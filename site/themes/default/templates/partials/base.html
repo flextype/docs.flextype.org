@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ locale }}">
+    {% set entry_locale = entries.fetch(locale) %}
+    <head>
+        {% block head %}
+            <meta charset="{{ registry.settings.charset|lower }}">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.settings.description }}{% endif %}">
+            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.settings.keywords }}{% endif %}">
+            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.settings.robots }}{% endif %}">
+            <meta name="generator" content="Powered by Flextype {{ FLEXTYPE_VERSION }}" />
+
+            <!-- Twitter -->
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@getflextype">
+            <meta name="twitter:creator" content="@getflextype">
+            <meta name="twitter:title" content="Content Management System &mdash; Flextype">
+            <meta name="twitter:description" content="Build fast, flexible, easier to manage websites with Flextype.">
+            <meta name="twitter:image" content="https://github.com/flextype/flextype/raw/dev/site/plugins/admin/preview.png">
+
+            <!-- Facebook -->
+            <meta property="og:url" content="http://flextype.org">
+            <meta property="og:title" content="Content Management System &mdash; Flextype">
+            <meta property="og:description" content="Build fast, flexible, easier to manage websites with Flextype.">
+            <meta property="og:type" content="website">
+            <meta property="og:image" content="https://github.com/flextype/flextype/raw/dev/site/plugins/admin/preview.png">
+            <meta property="og:image:type" content="image/png">
+
+            {{ emitter.emit('onThemeMeta') }}
+
+            <title>{% if entry.title %}{{ entry.title|e('html') }} | {% endif %}{{ registry.settings.title|e('html') }}</title>
+
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
+
+            {% set learn = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/learn.css' %}
+            {% do assets.add('css', learn, 'site', 1) %}
+            {% for assets_site in assets.get('css', 'site') %}
+                {% for assets_by_priorities in assets_site %}
+                    <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
+                {% endfor %}
+            {% endfor %}
+
+            {{ emitter.emit('onThemeHeader') }}
+            {{ snippets.exec('yandex-verification')|raw }}
+            {{ snippets.exec('yandex-metrika')|raw }}
+        {% endblock %}
+    </head>
+    <body>
+
+        {% block content %}{% endblock %}
+
+        {{ emitter.emit('onThemeTail') }}
+    </body>
+</html>
