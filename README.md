@@ -1,2 +1,2 @@
-# learn.flextype.org
+# docs.flextype.org
 Flextype Learn Website
