@@ -37,8 +37,9 @@ h6 {
   font-weight: normal;
 }
 
-ul {
-  list-style: none;
+ul, ol {
+  margin-left: 40px;
+  margin-bottom: 20px;
 }
 
 button,
@@ -129,6 +130,10 @@ p {
     line-height: 20px;
 }
 
+p {
+    margin-bottom: 20px;
+}
+
 pre {
     background: #f0f0f0;
     padding: 20px;
@@ -158,8 +163,17 @@ h5 {
     margin-top: 40px;
 }
 
+pre {
+    margin-bottom: 20px;
+}
+
 .sidebar, .content {
     padding: 20px;
+}
+
+.sidebar ul {
+    margin: 0;
+    list-style: none;
 }
 
 
