@@ -13,4 +13,4 @@ title: Constants
 | PATH\['themes'\]              | Define the PATH to site themes (without trailing slash).        |
 | PATH\['config'\]\['default'\] | Define the PATH to default config (without trailing slash).     |
 | PATH\['config'\]\['site'\]    | Define the PATH to site config (without trailing slash).        |
-| PATH\['cache'\]               | Define the PATH to site chache (without trailing slash).        |
+| PATH\['cache'\]               | Define the PATH to site cache (without trailing slash).         |
