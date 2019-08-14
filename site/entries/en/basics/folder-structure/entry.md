@@ -1,79 +1,70 @@
 ---
 title: Folder structure
 ---
-<p>System folders:</p>
-<pre><code class="text hljs">/flextype
-/vendor
-/site
-</code></pre>
+System folders:
 
-<h3>/flextype</h3>
-<p>
-    The main folder of the Flextype system, which stores common and important files for its work.<br> You cannot edit any files in this folder!
-</p>
+    /flextype
+    /vendor
+    /site
 
-<h3>/vendor</h3>
-<p>
-    The vendor folder contains important libraries that Flextype uses.<br> This folder is similar to the flextype folder and its contents should not be edited!
-</p>
 
-<h3>/site</h3>
-<p>
-    This folder contains content, plugins, themes and all that is necessary for the work of the site.
-</p>
+### /flextype
 
-<pre><code class="text hljs">/site/cache
-/site/config
-/site/entries
-/site/logs
-/site/menus
-/site/plugins
-/site/themes
-/site/snippets
-/site/aсcounts
-</code></pre>
+The main folder of the Flextype system, which stores common and important files for its work.  
+You cannot edit any files in this folder!
 
-<h3>/site/cache</h3>
-<p>
-    This folder is used to store temporary cached files that are automatically created by the Flextype to improve performance.
-</p>
+### /vendor
 
-<h3>/site/config</h3>
-<p>
-    This folder contains the site and system settings.
-</p>
+The vendor folder contains important libraries that Flextype uses.  
+This folder is similar to the flextype folder and its contents should not be edited!
 
-<h3>/site/entries</h3>
-<p>
-    Entries and media files of the site are stored in this folder.
-</p>
+### /site
 
-<h3>/site/logs</h3>
-<p>
-    Error logs are stored in this folder.
-</p>
+This folder contains content, plugins, themes and all that is necessary for the work of the site.
 
-<h3>/site/menus</h3>
-<p>
-    This folder contains the site menu.
-</p>
+    /site/cache
+    /site/config
+    /site/entries
+    /site/logs
+    /site/menus
+    /site/plugins
+    /site/themes
+    /site/snippets
+    /site/aсcounts
 
-<h3>/site/plugins</h3>
-<p>
-    This folder contains plugins that extend the capabilities of the system.
-</p>
 
-<h3>/site/themes</h3>
-<p>
-    This folder contains themes for the website with the styles, scripts and individual fieldsets.
-</p>
+### /site/cache
 
-<h3>/site/snippets</h3>
-<p>
-    Snippets are stored in this folder.
-</p>
+This folder is used to store temporary cached files that are automatically created by the Flextype to improve performance.
 
-<h3>/site/aсcounts</h3>
-<p>
-    Accounts are stored in this folder.
-</p>
+### /site/config
+
+This folder contains the site and system settings.
+
+### /site/entries
+
+Entries and media files of the site are stored in this folder.
+
+### /site/logs
+
+Error logs are stored in this folder.
+
+### /site/menus
+
+This folder contains the site menu.
+
+### /site/plugins
+
+This folder contains plugins that extend the capabilities of the system.
+
+### /site/themes
+
+This folder contains themes for the website with the styles, scripts and individual fieldsets.
+
+### /site/snippets
+
+Snippets are stored in this folder.
+
+### /site/aсcounts
+
+Accounts are stored in this folder.
