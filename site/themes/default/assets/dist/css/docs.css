@@ -1,0 +1,170 @@
+/* reset css */
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+/* typo */
+
+/* flex */
+
+.flex {
+    display: flex;
+}
+
+/* custom */
+
+body,
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+
+    height: 100%;
+    letter-spacing: 0;
+    color: #424243;
+    background: #fff;
+}
+
+body,
+button,
+input,
+p,
+select,
+textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+
+    color: black;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+body,
+p {
+    line-height: 20px;
+}
+
+pre {
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
+
+h3,
+h4,
+h5 {
+    margin-top: 40px;
+}
+
+.sidebar, .content {
+    padding: 20px;
+}
+
+
+.flextype {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 60px;
+}

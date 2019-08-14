@@ -33,7 +33,7 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
-            {% set learn = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/learn.css' %}
+            {% set learn = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.css' %}
             {% do assets.add('css', learn, 'site', 1) %}
             {% for assets_site in assets.get('css', 'site') %}
                 {% for assets_by_priorities in assets_site %}
@@ -48,7 +48,29 @@
     </head>
     <body>
 
-        {% block content %}{% endblock %}
+        <div class="flex">
+            <div class="sidebar">
+                <div class="flextype">FLEXTYPE</div>
+                <h4>Basics</h4>
+                <ul>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/requirements">Requirements</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/installation">Installation</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/configuration">Configuration</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/folder-structure">Folder Structure</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/constants">Constants</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/getting-help">Getting Help</a></li>
+                </ul>
+                <h4>Content</h4>
+                <ul>
+                    <li><a href="{{ base_url() }}/{{ locale }}/content/entries">Entries</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/content/media">Media</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/content/snippets">Snippets</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
 
         {{ emitter.emit('onThemeTail') }}
     </body>
