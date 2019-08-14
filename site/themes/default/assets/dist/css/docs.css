@@ -85,12 +85,12 @@ th {
 
 body,
 html {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 20px;
+    line-height: 32px;
+
 
     height: 100%;
-    letter-spacing: 0;
     color: #424243;
     background: #fff;
 }
@@ -101,11 +101,10 @@ input,
 p,
 select,
 textarea {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 20px;
+    line-height: 32px;
     font-weight: 400;
-
     color: black;
 }
 
@@ -128,11 +127,6 @@ a:hover {
     color: black;
 }
 
-body,
-p {
-    line-height: 20px;
-}
-
 p {
     margin-bottom: 20px;
 }
@@ -152,6 +146,7 @@ h2,
 h3,
 h4,
 h5 {
+    font-family: "Montserrat",sans-serif;
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -168,6 +163,7 @@ h5 {
 
 pre {
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .sidebar, .content {
@@ -178,7 +174,6 @@ pre {
     margin: 0;
     list-style: none;
 }
-
 
 .flextype {
     font-weight: bold;
