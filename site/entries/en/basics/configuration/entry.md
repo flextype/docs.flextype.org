@@ -5,6 +5,7 @@ Flextype allows you to configure your site in any way you can dream up, and itâ€
 
 You can update and create site configuration by editing file `/site/config/settings.yaml`
 
+```
     # The title of the website
     title: "Site title here"
 
@@ -67,6 +68,6 @@ You can update and create site configuration by editing file `/site/config/setti
 
     # Define the file types (extensions to be exact) that are acceptable for upload.
     accept_file_types: [ gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg]
-
+```
 
 Also you can update site setting in Admin Panel on the Settings page.

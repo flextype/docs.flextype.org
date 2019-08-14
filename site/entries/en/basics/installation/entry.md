@@ -16,14 +16,14 @@ Unzip the contents to a new folder on your local computer, and upload to your we
 
 You can easily install Flextype with Composer.
 ```
-    composer create-project flextype/flextype
+composer create-project flextype/flextype
 ```
 Also you may need to install vendor libs for Default Theme
 ```
-    composer install
-    cd site/themes/default
-    npm install
-    gulp
+composer install
+cd site/themes/default
+npm install
+gulp
 ```
 
 ### Using command-line
@@ -44,11 +44,11 @@ Your homepage is working, but subpages won't open or lead to a server error?
 2. Check if mod_rewrite is enabled on your server.
 3. Please try setting the RewriteBase in the .htaccess file:
 ```
-    RewriteBase /
+RewriteBase /
 ```
 If you run Flextype in a subfolder, make sure to set the RewriteBase according to the name of your subfolder:
 ```
-    RewriteBase /my-subfolder/
+RewriteBase /my-subfolder/
 ```
 
 ## Themes Installation
