@@ -26,7 +26,6 @@ This folder contains content, plugins, themes and all that is necessary for the 
     /site/config
     /site/entries
     /site/logs
-    /site/menus
     /site/plugins
     /site/themes
     /site/snippets
@@ -48,10 +47,6 @@ Entries and media files of the site are stored in this folder.
 ### /site/logs
 
 Error logs are stored in this folder.
-
-### /site/menus
-
-This folder contains the site menu.
 
 ### /site/plugins
 
