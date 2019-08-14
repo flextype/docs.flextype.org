@@ -8,18 +8,16 @@ var Promise = require("es6-promise").Promise,
     csso = require('gulp-csso'),
     concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps'),
-    autoprefixer = require('gulp-autoprefixer'),
-    sass = require('gulp-sass');
+    autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('css', function() {
-    return gulp.src('assets/scss/flextype.scss')
-        .pipe(sass().on('error', sass.logError))
+    return gulp.src('assets/dist/css/docs.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(csso())
-        .pipe(concat('flextype.min.css'))
+        .pipe(concat('docs.min.css'))
         .pipe(gulp.dest('assets/dist/css/'));
 });
 

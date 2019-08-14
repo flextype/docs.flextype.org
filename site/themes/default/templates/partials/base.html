@@ -33,8 +33,8 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
-            {% set learn = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.css' %}
-            {% do assets.add('css', learn, 'site', 1) %}
+            {% set docs = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.min.css' %}
+            {% do assets.add('css', docs, 'site', 1) %}
             {% for assets_site in assets.get('css', 'site') %}
                 {% for assets_by_priorities in assets_site %}
                     <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
@@ -42,8 +42,6 @@
             {% endfor %}
 
             {{ emitter.emit('onThemeHeader') }}
-            {{ snippets.exec('yandex-verification')|raw }}
-            {{ snippets.exec('yandex-metrika')|raw }}
         {% endblock %}
     </head>
     <body>
