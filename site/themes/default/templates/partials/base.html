@@ -56,7 +56,7 @@
                     <li><a href="{{ base_url() }}/{{ locale }}/basics/installation">Installation</a></li>
                     <li><a href="{{ base_url() }}/{{ locale }}/basics/configuration">Configuration</a></li>
                     <li><a href="{{ base_url() }}/{{ locale }}/basics/folder-structure">Folder Structure</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/constants">Constants</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/constants">PHP Constants</a></li>
                     <li><a href="{{ base_url() }}/{{ locale }}/basics/getting-help">Getting Help</a></li>
                 </ul>
                 <!--
@@ -70,6 +70,9 @@
             </div>
             <div class="content">
                 {% block content %}{% endblock %}
+                <div class="edit-this-page">
+                    <a href="#">edit this page</a>
+                </div>
             </div>
         </div>
 
