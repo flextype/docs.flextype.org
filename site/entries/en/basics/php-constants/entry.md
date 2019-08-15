@@ -1,6 +1,8 @@
 ---
-title: Constants
+title: PHP Constants
 ---
+
+Your `index.php` file can define certain PHP constants, which Flextype bootstrap script will check for while loading and configuring Flextype.
 
 ### FLEXTYPE_MINIMUM_PHP
 Define the application minimum supported PHP version.
