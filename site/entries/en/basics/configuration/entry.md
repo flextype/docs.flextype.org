@@ -26,7 +26,8 @@ You can update and create site configuration by editing file `/site/config/setti
       "upload_images_quality":70,
       "upload_images_width":1600,
       "upload_images_height":0,
-      "accept_file_types":"gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg"
+      "accept_file_types":"gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls,
+       xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg"
     },
     "error404":{
       "title":"Error 404",
