@@ -180,3 +180,10 @@ pre {
     font-size: 36px;
     line-height: 60px;
 }
+
+.edit-this-page {
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #000;
+}
