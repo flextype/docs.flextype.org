@@ -49,29 +49,26 @@
         <div class="flex">
             <div class="sidebar">
                 <div class="flextype">FLEXTYPE</div>
-                <h4>Basics</h4>
+                <h4>{{ entry_locale.txt_basics }}</h4>
                 <ul>
-                    <li><a href="{{ base_url() }}/{{ locale }}">What is Flextype?</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/requirements">Requirements</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/installation">Installation</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/configuration">Configuration</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/folder-structure">Folder Structure</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/php-constants">PHP Constants</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/getting-help">Getting Help</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}">{{ entry_locale.txt_link_what_is_flextype }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/requirements">{{ entry_locale.txt_link_requirements }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/installation">{{ entry_locale.txt_link_installation }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/configuration">{{ entry_locale.txt_link_configuration }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/folder-structure">{{ entry_locale.txt_link_folder_structure }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/php-constants">{{ entry_locale.txt_link_php_constants }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/coc">{{ entry_locale.txt_link_coc }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/getting-help">{{ entry_locale.txt_link_getting_help }}</a></li>
                 </ul>
-                <!--
-                <h4>Content</h4>
+                <h4>API</h4>
                 <ul>
-                    <li><a href="{{ base_url() }}/{{ locale }}/content/entries">Entries</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/content/media">Media</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/content/snippets">Snippets</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/api/flextype">Flextype API</a></li>
                 </ul>
-                -->
             </div>
             <div class="content">
                 {% block content %}{% endblock %}
                 <div class="edit-this-page">
-                    <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">edit this page</a>
+                    <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt_link_edit_this_page }}</a>
                 </div>
             </div>
         </div>

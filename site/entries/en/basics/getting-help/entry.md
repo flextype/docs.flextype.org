@@ -28,3 +28,9 @@ Link: [https://vk.com/flextype](https://vk.com/flextype)
 Follow [Flextype on Twitter](https://twitter.com/getflextype) to get real-time news regarding the development and all events we are attending.  
 
 Link: [https://twitter.com/getflextype](https://twitter.com/getflextype)
+
+### Forum
+
+We have a forum to provide a simple way to get your Flextype questions answered quickly.
+
+Link: [http://forum.flextype.org](http://forum.flextype.org)

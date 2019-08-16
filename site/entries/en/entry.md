@@ -1,5 +1,15 @@
 ---
 title: What is Flextype?
+txt_basics: Basics
+txt_link_what_is_flextype: What is Flextype?
+txt_link_requirements: Requirements
+txt_link_installation: Installation
+txt_link_configuration: Configuration
+txt_link_folder_structure: Folder Structure
+txt_link_php_constants: PHP Constants
+txt_link_coc: Code of Conduct
+txt_link_getting_help: Getting Help
+txt_link_edit_this_page: Edit this page
 ---
 
 Flextype was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
