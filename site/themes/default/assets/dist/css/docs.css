@@ -166,6 +166,12 @@ pre {
     font-size: 16px;
 }
 
+th, td {
+    padding: 4px;
+    vertical-align: middle;
+}
+
+
 .sidebar, .content {
     padding: 20px;
 }
