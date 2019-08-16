@@ -14,7 +14,7 @@ Make sure your server meets the following requirements.
 Flextype needs the following PHP extensions to be enabled:
 
 - PHP [mbstring](http://php.net/manual/en/book.mbstring.php) module for full UTF-8 support.
-- PHP [gd](http://php.net/manual/en/book.image.php) module for image processing.
+- PHP [gd](http://php.net/manual/en/book.image.php) or [ImageMagick](http://php.net/manual/en/book.imagick.php) module for image processing.
 - PHP [json](https://php.net/manual/en/book.json.php) module for JSON manipulation.
 - PHP [Fileinfo](https://www.php.net/manual/en/book.fileinfo.php)
 - PHP [SPL](https://www.php.net/manual/en/book.spl.php)
