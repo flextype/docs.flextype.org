@@ -4,11 +4,10 @@ title: Folder structure
 
 System folders:
 
-```
-/flextype
-/vendor
-/site
-```
+    /flextype
+    /vendor
+    /site
+    
 
 ### /flextype
 
@@ -24,16 +23,15 @@ This folder is similar to the flextype folder and its contents should not be edi
 
 This folder contains content, plugins, themes and all that is necessary for the work of the site.
 
-```
-/site/cache
-/site/config
-/site/entries
-/site/logs
-/site/plugins
-/site/themes
-/site/snippets
-/site/aсcounts
-```
+    /site/cache
+    /site/config
+    /site/entries
+    /site/logs
+    /site/plugins
+    /site/themes
+    /site/snippets
+    /site/aсcounts
+    
 
 ### /site/cache
 
