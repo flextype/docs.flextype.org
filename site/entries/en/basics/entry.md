@@ -1,6 +1,7 @@
 ---
 title: Basics
 ---
+
 <div class="row">
     <a class="col-md-6 documentation-panel" href="[site_url]/[locale]/documentation/guide/basics/requirements">Requirements</a>
     <a class="col-md-6 documentation-panel" href="[site_url]/[locale]/documentation/guide/basics/installation">Installation</a>
