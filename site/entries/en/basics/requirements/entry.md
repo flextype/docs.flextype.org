@@ -20,7 +20,6 @@ Flextype needs the following PHP extensions to be enabled:
 - PHP [SPL](https://www.php.net/manual/en/book.spl.php)
 - PHP [DOM](https://www.php.net/manual/ru/class.domdocument.php)
 
-
 Although it is optional, we strongly recommend enabling the following PHP extensions:  
 APC, APCu, XCache, Memcached, or Redis for better performance.
 
