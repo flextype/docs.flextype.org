@@ -231,4 +231,4 @@ image:
   driver: gd
 ```
 
-Also you can update site setting in Admin Panel on the Settings page.
+Also you can update any site setting in Admin Panel on the Settings page.
