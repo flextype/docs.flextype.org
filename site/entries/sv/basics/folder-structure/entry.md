@@ -23,6 +23,8 @@ This folder is similar to the flextype folder and its contents should not be edi
 
 This folder contains content, plugins, themes and all that is necessary for the work of the site.
 
+<<<<<<< HEAD
+
     /site/cache
     /site/config
     /site/entries
@@ -30,8 +32,12 @@ This folder contains content, plugins, themes and all that is necessary for the 
     /site/plugins
     /site/themes
     /site/snippets
-    /site/aсcounts
+    /site/accounts
     
+
+======= /site/cache /site/config /site/entries /site/logs /site/plugins /site/themes /site/snippets /site/aсcounts
+
+> > > > > > > origin/dev
 
 ### /site/cache
 
