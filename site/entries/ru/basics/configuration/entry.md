@@ -32,11 +32,11 @@ You can update and create site configuration by editing file `/site/config/setti
     # Set internal character encoding.
     #
     # Currently the following names are supported:
-    # http://php.net/manual/ru/function.mb-regex-encoding.php#121645
+    # http://php.net/manual/en/function.mb-regex-encoding.php#121645
     charset: UTF-8
     
     # Valid date format
-    # see: http://php.net/manual/ru/function.date.php
+    # see: http://php.net/manual/en/function.date.php
     date_format: F d Y H:i:s
     
     # The theme to use.
