@@ -32,7 +32,7 @@ This folder contains content, plugins, themes and all that is necessary for the 
 /site/plugins
 /site/themes
 /site/snippets
-/site/aсcounts
+/site/accounts
 ```
 
 ### /site/cache
