@@ -13,6 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\Common\Collections\Expr\Comparison;
 use Flextype\Component\Filesystem\Filesystem;
+use function array_replace_recursive;
 use function ltrim;
 use function md5;
 use function rename;
@@ -39,6 +40,39 @@ class Entries
     public $entries = [];
 
     /**
+     * Set Expression
+     *
+     * @var array
+     * @access public
+     */
+    public $expression = [
+        '=' => Comparison::EQ,
+        '<>' => Comparison::NEQ,
+        '<' => Comparison::LT,
+        '<=' => Comparison::LTE,
+        '>' => Comparison::GT,
+        '>=' => Comparison::GTE,
+        'is' => Comparison::IS,
+        'in' => Comparison::IN,
+        'nin' => Comparison::NIN,
+        'contains' => Comparison::CONTAINS,
+        'member_of' => Comparison::MEMBER_OF,
+        'start_with' => Comparison::STARTS_WITH,
+        'ends_with' => Comparison::ENDS_WITH,
+    ];
+
+    /**
+     * Set Order Direction
+     *
+     * @var array
+     * @access public
+     */
+    public $direction = [
+        'asc' => Criteria::ASC,
+        'desc' => Criteria::DESC,
+    ];
+
+    /**
      * Flextype Dependency Container
      *
      * @access private
@@ -60,23 +94,23 @@ class Entries
      *
      * @param string $id Entry ID
      *
-     * @return array|false The entry contents or false on failure.
+     * @return array|false The entry array data or false on failure.
      *
      * @access public
      */
     public function fetch(string $id)
     {
         // Get entry file location
-        $entry_file = $this->_file_location($id);
+        $entry_file = $this->getFileLocation($id);
 
-        // If requested entry founded then process it
-        if ($entry_file) {
+        // If requested entry file founded then process it
+        if (Filesystem::has($entry_file)) {
             // Create unique entry cache_id
             // Entry Cache ID = entry + entry file + entry file time stamp
-            if ($timestamp = Filesystem::getTimestamp($entry_file['file'])) {
-                $entry_cache_id = md5('entry' . $entry_file['file'] . $timestamp);
+            if ($timestamp = Filesystem::getTimestamp($entry_file)) {
+                $entry_cache_id = md5('entry' . $entry_file . $timestamp);
             } else {
-                $entry_cache_id = md5('entry' . $entry_file['file']);
+                $entry_cache_id = md5('entry' . $entry_file);
             }
 
             // Try to get the requested entry from cache
@@ -95,38 +129,30 @@ class Entries
             // else Try to get requested entry from the filesystem
             }
 
-            // Try to get requested entry body content
-            if ($entry_body = Filesystem::read($entry_file['file'])) {
-                // Try to decode requested entry body content
-                if ($entry_decoded = Parser::decode($entry_body, $entry_file['driver'])) {
-                    // Add predefined entry items
-                    // Entry Date
-                    $entry_decoded['published_at'] = $entry_decoded['published_at'] ? $entry_decoded['published_at'] : Filesystem::getTimestamp($entry_file['file']);
-                    $entry_decoded['created_at']   = $entry_decoded['created_at'] ? $entry_decoded['created_at'] : Filesystem::getTimestamp($entry_file['file']);
+            $entry_decoded = Parser::decode(Filesystem::read($entry_file), 'frontmatter');
 
-                    // Entry Timestamp
-                    $entry_decoded['modified_at'] = Filesystem::getTimestamp($entry_file['file']);
+            // Add predefined entry items
+            // Entry Date
+            $entry_decoded['published_at'] = $entry_decoded['published_at'] ? $entry_decoded['published_at'] : Filesystem::getTimestamp($entry_file);
+            $entry_decoded['created_at']   = $entry_decoded['created_at'] ? $entry_decoded['created_at'] : Filesystem::getTimestamp($entry_file);
 
-                    // Entry Slug
-                    $entry_decoded['slug'] = $entry_decoded['slug'] ?? ltrim(rtrim($id, '/'), '/');
+            // Entry Timestamp
+            $entry_decoded['modified_at'] = Filesystem::getTimestamp($entry_file);
 
-                    // Save decoded entry content into the cache
-                    $this->flextype['cache']->save($entry_cache_id, $entry_decoded);
+            // Entry Slug
+            $entry_decoded['slug'] = $entry_decoded['slug'] ?? ltrim(rtrim($id, '/'), '/');
 
-                    // Set entry to the Entry class property $entry
-                    $this->entry = $entry_decoded;
+            // Save decoded entry content into the cache
+            $this->flextype['cache']->save($entry_cache_id, $entry_decoded);
 
-                    // Run event onEntryAfterInitialized
-                    $this->flextype['emitter']->emit('onEntryAfterInitialized');
+            // Set entry to the Entry class property $entry
+            $this->entry = $entry_decoded;
 
-                    // Return entry from the Entry class property $entry
-                    return $this->entry;
-                }
+            // Run event onEntryAfterInitialized
+            $this->flextype['emitter']->emit('onEntryAfterInitialized');
 
-                return false;
-            }
-
-            return false;
+            // Return entry from the Entry class property $entry
+            return $this->entry;
         }
 
         return false;
@@ -137,7 +163,7 @@ class Entries
      *
      * @param array $args Query arguments
      *
-     * @return array The entries
+     * @return array The entries array data
      *
      * @access public
      */
@@ -147,27 +173,10 @@ class Entries
         $entries = [];
 
         // Set Expression
-        $expression = [
-            '=' => Comparison::EQ,
-            '<>' => Comparison::NEQ,
-            '<' => Comparison::LT,
-            '<=' => Comparison::LTE,
-            '>' => Comparison::GT,
-            '>=' => Comparison::GTE,
-            'is' => Comparison::IS,
-            'in' => Comparison::IN,
-            'nin' => Comparison::NIN,
-            'contains' => Comparison::CONTAINS,
-            'member_of' => Comparison::MEMBER_OF,
-            'start_with' => Comparison::STARTS_WITH,
-            'ends_with' => Comparison::ENDS_WITH,
-        ];
+        $expression = $this->expression;
 
         // Set Direction
-        $direction = [
-            'asc' => Criteria::ASC,
-            'desc' => Criteria::DESC,
-        ];
+        $direction = $this->direction;
 
         // Bind: entry id
         $bind_id = $id;
@@ -221,31 +230,16 @@ class Entries
         }
 
         // Get entries path
-        $entries_path = $this->_dir_location($bind_id);
+        $entries_path = $this->getDirLocation($bind_id);
 
         // Get entries list
         $entries_list = Filesystem::listContents($entries_path, $bind_recursive);
 
-        // Create unique entries $_entries_ids
-        // 1. Go through all entries
-        // 2. set all entries IDs and their timestamps into the $_entries_ids
-        $_entries_ids = '';
-        foreach ($entries_list as $current_entry) {
-            if (strpos($current_entry['path'], $bind_id . '/entry.json') !== false) {
-                // ignore ...
-            } else {
-                if ($current_entry['type'] === 'dir' && Filesystem::has($current_entry['path'] . '/entry.json')) {
-                    if ($timestamp = Filesystem::getTimestamp($current_entry['path'] . '/entry.json')) {
-                        $_entries_ids .= 'entry:' . ltrim(rtrim(str_replace(PATH['entries'], '', $current_entry['path']), '/'), '/') . ' timestamp:' . $timestamp;
-                    } else {
-                        $_entries_ids .= 'entry:' . ltrim(rtrim(str_replace(PATH['entries'], '', $current_entry['path']), '/'), '/');
-                    }
-                }
-            }
-        }
+        // Get Entries Timestamp
+        $entries_timestamp = Filesystem::getDirTimestamp($entries_path);
 
         // Create unique entries $cache_id
-        $cache_id =  md5($_entries_ids .
+        $cache_id =  md5($entries_timestamp .
                          $bind_id .
                          ($bind_recursive ? 'true' : 'false') .
                          ($bind_set_max_result ? $bind_set_max_result : 'false') .
@@ -268,13 +262,14 @@ class Entries
             $entries = $this->flextype['cache']->fetch($cache_id);
         } else {
             // Create entries array from entries list and ignore current requested entry
+            //echo count($entries_list);
             foreach ($entries_list as $current_entry) {
-                if (strpos($current_entry['path'], $bind_id . '/entry') !== false) {
+                if (strpos($current_entry['path'], $bind_id . '/entry' . '.' . 'md') !== false) {
                     // ignore ...
                 } else {
                     // We are checking...
-                    // Whether the requested entry is a director and whether the file entry.json is in this directory.
-                    if ($current_entry['type'] === 'dir' && $this->_one_of($id)) {
+                    // Whether the requested entry is a director and whether the file entry is in this directory.
+                    if ($current_entry['type'] === 'dir' && Filesystem::has($current_entry['path'] . '/entry.md')) {
                         // Get entry uid
                         // 1. Remove entries path
                         // 2. Remove left and right slashes
@@ -296,7 +291,7 @@ class Entries
             $criteria = new Criteria();
 
             // Exec: where
-            if (isset($bind_and_where['where']['key']) && isset($bind_and_where['where']['expr']) && isset($bind_and_where['where']['value'])) {
+            if (isset($bind_where['where']['key']) && isset($bind_where['where']['expr']) && isset($bind_where['where']['value'])) {
                 $expr = new Comparison($bind_where['where']['key'], $bind_where['where']['expr'], $bind_where['where']['value']);
                 $criteria->where($expr);
             }
@@ -304,13 +299,13 @@ class Entries
             // Exec: and where
             if (isset($bind_and_where['and_where']['key']) && isset($bind_and_where['and_where']['expr']) && isset($bind_and_where['and_where']['value'])) {
                 $expr = new Comparison($bind_and_where['and_where']['key'], $bind_and_where['and_where']['expr'], $bind_and_where['and_where']['value']);
-                $criteria->where($expr);
+                $criteria->andWhere($expr);
             }
 
             // Exec: or where
             if (isset($bind_or_where['or_where']['key']) && isset($bind_or_where['or_where']['expr']) && isset($bind_or_where['or_where']['value'])) {
                 $expr = new Comparison($bind_or_where['or_where']['key'], $bind_or_where['or_where']['expr'], $bind_or_where['or_where']['value']);
-                $criteria->where($expr);
+                $criteria->orWhere($expr);
             }
 
             // Exec: order by
@@ -349,10 +344,10 @@ class Entries
     }
 
     /**
-     * Rename entry.
+     * Rename entry
      *
-     * @param string $id     Entry id
-     * @param string $new_id New entry id
+     * @param string $id     Entry ID
+     * @param string $new_id New entry ID
      *
      * @return bool True on success, false on failure.
      *
@@ -360,23 +355,27 @@ class Entries
      */
     public function rename(string $id, string $new_id) : bool
     {
-        return rename($this->_dir_location($id), $this->_dir_location($new_id));
+        return rename($this->getDirLocation($id), $this->getDirLocation($new_id));
     }
 
     /**
      * Update entry
      *
-     * @param string $id   Entry
+     * @param string $id   Entry ID
      * @param array  $data Data
+     *
+     * @return bool True on success, false on failure.
      *
      * @access public
      */
     public function update(string $id, array $data) : bool
     {
-        $entry_file = $this->_file_location($id);
+        $entry_file = $this->getFileLocation($id);
 
-        if (Filesystem::has($entry_file['file'])) {
-            return Filesystem::write($entry_file['file'], Parser::encode($data, $entry_file['driver']));
+        if (Filesystem::has($entry_file)) {
+            $body = Filesystem::read($entry_file);
+            $entry = Parser::decode($body, 'frontmatter');
+            return Filesystem::write($entry_file, Parser::encode(array_replace_recursive($entry, $data), 'frontmatter'));
         }
 
         return false;
@@ -385,40 +384,36 @@ class Entries
     /**
      * Create entry
      *
-     * @param string $id   Entry id
+     * @param string $id   Entry ID
      * @param array  $data Data
+     *
+     * @return bool True on success, false on failure.
      *
      * @access public
      */
-    public function create(string $id, array $data, string $driver = 'json') : bool
+    public function create(string $id, array $data) : bool
     {
-        $entry_dir = $this->_dir_location($id);
+        $entry_dir = $this->getDirLocation($id);
 
-        // Check if new entry directory exists
         if (! Filesystem::has($entry_dir)) {
             // Try to create directory for new entry
             if (Filesystem::createDir($entry_dir)) {
-                // Entry file path
-                $entry_file = $entry_dir . '/entry' . '.' . $driver;
-
                 // Check if new entry file exists
-                if (! Filesystem::has($entry_file)) {
-                    return Filesystem::write($entry_file, Parser::encode($data));
+                if (! Filesystem::has($entry_file = $entry_dir . '/entry.md')) {
+                    return Filesystem::write($entry_file, Parser::encode($data, 'frontmatter'));
                 }
 
                 return false;
             }
-
-            return false;
         }
 
         return false;
     }
 
     /**
-     * Delete entry.
+     * Delete entry
      *
-     * @param string $id Entry id
+     * @param string $id Entry ID
      *
      * @return bool True on success, false on failure.
      *
@@ -426,7 +421,7 @@ class Entries
      */
     public function delete(string $id) : bool
     {
-        return Filesystem::deleteDir($this->_dir_location($id));
+        return Filesystem::deleteDir($this->getDirLocation($id));
     }
 
     /**
@@ -436,78 +431,53 @@ class Entries
      * @param string $new_id    New entry id
      * @param bool   $recursive Recursive copy entries.
      *
-     * @return bool True on success, false on failure.
+     * @return bool|null True on success, false on failure.
      *
      * @access public
      */
-    public function copy(string $id, string $new_id, bool $recursive = false) : bool
+    public function copy(string $id, string $new_id, bool $recursive = false)
     {
-        return Filesystem::copy($this->_dir_location($id), $this->_dir_location($new_id), $recursive);
+        return Filesystem::copy($this->getDirLocation($id), $this->getDirLocation($new_id), $recursive);
     }
 
     /**
-     * Check whether entry exists.
+     * Check whether entry exists
      *
-     * @param string $id Entry
+     * @param string $id Entry ID
+     *
+     * @return bool True on success, false on failure.
      *
      * @access public
      */
     public function has(string $id) : bool
     {
-        return Filesystem::has($this->_file_location($id));
+        return Filesystem::has($this->getFileLocation($id));
     }
 
     /**
-     * Helper method _one_of
+     * Get entry file location
      *
-     * @param string $id Entry id
+     * @param string $id Entry ID
      *
-     * @return bool True on success, false on failure.
+     * @return string entry file location
      *
      * @access private
      */
-    private function _one_of(string $id) : bool
+    public function getFileLocation(string $id) : string
     {
-        foreach (Parser::$drivers as $driver) {
-            $driver_file = PATH['entries'] . '/' . $id . '/entry' . '.' . $driver['ext'];
-
-            return true;
-        }
-
-        return false;
+        return PATH['entries'] . '/' . $id . '/entry.md';
     }
 
     /**
-     * Helper method _file_location
+     * Get entry directory location
      *
-     * @param string $id Entry id
+     * @param string $id Entry ID
      *
-     * @access private
-     */
-    private function _file_location(string $id)
-    {
-        foreach (Parser::$drivers as $driver) {
-            $driver_file = PATH['entries'] . '/' . $id . '/entry' . '.' . $driver['ext'];
-
-            if (Filesystem::has($driver_file)) {
-                return [
-                    'file' => $driver_file,
-                    'driver' => $driver['name'],
-                ];
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Helper method _dir_location
-     *
-     * @param string $id Entry id
+     * @return string entry directory location
      *
      * @access private
      */
-    private function _dir_location(string $id) : string
+    public function getDirLocation(string $id) : string
     {
         return PATH['entries'] . '/' . $id;
     }
