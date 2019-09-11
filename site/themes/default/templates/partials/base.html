@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="{{ locale }}">
+    {% set entry_locale = entries.fetch(locale) %}
+    <head>
+        {% block head %}
+            <meta charset="{{ registry.settings.charset|lower }}">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.settings.description }}{% endif %}">
+            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.settings.keywords }}{% endif %}">
+            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.settings.robots }}{% endif %}">
+            <meta name="generator" content="Powered by Flextype {{ FLEXTYPE_VERSION }}" />
+
+            <!-- Twitter -->
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@getflextype">
+            <meta name="twitter:creator" content="@getflextype">
+            <meta name="twitter:title" content="Content Management System &mdash; Flextype">
+            <meta name="twitter:description" content="Build fast, flexible, easier to manage websites with Flextype.">
+            <meta name="twitter:image" content="https://github.com/flextype/flextype/raw/dev/site/plugins/admin/preview.png">
+
+            <!-- Facebook -->
+            <meta property="og:url" content="http://flextype.org">
+            <meta property="og:title" content="Content Management System &mdash; Flextype">
+            <meta property="og:description" content="Build fast, flexible, easier to manage websites with Flextype.">
+            <meta property="og:type" content="website">
+            <meta property="og:image" content="https://github.com/flextype/flextype/raw/dev/site/plugins/admin/preview.png">
+            <meta property="og:image:type" content="image/png">
+
+            {{ emitter.emit('onThemeMeta') }}
+
+            <title>{% if entry.title %}{{ entry.title|e('html') }} | {% endif %}{{ registry.settings.title|e('html') }}</title>
+
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
+
+            {% set docs = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.min.css' %}
+            {% do assets.add('css', docs, 'site', 1) %}
+            {% for assets_site in assets.get('css', 'site') %}
+                {% for assets_by_priorities in assets_site %}
+                    <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
+                {% endfor %}
+            {% endfor %}
+
+            {{ emitter.emit('onThemeHeader') }}
+        {% endblock %}
+    </head>
+    <body>
+
+        <div class="flex">
+            <div class="sidebar">
+                <div class="flextype">FLEXTYPE</div>
+                <h4>{{ entry_locale.txt_basics }}</h4>
+                <ul>
+                    <li><a href="{{ base_url() }}/{{ locale }}">{{ entry_locale.txt_link_what_is_flextype }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/requirements">{{ entry_locale.txt_link_requirements }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/installation">{{ entry_locale.txt_link_installation }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/configuration">{{ entry_locale.txt_link_configuration }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/folder-structure">{{ entry_locale.txt_link_folder_structure }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/php-constants">{{ entry_locale.txt_link_php_constants }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/coc">{{ entry_locale.txt_link_coc }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/basics/getting-help">{{ entry_locale.txt_link_getting_help }}</a></li>
+                </ul>
+                <h4>{{ entry_locale.txt_content }}</h4>
+                <ul>
+                    <li><a href="{{ base_url() }}/{{ locale }}/content/entries">{{ entry_locale.txt_link_entries }}</a></li>
+                </ul>
+                <h4>API</h4>
+                <ul>
+                    <li><a href="{{ base_url() }}/{{ locale }}/api/flextype">Flextype API</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                {% block content %}{% endblock %}
+                <div class="edit-this-page">
+                    <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt_link_edit_this_page }}</a>
+                </div>
+            </div>
+        </div>
+
+        {{ emitter.emit('onThemeTail') }}
+    </body>
+</html>

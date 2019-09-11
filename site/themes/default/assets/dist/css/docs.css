@@ -1,0 +1,195 @@
+/* reset css */
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+/* typo */
+
+/* flex */
+
+.flex {
+    display: flex;
+}
+
+/* custom */
+
+body,
+html {
+    font-family: "Montserrat",sans-serif;
+    font-size: 20px;
+    line-height: 32px;
+
+
+    height: 100%;
+    color: #424243;
+    background: #fff;
+}
+
+body,
+button,
+input,
+p,
+select,
+textarea {
+    font-family: "Montserrat",sans-serif;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+    color: black;
+}
+
+ul, ol {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: underline;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+pre {
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Montserrat",sans-serif;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
+
+h3,
+h4,
+h5 {
+    margin-top: 40px;
+}
+
+pre {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+th, td {
+    padding: 4px;
+    vertical-align: middle;
+}
+
+
+.sidebar, .content {
+    padding: 20px;
+}
+
+.sidebar ul {
+    margin: 0;
+    list-style: none;
+}
+
+.flextype {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 60px;
+}
+
+.edit-this-page {
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #000;
+}
