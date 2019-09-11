@@ -21,6 +21,7 @@ The underlying architecture of Flextype is built using well established and best
 * [Slim PHP](http://www.slimframework.com): Framework for powerful web applications and APIs.
 * [Twig Templating](https://twig.symfony.com): Flexible, fast, and secure template engine for PHP.
 * [Doctrine Project](https://www.doctrine-project.org): A set of decoupled and reusable PHP libraries for powerful web applications.
+<<<<<<< HEAD
 * [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
 
 Flextype is an MIT-licensed open source project and completely free to use.
@@ -29,3 +30,6 @@ However, the amount of effort needed to maintain and develop new features for th
 
 * [Become a backer or sponsor on Patreon](https://www.patreon.com/awilum).
 * [One-time donation via PayPal, QIWI, Sberbank, Yandex](http://flextype.org/en/one-time-donation)
+=======
+* [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
+>>>>>>> origin/master
