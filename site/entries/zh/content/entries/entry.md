@@ -2,9 +2,9 @@
 title: Entries
 ---
 
-Entries are the fundamental building-blocks of your site. Each entry in Flextype should contains **entry header** block in YAML format at the top of the file and **entry content** marked up using HTML + Shortcodes at the bottom of the file.
+Entries are the fundamental building-blocks of your site. Each entry in Flextype should contains **entry header** block in YAML format at the top of the file and **entry content** marked up using HTML + Markdown + Shortcodes at the bottom of the file.
 
-Here is a basic example (site/entries/my-entry/entry.html):
+Here is a basic example (site/entries/my-entry/entry.md):
 
     ---
     title: My Entry
@@ -17,11 +17,11 @@ Between these triple-dashed lines, you can set predefined entry header variables
 
 ### Entries and Urls structure in Flextype: {#entries-and-urls-structure-in-flextype}
 
-| Physical Location                       | URL              |
-| --------------------------------------- | ---------------- |
-| site/entries/home/entry.html            | /                |
-| site/entries/blog/my-post/entry.html    | /blog/my-post    |
-| site/entries/a/very/long/url/entry.html | /a/very/long/url |
+| Physical Location                     | URL              |
+| ------------------------------------- | ---------------- |
+| site/entries/home/entry.md            | /                |
+| site/entries/blog/my-post/entry.md    | /blog/my-post    |
+| site/entries/a/very/long/url/entry.md | /a/very/long/url |
 
 
 ### Predefined Entries Header Variables {#predefined-entries-header-variables}
