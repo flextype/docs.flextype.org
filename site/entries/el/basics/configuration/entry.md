@@ -35,10 +35,6 @@ You can update and create site configuration by editing file `/site/config/setti
     # http://php.net/manual/en/function.mb-regex-encoding.php#121645
     charset: UTF-8
     
-    # Valid date format
-    # see: http://php.net/manual/en/function.date.php
-    date_format: F d Y H:i:s
-    
     # The theme to use.
     #
     # Don't edit the provided theme templates directly, because they get updated
@@ -49,8 +45,19 @@ You can update and create site configuration by editing file `/site/config/setti
     # The locale that'll be used by the Flextype.
     locale: en_US
     
-    # The entries settings
-    # Define the file types (extensions to be exact) that are acceptable for upload.
+    # Valid date format
+    #
+    # - date_format: Valid date format
+    #
+    # - date_display_format: Valid date format to display
+    date_format: 'd-m-Y H:i'
+    date_display_format: 'd-m-y G:i'
+    
+    # The entries settings§
+    #
+    # - main:        Main entry
+    # - media.upload_images_quality: Image quality
+    # - media.accept_file_types: Define the file types (extensions to be exact) that are acceptable for upload.
     entries:
       main: home
       media:
@@ -104,7 +111,7 @@ You can update and create site configuration by editing file `/site/config/setti
     #
     # - sqlite3.table    SQLite3 Table
     cache:
-      enabled: false
+      enabled: true
       prefix: flextype
       driver: auto
       lifetime: 604800
