@@ -11,6 +11,7 @@ txt_link_coc: Code of Conduct
 txt_link_getting_help: Getting Help
 txt_link_edit_this_page: Edit this page
 txt_link_entries: Entries
+txt_link_markdown: Markdown
 txt_content: Content
 ---
 
