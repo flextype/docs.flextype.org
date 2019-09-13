@@ -14,58 +14,58 @@ The overriding design goal for Markdown’s formatting syntax is to make it as r
 
 -- John Gruber
 
-
 Note: Using Markdown doesn't mean that you can't also use HTML. You can add HTML tags to any Markdown file. This is helpful if you prefer certain HTML tags to Markdown syntax. For example, some people find that it's easier to use HTML tags for images.
 
 ## Headings
 
 Headings from `h1` through `h6` are constructed with a `#` for each level:
 
-```
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-```
+    # h1 Heading
+    ## h2 Heading
+    ### h3 Heading
+    #### h4 Heading
+    ##### h5 Heading
+    ###### h6 Heading
+    
 
 Renders to:
 
 # h1 Heading
+
 ## h2 Heading
+
 ### h3 Heading
+
 #### h4 Heading
+
 ##### h5 Heading
+
 ###### h6 Heading
 
 HTML:
 
-```
-<h1>h1 Heading</h1>
-<h2>h2 Heading</h2>
-<h3>h3 Heading</h3>
-<h4>h4 Heading</h4>
-<h5>h5 Heading</h5>
-<h6>h6 Heading</h6>
-```
+    <h1>h1 Heading</h1>
+    <h2>h2 Heading</h2>
+    <h3>h3 Heading</h3>
+    <h4>h4 Heading</h4>
+    <h5>h5 Heading</h5>
+    <h6>h6 Heading</h6>
+    
 
 ## Comments
 
 Comments should be HTML compatible
 
-```
-<!--
-This is a comment
--->
-```
+    <!--
+    This is a comment
+    -->
+    
 
 Comment below should **NOT** be seen:
 
 <!--
 This is a comment
 -->
-
 
 ## Horizontal Rules
 
@@ -77,8 +77,8 @@ The HTML `<hr>` element is for creating a "thematic break" between paragraph-lev
 
 renders to:
 
-___
+* * *
 
----
+* * *
 
-***
+* * *
