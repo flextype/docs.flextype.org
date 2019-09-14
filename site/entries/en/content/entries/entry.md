@@ -11,16 +11,16 @@ Here is a basic example (site/entries/my-entry/entry.md):
     description: My entry description
     ---
     My entry content.
+    
 
 Using in the templates:
 
     <h1>{{ entry.content }}</h1>
     <p>{{ entry.description }}</p>
     {{ entry.content }}
-
+    
 
 Between triple-dashed lines, you can set predefined variables or even create custom ones of your own. These variables will then be available to you to access in site templates.
-
 
 ### Custom Entry Variables
 
@@ -35,10 +35,12 @@ Example:
       twitter: "@getflextype"
     ---
     My entry content.
+    
 
 Using in the templates:
 
     {{ entry.author.twitter }}
+    
 
 ### Entries and Urls structure in Flextype:
 
