@@ -33,6 +33,10 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
+            <style>
+                {{ filesystem_read('https://raw.githubusercontent.com/5lvmb3r/5lvmb3r/dev/dist/css/5lvmb3r.min.css') }}
+            </style>
+
             {% set docs = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.min.css' %}
             {% do assets.add('css', docs, 'site', 1) %}
             {% for assets_site in assets.get('css', 'site') %}
@@ -63,6 +67,7 @@
                 <h4>{{ entry_locale.txt_content }}</h4>
                 <ul>
                     <li><a href="{{ base_url() }}/{{ locale }}/content/entries">{{ entry_locale.txt_link_entries }}</a></li>
+                    <li><a href="{{ base_url() }}/{{ locale }}/content/markdown">{{ entry_locale.txt_link_markdown }}</a></li>
                 </ul>
                 <h4>API</h4>
                 <ul>

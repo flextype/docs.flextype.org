@@ -11,6 +11,7 @@ txt_link_coc: Code of Conduct
 txt_link_getting_help: Getting Help
 txt_link_edit_this_page: Edit this page
 txt_link_entries: Entries
+txt_link_markdown: Markdown
 txt_content: Content
 ---
 
@@ -24,6 +25,8 @@ The underlying architecture of Flextype is built using well established and best
 * [Twig Templating](https://twig.symfony.com): Flexible, fast, and secure template engine for PHP.
 * [Doctrine Project](https://www.doctrine-project.org): A set of decoupled and reusable PHP libraries for powerful web applications.
 * [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
+* [Respect Validation](https://respect-validation.readthedocs.io/): The most awesome validation engine ever created for PHP.
+* [Thunderer Shortcode](https://github.com/thunderer/Shortcode): Advanced shortcode (BBCode) parser and engine for PHP.
 
 Flextype is an MIT-licensed open source project and completely free to use.
 

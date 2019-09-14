@@ -16,17 +16,20 @@ title: Flextype API
 - [\Flextype\Fieldsets](#class-flextypefieldsets)
 - [\Flextype\Plugins](#class-flextypeplugins)
 - [\Flextype\Middleware](#class-flextypemiddleware)
-- [\Flextype\JsonParserTwigExtension](#class-flextypejsonparsertwigextension)
+- [\Flextype\Forms](#class-flextypeforms)
+- [\Flextype\AuthMiddleware](#class-flextypeauthmiddleware)
 - [\Flextype\EmitterTwigExtension](#class-flextypeemittertwigextension)
 - [\Flextype\MarkdownTwigExtension](#class-flextypemarkdowntwigextension)
 - [\Flextype\SnippetsTwigExtension](#class-flextypesnippetstwigextension)
 - [\Flextype\I18nTwigExtension](#class-flextypei18ntwigextension)
 - [\Flextype\AssetsTwigExtension](#class-flextypeassetstwigextension)
 - [\Flextype\FlashTwigExtension](#class-flextypeflashtwigextension)
+- [\Flextype\JsonTwigExtension](#class-flextypejsontwigextension)
 - [\Flextype\CsrfTwigExtension](#class-flextypecsrftwigextension)
 - [\Flextype\EntriesTwigExtension](#class-flextypeentriestwigextension)
 - [\Flextype\FilesystemTwigExtension](#class-flextypefilesystemtwigextension)
 - [\Flextype\ShortcodesTwigExtension](#class-flextypeshortcodestwigextension)
+- [\Flextype\YamlTwigExtension](#class-flextypeyamltwigextension)
 - [\Flextype\GlobalVarsTwigExtension](#class-flextypeglobalvarstwigextension)
 
 * * *
@@ -42,7 +45,7 @@ title: Flextype API
 | public static | **parser(***\string* **$content**)</strong> : *array* |
 
 
-*Front matter parser* | 
+*Front matter parser* |
 
 * * *
 
@@ -52,8 +55,8 @@ title: Flextype API
 
 | Visibility    | Function                                                                    |
 |:------------- |:--------------------------------------------------------------------------- |
-| public static | **decode(***\string* **$input**, *\string* **$driver**)</strong> : *void* |
-| public static | **encode(***mixed* **$input**, *\string* **$driver**)</strong> : *void*    |
+| public static | **decode(***\string* **$input**, *\string* **$parser**)</strong> : *void* |
+| public static | **encode(***mixed* **$input**, *\string* **$parser**)</strong> : *void*    |
 
 
 * * *
@@ -68,7 +71,7 @@ title: Flextype API
 
 
 *Parses YAML into a PHP value. $array = YamlParser::decode($yaml_file_content);* | | public static | **encode(***mixed* **$input**, *\integer* **$inline=5**, *\integer* **$indent=2**, *\integer* **$flags=16**)</strong> : *string A YAML string representing the original PHP value*  
-*Dumps a PHP value to a YAML string. The dump method, when supplied with an array, will do its best to convert the array into friendly YAML.* | 
+*Dumps a PHP value to a YAML string. The dump method, when supplied with an array, will do its best to convert the array into friendly YAML.* |
 
 * * *
 
@@ -82,7 +85,7 @@ title: Flextype API
 
 
 *Takes a JSON encoded string and converts it into a PHP variable. $array = JsonParser::decode($json_file_content);* | | public static | **encode(***mixed* **$input**, *int/\integer* **$encode_options**, *\integer* **$encode_depth=512**)</strong> : *mixed The JSON converted to a PHP value*  
-*Returns the JSON representation of a value $result = JsonParser::encode($json_content);* | 
+*Returns the JSON representation of a value $result = JsonParser::encode($json_content);* |
 
 * * *
 
@@ -90,20 +93,39 @@ title: Flextype API
 
 ### Class: \Flextype\Entries
 
-| Visibility | Function                                                   |
-|:---------- |:---------------------------------------------------------- |
-| public     | **__construct(***mixed* **$flextype**)</strong> : *void* |
+<table>
+  <tr>
+    <th align="left">
+      Visibility
+    </th>
+    
+    <th align="left">
+      Function
+    </th>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      public
+    </td>
+    
+    <td align="left">
+      <strong>__construct(***mixed* **$flextype</strong>)</strong> : <em>void</em>
+    </td>
+  </tr>
+</table>
 
-
-*Constructor* | | public | **copy(***\string* **$id**, *\string* **$new_id**, *\boolean* **$recursive=false**)</strong> : *bool True on success, false on failure.*  
-*Copy entry(s)* | | public | **create(***\string* **$id**, *array* **$data**, *\string* **$driver=`'json'`**)</strong> : *mixed*  
+*Constructor* | | public | **copy(***\string* **$id**, *\string* **$new_id**, *\boolean* **$recursive=false**)</strong> : *bool/null True on success, false on failure.*  
+*Copy entry(s)* | | public | **create(***\string* **$id**, *array* **$data**)</strong> : *bool True on success, false on failure.*  
 *Create entry* | | public | **delete(***\string* **$id**)</strong> : *bool True on success, false on failure.*  
-*Delete entry.* | | public | **fetch(***\string* **$id**)</strong> : *array/false The entry contents or false on failure.*  
-*Fetch single entry* | | public | **fetchAll(***\string* **$id**, *array* **$args=array()**)</strong> : *array The entries*  
-*Fetch entries collection* | | public | **has(***\string* **$id**)</strong> : *bool*  
-*Check whether entry exists.* | | public | **rename(***\string* **$id**, *\string* **$new_id**)</strong> : *bool True on success, false on failure.*  
-*Rename entry.* | | public | **update(***\string* **$id**, *array* **$data**)</strong> : *void*  
-*Update entry* | 
+*Delete entry* | | public | **fetch(***\string* **$id**)</strong> : *array/false The entry array data or false on failure.*  
+*Fetch single entry* | | public | **fetchAll(***\string* **$id**, *array* **$args=array()**)</strong> : *array The entries array data*  
+*Fetch entries collection* | | public | **getDirLocation(***\string* **$id**)</strong> : *string entry directory location*  
+*Get entry directory location* | | public | **getFileLocation(***\string* **$id**)</strong> : *string entry file location*  
+*Get entry file location* | | public | **has(***\string* **$id**)</strong> : *bool True on success, false on failure.*  
+*Check whether entry exists* | | public | **rename(***\string* **$id**, *\string* **$new_id**)</strong> : *bool True on success, false on failure.*  
+*Rename entry* | | public | **update(***\string* **$id**, *array* **$data**)</strong> : *bool True on success, false on failure.*  
+*Update entry* |
 
 * * *
 
@@ -136,13 +158,15 @@ title: Flextype API
 *Constructor* | | public | **copy(***\string* **$id**, *\string* **$new_id**)</strong> : *bool True on success, false on failure.*  
 *Copy snippet* | | public | **create(***\string* **$id**, *\string* **$data=`''`**)</strong> : *bool True on success, false on failure.*  
 *Create snippet* | | public | **delete(***\string* **$id**)</strong> : *bool True on success, false on failure.*  
-*Delete snippet.* | | public | **exec(***\string* **$id**)</strong> : *string/bool Returns the contents of the output buffer and end output buffering. If output buffering isn't active then FALSE is returned.*  
+*Delete snippet* | | public | **exec(***\string* **$id**)</strong> : *string/bool Returns the contents of the output buffer and end output buffering. If output buffering isn't active then FALSE is returned.*  
 *Exec snippet* | | public | **fetch(***\string* **$id**)</strong> : *string/false The snippet contents or false on failure.*  
 *Fetch snippet* | | public | **fetchAll()** : *array*  
-*Fetch Snippets* | | public | **has(***\string* **$id**)</strong> : *bool True on success, false on failure.*  
+*Fetch Snippets* | | public | **getDirLocation()** : *string Snippet dir path*  
+*Helper method getDirLocation* | | public | **getFileLocation(***\string* **$id**)</strong> : *string Snippet file path*  
+*Helper method getFileLocation* | | public | **has(***\string* **$id**)</strong> : *bool True on success, false on failure.*  
 *Check whether snippet exists.* | | public | **rename(***\string* **$id**, *\string* **$new_id**)</strong> : *bool True on success, false on failure.*  
 *Rename snippet* | | public | **update(***\string* **$id**, *\string* **$data**)</strong> : *bool True on success, false on failure.*  
-*Update Snippet* | 
+*Update Snippet* |
 
 * * *
 
@@ -153,8 +177,9 @@ title: Flextype API
 | Visibility | Function                                                    |
 |:---------- |:----------------------------------------------------------- |
 | public     | **__construct(***mixed* **$container**)</strong> : *void* |
-| public     | **__get(***mixed* **$property**)</strong> : *void*        |
+ *__construct* | | public | **__get(***mixed* **$property**)</strong> : *void* 
 
+*__get* |
 
 * * *
 
@@ -171,7 +196,7 @@ title: Flextype API
 *Get partials for theme* | | public | **getTemplates(***\string* **$theme**)</strong> : *array*  
 *Get templates for theme* | | public | **getThemes()** : *array*  
 *Get list of themes* | | public | **init(***mixed* **$flextype**, *mixed* **$app**)</strong> : *void*  
-*Init themes* | 
+*Init themes* |
 
 * * *
 
@@ -220,7 +245,7 @@ title: Flextype API
 *The RedisCache driver stores the cache data in Redis and depends on the phpredis extension https://github.com/phpredis/phpredis* | | protected | **setSQLite3CacheDriver()** : *void*  
 *The SQLite3Cache driver stores the cache data in a SQLite database and depends on the sqlite3 extension http://php.net/manual/en/book.sqlite3.php* | | protected | **setWinCacheDriver()** : *void*  
 *The WinCacheCache driver uses the wincache_ucache_get, wincache_ucache_exists, etc. functions that come with the wincache extension http://php.net/manual/en/book.wincache.php* | | protected | **setZendDataCacheDriver()** : *void*  
-*The ZendDataCache driver uses the Zend Data Cache API available in the Zend Platform.* | 
+*The ZendDataCache driver uses the Zend Data Cache API available in the Zend Platform.* |
 
 * * *
 
@@ -228,20 +253,39 @@ title: Flextype API
 
 ### Class: \Flextype\Fieldsets
 
-| Visibility | Function                                                   |
-|:---------- |:---------------------------------------------------------- |
-| public     | **__construct(***mixed* **$flextype**)</strong> : *void* |
-
+<table>
+  <tr>
+    <th align="left">
+      Visibility
+    </th>
+    
+    <th align="left">
+      Function
+    </th>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      public
+    </td>
+    
+    <td align="left">
+      <strong>__construct(***mixed* **$flextype</strong>)</strong> : <em>void</em>
+    </td>
+  </tr>
+</table>
 
 *Constructor* | | public | **copy(***\string* **$id**, *\string* **$new_id**)</strong> : *bool True on success, false on failure.*  
 *Copy fieldset* | | public | **create(***\string* **$id**, *array* **$data**)</strong> : *bool True on success, false on failure.*  
 *Create fieldset* | | public | **delete(***\string* **$id**)</strong> : *bool True on success, false on failure.*  
 *Delete fieldset* | | public | **fetch(***\string* **$id**)</strong> : *array/false The entry contents or false on failure.*  
 *Fetch fieldset* | | public | **fetchAll()** : *array*  
-*Fetch all fieldsets* | | public | **has(***\string* **$id**)</strong> : *bool True on success, false on failure.*  
+*Fetch all fieldsets* | | public | **getDirLocation()** : *mixed*  
+*Helper method getDirLocation* | | public | **getFileLocation(***\string* **$id**)</strong> : *mixed*  
+*Helper method getFileLocation* | | public | **has(***\string* **$id**)</strong> : *bool True on success, false on failure.*  
 *Check whether fieldset exists.* | | public | **rename(***\string* **$id**, *\string* **$new_id**)</strong> : *bool True on success, false on failure.*  
 *Rename fieldset* | | public | **update(***\string* **$id**, *array* **$data**)</strong> : *bool True on success, false on failure.*  
-*Update fieldset* | 
+*Update fieldset* |
 
 * * *
 
@@ -254,8 +298,9 @@ title: Flextype API
 | public     | **__construct(***mixed* **$flextype**, *mixed* **$app**)</strong> : *void* |
 
 
-*Constructor* | | public | **getLocales()** : *mixed* | | public | **init(***mixed* **$flextype**, *mixed* **$app**)</strong> : *void*  
-*Init Plugins* | 
+*Constructor* | | public | **getLocales()** : *array*  
+*Get locales* | | public | **init(***mixed* **$flextype**, *mixed* **$app**)</strong> : *void*  
+*Init Plugins* |
 
 * * *
 
@@ -266,27 +311,66 @@ title: Flextype API
 | Visibility | Function                                                    |
 |:---------- |:----------------------------------------------------------- |
 | public     | **__construct(***mixed* **$container**)</strong> : *void* |
-| public     | **__get(***mixed* **$property**)</strong> : *void*        |
+ *__construct* | | public | **__get(***mixed* **$property**)</strong> : *void* 
 
+*__get* |
 
 * * *
 
-<a id="class-flextypejsonparsertwigextension"></a>
+<a id="class-flextypeforms"></a>
 
-### Class: \Flextype\JsonParserTwigExtension
+### Class: \Flextype\Forms
 
-| Visibility | Function                                                                                                                                                    |
-|:---------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| public     | **decode(***\string* **$input**, *\boolean* **$decode_assoc=true**, *\integer* **$decode_depth=512**, *\integer* **$decode_options**)</strong> : *void* |
+<table>
+  <tr>
+    <th align="left">
+      Visibility
+    </th>
+    
+    <th align="left">
+      Function
+    </th>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      public
+    </td>
+    
+    <td align="left">
+      <strong>__construct(***mixed* **$flextype</strong>)</strong> : <em>void</em>
+    </td>
+  </tr>
+</table>
 
+*Constructor* | | public | **render(***array* **$fieldset**, *array* **$values=array()**, *\Flextype\Request/\Psr\Http\Message\ServerRequestInterface* **$request**, *\Flextype\Response/\Psr\Http\Message\ResponseInterface* **$response**)</strong> : *string Returns form based on fieldsets*  
+*Render form* | | protected | **_actionHiddenField()** : *string Returns field*  
+*_actionHiddenField* | | protected | **_csrfHiddenField()** : *string Returns field*  
+*_csrfHiddenField* | | protected | **dateField(***\string* **$name**, *\string* **$value**)</strong> : *string Returns field*  
+*Date field* | | protected | **getElementName(***\string* **$element**)</strong> : *string Returns form element name*  
+*Get element name* | | protected | **hiddenField(***\string* **$name**, *\string* **$value**, *array* **$property**)</strong> : *string Returns field*  
+*Hidden field* | | protected | **htmlField(***\string* **$name**, *\string* **$value**, *array* **$property**)</strong> : *string Returns field*  
+*Html field* | | protected | **mediaSelectField(***\string* **$name**, *array* **$options**, *\string* **$value**, *array* **$property**)</strong> : *string Returns field*  
+*Media select field* | | protected | **selectField(***\string* **$name**, *array* **$options**, *\string* **$value**, *array* **$property**)</strong> : *string Returns field*  
+*Select field* | | protected | **tagsField(***\string* **$name**, *\string* **$value**)</strong> : *string Returns field*  
+*Tags field* | | protected | **templateSelectField(***\string* **$name**, *\string* **$value**, *array* **$property**)</strong> : *string Returns field*  
+*Template select field* | | protected | **textField(***\string* **$name**, *\string* **$value**, *array* **$property**)</strong> : *string Returns field*  
+*Text field* | | protected | **textareaField(***\string* **$name**, *\string* **$value**, *array* **$property**)</strong> : *string Returns field*  
+*Textarea field* | | protected | **visibilitySelectField(***\string* **$name**, *array* **$options**, *\string* **$value**, *array* **$property**)</strong> : *string Returns field*  
+*Visibility field* |
 
-*Decode JSON* | | public | **encode(***mixed* **$input**, *\integer* **$encode_options**, *\integer* **$encode_depth=512**)</strong> : *void*  
-*Encode JSON* | | public | **getFunctions()** : *array*  
-*Returns a list of functions to add to the existing list.* | 
+* * *
 
-*This class extends \Twig\Extension\AbstractExtension*
+<a id="class-flextypeauthmiddleware"></a>
 
-*This class implements \Twig\Extension\ExtensionInterface*
+### Class: \Flextype\AuthMiddleware
+
+| Visibility | Function                                                                                                                                                                                                                |
+|:---------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| public     | **__invoke(***\Flextype\Request/\Psr\Http\Message\ServerRequestInterface* **$request**, *\Flextype\Response/\Psr\Http\Message\ResponseInterface* **$response**, *\callable* **$next**)</strong> : *void* |
+ *__invoke* | 
+
+*This class extends [\Flextype\Middleware](#class-flextypemiddleware)*
 
 * * *
 
@@ -300,7 +384,7 @@ title: Flextype API
 
 
 *Constructor* | | public | **getGlobals()** : *mixed*  
-*Register Global variables in an extension* | 
+*Register Global variables in an extension* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -319,7 +403,7 @@ title: Flextype API
 
 *Constructor* | | public | **getFilters()** : *array*  
 *Returns a list of filters to add to the existing list.* | | public | **markdown(***mixed* **$value**)</strong> : *void*  
-*Markdown process* | 
+*Markdown process* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -337,7 +421,7 @@ title: Flextype API
 
 
 *Constructor* | | public | **getGlobals()** : *mixed*  
-*Register Global variables in an extension* | 
+*Register Global variables in an extension* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -356,7 +440,7 @@ title: Flextype API
 
 *Returns a list of filters to add to the existing list.* | | public | **getFunctions()** : *array*  
 *Returns a list of functions to add to the existing list.* | | public | **tr(***\string* **$translate**, *\string* **$locale=null**, *array* **$values=array()**)</strong> : *void*  
-*Translate string* | 
+*Translate string* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -373,7 +457,7 @@ title: Flextype API
 | public     | **getGlobals()** : *mixed* |
 
 
-*Register Global variables in an extension* | 
+*Register Global variables in an extension* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -392,7 +476,26 @@ title: Flextype API
 
 *Constructor* | | public | **getFunctions()** : *array*  
 *Returns a list of functions to add to the existing list.* | | public | **getMessages(***\string* **$key=null**)</strong> : *array*  
-*Returns Flash messages; If key is provided then returns messages for that key.* | 
+*Returns Flash messages; If key is provided then returns messages for that key.* |
+
+*This class extends \Twig\Extension\AbstractExtension*
+
+*This class implements \Twig\Extension\ExtensionInterface*
+
+* * *
+
+<a id="class-flextypejsontwigextension"></a>
+
+### Class: \Flextype\JsonTwigExtension
+
+| Visibility | Function                                                                                                                                                    |
+|:---------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| public     | **decode(***\string* **$input**, *\boolean* **$decode_assoc=true**, *\integer* **$decode_depth=512**, *\integer* **$decode_options**)</strong> : *void* |
+
+
+*Decode JSON* | | public | **encode(***mixed* **$input**, *\integer* **$encode_options**, *\integer* **$encode_depth=512**)</strong> : *void*  
+*Encode JSON* | | public | **getFunctions()** : *array*  
+*Returns a list of functions to add to the existing list.* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -412,7 +515,7 @@ title: Flextype API
 *Constructor* | | public | **csrf()** : *void*  
 *CSRF* | | public | **getFunctions()** : *array*  
 *Returns a list of functions to add to the existing list.* | | public | **getGlobals()** : *mixed*  
-*Register Global variables in an extension* | | public | **getName()** : *mixed* | 
+*Register Global variables in an extension* | | public | **getName()** : *mixed* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -430,7 +533,7 @@ title: Flextype API
 
 
 *Constructor* | | public | **getGlobals()** : *mixed*  
-*Register Global variables in an extension* | 
+*Register Global variables in an extension* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -449,7 +552,7 @@ title: Flextype API
 | public     | **getFunctions()** : *array*                                                  |
 
 
-*Callback for twig.* | | public | **has(***mixed* **$path**)</strong> : *bool* | | public | **list_contents(***\string* **$directory=`''`**, *\boolean* **$recursive=false**)</strong> : *void* | | public | **read(***mixed* **$path**)</strong> : *void* | 
+*Callback for twig.* | | public | **has(***mixed* **$path**)</strong> : *bool* | | public | **list_contents(***\string* **$directory=`''`**, *\boolean* **$recursive=false**)</strong> : *void* | | public | **read(***mixed* **$path**)</strong> : *void* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -468,7 +571,26 @@ title: Flextype API
 
 *Constructor* | | public | **getFilters()** : *array*  
 *Returns a list of filters to add to the existing list.* | | public | **shortcode(***mixed* **$value**)</strong> : *void*  
-*Shorcode process* | 
+*Shorcode process* |
+
+*This class extends \Twig\Extension\AbstractExtension*
+
+*This class implements \Twig\Extension\ExtensionInterface*
+
+* * *
+
+<a id="class-flextypeyamltwigextension"></a>
+
+### Class: \Flextype\YamlTwigExtension
+
+| Visibility | Function                                                                    |
+|:---------- |:--------------------------------------------------------------------------- |
+| public     | **decode(***\string* **$input**, *\integer* **$flags**)</strong> : *void* |
+
+
+*Decode YAML* | | public | **encode(***mixed* **$input**, *\integer* **$inline=5**, *\integer* **$indent=2**, *\integer* **$flags=16**)</strong> : *void*  
+*Encode YAML* | | public | **getFunctions()** : *array*  
+*Returns a list of functions to add to the existing list.* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -486,7 +608,7 @@ title: Flextype API
 
 
 *Constructor* | | public | **getGlobals()** : *mixed*  
-*Register Global variables in an extension* | 
+*Register Global variables in an extension* |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
