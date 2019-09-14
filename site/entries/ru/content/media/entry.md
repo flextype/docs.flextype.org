@@ -19,7 +19,7 @@ Those files are being stored directly in the entry folder.
     {% endfor %}
     
 
-### Display images using the Glide/Intervention {#display-images-using-the-glideintervention}
+### Display images using the Glide/Intervention
 
 The built-in Glide/Intervention library allows you to do manipulations with images and cache the images.
 
