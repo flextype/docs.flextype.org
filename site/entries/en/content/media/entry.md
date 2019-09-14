@@ -5,16 +5,18 @@ title: Media
 Entries can have any number and kind of images, videos, documents or other files.  
 Those files are being stored directly in the entry folder.
 
-### Getting list of images for entry in your template {#getting-list-of-images-for-entry-in-your-template}
+### Getting list of media files for entry in your template
 
-    <?php $images = Filesystem::getFilesList(PATH['entries'] . '/portfolio', 'jpg') ?>
+    {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
     
 
-### Displaying images {#displaying-images}
+### Displaying images
 
-    <?php foreach($images as $image): ?>
-        <img src="<?= $entry['base_url'] . '/portfolio/' . basename($image); ?>" />
-    <?php endforeach ?>
+    {% for image in media %}
+        {% if image.extension == 'jpg' %}
+            <img src="{{ base_url() }}/image/{{ entry.slug }}/{{ image.filename }}">
+        {% endif %}
+    {% endfor %}
     
 
 ### Display images using the Glide/Intervention {#display-images-using-the-glideintervention}
@@ -23,9 +25,11 @@ The built-in Glide/Intervention library allows you to do manipulations with imag
 
 An example of using the Glide/Intervention library to resize images:
 
-    <?php foreach($images as $image): ?>
-        <img src="<?= Images::getImageUrl('portfolio/' . $image, ['w' => '670']) ?>" />
-    <?php endforeach ?>
+    {% for image in media %}
+        {% if image.extension == 'jpg' %}
+            <img src="{{ base_url() }}/image/{{ entry.slug }}/{{ image.filename }}?dpr=2&w=350&q=60">
+        {% endif %}
+    {% endfor %}
     
 
 A complete list of available options, you can find here: <http://glide.thephpleague.com/1.0/api/quick-reference/>
