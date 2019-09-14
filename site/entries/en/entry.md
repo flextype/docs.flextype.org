@@ -12,6 +12,7 @@ txt_link_getting_help: Getting Help
 txt_link_edit_this_page: Edit this page
 txt_link_entries: Entries
 txt_link_markdown: Markdown
+txt_link_media: Media
 txt_content: Content
 ---
 
