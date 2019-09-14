@@ -4,23 +4,31 @@ title: Entries
 
 Entries are the fundamental building-blocks of your site. Each entry in Flextype should contains **Entry Front Matter** block in YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes at the bottom of the file.
 
-Here is a basic example (site/entries/my-entry/entry.md):
+Here is a basic example `site/entries/my-entry/entry.md`:
 
     ---
     title: My Entry
     description: My entry description
     ---
     My entry content.
-    
+
+Between triple-dashed lines, you can set predefined variables or even create custom ones of your own. These variables will then be available to you to access in site templates.
 
 Using in the templates:
 
     <h1>{{ entry.content }}</h1>
     <p>{{ entry.description }}</p>
     {{ entry.content }}
-    
 
-Between triple-dashed lines, you can set predefined variables or even create custom ones of your own. These variables will then be available to you to access in site templates.
+### Predefined Entry Variables
+
+There are a number of predefined global variables that you can set in the front matter of a entry.
+
+* published_at
+* created_at
+* modified_at
+* slug
+* content 
 
 ### Custom Entry Variables
 
@@ -35,12 +43,12 @@ Example:
       twitter: "@getflextype"
     ---
     My entry content.
-    
+
 
 Using in the templates:
 
     {{ entry.author.twitter }}
-    
+
 
 ### Entries and Urls structure in Flextype:
 
