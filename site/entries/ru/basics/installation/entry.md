@@ -4,8 +4,8 @@ title: Установка
 
 ### Проверьте версию PHP
 
-Flextype is incredibly easy to set up and get running.  
-Be sure you have at least PHP version 7.2.0+ by going to the terminal and typing `php -v`:
+Flextype невероятно легко настроить и запустить.  
+Убедитесь, что у вас есть хотя бы PHP версии 7.2.0+, перейдя в терминал и набрав `php -v`:
 
                 php -v
                 PHP 7.2.20 (cli) (built: Jul  5 2019 12:51:26) ( NTS )
@@ -14,22 +14,22 @@ Be sure you have at least PHP version 7.2.0+ by going to the terminal and typing
                     with Zend OPcache v7.2.20, Copyright (c) 1999-2018, by Zend Technologies
     
 
-### Using (S)FTP
+### Использование (S)FTP
 
-[Download the latest version.](http://flextype.org/en/download)
+[Загрузите последнюю версию.](http://flextype.org/en/download)
 
-Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, be sure to chmod the following directories (with containing files) to `755` (or `777`), so they are readable and writable by Flextype:
+Распакуйте содержимое в новую папку на локальном компьютере и загрузите на свой веб-узел с помощью выбранного FTP-клиента. Затем, когда файлы загружены, удостоверьтесь в том, что вы выставили права chmod (для *nix систем) `755`, либо `777` на следующие директории:
 
 * `site/`
 
-### Using Composer
+### Использование Composer
 
-You can easily install Flextype with Composer.
+Вы можете легко установить Flextype с помощью Composer.
 
                 composer create-project flextype/flextype
     
 
-Also you may need to install vendor libs for Default Theme
+Вероятно, вам понадобится внешние библиотеки для default-темы сайта с помощью Node Package Manager
 
                 composer install
                 cd site/themes/default
@@ -37,7 +37,7 @@ Also you may need to install vendor libs for Default Theme
                 gulp
     
 
-### Using command-line
+### Использование командной строки
 
 If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
 
