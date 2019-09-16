@@ -75,4 +75,4 @@ Example:
 
 Using in the templates:
 
-  {{ entry.author.twitter }}
+{{ entry.author.twitter }}
