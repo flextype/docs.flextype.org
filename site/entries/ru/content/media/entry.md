@@ -1,11 +1,11 @@
 ---
-title: Media
+title: Медиа
 ---
 
-Entries can have any number and kind of images, videos, documents or other files.  
-Those files are being stored directly in the entry folder.
+Записи могут иметь любое количество изображений, видео, документов или других файлов.  
+Эти файлы хранятся непосредственно в папке ввода.
 
-### Getting list of media files for entry in your template
+### Получение списка медиа файлов для записи в вашем шаблоне
 
     {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
     
