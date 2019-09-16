@@ -50,7 +50,7 @@ title: Записи
 
 ### Предопределенные переменные записи
 
-There are a number of predefined global variables that you can set in the front matter of a entry.
+Существует ряд предопределенных глобальных переменных, которые можно задать в начале записи.
 
 * published_at
 * created_at
@@ -58,11 +58,11 @@ There are a number of predefined global variables that you can set in the front 
 * slug
 * content
 
-### Custom Entry Variables
+### Пользовательские переменные
 
-You can create any custom entry front matter variables using valid YAML syntax.
+Вы можете создать любые пользовательские переменные переднего поля ввода, используя корректный синтаксис YAML.
 
-Example:
+Пример:
 
     ---
     title: My Entry
@@ -73,6 +73,6 @@ Example:
     My entry content.
     
 
-Using in the templates:
+Использование в шаблонах:
 
 {{ entry.author.twitter }}
