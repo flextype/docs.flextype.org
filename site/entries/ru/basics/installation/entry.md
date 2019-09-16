@@ -1,8 +1,8 @@
 ---
-title: Installation
+title: Установка
 ---
 
-### Check for PHP version
+### Проверьте версию PHP
 
 Flextype is incredibly easy to set up and get running.  
 Be sure you have at least PHP version 7.2.0+ by going to the terminal and typing `php -v`:
