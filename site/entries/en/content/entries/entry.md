@@ -35,6 +35,19 @@ Folder names should also be valid **slugs**. Slugs are entirely lowercase, with 
 | site/entries/a/very/long/url/entry.md | /a/very/long/url |
 
 
+### Entries and Urls structure in Flextype
+
+All content entries are located in the `/site/entries` folder. Each Entry should be placed in its own folder.
+
+Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
+
+| Physical Location                     | URL              |
+| ------------------------------------- | ---------------- |
+| site/entries/home/entry.md            | /                |
+| site/entries/blog/my-post/entry.md    | /blog/my-post    |
+| site/entries/a/very/long/url/entry.md | /a/very/long/url |
+
+
 ### Predefined Entry Variables
 
 There are a number of predefined global variables that you can set in the front matter of a entry.
@@ -62,4 +75,4 @@ Example:
 
 Using in the templates:
 
-    {{ entry.author.twitter }}
+  {{ entry.author.twitter }}
