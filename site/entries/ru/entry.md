@@ -1,37 +1,39 @@
 ---
-title: What is Flextype?
-txt_basics: Basics
-txt_link_what_is_flextype: What is Flextype?
-txt_link_requirements: Requirements
-txt_link_installation: Installation
-txt_link_configuration: Configuration
-txt_link_folder_structure: Folder Structure
-txt_link_php_constants: PHP Constants
-txt_link_coc: Code of Conduct
-txt_link_getting_help: Getting Help
-txt_link_edit_this_page: Edit this page
-txt_link_entries: Entries
-txt_link_markdown: Markdown
-txt_link_media: Media
-txt_content: Content
+title: Что такое Flextype?
+txt_basics: Основное
+txt_link_what_is_flextype: Что такое Flextype?
+txt_link_requirements: Требования
+txt_link_installation: Установка
+txt_link_configuration: Настройка
+txt_link_folder_structure: Структура папок
+txt_link_php_constants: PHP константы
+txt_link_coc: Кодекс поведения
+txt_link_getting_help: Получение помощи
+txt_link_edit_this_page: Редактировать страницу
+txt_link_entries: Записи
+txt_link_markdown: Разметка
+txt_link_media: Медиа
+txt_link_password_recovery: Восстановление пароля
+txt_content: Контент
+txt_advanced: Дополнительные параметры
 ---
 
-Flextype was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
+Flextype был **основан в марте 2018** как легкая альтернатива другим тяжелым и устаревшим CMS. Многие люди используют сложные решения для простых страниц, без необходимости. Создавая эту систему управления контентом, мы сосредоточили внимание на простоте - даже новичок Вебмастер может адаптировать его шаблон и написать свой собственный плагин. Для этого мы внедрили простой, но мощный API.
 
-With Flextype, you are in complete control. Design your data structure the way you want. Update and share your data with others and teams using version control. Flextype does not require MySQL database, because all the data are collected in a simple files. Perfect portability when changing your hosting provider. Just copy all the files from one account to another.
+С Flextype вы находитесь под полным контролем. Создайте структуру данных так, как вы хотите. Обновляйте и передавайте свои данные другим пользователям и командам с помощью системы управления версиями. Flextype не требует базы данных MySQL, потому что все данные собираются в простых файлах. Идеально подходит для переноса при изменении хостинга. Просто скопируйте все файлы из одной учетной записи в другую.
 
-The underlying architecture of Flextype is built using well established and best-in-class technologies. This is to ensure that Flextype is simple to use and easy to extend. Some of these key technologies include:
+Базовая архитектура Flextype построена с использованием хорошо зарекомендовавших себя и лучших в своем классе технологий. Это гарантирует, что тип файла прост в использовании и легко расширяется. Некоторые из этих ключевых технологий включают:
 
-* [Slim PHP](http://www.slimframework.com): Framework for powerful web applications and APIs.
-* [Twig Templating](https://twig.symfony.com): Flexible, fast, and secure template engine for PHP.
-* [Doctrine Project](https://www.doctrine-project.org): A set of decoupled and reusable PHP libraries for powerful web applications.
-* [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
-* [Respect Validation](https://respect-validation.readthedocs.io/): The most awesome validation engine ever created for PHP.
-* [Thunderer Shortcode](https://github.com/thunderer/Shortcode): Advanced shortcode (BBCode) parser and engine for PHP.
+* [Slim PHP](http://www.slimframework.com): Платформа для мощных веб-приложений и API.
+* [Хранилище Twig](https://twig.symfony.com): Гибкий, быстрый и безопасный шаблон для PHP.
+* [Doctrine Projec](https://www.doctrine-project.org): Набор отдельных и многоразовых PHP библиотек для мощных веб-приложений.
+* [The PHP League](https://thephpleague.com): Лига экстраординарных PHP пакетов хорошо протестирована и использует современные стандарты кодирования.
+* [Respect Validation](https://respect-validation.readthedocs.io/): Самый удивительный движок проверки, созданный для PHP.
+* [Thunderer Shortcode](https://github.com/thunderer/Shortcode): Расширенный шорткод (BBCode) синтаксический анализатор и движок для PHP.
 
-Flextype is an MIT-licensed open source project and completely free to use.
+Flextype - это проект с открытым исходным кодом, который полностью свободен для использования.
 
-However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing. You can support it's ongoing development by being a backer or a sponsor:
+Однако объем усилий, необходимых для поддержания и развития новых возможностей для проекта, не является устойчивым без надлежащей финансовой поддержки. Вы можете поддержать его текущее развитие, будучи спонсором:
 
-* [Become a backer or sponsor on Patreon](https://www.patreon.com/awilum).
-* [One-time donation via PayPal, QIWI, Sberbank, Yandex](http://flextype.org/en/one-time-donation)
+* [Станьте спонсором на Patreon](https://www.patreon.com/awilum).
+* [Одноразовое пожертвование через PayPal, QIWI, Sberbank, Яндекс](http://flextype.org/en/one-time-donation)

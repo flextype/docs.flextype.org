@@ -1,16 +1,16 @@
 ---
-title: Media
+title: Медиа
 ---
 
-Entries can have any number and kind of images, videos, documents or other files.  
-Those files are being stored directly in the entry folder.
+Записи могут иметь любое количество изображений, видео, документов или других файлов.  
+Эти файлы хранятся непосредственно в папке ввода.
 
-### Getting list of media files for entry in your template
+### Получение списка медиа файлов для записи в вашем шаблоне
 
     {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
     
 
-### Displaying images
+### Подключение изображений
 
     {% for image in media %}
         {% if image.extension == 'jpg' %}
@@ -19,11 +19,11 @@ Those files are being stored directly in the entry folder.
     {% endfor %}
     
 
-### Display images using the Glide/Intervention {#display-images-using-the-glideintervention}
+### Отображение изображений с помощью Glide/Intervention
 
-The built-in Glide/Intervention library allows you to do manipulations with images and cache the images.
+Встроенная библиотека Glide/Intervention позволяет вам манипулировать изображениями и кэшировать изображения.
 
-An example of using the Glide/Intervention library to resize images:
+Пример использования библиотеки Glide/Intervention для изменения размера изображений:
 
     {% for image in media %}
         {% if image.extension == 'jpg' %}
@@ -32,4 +32,4 @@ An example of using the Glide/Intervention library to resize images:
     {% endfor %}
     
 
-A complete list of available options, you can find here: <http://glide.thephpleague.com/1.0/api/quick-reference/>
+Полный список доступных вариантов, вы можете найти здесь: <http://glide.thephpleague.com/1.0/api/quick-reference/>

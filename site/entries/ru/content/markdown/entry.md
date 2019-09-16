@@ -2,33 +2,33 @@
 title: Markdown
 ---
 
-## What’s Markdown?
+## Что такое Markdown?
 
-Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.
+Markdown-это легкий язык разметки, который можно использовать для добавления элементов форматирования в текстовые документы открытого типа. Созданный Джоном Грубером в 2004 году, Markdown является одним из самых популярных языков в мире.
 
-Using Markdown is different than using a WYSIWYG editor. In an application like Microsoft Word, you click buttons to format words and phrases, and the changes are visible immediately. Markdown isn’t like that. When you create a Markdown-formatted file, you add Markdown syntax to the text to indicate which words and phrases should look different.
+Использование Markdown отличается от использования WYSIWYG редактора. В таком приложении, как Microsoft Word, вы нажимаете кнопки для форматирования слов и фраз, и изменения сразу же видны. В Markdown это не так. При создании файла в формате Markdown в текст добавляется синтаксис Markdown, указывающий, какие слова и фразы должны выглядеть иначе.
 
-For instance, to denote a heading, you add a number sign before it (e.g., # Heading One). Or to make a phrase bold, you add two asterisks before and after it (e.g., `**this text is bold**`). It may take a while to get used to seeing Markdown syntax in your text, especially if you’re accustomed to WYSIWYG applications.
+Например, чтобы обозначить заголовок, вы добавляете перед ним числовое значение (например, # Заголовок 1). Или, чтобы сделать фразу жирным, вы добавляете две звездочки до и после нее (например, `**этот текст жирным**`). Это может занять некоторое время, чтобы привыкнуть видеть синтаксис Markdown в вашем тексте, особенно если вы привыкли к приложениям WYSIWYG.
 
-The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-to-HTML filters, the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.
+Главная цель дизайна форматирования Markdown заключается в том, чтобы сделать его максимально читаемым. Идея заключается в том, что документ, отформатированный Markdown, должен быть опубликован как простой текст, не смотря на то, что он был помечен тегами или инструкциями по форматированию. В то время как синтаксис Markdown был под влиянием нескольких существующих фильтров text-to-HTML, единственным самым большим источником вдохновения для синтаксиса Markdown является формат обычной текстовой электронной почты.
 
--- John Gruber
+-- Джон Грубер
 
-Note: Using Markdown doesn't mean that you can't also use HTML. You can add HTML tags to any Markdown file. This is helpful if you prefer certain HTML tags to Markdown syntax. For example, some people find that it's easier to use HTML tags for images.
+Примечание: Использование Markdown не означает, что вы не можете использовать HTML. Вы можете добавить HTML-теги в любой файл Markdown. Это полезно, если вы предпочитаете определенные HTML-теги синтаксису Markdown. Например, некоторые люди считают, что проще использовать HTML теги для изображений.
 
-## Headings
+## Заголовки
 
-Headings from `h1` through `h6` are constructed with a `#` for each level:
+Заголовки `h1` до `h6` построены с помощью `#` для каждого уровня:
 
-    # h1 Heading
-    ## h2 Heading
-    ### h3 Heading
-    #### h4 Heading
-    ##### h5 Heading
-    ###### h6 Heading
+    # h1 Заголовок
+    ## h2 Заголовок
+    ### h3 Заголовок
+    #### h4 Заголовок
+    ##### h5 Заголовок
+    ###### h6 Заголовок
     
 
-Renders to:
+Пример:
 
 # h1 Heading
 
@@ -52,30 +52,30 @@ HTML:
     <h6>h6 Heading</h6>
     
 
-## Comments
+## Комментарии
 
-Comments should be HTML compatible
+Комментарии должны быть совместимыми с HTML
 
     <!--
-    This is a comment
+    Это комментарий
     -->
     
 
-Comment below should **NOT** be seen:
+Код ниже должен **НЕ** быть виден:
 
 <!--
 This is a comment
 -->
 
-## Horizontal Rules
+## Горизонтальный разделитель
 
-The HTML `<hr>` element is for creating a "thematic break" between paragraph-level elements. In markdown, you can create a `<hr>` with any of the following:
+HTML `<hr>` элемент для создания "тематического разрыва" между элементами абзаца. В markdown вы можете создать `<hr>` с любым из следующих:
 
-* `___`: three consecutive underscores
-* `---`: three consecutive dashes
-* `***`: three consecutive asterisks
+* `___`: три последовательных подчеркивания
+* `---`: три последовательных дефис
+* `***`: три звездочки подряд
 
-renders to:
+пример:
 
 * * *
 
