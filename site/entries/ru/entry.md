@@ -1,10 +1,10 @@
 ---
-title: What is Flextype?
+title: Что такое Flextype?
 txt_basics: Basics
-txt_link_what_is_flextype: What is Flextype?
+txt_link_what_is_flextype: Что такое Flextype?
 txt_link_requirements: Requirements
-txt_link_installation: Installation
-txt_link_configuration: Configuration
+txt_link_installation: Установка
+txt_link_configuration: Настройка
 txt_link_folder_structure: Folder Structure
 txt_link_php_constants: PHP Constants
 txt_link_coc: Code of Conduct
