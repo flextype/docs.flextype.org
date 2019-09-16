@@ -5,20 +5,20 @@ txt_link_what_is_flextype: Что такое Flextype?
 txt_link_requirements: Requirements
 txt_link_installation: Установка
 txt_link_configuration: Настройка
-txt_link_folder_structure: Folder Structure
-txt_link_php_constants: PHP Constants
+txt_link_folder_structure: Структура папок
+txt_link_php_constants: PHP константы
 txt_link_coc: Code of Conduct
-txt_link_getting_help: Getting Help
-txt_link_edit_this_page: Edit this page
+txt_link_getting_help: Получение помощи
+txt_link_edit_this_page: Редактировать страницу
 txt_link_entries: Entries
 txt_link_markdown: Markdown
-txt_link_media: Media
-txt_link_password_recovery: Password recovery
-txt_content: Content
-txt_advanced: Advanced
+txt_link_media: Медиа
+txt_link_password_recovery: Восстановление пароля
+txt_content: Контент
+txt_advanced: Дополнительные параметры
 ---
 
-Flextype was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
+Flextype был **основан в марте 2018** как легкая альтернатива другим тяжелым и устаревшим CMS. Многие люди используют сложные решения для простых страниц, без необходимости. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
 
 With Flextype, you are in complete control. Design your data structure the way you want. Update and share your data with others and teams using version control. Flextype does not require MySQL database, because all the data are collected in a simple files. Perfect portability when changing your hosting provider. Just copy all the files from one account to another.
 
