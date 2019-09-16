@@ -28,6 +28,19 @@ title: Записи
 
 Имена папок должны быть допустимыми **slugs**. Slugs полностью строчный, с акцентированными символами, заменяемыми буквами латинского алфавита и пробелами символов, заменяемых дефисом или подчеркиванием, чтобы избежать кодирования.
 
+| Месторасположение                     | URL адрес        |
+| ------------------------------------- | ---------------- |
+| site/entries/home/entry.md            | /                |
+| site/entries/blog/my-post/entry.md    | /blog/my-post    |
+| site/entries/a/very/long/url/entry.md | /a/very/long/url |
+
+
+### Структура записей и Url-адресов в Flextype
+
+Все записи содержимого расположены в папке `/site/entries`. Каждая запись должна быть помещена в свою папку.
+
+Имена папок должны быть допустимыми **slugs**. Slugs полностью строчный, с акцентированными символами, заменяемыми буквами латинского алфавита и пробелами символов, заменяемых дефисом или подчеркиванием, чтобы избежать кодирования.
+
 | Месторасположение                     | URL              |
 | ------------------------------------- | ---------------- |
 | site/entries/home/entry.md            | /                |
@@ -35,20 +48,7 @@ title: Записи
 | site/entries/a/very/long/url/entry.md | /a/very/long/url |
 
 
-### Entries and Urls structure in Flextype
-
-All content entries are located in the `/site/entries` folder. Each Entry should be placed in its own folder.
-
-Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
-
-| Physical Location                     | URL              |
-| ------------------------------------- | ---------------- |
-| site/entries/home/entry.md            | /                |
-| site/entries/blog/my-post/entry.md    | /blog/my-post    |
-| site/entries/a/very/long/url/entry.md | /a/very/long/url |
-
-
-### Predefined Entry Variables
+### Предопределенные переменные записи
 
 There are a number of predefined global variables that you can set in the front matter of a entry.
 
