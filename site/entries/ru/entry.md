@@ -1,16 +1,16 @@
 ---
 title: Что такое Flextype?
-txt_basics: Basics
+txt_basics: Основное
 txt_link_what_is_flextype: Что такое Flextype?
-txt_link_requirements: Requirements
+txt_link_requirements: Требования
 txt_link_installation: Установка
 txt_link_configuration: Настройка
 txt_link_folder_structure: Структура папок
 txt_link_php_constants: PHP константы
-txt_link_coc: Code of Conduct
+txt_link_coc: Кодекс поведения
 txt_link_getting_help: Получение помощи
 txt_link_edit_this_page: Редактировать страницу
-txt_link_entries: Entries
+txt_link_entries: Записи
 txt_link_markdown: Markdown
 txt_link_media: Медиа
 txt_link_password_recovery: Восстановление пароля
@@ -35,5 +35,5 @@ Flextype - это проект с открытым исходным кодом, 
 
 Однако объем усилий, необходимых для поддержания и развития новых возможностей для проекта, не является устойчивым без надлежащей финансовой поддержки. Вы можете поддержать его текущее развитие, будучи спонсором:
 
-* [Become a backer or sponsor on Patreon](https://www.patreon.com/awilum).
-* [One-time donation via PayPal, QIWI, Sberbank, Yandex](http://flextype.org/en/one-time-donation)
+* [Станьте спонсором на Patreon](https://www.patreon.com/awilum).
+* [Одноразовое пожертвование через PayPal, QIWI, Sberbank, Яндекс](http://flextype.org/en/one-time-donation)
