@@ -1,11 +1,11 @@
 ---
-title: Password recovery
+title: Восстановление пароля
 ---
 
-Flextype does not provide a password recovery, but there is a way to create a new password.
+Flextype не обеспечивает восстановление пароля, но есть способ создать новый пароль.
 
-1. Connect to your website (e.g. via FTP).
-2. Go to the folder `/site/accounts/`
-3. Then delete the file `your_user_name.yaml` on your server.
-4. Go to yoursite.com/admin
-5. Create new admin user.
+1. Подключитесь к вашему веб-сайту (например, через FTP).
+2. Перейти в папку `/site/accounts/`
+3. Затем удалите файл `your_user_name.yaml` на вашем сервере.
+4. Перейти к вашему адресу.com/admin
+5. Создать нового пользователя администратора.

@@ -11,6 +11,7 @@ Here is a basic example `site/entries/my-entry/entry.md`:
     description: My entry description
     ---
     My entry content.
+    
 
 Between triple-dashed lines, you can set predefined variables or even create custom ones of your own. These variables will then be available to you to access in site templates.
 
@@ -19,6 +20,20 @@ Using in the templates:
     <h1>{{ entry.content }}</h1>
     <p>{{ entry.description }}</p>
     {{ entry.content }}
+    
+
+### Entries and Urls structure in Flextype
+
+All content entries are located in the `/site/entries` folder. Each Entry should be placed in its own folder.
+
+Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
+
+| Physical Location                     | URL              |
+| ------------------------------------- | ---------------- |
+| site/entries/home/entry.md            | /                |
+| site/entries/blog/my-post/entry.md    | /blog/my-post    |
+| site/entries/a/very/long/url/entry.md | /a/very/long/url |
+
 
 ### Entries and Urls structure in Flextype
 
@@ -56,8 +71,8 @@ Example:
       twitter: "@getflextype"
     ---
     My entry content.
-
+    
 
 Using in the templates:
 
-    {{ entry.author.twitter }}
+  {{ entry.author.twitter }}
