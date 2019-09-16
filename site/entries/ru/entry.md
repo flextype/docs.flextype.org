@@ -11,7 +11,7 @@ txt_link_coc: Кодекс поведения
 txt_link_getting_help: Получение помощи
 txt_link_edit_this_page: Редактировать страницу
 txt_link_entries: Записи
-txt_link_markdown: Markdown
+txt_link_markdown: Разметка
 txt_link_media: Медиа
 txt_link_password_recovery: Восстановление пароля
 txt_content: Контент
@@ -27,7 +27,7 @@ Flextype был **основан в марте 2018** как легкая аль
 * [Slim PHP](http://www.slimframework.com): Платформа для мощных веб-приложений и API.
 * [Хранилище Twig](https://twig.symfony.com): Гибкий, быстрый и безопасный шаблон для PHP.
 * [Doctrine Projec](https://www.doctrine-project.org): Набор отдельных и многоразовых PHP библиотек для мощных веб-приложений.
-* [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
+* [The PHP League](https://thephpleague.com): Лига экстраординарных PHP пакетов хорошо протестирована и использует современные стандарты кодирования.
 * [Respect Validation](https://respect-validation.readthedocs.io/): Самый удивительный движок проверки, созданный для PHP.
 * [Thunderer Shortcode](https://github.com/thunderer/Shortcode): Расширенный шорткод (BBCode) синтаксический анализатор и движок для PHP.
 
