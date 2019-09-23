@@ -14,8 +14,10 @@ txt_link_entries: Записи
 txt_link_markdown: Разметка
 txt_link_media: Медиа
 txt_link_password_recovery: Восстановление пароля
-txt_content: Контент
-txt_advanced: Дополнительные параметры
+txt_link_twig_filters_functions: Twig Filters & Functions
+txt_themes: Themes
+txt_content: Content
+txt_advanced: Advanced
 ---
 
 Flextype был **основан в марте 2018** как легкая альтернатива другим тяжелым и устаревшим CMS. Многие люди используют сложные решения для простых страниц, без необходимости. Создавая эту систему управления контентом, мы сосредоточили внимание на простоте - даже новичок Вебмастер может адаптировать его шаблон и написать свой собственный плагин. Для этого мы внедрили простой, но мощный API.
