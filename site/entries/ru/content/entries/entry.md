@@ -1,10 +1,10 @@
 ---
-title: Entries
+title: Записи
 ---
 
-Entries are the fundamental building-blocks of your site. Each entry in Flextype should contains **Entry Front Matter** block in YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes at the bottom of the file.
+Записи являются основными строительными блоками вашего сайта. Каждая запись в Flextype должна содержать **Вступительный фронт Matter** блок в формате YAML вверху файла и **Содержимое записи** помечено с помощью HTML + Markdown + Коротков в нижней части файла.
 
-Here is a basic example `site/entries/my-entry/entry.md`:
+Вот базовый пример: `сайт/записи/my-entry/entry.md`:
 
     ---
     title: My Entry
@@ -13,31 +13,44 @@ Here is a basic example `site/entries/my-entry/entry.md`:
     My entry content.
     
 
-Between triple-dashed lines, you can set predefined variables or even create custom ones of your own. These variables will then be available to you to access in site templates.
+Между строками с трехразовым дефисом можно установить предопределенные переменные или даже создать собственные. Эти переменные будут доступны для доступа к шаблонам сайта.
 
-Using in the templates:
+Использование в шаблонах:
 
     <h1>{{ entry.content }}</h1>
     <p>{{ entry.description }}</p>
     {{ entry.content }}
     
 
-### Entries and Urls structure in Flextype
+### Структура записей и Url-адресов в Flextype
 
-All content entries are located in the `/site/entries` folder. Each Entry should be placed in its own folder.
+Все записи содержимого расположены в папке `/site/entries`. Каждая запись должна быть помещена в свою папку.
 
-Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
+Имена папок должны быть допустимыми **slugs**. Slugs полностью строчный, с акцентированными символами, заменяемыми буквами латинского алфавита и пробелами символов, заменяемых дефисом или подчеркиванием, чтобы избежать кодирования.
 
-| Physical Location                     | URL              |
+| Месторасположение                     | URL адрес        |
 | ------------------------------------- | ---------------- |
 | site/entries/home/entry.md            | /                |
 | site/entries/blog/my-post/entry.md    | /blog/my-post    |
 | site/entries/a/very/long/url/entry.md | /a/very/long/url |
 
 
-### Predefined Entry Variables
+### Структура записей и Url-адресов в Flextype
 
-There are a number of predefined global variables that you can set in the front matter of a entry.
+Все записи содержимого расположены в папке `/site/entries`. Каждая запись должна быть помещена в свою папку.
+
+Имена папок должны быть допустимыми **slugs**. Slugs полностью строчный, с акцентированными символами, заменяемыми буквами латинского алфавита и пробелами символов, заменяемых дефисом или подчеркиванием, чтобы избежать кодирования.
+
+| Месторасположение                     | URL              |
+| ------------------------------------- | ---------------- |
+| site/entries/home/entry.md            | /                |
+| site/entries/blog/my-post/entry.md    | /blog/my-post    |
+| site/entries/a/very/long/url/entry.md | /a/very/long/url |
+
+
+### Предопределенные переменные записи
+
+Существует ряд предопределенных глобальных переменных, которые можно задать в начале записи.
 
 * published_at
 * created_at
@@ -45,11 +58,11 @@ There are a number of predefined global variables that you can set in the front 
 * slug
 * content
 
-### Custom Entry Variables
+### Пользовательские переменные
 
-You can create any custom entry front matter variables using valid YAML syntax.
+Вы можете создать любые пользовательские переменные переднего поля ввода, используя корректный синтаксис YAML.
 
-Example:
+Пример:
 
     ---
     title: My Entry
@@ -60,6 +73,6 @@ Example:
     My entry content.
     
 
-Using in the templates:
+Использование в шаблонах:
 
-    {{ entry.author.twitter }}
+{{ entry.author.twitter }}
