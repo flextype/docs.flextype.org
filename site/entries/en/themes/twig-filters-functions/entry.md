@@ -43,7 +43,6 @@ Result:
 Build fast, flexible, easier to manage websites with
 <a href="http://flextype.org">Flextype</a>.
 
-<hr>
 
 Multiple filters can be chained. The output of one filter is applied to the next.
 
@@ -56,3 +55,28 @@ Usage:
 Result:
 
 **Bold text** *Italic text*
+
+### Flextype Twig Functions
+
+Twig functions are called directly with any parameters being passed in via parenthesis.
+
+#### Yaml Decode
+
+Usage:
+```
+{{ yaml_decode('title: Hello World!').title }}
+```
+
+Result:
+Hello World!
+
+#### Yaml Encode
+
+Usage:
+```
+{{ yaml_encode({'title': 'Hello World!'})}}
+```
+
+Result:
+
+title: 'Hello World!'
