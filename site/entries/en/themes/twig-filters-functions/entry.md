@@ -12,6 +12,7 @@ Twig filters are applied to Twig variables by using the `|` character followed b
 #### Shortcode Parser
 
 Usage:
+
 ```
 {{ '[b]Bold text[/b]'|shortcode }}
 ```
@@ -23,6 +24,7 @@ Result:
 #### Markdown Parser
 
 Usage:
+
 ```
 {{ '**Bold text**'|markdown }}
 ```
@@ -34,6 +36,7 @@ Result:
 #### Translates
 
 Usage:
+
 ```
 {{ 'site_powered_by_flextype'|tr }}
 ```
@@ -48,6 +51,7 @@ Multiple filters can be chained. The output of one filter is applied to the next
 
 
 Usage:
+
 ```
 {{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
 ```
@@ -63,6 +67,7 @@ Twig functions are called directly with any parameters being passed in via paren
 #### Yaml Decode
 
 Usage:
+
 ```
 {{ yaml_decode('title: Hello World!').title }}
 ```
@@ -85,6 +90,7 @@ title: 'Hello World!'
 #### Json Decode
 
 Usage:
+
 ```
 {{ json_decode('{"title": "Hello World!"}').title }}
 ```
@@ -96,6 +102,7 @@ Hello World!
 #### Json Encode
 
 Usage:
+
 ```
 {{ json_encode({'title': 'Hello World!'})}}
 ```
@@ -103,3 +110,58 @@ Usage:
 Result:
 
 {"title": "Hello World!"}
+
+#### Translates
+
+Usage:
+
+```
+{{ tr('site_powered_by_flextype') }}
+```
+
+Result:
+
+Build fast, flexible, easier to manage websites with
+<a href="http://flextype.org">Flextype</a>.
+
+#### List contents of a directory
+
+Usage:
+
+```
+{% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
+```
+
+#### Check whether a file exists
+
+Usage:
+
+```
+{% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
+    Show something...
+{% endif %}
+```
+
+#### Read a file
+
+Usage:
+
+```
+{{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
+
+#### Get file extension
+
+Usage:
+
+```
+{{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
+
+#### Get filename
+
+Usage:
+
+```
+{{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
