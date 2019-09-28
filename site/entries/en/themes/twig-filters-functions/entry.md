@@ -68,6 +68,7 @@ Usage:
 ```
 
 Result:
+
 Hello World!
 
 #### Yaml Encode
@@ -80,3 +81,25 @@ Usage:
 Result:
 
 title: 'Hello World!'
+
+#### Json Decode
+
+Usage:
+```
+{{ json_decode('{"title": "Hello World!"}').title }}
+```
+
+Result:
+
+Hello World!
+
+#### Json Encode
+
+Usage:
+```
+{{ json_encode({'title': 'Hello World!'})}}
+```
+
+Result:
+
+{"title": "Hello World!"}
