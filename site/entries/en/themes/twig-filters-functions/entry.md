@@ -132,6 +132,10 @@ Usage:
 {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
 ```
 
+Result:
+
+array (media)
+
 #### Check whether a file exists
 
 Usage:
@@ -150,6 +154,12 @@ Usage:
 {{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
 ```
 
+Result:
+
+    ---
+    title: About
+    ---
+
 #### Get file extension
 
 Usage:
@@ -158,6 +168,10 @@ Usage:
 {{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
 ```
 
+Result:
+
+.md
+
 #### Get filename
 
 Usage:
@@ -165,3 +179,7 @@ Usage:
 ```
 {{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
 ```
+
+Result:
+
+entry
