@@ -29,3 +29,25 @@ Usage:
 ```
 {{ entry.title }} {# returns the current entry title #}
 ```
+
+#### Assets Object
+
+Add asset
+
+Usage:
+```
+{% set site = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/site/site.min.css' %}
+{% do assets.add('css', site, 'site', 1) %}
+```
+
+Get assets
+
+Usage:
+
+```
+{% for assets_site in assets.get('css', 'site') %}
+    {% for assets_by_priorities in assets_site %}
+        <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
+    {% endfor %}
+{% endfor %}
+```
