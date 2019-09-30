@@ -51,20 +51,3 @@ Usage:
     {% endfor %}
 {% endfor %}
 ```
-
-#### Emitter Object
-
-Emitting events
-
-Usage:
-```
-{{ emitter.emit('onThemeHeader') }}
-```
-
-Emitting events in batches
-
-Usage:
-
-```
-{{ emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) }}
-```
