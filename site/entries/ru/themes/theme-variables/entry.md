@@ -30,11 +30,31 @@ Usage:
 {{ entry.title }} {# returns the current entry title #}
 ```
 
+#### Entries Object
+
+Fetch single entry
+
+Usage:
+
+```
+{% set about_entry = entries.fetch('about') %}
+```
+
+Fetch collection of entries
+
+Usage:
+
+```
+{% set posts = entries.fetchAll('blog') %}
+```
+
+
 #### Assets Object
 
 Add asset
 
 Usage:
+
 ```
 {% set site = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/site/site.min.css' %}
 {% do assets.add('css', site, 'site', 1) %}
@@ -50,4 +70,21 @@ Usage:
         <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
     {% endfor %}
 {% endfor %}
+```
+
+#### Emitter Object
+
+Emitting events
+
+Usage:
+```
+{% do emitter.emit('onThemeHeader') %}
+```
+
+Emitting events in batches
+
+Usage:
+
+```
+{% do emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) %}
 ```
