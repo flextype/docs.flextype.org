@@ -4,7 +4,6 @@ title: Twig Filters & Functions
 
 Twig already provides an extensive list of [filters, functions, and tags](https://twig.symfony.com/doc/2.x/), Flextype also provides a selection of useful additions to make the process of theming easier.
 
-
 ### Flextype Twig Filters
 
 Twig filters are applied to Twig variables by using the `|` character followed by the filter name. Parameters can be passed in just like Twig functions using parenthesis.
@@ -13,9 +12,8 @@ Twig filters are applied to Twig variables by using the `|` character followed b
 
 Usage:
 
-```
-{{ '[b]Bold text[/b]'|shortcode }}
-```
+    {{ '[b]Bold text[/b]'|shortcode }}
+    
 
 Result:
 
@@ -25,9 +23,8 @@ Result:
 
 Usage:
 
-```
-{{ '**Bold text**'|markdown }}
-```
+    {{ '**Bold text**'|markdown }}
+    
 
 Result:
 
@@ -37,24 +34,20 @@ Result:
 
 Usage:
 
-```
-{{ 'site_powered_by_flextype'|tr }}
-```
+    {{ 'site_powered_by_flextype'|tr }}
+    
 
 Result:
 
 Build fast, flexible, easier to manage websites with
 <a href="http://flextype.org">Flextype</a>.
 
-
 Multiple filters can be chained. The output of one filter is applied to the next.
-
 
 Usage:
 
-```
-{{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
-```
+    {{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
+    
 
 Result:
 
@@ -68,9 +61,8 @@ Twig functions are called directly with any parameters being passed in via paren
 
 Usage:
 
-```
-{{ yaml_decode('title: Hello World!').title }}
-```
+    {{ yaml_decode('title: Hello World!').title }}
+    
 
 Result:
 
@@ -79,9 +71,9 @@ Hello World!
 #### Yaml Encode
 
 Usage:
-```
-{{ yaml_encode({'title': 'Hello World!'})}}
-```
+
+    {{ yaml_encode({'title': 'Hello World!'})}}
+    
 
 Result:
 
@@ -91,9 +83,8 @@ title: 'Hello World!'
 
 Usage:
 
-```
-{{ json_decode('{"title": "Hello World!"}').title }}
-```
+    {{ json_decode('{"title": "Hello World!"}').title }}
+    
 
 Result:
 
@@ -103,9 +94,8 @@ Hello World!
 
 Usage:
 
-```
-{{ json_encode({'title': 'Hello World!'})}}
-```
+    {{ json_encode({'title': 'Hello World!'})}}
+    
 
 Result:
 
@@ -115,9 +105,8 @@ Result:
 
 Usage:
 
-```
-{{ tr('site_powered_by_flextype') }}
-```
+    {{ tr('site_powered_by_flextype') }}
+    
 
 Result:
 
@@ -128,9 +117,8 @@ Build fast, flexible, easier to manage websites with
 
 Usage:
 
-```
-{% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
-```
+    {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
+    
 
 Result:
 
@@ -140,33 +128,31 @@ array (media)
 
 Usage:
 
-```
-{% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
-    Show something...
-{% endif %}
-```
+    {% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
+        Show something...
+    {% endif %}
+    
 
 #### Read a file
 
 Usage:
 
-```
-{{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-```
+    {{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+    
 
 Result:
 
     ---
     title: About
     ---
+    
 
 #### Get file extension
 
 Usage:
 
-```
-{{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-```
+    {{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+    
 
 Result:
 
@@ -176,9 +162,8 @@ Result:
 
 Usage:
 
-```
-{{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-```
+    {{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+    
 
 Result:
 
