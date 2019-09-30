@@ -35,22 +35,9 @@ title: Записи
 | site/entries/a/very/long/url/entry.md | /a/very/long/url |
 
 
-### Структура записей и Url-адресов в Flextype
+### Predefined Entry Variables
 
-Все записи содержимого расположены в папке `/site/entries`. Каждая запись должна быть помещена в свою папку.
-
-Имена папок должны быть допустимыми **slugs**. Slugs полностью строчный, с акцентированными символами, заменяемыми буквами латинского алфавита и пробелами символов, заменяемых дефисом или подчеркиванием, чтобы избежать кодирования.
-
-| Месторасположение                     | URL              |
-| ------------------------------------- | ---------------- |
-| site/entries/home/entry.md            | /                |
-| site/entries/blog/my-post/entry.md    | /blog/my-post    |
-| site/entries/a/very/long/url/entry.md | /a/very/long/url |
-
-
-### Предопределенные переменные записи
-
-Существует ряд предопределенных глобальных переменных, которые можно задать в начале записи.
+There are a number of predefined global variables that you can set in the front matter of a entry.
 
 * published_at
 * created_at
@@ -58,11 +45,11 @@ title: Записи
 * slug
 * content
 
-### Пользовательские переменные
+### Custom Entry Variables
 
-Вы можете создать любые пользовательские переменные переднего поля ввода, используя корректный синтаксис YAML.
+You can create any custom entry front matter variables using valid YAML syntax.
 
-Пример:
+Example:
 
     ---
     title: My Entry
@@ -73,6 +60,6 @@ title: Записи
     My entry content.
     
 
-Использование в шаблонах:
+Using in the templates:
 
 {{ entry.author.twitter }}
