@@ -20,7 +20,7 @@ Using in the templates:
     <h1>{{ entry.content }}</h1>
     <p>{{ entry.description }}</p>
     {{ entry.content }}
-
+    
 
 ### Entries and Urls structure in Flextype
 
@@ -58,7 +58,7 @@ Example:
       twitter: "@getflextype"
     ---
     My entry content.
-
+    
 
 Using in the templates:
 
