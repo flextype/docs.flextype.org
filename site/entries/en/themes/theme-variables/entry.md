@@ -11,7 +11,21 @@ There are several **core objects** that are available to a Twig template, and ea
 #### Registry Object
 
 You can access any Flextype registry via the config-object.  
-For example:
+
+Usage:
+
 ```
-{{ registry.settings.theme }}{# returns the currently configured theme #}
+{{ registry.settings.theme }} {# returns the currently configured theme #}
+```
+
+#### Entry Object
+
+Because Flextype is built using the structure defined in the entries/ folder, each entry is represented by a entry object.
+
+The entry object is probably the most important object you will work with as it contains all the information about the current page you are currently on.
+
+Usage:
+
+```
+{{ entry.title }} {# returns the current entry title #}
 ```
