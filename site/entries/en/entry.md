@@ -15,6 +15,7 @@ txt_link_markdown: Markdown
 txt_link_media: Media
 txt_link_password_recovery: Password recovery
 txt_link_twig_filters_functions: Twig Filters & Functions
+txt_link_theme_variables: Theme Variables
 txt_themes: Themes
 txt_content: Content
 txt_advanced: Advanced
