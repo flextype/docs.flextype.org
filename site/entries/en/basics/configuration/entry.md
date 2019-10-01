@@ -3,30 +3,32 @@ title: Configuration
 ---
 Flextype allows you to configure your site in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that make this possible.
 
+All Flextype configuration files are written in YAML syntax with a `.yaml` file extension. YAML is very intuitive which makes it very easy to both read and write.
+
 You can update and create site configuration by editing file `/site/config/settings.yaml`
 
     # The title of the website
     title: Flextype
-    
+
     # The description of the website
     description: Build fast, flexible, easier to manage websites with Flextype.
-    
+
     # The keywords of the website
     keywords: flextype, php, cms, flat-file cms, flat cms, flatfile cms, html
-    
+
     # The robots of the website
     robots: index, follow
-    
+
     # The name and email address of the website author
     author:
       email: ''
       name: ''
-    
+
     # Set the timezone to be used on the website.
     # For a list of valid timezone settings, see:
     # http://php.net/manual/en/timezones.php
     timezone: UTC
-    
+
     # Charset
     #
     # Set internal character encoding.
@@ -34,17 +36,17 @@ You can update and create site configuration by editing file `/site/config/setti
     # Currently the following names are supported:
     # http://php.net/manual/en/function.mb-regex-encoding.php#121645
     charset: UTF-8
-    
+
     # The theme to use.
     #
     # Don't edit the provided theme templates directly, because they get updated
     # in next releases. If you wish to modify a default theme, copy its folder, and
     # change the name here accordingly.
     theme: default
-    
+
     # The locale that'll be used by the Flextype.
     locale: en_US
-    
+
     # Valid date format
     #
     # - date_format: Valid date format
@@ -52,7 +54,7 @@ You can update and create site configuration by editing file `/site/config/setti
     # - date_display_format: Valid date format to display
     date_format: 'd-m-Y H:i'
     date_display_format: 'd-m-y G:i'
-    
+
     # The entries settings§
     #
     # - main:        Main entry
@@ -72,13 +74,13 @@ You can update and create site configuration by editing file `/site/config/setti
         description: We're sorry but the page you are looking for doesn't appear to exist!
         content: We're sorry but the page you are looking for doesn't appear to exist!
         template: default
-    
+
     # Display errors
     #
     # - display: Display errors or not.
     errors:
       display: false
-    
+
     # Cache
     #
     # - enabled:         Set to true to enable caching
@@ -129,13 +131,13 @@ You can update and create site configuration by editing file `/site/config/setti
       sqlite3:
         database: flextype
         table: flextype
-    
+
     # Admin Panel
     #
     # - themes:  Theme (dark, light)
     admin_panel:
       theme: light
-    
+
     # Whoops
     #
     # - editor: emacs, idea, macvim, phpstorm, sublime, textmate, xdebug, vscode, atom, espresso
@@ -144,7 +146,7 @@ You can update and create site configuration by editing file `/site/config/setti
     whoops:
       editor: atom
       page_title: Error!
-    
+
     # Slim
     #
     # - display_error_details: When true, additional information about exceptions are
@@ -179,7 +181,7 @@ You can update and create site configuration by editing file `/site/config/setti
     output_buffering: append
     response_chunk_size: 4096
     http_version: '1.1'
-    
+
     # Twig
     #
     # - auto_reload: When developing with Twig, it's useful to recompile the template
@@ -198,7 +200,7 @@ You can update and create site configuration by editing file `/site/config/setti
       cache: true
       debug: false
       charset: "UTF-8"
-    
+
     # Slugify
     #
     # - separator: By default Slugify will use dashes as separators.
@@ -229,12 +231,12 @@ You can update and create site configuration by editing file `/site/config/setti
       regexp: "/[^A-Za-z0-9]+/"
       lowercase_after_regexp: false
       strip_tags: false
-    
+
     # Image
     #
     # - driver: gd or imagick
     image:
       driver: gd
-    
+
 
 Also you can update any site setting in Admin Panel on the Settings page.
