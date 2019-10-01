@@ -33,10 +33,6 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
-            <style>
-                {{ filesystem_read('https://raw.githubusercontent.com/5lvmb3r/5lvmb3r/dev/dist/css/5lvmb3r.min.css') }}
-            </style>
-
             {% set docs = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.min.css' %}
             {% do assets.add('css', docs, 'site', 1) %}
             {% for assets_site in assets.get('css', 'site') %}
@@ -51,7 +47,7 @@
     <body>
 
         <div class="flex">
-            <div class="sidebar">
+            <div class="sidebar width-3-12">
                 <div class="flextype">FLEXTYPE</div>
                 <h4>{{ entry_locale.txt_basics }}</h4>
                 <ul>
@@ -83,7 +79,7 @@
                     <li><a href="{{ base_url() }}/{{ locale }}/api/flextype">Flextype API</a></li>
                 </ul>
             </div>
-            <div class="content">
+            <div class="content width-9-12">
                 {% block content %}{% endblock %}
                 <div class="edit-this-page">
                     <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt_link_edit_this_page }}</a>
