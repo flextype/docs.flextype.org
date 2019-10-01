@@ -8,34 +8,40 @@ Twig already provides an extensive list of [filters, functions, and tags](https:
 
 Twig filters are applied to Twig variables by using the `|` character followed by the filter name. Parameters can be passed in just like Twig functions using parenthesis.
 
-#### Shortcode Parser
+#### shortcode
+
+Parse shortcode
 
 Usage:
 
     {{ '[b]Bold text[/b]'|shortcode }}
-    
+
 
 Result:
 
 **Bold text**
 
-#### Markdown Parser
+#### markdown
 
-Usage:
+Parse markdown
+
+Usage: markdown
 
     {{ '**Bold text**'|markdown }}
-    
+
 
 Result:
 
 **Bold text**
 
-#### Translates
+#### tr
+
+Translate text
 
 Usage:
 
     {{ 'site_powered_by_flextype'|tr }}
-    
+
 
 Result:
 
@@ -47,7 +53,6 @@ Multiple filters can be chained. The output of one filter is applied to the next
 Usage:
 
     {{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
-    
 
 Result:
 
@@ -57,113 +62,133 @@ Result:
 
 Twig functions are called directly with any parameters being passed in via parenthesis.
 
-#### Yaml Decode
+#### yaml_decode
+
+Decode valid yaml string into array
 
 Usage:
 
     {{ yaml_decode('title: Hello World!').title }}
-    
+
 
 Result:
 
 Hello World!
 
-#### Yaml Encode
+#### yaml_encode
+
+Encode array into valid yaml string
 
 Usage:
 
     {{ yaml_encode({'title': 'Hello World!'})}}
-    
+
 
 Result:
 
 title: 'Hello World!'
 
-#### Json Decode
+#### json_decode
+
+Decode valid json string into array
 
 Usage:
 
     {{ json_decode('{"title": "Hello World!"}').title }}
-    
+
 
 Result:
 
 Hello World!
 
-#### Json Encode
+#### json_encode
+
+Encode array into valid json string
 
 Usage:
 
     {{ json_encode({'title': 'Hello World!'})}}
-    
+
 
 Result:
 
 {"title": "Hello World!"}
 
-#### Translates
+#### tr
+
+Translate string
 
 Usage:
 
     {{ tr('site_powered_by_flextype') }}
-    
+
 
 Result:
 
 Build fast, flexible, easier to manage websites with
 <a href="http://flextype.org">Flextype</a>.
 
-#### List contents of a directory
+#### filesystem_list_contents
+
+List contents of a directory
 
 Usage:
 
     {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
-    
+
 
 Result:
 
 array (media)
 
-#### Check whether a file exists
+#### filesystem_has
+
+Check whether a file exists
 
 Usage:
 
     {% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
         Show something...
     {% endif %}
-    
 
-#### Read a file
+
+#### filesystem_read
+
+Read a file
 
 Usage:
 
     {{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-    
+
 
 Result:
 
     ---
     title: About
     ---
-    
 
-#### Get file extension
+
+#### filesystem_ext
+
+Get file extension
 
 Usage:
 
     {{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-    
+
 
 Result:
 
 .md
 
-#### Get filename
+#### filesystem_basename
+
+Get filename
 
 Usage:
 
     {{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-    
+
 
 Result:
 

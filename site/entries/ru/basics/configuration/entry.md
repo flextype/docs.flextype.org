@@ -3,6 +3,8 @@ title: Configuration
 ---
 Flextype allows you to configure your site in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that make this possible.
 
+All Flextype configuration files are written in YAML syntax with a `.yaml` file extension. YAML is very intuitive which makes it very easy to both read and write.
+
 You can update and create site configuration by editing file `/site/config/settings.yaml`
 
     # The title of the website
@@ -235,6 +237,6 @@ You can update and create site configuration by editing file `/site/config/setti
     # - driver: gd or imagick
     image:
       driver: gd
-    
+
 
 Also you can update any site setting in Admin Panel on the Settings page.
