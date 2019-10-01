@@ -19,6 +19,7 @@ txt_link_theme_variables: Theme Variables
 txt_themes: Themes
 txt_content: Content
 txt_advanced: Advanced
+txt_language: Language
 ---
 
 Flextype was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
