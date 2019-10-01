@@ -81,8 +81,19 @@
             </div>
             <div class="content width-9-12">
                 {% block content %}{% endblock %}
-                <div class="edit-this-page">
-                    <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt_link_edit_this_page }}</a>
+                <div class="edit-this-page flex">
+                    <div class="width-3-12 text-left">
+                        {{ entry_locale.txt_language }}:
+                        <a href="{{ base_url() }}/en">en</a>,
+                        <a href="{{ base_url() }}/ru">ru</a>
+                    </div>
+                    <div class="width-9-12">
+                        {% if locale == 'en' %}
+                            <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt_link_edit_this_page }}</a>
+                        {% else %}
+                            <a href="https://crowdin.com/project/flextype-documentation/{{ locale }}">{{ entry_locale.txt_link_edit_this_page }}</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
