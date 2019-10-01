@@ -59,7 +59,7 @@ Usage:
 {% do assets.add('css', site, 'site', 1) %}
 ```
 
-Get assets from the collection 
+Get assets from the collection
 
 Usage:
 
