@@ -48,10 +48,9 @@ Usage:
 {% set posts = entries.fetchAll('blog') %}
 ```
 
-
 #### Assets Object
 
-Add asset
+Add asset to the collection
 
 Usage:
 
@@ -60,7 +59,7 @@ Usage:
 {% do assets.add('css', site, 'site', 1) %}
 ```
 
-Get assets
+Get assets from the collection
 
 Usage:
 
