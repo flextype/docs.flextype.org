@@ -172,6 +172,49 @@ th, td {
 }
 
 
+.markdown-body h1 {
+    font-size:2em
+}
+
+.markdown-body h1, .markdown-body h2 {
+    padding-bottom: .3em;
+    border-bottom:1px solid #eaecef
+}
+
+h2 {
+    font-size:1.5em
+}
+
+h3 {
+    font-size:1.25em
+}
+
+h4 {
+    font-size:1em
+}
+
+h5 {
+    font-size:.875em
+}
+
+h6 {
+    font-size: .85em;
+}
+
+ul {
+    list-style: circle;
+}
+
+code {
+    background: #ececec;
+    padding: 1px 10px;
+}
+
+pre > code {
+    background: inherit;
+    padding: 0;
+}
+
 .sidebar, .content {
     padding: 20px;
 }
