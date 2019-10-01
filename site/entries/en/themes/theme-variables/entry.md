@@ -10,7 +10,7 @@ There are several **core objects** that are available to a Twig template, and ea
 
 #### Registry Object
 
-You can access any Flextype registry via the config-object.
+You can access any Flextype registry via the registry object.
 
 Usage:
 
