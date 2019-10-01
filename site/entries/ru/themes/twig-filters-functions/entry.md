@@ -8,7 +8,9 @@ Twig already provides an extensive list of [filters, functions, and tags](https:
 
 Twig filters are applied to Twig variables by using the `|` character followed by the filter name. Parameters can be passed in just like Twig functions using parenthesis.
 
-#### Shortcode Parser
+#### shortcode
+
+Parse shortcode
 
 Usage:
 
@@ -19,9 +21,11 @@ Result:
 
 **Bold text**
 
-#### Markdown Parser
+#### markdown
 
-Usage:
+Parse markdown
+
+Usage: markdown
 
     {{ '**Bold text**'|markdown }}
     
@@ -30,7 +34,9 @@ Result:
 
 **Bold text**
 
-#### Translates
+#### tr
+
+Translate text
 
 Usage:
 
@@ -57,7 +63,9 @@ Result:
 
 Twig functions are called directly with any parameters being passed in via parenthesis.
 
-#### Yaml Decode
+#### yaml_decode
+
+Decode valid yaml string into array
 
 Usage:
 
@@ -68,7 +76,9 @@ Result:
 
 Hello World!
 
-#### Yaml Encode
+#### yaml_encode
+
+Encode array into valid yaml string
 
 Usage:
 
@@ -79,7 +89,9 @@ Result:
 
 title: 'Hello World!'
 
-#### Json Decode
+#### json_decode
+
+Decode valid json string into array
 
 Usage:
 
@@ -90,7 +102,9 @@ Result:
 
 Hello World!
 
-#### Json Encode
+#### json_encode
+
+Encode array into valid json string
 
 Usage:
 
@@ -101,7 +115,9 @@ Result:
 
 {"title": "Hello World!"}
 
-#### Translates
+#### tr
+
+Translate string
 
 Usage:
 
@@ -113,7 +129,9 @@ Result:
 Build fast, flexible, easier to manage websites with
 <a href="http://flextype.org">Flextype</a>.
 
-#### List contents of a directory
+#### filesystem_list_contents
+
+List contents of a directory
 
 Usage:
 
@@ -124,7 +142,9 @@ Result:
 
 array (media)
 
-#### Check whether a file exists
+#### filesystem_has
+
+Check whether a file exists
 
 Usage:
 
@@ -133,7 +153,9 @@ Usage:
     {% endif %}
     
 
-#### Read a file
+#### filesystem_read
+
+Read a file
 
 Usage:
 
@@ -147,7 +169,9 @@ Result:
     ---
     
 
-#### Get file extension
+#### filesystem_ext
+
+Get file extension
 
 Usage:
 
@@ -158,7 +182,9 @@ Result:
 
 .md
 
-#### Get filename
+#### filesystem_basename
+
+Get filename
 
 Usage:
 
