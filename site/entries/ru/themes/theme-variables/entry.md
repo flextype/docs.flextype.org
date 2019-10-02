@@ -88,6 +88,16 @@ Usage:
 {% do emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) %}
 ```
 
+#### snippets
+
+Execute snippet
+
+Usage:
+
+```
+{{ snippets.exec('google-analytics')|raw }}
+```
+
 ### Global Variables
 
 ```
