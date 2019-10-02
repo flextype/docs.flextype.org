@@ -10,3 +10,4 @@ title: Basics
     <a class="col-md-6 documentation-panel" href="[site_url]/[locale]/documentation/guide/basics/constants">Constants</a>
     <a class="col-md-6 documentation-panel" href="[site_url]/[locale]/documentation/guide/basics/getting-help">Getting Help</a>
 </div>
+
