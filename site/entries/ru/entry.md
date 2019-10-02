@@ -16,6 +16,7 @@ txt_link_media: Медиа
 txt_link_password_recovery: Восстановление пароля
 txt_link_twig_filters_functions: Twig Filters & Functions
 txt_link_theme_variables: Theme Variables
+txt_link_theme_configuration: Theme Configuration
 txt_themes: Themes
 txt_content: Content
 txt_advanced: Advanced
