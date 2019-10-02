@@ -1,0 +1,31 @@
+## Table of contents
+
+- [\Flextype\Component\Text\Text](#class-flextypecomponenttexttext)
+
+<hr /><a id="class-flextypecomponenttexttext"></a>
+### Class: \Flextype\Component\Text\Text
+
+| Visibility | Function |
+|:-----------|:---------|
+| public static | <strong>ampDecode(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Converts &amp; to &. echo Text::ampEncode("M&amp;CMS");</em> |
+| public static | <strong>ampEncode(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Converts & to &amp;. echo Text::ampEncode("M&CMS");</em> |
+| public static | <strong>br2nl(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Replaces <br> and <br /> with newline. echo Text::br2nl("Some <br /> text <br /> here");</em> |
+| public static | <strong>cut(</strong><em>\string</em> <strong>$str</strong>, <em>int/\integer</em> <strong>$length</strong>, <em>\string</em> <strong>$cut_msg=null</strong>)</strong> : <em>string</em><br /><em>Cut string echo Text::cut('Some text here', 5);</em> |
+| public static | <strong>encryptPassword(</strong><em>string</em> <strong>$str</strong>, <em>string</em> <strong>$str_salt=`'string_salt'`</strong>)</strong> : <em>string</em><br /><em>Encrypt string $encrypt_string = Text::encryptString('password', 'string_salt');</em> |
+| public static | <strong>increment(</strong><em>\string</em> <strong>$str</strong>, <em>\integer</em> <strong>$first=1</strong>, <em>\string</em> <strong>$separator=`'_'`</strong>)</strong> : <em>string</em><br /><em>Add's _1 to a string or increment the ending number to allow _2, _3, etc $str = Text::increment($str);</em> |
+| public static | <strong>left(</strong><em>\string</em> <strong>$str</strong>, <em>int/\integer</em> <strong>$num</strong>)</strong> : <em>string</em><br /><em>Extract the first `$num` characters from a string. echo Text::left('Some text here', 4);</em> |
+| public static | <strong>length(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Get length echo Text::length('Some text here');</em> |
+| public static | <strong>lorem(</strong><em>\integer</em> <strong>$num=1</strong>)</strong> : <em>string</em><br /><em>Create a lorem ipsum text echo Text::lorem(2);</em> |
+| public static | <strong>lowercase(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Lowercase echo Text::lowercase('Some text here');</em> |
+| public static | <strong>nl2br(</strong><em>\string</em> <strong>$str</strong>, <em>\boolean</em> <strong>$xhtml=true</strong>)</strong> : <em>string</em><br /><em>Replaces newline with <br> or <br />. echo Text::nl2br("Some \n text \n here");</em> |
+| public static | <strong>quotesToEntities(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Convert single and double quotes to entities echo Text::quotesToEntities('some "text" here');</em> |
+| public static | <strong>random(</strong><em>\string</em> <strong>$type=`'alnum'`</strong>, <em>\integer</em> <strong>$length=16</strong>)</strong> : <em>string</em><br /><em>Creates a random string of characters echo Text::random();</em> |
+| public static | <strong>reduceSlashes(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Reduces multiple slashes in a string to single slashes. echo Text::reduceSlashes('some//text//here');</em> |
+| public static | <strong>right(</strong><em>\string</em> <strong>$str</strong>, <em>int/\integer</em> <strong>$num</strong>)</strong> : <em>string</em><br /><em>Extract the last `$num` characters from a string. echo Text::right('Some text here', 4);</em> |
+| public static | <strong>safeString(</strong><em>\string</em> <strong>$str</strong>, <em>\string</em> <strong>$delimiter=`'-'`</strong>, <em>\boolean</em> <strong>$lowercase=false</strong>)</strong> : <em>string</em><br /><em>Create safe string. Use to create safe usernames or filenames. $safe_string = Text::safeString('hello world');</em> |
+| public static | <strong>stripQuotes(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Removes single and double quotes from a string echo Text::stripQuotes('some "text" here');</em> |
+| public static | <strong>toHtml(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Convert plain text to html echo Text::toHtml('test');</em> |
+| public static | <strong>translitIt(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string $str</em><br /><em>Translit function to convert text from one script to another. echo Text::translitIt('Привет');</em> |
+| public static | <strong>trimSlashes(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Removes any leading and traling slashes from a string echo Text::trimSlashes('some text here/');</em> |
+| public static | <strong>uppercase(</strong><em>\string</em> <strong>$str</strong>)</strong> : <em>string</em><br /><em>Uppercase echo Text::uppercase('some text here');</em> |
+

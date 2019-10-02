@@ -86,10 +86,18 @@ pre {
     font-size: 16px;
 }
 
+table {
+    width: 100%;
+}
+
 th, td {
-    padding: 4px;
+    padding-bottom: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 16px;
     vertical-align: middle;
 }
+
 
 
 .markdown-body h1 {

@@ -7,17 +7,15 @@ System folders:
     /flextype
     /vendor
     /site
-    
+
 
 ### /flextype
 
-The main folder of the Flextype system, which stores common and important files for its work.  
-You cannot edit any files in this folder!
+The main folder of the Flextype system, which stores common and important files for its work. You cannot edit any files in this folder!
 
 ### /vendor
 
-The vendor folder contains important libraries that Flextype uses.  
-This folder is similar to the flextype folder and its contents should not be edited!
+The vendor folder contains important libraries that Flextype uses. This folder is similar to the flextype folder and its contents should not be edited!
 
 ### /site
 
@@ -31,7 +29,7 @@ This folder contains content, plugins, themes and all that is necessary for the 
     /site/themes
     /site/snippets
     /site/aсcounts
-    
+
 
 ### /site/cache
 

@@ -1,4 +1,3 @@
 ---
-title: API
+title: Flextype API's
 ---
-
