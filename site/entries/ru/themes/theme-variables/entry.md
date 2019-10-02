@@ -8,9 +8,9 @@ When you are designing a theme, Flextype gives you access to all sorts of object
 
 There are several **core objects** that are available to a Twig template, and each object has a set of **variables** and **functions**.
 
-#### Registry Object
+#### registry
 
-You can access any Flextype registry via the registry object.
+Registry stored all flextype, themes and plugins settings.<br /> You can access Flextype registry via the registry object.
 
 Usage:
 
@@ -18,9 +18,9 @@ Usage:
 {{ registry.settings.theme }} {# returns the currently configured theme #}
 ```
 
-#### Entry Object
+#### entry
 
-Because Flextype is built using the structure defined in the entries/ folder, each entry is represented by a entry object.
+Because Flextype is built using the structure defined in the `/site/entries/` folder, each entry is represented by a entry object.
 
 The entry object is probably the most important object you will work with as it contains all the information about the current page you are currently on.
 
@@ -30,7 +30,7 @@ Usage:
 {{ entry.title }} {# returns the current entry title #}
 ```
 
-#### Entries Object
+#### entries
 
 Fetch single entry
 
@@ -48,7 +48,7 @@ Usage:
 {% set posts = entries.fetchAll('blog') %}
 ```
 
-#### Assets Object
+#### assets
 
 Add asset to the collection
 
@@ -71,7 +71,7 @@ Usage:
 {% endfor %}
 ```
 
-#### Emitter Object
+#### emitter
 
 Emitting events
 
@@ -86,4 +86,30 @@ Usage:
 
 ```
 {% do emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) %}
+```
+
+#### snippets
+
+Execute snippet
+
+Usage:
+
+```
+{{ snippets.exec('google-analytics')|raw }}
+```
+
+### Global Variables
+
+```
+{{ PATH_SITE }} {# Returns the path to the site directory (without trailing slash). #}
+{{ PATH_PLUGINS }} {# Returns the plugins to the root directory (without trailing slash). #}
+{{ PATH_THEMES }} {# Returns the path to the themes directory (without trailing slash). #}
+{{ PATH_ENTRIES }} {# Returns the path to the entries directory (without trailing slash). #}
+{{ PATH_SNIPPETS }} {# Returns the path to the snippets directory (without trailing slash). #}
+{{ PATH_FIELDSETS }} {# Returns the path to the fieldsets directory (without trailing slash). #}
+{{ PATH_CONFIG_DEFAULT }} {# Returns the path to the default config directory (without trailing slash). #}
+{{ PATH_CONFIG_SITE }} {# Returns the path to the site config directory (without trailing slash). #}
+{{ PATH_CACHE }} {# Returns the path to the cache directory (without trailing slash). #}
+{{ FLEXTYPE_VERSION }} {# Returns the Flextype version #}
+{{ PHP_VERSION }} {# Returns the php version #}
 ```

@@ -194,3 +194,36 @@ Usage:
 Result:
 
 entry
+
+#### path_for
+
+Returns the URL for a given route.
+
+Usage:
+
+    {{ path_for('profile') }}
+    
+
+#### base_url
+
+Returns the Uri object's base URL.
+
+Usage:
+
+    {{ base_url() }}
+    
+
+#### is_current_path
+
+Returns true is the provided route name and parameters are valid for the current path.
+
+    {% if is_current_path('profile') %}
+        Show profile page
+    {% endif %}
+    
+
+#### current_path
+
+Renders the current path, with or without the query string.
+
+    {{ current_path() }}
