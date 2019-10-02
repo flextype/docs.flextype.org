@@ -1,5 +1,5 @@
 ---
-title: Flextype API
+title: Core API
 ---
 
 - [\Flextype\FrontmatterParser](#class-flextypefrontmatterparser)

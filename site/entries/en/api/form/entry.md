@@ -1,0 +1,26 @@
+---
+title: Form
+---
+
+- [\Flextype\Component\Form\Form](#class-flextypecomponentformform)
+
+<hr /><a id="class-flextypecomponentformform"></a>
+### Class: \Flextype\Component\Form\Form
+
+| Visibility | Function |
+|:-----------|:---------|
+| public static | <strong>__callStatic(</strong><em>string</em> <strong>$method</strong>, <em>array</em> <strong>$parameters</strong>)</strong> : <em>mixed</em><br /><em>Dynamically handle calls to custom macros.</em> |
+| public static | <strong>button(</strong><em>string</em> <strong>$name</strong>, <em>mixed</em> <strong>$body</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a button form input. echo Form::button('save', 'Save Profile', array('type' => 'submit'));</em> |
+| public static | <strong>checkbox(</strong><em>string</em> <strong>$name</strong>, <em>string</em> <strong>$value=`''`</strong>, <em>bool/boolean</em> <strong>$checked=false</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a checkbox form input. echo Form::checkbox('i_am_not_a_robot');</em> |
+| public static | <strong>close()</strong> : <em>string</em><br /><em>Create closing form tag. echo Form::close();</em> |
+| public static | <strong>file(</strong><em>\string</em> <strong>$name</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a file upload form input. echo Form::file('image');</em> |
+| public static | <strong>hidden(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value=`''`</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Create a hidden form input. echo Form::hidden('user_id', $user_id);</em> |
+| public static | <strong>input(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value=`''`</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Create a form input. Text is default input type. echo Form::input('username', $username);</em> |
+| public static | <strong>label(</strong><em>string</em> <strong>$input</strong>, <em>string</em> <strong>$text</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a form label. echo Form::label('username', 'Username');</em> |
+| public static | <strong>macro(</strong><em>\string</em> <strong>$name</strong>, <em>\Flextype\Component\Form\Closure</em> <strong>$macro</strong>)</strong> : <em>void</em><br /><em>Registers a custom macro. // Registering a Form macro Form::macro('my_field', function() { return '<input type="text" name="my_field">'; }); // Calling a custom Form macro echo Form::my_field(); // Registering a Form macro with parameters Form::macro('my_field', function($value = '') { return '<input type="text" name="my_field" value="'.$value.'">'; }); // Calling a custom Form macro with parameters echo Form::my_field('Flextype');</em> |
+| public static | <strong>open(</strong><em>string</em> <strong>$action=`''`</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Create an opening HTML form tag. // Form will submit back to the current page using POST echo Form::open(); // Form will submit to 'search' using GET echo Form::open('search', array('method' => 'get')); // When "file" inputs are present, you must include the "enctype" echo Form::open(null, array('enctype' => 'multipart/form-data'));</em> |
+| public static | <strong>password(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value=`''`</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a password form input. echo Form::password('password');</em> |
+| public static | <strong>radio(</strong><em>string</em> <strong>$name</strong>, <em>string</em> <strong>$value=`''`</strong>, <em>boolean</em> <strong>$checked=null</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a radio form input. echo Form::radio('i_am_not_a_robot');</em> |
+| public static | <strong>select(</strong><em>string</em> <strong>$name</strong>, <em>array</em> <strong>$options=null</strong>, <em>string</em> <strong>$selected=null</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a select form input. <code> echo Form::select('themes', array('default', 'classic', 'modern')); </code></em> |
+| public static | <strong>submit(</strong><em>string</em> <strong>$name</strong>, <em>string</em> <strong>$value</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a submit form input. <code> echo Form::submit('save', 'Save'); </code></em> |
+| public static | <strong>textarea(</strong><em>string</em> <strong>$name</strong>, <em>string</em> <strong>$body=`''`</strong>, <em>array</em> <strong>$attributes=null</strong>)</strong> : <em>string</em><br /><em>Creates a textarea form input. echo Form::textarea('text', $text);</em> |
