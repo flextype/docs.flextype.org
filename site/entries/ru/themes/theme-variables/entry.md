@@ -1,10 +1,10 @@
 ---
-title: Theme Variables
+title: Настраиваемые параметры темы
 ---
 
-When you are designing a theme, Flextype gives you access to all sorts of objects and variables from within your Twig templates. The Twig templating framework provides powerful ways to read and manipulate these objects and variables.
+При проектировании темы Flextype дает доступ ко всем видам объектов и переменных из ваших шаблонов Twig. Шаблон Twig предоставляет мощные способы для чтения и манипулирования этими объектами и переменными.
 
-### Core Objects
+### Основные объекты
 
 There are several **core objects** that are available to a Twig template, and each object has a set of **variables** and **functions**.
 
