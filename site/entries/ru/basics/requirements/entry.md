@@ -28,12 +28,12 @@ title: Requirements
 
 ##### Windows и macOS
 
-* Chrome (Хром) 29 или позже
+* Chrome 29 или позже
 * Mozilla Firefox 28 или позже
-* Safari 9.0 or later
+* Safari 9.0 или позже
 * Microsoft Edge
 
-##### Mobile
+##### Мобильный
 
-* iOS: Safari 9.1 or later
-* Android: Chrome 4.4 or later
+* iOS: Safari 9.1 или позже
+* Android: Chrome 4.4 или позже
