@@ -2,38 +2,38 @@
 title: Requirements
 ---
 
-### System requirements
+### Системные требования
 
-Make sure your server meets the following requirements.
+Убедитесь, что ваш сервер отвечает следующим требованиям.
 
-* Webserver (Apache with [Mod Rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html))
-* PHP 7.2.0 or higher
+* Веб-сервер (Apache с функцией [Mod Rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html))
+* PHP 7.2.0 или выше
 
-### PHP extensions
+### Расширения PHP
 
-Flextype needs the following PHP extensions to be enabled:
+Для работы Flextype необходимо включить следующие расширения PHP:
 
-- PHP [mbstring](http://php.net/manual/en/book.mbstring.php) module for full UTF-8 support.
-- PHP [gd](http://php.net/manual/en/book.image.php) or [ImageMagick](http://php.net/manual/en/book.imagick.php) module for image processing.
-- PHP [json](https://php.net/manual/en/book.json.php) module for JSON manipulation.
-- PHP [Fileinfo](https://www.php.net/manual/en/book.fileinfo.php)
+- Модуль PHP [mbstring](http://php.net/manual/en/book.mbstring.php) для полной поддержки UTF-8.
+- PHP [gd](http://php.net/manual/en/book.image.php) или [ImageMagick](http://php.net/manual/en/book.imagick.php) модуль для обработки изображений.
+- Модуль [PHP json](https://php.net/manual/en/book.json.php) для манипулирования JSON.
+- PHP [Информация о файле](https://www.php.net/manual/en/book.fileinfo.php)
 - PHP [SPL](https://www.php.net/manual/en/book.spl.php)
 - PHP [DOM](https://www.php.net/manual/ru/class.domdocument.php)
 
-Although it is optional, we strongly recommend enabling the following PHP extensions: APC, APCu, XCache, Memcached, or Redis for better performance.
+Хотя это и необязательно, мы настоятельно рекомендуем включить следующие расширения PHP: APC, APCu, XCache, Memcached или Redis для повышения производительности.
 
-### Browser requirements
+### Требования к браузеру
 
-The admin panel of Flextype is compatible with:
+Панель администрирования Flextype совместима с:
 
-##### Windows and macOS
+##### Windows и macOS
 
-* Chrome 29 or later
-* Firefox 28 or later
-* Safari 9.0 or later
+* Chrome 29 или позже
+* Mozilla Firefox 28 или позже
+* Safari 9.0 или позже
 * Microsoft Edge
 
-##### Mobile
+##### Мобильный
 
-* iOS: Safari 9.1 or later
-* Android: Chrome 4.4 or later
+* iOS: Safari 9.1 или позже
+* Android: Chrome 4.4 или позже
