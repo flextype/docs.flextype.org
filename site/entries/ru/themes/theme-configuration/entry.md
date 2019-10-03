@@ -1,14 +1,14 @@
 ---
-title: Theme Configuration
+title: Конфигурация темы
 ---
 
-You can easily access theme configuration and theme information from your Twig and PHP files.
+Вы можете легко получить доступ к настройке тем и информации о темах из ваших файлов Twig и PHP.
 
-### Accessing Theme Information
+### Доступ к тематической информации
 
-Information from the currently active theme can be had from the `registry` object.
+Информация из текущего активного шаблона может быть получена из объекта `registry`.
 
-Example information from `/site/themes/default/theme.yaml`:
+Пример информации из `/site/themes/default/theme.yaml`:
 
 ```
 name: Default
@@ -23,32 +23,32 @@ bugs: https://github.com/flextype/flextype/issues
 license: MIT
 ```
 
-You can reach any of these items via `registry.themes` by using the standard dot-syntax:
+Вы можете получить доступ к любому из этих элементов через раздел `registry.themes`, темы с помощью стандартного точечного синтаксиса:
 
-Usage:
+Использовать:
 
 ```
 Theme name: {{ registry.themes.default.name }}
 Theme version: {{ registry.themes.default.version }}
 ```
 
-Result:
+Результат:
 
 ```
 Theme name: Default
 Theme version: 1.0.0
 ```
 
-You can also reach these same values from a Fextype plugin with PHP syntax:
+Вы также можете получить эти же значения из плагина Fextype с синтаксисом PHP:
 
-Usage:
+Использовать:
 
 ```
 $theme_name = $flextype->registry->get('themes.default.name');
 $theme_version = $flextype->registry->get('themes.default.version');
 ```
 
-### Accessing Theme Configuration
+### Доступ к тематической конфигурации
 
 Theme's have configuration files, named `settings.yaml` located in `/site/themes/<themename>/`
 
