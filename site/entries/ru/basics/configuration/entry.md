@@ -1,11 +1,11 @@
 ---
-title: Configuration
+title: Конфигурация
 ---
-Flextype allows you to configure your site in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that make this possible.
+Flextype позволяет конфигурировать сайт любым удобным для вас способом, и это благодаря мощным и гибким опциям конфигурации, которые делают это возможным.
 
-All Flextype configuration files are written in YAML syntax with a `.yaml` file extension. YAML is very intuitive which makes it very easy to both read and write.
+Все файлы конфигурации Flextype написаны в синтаксисе YAML с расширением файла `.yaml`. YAML очень интуитивно понятен, что делает его очень удобным как для чтения, так и для записи.
 
-You can update and create site configuration by editing file `/site/config/settings.yaml`
+Вы можете обновить и создать конфигурацию сайта, отредактировав файл.`/site/config/settings.yaml`
 
     # The title of the website
     title: Flextype
@@ -239,4 +239,4 @@ You can update and create site configuration by editing file `/site/config/setti
       driver: gd
 
 
-Also you can update any site setting in Admin Panel on the Settings page.
+Также вы можете обновить любые настройки сайта в Панели администратора на странице Настройки.
