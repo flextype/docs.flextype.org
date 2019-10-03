@@ -2,12 +2,12 @@
 title: Requirements
 ---
 
-### System requirements
+### Системные требования
 
-Make sure your server meets the following requirements.
+Убедитесь, что ваш сервер отвечает следующим требованиям.
 
-* Webserver (Apache with [Mod Rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html))
-* PHP 7.2.0 or higher
+* Веб-сервер (Apache с функцией [Mod Rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html))
+* PHP 7.2.0 или выше
 
 ### PHP extensions
 
