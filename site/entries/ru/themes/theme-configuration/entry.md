@@ -1,14 +1,14 @@
 ---
-title: Theme Configuration
+title: Конфигурация темы
 ---
 
-You can easily access theme configuration and theme information from your Twig and PHP files.
+Вы можете легко получить доступ к настройке тем и информации о темах из ваших файлов Twig и PHP.
 
-### Accessing Theme Information
+### Доступ к тематической информации
 
-Information from the currently active theme can be had from the `registry` object.
+Информация из текущего активного шаблона может быть получена из объекта `registry`.
 
-Example information from `/site/themes/default/theme.yaml`:
+Пример информации из `/site/themes/default/theme.yaml`:
 
 ```
 name: Default
@@ -23,49 +23,49 @@ bugs: https://github.com/flextype/flextype/issues
 license: MIT
 ```
 
-You can reach any of these items via `registry.themes` by using the standard dot-syntax:
+Вы можете получить доступ к любому из этих элементов через раздел `registry.themes`, темы с помощью стандартного точечного синтаксиса:
 
-Usage:
+Использовать:
 
 ```
 Theme name: {{ registry.themes.default.name }}
 Theme version: {{ registry.themes.default.version }}
 ```
 
-Result:
+Результат:
 
 ```
 Theme name: Default
 Theme version: 1.0.0
 ```
 
-You can also reach these same values from a Fextype plugin with PHP syntax:
+Вы также можете получить эти же значения из плагина Fextype с синтаксисом PHP:
 
-Usage:
+Использовать:
 
 ```
 $theme_name = $flextype->registry->get('themes.default.name');
 $theme_version = $flextype->registry->get('themes.default.version');
 ```
 
-### Accessing Theme Configuration
+### Доступ к тематической конфигурации
 
-Theme's have configuration files, named `settings.yaml` located in `/site/themes/<themename>/`
+У темы есть конфигурационные файлы, под названием: `settings.yaml` расположенный в `/site/themes/<themename>/`
 
-For example, let us consider the Default theme and there is a file called settings.yaml in the theme's root folder. The contents of this configuration file look like this:
+Например, давайте рассмотрим тему Default (По умолчанию) и в корневой папке темы есть файл settings.yaml. Содержимое этого конфигурационного файла выглядит следующим образом:
 
 ```
 enabled: true
 ```
 
-Let us add some custom theme settings. Open `/site/themes/default/settings.yaml` and add new variable with value `highlight: red`
+Давайте добавим некоторые пользовательские настройки тем. Открыть `/site/themes/default/settings.yaml` и добавить новую переменную с значением `highlight: red`
 
 ```
 enabled: true
 highlight: red
 ```
 
-Then in your theme templates you can access these variable using the `registry.themes.default` object:
+Затем в шаблонах тем вы можете получить доступ к этой переменной с помощью объекта `registry.themes.default.`:object:
 
 ```
 <h1 style="color:{{ registry.themes.default.highlight }}">
@@ -73,11 +73,11 @@ Then in your theme templates you can access these variable using the `registry.t
 </h1>
 ```
 
-Result:
+Результат:
 
-<h1 style="color:red">BUILD FAST, FLEXIBLE, EASIER TO MANAGE WEBSITES WITH FLEXTYPE.</h1>
+<h1 style="color:red">СОЗДАВАТЬ БЫСТРЫЕ, ГИБКИЕ, ПРОСТЫЕ В УПРАВЛЕНИИ ВЕБ-САЙТЫ С ПОМОЩЬЮ ТЕХНОЛОГИИ FLEXTYPE.</h1>
 
-In PHP you can access the current theme configuration like this:
+В PHP вы можете получить доступ к текущей конфигурации тем следующим образом:
 
 ```
 $highlight = $flextype->registry->get('themes.default.highlight');

@@ -1,8 +1,8 @@
 ---
-title: Folder structure
+title: Структура папок
 ---
 
-System folders:
+Системные папки:
 
     /flextype
     /vendor
@@ -11,15 +11,15 @@ System folders:
 
 ### /flextype
 
-The main folder of the Flextype system, which stores common and important files for its work. You cannot edit any files in this folder!
+Главная папка системы Flextype, в которой хранятся общие и важные для ее работы файлы. Вы не можете редактировать файлы в этой папке!
 
 ### /vendor
 
-The vendor folder contains important libraries that Flextype uses. This folder is similar to the flextype folder and its contents should not be edited!
+Папка производителя содержит важные библиотеки, которые использует Flextype. Эта папка похожа на папку flextype и ее содержимое не подлежит редактированию!
 
 ### /site
 
-This folder contains content, plugins, themes and all that is necessary for the work of the site.
+Эта папка содержит контент, плагины, темы и все, что необходимо для работы сайта.
 
     /site/cache
     /site/config
@@ -33,32 +33,32 @@ This folder contains content, plugins, themes and all that is necessary for the 
 
 ### /site/cache
 
-This folder is used to store temporary cached files that are automatically created by the Flextype to improve performance.
+Эта папка используется для хранения временных кэшированных файлов, которые автоматически создаются Flextype для повышения производительности.
 
 ### /site/config
 
-This folder contains the site and system settings.
+В этой папке содержатся настройки сайта и системы.
 
 ### /site/entries
 
-Entries and media files of the site are stored in this folder.
+В этой папке хранятся записи и медиафайлы сайта.
 
 ### /site/logs
 
-Error logs are stored in this folder.
+В этой папке хранятся журналы ошибок.
 
 ### /site/plugins
 
-This folder contains plugins that extend the capabilities of the system.
+Эта папка содержит плагины, расширяющие возможности системы.
 
 ### /site/themes
 
-This folder contains themes for the website with the styles, scripts and individual fieldsets.
+Эта папка содержит темы для веб-сайта со стилями, скриптами и отдельными наборами полей.
 
 ### /site/snippets
 
-Snippets are stored in this folder.
+В этой папке хранятся фрагменты.
 
 ### /site/aсcounts
 
-Accounts are stored in this folder.
+В этой папке хранятся учетные записи.
