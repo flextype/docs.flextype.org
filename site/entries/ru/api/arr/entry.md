@@ -1,5 +1,5 @@
 ---
-title: Arr
+title: Стр
 ---
 
 - [\Flextype\Component\Arr\Arr](#class-flextypecomponentarrarr)
@@ -8,7 +8,7 @@ title: Arr
 
 ### Class: \Flextype\Component\Arr\Arr
 
-| Visibility    | Function                                                                                                                                                                                                                                                                                                                                        |
+| Видимость     | Function                                                                                                                                                                                                                                                                                                                                        |
 |:------------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | public static | <strong>average(</strong><em>array</em> <strong>$array</strong>, <em>int/\integer</em> <strong>$decimals</strong>)</strong> : <em>int/\Flextype\Component\Arr\double</em><br /><em>Returns the average value of the current array. echo Arr::average([2, 5, 1, 9], 2);</em>                                                                                                                             |
 | public static | <strong>createFromJson(</strong><em>\string</em> <strong>$json</strong>, <em>\boolean</em> <strong>$assoc=true</strong>, <em>\integer</em> <strong>$depth=512</strong>, <em>\integer</em> <strong>$options</strong>)</strong> : <em>array</em><br /><em>Create an new Array from JSON string. $str = '{"firstName":"John", "lastName":"Doe"}'; // Array['firstName' => 'John', 'lastName' => 'Doe'] $array = Arr::createFromJson($str);</em>              |
