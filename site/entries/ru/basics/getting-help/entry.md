@@ -1,36 +1,36 @@
 ---
-title: Getting Help
+title: Получение помощи
 ---
-There are several channels to reach the developers and the Flextype community to get direct assistance.
+Существует несколько каналов связи с разработчиками и сообществом Flextype для получения прямой помощи.
 
-If you can't find the right answers to your questions on our Website, you can turn to one of our other official sources to get help and discuss your issues, but also to receive news and update notifications.
+Если вы не можете найти правильные ответы на свои вопросы на нашем сайте, вы можете обратиться к одному из наших официальных источников для получения помощи и обсуждения ваших проблем, а также для получения новостей и уведомлений об обновлениях.
 
 ### Discord
 
-Got a question about setting up or using Flextype? We'll do our best to help you out. Also here you may start discussions about core, plugin and themes development.
+У вас есть вопрос о настройке или использовании Flextype? Мы сделаем все возможное, чтобы помочь вам. Также здесь вы можете начать обсуждение разработки ядра, плагина и тем.
 
 Link: <https://discord.gg/CCKPKVG>
 
 ### Github
 
-If you want to report a bug or contribute your ideas, you can use the [Flextype GitHub Issues tracker](https://github.com/flextype/flextype/issues).
+Если вы хотите сообщить об ошибке или поделиться своими идеями, вы можете использовать [Flextype GitHub Issues tracker](https://github.com/flextype/flextype/issues).
 
 Link: <https://github.com/flextype>
 
 ### Vkontakte
 
-Russian Flextype Community!
+Российское Flextype сообщество!
 
 Link: <https://vk.com/flextype>
 
 ### Twitter
 
-Follow [Flextype on Twitter](https://twitter.com/getflextype) to get real-time news regarding the development and all events we are attending.
+Подписывайтесь на наш [официальный Twitter](https://twitter.com/getflextype) чтобы получать получать в режиме реального времени новости о разработке и всех мероприятиях, которые мы посещаем.
 
 Link: <https://twitter.com/getflextype>
 
-### Forum
+### Форум
 
-We have a forum to provide a simple way to get your Flextype questions answered quickly.
+Мы имеем форум, чтобы предоставить простой способ быстро ответить на ваши вопросы Flextype.
 
 Link: <http://forum.flextype.org>
