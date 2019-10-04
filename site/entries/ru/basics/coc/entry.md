@@ -14,19 +14,19 @@ title: Кодекс поведения
 
 - **Будьте дружелюбны и терпеливы.**
 - **Будьте доброжелательны.** Мы стремимся быть сообществом, которое приветствует и поддерживает людей всех фоновых и личных данных. К ним относятся, в частности, представители любой расы, этнической принадлежности, культуры, национального происхождения, цвета кожи, иммиграционного статуса, социального и экономического класса, уровня образования, пола, сексуальной ориентации, гендерной идентичности и самовыражения, возраста, размера, семейного положения, политических убеждений, религии, умственных и физических возможностей.
-- **Будьте внимательны.** Ваша работа будет использоваться другими людьми, и вы, в свою очередь, будете зависеть от работы других. Any decision you take will affect users and colleagues, and you should take those consequences into account when making decisions. Remember that we’re a world-wide community, so you might not be communicating in someone else’s primary language.
-- **Be respectful.** Not all of us will agree all the time, but disagreement is no excuse for poor behavior and poor manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It’s important to remember that a community where people feel uncomfortable or threatened is not a productive one. Members of the Flextype community should be respectful when dealing with other members as well as with people outside the Flextype community.
-- **Be careful in the words that you choose.** We are a community of professionals, and we conduct ourselves professionally. Be kind to others. Do not insult or put down other participants. Harassment and other exclusionary behavior aren’t acceptable. This includes, but is not limited to:
+- **Будьте внимательны.** Ваша работа будет использоваться другими людьми, и вы, в свою очередь, будете зависеть от работы других. Любое решение, которое вы принимаете, повлияет на пользователей и коллег, и вы должны принимать во внимание эти последствия при принятии решений. Помните, что мы являемся всемирным сообществом, поэтому вы можете не общаться на чужом основном языке.
+- **Будьте уважаемыми.** Не все мы согласны все время, но разногласия не являются оправданием для плохого поведения и плохих манер. Время от времени мы все можем испытывать некоторое разочарование, но мы не можем допустить, чтобы это разочарование переросло в личное нападение. Важно помнить, что сообщество, в котором люди чувствуют себя неуютно или находятся под угрозой, не является продуктивным. Члены сообщества Flextype должны относиться с уважением к другим членам сообщества, а также к людям за пределами сообщества Flextype.
+- **Будьте осторожны в словах, которые вы выбираете.** Мы являемся профессиональным сообществом и ведем себя профессионально. Будьте добры к другим. Не оскорбляйте и не отстраняйте других участников. Преследование и другие формы исключающего поведения недопустимы. Это включает в себя, но не ограничивается этим:
 
-  - Violent threats or language directed against another person.
-  - Discriminatory jokes and language.
-  - Exclusionary gendered language (guys, gentlemen, bros, etc).
-  - Posting sexually explicit or violent material.
-  - Posting (or threatening to post) other people’s personally identifying information ("doxing").
-  - Personal insults, especially those using racist or sexist terms.
-  - Unwelcome sexual attention.
-  - Advocating for, or encouraging, any of the above behavior.
-  - Repeated harassment of others. In general, if someone asks you to stop, then stop.
-- **When we disagree, try to understand why.** Disagreements, both social and technical, happen all the time and Flextype is no exception. It is important that we resolve disagreements and differing views constructively. Remember that we’re different. The strength of Flextype comes from its varied community, people from a wide range of backgrounds. Different people have different perspectives on issues. Being unable to understand why someone holds a viewpoint doesn’t mean that they’re wrong. Don’t forget that it is human to err and blaming each other doesn’t get us anywhere. Instead, focus on helping to resolve issues and learning from mistakes.
+  - Насильственные угрозы или высказывания в адрес другого человека.
+  - Дискриминационные шутки.
+  - Исключительный гендерный язык (парни, джентльмены, братья и т. д.).
+  - Размещение материалов откровенно сексуального характера или насильственного характера.
+  - Размещение (или угроза размещения) чужой персональной идентифицирующей информации.
+  - Личные оскорбления, особенно расистские или сексистские.
+  - Нежелательное сексуальное внимание.
+  - Адвокация или поощрение любого из вышеперечисленных действий.
+  - Неоднократные притеснения других. В общем, если кто-то попросит тебя остановиться, то остановись.
+- **Когда мы не согласны, постарайтесь понять, почему.** Разногласия, как социальные, так и технические, происходят постоянно, и Flextype не является исключением. Важно конструктивно разрешать разногласия и расхождения во мнениях. Помни, что мы разные. Сила Flextype заключается в его разнообразном сообществе, состоящем из людей с разным жизненным опытом. У разных людей разные взгляды на проблемы. Невозможность понять, почему кто-то придерживается той или иной точки зрения, не означает, что он ошибается. Не забывайте, что ошибаться - каждый человек, и обвинение друг друга ни к чему не приведет. Вместо этого, сосредоточьтесь на помощи в решении проблем и извлечении уроков из ошибок.
 
-*Credits for the sources and inspiration of this code of conduct go to the [Speak Up! project.](http://web.archive.org/web/20141109123859/http://speakup.io/coc.html)*
+*Зачетные единицы за источники и вдохновение этого кодекса поведения перечислены в [Speak Up! проекте.](http://web.archive.org/web/20141109123859/http://speakup.io/coc.html)*
