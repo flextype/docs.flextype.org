@@ -1,20 +1,20 @@
 ---
-title: Code of Conduct
+title: Кодекс поведения
 ---
 
-Like the technical community as a whole, the Flextype team and community is made up of a mixture of professionals and volunteers from all over the world, working on every aspect of the mission - including mentorship, teaching, and connecting people.
+Как и все техническое сообщество в целом, команда Flextype состоит из профессионалов и волонтеров со всего мира, которые работают над каждым аспектом миссии, включая наставничество, обучение и налаживание связей между людьми.
 
-Diversity is one of our strengths. With that, challenges will arise that can lead to communication issues and unhappiness. To that end, we have a few ground rules that we ask people to adhere to. This code applies equally to founders, mentors and those seeking help and guidance.
+Разнообразие - одна из наших сильных сторон. При этом будут возникать проблемы, которые могут привести к проблемам коммуникации и несчастью. Для этого у нас есть несколько основных правил, которых мы просим придерживаться. Этот кодекс в равной степени применим к учредителям, наставникам и тем, кто ищет помощи и руководства.
 
-This isn’t an exhaustive list of things that you can’t do. Rather, take it in the spirit in which it’s intended - a guide to make it easier to enrich all of us and the technical communities in which we participate.
+Это не исчерпывающий список вещей, которые вы не можете сделать. Напротив, воспринимайте его в том духе, в котором он был задуман, как руководство, чтобы сделать его более полезным для всех нас и технических сообществ, в которых мы участвуем.
 
-This code of conduct applies to all spaces used by the Flextype community for communication. This includes Flextype Discord, GitHub, Twitter, Facebook, meetups, conferences, and any other relevant forums. Violations of this code outside of any spaces managed by the Flextype team will still affect a person’s ability to participate within them.
+Этот кодекс поведения применяется ко всем пространствам, используемым сообществом Flextype для общения. Это включает Flextype Discord, GitHub, Twitter, Facebook, встречи, конференции и любые другие соответствующие форумы. Нарушения этого кода за пределами любого пространства, управляемого командой Flextype, будут влиять на способность человека участвовать в них.
 
-If you believe someone is violating the code of conduct, we ask that you report it by contacting us from [&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#102;&#108;&#101;&#120;&#116;&#121;&#112;&#101;&#046;&#111;&#114;&#103;](mailto:support@flextype.org). We take all reports seriously, and your identity will remain confidential.
+Если вы считаете, что кто-то нарушает кодекс поведения, мы просим вас сообщить об этом, связавшись с нами по адресу [&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#102;&#108;&#101;&#120;&#116;&#121;&#112;&#101;&#046;&#111;&#114;&#103;](mailto:support@flextype.org). Мы серьезно относимся ко всем сообщениям, и ваша личность останется конфиденциальной.
 
-- **Be friendly and patient.**
-- **Be welcoming.** We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion, and mental and physical ability.
-- **Be considerate.** Your work will be used by other people, and you in turn will depend on the work of others. Any decision you take will affect users and colleagues, and you should take those consequences into account when making decisions. Remember that we’re a world-wide community, so you might not be communicating in someone else’s primary language.
+- **Будьте дружелюбны и терпеливы.**
+- **Будьте доброжелательны.** Мы стремимся быть сообществом, которое приветствует и поддерживает людей всех фоновых и личных данных. К ним относятся, в частности, представители любой расы, этнической принадлежности, культуры, национального происхождения, цвета кожи, иммиграционного статуса, социального и экономического класса, уровня образования, пола, сексуальной ориентации, гендерной идентичности и самовыражения, возраста, размера, семейного положения, политических убеждений, религии, умственных и физических возможностей.
+- **Будьте внимательны.** Ваша работа будет использоваться другими людьми, и вы, в свою очередь, будете зависеть от работы других. Any decision you take will affect users and colleagues, and you should take those consequences into account when making decisions. Remember that we’re a world-wide community, so you might not be communicating in someone else’s primary language.
 - **Be respectful.** Not all of us will agree all the time, but disagreement is no excuse for poor behavior and poor manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It’s important to remember that a community where people feel uncomfortable or threatened is not a productive one. Members of the Flextype community should be respectful when dealing with other members as well as with people outside the Flextype community.
 - **Be careful in the words that you choose.** We are a community of professionals, and we conduct ourselves professionally. Be kind to others. Do not insult or put down other participants. Harassment and other exclusionary behavior aren’t acceptable. This includes, but is not limited to:
 
