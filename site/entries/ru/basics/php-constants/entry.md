@@ -1,45 +1,45 @@
 ---
-title: PHP Constants
+title: Константы PHP
 ---
 
-Your `index.php` file can define certain PHP constants, which Flextype bootstrap script will check for while loading and configuring Flextype.
+Ваш файл `index.php` может определить определенные константы PHP, которые Flextype bootstrap скрипт будет проверять при загрузке и настройке Flextype.
 
 ### FLEXTYPE_MINIMUM_PHP
 
-Define the application minimum supported PHP version.
+Определите минимальную версию приложения, поддерживаемую PHP.
 
 ### ROOT_DIR
 
-Define the path to the root directory (without trailing slash).
+Определите путь к корневому каталогу (без обратной косой черты).
 
 ### LOGS_PATH
 
-Define the PATH to logs (without trailing slash).
+Определите PATH для журналов (без задней черты).
 
 ### PATH['site']
 
-Define the PATH to site (without trailing slash).
+Определите PATH to site (без задней черты).
 
 ### PATH['entries']
 
-Define the PATH to site entries (without trailing slash).
+Определите входы PATH to site (без наклонной черты).
 
 ### PATH['plugins']
 
-Define the PATH to site plugins (without trailing slash).
+Определите плагины PATH to site (без обратного слеша).
 
 ### PATH['themes']
 
-Define the PATH to site themes (without trailing slash).
+Определите темы PATH to site (без наклонной черты).
 
 ### PATH\['config'\]\['default'\]
 
-Define the PATH to default config (without trailing slash).
+Определите конфигурацию PATH по умолчанию (без обратного слеша).
 
 ### PATH\['config'\]\['site'\]
 
-Define the PATH to site config (without trailing slash).
+Определите конфигурацию PATH to site (без обратного слеша).
 
 ### PATH['cache']
 
-Define the PATH to site cache (without trailing slash).
+Определите кэш PATH to site (без обратного слеша).
