@@ -17,6 +17,7 @@ txt_link_password_recovery: Восстановление пароля
 txt_link_twig_filters_functions: Twig Filters & Functions
 txt_link_theme_variables: Theme Variables
 txt_link_theme_configuration: Theme Configuration
+txt_link_yaml_syntax: YAML Syntax
 txt_license: License
 txt_themes: Themes
 txt_content: Content
