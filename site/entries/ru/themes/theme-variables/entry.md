@@ -42,7 +42,7 @@ title: Настраиваемые параметры темы
 
 Получить коллекцию записей
 
-Usage:
+Применение:
 
 ```
 {% set posts = entries.fetchAll('blog') %}
@@ -50,18 +50,18 @@ Usage:
 
 #### assets
 
-Add asset to the collection
+Добавить активы в коллекцию
 
-Usage:
+Применение:
 
 ```
 {% set site = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/site/site.min.css' %}
 {% do assets.add('css', site, 'site', 1) %}
 ```
 
-Get assets from the collection
+Получить активы из коллекции
 
-Usage:
+Применение:
 
 ```
 {% for assets_site in assets.get('css', 'site') %}
@@ -73,16 +73,16 @@ Usage:
 
 #### emitter
 
-Emitting events
+Происходящие события
 
-Usage:
+Применение:
 ```
 {% do emitter.emit('onThemeHeader') %}
 ```
 
-Emitting events in batches
+Выпуск событий партиями
 
-Usage:
+Применение:
 
 ```
 {% do emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) %}
@@ -92,13 +92,13 @@ Usage:
 
 Execute snippet
 
-Usage:
+Применение:
 
 ```
 {{ snippets.exec('google-analytics')|raw }}
 ```
 
-### Global Variables
+### Глобальные переменные
 
 ```
 {{ PATH_SITE }} {# Returns the path to the site directory (without trailing slash). #}
