@@ -197,25 +197,25 @@ entry
 
 #### path_for
 
-Returns the URL for a given route.
+Возвращает URL-адрес для данного маршрута.
 
-Usage:
+Применение:
 
     {{ path_for('profile') }}
     
 
 #### base_url
 
-Returns the Uri object's base URL.
+Возвращает базовый URL-адрес объекта Uri.
 
-Usage:
+Применение:
 
     {{ base_url() }}
     
 
 #### is_current_path
 
-Returns true is the provided route name and parameters are valid for the current path.
+Returns true (Возвращает true) - имя маршрута и параметры действительны для текущего маршрута.
 
     {% if is_current_path('profile') %}
         Show profile page
@@ -224,6 +224,6 @@ Returns true is the provided route name and parameters are valid for the current
 
 #### current_path
 
-Renders the current path, with or without the query string.
+Отображает текущий путь, со строкой запроса или без нее.
 
     {{ current_path() }}
