@@ -140,14 +140,14 @@ items:
 
 Мы рассмотрели словари выше, но есть еще кое-что.
 
-Как и массивы, вы можете добавлять словари в последовательность. We saw this format above. It’s how python prints dictionaries.
+Как и массивы, вы можете добавлять словари в последовательность. Мы видели этот формат выше. Это как python печатает словари.
 
 ```
 foo: { thing1: huey, thing2: louie, thing3: dewey }
 ```
 
-### Resources and Further Documentation
+### Ресурсы и дальнейшая документация
 
-* [Official YAML 1.2 Documentation](https://yaml.org/spec/1.2/spec.html)
-* [YAML Reference Card](https://yaml.org/refcard.html)
+* [Официальная документация YAML 1.2](https://yaml.org/spec/1.2/spec.html)
+* [Справочная карта YAML](https://yaml.org/refcard.html)
 * [YAML Lint](http://www.yamllint.com)
