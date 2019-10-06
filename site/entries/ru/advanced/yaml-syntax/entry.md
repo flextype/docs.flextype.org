@@ -1,20 +1,20 @@
 ---
-title: YAML Syntax
+title: Синтаксис YAML
 ---
 
-YAML (YAML Ain't Markup) is a human friendly data serialization language.
+YAML (YAML Ain't Markup) является дружественным человеческим языком специализации данных.
 
-Flextype uses YAML because it's as close to plain English as data serialization and configuration formats get. It has no curly braces, it allows you to omit quotation marks for strings in most cases, and it relies on indentation for structure, which makes it incredibly readable compared to other languages, such as JSON and XML.
+Flextype использует YAML, потому что он так близок к простому английскому языку, как специализация данных и конфигурация форматов получить. Он не имеет фигурных скобок, в большинстве случаев позволяет опустить кавычки для строк, а для структуры полагается на отступ, что делает его невероятно читаемым по сравнению с другими языками, такими как JSON и XML.
 
-YAML is used extensively in Flextype for its configuration files, fieldsets, and also in entries settings.
+YAML широко используется в Flextype для конфигурационных файлов, наборов полей, а также в настройках записей.
 
-### Basic Rules
+### Основные правила
 
-There are some rules that YAML has in place to avoid issues related to ambiguity in relation to various languages and editing programs. These rules make it possible for a single YAML file to be interpreted consistently, regardless of which application and/or library is being used to interpret it.
+Существуют некоторые правила, которые существуют в YAML, чтобы избежать вопросов, связанных с двусмысленностью в отношении различных языков и редактирования программ. Эти правила позволяют последовательно интерпретировать один файл YAML независимо от того, какое приложение или библиотека используется для его интерпретации.
 
-* YAML files should end in .yaml whenever possible in Flextype.
-* YAML is case sensitive.
-* YAML does not allow the use of tabs. Spaces are used instead as tabs are not universally supported.
+* YAML-файлы должны заканчиваться на .yaml, по возможности в Flextype.
+* YAML чувствительна к регистру.
+* YAML не позволяет использовать вкладки. Spaces are used instead as tabs are not universally supported.
 
 ### Datatypes
 
