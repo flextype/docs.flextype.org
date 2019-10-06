@@ -12,7 +12,7 @@ There are several **core objects** that are available to a Twig template, and ea
 
 Registry stored all flextype, themes and plugins settings.<br /> You can access Flextype registry via the registry object.
 
-Usage:
+Применение:
 
 ```
 {{ registry.settings.theme }} {# returns the currently configured theme #}
