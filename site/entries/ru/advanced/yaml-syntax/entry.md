@@ -54,9 +54,9 @@ bar: this is not a normal string\n
 
 YAML обрабатывает первое значение как заканчивающееся возвратом и подачей строки. Поскольку второе значение не цитируется, YAML рассматривает `\n` как два символа.
 
-YAML will not escape strings with single quotes, but the single quotes do avoid having string contents interpreted as document formatting.
+YAML не будет экранировать строки с одиночными кавычками, но одиночные кавычки не будут иметь содержимое строк, интерпретируемое как форматирование документа.
 
-String values can span more than one line. With the fold (greater than) character, you can specify a string in a block. But it’s interpreted without the newlines.
+Строковые значения могут охватывать более одной строки. С помощью символа складки (больше) можно указать строку в блоке. Но это интерпретируется без новых строк.
 
 ```
 foo: >
@@ -66,7 +66,7 @@ foo: >
   see?
 ```
 
-The block (pipe) character has a similar function, but YAML interprets the field exactly as is. So, we see the newlines where they are in the document.
+Символ блока (pipe) имеет схожую функцию, но YAML интерпретирует поле точно так же, как есть. Итак, мы видим в документе новые строки, где они находятся.
 
 ```
 foo: |
@@ -77,18 +77,18 @@ foo: |
 ```
 
 
-#### Nulls
+#### Недействительный
 
-You enter nulls with a tilde or the unquoted null string literal.
+Вы вводите нули с тильдой или цитируемым нулевым строковым литералом.
 
 ```
 foo: ~
 bar: null
 ```
 
-#### Booleans
+#### Логические значения
 
-YAML indicates boolean values with the keywords True, On and Yes for true. False is indicated with False, Off, or No.
+YAML указывает логические значения с ключевыми словами True, On и Yes для true. False обозначается как False, Off или No.
 
 ```
 foo: True
@@ -97,16 +97,16 @@ light: On
 TV: Off
 ```
 
-#### Arrays
+#### Массивы
 
-You can specify arrays or lists on a single line.
+Вы можете указать массивы или списки в одной строке.
 
 ```
 items: [ 1, 2, 3, 4, 5 ]
 names: [ "one", "two", "three", "four" ]
 ```
 
-Or, you can put them on multiple lines.
+Или вы можете поставить их на несколько строк.
 
 ```
 items:
@@ -122,7 +122,7 @@ names:
   - "four"
 ```
 
-The multiple line format is useful for lists that contain complex objects instead of scalars.
+Многострочный формат полезен для списков, содержащих сложные объекты, а не скаляры.
 
 ```
 items:
@@ -134,13 +134,13 @@ items:
       key: value
 ```
 
-An array can contain any valid YAML value. The values in a list do not have to be the same type.
+Массив может содержать любое допустимое значение YAML. Значения в списке не обязательно должны быть одного и того же типа.
 
-#### Dictionaries
+#### Словари
 
-We covered dictionaries above, but there’s more to them.
+Мы рассмотрели словари выше, но есть еще кое-что.
 
-Like arrays, you can put dictionaries inline. We saw this format above. It’s how python prints dictionaries.
+Как и массивы, вы можете добавлять словари в последовательность. We saw this format above. It’s how python prints dictionaries.
 
 ```
 foo: { thing1: huey, thing2: louie, thing3: dewey }
