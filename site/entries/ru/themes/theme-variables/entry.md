@@ -6,11 +6,11 @@ title: Настраиваемые параметры темы
 
 ### Основные объекты
 
-There are several **core objects** that are available to a Twig template, and each object has a set of **variables** and **functions**.
+Существует несколько основных объектов ****, которые доступны для шаблона Twig, и каждый объект имеет набор переменных **** и **функций**.
 
-#### registry
+#### реестр
 
-Registry stored all flextype, themes and plugins settings.<br /> You can access Flextype registry via the registry object.
+Реестр хранит все настройки flextype, тем и плагинов.<br /> Вы можете получить доступ к реестру Flextype через объект реестра.
 
 Применение:
 
@@ -18,13 +18,13 @@ Registry stored all flextype, themes and plugins settings.<br /> You can access 
 {{ registry.settings.theme }} {# returns the currently configured theme #}
 ```
 
-#### entry
+#### записи
 
-Because Flextype is built using the structure defined in the `/site/entries/` folder, each entry is represented by a entry object.
+Поскольку Flextype построен с использованием структуры, определенной в папке `/site/entries/`, каждая запись представлена объектом записи.
 
-The entry object is probably the most important object you will work with as it contains all the information about the current page you are currently on.
+Объект записи, вероятно, самый важный объект, с которым вы будете работать, так как он содержит всю информацию о текущей странице, на которой вы находитесь в данный момент.
 
-Usage:
+Применение:
 
 ```
 {{ entry.title }} {# returns the current entry title #}
@@ -32,17 +32,17 @@ Usage:
 
 #### entries
 
-Fetch single entry
+Получить одну запись
 
-Usage:
+Применение:
 
 ```
 {% set about_entry = entries.fetch('about') %}
 ```
 
-Fetch collection of entries
+Получить коллекцию записей
 
-Usage:
+Применение:
 
 ```
 {% set posts = entries.fetchAll('blog') %}
@@ -50,18 +50,18 @@ Usage:
 
 #### assets
 
-Add asset to the collection
+Добавить активы в коллекцию
 
-Usage:
+Применение:
 
 ```
 {% set site = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/site/site.min.css' %}
 {% do assets.add('css', site, 'site', 1) %}
 ```
 
-Get assets from the collection
+Получить активы из коллекции
 
-Usage:
+Применение:
 
 ```
 {% for assets_site in assets.get('css', 'site') %}
@@ -73,16 +73,16 @@ Usage:
 
 #### emitter
 
-Emitting events
+Происходящие события
 
-Usage:
+Применение:
 ```
 {% do emitter.emit('onThemeHeader') %}
 ```
 
-Emitting events in batches
+Выпуск событий партиями
 
-Usage:
+Применение:
 
 ```
 {% do emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) %}
@@ -92,13 +92,13 @@ Usage:
 
 Execute snippet
 
-Usage:
+Применение:
 
 ```
 {{ snippets.exec('google-analytics')|raw }}
 ```
 
-### Global Variables
+### Глобальные переменные
 
 ```
 {{ PATH_SITE }} {# Returns the path to the site directory (without trailing slash). #}
