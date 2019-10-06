@@ -10,7 +10,7 @@ Twig уже предоставляет обширный список [фильт
 
 #### shortcode
 
-Разбор кода
+Разбор
 
 Применение:
 
@@ -23,130 +23,130 @@ Twig уже предоставляет обширный список [фильт
 
 #### markdown
 
-Parse markdown
+Разбор
 
-Usage: markdown
+Применение: markdown
 
     {{ '**Bold text**'|markdown }}
     
 
-Result:
+Результат:
 
 **Bold text**
 
 #### tr
 
-Translate text
+Перевод текста
 
-Usage:
+Применение:
 
     {{ 'site_powered_by_flextype'|tr }}
     
 
-Result:
+Результат:
 
-Build fast, flexible, easier to manage websites with
+Создавайте быстрые, гибкие, простые в управлении веб-сайты с помощью
 <a href="http://flextype.org">Flextype</a>.
 
-Multiple filters can be chained. The output of one filter is applied to the next.
+Могут быть сцеплены несколько фильтров. Выход одного фильтра применяется к следующему.
 
-Usage:
+Применение:
 
     {{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
     
 
-Result:
+Результат:
 
 **Bold text** *Italic text*
 
-### Flextype Twig Functions
+### Flextype Twig Функции
 
-Twig functions are called directly with any parameters being passed in via parenthesis.
+Функции Twig вызываются напрямую с любыми параметрами, передаваемыми через скобки.
 
 #### yaml_decode
 
-Decode valid yaml string into array
+Декодируйте действительную строку из yaml в массив
 
-Usage:
+Применение:
 
     {{ yaml_decode('title: Hello World!').title }}
     
 
-Result:
+Результат:
 
 Hello World!
 
 #### yaml_encode
 
-Encode array into valid yaml string
+Кодировать массив в действительную строку yaml
 
-Usage:
+Применение:
 
     {{ yaml_encode({'title': 'Hello World!'})}}
     
 
-Result:
+Результат:
 
 title: 'Hello World!'
 
 #### json_decode
 
-Decode valid json string into array
+Декодируйте действительную строку из yaml в массив
 
-Usage:
+Применение:
 
     {{ json_decode('{"title": "Hello World!"}').title }}
     
 
-Result:
+Результат:
 
 Hello World!
 
 #### json_encode
 
-Encode array into valid json string
+Кодировать массив в действительную строку yaml
 
-Usage:
+Применение:
 
     {{ json_encode({'title': 'Hello World!'})}}
     
 
-Result:
+Результат:
 
 {"title": "Hello World!"}
 
 #### tr
 
-Translate string
+Перевести строку
 
-Usage:
+Применение:
 
     {{ tr('site_powered_by_flextype') }}
     
 
-Result:
+Результат:
 
-Build fast, flexible, easier to manage websites with
+Создавайте быстрые, гибкие, простые в управлении веб-сайты с помощью
 <a href="http://flextype.org">Flextype</a>.
 
 #### filesystem_list_contents
 
-List contents of a directory
+Считывает содержимое каталога
 
-Usage:
+Применение:
 
     {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
     
 
-Result:
+Результат:
 
 array (media)
 
 #### filesystem_has
 
-Check whether a file exists
+Проверьте наличие файла
 
-Usage:
+Применение:
 
     {% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
         Show something...
@@ -155,14 +155,14 @@ Usage:
 
 #### filesystem_read
 
-Read a file
+Открыть файл
 
-Usage:
+Применение:
 
     {{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
     
 
-Result:
+Результат:
 
     ---
     title: About
@@ -171,27 +171,27 @@ Result:
 
 #### filesystem_ext
 
-Get file extension
+Получить расширение файла
 
-Usage:
+Применение:
 
     {{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
     
 
-Result:
+Результат:
 
 .md
 
 #### filesystem_basename
 
-Get filename
+Получить имя файла
 
-Usage:
+Применение:
 
     {{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
     
 
-Result:
+Результат:
 
 entry
 
