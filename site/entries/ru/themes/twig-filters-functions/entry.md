@@ -1,23 +1,23 @@
 ---
-title: Twig Filters и функции
+title: Twig Фильтры и Функции
 ---
 
-Twig already provides an extensive list of [filters, functions, and tags](https://twig.symfony.com/doc/2.x/), Flextype also provides a selection of useful additions to make the process of theming easier.
+Twig уже предоставляет обширный список [фильтров, функций и тегов](https://twig.symfony.com/doc/2.x/), Flextype также предоставляет набор полезных дополнений, облегчающих процесс создания тем.
 
-### Flextype Twig Filters
+### Flextype Twig Фильтры
 
-Twig filters are applied to Twig variables by using the `|` character followed by the filter name. Parameters can be passed in just like Twig functions using parenthesis.
+Фильтры Twig применяются к переменным Twig, используя символ `|`, за которым следуют имя фильтра. Параметры могут передаваться точно так же, как Twig-функции в скобках.
 
 #### shortcode
 
-Parse shortcode
+Разбор кода
 
-Usage:
+Применение:
 
     {{ '[b]Bold text[/b]'|shortcode }}
     
 
-Result:
+Результат:
 
 **Bold text**
 
