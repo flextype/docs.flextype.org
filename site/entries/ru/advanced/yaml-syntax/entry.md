@@ -14,45 +14,45 @@ YAML широко используется в Flextype для конфигура
 
 * YAML-файлы должны заканчиваться на .yaml, по возможности в Flextype.
 * YAML чувствительна к регистру.
-* YAML не позволяет использовать вкладки. Spaces are used instead as tabs are not universally supported.
+* YAML не позволяет использовать вкладки. Вместо этого используются пробелы, так как вкладки не всегда поддерживаются.
 
-### Datatypes
+### Тип данных
 
-Values in YAML’s key-value pairs are scalar. They act like the scalar types in languages like Perl, Javascript, and Python. It’s usually good enough to enclose strings in quotes, leave numbers unquoted, and let the parser figure it out.
+Значения в парах ключ-значение YAML являются скалярными. Они действуют как скалярные типы в языках Perl, Javascript и Python. Обычно достаточно хорошо заключать строки в кавычки, оставлять цифры без кавычек и позволять парсеру разобраться в них.
 
-But that’s only the tip of the iceberg. YAML is capable of a great deal more.
+Но это только верхушка айсберга. YAML способен на гораздо большее.
 
-#### Key-Value Pairs and Dictionaries
+#### Пары ключевых слов и словари ключевых значений
 
-The key-value is YAML’s basic building block. Every item in a YAML document is a member of at least one dictionary. The key is always a string. The value is a scalar so that it can be any datatype.
+Ключевое значение является основным структурным элементом YAML. Каждый пункт в документе YAML является членом хотя бы одного словаря. Ключом всегда является строка. Значение является скалярным и может быть любым типом данных.
 
-So, as we’ve already seen, the value can be a string, a number, or another dictionary.
+Итак, как мы уже видели, значением может быть строка, число или другой словарь.
 
-#### Numeric types
+#### Числовые типы
 
-YAML recognizes numeric types. We saw floating point and integers above. YAML supports several other numeric types.
+YAML распознает числовые типы. Мы в идем двоеточие и целые числа ниже. YAML поддерживает несколько других цифровых типов.
 
 ```
 foo: 12345
 bar: 0x12d4
 ```
 
-#### Strings
+#### Строки
 
-YAML strings are Unicode. In most situations, you don’t have to specify them in quotes.
+YAML строки - это Unicode. В большинстве случаев, вам не нужно указывать их в кавычках.
 
 ```
 foo: this is a normal string
 ```
 
-If we want escape sequences handled, we need to use double quotes.
+Если мы хотим работать с управляющими последовательностями, нам нужно использовать двойные кавычки.
 
 ```
 foo: "this is not a normal string\n"
 bar: this is not a normal string\n
 ```
 
-YAML processes the first value as ending with a carriage return and linefeed. Since the second value is not quoted, YAML treats the `\n` as two characters.
+YAML обрабатывает первое значение как заканчивающееся возвратом и подачей строки. Поскольку второе значение не цитируется, YAML рассматривает `\n` как два символа.
 
 YAML will not escape strings with single quotes, but the single quotes do avoid having string contents interpreted as document formatting.
 
