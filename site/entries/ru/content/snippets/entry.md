@@ -1,20 +1,20 @@
 ---
-title: Snippets
+title: Фрагменты
 ---
 
-Snippets are extensions written on PHP/HTML/JS languages that add different features on the site.
+Фрагменты - это расширения, написанные на языках PHP/HTML/JS, которые добавляют различные возможности на сайте.
 
-Snippets are stored in `/site/snippets/` You can edit snippets manually using any text editor or via the admin panel in the snippets section.
+Фрагменты хранятся в следующих местах `/site/snippets/` Вы можете редактировать фрагменты вручную с помощью любого текстового редактора или с помощью панели администратора в разделе фрагменты.
 
-### Using snippets in the content {#using-snippets-in-the-content}
+### Использование фрагментов в контенте {#using-snippets-in-the-content}
 
-You can display the snippet in the page with a shortcode like this:
+Вы можете отобразить фрагмент на странице с помощью такого ярлыка, как этот:
 
     [snippet name="snippet_name"]
 
 
-### Snippets can be displayed in the template {#snippets-can-be-displayed-in-the-template}
+### Фрагменты могут быть отображены в шаблоне {#snippets-can-be-displayed-in-the-template}
 
-Display a snippet by its name:
+Отображение фрагмента по его названию:
 
     <?= Snippets::get('snippet_name') ?>
