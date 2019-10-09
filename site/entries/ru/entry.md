@@ -18,11 +18,12 @@ txt_link_twig_filters_functions: Twig Фильтры и Функции
 txt_link_theme_variables: Переменные темы
 txt_link_theme_configuration: Настройка темы
 txt_link_yaml_syntax: Синтаксис YAML
-txt_license: Лицензия
-txt_themes: Темы
-txt_content: Контент
-txt_advanced: Дополнительные параметры
-txt_language: Язык
+txt_link_entries_fetch: Entries Fetch
+txt_license: License
+txt_themes: Themes
+txt_content: Content
+txt_advanced: Advanced
+txt_language: Language
 ---
 
 Flextype был **основан в марте 2018** как легкая альтернатива другим тяжелым и устаревшим CMS. Многие люди используют сложные решения для простых страниц, без необходимости. Создавая эту систему управления контентом, мы сосредоточили внимание на простоте - даже новичок Вебмастер может адаптировать его шаблон и написать свой собственный плагин. Для этого мы внедрили простой, но мощный API.
