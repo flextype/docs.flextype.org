@@ -1,62 +1,62 @@
 ---
-title: YAML Syntax
+title: Синтаксис YAML
 ---
 
-YAML (YAML Ain't Markup) is a human friendly data serialization language.
+YAML (YAML Ain't Markup) является дружественным человеческим языком специализации данных.
 
-Flextype uses YAML because it's as close to plain English as data serialization and configuration formats get. It has no curly braces, it allows you to omit quotation marks for strings in most cases, and it relies on indentation for structure, which makes it incredibly readable compared to other languages, such as JSON and XML.
+Flextype использует YAML, потому что он так близок к простому английскому языку, как специализация данных и конфигурация форматов получить. Он не имеет фигурных скобок, в большинстве случаев позволяет опустить кавычки для строк, а для структуры полагается на отступ, что делает его невероятно читаемым по сравнению с другими языками, такими как JSON и XML.
 
-YAML is used extensively in Flextype for its configuration files, fieldsets, and also in entries settings.
+YAML широко используется в Flextype для конфигурационных файлов, наборов полей, а также в настройках записей.
 
-### Basic Rules
+### Основные правила
 
-There are some rules that YAML has in place to avoid issues related to ambiguity in relation to various languages and editing programs. These rules make it possible for a single YAML file to be interpreted consistently, regardless of which application and/or library is being used to interpret it.
+Существуют некоторые правила, которые существуют в YAML, чтобы избежать вопросов, связанных с двусмысленностью в отношении различных языков и редактирования программ. Эти правила позволяют последовательно интерпретировать один файл YAML независимо от того, какое приложение или библиотека используется для его интерпретации.
 
-* YAML files should end in .yaml whenever possible in Flextype.
-* YAML is case sensitive.
-* YAML does not allow the use of tabs. Spaces are used instead as tabs are not universally supported.
+* YAML-файлы должны заканчиваться на .yaml, по возможности в Flextype.
+* YAML чувствительна к регистру.
+* YAML не позволяет использовать вкладки. Вместо этого используются пробелы, так как вкладки не всегда поддерживаются.
 
-### Datatypes
+### Тип данных
 
-Values in YAML’s key-value pairs are scalar. They act like the scalar types in languages like Perl, Javascript, and Python. It’s usually good enough to enclose strings in quotes, leave numbers unquoted, and let the parser figure it out.
+Значения в парах ключ-значение YAML являются скалярными. Они действуют как скалярные типы в языках Perl, Javascript и Python. Обычно достаточно хорошо заключать строки в кавычки, оставлять цифры без кавычек и позволять парсеру разобраться в них.
 
-But that’s only the tip of the iceberg. YAML is capable of a great deal more.
+Но это только верхушка айсберга. YAML способен на гораздо большее.
 
-#### Key-Value Pairs and Dictionaries
+#### Пары ключевых слов и словари ключевых значений
 
-The key-value is YAML’s basic building block. Every item in a YAML document is a member of at least one dictionary. The key is always a string. The value is a scalar so that it can be any datatype.
+Ключевое значение является основным структурным элементом YAML. Каждый пункт в документе YAML является членом хотя бы одного словаря. Ключом всегда является строка. Значение является скалярным и может быть любым типом данных.
 
-So, as we’ve already seen, the value can be a string, a number, or another dictionary.
+Итак, как мы уже видели, значением может быть строка, число или другой словарь.
 
-#### Numeric types
+#### Числовые типы
 
-YAML recognizes numeric types. We saw floating point and integers above. YAML supports several other numeric types.
+YAML распознает числовые типы. Мы в идем двоеточие и целые числа ниже. YAML поддерживает несколько других цифровых типов.
 
 ```
 foo: 12345
 bar: 0x12d4
 ```
 
-#### Strings
+#### Строки
 
-YAML strings are Unicode. In most situations, you don’t have to specify them in quotes.
+YAML строки - это Unicode. В большинстве случаев, вам не нужно указывать их в кавычках.
 
 ```
 foo: this is a normal string
 ```
 
-If we want escape sequences handled, we need to use double quotes.
+Если мы хотим работать с управляющими последовательностями, нам нужно использовать двойные кавычки.
 
 ```
 foo: "this is not a normal string\n"
 bar: this is not a normal string\n
 ```
 
-YAML processes the first value as ending with a carriage return and linefeed. Since the second value is not quoted, YAML treats the `\n` as two characters.
+YAML обрабатывает первое значение как заканчивающееся возвратом и подачей строки. Поскольку второе значение не цитируется, YAML рассматривает `\n` как два символа.
 
-YAML will not escape strings with single quotes, but the single quotes do avoid having string contents interpreted as document formatting.
+YAML не будет экранировать строки с одиночными кавычками, но одиночные кавычки не будут иметь содержимое строк, интерпретируемое как форматирование документа.
 
-String values can span more than one line. With the fold (greater than) character, you can specify a string in a block. But it’s interpreted without the newlines.
+Строковые значения могут охватывать более одной строки. С помощью символа складки (больше) можно указать строку в блоке. Но это интерпретируется без новых строк.
 
 ```
 foo: >
@@ -66,7 +66,7 @@ foo: >
   see?
 ```
 
-The block (pipe) character has a similar function, but YAML interprets the field exactly as is. So, we see the newlines where they are in the document.
+Символ блока (pipe) имеет схожую функцию, но YAML интерпретирует поле точно так же, как есть. Итак, мы видим в документе новые строки, где они находятся.
 
 ```
 foo: |
@@ -77,18 +77,18 @@ foo: |
 ```
 
 
-#### Nulls
+#### Недействительный
 
-You enter nulls with a tilde or the unquoted null string literal.
+Вы вводите нули с тильдой или цитируемым нулевым строковым литералом.
 
 ```
 foo: ~
 bar: null
 ```
 
-#### Booleans
+#### Логические значения
 
-YAML indicates boolean values with the keywords True, On and Yes for true. False is indicated with False, Off, or No.
+YAML указывает логические значения с ключевыми словами True, On и Yes для true. False обозначается как False, Off или No.
 
 ```
 foo: True
@@ -97,16 +97,16 @@ light: On
 TV: Off
 ```
 
-#### Arrays
+#### Массивы
 
-You can specify arrays or lists on a single line.
+Вы можете указать массивы или списки в одной строке.
 
 ```
 items: [ 1, 2, 3, 4, 5 ]
 names: [ "one", "two", "three", "four" ]
 ```
 
-Or, you can put them on multiple lines.
+Или вы можете поставить их на несколько строк.
 
 ```
 items:
@@ -122,7 +122,7 @@ names:
   - "four"
 ```
 
-The multiple line format is useful for lists that contain complex objects instead of scalars.
+Многострочный формат полезен для списков, содержащих сложные объекты, а не скаляры.
 
 ```
 items:
@@ -134,20 +134,20 @@ items:
       key: value
 ```
 
-An array can contain any valid YAML value. The values in a list do not have to be the same type.
+Массив может содержать любое допустимое значение YAML. Значения в списке не обязательно должны быть одного и того же типа.
 
-#### Dictionaries
+#### Словари
 
-We covered dictionaries above, but there’s more to them.
+Мы рассмотрели словари выше, но есть еще кое-что.
 
-Like arrays, you can put dictionaries inline. We saw this format above. It’s how python prints dictionaries.
+Как и массивы, вы можете добавлять словари в последовательность. Мы видели этот формат выше. Это как python печатает словари.
 
 ```
 foo: { thing1: huey, thing2: louie, thing3: dewey }
 ```
 
-### Resources and Further Documentation
+### Ресурсы и дальнейшая документация
 
-* [Official YAML 1.2 Documentation](https://yaml.org/spec/1.2/spec.html)
-* [YAML Reference Card](https://yaml.org/refcard.html)
+* [Официальная документация YAML 1.2](https://yaml.org/spec/1.2/spec.html)
+* [Справочная карта YAML](https://yaml.org/refcard.html)
 * [YAML Lint](http://www.yamllint.com)
