@@ -8,6 +8,9 @@ Skip a specific number of entries (especially useful for pagination).
 
 Example
 
+Fetch blog posts and set first result 2
+
+
 ```
 {% set posts = entries.fetchAll('blog', {'set_first_result': 2}) %}
 
@@ -27,6 +30,10 @@ Result
 ### Set max result
 
 Limit the size of the returned results.
+
+Example
+
+Fetch blog posts and set max result 2
 
 ```
 {% set posts = entries.fetchAll('blog', {'set_max_result': 2}) %}
