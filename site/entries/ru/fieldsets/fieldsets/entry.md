@@ -1,5 +1,5 @@
 ---
-title: Fieldsets
+title: Наборы полей
 ---
 
-Fieldsets are the tool used by your Control Panel to create publish forms. They establish your content model. Essentially, a schema that defines your fields, data types, and the interface used to manage them.
+Наборы полей - это инструмент, используемый вашей панелью управления для создания форм публикации. Они определяют вашу модель контента. По сути, схема, которая определяет ваши поля, типы данных и интерфейс, используемый для их управления.
