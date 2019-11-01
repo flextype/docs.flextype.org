@@ -1,29 +1,29 @@
 ---
-title: Entries fetch
+title: Загрузка записей
 ---
 
-### Expressions
+### Условие
 
-* `eq` or `=` - Equals
-* `neq` or `<>` - Not equals
-* `lt` or `<` - Lower than
-* `gt` or `>` - Greater than
-* `lte` or `<=` - Lower than or equal to
-* `gte` or `>=` - Greater than or equal to
-* `in` - Included in an array of values
-* `nin` - Isn't included in an array of values
-* `contains` - Contains
-* `member_of` - Member of
-* `start_with` - Start with
-* `ends_with` - Ends with
+* `eq` или `=` - Равно
+* `neq` или `<>` - Не равно
+* `lt` или `<` - Меньше чем
+* `gt` или `>` - Больше чем
+* `lt` или `<` - Меньше чем
+* `gte` или `>=` - Больше или равно
+* `in` - Включено в массив значений
+* `nin` - Не включен в массив значений
+* `contains` - Содержит
+* `member_of` - Членство
+* `start_with` - Начать с
+* `ends_withс` - заканчивается
 
 ### where
 
-Sets the where expression.
+Задает место выражения.
 
-Example
+Пример
 
-Fetch blog posts where **category** is equals **bikes**
+Получить записи в блоге, где категория **** равна **велосипедам**
 
 ```
 {% set posts = entries.fetchAll('blog', {
@@ -41,11 +41,11 @@ Fetch blog posts where **category** is equals **bikes**
 
 ### and_where
 
-Sets the and_where expression(s).
+Устанавливает and_where выражение(и).
 
-Example
+Пример
 
-Fetch blog posts where **category** is equals **bikes** and where **brand** is equals **GT** and where **color** is equals **red**
+Получить сообщения в блоге, где категория **** равна **велосипедам** и где **бренд** равен **GT** и где **цвет** равен **красным**
 
 ```
 {% set posts = entries.fetchAll('blog', {
@@ -76,11 +76,11 @@ Fetch blog posts where **category** is equals **bikes** and where **brand** is e
 
 ### or_where
 
-Sets the or_where expression(s).
+Задает выражение(и) or_where.
 
-Example
+Пример
 
-Fetch blog posts where **brand** is equals **GT** or where **brand** is equals **Norco** or where **country** is equals **USA**
+Получить сообщения в блоге, где **бренд** равен **GT** или где **бренд** равен **Норко** или где **страна** равна **США**
 
 ```
 {% set posts = entries.fetchAll('blog', {
@@ -110,11 +110,11 @@ Fetch blog posts where **brand** is equals **GT** or where **brand** is equals *
 
 ### set_first_result
 
-Skip a specific number of entries (especially useful for pagination).
+Пропустить определенное количество записей (особенно полезное для нумерации).
 
-Example
+Пример
 
-Fetch blog posts and set first result 2
+Получить записи блога и задать первый результат 2
 
 ```
 {% set posts = entries.fetchAll('blog', {'set_first_result': 2}) %}
@@ -124,7 +124,7 @@ Fetch blog posts and set first result 2
 {% endfor %}
 ```
 
-Result
+Результат
 
 ```
 <h3>Lorem ipsum dolor sit amet</h3>
@@ -134,11 +134,11 @@ Result
 
 ### set_max_result
 
-Limit the size of the returned results.
+Ограничить размер возвращаемых результатов.
 
-Example
+Пример
 
-Fetch blog posts and set max result 2
+Получить записи блога и задать первый результат 2
 
 ```
 {% set posts = entries.fetchAll('blog', {'set_max_result': 2}) %}
@@ -148,7 +148,7 @@ Fetch blog posts and set max result 2
 {% endfor %}
 ```
 
-Result
+Результат
 
 ```
 <h3>Ullamco laboris nisi ut aliquip</h3>
@@ -157,12 +157,12 @@ Result
 
 ### order_by
 
-Sort according to a specific field and direction.
+Сортировать по определенному полю и направлению.
 
 
-Example
+Пример
 
-Fetch blog posts, order by field **title** and **asc**(ascending) direction
+Получить сообщения блога, заказать по полю **title** и **asc**(по возрастанию)
 
 ```
 {% set posts = entries.fetchAll('blog', {
@@ -177,7 +177,7 @@ Fetch blog posts, order by field **title** and **asc**(ascending) direction
 {% endfor %}
 ```
 
-Result
+Результат
 
 ```
 <h3>Allamco laboris nisi ut aliquip nisi ut aliquip</h3>
@@ -187,9 +187,9 @@ Result
 <h3>Ullamco laboris nisi ut aliquip</h3>
 ```
 
-Example
+Пример
 
-Fetch blog posts, order by field **title** and **desc**(descending) direction
+Получить сообщения блога, заказать по полю **title** и **asc**(по возрастанию)
 
 ```
 {% set posts = entries.fetchAll('blog', {
@@ -204,7 +204,7 @@ Fetch blog posts, order by field **title** and **desc**(descending) direction
 {% endfor %}
 ```
 
-Result
+Результат
 
 ```
 <h3>Ullamco laboris nisi ut aliquip</h3>
