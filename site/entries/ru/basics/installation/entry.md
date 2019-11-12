@@ -26,15 +26,26 @@ Flextype невероятно легко настроить и запустит�
 
 Вы можете легко установить Flextype с помощью Composer.
 
-      composer create-project flextype/flextype
+     composer create-project flextype/flextype
     
 
-Вероятно, вам понадобится внешние библиотеки для default-темы сайта с помощью Node Package Manager
+Also you may need to install vendor libs for default plugins and default theme. Go to your project folder, and run:
 
-      composer install
-      cd site/themes/default
-      npm install
-      gulp
+     cd site/plugins/admin
+     composer install
+     npm install
+     gulp
+    
+     cd ../../../
+    
+     cd site/plugins/site
+     composer install
+    
+     cd ../../../
+    
+     cd site/themes/default
+     npm install
+     gulp
     
 
 ### Использование командной строки

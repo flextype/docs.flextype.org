@@ -19,6 +19,7 @@ txt_link_theme_variables: Theme Variables
 txt_link_theme_configuration: Theme Configuration
 txt_link_yaml_syntax: YAML Syntax
 txt_link_entries_fetch: Entries Fetch
+txt_link_fieldsets: Fieldsets
 txt_license: License
 txt_themes: Themes
 txt_content: Content
