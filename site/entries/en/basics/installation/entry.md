@@ -16,7 +16,7 @@ Be sure you have at least PHP version 7.2.0+ by going to the terminal and typing
 
 ### Using (S)FTP
 
-[Download the latest version.](http://flextype.org/en/download)
+[Download the latest version.](http://flextype.org/en/downloads)
 
 Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, be sure to chmod the following directories (with containing files) to `755` (or `777`), so they are readable and writable by Flextype:
 
