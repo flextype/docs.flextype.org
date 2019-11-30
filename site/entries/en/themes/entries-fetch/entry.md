@@ -26,7 +26,7 @@ Example
 Fetch blog posts where **category** is equals **bikes**
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'category',
                                                 'expr': 'eq',
@@ -48,7 +48,7 @@ Example
 Fetch blog posts where **category** is equals **bikes** and where **brand** is equals **GT** and where **color** is equals **red**
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'category',
                                                 'expr': 'eq',
@@ -83,7 +83,7 @@ Example
 Fetch blog posts where **brand** is equals **GT** or where **brand** is equals **Norco** or where **country** is equals **USA**
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'brand',
                                                 'expr': 'eq',
@@ -117,7 +117,7 @@ Example
 Fetch blog posts and set first result 2
 
 ```
-{% set posts = entries.fetchAll('blog', {'set_first_result': 2}) %}
+{% set posts = entries.fetch('blog', {'set_first_result': 2}) %}
 
 {% for post in posts %}
     <h3>{{ post.title }}</h3>
@@ -141,7 +141,7 @@ Example
 Fetch blog posts and set max result 2
 
 ```
-{% set posts = entries.fetchAll('blog', {'set_max_result': 2}) %}
+{% set posts = entries.fetch('blog', {'set_max_result': 2}) %}
 
 {% for post in posts %}
     <h3>{{ post.title }}</h3>
@@ -165,7 +165,7 @@ Example
 Fetch blog posts, order by field **title** and **asc**(ascending) direction
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'order_by': {
                                                 'field': 'title',
                                                 'direction': 'asc'
@@ -192,7 +192,7 @@ Example
 Fetch blog posts, order by field **title** and **desc**(descending) direction
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'order_by': {
                                                 'field': 'title',
                                                 'direction': 'desc'
