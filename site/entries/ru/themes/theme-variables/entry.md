@@ -45,7 +45,9 @@ title: Настраиваемые параметры темы
 Применение:
 
 ```
-{% set posts = entries.fetchAll('blog') %}
+{% set posts = entries.fetch('blog', {}) %}
+or
+{% set posts = entries.fetchCollection('blog') %}
 ```
 
 #### assets
