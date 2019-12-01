@@ -26,7 +26,7 @@ title: Загрузка записей
 Получить записи в блоге, где категория **** равна **велосипедам**
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'category',
                                                 'expr': 'eq',
@@ -48,7 +48,7 @@ title: Загрузка записей
 Получить сообщения в блоге, где категория **** равна **велосипедам** и где **бренд** равен **GT** и где **цвет** равен **красным**
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'category',
                                                 'expr': 'eq',
@@ -83,7 +83,7 @@ title: Загрузка записей
 Получить сообщения в блоге, где **бренд** равен **GT** или где **бренд** равен **Норко** или где **страна** равна **США**
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'brand',
                                                 'expr': 'eq',
@@ -117,7 +117,7 @@ title: Загрузка записей
 Получить записи блога и задать первый результат 2
 
 ```
-{% set posts = entries.fetchAll('blog', {'set_first_result': 2}) %}
+{% set posts = entries.fetch('blog', {'set_first_result': 2}) %}
 
 {% for post in posts %}
     <h3>{{ post.title }}</h3>
@@ -141,7 +141,7 @@ title: Загрузка записей
 Получить записи блога и задать первый результат 2
 
 ```
-{% set posts = entries.fetchAll('blog', {'set_max_result': 2}) %}
+{% set posts = entries.fetch('blog', {'set_max_result': 2}) %}
 
 {% for post in posts %}
     <h3>{{ post.title }}</h3>
@@ -165,7 +165,7 @@ title: Загрузка записей
 Получить сообщения блога, заказать по полю **title** и **asc**(по возрастанию)
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'order_by': {
                                                 'field': 'title',
                                                 'direction': 'asc'
@@ -192,7 +192,7 @@ title: Загрузка записей
 Получить сообщения блога, заказать по полю **title** и **asc**(по возрастанию)
 
 ```
-{% set posts = entries.fetchAll('blog', {
+{% set posts = entries.fetch('blog', {
                                             'order_by': {
                                                 'field': 'title',
                                                 'direction': 'desc'
