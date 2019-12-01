@@ -46,3 +46,4 @@ Flextype - это проект с открытым исходным кодом, 
 
 * [Станьте спонсором на Patreon](https://www.patreon.com/awilum).
 * [Одноразовое пожертвование через PayPal, QIWI, Sberbank, Яндекс](http://flextype.org/en/one-time-donation)
+* [Visit our Sponsors & Backers page](http://flextype.org/en/sponsors)
