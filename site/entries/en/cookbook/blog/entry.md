@@ -75,9 +75,10 @@ sections:
 ## Create blog post fieldset
 `/site/fieldsets/blog-post.yaml`
 
-```
+```yaml
 title: Blog Post
 default_field: title
+hide: false
 sections:
   main:
     title: Main
@@ -116,7 +117,7 @@ sections:
 ## Create blog template
 `/site/themes/default/blog.html`
 
-```
+```twig
 {% extends "themes/default/templates/partials/base.html" %}
 
 {% block content %}
@@ -234,7 +235,7 @@ sections:
 ## Create blog post template
 `/site/themes/default/blog-post.html`
 
-```
+```twig
 {% extends "themes/default/templates/partials/base.html" %}
 
 {% block content %}
