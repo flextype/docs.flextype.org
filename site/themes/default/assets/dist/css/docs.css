@@ -134,12 +134,10 @@ ul {
 }
 
 code {
-    background: #ececec;
-    padding: 4px 10px;
-    font-size: 14px;
+    padding: 25px!important;
 }
 
-pre > code {
+pre {
     background: inherit;
     padding: 0;
 }
