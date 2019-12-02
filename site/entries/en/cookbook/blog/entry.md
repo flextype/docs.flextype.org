@@ -2,7 +2,7 @@
 title: Blog
 ---
 
-In this section you will learn how to build a simple blog with Flextype.
+A simple blog setup with Flextype.
 
 Structure:
 ```
