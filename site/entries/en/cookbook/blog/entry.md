@@ -72,6 +72,11 @@ sections:
 
 <br>
 
+### Result
+<img src="[base_url]/image/en/cookbook/blog/create-blog.png?q=70" />
+
+<br>
+
 ## Create blog post fieldset
 `/site/fieldsets/blog-post.yaml`
 
@@ -111,6 +116,11 @@ sections:
         type: textarea
         size: 12
 ```
+
+<br>
+
+### Result
+<img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?q=70" />
 
 <br>
 
