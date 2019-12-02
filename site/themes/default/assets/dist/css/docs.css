@@ -133,7 +133,7 @@ ul {
     list-style: circle;
 }
 
-code {
+pre > code {
     padding: 25px!important;
 }
 
