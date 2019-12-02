@@ -33,8 +33,10 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
-            {% set docs = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.min.css' %}
-            {% do assets.add('css', docs, 'site', 1) %}
+            {% set highlight_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/styles/github.css' %}
+            {% set docs_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.min.css' %}
+            {% do assets.add('css', highlight_css, 'site', 1) %}
+            {% do assets.add('css', docs_css, 'site', 2) %}
             {% for assets_site in assets.get('css', 'site') %}
                 {% for assets_by_priorities in assets_site %}
                     <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
@@ -79,6 +81,10 @@
                     <li><a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax">{{ entry_locale.txt_link_yaml_syntax }}</a></li>
                     <li><a href="{{ base_url() }}/{{ locale }}/advanced/password-recovery">{{ entry_locale.txt_link_password_recovery }}</a></li>
                 </ul>
+                <h4>{{ entry_locale.txt_cookbook }}</h4>
+                <ul>
+                    <li><a href="{{ base_url() }}/{{ locale }}/cookbook/blog">{{ entry_locale.txt_blog }}</a></li>
+                </ul>
                 <h4>Flextype API's</h4>
                 <ul>
                     <li><a href="{{ base_url() }}/{{ locale }}/api/core">Core</a></li>
@@ -116,6 +122,16 @@
             </div>
         </div>
 
+
+        {% set highlight_js = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/highlight.pack.js' %}
+        <script src="{{ highlight_js }}"></script>
+
+        <script>
+        hljs.configure({useBR: false});
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+        </script>
         {{ emitter.emit('onThemeTail') }}
     </body>
 </html>

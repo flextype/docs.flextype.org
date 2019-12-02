@@ -133,13 +133,11 @@ ul {
     list-style: circle;
 }
 
-code {
-    background: #ececec;
-    padding: 4px 10px;
-    font-size: 14px;
+pre > code {
+    padding: 25px!important;
 }
 
-pre > code {
+pre {
     background: inherit;
     padding: 0;
 }
