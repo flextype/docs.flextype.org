@@ -12,8 +12,9 @@ site
     └── blog-post.yaml  
 └── themes
     └── default
-        ├── blog.html  
-        └── blog-post.html  
+        └── templates
+            ├── blog.html  
+            └── blog-post.html  
 └── entries
     └── blog
         ├── entry.md  

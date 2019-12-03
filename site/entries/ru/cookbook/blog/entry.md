@@ -10,10 +10,16 @@ site
 └── fieldsets
     ├── blog.yaml  
     └── blog-post.yaml  
-themes
-└── default
-    ├── blog.html  
-    └── blog-post.html  
+└── themes
+    └── default
+        └── templates
+            ├── blog.html  
+            └── blog-post.html  
+└── entries
+    └── blog
+        ├── entry.md  
+        └── hello-world
+            └── entry.md
 ```
 
 <br>
@@ -72,6 +78,13 @@ sections:
 
 <br>
 
+### Blog entry
+`/site/entries/blog/entry.md`
+
+<img src="[base_url]/image/en/cookbook/blog/create-blog.png?q=70" />
+
+<br>
+
 ## Create blog post fieldset
 `/site/fieldsets/blog-post.yaml`
 
@@ -111,6 +124,13 @@ sections:
         type: textarea
         size: 12
 ```
+
+<br>
+
+### Blog post entry
+`/site/entries/blog/hello-world/entry.md`
+
+<img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?q=70" />
 
 <br>
 

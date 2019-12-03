@@ -52,8 +52,8 @@ Also you may need to install vendor libs for default plugins and default theme. 
 
 Если у вас есть доступ к командной строке, вы можете легко установить Flextype, выполнив несколько команд. Для начала создайте директорию, в которую хотите установить Flextype, если она ещё не создана. Затем перейдите в директорию и выполните следующие команды:
 
-      wget https://github.com/flextype/flextype/releases/download/v0.9.4/flextype-0.9.4.zip
-      unzip flextype-0.9.4.zip
+      wget https://github.com/flextype/flextype/releases/download/v0.9.6/flextype-0.9.6.zip
+      unzip flextype-0.9.6.zip
       chmod -R 0777 site/
     
 
