@@ -152,7 +152,7 @@ sections:
 
     {% if tag %}
         {# @todo get count from cache! #}
-        {% set entries_length = entries.fetchAll('blog', {
+        {% set entries_length = entries.fetch('blog', {
                                                             'where': {
                                                                 'key': 'tag',
                                                                 'expr': 'contains',
@@ -174,7 +174,7 @@ sections:
         {% set entries_offset = (page-1)*entries_limit %}
         {% if entries_offset < 0 %}{% set entries_offset = 0 %}{% endif %}
 
-        {% set entries = entries.fetchAll('blog', {
+        {% set entries = entries.fetch('blog', {
                                                     'where': {
                                                         'key': 'tag',
                                                         'expr': 'contains',
@@ -195,7 +195,7 @@ sections:
     {% else %}
 
         {# @todo get count from cache! #}
-        {% set entries_length = entries.fetchAll('blog', {
+        {% set entries_length = entries.fetch('blog', {
                                                             'where': {
                                                                 'key': 'visibility',
                                                                 'expr': 'nin',
@@ -212,7 +212,7 @@ sections:
         {% set entries_offset = (page-1)*entries_limit %}
         {% if entries_offset < 0 %}{% set entries_offset = 0 %}{% endif %}
 
-        {% set entries = entries.fetchAll('blog', {
+        {% set entries = entries.fetch('blog', {
                                                     'where': {
                                                         'key': 'visibility',
                                                         'expr': 'nin',
