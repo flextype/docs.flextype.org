@@ -50,9 +50,36 @@ sections:
         title: admin_description
         type: textarea
         size: 4/12
-  menu:
-    title: Menu
+  settings:
+    title: admin_settings
     fields:
+      general_heading:
+        title: admin_general
+        type: heading
+      description:
+        title: admin_description
+        type: textarea
+        size: 12
+        default: test!
+      template:
+        title: admin_template
+        type: template_select
+        size: 4/12
+      visibility:
+        title: admin_visibility
+        type: visibility_select
+        size: 4/12
+      published_at:
+        title: admin_published_at
+        type: datetimepicker
+        size: 4/12
+      routable:
+        title: admin_routable
+        type: routable_select
+        size: 4/12
+      menu_heading:
+        title: admin_menu
+        type: heading
       menu_item_title:
         title: admin_menu_item_title
         type: text
@@ -64,11 +91,7 @@ sections:
       menu_item_target:
         title: admin_menu_item_target
         type: select
-        options:
-          _self: _self
-          _blank: _blank
-          _parent: _parent
-          _top: _top
+        options: { _self: _self, _blank: _blank, _parent: _parent, _top: _top }
         size: 4/12
       menu_item_order:
         title: admin_menu_item_order
@@ -112,17 +135,60 @@ sections:
         title: admin_tags
         type: tags
         size: 8/12
-      published_at:
-        title: admin_published_at
-        type: datetimepicker
-        size: 4/12
   seo:
     title: Seo
     fields:
       description:
         title: admin_description
         type: textarea
+        size: 4/12
+  settings:
+    title: admin_settings
+    fields:
+      general_heading:
+        title: admin_general
+        type: heading
+      description:
+        title: admin_description
+        type: textarea
         size: 12
+        default: test!
+      template:
+        title: admin_template
+        type: template_select
+        size: 4/12
+      visibility:
+        title: admin_visibility
+        type: visibility_select
+        size: 4/12
+      published_at:
+        title: admin_published_at
+        type: datetimepicker
+        size: 4/12
+      routable:
+        title: admin_routable
+        type: routable_select
+        size: 4/12
+      menu_heading:
+        title: admin_menu
+        type: heading
+      menu_item_title:
+        title: admin_menu_item_title
+        type: text
+        size: 4/12
+      menu_item_url:
+        title: admin_menu_item_url
+        type: text
+        size: 4/12
+      menu_item_target:
+        title: admin_menu_item_target
+        type: select
+        options: { _self: _self, _blank: _blank, _parent: _parent, _top: _top }
+        size: 4/12
+      menu_item_order:
+        title: admin_menu_item_order
+        type: text
+        size: 4/12
 ```
 
 <br>
@@ -152,20 +218,20 @@ sections:
 
     {% if tag %}
         {# @todo get count from cache! #}
-        {% set entries_length = entries.fetchAll('blog', {
+        {% set entries_length = entries.fetch('blog', {
                                                             'where': {
                                                                 'key': 'tag',
                                                                 'expr': 'contains',
                                                                 'value': tag
                                                             },
-                                                            'and_where': {
+                                                            'and_where': [{
                                                                 'key': 'visibility',
                                                                 'expr': 'nin',
                                                                 'value': ['draft', 'hidden']
-                                                            }
+                                                            }]
                                                         })|length %}
 
-        {% set entries_pages = (entries_length/entries_limit)|round %}
+        {% set entries_pages = (entries_length/entries_limit)|round(0, 'ceil') %}
         {% if page < 1 %}
             {% set page = 1 %}
         {% elseif page > entries_pages %}
@@ -174,17 +240,17 @@ sections:
         {% set entries_offset = (page-1)*entries_limit %}
         {% if entries_offset < 0 %}{% set entries_offset = 0 %}{% endif %}
 
-        {% set entries = entries.fetchAll('blog', {
+        {% set entries = entries.fetch('blog', {
                                                     'where': {
                                                         'key': 'tag',
                                                         'expr': 'contains',
                                                         'value': tag
                                                     },
-                                                    'and_where': {
+                                                    'and_where': [{
                                                         'key': 'visibility',
                                                         'expr': 'nin',
                                                         'value': ['draft', 'hidden']
-                                                    },
+                                                    }],
                                                     'order_by': {
                                                         'field': 'published_at',
                                                         'direction': 'desc'
@@ -195,7 +261,7 @@ sections:
     {% else %}
 
         {# @todo get count from cache! #}
-        {% set entries_length = entries.fetchAll('blog', {
+        {% set entries_length = entries.fetch('blog', {
                                                             'where': {
                                                                 'key': 'visibility',
                                                                 'expr': 'nin',
@@ -203,16 +269,18 @@ sections:
                                                             }
                                                         })|length %}
 
-        {% set entries_pages = (entries_length/entries_limit)|round %}
+        {% set entries_pages = (entries_length/entries_limit)|round(0, 'ceil') %}
+
         {% if page < 1 %}
             {% set page = 1 %}
         {% elseif page > entries_pages %}
             {% set page = entries_pages %}
         {% endif %}
+
         {% set entries_offset = (page-1)*entries_limit %}
         {% if entries_offset < 0 %}{% set entries_offset = 0 %}{% endif %}
 
-        {% set entries = entries.fetchAll('blog', {
+        {% set entries = entries.fetch('blog', {
                                                     'where': {
                                                         'key': 'visibility',
                                                         'expr': 'nin',
@@ -241,7 +309,9 @@ sections:
         {% if (page - 1) > 0 %}
             <a href="?page={{ page - 1 }}{% if tag %}&tag={{ tag }}{% endif %}">&larr;</a>
         {% endif %}
-        {{ page }} / {{ entries_pages }}
+        {% if entries_pages is not null and entries_pages != 0 %}
+            {{ page }} / {{ entries_pages }}
+        {% endif %}
         {% if (page) < entries_pages %}
             <a href="?page={{ page + 1 }}{% if tag %}&tag={{ tag }}{% endif %}">&rarr;</a>
         {% endif %}
