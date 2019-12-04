@@ -25,7 +25,7 @@ Example
 
 Fetch blog posts where **category** is equals **bikes**
 
-```
+```twig
 {% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'category',
@@ -47,7 +47,7 @@ Example
 
 Fetch blog posts where **category** is equals **bikes** and where **brand** is equals **GT** and where **color** is equals **red**
 
-```
+```twig
 {% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'category',
@@ -82,7 +82,7 @@ Example
 
 Fetch blog posts where **brand** is equals **GT** or where **brand** is equals **Norco** or where **country** is equals **USA**
 
-```
+```twig
 {% set posts = entries.fetch('blog', {
                                             'where': {
                                                 'key': 'brand',
@@ -116,7 +116,7 @@ Example
 
 Fetch blog posts and set first result 2
 
-```
+```twig
 {% set posts = entries.fetch('blog', {'set_first_result': 2}) %}
 
 {% for post in posts %}
@@ -126,7 +126,7 @@ Fetch blog posts and set first result 2
 
 Result
 
-```
+```twig
 <h3>Lorem ipsum dolor sit amet</h3>
 <h3>Cillum dolore eu fugiat nulla pariatur</h3>
 <h3>Excepteur sint occaecat cupidatat non proident</h3>
@@ -140,7 +140,7 @@ Example
 
 Fetch blog posts and set max result 2
 
-```
+```twig
 {% set posts = entries.fetch('blog', {'set_max_result': 2}) %}
 
 {% for post in posts %}
@@ -150,7 +150,7 @@ Fetch blog posts and set max result 2
 
 Result
 
-```
+```twig
 <h3>Ullamco laboris nisi ut aliquip</h3>
 <h3>Allamco laboris nisi ut aliquip nisi ut aliquip</h3>
 ```
@@ -164,7 +164,7 @@ Example
 
 Fetch blog posts, order by field **title** and **asc**(ascending) direction
 
-```
+```twig
 {% set posts = entries.fetch('blog', {
                                             'order_by': {
                                                 'field': 'title',
@@ -179,7 +179,7 @@ Fetch blog posts, order by field **title** and **asc**(ascending) direction
 
 Result
 
-```
+```twig
 <h3>Allamco laboris nisi ut aliquip nisi ut aliquip</h3>
 <h3>Cillum dolore eu fugiat nulla pariatur</h3>
 <h3>Excepteur sint occaecat cupidatat non proident</h3>
@@ -191,7 +191,7 @@ Example
 
 Fetch blog posts, order by field **title** and **desc**(descending) direction
 
-```
+```twig
 {% set posts = entries.fetch('blog', {
                                             'order_by': {
                                                 'field': 'title',
@@ -206,7 +206,7 @@ Fetch blog posts, order by field **title** and **desc**(descending) direction
 
 Result
 
-```
+```twig
 <h3>Ullamco laboris nisi ut aliquip</h3>
 <h3>Lorem ipsum dolor sit amet</h3>
 <h3>Excepteur sint occaecat cupidatat non proident</h3>

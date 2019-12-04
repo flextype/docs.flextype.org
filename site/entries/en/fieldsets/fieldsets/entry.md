@@ -29,13 +29,13 @@ Form fields are an essential part of the fieldsets and have very powerful option
 | :------------- | :------------- | :------------- | :------------- |
 | title | string | | The field label title |
 | help | string | | Optional help text below the field |
-| size | string | 12 | The width of the field in the field grid. Available widths: `1/12` , `2/12`, `3/12`, `4/12`, `5/12`, `6/12`, `7/12`, `8/12`, `9/12`, `10/12`, `11/12`, `12` |
+| size | string | 12 | The width of the field in the field grid. Available widths: 1/12, 2/12, 3/12, 4/12, 5/12, 6/12, 7/12, 8/12, 9/12, 10/12, 11/12, 12 |
 | default | string | | Default value for the field, which will be used when entry is created |
 | attributes | array | | Any valid HTML attributes. For e.g. id, class, and etc... |
 
 ### Example
 
-```
+```yaml
 title: Default
 default_field: title
 icon: 'far fa-file-alt'

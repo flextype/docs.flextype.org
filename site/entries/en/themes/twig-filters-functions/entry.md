@@ -14,8 +14,9 @@ Parse shortcode
 
 Usage:
 
-    {{ '[b]Bold text[/b]'|shortcode }}
-
+```twig
+{{ '[b]Bold text[/b]'|shortcode }}
+```
 
 Result:
 
@@ -27,8 +28,9 @@ Parse markdown
 
 Usage: markdown
 
-    {{ '**Bold text**'|markdown }}
-
+```twig
+{{ '**Bold text**'|markdown }}
+```
 
 Result:
 
@@ -39,9 +41,9 @@ Result:
 Translate text
 
 Usage:
-
-    {{ 'site_powered_by_flextype'|tr }}
-
+```twig
+{{ 'site_powered_by_flextype'|tr }}
+```
 
 Result:
 
@@ -51,8 +53,9 @@ Build fast, flexible, easier to manage websites with
 Multiple filters can be chained. The output of one filter is applied to the next.
 
 Usage:
-
-    {{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
+```twig
+{{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
+```
 
 Result:
 
@@ -67,61 +70,65 @@ Twig functions are called directly with any parameters being passed in via paren
 Decode valid yaml string into array
 
 Usage:
-
-    {{ yaml_decode('title: Hello World!').title }}
-
+```twig
+{{ yaml_decode('title: Hello World!').title }}
+```
 
 Result:
-
+```twig
 Hello World!
+```
 
 #### yaml_encode
 
 Encode array into valid yaml string
 
 Usage:
-
-    {{ yaml_encode({'title': 'Hello World!'})}}
-
+```twig
+{{ yaml_encode({'title': 'Hello World!'})}}
+```
 
 Result:
-
+```yaml
 title: 'Hello World!'
+```
 
 #### json_decode
 
 Decode valid json string into array
 
 Usage:
-
-    {{ json_decode('{"title": "Hello World!"}').title }}
-
+```twig
+{{ json_decode('{"title": "Hello World!"}').title }}
+```
 
 Result:
-
+```twig
 Hello World!
+```
 
 #### json_encode
 
 Encode array into valid json string
 
 Usage:
-
-    {{ json_encode({'title': 'Hello World!'})}}
-
+```twig
+{{ json_encode({'title': 'Hello World!'})}}
+```
 
 Result:
-
+```json
 {"title": "Hello World!"}
+```
 
 #### tr
 
 Translate string
 
 Usage:
-
-    {{ tr('site_powered_by_flextype') }}
-
+```twig
+{{ tr('site_powered_by_flextype') }}
+```
 
 Result:
 
@@ -134,8 +141,9 @@ List contents of a directory
 
 Usage:
 
-    {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
-
+```twig
+{% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
+```
 
 Result:
 
@@ -146,36 +154,35 @@ array (media)
 Check whether a file exists
 
 Usage:
-
-    {% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
-        Show something...
-    {% endif %}
-
+```twig
+{% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
+    Show something...
+{% endif %}
+```
 
 #### filesystem_read
 
 Read a file
 
 Usage:
-
-    {{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-
+```twig
+{{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
 
 Result:
-
     ---
     title: About
     ---
-
+    Some text here
 
 #### filesystem_ext
 
 Get file extension
 
 Usage:
-
-    {{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-
+```twig
+{{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
 
 Result:
 
@@ -186,9 +193,9 @@ Result:
 Get filename
 
 Usage:
-
-    {{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-
+```
+{{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
 
 Result:
 
@@ -199,27 +206,31 @@ entry
 Returns the URL for a given route.
 
 Usage:
-
-    {{ path_for('profile') }}
+```twig
+{{ path_for('profile') }}
+```
 
 #### base_url
 
 Returns the Uri object's base URL.
 
 Usage:
-
-    {{ base_url() }}
+```twig
+{{ base_url() }}
+```
 
 #### is_current_path
 
 Returns true is the provided route name and parameters are valid for the current path.
-
-    {% if is_current_path('profile') %}
-        Show profile page
-    {% endif %}
+```twig
+{% if is_current_path('profile') %}
+    Show profile page
+{% endif %}
+```
 
 #### current_path
 
 Renders the current path, with or without the query string.
-
-    {{ current_path() }}
+```twig
+{{ current_path() }}
+```

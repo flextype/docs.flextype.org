@@ -6,21 +6,22 @@ Entries are the fundamental building-blocks of your site. Each entry in Flextype
 
 Here is a basic example `site/entries/my-entry/entry.md`:
 
-    ---
+<div class="file-header"><i class="far fa-file-alt"></i> site/entries/my-entry/entry.md</div>
+
     title: My Entry
     description: My entry description
     ---
     My entry content.
 
-
 Between triple-dashed lines, you can set predefined variables or even create custom ones of your own. These variables will then be available to you to access in site templates.
 
 Using in the templates:
 
-    <h1>{{ entry.content }}</h1>
-    <p>{{ entry.description }}</p>
-    {{ entry.content }}
-
+```twig
+<h1>{{ entry.content }}</h1>
+<p>{{ entry.description }}</p>
+{{ entry.content }}
+```
 
 ### Entries and Urls structure in Flextype
 
@@ -61,5 +62,6 @@ Example:
 
 
 Using in the templates:
-
-    {{ entry.author.twitter }}
+```twig
+{{ entry.author.twitter }}
+```
