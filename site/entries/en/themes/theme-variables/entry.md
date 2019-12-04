@@ -15,7 +15,7 @@ You can access Flextype registry via the registry object.
 
 Usage:
 
-```
+```twig
 {{ registry.settings.theme }} {# returns the currently configured theme #}
 ```
 
@@ -27,7 +27,7 @@ The entry object is probably the most important object you will work with as it 
 
 Usage:
 
-```
+```twig
 {{ entry.title }} {# returns the current entry title #}
 ```
 
@@ -37,7 +37,7 @@ Fetch single entry
 
 Usage:
 
-```
+```twig
 {% set about_entry = entries.fetch('about') %}
 ```
 
@@ -45,7 +45,7 @@ Fetch collection of entries
 
 Usage:
 
-```
+```twig
 {% set posts = entries.fetch('blog', {}) %}
 or
 {% set posts = entries.fetchCollection('blog') %}
@@ -57,7 +57,7 @@ Add asset to the collection
 
 Usage:
 
-```
+```twig
 {% set site = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/site/site.min.css' %}
 {% do assets.add('css', site, 'site', 1) %}
 ```
@@ -66,7 +66,7 @@ Get assets from the collection
 
 Usage:
 
-```
+```twig
 {% for assets_site in assets.get('css', 'site') %}
     {% for assets_by_priorities in assets_site %}
         <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
@@ -79,7 +79,7 @@ Usage:
 Emitting events
 
 Usage:
-```
+```twig
 {% do emitter.emit('onThemeHeader') %}
 ```
 
@@ -87,7 +87,7 @@ Emitting events in batches
 
 Usage:
 
-```
+```twig
 {% do emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) %}
 ```
 
@@ -97,13 +97,13 @@ Execute snippet
 
 Usage:
 
-```
+```twig
 {{ snippets.exec('google-analytics')|raw }}
 ```
 
 ### Global Variables
 
-```
+```twig
 {{ PATH_SITE }} {# Returns the path to the site directory (without trailing slash). #}
 {{ PATH_PLUGINS }} {# Returns the plugins to the root directory (without trailing slash). #}
 {{ PATH_THEMES }} {# Returns the path to the themes directory (without trailing slash). #}
