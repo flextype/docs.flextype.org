@@ -14,7 +14,7 @@ title: Настраиваемые параметры темы
 
 Применение:
 
-```
+```twig
 {{ registry.settings.theme }} {# returns the currently configured theme #}
 ```
 
@@ -26,7 +26,7 @@ title: Настраиваемые параметры темы
 
 Применение:
 
-```
+```twig
 {{ entry.title }} {# returns the current entry title #}
 ```
 
@@ -36,7 +36,7 @@ title: Настраиваемые параметры темы
 
 Применение:
 
-```
+```twig
 {% set about_entry = entries.fetch('about') %}
 ```
 
@@ -44,7 +44,7 @@ title: Настраиваемые параметры темы
 
 Применение:
 
-```
+```twig
 {% set posts = entries.fetch('blog', {}) %}
 or
 {% set posts = entries.fetchCollection('blog') %}
@@ -56,7 +56,7 @@ or
 
 Применение:
 
-```
+```twig
 {% set site = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/site/site.min.css' %}
 {% do assets.add('css', site, 'site', 1) %}
 ```
@@ -65,7 +65,7 @@ or
 
 Применение:
 
-```
+```twig
 {% for assets_site in assets.get('css', 'site') %}
     {% for assets_by_priorities in assets_site %}
         <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
@@ -78,7 +78,7 @@ or
 Происходящие события
 
 Применение:
-```
+```twig
 {% do emitter.emit('onThemeHeader') %}
 ```
 
@@ -86,7 +86,7 @@ or
 
 Применение:
 
-```
+```twig
 {% do emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) %}
 ```
 
@@ -96,13 +96,13 @@ Execute snippet
 
 Применение:
 
-```
+```twig
 {{ snippets.exec('google-analytics')|raw }}
 ```
 
 ### Глобальные переменные
 
-```
+```twig
 {{ PATH_SITE }} {# Returns the path to the site directory (without trailing slash). #}
 {{ PATH_PLUGINS }} {# Returns the plugins to the root directory (without trailing slash). #}
 {{ PATH_THEMES }} {# Returns the path to the themes directory (without trailing slash). #}
