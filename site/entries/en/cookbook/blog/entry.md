@@ -201,7 +201,7 @@ sections:
 <br>
 
 ## Create blog template
-`/site/themes/default/blog.html`
+`/site/themes/default/templates/blog.html`
 
 ```twig
 {% extends "themes/default/templates/partials/base.html" %}
@@ -323,7 +323,7 @@ sections:
 <br>
 
 ## Create blog post template
-`/site/themes/default/blog-post.html`
+`/site/themes/default/templates/blog-post.html`
 
 ```twig
 {% extends "themes/default/templates/partials/base.html" %}
