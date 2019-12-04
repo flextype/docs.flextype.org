@@ -14,8 +14,9 @@ Twig уже предоставляет обширный список [фильт
 
 Применение:
 
-    {{ '[b]Bold text[/b]'|shortcode }}
-    
+```twig
+{{ '[b]Bold text[/b]'|shortcode }}
+```
 
 Результат:
 
@@ -27,8 +28,9 @@ Twig уже предоставляет обширный список [фильт
 
 Применение: markdown
 
-    {{ '**Bold text**'|markdown }}
-    
+```twig
+{{ '**Bold text**'|markdown }}
+```
 
 Результат:
 
@@ -40,8 +42,9 @@ Twig уже предоставляет обширный список [фильт
 
 Применение:
 
-    {{ 'site_powered_by_flextype'|tr }}
-    
+```twig
+{{ 'site_powered_by_flextype'|tr }}
+```
 
 Результат:
 
@@ -52,8 +55,9 @@ Twig уже предоставляет обширный список [фильт
 
 Применение:
 
-    {{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
-    
+```twig
+{{ '[b]Bold text[/b] *Italic text*'|shortcode|markdown }}
+```
 
 Результат:
 
@@ -69,74 +73,88 @@ Twig уже предоставляет обширный список [фильт
 
 Применение:
 
-    {{ yaml_decode('title: Hello World!').title }}
-    
+```twig
+{{ yaml_decode('title: Hello World!').title }}
+```
 
 Результат:
 
+```twig
 Hello World!
+```
 
 #### yaml_encode
 
-Кодировать массив в действительную строку yaml
+Encode array into valid yaml string
 
-Применение:
+Usage:
 
-    {{ yaml_encode({'title': 'Hello World!'})}}
-    
+```twig
+{{ yaml_encode({'title': 'Hello World!'})}}
+```
 
-Результат:
+Result:
 
+```yaml
 title: 'Hello World!'
+```
 
 #### json_decode
 
-Декодируйте действительную строку из yaml в массив
+Decode valid json string into array
 
-Применение:
+Usage:
 
-    {{ json_decode('{"title": "Hello World!"}').title }}
-    
+```twig
+{{ json_decode('{"title": "Hello World!"}').title }}
+```
 
-Результат:
+Result:
 
+```twig
 Hello World!
+```
 
 #### json_encode
 
-Кодировать массив в действительную строку yaml
+Encode array into valid json string
 
-Применение:
+Usage:
 
-    {{ json_encode({'title': 'Hello World!'})}}
-    
+```twig
+{{ json_encode({'title': 'Hello World!'})}}
+```
 
-Результат:
+Result:
 
+```json
 {"title": "Hello World!"}
+```
 
 #### tr
 
-Перевести строку
+Translate string
 
 Применение:
 
-    {{ tr('site_powered_by_flextype') }}
-    
+```twig
+{{ tr('site_powered_by_flextype') }}
+```
 
 Результат:
 
-Создавайте быстрые, гибкие, простые в управлении веб-сайты с помощью
+Build fast, flexible, easier to manage websites with
 <a href="http://flextype.org">Flextype</a>.
 
 #### filesystem_list_contents
 
-Считывает содержимое каталога
+List contents of a directory
 
 Применение:
 
-    {% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
-    
+```twig
+{% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
+```
 
 Результат:
 
@@ -144,47 +162,45 @@ array (media)
 
 #### filesystem_has
 
-Проверьте наличие файла
+Check whether a file exists
 
 Применение:
 
-    {% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
-        Show something...
-    {% endif %}
-    
+```twig
+{% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
+    Show something...
+{% endif %}
+```
 
 #### filesystem_read
 
-Открыть файл
+Read a file
 
-Применение:
+Usage:
 
-    {{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-    
+```twig
+{{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
 
-Результат:
-
-    ---
-    title: About
-    ---
-    
+Result: \--- title: About \--- Some text here
 
 #### filesystem_ext
 
-Получить расширение файла
+Get file extension
 
-Применение:
+Usage:
 
-    {{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-    
+```twig
+{{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
 
-Результат:
+Result:
 
 .md
 
 #### filesystem_basename
 
-Получить имя файла
+Get filename
 
 Применение:
 
@@ -197,33 +213,38 @@ entry
 
 #### path_for
 
-Возвращает URL-адрес для данного маршрута.
+Returns the URL for a given route.
 
 Применение:
 
-    {{ path_for('profile') }}
-    
+```twig
+{{ path_for('profile') }}
+```
 
 #### base_url
 
-Возвращает базовый URL-адрес объекта Uri.
+Returns the Uri object's base URL.
 
-Применение:
+Usage:
 
-    {{ base_url() }}
-    
+```twig
+{{ base_url() }}
+```
 
 #### is_current_path
 
-Returns true (Возвращает true) - имя маршрута и параметры действительны для текущего маршрута.
+Returns true is the provided route name and parameters are valid for the current path.
 
-    {% if is_current_path('profile') %}
-        Show profile page
-    {% endif %}
-    
+```twig
+{% if is_current_path('profile') %}
+    Show profile page
+{% endif %}
+```
 
 #### current_path
 
-Отображает текущий путь, со строкой запроса или без нее.
+Renders the current path, with or without the query string.
 
-    {{ current_path() }}
+```twig
+{{ current_path() }}
+```
