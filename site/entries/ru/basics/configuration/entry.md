@@ -7,6 +7,8 @@ Flextype позволяет конфигурировать сайт любым �
 
 Вы можете обновить и создать конфигурацию сайта, отредактировав файл.`/site/config/settings.yaml`
 
+<div class="file-header"><i class="far fa-file-alt"></i> /site/config/settings.yaml</div>
+
 ```
 # The title of the website
 title: Flextype
@@ -240,4 +242,8 @@ image:
   driver: gd
 ```
 
-Также вы можете обновить любые настройки сайта в Панели администратора на странице Настройки.
+<br />
+
+Also you can update any site setting in Admin Panel on the Settings page.
+
+<img src="[base_url]/image/en/basics/configuration/settings.png?q=70" />
