@@ -10,7 +10,9 @@ title: Конфигурация темы
 
 Пример информации из `/site/themes/default/theme.yaml`:
 
-```
+<div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/theme.yaml</div>
+
+```yaml
 name: Default
 version: 1.0.0
 description: Default theme for Flextype
@@ -27,14 +29,14 @@ license: MIT
 
 Использовать:
 
-```
+```twig
 Theme name: {{ registry.themes.default.name }}
 Theme version: {{ registry.themes.default.version }}
 ```
 
 Результат:
 
-```
+```twig
 Theme name: Default
 Theme version: 1.0.0
 ```
@@ -43,7 +45,7 @@ Theme version: 1.0.0
 
 Использовать:
 
-```
+```php
 $theme_name = $flextype->registry->get('themes.default.name');
 $theme_version = $flextype->registry->get('themes.default.version');
 ```
@@ -54,20 +56,20 @@ $theme_version = $flextype->registry->get('themes.default.version');
 
 Например, давайте рассмотрим тему Default (По умолчанию) и в корневой папке темы есть файл settings.yaml. Содержимое этого конфигурационного файла выглядит следующим образом:
 
-```
+```yaml
 enabled: true
 ```
 
 Давайте добавим некоторые пользовательские настройки тем. Открыть `/site/themes/default/settings.yaml` и добавить новую переменную с значением `highlight: red`
 
-```
+```yaml
 enabled: true
 highlight: red
 ```
 
 Затем в шаблонах тем вы можете получить доступ к этой переменной с помощью объекта `registry.themes.default.`:object:
 
-```
+```twig
 <h1 style="color:{{ registry.themes.default.highlight }}">
     BUILD FAST, FLEXIBLE, EASIER TO MANAGE WEBSITES WITH FLEXTYPE.
 </h1>
@@ -79,6 +81,6 @@ highlight: red
 
 В PHP вы можете получить доступ к текущей конфигурации тем следующим образом:
 
-```
+```php
 $highlight = $flextype->registry->get('themes.default.highlight');
 ```

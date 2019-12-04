@@ -5,27 +5,28 @@ title: Blog
 A simple blog setup with Flextype.
 
 Structure:
-```
-site
-└── fieldsets
-    ├── blog.yaml  
-    └── blog-post.yaml  
-└── themes
-    └── default
-        └── templates
-            ├── blog.html  
-            └── blog-post.html  
-└── entries
-    └── blog
-        ├── entry.md  
-        └── hello-world
-            └── entry.md
-```
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> site</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> fieldsets</li>
+    <li class="file-list-level-3"><i class="far fa-file-alt"></i> blog.yaml</li>
+    <li class="file-list-level-3"><i class="far fa-file-alt"></i> blog-post.yaml</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
+    <li class="file-list-level-3"><i class="fas fa-folder"></i> default</li>
+    <li class="file-list-level-4"><i class="fas fa-folder"></i> templates</li>
+    <li class="file-list-level-5"><i class="far fa-file-alt"></i> blog.html</li>
+    <li class="file-list-level-5"><i class="far fa-file-alt"></i> blog-post.html</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> entries</li>
+    <li class="file-list-level-3"><i class="fas fa-folder"></i> blog</li>
+    <li class="file-list-level-4"><i class="far fa-file-alt"></i> entry.md</li>
+    <li class="file-list-level-4"><i class="fas fa-folder"></i> hello-world</li>
+    <li class="file-list-level-5"><i class="far fa-file-alt"></i> entry.md</li>
+</ul>
 
 <br>
 
 ## Create blog fieldset
-`/site/fieldsets/blog.yaml`
+
+<div class="file-header"><i class="far fa-file-alt"></i> /site/fieldsets/blog.yaml</div>
 
 ```yaml
 title: Blog
@@ -102,14 +103,16 @@ sections:
 <br>
 
 ### Blog entry
-`/site/entries/blog/entry.md`
+
+<div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/blog/create-blog.png?q=70" />
 
 <br>
 
 ## Create blog post fieldset
-`/site/fieldsets/blog-post.yaml`
+
+<div class="file-header"><i class="far fa-file-alt"></i> /site/fieldsets/blog-post.yaml</div>
 
 ```yaml
 title: Blog Post
@@ -194,14 +197,16 @@ sections:
 <br>
 
 ### Blog post entry
-`/site/entries/blog/hello-world/entry.md`
+
+<div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?q=70" />
 
 <br>
 
 ## Create blog template
-`/site/themes/default/templates/blog.html`
+
+<div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/templates/blog.html</div>
 
 ```twig
 {% extends "themes/default/templates/partials/base.html" %}
@@ -323,7 +328,8 @@ sections:
 <br>
 
 ## Create blog post template
-`/site/themes/default/templates/blog-post.html`
+
+<div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/templates/blog-post.html</div>
 
 ```twig
 {% extends "themes/default/templates/partials/base.html" %}
