@@ -17,10 +17,11 @@ Between triple-dashed lines, you can set predefined variables or even create cus
 
 Using in the templates:
 
-    <h1>{{ entry.content }}</h1>
-    <p>{{ entry.description }}</p>
-    {{ entry.content }}
-
+```twig
+<h1>{{ entry.content }}</h1>
+<p>{{ entry.description }}</p>
+{{ entry.content }}
+```
 
 ### Entries and Urls structure in Flextype
 
@@ -61,5 +62,6 @@ Example:
 
 
 Using in the templates:
-
-    {{ entry.author.twitter }}
+```twig
+{{ entry.author.twitter }}
+```
