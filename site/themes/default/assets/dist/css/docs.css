@@ -139,6 +139,20 @@ th, td {
     vertical-align: middle;
 }
 
+.flextype .h2 {
+    font-size: 36px;
+    line-height: 36px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.flextype .h3 {
+    letter-spacing: 0.9px;
+    line-height: 36px;
+    padding-top: 0;
+    font-size: 20px;
+    margin-top: 0;
+}
 
 
 .markdown-body h1 {
@@ -174,8 +188,20 @@ ul {
     list-style: circle;
 }
 
+li {
+    margin-bottom: 2px;
+}
+
 pre > code {
     padding: 25px!important;
+    font-family: "noirpro-light", sans-serif;
+}
+
+code {
+    background: black;
+    color: white;
+    padding: 2px 10px;
+    font-family: "noirpro-light", sans-serif;
 }
 
 pre {
