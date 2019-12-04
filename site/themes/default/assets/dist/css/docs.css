@@ -223,10 +223,23 @@ code {
 }
 
 .file-list-level-2 {
-    padding-left: 15px;
+    padding-left: 18px;
 }
+
 .file-list-level-3 {
-    padding-left: 30px;
+    padding-left: 36px;
+}
+
+.file-list-level-4 {
+    padding-left: 54px;
+}
+
+.file-list-level-5 {
+    padding-left: 72px;
+}
+
+.file-list-level-6 {
+    padding-left: 90px;
 }
 
 .file-header {
