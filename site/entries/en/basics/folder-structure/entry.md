@@ -93,7 +93,7 @@ Snippets are stored in this folder.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> aсcounts</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> accounts</li>
 </ul>
 
 Accounts are stored in this folder.
