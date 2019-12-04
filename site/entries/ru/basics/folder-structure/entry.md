@@ -91,7 +91,7 @@ title: Структура папок
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> aсcounts</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> accounts</li>
 </ul>
 
 В этой папке хранятся учетные записи.
