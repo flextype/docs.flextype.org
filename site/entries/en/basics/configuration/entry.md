@@ -241,4 +241,8 @@ image:
   driver: gd
 ```
 
+<br>
+
 Also you can update any site setting in Admin Panel on the Settings page.
+
+<img src="[base_url]/image/en/basics/configuration/settings.png?q=70" />
