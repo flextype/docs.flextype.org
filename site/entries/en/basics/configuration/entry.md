@@ -7,6 +7,7 @@ All Flextype configuration files are written in YAML syntax with a `.yaml` file 
 
 You can update and create site configuration by editing file `/site/config/settings.yaml`
 
+<div class="file-header"><i class="far fa-file-alt"></i> /site/config/settings.yaml</div>
 ```
 # The title of the website
 title: Flextype
