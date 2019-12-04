@@ -10,7 +10,8 @@ Information from the currently active theme can be had from the `registry` objec
 
 Example information from `/site/themes/default/theme.yaml`:
 
-```
+<div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/theme.yaml</div>
+```yaml
 name: Default
 version: 1.0.0
 description: Default theme for Flextype
@@ -27,14 +28,14 @@ You can reach any of these items via `registry.themes` by using the standard dot
 
 Usage:
 
-```
+```twig
 Theme name: {{ registry.themes.default.name }}
 Theme version: {{ registry.themes.default.version }}
 ```
 
 Result:
 
-```
+```twig
 Theme name: Default
 Theme version: 1.0.0
 ```
@@ -43,7 +44,7 @@ You can also reach these same values from a Fextype plugin with PHP syntax:
 
 Usage:
 
-```
+```php
 $theme_name = $flextype->registry->get('themes.default.name');
 $theme_version = $flextype->registry->get('themes.default.version');
 ```
@@ -54,20 +55,20 @@ Theme's have configuration files, named `settings.yaml` located in `/site/themes
 
 For example, let us consider the Default theme and there is a file called settings.yaml in the theme's root folder. The contents of this configuration file look like this:
 
-```
+```yaml
 enabled: true
 ```
 
 Let us add some custom theme settings. Open `/site/themes/default/settings.yaml` and add new variable with value `highlight: red`
 
-```
+```yaml
 enabled: true
 highlight: red
 ```
 
 Then in your theme templates you can access these variable using the `registry.themes.default` object:
 
-```
+```twig
 <h1 style="color:{{ registry.themes.default.highlight }}">
     BUILD FAST, FLEXIBLE, EASIER TO MANAGE WEBSITES WITH FLEXTYPE.
 </h1>
@@ -80,6 +81,6 @@ Result:
 
 In PHP you can access the current theme configuration like this:
 
-```
+```php
 $highlight = $flextype->registry->get('themes.default.highlight');
 ```
