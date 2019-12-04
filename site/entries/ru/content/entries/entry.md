@@ -6,7 +6,8 @@ title: Записи
 
 Вот базовый пример: `сайт/записи/my-entry/entry.md`:
 
-    ---
+<div class="file-header"><i class="far fa-file-alt"></i> site/entries/my-entry/entry.md</div>
+
     title: My Entry
     description: My entry description
     ---
@@ -17,10 +18,11 @@ title: Записи
 
 Использование в шаблонах:
 
-    <h1>{{ entry.content }}</h1>
-    <p>{{ entry.description }}</p>
-    {{ entry.content }}
-    
+```twig
+<h1>{{ entry.content }}</h1>
+<p>{{ entry.description }}</p>
+{{ entry.content }}
+```
 
 ### Структура записей и Url-адресов в Flextype
 
@@ -62,4 +64,6 @@ Example:
 
 Using in the templates:
 
-    {{ entry.author.twitter }}
+```twig
+{{ entry.author.twitter }}
+```
