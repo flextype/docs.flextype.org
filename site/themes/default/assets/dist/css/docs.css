@@ -193,7 +193,7 @@ li {
 }
 
 pre > code {
-    padding: 25px!important;
+    padding: 20px!important;
     font-family: "noirpro-light", sans-serif;
     font-size: 20px;
 }
@@ -207,7 +207,7 @@ code {
 }
 
 .file {
-    padding: 25px!important;
+    padding: 20px!important;
     background: black;
     color: white;
     font-family: "noirpro-light", sans-serif;
@@ -221,7 +221,7 @@ code {
 }
 
 .file-header {
-    padding: 25px!important;
+    padding: 20px!important;
     background: black;
     color: white;
     font-family: "noirpro-light", sans-serif;
