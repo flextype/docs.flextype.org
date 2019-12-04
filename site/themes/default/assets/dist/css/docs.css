@@ -195,13 +195,41 @@ li {
 pre > code {
     padding: 25px!important;
     font-family: "noirpro-light", sans-serif;
+    font-size: 20px;
 }
 
 code {
+    font-size: 20px;
     background: black;
     color: white;
     padding: 2px 10px;
     font-family: "noirpro-light", sans-serif;
+}
+
+.file {
+    padding: 25px!important;
+    background: black;
+    color: white;
+    font-family: "noirpro-light", sans-serif;
+    margin-bottom: 20px;
+    list-style: none;
+    margin-left: 0;
+}
+
+.file i {
+    margin-right: 10px;
+}
+
+.file-header {
+    padding: 25px!important;
+    background: black;
+    color: white;
+    font-family: "noirpro-light", sans-serif;
+    border-bottom: 1px solid rgb(39, 39, 39);
+}
+
+.file-header > i {
+    margin-right: 10px;
 }
 
 pre {
