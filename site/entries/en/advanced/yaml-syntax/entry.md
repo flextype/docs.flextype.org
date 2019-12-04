@@ -32,7 +32,7 @@ So, as we’ve already seen, the value can be a string, a number, or another dic
 
 YAML recognizes numeric types. We saw floating point and integers above. YAML supports several other numeric types.
 
-```
+```yaml
 foo: 12345
 bar: 0x12d4
 ```
@@ -41,13 +41,13 @@ bar: 0x12d4
 
 YAML strings are Unicode. In most situations, you don’t have to specify them in quotes.
 
-```
+```yaml
 foo: this is a normal string
 ```
 
 If we want escape sequences handled, we need to use double quotes.
 
-```
+```yaml
 foo: "this is not a normal string\n"
 bar: this is not a normal string\n
 ```
@@ -58,7 +58,7 @@ YAML will not escape strings with single quotes, but the single quotes do avoid 
 
 String values can span more than one line. With the fold (greater than) character, you can specify a string in a block. But it’s interpreted without the newlines.
 
-```
+```yaml
 foo: >
   this is not a normal string it
   spans more than
@@ -68,7 +68,7 @@ foo: >
 
 The block (pipe) character has a similar function, but YAML interprets the field exactly as is. So, we see the newlines where they are in the document.
 
-```
+```yaml
 foo: |
   this is not a normal string it
   spans more than
@@ -81,7 +81,7 @@ foo: |
 
 You enter nulls with a tilde or the unquoted null string literal.
 
-```
+```yaml
 foo: ~
 bar: null
 ```
@@ -90,7 +90,7 @@ bar: null
 
 YAML indicates boolean values with the keywords True, On and Yes for true. False is indicated with False, Off, or No.
 
-```
+```yaml
 foo: True
 bar: False
 light: On
@@ -101,14 +101,14 @@ TV: Off
 
 You can specify arrays or lists on a single line.
 
-```
+```yaml
 items: [ 1, 2, 3, 4, 5 ]
 names: [ "one", "two", "three", "four" ]
 ```
 
 Or, you can put them on multiple lines.
 
-```
+```yaml
 items:
   - 1
   - 2
@@ -124,7 +124,7 @@ names:
 
 The multiple line format is useful for lists that contain complex objects instead of scalars.
 
-```
+```yaml
 items:
   - things:
       thing1: huey
@@ -142,7 +142,7 @@ We covered dictionaries above, but there’s more to them.
 
 Like arrays, you can put dictionaries inline. We saw this format above. It’s how python prints dictionaries.
 
-```
+```yaml
 foo: { thing1: huey, thing2: louie, thing3: dewey }
 ```
 
