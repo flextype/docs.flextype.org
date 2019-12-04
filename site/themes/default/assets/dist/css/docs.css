@@ -265,3 +265,10 @@ pre {
 table tr {
     border-bottom: 1px solid black;
 }
+
+hr {
+    border-top: 1px solid black;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
