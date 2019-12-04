@@ -53,54 +53,54 @@
                 <div class="flextype">FLEXTYPE</div>
                 <h4>{{ entry_locale.txt_basics }}</h4>
                 <ul>
-                    <li><a href="{{ base_url() }}/{{ locale }}">{{ entry_locale.txt_link_what_is_flextype }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/requirements">{{ entry_locale.txt_link_requirements }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/installation">{{ entry_locale.txt_link_installation }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/configuration">{{ entry_locale.txt_link_configuration }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/folder-structure">{{ entry_locale.txt_link_folder_structure }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/php-constants">{{ entry_locale.txt_link_php_constants }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/coc">{{ entry_locale.txt_link_coc }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/getting-help">{{ entry_locale.txt_link_getting_help }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/basics/license">{{ entry_locale.txt_license }}</a></li>
+                    <li class="{% if entry.slug == locale %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}">{{ entry_locale.txt_link_what_is_flextype }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/basics/requirements" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/requirements">{{ entry_locale.txt_link_requirements }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/basics/installation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/installation">{{ entry_locale.txt_link_installation }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/basics/configuration" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/configuration">{{ entry_locale.txt_link_configuration }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/basics/folder-structure" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/folder-structure">{{ entry_locale.txt_link_folder_structure }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/basics/php-constants" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/php-constants">{{ entry_locale.txt_link_php_constants }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/basics/coc" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/coc">{{ entry_locale.txt_link_coc }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/basics/getting-help" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/getting-help">{{ entry_locale.txt_link_getting_help }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/basics/license" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/license">{{ entry_locale.txt_license }}</a></li>
                 </ul>
                 <h4>{{ entry_locale.txt_content }}</h4>
                 <ul>
-                    <li><a href="{{ base_url() }}/{{ locale }}/content/entries">{{ entry_locale.txt_link_entries }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/content/media">{{ entry_locale.txt_link_media }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/fieldsets/fieldsets">{{ entry_locale.txt_link_fieldsets }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/content/entries" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/entries">{{ entry_locale.txt_link_entries }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/content/media" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/media">{{ entry_locale.txt_link_media }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/fieldsets/fieldsets" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/fieldsets/fieldsets">{{ entry_locale.txt_link_fieldsets }}</a></li>
                 </ul>
                 <h4>{{ entry_locale.txt_themes }}</h4>
                 <ul>
-                    <li><a href="{{ base_url() }}/{{ locale }}/themes/theme-configuration">{{ entry_locale.txt_link_theme_configuration }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/themes/theme-variables">{{ entry_locale.txt_link_theme_variables }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/themes/twig-filters-functions">{{ entry_locale.txt_link_twig_filters_functions }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/themes/entries-fetch">{{ entry_locale.txt_link_entries_fetch }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/themes/theme-configuration" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/theme-configuration">{{ entry_locale.txt_link_theme_configuration }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/themes/theme-variables" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/theme-variables">{{ entry_locale.txt_link_theme_variables }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/themes/twig-filters-functions" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/twig-filters-functions">{{ entry_locale.txt_link_twig_filters_functions }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/themes/entries-fetch" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/entries-fetch">{{ entry_locale.txt_link_entries_fetch }}</a></li>
                 </ul>
                 <h4>{{ entry_locale.txt_advanced }}</h4>
                 <ul>
-                    <li><a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax">{{ entry_locale.txt_link_yaml_syntax }}</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/advanced/password-recovery">{{ entry_locale.txt_link_password_recovery }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/advanced/yaml-syntax" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax">{{ entry_locale.txt_link_yaml_syntax }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/advanced/password-recovery" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/password-recovery">{{ entry_locale.txt_link_password_recovery }}</a></li>
                 </ul>
                 <h4>{{ entry_locale.txt_cookbook }}</h4>
                 <ul>
-                    <li><a href="{{ base_url() }}/{{ locale }}/cookbook/blog">{{ entry_locale.txt_blog }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/cookbook/blog" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/cookbook/blog">{{ entry_locale.txt_blog }}</a></li>
                 </ul>
                 <h4>Flextype API's</h4>
                 <ul>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/core">Core</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/arr">Arr</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/assets">Assets</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/cookie">Cookie</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/date">Date</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/debug">Debug</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/filesystem">Filesystem</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/form">Form</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/html">Html</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/i18n">i18n</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/number">Number</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/registry">Registry</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/session">Session</a></li>
-                    <li><a href="{{ base_url() }}/{{ locale }}/api/text">Text</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/core" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/core">Core</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/arr" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/arr">Arr</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/assets" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/assets">Assets</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/cookie" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/cookie">Cookie</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/date" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/date">Date</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/debug" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/debug">Debug</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/filesystem" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/filesystem">Filesystem</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/form" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/form">Form</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/html" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/html">Html</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/i18n" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/i18n">i18n</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/number" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/number">Number</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/registry" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/registry">Registry</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/session" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/session">Session</a></li>
+                    <li class="{% if entry.slug == locale ~ "/api/text" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/api/text">Text</a></li>
                 </ul>
             </div>
             <div class="content width-9-12">
