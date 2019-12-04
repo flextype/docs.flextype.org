@@ -208,7 +208,7 @@ code {
     font-family: "noirpro-light", sans-serif;
 }
 
-.file {
+.file-list {
     padding: 20px!important;
     background: black;
     color: white;
@@ -218,8 +218,15 @@ code {
     margin-left: 0;
 }
 
-.file i {
+.file-list i {
     margin-right: 10px;
+}
+
+.file-list-level-2 {
+    padding-left: 15px;
+}
+.file-list-level-3 {
+    padding-left: 30px;
 }
 
 .file-header {
