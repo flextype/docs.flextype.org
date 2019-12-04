@@ -33,7 +33,7 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
-            {% set highlight_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/styles/github.css' %}
+            {% set highlight_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/styles/tomorrow-night-bright.css' %}
             {% set docs_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/docs.min.css' %}
             {% do assets.add('css', highlight_css, 'site', 1) %}
             {% do assets.add('css', docs_css, 'site', 2) %}
@@ -50,7 +50,10 @@
 
         <div class="flex">
             <div class="sidebar width-3-12">
-                <div class="flextype">FLEXTYPE</div>
+                <div class="flextype">
+                    <h2 class="h2">FLEXTYPE</h2>
+                    <h3 class="h3">DOCUMENTATION</h3>
+                </div>
                 <h4>{{ entry_locale.txt_basics }}</h4>
                 <ul>
                     <li class="{% if entry.slug == locale %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}">{{ entry_locale.txt_link_what_is_flextype }}</a></li>

@@ -1,14 +1,15 @@
 ---
-title: Core API
+title: Core API (0.9.6)
 ---
 
-- [\Flextype\FrontmatterParser](#class-flextypefrontmatterparser)
-- [\Flextype\Parser](#class-flextypeparser)
-- [\Flextype\YamlParser](#class-flextypeyamlparser)
-- [\Flextype\JsonParser](#class-flextypejsonparser)
+- [\Flextype\Frontmatter](#class-flextypefrontmatter)
+- [\Flextype\Markdown](#class-flextypemarkdown)
+- [\Flextype\Json](#class-flextypejson)
+- [\Flextype\Yaml](#class-flextypeyaml)
 - [\Flextype\Entries](#class-flextypeentries)
 - [\Flextype\Snippets](#class-flextypesnippets)
 - [\Flextype\Controller](#class-flextypecontroller)
+- [\Flextype\Parser](#class-flextypeparser)
 - [\Flextype\Themes](#class-flextypethemes)
 - [\Flextype\Cache](#class-flextypecache)
 - [\Flextype\Fieldsets](#class-flextypefieldsets)
@@ -20,48 +21,49 @@ title: Core API
 - [\Flextype\MarkdownTwigExtension](#class-flextypemarkdowntwigextension)
 - [\Flextype\SnippetsTwigExtension](#class-flextypesnippetstwigextension)
 - [\Flextype\I18nTwigExtension](#class-flextypei18ntwigextension)
+- [\Flextype\DateTwigExtension](#class-flextypedatetwigextension)
 - [\Flextype\AssetsTwigExtension](#class-flextypeassetstwigextension)
 - [\Flextype\FlashTwigExtension](#class-flextypeflashtwigextension)
 - [\Flextype\JsonTwigExtension](#class-flextypejsontwigextension)
+- [\Flextype\CacheTwigExtension](#class-flextypecachetwigextension)
 - [\Flextype\CsrfTwigExtension](#class-flextypecsrftwigextension)
+- [\Flextype\ParserTwigExtension](#class-flextypeparsertwigextension)
 - [\Flextype\EntriesTwigExtension](#class-flextypeentriestwigextension)
 - [\Flextype\FilesystemTwigExtension](#class-flextypefilesystemtwigextension)
 - [\Flextype\ShortcodesTwigExtension](#class-flextypeshortcodestwigextension)
 - [\Flextype\YamlTwigExtension](#class-flextypeyamltwigextension)
 - [\Flextype\GlobalVarsTwigExtension](#class-flextypeglobalvarstwigextension)
 
-<hr /><a id="class-flextypefrontmatterparser"></a>
-### Class: \Flextype\FrontmatterParser
+<hr /><a id="class-flextypefrontmatter"></a>
+### Class: \Flextype\Frontmatter
 
 | Visibility | Function |
 |:-----------|:---------|
-| public static | <strong>decode(</strong><em>\string</em> <strong>$input</strong>)</strong> : <em>void</em> |
-| public static | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>)</strong> : <em>void</em> |
-| public static | <strong>parser(</strong><em>\string</em> <strong>$content</strong>)</strong> : <em>array</em><br /><em>Front matter parser</em> |
+| public static | <strong>decode(</strong><em>\string</em> <strong>$input</strong>)</strong> : <em>mixed The FRONTMATTER converted to a PHP value</em><br /><em>Takes a FRONTMATTER encoded string and converts it into a PHP variable.</em> |
+| public static | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>)</strong> : <em>string A FRONTMATTER string representing the original PHP value</em><br /><em>Returns the FRONTMATTER representation of a value</em> |
 
-<hr /><a id="class-flextypeparser"></a>
-### Class: \Flextype\Parser
-
-| Visibility | Function |
-|:-----------|:---------|
-| public static | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>\string</em> <strong>$parser</strong>)</strong> : <em>void</em> |
-| public static | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>, <em>\string</em> <strong>$parser</strong>)</strong> : <em>void</em> |
-
-<hr /><a id="class-flextypeyamlparser"></a>
-### Class: \Flextype\YamlParser
+<hr /><a id="class-flextypemarkdown"></a>
+### Class: \Flextype\Markdown
 
 | Visibility | Function |
 |:-----------|:---------|
-| public static | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>int/\integer</em> <strong>$flags</strong>)</strong> : <em>mixed The YAML converted to a PHP value</em><br /><em>Parses YAML into a PHP value. $array = YamlParser::decode($yaml_file_content);</em> |
-| public static | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>, <em>\integer</em> <strong>$inline=5</strong>, <em>\integer</em> <strong>$indent=2</strong>, <em>\integer</em> <strong>$flags=16</strong>)</strong> : <em>string A YAML string representing the original PHP value</em><br /><em>Dumps a PHP value to a YAML string. The dump method, when supplied with an array, will do its best to convert the array into friendly YAML.</em> |
+| public static | <strong>decode(</strong><em>\string</em> <strong>$input</strong>)</strong> : <em>mixed The MARKDOWN converted to a PHP value</em><br /><em>Takes a MARKDOWN encoded string and converts it into a PHP variable.</em> |
 
-<hr /><a id="class-flextypejsonparser"></a>
-### Class: \Flextype\JsonParser
+<hr /><a id="class-flextypejson"></a>
+### Class: \Flextype\Json
 
 | Visibility | Function |
 |:-----------|:---------|
-| public static | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>\boolean</em> <strong>$decode_assoc=true</strong>, <em>\integer</em> <strong>$decode_depth=512</strong>, <em>int/\integer</em> <strong>$decode_options</strong>)</strong> : <em>mixed The JSON converted to a PHP value</em><br /><em>Takes a JSON encoded string and converts it into a PHP variable. $array = JsonParser::decode($json_file_content);</em> |
-| public static | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>, <em>int/\integer</em> <strong>$encode_options</strong>, <em>\integer</em> <strong>$encode_depth=512</strong>)</strong> : <em>mixed The JSON converted to a PHP value</em><br /><em>Returns the JSON representation of a value $result = JsonParser::encode($json_content);</em> |
+| public static | <strong>decode(</strong><em>\string</em> <strong>$input</strong>)</strong> : <em>mixed The JSON converted to a PHP value</em><br /><em>Takes a JSON encoded string and converts it into a PHP variable.</em> |
+| public static | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>)</strong> : <em>mixed A JSON string representing the original PHP value</em><br /><em>Returns the JSON representation of a value</em> |
+
+<hr /><a id="class-flextypeyaml"></a>
+### Class: \Flextype\Yaml
+
+| Visibility | Function |
+|:-----------|:---------|
+| public static | <strong>decode(</strong><em>\string</em> <strong>$input</strong>)</strong> : <em>array The YAML converted to a PHP value</em><br /><em>Parses YAML into a PHP value.</em> |
+| public static | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>)</strong> : <em>string A YAML string representing the original PHP value</em><br /><em>Dumps a PHP value to a YAML string. The dump method, when supplied with an array, will do its best to convert the array into friendly YAML.</em> |
 
 <hr /><a id="class-flextypeentries"></a>
 ### Class: \Flextype\Entries
@@ -72,8 +74,9 @@ title: Core API
 | public | <strong>copy(</strong><em>\string</em> <strong>$id</strong>, <em>\string</em> <strong>$new_id</strong>, <em>\boolean</em> <strong>$recursive=false</strong>)</strong> : <em>bool/null True on success, false on failure.</em><br /><em>Copy entry(s)</em> |
 | public | <strong>create(</strong><em>\string</em> <strong>$id</strong>, <em>array</em> <strong>$data</strong>)</strong> : <em>bool True on success, false on failure.</em><br /><em>Create entry</em> |
 | public | <strong>delete(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>bool True on success, false on failure.</em><br /><em>Delete entry</em> |
-| public | <strong>fetch(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>array/false The entry array data or false on failure.</em><br /><em>Fetch single entry</em> |
-| public | <strong>fetchAll(</strong><em>\string</em> <strong>$id</strong>, <em>array</em> <strong>$args=array()</strong>)</strong> : <em>array The entries array data</em><br /><em>Fetch entries collection</em> |
+| public | <strong>fetch(</strong><em>\string</em> <strong>$id</strong>, <em>array/null</em> <strong>$args=null</strong>)</strong> : <em>array The entry array data.</em><br /><em>Fetch entry(enries)</em> |
+| public | <strong>fetchCollection(</strong><em>\string</em> <strong>$id</strong>, <em>array</em> <strong>$args=array()</strong>)</strong> : <em>array The entries array data.</em><br /><em>Fetch entries collection</em> |
+| public | <strong>fetchSingle(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>array The entry array data.</em><br /><em>Fetch single entry</em> |
 | public | <strong>getDirLocation(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>string entry directory location</em><br /><em>Get entry directory location</em> |
 | public | <strong>getFileLocation(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>string entry file location</em><br /><em>Get entry file location</em> |
 | public | <strong>has(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>bool True on success, false on failure.</em><br /><em>Check whether entry exists</em> |
@@ -106,6 +109,16 @@ title: Core API
 | public | <strong>__construct(</strong><em>mixed</em> <strong>$container</strong>)</strong> : <em>void</em><br /><em>__construct</em> |
 | public | <strong>__get(</strong><em>mixed</em> <strong>$property</strong>)</strong> : <em>void</em><br /><em>__get</em> |
 
+<hr /><a id="class-flextypeparser"></a>
+### Class: \Flextype\Parser
+
+| Visibility | Function |
+|:-----------|:---------|
+| public | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
+| public | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>\string</em> <strong>$parser</strong>, <em>\boolean</em> <strong>$cache=true</strong>)</strong> : <em>mixed The Content converted to a PHP value</em><br /><em>Parse INPUT content into a PHP value.</em> |
+| public | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>, <em>\string</em> <strong>$parser</strong>)</strong> : <em>mixed PHP value converted to a string CONTENT.</em><br /><em>Dumps a PHP value to a string CONTENT.</em> |
+| public | <strong>getParserInfo(</strong><em>\string</em> <strong>$parser</strong>)</strong> : <em>array</em><br /><em>Get Parser Information</em> |
+
 <hr /><a id="class-flextypethemes"></a>
 ### Class: \Flextype\Themes
 
@@ -126,6 +139,7 @@ title: Core API
 | public | <strong>clear(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>void</em><br /><em>Clear Cache</em> |
 | public | <strong>clearAll()</strong> : <em>void</em><br /><em>Clear ALL Cache</em> |
 | public | <strong>contains(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>bool true if the cached items exists</em><br /><em>Returns a boolean state of whether or not the item exists in the cache based on id key</em> |
+| public | <strong>delete(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>void</em><br /><em>Delete item from the chache</em> |
 | public | <strong>driver()</strong> : <em>void</em><br /><em>Returns driver variable</em> |
 | public | <strong>fetch(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>mixed The cached data or FALSE, if no cache entry exists for the given id.</em><br /><em>Fetches an entry from the cache.</em> |
 | public | <strong>getCacheDriver()</strong> : <em>mixed</em><br /><em>Get Cache Driver</em> |
@@ -168,6 +182,7 @@ title: Core API
 |:-----------|:---------|
 | public | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>, <em>mixed</em> <strong>$app</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
 | public | <strong>getLocales()</strong> : <em>array</em><br /><em>Get locales</em> |
+| public | <strong>getPluginsList()</strong> : <em>mixed</em><br /><em>Get plugins list</em> |
 | public | <strong>init(</strong><em>mixed</em> <strong>$flextype</strong>, <em>mixed</em> <strong>$app</strong>)</strong> : <em>void</em><br /><em>Init Plugins</em> |
 
 <hr /><a id="class-flextypemiddleware"></a>
@@ -184,20 +199,24 @@ title: Core API
 | Visibility | Function |
 |:-----------|:---------|
 | public | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
-| public | <strong>render(</strong><em>array</em> <strong>$fieldset</strong>, <em>array</em> <strong>$values=array()</strong>, <em>\Flextype\Request/\Psr\Http\Message\ServerRequestInterface</em> <strong>$request</strong>, <em>\Flextype\Response/\Psr\Http\Message\ResponseInterface</em> <strong>$response</strong>)</strong> : <em>string Returns form based on fieldsets</em><br /><em>Render form</em> |
+| public | <strong>render(</strong><em>array</em> <strong>$fieldset</strong>, <em>array</em> <strong>$values=array()</strong>, <em>\Flextype\Request/\Psr\Http\Message\ServerRequestInterface</em> <strong>$request</strong>)</strong> : <em>string Returns form based on fieldsets</em><br /><em>Render form</em> |
 | protected | <strong>_actionHiddenField()</strong> : <em>string Returns field</em><br /><em>_actionHiddenField</em> |
 | protected | <strong>_csrfHiddenField()</strong> : <em>string Returns field</em><br /><em>_csrfHiddenField</em> |
-| protected | <strong>dateField(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value</strong>)</strong> : <em>string Returns field</em><br /><em>Date field</em> |
+| protected | <strong>dateField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Date field</em> |
+| protected | <strong>getElementID(</strong><em>\string</em> <strong>$element</strong>)</strong> : <em>string Returns form element id</em><br /><em>Get element id</em> |
 | protected | <strong>getElementName(</strong><em>\string</em> <strong>$element</strong>)</strong> : <em>string Returns form element name</em><br /><em>Get element name</em> |
-| protected | <strong>hiddenField(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value</strong>, <em>array</em> <strong>$property</strong>)</strong> : <em>string Returns field</em><br /><em>Hidden field</em> |
-| protected | <strong>htmlField(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value</strong>, <em>array</em> <strong>$property</strong>)</strong> : <em>string Returns field</em><br /><em>Html field</em> |
-| protected | <strong>mediaSelectField(</strong><em>\string</em> <strong>$name</strong>, <em>array</em> <strong>$options</strong>, <em>\string</em> <strong>$value</strong>, <em>array</em> <strong>$property</strong>)</strong> : <em>string Returns field</em><br /><em>Media select field</em> |
-| protected | <strong>selectField(</strong><em>\string</em> <strong>$name</strong>, <em>array</em> <strong>$options</strong>, <em>\string</em> <strong>$value</strong>, <em>array</em> <strong>$property</strong>)</strong> : <em>string Returns field</em><br /><em>Select field</em> |
-| protected | <strong>tagsField(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value</strong>)</strong> : <em>string Returns field</em><br /><em>Tags field</em> |
-| protected | <strong>templateSelectField(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value</strong>, <em>array</em> <strong>$property</strong>)</strong> : <em>string Returns field</em><br /><em>Template select field</em> |
-| protected | <strong>textField(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value</strong>, <em>array</em> <strong>$property</strong>)</strong> : <em>string Returns field</em><br /><em>Text field</em> |
-| protected | <strong>textareaField(</strong><em>\string</em> <strong>$name</strong>, <em>\string</em> <strong>$value</strong>, <em>array</em> <strong>$property</strong>)</strong> : <em>string Returns field</em><br /><em>Textarea field</em> |
-| protected | <strong>visibilitySelectField(</strong><em>\string</em> <strong>$name</strong>, <em>array</em> <strong>$options</strong>, <em>\string</em> <strong>$value</strong>, <em>array</em> <strong>$property</strong>)</strong> : <em>string Returns field</em><br /><em>Visibility field</em> |
+| protected | <strong>getElementValue(</strong><em>\string</em> <strong>$element</strong>, <em>array</em> <strong>$values</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>mixed Returns form element value</em><br /><em>Get element value</em> |
+| protected | <strong>headingField(</strong><em>\string</em> <strong>$field_id</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Heading field</em> |
+| protected | <strong>hiddenField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Hidden field</em> |
+| protected | <strong>htmlField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Html field</em> |
+| protected | <strong>mediaSelectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>, <em>\Flextype\Request/\Psr\Http\Message\ServerRequestInterface</em> <strong>$request</strong>)</strong> : <em>string Returns field</em><br /><em>Media select field</em> |
+| protected | <strong>routableSelectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Routable select field</em> |
+| protected | <strong>selectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Select field</em> |
+| protected | <strong>tagsField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Tags field</em> |
+| protected | <strong>templateSelectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Template select field</em> |
+| protected | <strong>textField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Text field</em> |
+| protected | <strong>textareaField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>string</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Textarea field</em> |
+| protected | <strong>visibilitySelectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Visibility field</em> |
 
 <hr /><a id="class-flextypeauthmiddleware"></a>
 ### Class: \Flextype\AuthMiddleware
@@ -227,7 +246,7 @@ title: Core API
 |:-----------|:---------|
 | public | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
 | public | <strong>getFilters()</strong> : <em>array</em><br /><em>Returns a list of filters to add to the existing list.</em> |
-| public | <strong>markdown(</strong><em>mixed</em> <strong>$value</strong>)</strong> : <em>void</em><br /><em>Markdown process</em> |
+| public | <strong>markdown(</strong><em>mixed</em> <strong>$input</strong>, <em>\boolean</em> <strong>$cache=true</strong>)</strong> : <em>void</em><br /><em>Markdown process</em> |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -252,7 +271,19 @@ title: Core API
 |:-----------|:---------|
 | public | <strong>getFilters()</strong> : <em>array</em><br /><em>Returns a list of filters to add to the existing list.</em> |
 | public | <strong>getFunctions()</strong> : <em>array</em><br /><em>Returns a list of functions to add to the existing list.</em> |
-| public | <strong>tr(</strong><em>\string</em> <strong>$translate</strong>, <em>\string</em> <strong>$locale=null</strong>, <em>array</em> <strong>$values=array()</strong>)</strong> : <em>void</em><br /><em>Translate string</em> |
+| public | <strong>tr(</strong><em>\string</em> <strong>$translate</strong>, <em>array</em> <strong>$values=array()</strong>, <em>\string</em> <strong>$locale=null</strong>)</strong> : <em>void</em><br /><em>Translate string</em> |
+
+*This class extends \Twig\Extension\AbstractExtension*
+
+*This class implements \Twig\Extension\ExtensionInterface*
+
+<hr /><a id="class-flextypedatetwigextension"></a>
+### Class: \Flextype\DateTwigExtension
+
+| Visibility | Function |
+|:-----------|:---------|
+| public | <strong>dateformatToMomentJS(</strong><em>mixed</em> <strong>$php_format</strong>)</strong> : <em>void</em> |
+| public | <strong>getFunctions()</strong> : <em>array</em><br /><em>Returns a list of functions to add to the existing list.</em> |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
@@ -287,13 +318,27 @@ title: Core API
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>\boolean</em> <strong>$decode_assoc=true</strong>, <em>\integer</em> <strong>$decode_depth=512</strong>, <em>\integer</em> <strong>$decode_options</strong>)</strong> : <em>void</em><br /><em>Decode JSON</em> |
-| public | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>, <em>\integer</em> <strong>$encode_options</strong>, <em>\integer</em> <strong>$encode_depth=512</strong>)</strong> : <em>void</em><br /><em>Encode JSON</em> |
+| public | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
+| public | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>\boolean</em> <strong>$cache=true</strong>)</strong> : <em>void</em><br /><em>Decode JSON</em> |
+| public | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>)</strong> : <em>void</em><br /><em>Encode JSON</em> |
+| public | <strong>getFilters()</strong> : <em>array</em><br /><em>Returns a list of filters to add to the existing list.</em> |
 | public | <strong>getFunctions()</strong> : <em>array</em><br /><em>Returns a list of functions to add to the existing list.</em> |
 
 *This class extends \Twig\Extension\AbstractExtension*
 
 *This class implements \Twig\Extension\ExtensionInterface*
+
+<hr /><a id="class-flextypecachetwigextension"></a>
+### Class: \Flextype\CacheTwigExtension
+
+| Visibility | Function |
+|:-----------|:---------|
+| public | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
+| public | <strong>getGlobals()</strong> : <em>mixed</em><br /><em>Register Global variables in an extension</em> |
+
+*This class extends \Twig\Extension\AbstractExtension*
+
+*This class implements \Twig\Extension\ExtensionInterface, \Twig\Extension\GlobalsInterface*
 
 <hr /><a id="class-flextypecsrftwigextension"></a>
 ### Class: \Flextype\CsrfTwigExtension
@@ -309,6 +354,21 @@ title: Core API
 *This class extends \Twig\Extension\AbstractExtension*
 
 *This class implements \Twig\Extension\ExtensionInterface, \Twig\Extension\GlobalsInterface*
+
+<hr /><a id="class-flextypeparsertwigextension"></a>
+### Class: \Flextype\ParserTwigExtension
+
+| Visibility | Function |
+|:-----------|:---------|
+| public | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
+| public | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>\string</em> <strong>$parser</strong>, <em>\boolean</em> <strong>$cache=true</strong>)</strong> : <em>void</em><br /><em>Decode</em> |
+| public | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>, <em>\string</em> <strong>$parser</strong>)</strong> : <em>void</em><br /><em>Encode</em> |
+| public | <strong>getFunctions()</strong> : <em>array</em><br /><em>Returns a list of functions to add to the existing list.</em> |
+| public | <strong>getParserInfo(</strong><em>\string</em> <strong>$parser</strong>)</strong> : <em>mixed</em><br /><em>Get Parser Info</em> |
+
+*This class extends \Twig\Extension\AbstractExtension*
+
+*This class implements \Twig\Extension\ExtensionInterface*
 
 <hr /><a id="class-flextypeentriestwigextension"></a>
 ### Class: \Flextype\EntriesTwigExtension
@@ -356,8 +416,10 @@ title: Core API
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>\integer</em> <strong>$flags</strong>)</strong> : <em>void</em><br /><em>Decode YAML</em> |
-| public | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>, <em>\integer</em> <strong>$inline=5</strong>, <em>\integer</em> <strong>$indent=2</strong>, <em>\integer</em> <strong>$flags=16</strong>)</strong> : <em>void</em><br /><em>Encode YAML</em> |
+| public | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
+| public | <strong>decode(</strong><em>\string</em> <strong>$input</strong>, <em>\boolean</em> <strong>$cache=true</strong>)</strong> : <em>void</em><br /><em>Decode YAML</em> |
+| public | <strong>encode(</strong><em>mixed</em> <strong>$input</strong>)</strong> : <em>void</em><br /><em>Encode YAML</em> |
+| public | <strong>getFilters()</strong> : <em>array</em><br /><em>Returns a list of filters to add to the existing list.</em> |
 | public | <strong>getFunctions()</strong> : <em>array</em><br /><em>Returns a list of functions to add to the existing list.</em> |
 
 *This class extends \Twig\Extension\AbstractExtension*

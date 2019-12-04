@@ -5,28 +5,20 @@ title: Blog
 A simple blog setup with Flextype.
 
 Structure:
-```
-site
-└── fieldsets
-    ├── blog.yaml  
-    └── blog-post.yaml  
-└── themes
-    └── default
-        └── templates
-            ├── blog.html  
-            └── blog-post.html  
-└── entries
-    └── blog
-        ├── entry.md  
-        └── hello-world
-            └── entry.md
-```
+<ul class="file">
+    <li><i class="far fa-file-alt"></i> /site/fieldsets/blog.yaml</li>
+    <li><i class="far fa-file-alt"></i> /site/fieldsets/blog-post.yaml</li>
+    <li><i class="far fa-file-alt"></i> /site/themes/default/templates/blog.html</li>
+    <li><i class="far fa-file-alt"></i> /site/themes/default/templates/blog-post.html</li>
+    <li><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</li>
+    <li><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</li>
+</ul>
 
 <br>
 
 ## Create blog fieldset
-`/site/fieldsets/blog.yaml`
 
+<div class="file-header"><i class="far fa-file-alt"></i> /site/fieldsets/blog.yaml</div>
 ```yaml
 title: Blog
 default_field: title
@@ -102,15 +94,16 @@ sections:
 <br>
 
 ### Blog entry
-`/site/entries/blog/entry.md`
+
+<div class="file"><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/blog/create-blog.png?q=70" />
 
 <br>
 
 ## Create blog post fieldset
-`/site/fieldsets/blog-post.yaml`
 
+<div class="file-header"><i class="far fa-file-alt"></i> /site/fieldsets/blog-post.yaml</div>
 ```yaml
 title: Blog Post
 default_field: title
@@ -194,15 +187,16 @@ sections:
 <br>
 
 ### Blog post entry
-`/site/entries/blog/hello-world/entry.md`
+
+<div class="file"><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?q=70" />
 
 <br>
 
 ## Create blog template
-`/site/themes/default/templates/blog.html`
 
+<div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/templates/blog.html</div>
 ```twig
 {% extends "themes/default/templates/partials/base.html" %}
 
@@ -323,8 +317,8 @@ sections:
 <br>
 
 ## Create blog post template
-`/site/themes/default/templates/blog-post.html`
 
+<div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/templates/blog-post.html</div>
 ```twig
 {% extends "themes/default/templates/partials/base.html" %}
 
