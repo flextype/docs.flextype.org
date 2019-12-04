@@ -5,13 +5,21 @@ title: Blog
 A simple blog setup with Flextype.
 
 Structure:
-<ul class="file">
-    <li><i class="far fa-file-alt"></i> /site/fieldsets/blog.yaml</li>
-    <li><i class="far fa-file-alt"></i> /site/fieldsets/blog-post.yaml</li>
-    <li><i class="far fa-file-alt"></i> /site/themes/default/templates/blog.html</li>
-    <li><i class="far fa-file-alt"></i> /site/themes/default/templates/blog-post.html</li>
-    <li><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</li>
-    <li><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</li>
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> site</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> fieldsets</li>
+    <li class="file-list-level-3"><i class="far fa-file-alt"></i> blog.yaml</li>
+    <li class="file-list-level-3"><i class="far fa-file-alt"></i> blog-post.yaml</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
+    <li class="file-list-level-3"><i class="fas fa-folder"></i> default</li>
+    <li class="file-list-level-4"><i class="fas fa-folder"></i> templates</li>
+    <li class="file-list-level-5"><i class="far fa-file-alt"></i> blog.html</li>
+    <li class="file-list-level-5"><i class="far fa-file-alt"></i> blog-post.html</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> entries</li>
+    <li class="file-list-level-3"><i class="fas fa-folder"></i> blog</li>
+    <li class="file-list-level-4"><i class="far fa-file-alt"></i> entry.md</li>
+    <li class="file-list-level-4"><i class="fas fa-folder"></i> hello-world</li>
+    <li class="file-list-level-5"><i class="far fa-file-alt"></i> entry.md</li>
 </ul>
 
 <br>
@@ -96,7 +104,7 @@ sections:
 
 ### Blog entry
 
-<div class="file"><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</div>
+<div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/blog/create-blog.png?q=70" />
 
@@ -190,7 +198,7 @@ sections:
 
 ### Blog post entry
 
-<div class="file"><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</div>
+<div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?q=70" />
 
