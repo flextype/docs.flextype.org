@@ -35,7 +35,7 @@ Form fields are an essential part of the fieldsets and have very powerful option
 
 ### Example
 
-```
+```yaml
 title: Default
 default_field: title
 icon: 'far fa-file-alt'
