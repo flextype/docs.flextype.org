@@ -6,7 +6,7 @@ You can easily access theme configuration and theme information from your Twig a
 
 ### Accessing Theme Information
 
-Information from the currently active theme can be had from the `registry` object.
+Information from the currently active theme can get from the `registry` object.
 
 Example information from `/site/themes/default/theme.yaml`:
 
@@ -40,7 +40,7 @@ Theme name: Default
 Theme version: 1.0.0
 ```
 
-You can also reach these same values from a Fextype plugin with PHP syntax:
+You can also reach these same values from a Flextype plugin(s) with PHP syntax:
 
 Usage:
 
@@ -51,15 +51,15 @@ $theme_version = $flextype->registry->get('themes.default.version');
 
 ### Accessing Theme Configuration
 
-Theme's have configuration files, named `settings.yaml` located in `/site/themes/<themename>/`
+Themes have default and site configuration files, named `settings.yaml` located in `/site/themes/<themename>/` and in `/site/config/themes/<themename>/`
 
-For example, let us consider the Default theme and there is a file called settings.yaml in the theme's root folder. The contents of this configuration file look like this:
+For example, let us consider the Default theme and there is a file called `settings.yaml` in the themes site settings folder. The contents of this configuration file look like this:
 
 ```yaml
 enabled: true
 ```
 
-Let us add some custom theme settings. Open `/site/themes/default/settings.yaml` and add new variable with value `highlight: red`
+Let us add some custom theme settings. Open `/site/config/themes/default/settings.yaml` and add new variable with value `highlight: red`
 
 ```yaml
 enabled: true
