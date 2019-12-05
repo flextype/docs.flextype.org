@@ -219,11 +219,11 @@ sections:
     {% set page = query.page %}
     {% set tag = query.tag %}
 
-    {% set entries_limit = entries.fetch('blog').entries_limit %}
+    {% set blog_posts_limit = entries.fetch('blog').entries_limit %}
 
     {% if tag %}
         {# @todo get count from cache! #}
-        {% set entries_length = entries.fetch('blog', {
+        {% set blog_posts_length = entries.fetch('blog', {
                                                             'where': {
                                                                 'key': 'tag',
                                                                 'expr': 'contains',
@@ -236,16 +236,16 @@ sections:
                                                             }]
                                                         })|length %}
 
-        {% set entries_pages = (entries_length/entries_limit)|round(0, 'ceil') %}
+        {% set blog_posts_pages = (blog_posts_length/blog_posts_limit)|round(0, 'ceil') %}
         {% if page < 1 %}
             {% set page = 1 %}
-        {% elseif page > entries_pages %}
-            {% set page = entries_pages %}
+        {% elseif page > blog_posts_pages %}
+            {% set page = blog_posts_pages %}
         {% endif %}
-        {% set entries_offset = (page-1)*entries_limit %}
-        {% if entries_offset < 0 %}{% set entries_offset = 0 %}{% endif %}
+        {% set blog_posts_offset = (page-1)*blog_posts_limit %}
+        {% if blog_posts_offset < 0 %}{% set blog_posts_offset = 0 %}{% endif %}
 
-        {% set entries = entries.fetch('blog', {
+        {% set blog_posts = entries.fetch('blog', {
                                                     'where': {
                                                         'key': 'tag',
                                                         'expr': 'contains',
@@ -260,13 +260,13 @@ sections:
                                                         'field': 'published_at',
                                                         'direction': 'desc'
                                                     },
-                                                    'set_max_result': entries_limit,
-                                                    'set_first_result': entries_offset
+                                                    'set_max_result': blog_posts_limit,
+                                                    'set_first_result': blog_posts_offset
                                                 }) %}
     {% else %}
 
         {# @todo get count from cache! #}
-        {% set entries_length = entries.fetch('blog', {
+        {% set blog_posts_length = entries.fetch('blog', {
                                                             'where': {
                                                                 'key': 'visibility',
                                                                 'expr': 'nin',
@@ -274,18 +274,18 @@ sections:
                                                             }
                                                         })|length %}
 
-        {% set entries_pages = (entries_length/entries_limit)|round(0, 'ceil') %}
+        {% set blog_posts_pages = (blog_posts_length/blog_posts_limit)|round(0, 'ceil') %}
 
         {% if page < 1 %}
             {% set page = 1 %}
-        {% elseif page > entries_pages %}
-            {% set page = entries_pages %}
+        {% elseif page > blog_posts_pages %}
+            {% set page = blog_posts_pages %}
         {% endif %}
 
-        {% set entries_offset = (page-1)*entries_limit %}
-        {% if entries_offset < 0 %}{% set entries_offset = 0 %}{% endif %}
+        {% set blog_posts_offset = (page-1)*blog_posts_limit %}
+        {% if blog_posts_offset < 0 %}{% set blog_posts_offset = 0 %}{% endif %}
 
-        {% set entries = entries.fetch('blog', {
+        {% set blog_posts = entries.fetch('blog', {
                                                     'where': {
                                                         'key': 'visibility',
                                                         'expr': 'nin',
@@ -295,17 +295,18 @@ sections:
                                                         'field': 'published_at',
                                                         'direction': 'desc'
                                                     },
-                                                    'set_max_result': entries_limit,
-                                                    'set_first_result': entries_offset}) %}
+                                                    'set_max_result': blog_posts_limit,
+                                                    'set_first_result': blog_posts_offset}) %}
+
     {% endif %}
 
     {# /pagination #}
 
-    {% for entry in entries %}
-        <a href="{{ entry.slug }}" class="blog-post">
-            <h3>{{ entry.title }}</h3>
-            <p>{{ entry.summary|shortcode|raw}}</p>
-            <div>{{ entry.published_at|date(registry.settings.date_display_format) }}</div>
+    {% for post in blog_posts %}
+        <a href="{{ post.slug }}" class="blog-post">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.summary|shortcode|raw}}</p>
+            <div>{{ post.published_at|date(registry.settings.date_display_format) }}</div>
         </a>
     {% endfor %}
 
@@ -314,10 +315,10 @@ sections:
         {% if (page - 1) > 0 %}
             <a href="?page={{ page - 1 }}{% if tag %}&tag={{ tag }}{% endif %}">&larr;</a>
         {% endif %}
-        {% if entries_pages is not null and entries_pages != 0 %}
-            {{ page }} / {{ entries_pages }}
+        {% if blog_posts_pages is not null and blog_posts_pages != 0 %}
+            {{ page }} / {{ blog_posts_pages }}
         {% endif %}
-        {% if (page) < entries_pages %}
+        {% if (page) < blog_posts_pages %}
             <a href="?page={{ page + 1 }}{% if tag %}&tag={{ tag }}{% endif %}">&rarr;</a>
         {% endif %}
     </div>
@@ -327,8 +328,6 @@ sections:
 <br>
 
 <img src="[base_url]/image/en/cookbook/blog/blog.png?w=800&dpr=2&q=70" />
-
-<br>
 
 ## Create blog post template
 
@@ -348,5 +347,3 @@ sections:
 <br>
 
 <img src="[base_url]/image/en/cookbook/blog/blog-post.png?w=800&dpr=2&q=70" />
-
-<br>
