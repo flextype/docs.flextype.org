@@ -347,3 +347,20 @@ sections:
 <br>
 
 <img src="[base_url]/image/en/cookbook/blog/blog-post.png?w=800&dpr=2&q=70" />
+
+## List the last 5 recent blog posts
+
+```twig
+{% for recent_post in entries.fetch('blog', {'order_by':
+                                                {
+                                                    'field': 'published_at',
+                                                    'direction': 'desc'
+                                                },
+                                                'set_max_result': '5'}) %}
+    <a href="{{ recent_post.slug }}" class="blog-post">
+        <h3>{{ recent_post.title }}</h3>
+        <p>{{ recent_post.summary|shortcode|raw}}</p>
+        <div>{{ recent_post.published_at|date(registry.settings.date_display_format) }}</div>
+    </a>
+{% endfor %}
+```
