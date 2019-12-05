@@ -105,7 +105,7 @@ sections:
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</div>
 
-<img src="[base_url]/image/en/cookbook/blog/create-blog.png?q=70" />
+<img src="[base_url]/image/en/cookbook/blog/create-blog.png?w=800&dpr=2&q=70" />
 
 <br>
 
@@ -198,7 +198,7 @@ sections:
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</div>
 
-<img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?q=70" />
+<img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?w=800&dpr=2&q=70" />
 
 <br>
 
@@ -321,6 +321,9 @@ sections:
     {# /pagination navigation #}
 {% endblock %}
 ```
+<br>
+
+<img src="[base_url]/image/en/cookbook/blog/blog.png?w=800&dpr=2&q=70" />
 
 <br>
 
@@ -337,3 +340,9 @@ sections:
     </div>
 {% endblock %}
 ```
+
+<br>
+
+<img src="[base_url]/image/en/cookbook/blog/blog-post.png?w=800&dpr=2&q=70" />
+
+<br>
