@@ -74,6 +74,7 @@
                 </ul>
                 <h4>{{ entry_locale.txt_themes }}</h4>
                 <ul>
+                    <li class="{% if entry.slug == locale ~ "/themes/installation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/installation">{{ entry_locale.txt_theme_installation }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/themes/theme-configuration" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/theme-configuration">{{ entry_locale.txt_link_theme_configuration }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/themes/theme-variables" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/theme-variables">{{ entry_locale.txt_link_theme_variables }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/themes/twig-filters-functions" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/twig-filters-functions">{{ entry_locale.txt_link_twig_filters_functions }}</a></li>
@@ -81,6 +82,7 @@
                 </ul>
                 <h4>{{ entry_locale.txt_plugins }}</h4>
                 <ul>
+                    <li class="{% if entry.slug == locale ~ "/plugins/installation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/installation">{{ entry_locale.txt_plugins_installation }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/plugins/hooks" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/hooks">{{ entry_locale.txt_plugins_event_hooks }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/plugins/toast" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/toasts">{{ entry_locale.txt_plugins_toasts_notifications }}</a></li>
                 </ul>
