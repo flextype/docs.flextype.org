@@ -25,6 +25,7 @@ txt_plugins: "Plugins"
 txt_plugins_toasts_notifications: Toast Notifications
 txt_theme_installation: Theme Installation
 txt_plugins_installation: Plugin Installation
+txt_plugins_navigation: Navigation
 txt_license: License
 txt_themes: Themes
 txt_content: Content
