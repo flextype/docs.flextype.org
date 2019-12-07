@@ -82,6 +82,7 @@
                 <h4>{{ entry_locale.txt_plugins }}</h4>
                 <ul>
                     <li class="{% if entry.slug == locale ~ "/plugins/hooks" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/hooks">{{ entry_locale.txt_plugins_event_hooks }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/plugins/toast" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/toasts">{{ entry_locale.txt_plugins_toasts_notifications }}</a></li>
                 </ul>
                 <h4>{{ entry_locale.txt_advanced }}</h4>
                 <ul>
