@@ -79,6 +79,10 @@
                     <li class="{% if entry.slug == locale ~ "/themes/twig-filters-functions" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/twig-filters-functions">{{ entry_locale.txt_link_twig_filters_functions }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/themes/entries-fetch" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/entries-fetch">{{ entry_locale.txt_link_entries_fetch }}</a></li>
                 </ul>
+                <h4>{{ entry_locale.txt_plugins }}</h4>
+                <ul>
+                    <li class="{% if entry.slug == locale ~ "/plugins/hooks" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/hooks">{{ entry_locale.txt_plugins_event_hooks }}</a></li>
+                </ul>
                 <h4>{{ entry_locale.txt_advanced }}</h4>
                 <ul>
                     <li class="{% if entry.slug == locale ~ "/advanced/yaml-syntax" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax">{{ entry_locale.txt_link_yaml_syntax }}</a></li>
