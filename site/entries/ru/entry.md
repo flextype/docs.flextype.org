@@ -23,6 +23,8 @@ txt_link_fieldsets: Fieldsets
 txt_plugins_event_hooks: "Event Hooks"
 txt_plugins: "Plugins"
 txt_plugins_toasts_notifications: Toast Notifications
+txt_theme_installation: Theme Installation
+txt_plugins_installation: Plugin Installation
 txt_license: License
 txt_themes: Themes
 txt_content: Content
