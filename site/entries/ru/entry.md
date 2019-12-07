@@ -20,6 +20,8 @@ txt_link_theme_configuration: Настройка темы
 txt_link_yaml_syntax: Синтаксис YAML
 txt_link_entries_fetch: Entries Fetch
 txt_link_fieldsets: Fieldsets
+txt_plugins_event_hooks: "Event Hooks"
+txt_plugins: "Plugins"
 txt_license: License
 txt_themes: Themes
 txt_content: Content
