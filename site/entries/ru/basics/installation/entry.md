@@ -73,14 +73,3 @@ Also you may need to install vendor libs for default plugins and default theme. 
 Если вы запускаете Flextype в под-папке сайта, установите RewriteBase в соответствии с именем под-папки:
 
     RewriteBase /my-subfolder/
-    
-
-## Установка темы
-
-1. Разархивировать тему в папку `/site/themes/`
-2. Перейдите в `/site/config/settings.yaml` и обновите настройку `` с вашим именем темы.
-3. Сохранить ваши изменения.
-
-## Установка плагинов
-
-1. Разархивировать плагин в папку `/site/plugins/`

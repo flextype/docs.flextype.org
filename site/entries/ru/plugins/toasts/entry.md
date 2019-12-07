@@ -24,6 +24,7 @@ $this->flash->addMessage('warning', 'Warning message here');
 ### Display toast notifications in twig templates
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/plugins/admin/views/partials/messenger.html</div>
+
 ```twig
 <script type="text/javascript">
     Messenger.options = {
