@@ -1,3 +1,0 @@
----
-title: Flextype API's
----
