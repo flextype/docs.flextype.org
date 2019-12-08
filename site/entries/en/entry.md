@@ -31,6 +31,7 @@ txt:
       entries_fetch: Entries Fetch
     plugins:
       title: Plugins
+      configuration: Plugin Configuration
       event_hooks: "Event Hooks"
       toasts_notifications: Toast Notifications
       installation: Plugin Installation
