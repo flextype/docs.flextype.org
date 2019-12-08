@@ -1,37 +1,49 @@
 ---
 title: Что такое Flextype?
-txt_basics: Основное
-txt_link_what_is_flextype: Что такое Flextype?
-txt_link_requirements: Требования
-txt_link_installation: Установка
-txt_link_configuration: Настройка
-txt_link_folder_structure: Структура папок
-txt_link_php_constants: PHP константы
-txt_link_coc: Кодекс поведения
-txt_link_getting_help: Получение помощи
-txt_link_edit_this_page: Редактировать страницу
-txt_link_entries: Записи
-txt_link_markdown: Разметка
-txt_link_media: Медиа
-txt_link_password_recovery: Восстановление пароля
-txt_link_twig_filters_functions: Twig Фильтры и Функции
-txt_link_theme_variables: Переменные темы
-txt_link_theme_configuration: Настройка темы
-txt_link_yaml_syntax: Синтаксис YAML
-txt_link_entries_fetch: Entries Fetch
-txt_link_fieldsets: Fieldsets
-txt_plugins_event_hooks: "Event Hooks"
-txt_plugins: "Plugins"
-txt_plugins_toasts_notifications: Toast Notifications
-txt_theme_installation: Theme Installation
-txt_plugins_installation: Plugin Installation
-txt_license: License
-txt_themes: Themes
-txt_content: Content
-txt_advanced: Advanced
-txt_language: Language
-txt_cookbook: Cookbook
-txt_blog: Blog
+txt:
+  common:
+    edit_this_page: Edit this page
+    language: Language
+  categories:
+    basics:
+      title: Basics
+      what_is_flextype: What is Flextype?
+      requirements: Requirements
+      installation: Installation
+      configuration: Configuration
+      folder_structure: Folder Structure
+      php_constants: PHP Constants
+      coc: Code of Conduct
+      getting_help: Getting Help
+      license: License
+    content:
+      title: Content
+      entries: Entries
+      markdown: Markdown
+      media: Media
+      fieldsets: Fieldsets
+    themes:
+      title: Themes
+      theme_installation: Theme Installation
+      twig_filters_functions: Twig Filters & Functions
+      theme_variables: Theme Variables
+      theme_configuration: Theme Configuration
+      entries_fetch: Entries Fetch
+    plugins:
+      title: Plugins
+      configuration: Plugin Configuration
+      event_hooks: "Event Hooks"
+      toasts_notifications: Toast Notifications
+      installation: Plugin Installation
+      navigation: Navigation
+    cookbook:
+      title: Cookbook
+      blog: Blog
+    advanced:
+      title: Advanced
+      password_recovery: Password recovery
+      yaml_syntax: YAML Syntax
+      api: Flextype API's
 ---
 
 Flextype был **основан в марте 2018** как легкая альтернатива другим тяжелым и устаревшим CMS. Многие люди используют сложные решения для простых страниц, без необходимости. Создавая эту систему управления контентом, мы сосредоточили внимание на простоте - даже новичок Вебмастер может адаптировать его шаблон и написать свой собственный плагин. Для этого мы внедрили простой, но мощный API.
@@ -46,6 +58,8 @@ Flextype был **основан в марте 2018** как легкая аль
 * [The PHP League](https://thephpleague.com): Лига экстраординарных PHP пакетов хорошо протестирована и использует современные стандарты кодирования.
 * [Respect Validation](https://respect-validation.readthedocs.io/): Самый удивительный движок проверки, созданный для PHP.
 * [Thunderer Shortcode](https://github.com/thunderer/Shortcode): Расширенный шорткод (BBCode) синтаксический анализатор и движок для PHP.
+
+### Supporting Flextype
 
 Flextype - это проект с открытым исходным кодом, лицензированный MIT, и он абсолютно бесплатный для использования.
 
