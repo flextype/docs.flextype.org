@@ -41,6 +41,7 @@ txt:
       blog: Blog
     advanced:
       title: Advanced
+      performance_and_caching: Performance & Caching
       password_recovery: Password recovery
       yaml_syntax: YAML Syntax
       api: Flextype API's
