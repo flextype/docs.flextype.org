@@ -4,8 +4,6 @@ title: Fieldsets
 
 Fieldsets are configuration files written in YAML for Admin Panel to create publish forms. They establish your content model. Essentially, a schema that defines your fields, data types, and the interface used to manage them.
 
-<br>
-
 ## Fields
 
 Form fields are an essential part of the fieldsets and have very powerful options.
