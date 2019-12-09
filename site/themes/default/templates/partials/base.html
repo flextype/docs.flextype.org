@@ -90,6 +90,7 @@
                 </ul>
                 <h4>{{ entry_locale.txt.categories.advanced.title }}</h4>
                 <ul>
+                    <li class="{% if entry.slug == locale ~ "/advanced/performance-and-caching" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/performance-and-caching">{{ entry_locale.txt.categories.advanced.performance_and_caching }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/advanced/yaml-syntax" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax">{{ entry_locale.txt.categories.advanced.yaml_syntax }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/advanced/password-recovery" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/password-recovery">{{ entry_locale.txt.categories.advanced.password_recovery }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/advanced/api" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/api">{{ entry_locale.txt.categories.advanced.api }}</a></li>
