@@ -2,7 +2,7 @@
 title: Что такое Flextype?
 txt:
   common:
-    edit_this_page: Edit this page
+    edit_this_page: Improve this page
     language: Language
   categories:
     basics:
