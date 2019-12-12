@@ -9,7 +9,7 @@ If you can't find the right answers to your questions on our Website, you can tu
 
 Got a question about setting up or using Flextype? We'll do our best to help you out. Also here you may start discussions about core, plugin and themes development.
 
-Link: <https://discord.gg/CCKPKVG>
+Link: <https://flextype.org/en/discord>
 
 ### Github
 
@@ -17,20 +17,14 @@ If you want to report a bug or contribute your ideas, you can use the [Flextype 
 
 Link: <https://github.com/flextype>
 
-### Vkontakte
-
-Russian Flextype Community!
-
-Link: <https://vk.com/flextype>
-
 ### Twitter
 
 Follow [Flextype on Twitter](https://twitter.com/getflextype) to get real-time news regarding the development and all events we are attending.
 
 Link: <https://twitter.com/getflextype>
 
-### Forum
+### Vkontakte
 
-We have a forum to provide a simple way to get your Flextype questions answered quickly.
+Russian Flextype Community!
 
-Link: <http://forum.flextype.org>
+Link: <https://vk.com/flextype>

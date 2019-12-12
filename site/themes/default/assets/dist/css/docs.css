@@ -329,3 +329,37 @@ hr {
     border-left: none;
     border-right: none;
 }
+
+.hljs {
+    position: relative;
+}
+
+
+.hljs:before {
+    background: #202020;
+    letter-spacing: 1px;
+    padding: 7px 12px;
+    font-size: 10px;
+    line-height: 10px;
+    right: 0;
+    top: 0;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.hljs.language-plaintext:before {
+    content: "COMMAND LINE";
+}
+
+.hljs.language-php:before {
+    content: "PHP";
+}
+
+.hljs.language-yaml:before,
+.hljs.yaml:before {
+    content: "YAML";
+}
+
+.hljs.language-twig:before {
+    content: "TWIG";
+}

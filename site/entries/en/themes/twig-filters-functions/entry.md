@@ -170,6 +170,7 @@ Usage:
 ```
 
 Result:
+
     ---
     title: About
     ---
@@ -193,7 +194,8 @@ Result:
 Get filename
 
 Usage:
-```
+
+```twig
 {{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
 ```
 
