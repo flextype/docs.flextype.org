@@ -8,6 +8,7 @@ Here is a basic example `site/entries/my-entry/entry.md`:
 
 <div class="file-header"><i class="far fa-file-alt"></i> site/entries/my-entry/entry.md</div>
 
+    ---
     title: My Entry
     description: My entry description
     ---
