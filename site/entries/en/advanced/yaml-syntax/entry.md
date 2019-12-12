@@ -1,5 +1,12 @@
 ---
 title: YAML Syntax
+on_this_page:
+  basic_rules:
+    title: "Basic Rules"
+    link: "#basic-rules"
+  datatypes:
+    title: "Datatypes"
+    link: "#datatypes"
 ---
 
 YAML (YAML Ain't Markup) is a human friendly data serialization language.
@@ -8,6 +15,7 @@ Flextype uses YAML because it's as close to plain English as data serialization 
 
 YAML is used extensively in Flextype for its configuration files, fieldsets, and also in entries settings.
 
+<a name="#basic-rules"></a>
 ### Basic Rules
 
 There are some rules that YAML has in place to avoid issues related to ambiguity in relation to various languages and editing programs. These rules make it possible for a single YAML file to be interpreted consistently, regardless of which application and/or library is being used to interpret it.
@@ -16,6 +24,7 @@ There are some rules that YAML has in place to avoid issues related to ambiguity
 * YAML is case sensitive.
 * YAML does not allow the use of tabs. Spaces are used instead as tabs are not universally supported.
 
+<a name="#datatypes"></a>
 ### Datatypes
 
 Values in YAML’s key-value pairs are scalar. They act like the scalar types in languages like Perl, Javascript, and Python. It’s usually good enough to enclose strings in quotes, leave numbers unquoted, and let the parser figure it out.
@@ -28,21 +37,21 @@ The key-value is YAML’s basic building block. Every item in a YAML document is
 
 So, as we’ve already seen, the value can be a string, a number, or another dictionary.
 
-#### Numeric types
-
-YAML recognizes numeric types. We saw floating point and integers above. YAML supports several other numeric types.
-
-```yaml
-foo: 12345
-bar: 0x12d4
-```
-
 #### Strings
 
-YAML strings are Unicode. In most situations, you don’t have to specify them in quotes.
+YAML strings are Unicode. In most situations, you don’t have to specify them in quotes.<br>
+Any group of characters beginning with an alphabetic or numeric character is a string, unless it belongs to one of the groups below (such as an Integer or Time).
+
 
 ```yaml
 foo: this is a normal string
+```
+
+```php
+Array
+(
+    [foo] => this is a normal string
+)
 ```
 
 If we want escape sequences handled, we need to use double quotes.
@@ -50,6 +59,15 @@ If we want escape sequences handled, we need to use double quotes.
 ```yaml
 foo: "this is not a normal string\n"
 bar: this is not a normal string\n
+```
+
+```php
+Array
+(
+    [foo] => this is not a normal string
+
+    [bar] => this is not a normal string\n
+)
 ```
 
 YAML processes the first value as ending with a carriage return and linefeed. Since the second value is not quoted, YAML treats the `\n` as two characters.
@@ -66,6 +84,13 @@ foo: >
   see?
 ```
 
+```php
+Array
+(
+    [foo] => this is not a normal string it spans more than one line see?
+)
+```
+
 The block (pipe) character has a similar function, but YAML interprets the field exactly as is. So, we see the newlines where they are in the document.
 
 ```yaml
@@ -76,6 +101,111 @@ foo: |
   see?
 ```
 
+```php
+Array
+(
+    [foo] => this is not a normal string it
+spans more than
+one line
+see?
+
+)
+```
+
+#### Integers
+
+An integer is a series of numbers, optionally starting with a positive or negative sign. Integers may also contain commas for readability.
+
+```yaml
+zero: 0
+simple: 12
+one_thousand: 1,000
+negative_one_thousand: -1,000
+universe: 25
+answer: 42
+```
+
+```php
+Array
+(
+    [zero] => 0
+    [simple] => 12
+    [one_thousand] => 1,000
+    [negative_one_thousand] => -1,000
+    [universe] => 25
+    [answer] => 42
+)
+```
+
+##### Integers as Map Keys
+
+An integer can be used a dictionary key.
+
+```yaml
+1: one
+2: two
+3: three
+```
+
+```php
+Array
+(
+    [1] => one
+    [2] => two
+    [3] => three
+)
+```
+
+#### Floats
+
+Floats are represented by numbers with decimals, allowing for scientific notation, as well as positive and negative infinity and "not a number."
+
+```yaml
+a_simple_float: 2.00
+larger_float: 1,000.09
+scientific_notation: 1.00009e+3
+```
+
+```php
+Array
+(
+    [a_simple_float] => 2
+    [larger_float] => 1,000.09
+    [scientific_notation] => 1000.09
+)
+```
+
+#### Time
+
+You can represent timestamps by using ISO8601 format, or a variation which allows spaces between the date, time and time zone.
+
+```yaml
+iso8601: 2001-12-14t21:59:43.10-05:00
+space_seperated: 2001-12-14 21:59:43.10 -05:00
+```
+
+```php
+Array
+(
+    [iso8601] => 1008385183
+    [space_seperated] => 1008385183
+)
+```
+
+#### Date
+
+A date can be represented by its year, month and day in ISO8601 order.
+
+```yaml
+date: 1976-07-31
+```
+
+```php
+Array
+(
+    [date] => 207619200
+)
+```
 
 #### Nulls
 
@@ -86,15 +216,29 @@ foo: ~
 bar: null
 ```
 
+```php
+Array
+(
+    [foo] =>
+    [bar] =>
+)
+```
+
 #### Booleans
 
-YAML indicates boolean values with the keywords True, On and Yes for true. False is indicated with False, Off, or No.
+YAML indicates boolean values with the keywords `true`. False is indicated with `false`.
 
 ```yaml
-foo: True
-bar: False
-light: On
-TV: Off
+foo: true
+bar: false
+```
+
+```php
+Array
+(
+    [foo] => 1
+    [bar] =>
+)
 ```
 
 #### Arrays
@@ -144,6 +288,18 @@ Like arrays, you can put dictionaries inline. We saw this format above. It’s h
 
 ```yaml
 foo: { thing1: huey, thing2: louie, thing3: dewey }
+```
+
+### Merge key
+
+A merge key `<<` can be used in a mapping to insert other mappings. If the value associated with the merge key is a mapping, each of its key/value pairs is inserted into the current mapping.
+
+```yaml
+mapping:
+  name: Joe
+  job: Accountant
+  <<:
+    age: 38
 ```
 
 ### Resources and Further Documentation

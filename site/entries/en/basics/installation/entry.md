@@ -27,8 +27,9 @@ Unzip the contents to a new folder on your local computer, and upload to your we
 
 You can easily install Flextype with Composer.
 
-    composer create-project flextype/flextype
-
+```plaintext
+composer create-project flextype/flextype
+```
 
 Also you may need to install vendor libs for default plugins and default theme.
 Go to your project folder, and run:
