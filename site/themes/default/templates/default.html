@@ -5,8 +5,24 @@
     <h1 class="h2">
         {{ entry.title }}
     </h1>
-    <div>
-        {{ entry.content|shortcode|markdown|raw }}
+    <div class="flex relative">
+        <div class="{% if entry.on_this_page %}width-9-12{% else %}width-full{% endif %}">
+            {{ entry.content|shortcode|markdown|raw }}
+        </div>
+        {% if entry.on_this_page %}
+        <div class="width-3-12 block relative">
+            <div class="sticky top-18">
+                <div class="padding-left-2">
+                    <h4 class="margin-none">ON THIS PAGE</h4>
+                    <ul class="list-none margin-none padding-none">
+                        {% for item in entry.on_this_page %}
+                            <li><a class="text-decoration-none" href="#{{ item.link }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

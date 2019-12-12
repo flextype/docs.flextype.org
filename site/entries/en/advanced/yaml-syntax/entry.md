@@ -1,5 +1,12 @@
 ---
 title: YAML Syntax
+on_this_page:
+  basic_rules:
+    title: "Basic Rules"
+    link: "#basic-rules"
+  datatypes:
+    title: "Datatypes"
+    link: "#datatypes"
 ---
 
 YAML (YAML Ain't Markup) is a human friendly data serialization language.
@@ -8,6 +15,7 @@ Flextype uses YAML because it's as close to plain English as data serialization 
 
 YAML is used extensively in Flextype for its configuration files, fieldsets, and also in entries settings.
 
+<a name="#basic-rules"></a>
 ### Basic Rules
 
 There are some rules that YAML has in place to avoid issues related to ambiguity in relation to various languages and editing programs. These rules make it possible for a single YAML file to be interpreted consistently, regardless of which application and/or library is being used to interpret it.
@@ -16,6 +24,7 @@ There are some rules that YAML has in place to avoid issues related to ambiguity
 * YAML is case sensitive.
 * YAML does not allow the use of tabs. Spaces are used instead as tabs are not universally supported.
 
+<a name="#datatypes"></a>
 ### Datatypes
 
 Values in YAML’s key-value pairs are scalar. They act like the scalar types in languages like Perl, Javascript, and Python. It’s usually good enough to enclose strings in quotes, leave numbers unquoted, and let the parser figure it out.
