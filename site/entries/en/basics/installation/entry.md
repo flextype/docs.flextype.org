@@ -7,7 +7,7 @@ title: Installation
 Flextype is incredibly easy to set up and get running.  
 Be sure you have at least PHP version 7.2.0+ by going to the terminal and typing `php -v`:
 
-```
+```plaintext
 php -v
 PHP 7.2.20 (cli) (built: Jul  5 2019 12:51:26) ( NTS )
 Copyright (c) 1997-2018 The PHP Group
@@ -33,7 +33,7 @@ You can easily install Flextype with Composer.
 Also you may need to install vendor libs for default plugins and default theme.
 Go to your project folder, and run:
 
-```
+```plaintext
 cd site/plugins/admin
 composer install
 npm install
@@ -55,7 +55,7 @@ gulp
 
 If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
 
-```
+```plaintext
 wget https://github.com/flextype/flextype/releases/download/v0.9.6/flextype-0.9.6.zip
 unzip flextype-0.9.6.zip
 chmod -R 0777 site/
