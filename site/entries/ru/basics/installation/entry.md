@@ -7,12 +7,13 @@ title: Установка
 Flextype невероятно легко настроить и запустить.  
 Убедитесь, что у вас есть хотя бы PHP версии 7.2.0+, перейдя в терминал и набрав `php -v`:
 
-    php -v
-    PHP 7.2.20 (cli) (built: Jul  5 2019 12:51:26) ( NTS )
-    Copyright (c) 1997-2018 The PHP Group
-    Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
-     with Zend OPcache v7.2.20, Copyright (c) 1999-2018, by Zend Technologies
-    
+```plaintext
+php -v
+PHP 7.2.20 (cli) (built: Jul  5 2019 12:51:26) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+ with Zend OPcache v7.2.20, Copyright (c) 1999-2018, by Zend Technologies
+```
 
 ### Использование (S)FTP
 
@@ -31,31 +32,33 @@ Flextype невероятно легко настроить и запустит�
 
 Also you may need to install vendor libs for default plugins and default theme. Go to your project folder, and run:
 
-    cd site/plugins/admin
-    composer install
-    npm install
-    gulp
-    
-    cd ../../../
-    
-    cd site/plugins/site
-    composer install
-    
-    cd ../../../
-    
-    cd site/themes/default
-    npm install
-    gulp
-    
+```plaintext
+cd site/plugins/admin
+composer install
+npm install
+gulp
+
+cd ../../../
+
+cd site/plugins/site
+composer install
+
+cd ../../../
+
+cd site/themes/default
+npm install
+gulp
+```
 
 ### Использование командной строки
 
 Если у вас есть доступ к командной строке, вы можете легко установить Flextype, выполнив несколько команд. Для начала создайте директорию, в которую хотите установить Flextype, если она ещё не создана. Затем перейдите в директорию и выполните следующие команды:
 
-    wget https://github.com/flextype/flextype/releases/download/v0.9.6/flextype-0.9.6.zip
-    unzip flextype-0.9.6.zip
-    chmod -R 0777 site/
-    
+```plaintext
+wget https://github.com/flextype/flextype/releases/download/v0.9.6/flextype-0.9.6.zip
+unzip flextype-0.9.6.zip
+chmod -R 0777 site/
+```
 
 ### Проблемы при установке
 
