@@ -38,11 +38,27 @@ Any group of characters beginning with an alphabetic or numeric character is a s
 foo: this is a normal string
 ```
 
+```php
+Array
+(
+    [foo] => this is a normal string
+)
+```
+
 If we want escape sequences handled, we need to use double quotes.
 
 ```yaml
 foo: "this is not a normal string\n"
 bar: this is not a normal string\n
+```
+
+```php
+Array
+(
+    [foo] => this is not a normal string
+
+    [bar] => this is not a normal string\n
+)
 ```
 
 YAML processes the first value as ending with a carriage return and linefeed. Since the second value is not quoted, YAML treats the `\n` as two characters.
@@ -59,6 +75,13 @@ foo: >
   see?
 ```
 
+```php
+Array
+(
+    [foo] => this is not a normal string it spans more than one line see?
+)
+```
+
 The block (pipe) character has a similar function, but YAML interprets the field exactly as is. So, we see the newlines where they are in the document.
 
 ```yaml
@@ -69,13 +92,15 @@ foo: |
   see?
 ```
 
-##### Forcing Strings
+```php
+Array
+(
+    [foo] => this is not a normal string it
+spans more than
+one line
+see?
 
-Any YAML type can be forced into a string using the explicit `!str` method.
-
-```yaml
-date string: !str 2001-08-01
-number string: !str 192
+)
 ```
 
 #### Integers
@@ -91,6 +116,18 @@ universe: 25
 answer: 42
 ```
 
+```php
+Array
+(
+    [zero] => 0
+    [simple] => 12
+    [one_thousand] => 1,000
+    [negative_one_thousand] => -1,000
+    [universe] => 25
+    [answer] => 42
+)
+```
+
 ##### Integers as Map Keys
 
 An integer can be used a dictionary key.
@@ -99,6 +136,15 @@ An integer can be used a dictionary key.
 1: one
 2: two
 3: three
+```
+
+```php
+Array
+(
+    [1] => one
+    [2] => two
+    [3] => three
+)
 ```
 
 #### Floats
@@ -111,13 +157,30 @@ larger_float: 1,000.09
 scientific_notation: 1.00009e+3
 ```
 
+```php
+Array
+(
+    [a_simple_float] => 2
+    [larger_float] => 1,000.09
+    [scientific_notation] => 1000.09
+)
+```
+
 #### Time
 
 You can represent timestamps by using ISO8601 format, or a variation which allows spaces between the date, time and time zone.
 
 ```yaml
 iso8601: 2001-12-14t21:59:43.10-05:00
-space seperated: 2001-12-14 21:59:43.10 -05:00
+space_seperated: 2001-12-14 21:59:43.10 -05:00
+```
+
+```php
+Array
+(
+    [iso8601] => 1008385183
+    [space_seperated] => 1008385183
+)
 ```
 
 #### Date
@@ -126,6 +189,13 @@ A date can be represented by its year, month and day in ISO8601 order.
 
 ```yaml
 date: 1976-07-31
+```
+
+```php
+Array
+(
+    [date] => 207619200
+)
 ```
 
 #### Nulls
@@ -137,6 +207,14 @@ foo: ~
 bar: null
 ```
 
+```php
+Array
+(
+    [foo] =>
+    [bar] =>
+)
+```
+
 #### Booleans
 
 YAML indicates boolean values with the keywords `true`. False is indicated with `false`.
@@ -144,6 +222,14 @@ YAML indicates boolean values with the keywords `true`. False is indicated with 
 ```yaml
 foo: true
 bar: false
+```
+
+```php
+Array
+(
+    [foo] => 1
+    [bar] =>
+)
 ```
 
 #### Arrays
