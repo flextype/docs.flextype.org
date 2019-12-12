@@ -28,35 +28,27 @@ YAML широко используется в Flextype для конфигура
 
 Итак, как мы уже видели, значением может быть строка, число или другой словарь.
 
-#### Числовые типы
+#### Strings
 
-YAML распознает числовые типы. Мы в идем двоеточие и целые числа ниже. YAML поддерживает несколько других цифровых типов.
+YAML strings are Unicode. In most situations, you don’t have to specify them in quotes.<br> Any group of characters beginning with an alphabetic or numeric character is a string, unless it belongs to one of the groups below (such as an Integer or Time).
 
-```yaml
-foo: 12345
-bar: 0x12d4
-```
-
-#### Строки
-
-YAML строки - это Unicode. В большинстве случаев, вам не нужно указывать их в кавычках.
 
 ```yaml
 foo: this is a normal string
 ```
 
-Если мы хотим работать с управляющими последовательностями, нам нужно использовать двойные кавычки.
+If we want escape sequences handled, we need to use double quotes.
 
 ```yaml
 foo: "this is not a normal string\n"
 bar: this is not a normal string\n
 ```
 
-YAML обрабатывает первое значение как заканчивающееся возвратом и подачей строки. Поскольку второе значение не цитируется, YAML рассматривает `\n` как два символа.
+YAML processes the first value as ending with a carriage return and linefeed. Since the second value is not quoted, YAML treats the `\n` as two characters.
 
-YAML не будет экранировать строки с одиночными кавычками, но одиночные кавычки не будут иметь содержимое строк, интерпретируемое как форматирование документа.
+YAML will not escape strings with single quotes, but the single quotes do avoid having string contents interpreted as document formatting.
 
-Строковые значения могут охватывать более одной строки. С помощью символа складки (больше) можно указать строку в блоке. Но это интерпретируется без новых строк.
+String values can span more than one line. With the fold (greater than) character, you can specify a string in a block. But it’s interpreted without the newlines.
 
 ```yaml
 foo: >
@@ -66,7 +58,7 @@ foo: >
   see?
 ```
 
-Символ блока (pipe) имеет схожую функцию, но YAML интерпретирует поле точно так же, как есть. Итак, мы видим в документе новые строки, где они находятся.
+The block (pipe) character has a similar function, but YAML interprets the field exactly as is. So, we see the newlines where they are in the document.
 
 ```yaml
 foo: |
@@ -76,37 +68,93 @@ foo: |
   see?
 ```
 
+##### Forcing Strings
 
-#### Недействительный
+Any YAML type can be forced into a string using the explicit `!str` method.
 
-Вы вводите нули с тильдой или цитируемым нулевым строковым литералом.
+```yaml
+date string: !str 2001-08-01
+number string: !str 192
+```
+
+#### Integers
+
+An integer is a series of numbers, optionally starting with a positive or negative sign. Integers may also contain commas for readability.
+
+```yaml
+zero: 0
+simple: 12
+one_thousand: 1,000
+negative_one_thousand: -1,000
+universe: 25
+answer: 42
+```
+
+##### Integers as Map Keys
+
+An integer can be used a dictionary key.
+
+```yaml
+1: one
+2: two
+3: three
+```
+
+#### Floats
+
+Floats are represented by numbers with decimals, allowing for scientific notation, as well as positive and negative infinity and "not a number."
+
+```yaml
+a_simple_float: 2.00
+larger_float: 1,000.09
+scientific_notation: 1.00009e+3
+```
+
+#### Time
+
+You can represent timestamps by using ISO8601 format, or a variation which allows spaces between the date, time and time zone.
+
+```yaml
+iso8601: 2001-12-14t21:59:43.10-05:00
+space seperated: 2001-12-14 21:59:43.10 -05:00
+```
+
+#### Date
+
+A date can be represented by its year, month and day in ISO8601 order.
+
+```yaml
+date: 1976-07-31
+```
+
+#### Nulls
+
+You enter nulls with a tilde or the unquoted null string literal.
 
 ```yaml
 foo: ~
 bar: null
 ```
 
-#### Логические значения
+#### Booleans
 
-YAML указывает логические значения с ключевыми словами True, On и Yes для true. False обозначается как False, Off или No.
+YAML indicates boolean values with the keywords `true`. False is indicated with `false`.
 
 ```yaml
-foo: True
-bar: False
-light: On
-TV: Off
+foo: true
+bar: false
 ```
 
-#### Массивы
+#### Arrays
 
-Вы можете указать массивы или списки в одной строке.
+You can specify arrays or lists on a single line.
 
 ```yaml
 items: [ 1, 2, 3, 4, 5 ]
 names: [ "one", "two", "three", "four" ]
 ```
 
-Или вы можете поставить их на несколько строк.
+Or, you can put them on multiple lines.
 
 ```yaml
 items:
@@ -122,7 +170,7 @@ names:
   - "four"
 ```
 
-Многострочный формат полезен для списков, содержащих сложные объекты, а не скаляры.
+The multiple line format is useful for lists that contain complex objects instead of scalars.
 
 ```yaml
 items:
@@ -134,19 +182,31 @@ items:
       key: value
 ```
 
-Массив может содержать любое допустимое значение YAML. Значения в списке не обязательно должны быть одного и того же типа.
+An array can contain any valid YAML value. The values in a list do not have to be the same type.
 
-#### Словари
+#### Dictionaries
 
-Мы рассмотрели словари выше, но есть еще кое-что.
+We covered dictionaries above, but there’s more to them.
 
-Как и массивы, вы можете добавлять словари в последовательность. Мы видели этот формат выше. Это как python печатает словари.
+Like arrays, you can put dictionaries inline. We saw this format above. It’s how python prints dictionaries.
 
 ```yaml
 foo: { thing1: huey, thing2: louie, thing3: dewey }
 ```
 
-### Ресурсы и дальнейшая документация
+### Merge key
+
+A merge key `<<` can be used in a mapping to insert other mappings. If the value associated with the merge key is a mapping, each of its key/value pairs is inserted into the current mapping.
+
+```yaml
+mapping:
+  name: Joe
+  job: Accountant
+  <<:
+    age: 38
+```
+
+### Resources and Further Documentation
 
 * [Официальная документация YAML 1.2](https://yaml.org/spec/1.2/spec.html)
 * [Справочная карта YAML](https://yaml.org/refcard.html)
