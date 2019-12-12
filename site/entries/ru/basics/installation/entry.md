@@ -27,8 +27,9 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 
 Вы можете легко установить Flextype с помощью Composer.
 
-    composer create-project flextype/flextype
-    
+```plaintext
+composer create-project flextype/flextype
+```
 
 Also you may need to install vendor libs for default plugins and default theme. Go to your project folder, and run:
 
