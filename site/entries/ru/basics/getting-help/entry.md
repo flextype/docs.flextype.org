@@ -9,7 +9,7 @@ title: Получение помощи
 
 У вас есть вопрос о настройке или использовании Flextype? Мы сделаем все возможное, чтобы помочь вам. Также здесь вы можете начать обсуждение разработки ядра, плагина и тем.
 
-Link: <https://discord.gg/CCKPKVG>
+Link: <https://flextype.org/en/discord>
 
 ### Github
 
@@ -17,20 +17,14 @@ Link: <https://discord.gg/CCKPKVG>
 
 Link: <https://github.com/flextype>
 
-### Vkontakte
-
-Российское Flextype сообщество!
-
-Link: <https://vk.com/flextype>
-
 ### Twitter
 
-Подписывайтесь на наш [официальный Twitter](https://twitter.com/getflextype) чтобы получать получать в режиме реального времени новости о разработке и всех мероприятиях, которые мы посещаем.
+Follow [Flextype on Twitter](https://twitter.com/getflextype) to get real-time news regarding the development and all events we are attending.
 
 Link: <https://twitter.com/getflextype>
 
-### Форум
+### Vkontakte
 
-Мы имеем форум, чтобы предоставить простой способ быстро ответить на ваши вопросы Flextype.
+Russian Flextype Community!
 
-Link: <http://forum.flextype.org>
+Link: <https://vk.com/flextype>

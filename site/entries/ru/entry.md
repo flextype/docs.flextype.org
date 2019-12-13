@@ -4,6 +4,7 @@ txt:
   common:
     edit_this_page: Improve this page
     language: Language
+    on_this_page: On this page
   categories:
     basics:
       title: Basics
