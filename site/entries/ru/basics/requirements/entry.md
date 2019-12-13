@@ -12,18 +12,14 @@ on_this_page:
     link: "browser-requirements"
 ---
 
-<a name="system-requirements"></a>
-
-### Системные требования
+### <a name="system-requirements"></a> Системные требования
 
 Убедитесь, что ваш сервер отвечает следующим требованиям.
 
 * Веб-сервер (Apache с функцией [Mod Rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html))
 * PHP 7.2.0 или выше
 
-<a name="php-extensions"></a>
-
-### Расширения PHP
+### <a name="php-extensions"></a> Расширения PHP
 
 Для работы Flextype необходимо включить следующие расширения PHP:
 
@@ -36,9 +32,7 @@ on_this_page:
 
 Хотя это и необязательно, мы настоятельно рекомендуем включить следующие расширения PHP: APC, APCu, XCache, Memcached или Redis для повышения производительности.
 
-<a name="browser-requirements"></a>
-
-### Требования к браузеру
+### <a name="browser-requirements"></a> Требования к браузеру
 
 Панель администрирования Flextype совместима с:
 
