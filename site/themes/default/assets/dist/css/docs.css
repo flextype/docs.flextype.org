@@ -306,8 +306,8 @@ pre {
 .content {
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
 .flextype {
@@ -338,7 +338,6 @@ hr {
 .hljs {
     position: relative;
 }
-
 
 .hljs:before {
     background: #202020;
