@@ -1,5 +1,6 @@
 ---
 title: Event Hooks
+description: Hooks are a way for one piece of code to interact/modify another piece of code. They make up the foundation for how plugins and themes interact with Flextype.
 ---
 
 Hooks are a way for one piece of code to interact/modify another piece of code. They make up the foundation for how plugins and themes interact with Flextype.
