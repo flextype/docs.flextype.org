@@ -96,8 +96,33 @@ pre {
 }
 
 h1 {
-    font-size: 36px;
-    line-height: 60px;
+    font-size: 2.5em;
+    line-height: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+    line-height: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+h4 {
+    font-size: 1.3em;
+    line-height: 1.3em;
+}
+
+h5 {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
+h6 {
+    font-size: .85em;
+    line-height: .85em;
 }
 
 h1,
@@ -142,10 +167,11 @@ th, td {
     vertical-align: middle;
 }
 
-.h2 {
+.page-content .h1 {
     border-bottom: 3px solid black;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin-bottom: 25px;
+    line-height: 60px;
 }
 
 .flextype .h2 {
@@ -175,25 +201,6 @@ th, td {
     border-bottom:1px solid #eaecef;
 }
 
-h2 {
-    font-size:1.5em
-}
-
-h3 {
-    font-size:1.25em
-}
-
-h4 {
-    font-size:1em
-}
-
-h5 {
-    font-size:.875em
-}
-
-h6 {
-    font-size: .85em;
-}
 
 ul {
     list-style: circle;
@@ -304,10 +311,7 @@ pre {
 }
 
 .content {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding: 20px 40px 30px 40px;
 }
 
 .flextype {
