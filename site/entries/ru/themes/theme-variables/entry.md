@@ -1,5 +1,6 @@
 ---
 title: Настраиваемые параметры темы
+description: When you are designing a theme, Flextype gives you access to all sorts of objects and variables from within your Twig templates. The Twig templating framework provides powerful ways to read and manipulate these objects and variables.
 ---
 
 При проектировании темы Flextype дает доступ ко всем видам объектов и переменных из ваших шаблонов Twig. Шаблон Twig предоставляет мощные способы для чтения и манипулирования этими объектами и переменными.
