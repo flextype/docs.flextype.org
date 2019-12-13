@@ -1,5 +1,6 @@
 ---
 title: Media
+description: Entries can have any number and kind of images, videos, documents or other files. Those files are being stored directly in the entry folder.
 ---
 
 Entries can have any number and kind of images, videos, documents or other files.  

@@ -1,5 +1,6 @@
 ---
 title: Toast Notifications
+description: Simple notification messages that displays on the screen like toast popping out of a toaster.
 ---
 
 Simple notification messages that displays on the screen like toast popping out of a toaster.

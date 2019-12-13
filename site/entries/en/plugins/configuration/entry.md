@@ -1,5 +1,6 @@
 ---
 title: Plugin Configuration
+description: You can easily access plugin configuration and plugin information from your Twig templates and PHP files.
 ---
 
 You can easily access plugin configuration and plugin information from your Twig templates and PHP files.

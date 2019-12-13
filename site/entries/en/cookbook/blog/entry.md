@@ -1,5 +1,6 @@
 ---
 title: Blog
+description: A simple blog setup with Flextype.
 ---
 
 A simple blog setup with Flextype.
