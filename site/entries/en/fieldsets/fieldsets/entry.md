@@ -4,7 +4,7 @@ title: Fieldsets
 
 Fieldsets are configuration files written in YAML for Admin Panel to create publish forms. They establish your content model. Essentially, a schema that defines your fields, data types, and the interface used to manage them.
 
-## Fields
+### Fields
 
 Form fields are an essential part of the fieldsets and have very powerful options.
 
@@ -20,6 +20,8 @@ Form fields are an essential part of the fieldsets and have very powerful option
 | media_select | Media select field for selection media for entry. |
 | tags | An interactive tags input field. |
 | datetimepicker | A date time picker field. |
+
+<br>
 
 ### Field properties
 
