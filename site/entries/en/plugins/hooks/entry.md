@@ -4,10 +4,9 @@ title: Event Hooks
 
 Hooks are a way for one piece of code to interact/modify another piece of code. They make up the foundation for how plugins and themes interact with Flextype.
 
+### Available event hooks
 
-## Available event hooks
-
-### Core
+#### Core
 
 | Name | Description |
 | :------------- | :------------- |
@@ -16,9 +15,7 @@ Hooks are a way for one piece of code to interact/modify another piece of code. 
 | `onEntryAfterInitialized` | Fires when current entry requested by fetchSingle() method has been loaded into the entry object. |
 | `onEntriesAfterInitialized` | Fires when current entries collection requested by fetchCollection() method has been loaded into the entries object. |
 
-<br>
-
-### Admin plugin
+#### Admin plugin
 
 | Name | Description |
 | :------------- | :------------- |
@@ -26,17 +23,13 @@ Hooks are a way for one piece of code to interact/modify another piece of code. 
 | `onAdminThemeHeader` | Fires when html header information are printed for all admin pages. |
 | `onAdminThemeFooter` | Fires when html footer information are printed for all admin pages. |
 
-<br>
-
-### Site plugin
+#### Site plugin
 
 | Name | Description |
 | :------------- | :------------- |
 | `onSiteEntryAfterInitialized` | Fires after site entry requested by URL. |
 
-<br>
-
-### Default theme
+#### Default theme
 
 | Name | Description |
 | :------------- | :------------- |
@@ -44,11 +37,9 @@ Hooks are a way for one piece of code to interact/modify another piece of code. 
 | `onThemeHeader` | Fires when html header information are printed for all site pages. |
 | `onThemeTail` | Fires when html tail information are printed for all site pages. |
 
-<br>
+### How to use hooks
 
-## How to use hooks
-
-### Registering Listeners
+#### Registering Listeners
 
 Listeners are registered through the `addListener` method.
 
@@ -74,7 +65,7 @@ $flextype['emitter']->addListener('onThemeMeta', function() {
 });
 ```
 
-### Listener Priority
+#### Listener Priority
 
 Optionally event flow can be influenced by setting a priority. Priorities are represented as integers.
 
@@ -113,7 +104,7 @@ The `League\Event\EmitterInterface` has 3 predefined priorities:
 * `EmitterInterface::P_NORMAL` is 0
 * `EmitterInterface::P_LOW` is -100
 
-### Emitting events
+#### Emitting events
 
 Events are emitted using the `emit` function.
 
@@ -126,18 +117,17 @@ The event can be of two types:
 * `string` - (<a href="https://event.thephpleague.com/2.0/events/named/">view docs</a>)
 * `League\Event\EventInterface` - (<a href="https://event.thephpleague.com/2.0/events/classes/">view docs</a>)
 
-
-### Emitting events in batches
+#### Emitting events in batches
 
 ```
 $events = $flextype['emitter']->emitBatch([$event, $event, $event]);
 ```
 
-### Emit Return Values
+#### Emit Return Values
 
 Events emitted are returned as the result. When emitting events in batches an array of events is returned.
 
-### Emitting events in twig templates
+#### Emitting events in twig templates
 
 ```twig
 {% do emitter.emit('onThemeTail') %}
