@@ -1,11 +1,29 @@
 ---
 title: Установка
+on_this_page:
+  - 
+    title: "Check for PHP version"
+    link: "check-for-php-version"
+  - 
+    title: "Using (S)FTP"
+    link: "using-sftp"
+  - 
+    title: "Using Composer"
+    link: "using-composer"
+  - 
+    title: "Using command-line"
+    link: "using-command-line"
+  - 
+    title: "Installation issues"
+    link: "installation-issues"
 ---
+
+<a name="check-for-php-version"></a>
 
 ### Проверьте версию PHP
 
-Flextype невероятно легко настроить и запустить.  
-Убедитесь, что у вас есть хотя бы PHP версии 7.2.0+, перейдя в терминал и набрав `php -v`:
+Flextype is incredibly easy to set up and get running.  
+Be sure you have at least PHP version 7.2.0+ by going to the terminal and typing `php -v`:
 
 ```plaintext
 php -v
@@ -15,17 +33,21 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
  with Zend OPcache v7.2.20, Copyright (c) 1999-2018, by Zend Technologies
 ```
 
+<a name="using-sftp"></a>
+
 ### Использование (S)FTP
 
-[Загрузите последнюю версию.](http://flextype.org/en/downloads)
+[Download the latest version.](http://flextype.org/en/downloads)
 
-Распакуйте содержимое в новую папку на локальном компьютере и загрузите на свой веб-узел с помощью выбранного FTP-клиента. Затем, когда файлы загружены, удостоверьтесь в том, что вы выставили права chmod (для *nix систем) `755`, либо `777` на следующие директории:
+Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, be sure to chmod the following directories (with containing files) to `755` (or `777`), so they are readable and writable by Flextype:
 
 * `site/`
 
+<a name="using-composer"></a>
+
 ### Использование Composer
 
-Вы можете легко установить Flextype с помощью Composer.
+You can easily install Flextype with Composer.
 
 ```plaintext
 composer create-project flextype/flextype
@@ -51,9 +73,11 @@ npm install
 gulp
 ```
 
+<a name="using-command-line"></a>
+
 ### Использование командной строки
 
-Если у вас есть доступ к командной строке, вы можете легко установить Flextype, выполнив несколько команд. Для начала создайте директорию, в которую хотите установить Flextype, если она ещё не создана. Затем перейдите в директорию и выполните следующие команды:
+If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
 
 ```plaintext
 wget https://github.com/flextype/flextype/releases/download/v0.9.6/flextype-0.9.6.zip
@@ -61,11 +85,13 @@ unzip flextype-0.9.6.zip
 chmod -R 0777 site/
 ```
 
+<a name="installation-issues"></a>
+
 ### Проблемы при установке
 
 ##### Не работают под-страницы
 
-Домашняя страница вашего сайта работает, но не работают под-страницы сайта?
+Your homepage is working, but subpages won't open or lead to a server error?
 
 1. Удостоверьтесь, что в папке с установленным Flextype присутствует файл .htaccess.
 2. Проверьте, активирован ли на вашем сервере mod_rewrite.
@@ -74,6 +100,6 @@ chmod -R 0777 site/
     RewriteBase /
     
 
-Если вы запускаете Flextype в под-папке сайта, установите RewriteBase в соответствии с именем под-папки:
+If you run Flextype in a subfolder, make sure to set the RewriteBase according to the name of your subfolder:
 
     RewriteBase /my-subfolder/
