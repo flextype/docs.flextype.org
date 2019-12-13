@@ -13,6 +13,15 @@ on_this_page:
   - 
     title: "Datatypes"
     link: "datatypes"
+  - 
+    title: "Blocks"
+    link: "blocks"
+  - 
+    title: "Aliases and Anchors"
+    link: "aliases-and-anchors"
+  - 
+    title: "Resources and Further Documentation"
+    link: "resources-and-further-documentation"
 ---
 
 YAML (YAML Ain't Markup) является дружественным человеческим языком специализации данных.
@@ -624,7 +633,275 @@ Like arrays, you can put dictionaries inline. We saw this format above. It’s h
 foo: { thing1: huey, thing2: louie, thing3: dewey }
 ```
 
-### Resources and Further Documentation
+
+### <a name="blocks"></a> Blocks
+
+#### Single ending newline
+
+A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+
+```yaml
+this: |
+    Foo
+    Bar
+```
+
+```php
+Array
+(
+    [this] => Foo
+Bar
+
+)
+```
+
+#### The '+' indicator
+
+The '+' indicator says to keep newlines at the end of text blocks.
+
+```yaml
+normal: |
+  extra new lines not kept
+
+preserving: |+
+  extra new lines are kept
+
+
+dummy: value
+```
+
+```php
+Array
+(
+    [normal] => extra new lines not kept
+
+    [preserving] => extra new lines are kept
+
+
+
+    [dummy] => value
+)
+```
+
+#### Three trailing newlines in literals
+
+To give you more control over how space is preserved in text blocks, YAML has the keep '+' and chomp '-' indicators. The keep indicator will preserve all ending newlines, while the chomp indicator will strip all ending newlines.
+
+```yaml
+clipped: |
+    This has one newline.
+
+
+
+same as "clipped" above: "This has one newline.\n"
+
+stripped: |-
+    This has no newline.
+
+
+
+same as "stripped" above: "This has no newline."
+
+kept: |+
+    This has four newlines.
+
+
+
+same as "kept" above: "This has four newlines.\n\n\n\n"
+```
+
+```php
+Array
+(
+    [clipped] => This has one newline.
+
+    [same as "clipped" above] => This has one newline.
+
+    [stripped] => This has no newline.
+    [same as "stripped" above] => This has no newline.
+    [kept] => This has four newlines.
+
+
+
+
+    [same as "kept" above] => This has four newlines.
+
+
+
+```
+
+#### Extra trailing newlines with spaces
+
+Normally, only a single newline is kept from the end of a literal block, unless the keep '+' character is used in combination with the pipe. The following example will preserve all ending whitespace since the last line of both literal blocks contains spaces which extend past the indentation level.
+
+```yaml
+this: |
+    Foo
+
+
+kept: |+
+    Foo
+```
+
+```php
+Array
+(
+    [this] => Foo
+
+    [kept] => Foo
+
+)
+```
+
+#### Folded Block in a Sequence
+
+A greater-then character, followed by an indented block of text is treated as a folded block, in which lines of text separated by a single newline are concatenated as a single line.
+
+```yaml
+- apple
+- banana
+- >
+    can't you see
+    the beauty of yaml?
+    hmm
+- dog
+```
+
+```php
+Array
+(
+    [0] => apple
+    [1] => banana
+    [2] => "can't you see the beauty of yaml? hmm"
+
+    [3] => dog
+)
+```
+
+#### Folded Block as a Mapping Value
+
+Both literal and folded blocks can be used in collections, as values in a sequence or a mapping.
+
+```yaml
+quote: >
+    Mark McGwire's
+    year was crippled
+    by a knee injury.
+source: espn
+```
+
+```php
+Array
+(
+    [quote] => Mark McGwire's year was crippled by a knee injury.
+
+    [source] => espn
+)
+```
+
+#### Three trailing newlines in folded blocks
+
+```yaml
+clipped: >
+    This has one newline.
+
+
+
+same as "clipped" above: "This has one newline.\n"
+
+stripped: >-
+    This has no newline.
+
+
+
+same as "stripped" above: "This has no newline."
+
+kept: >+
+    This has four newlines.
+
+
+
+same as "kept" above: "This has four newlines.\n\n\n\n"
+```
+
+```php
+Array
+(
+    [clipped] => This has one newline.
+
+    [same as "clipped" above] => This has one newline.
+
+    [stripped] => This has no newline.
+    [same as "stripped" above] => This has no newline.
+    [kept] => This has four newlines.
+
+
+
+
+    [same as "kept" above] => This has four newlines.
+
+
+
+
+)
+```
+
+### <a name="aliases-and-anchors"></a> Aliases and Anchors
+
+#### Simple Alias Example
+
+If you need to refer to the same item of data twice, you can give that item an alias. The alias is a plain string, starting with an ampersand. The item may then be referred to by the alias throughout your document by using an asterisk before the name of the alias. This is called an anchor.
+
+```yaml
+- &showell Steve
+- Clark
+- Brian
+- Oren
+- *showell
+```
+
+```php
+Array
+(
+    [0] => Steve
+    [1] => Clark
+    [2] => Brian
+    [3] => Oren
+    [4] => Steve
+)
+```
+
+#### Alias of a Mapping
+
+An alias can be used on any item of data, including sequences, mappings, and other complex data types.
+
+```
+- &hello
+    Meat: pork
+    Starch: potato
+- banana
+- *hello
+```
+
+```php
+Array
+(
+    [0] => Array
+        (
+            [Meat] => pork
+            [Starch] => potato
+        )
+    [1] => banana
+    [2] => Array
+        (
+            [Meat] => pork
+            [Starch] => potato
+        )
+)
+```
+
+
+### <a name="resources-and-further-documentation"></a> Resources and Further Documentation
 
 * [Официальная документация YAML 1.2](https://yaml.org/spec/1.2/spec.html)
 * [Справочная карта YAML](https://yaml.org/refcard.html)
