@@ -1,5 +1,6 @@
 ---
 title: Requirements
+description: System and Browser requirements for Flextype
 on_this_page:
   0:
     title: "System requirements"

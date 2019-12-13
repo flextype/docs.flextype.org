@@ -1,5 +1,6 @@
 ---
 title: Blog
+description: A simple blog setup with Flextype.
 ---
 
 A simple blog setup with Flextype.
@@ -24,7 +25,7 @@ Structure:
 
 <br>
 
-## Create blog fieldset
+### Create blog fieldset
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/fieldsets/blog.yaml</div>
 ```yaml
@@ -99,17 +100,13 @@ sections:
         size: 4/12
 ```
 
-<br>
-
-### Blog entry
+#### Blog entry
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/blog/create-blog.png?w=800&dpr=2&q=70" />
 
-<br>
-
-## Create blog post fieldset
+### Create blog post fieldset
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/fieldsets/blog-post.yaml</div>
 ```yaml
@@ -192,17 +189,13 @@ sections:
         size: 4/12
 ```
 
-<br>
-
-### Blog post entry
+#### Blog post entry
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?w=800&dpr=2&q=70" />
 
-<br>
-
-## Create blog template
+### Create blog template
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/templates/blog.html</div>
 ```twig
@@ -326,7 +319,7 @@ sections:
 
 <img src="[base_url]/image/en/cookbook/blog/blog.png?w=800&dpr=2&q=70" />
 
-## Create blog post template
+### Create blog post template
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/templates/blog-post.html</div>
 ```twig
@@ -340,11 +333,9 @@ sections:
 {% endblock %}
 ```
 
-<br>
-
 <img src="[base_url]/image/en/cookbook/blog/blog-post.png?w=800&dpr=2&q=70" />
 
-## List the last 5 recent blog posts
+### List the last 5 recent blog posts
 
 ```twig
 {% for recent_post in entries.fetch('blog', {'order_by':

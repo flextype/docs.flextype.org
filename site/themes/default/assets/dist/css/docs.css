@@ -145,6 +145,18 @@ h5 {
     margin-top: 40px;
 }
 
+h1, h2, h3, h4, h5 {
+    padding-top: 10px;
+}
+
+.flex > div > h1:first-of-type
+.flex > div > h2:first-of-type,
+.flex > div > h3:first-of-type,
+.flex > div > h4:first-of-type,
+.flex > div > h5:first-of-type {
+    padding: 0;
+}
+
 .sidebar h3 {
     margin-top: 40px;
 }
@@ -157,6 +169,7 @@ pre {
 
 table {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 th, td {

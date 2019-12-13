@@ -1,5 +1,6 @@
 ---
 title: Password recovery
+description: Flextype does not provide a password recovery, but there is a way to create a new password.
 ---
 
 Flextype does not provide a password recovery, but there is a way to create a new password.

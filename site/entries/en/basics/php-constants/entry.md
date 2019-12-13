@@ -1,5 +1,6 @@
 ---
 title: PHP Constants
+description: Your index.php file can define certain PHP constants, which Flextype bootstrap script will check for while loading and configuring Flextype.
 ---
 
 Your `index.php` file can define certain PHP constants, which Flextype bootstrap script will check for while loading and configuring Flextype.
