@@ -8,6 +8,9 @@ on_this_page:
     title: "Collections"
     link: "collections"
   2:
+    title: "Inline Collections"
+    link: "inline-collections"
+  3:
     title: "Datatypes"
     link: "datatypes"
 ---
@@ -280,6 +283,81 @@ mapping:
   job: Accountant
   <<:
     age: 38
+```
+
+### <a name="inline-collections"></a> Inline Collections
+
+#### Simple Inline Array
+
+Sequences can be contained on a single line, using the inline syntax. Separate each entry with commas and enclose in square brackets.
+
+```yaml
+seq: [ a, b, c ]
+```
+
+```php
+Array
+(
+    [seq] => Array
+        (
+            [0] => a
+            [1] => b
+            [2] => c
+        )
+)
+```
+
+#### Simple Inline Hash
+
+Mapping can also be contained on a single line, using the inline syntax. Each key-value pair is separated by a colon, with a comma between each entry in the mapping. Enclose with curly braces.
+
+```yaml
+hash: { name: Steve, foo: bar }
+```
+
+```php
+Array
+(
+    [hash] => Array
+        (
+            [name] => Steve
+            [foo] => bar
+        )
+)
+```
+
+#### Multi-line Inline Collections
+
+Both inline sequences and inline mappings can span multiple lines, provided that you indent the additional lines.
+
+```yaml
+languages: [ Ruby,
+             Perl,
+             Python ]
+websites: { YAML: yaml.org,
+            Ruby: ruby-lang.org,
+            Python: python.org,
+            Perl: use.perl.org }
+```
+
+
+```php
+Array
+(
+    [languages] => Array
+        (
+            [0] => Ruby
+            [1] => Perl
+            [2] => Python
+        )
+    [websites] => Array
+        (
+            [YAML] => yaml.org
+            [Ruby] => ruby-lang.org
+            [Python] => python.org
+            [Perl] => use.perl.org
+        )
+)
 ```
 
 ### <a name="datatypes"></a> Datatypes
