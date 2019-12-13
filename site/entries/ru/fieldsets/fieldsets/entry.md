@@ -1,5 +1,6 @@
 ---
 title: Наборы полей
+description: Fieldsets are configuration files written in YAML for Admin Panel to create publish forms. They establish your content model. Essentially, a schema that defines your fields, data types, and the interface used to manage them.
 ---
 
 Fieldsets are configuration files written in YAML for Admin Panel to create publish forms. Они определяют вашу модель контента. По сути, схема, которая определяет ваши поля, типы данных и интерфейс, используемый для их управления.
