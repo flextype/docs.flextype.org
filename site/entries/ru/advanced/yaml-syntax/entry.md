@@ -5,6 +5,12 @@ on_this_page:
     title: "Basic Rules"
     link: "basic-rules"
   - 
+    title: "Collections"
+    link: "collections"
+  - 
+    title: "Inline Collections"
+    link: "inline-collections"
+  - 
     title: "Datatypes"
     link: "datatypes"
 ---
@@ -15,9 +21,7 @@ Flextype использует YAML, потому что он так близок
 
 YAML широко используется в Flextype для конфигурационных файлов, наборов полей, а также в настройках записей.
 
-<a name="basic-rules"></a>
-
-### Основные правила
+### <a name="basic-rules"></a> Основные правила
 
 Существуют некоторые правила, которые существуют в YAML, чтобы избежать вопросов, связанных с двусмысленностью в отношении различных языков и редактирования программ. Эти правила позволяют последовательно интерпретировать один файл YAML независимо от того, какое приложение или библиотека используется для его интерпретации.
 
@@ -25,19 +29,348 @@ YAML широко используется в Flextype для конфигура
 * YAML чувствительна к регистру.
 * YAML не позволяет использовать вкладки. Вместо этого используются пробелы, так как вкладки не всегда поддерживаются.
 
-<a name="datatypes"></a>
+### <a name="collections"></a> Collections
 
-### Тип данных
+#### Simple Sequence
 
-Значения в парах ключ-значение YAML являются скалярными. Они действуют как скалярные типы в языках Perl, Javascript и Python. Обычно достаточно хорошо заключать строки в кавычки, оставлять цифры без кавычек и позволять парсеру разобраться в них.
+You can specify a list in YAML by placing each member of the list on a new line with an opening dash. These lists are called sequences.
 
-Но это только верхушка айсберга. YAML способен на гораздо большее.
+```yaml
+- apple
+- banana
+- carrot
+```
 
-#### Пары ключевых слов и словари ключевых значений
+```php
+Array
+(
+    [0] => apple
+    [1] => banana
+    [2] => carrot
+)
+```
 
-Ключевое значение является основным структурным элементом YAML. Каждый пункт в документе YAML является членом хотя бы одного словаря. Ключом всегда является строка. Значение является скалярным и может быть любым типом данных.
+#### Nested Sequences
 
-Итак, как мы уже видели, значением может быть строка, число или другой словарь.
+You can include a sequence within another sequence by giving the sequence an empty dash, followed by an indented list.
+
+```yaml
+-
+ - foo
+ - bar
+ - baz
+```
+
+```php
+Array
+(
+    [0] => Array
+        (
+            [0] => foo
+            [1] => bar
+            [2] => baz
+        )
+)
+```
+
+#### Mixed Sequences
+
+Sequences can contain any YAML data, including strings and other sequences.
+
+```yaml
+- apple
+-
+ - foo
+ - bar
+ - x123
+- banana
+- carrot
+```
+
+```php
+Array
+(
+    [0] => apple
+    [1] => Array
+        (
+            [0] => foo
+            [1] => bar
+            [2] => x123
+        )
+    [2] => banana
+    [3] => carrot
+)
+```
+
+#### Deeply Nested Sequences
+
+Sequences can be nested even deeper, with each level of indentation representing a level of depth.
+
+```yaml
+-
+ -
+  - uno
+  - dos
+```
+
+```php
+Array
+(
+    [0] => Array
+        (
+            [0] => Array
+                (
+                    [0] => uno
+                    [1] => dos
+                )
+        )
+)
+```
+
+#### Simple Mapping
+
+You can add a keyed list (also known as a dictionary or hash) to your document by placing each member of the list on a new line, with a colon seperating the key from its value. In YAML, this type of list is called a mapping.
+
+```yaml
+Array
+(
+    [foo] => whatever
+    [bar] => stuff
+)
+```
+
+#### Sequence in a Mapping
+
+A value in a mapping can be a sequence.
+
+```yaml
+foo: whatever
+bar:
+ - uno
+ - dos
+```
+
+```php
+Array
+(
+    [foo] => whatever
+    [bar] => Array
+        (
+            [0] => uno
+            [1] => dos
+        )
+)
+```
+
+#### Nested Mappings
+
+A value in a mapping can be another mapping.
+
+```yaml
+foo: whatever
+bar:
+ fruit: apple
+ name: steve
+ sport: baseball
+```
+
+```php
+Array
+(
+    [foo] => whatever
+    [bar] => Array
+        (
+            [fruit] => apple
+            [name] => steve
+            [sport] => baseball
+        )
+)
+```
+
+#### Mixed Mapping
+
+A mapping can contain any assortment of mappings and sequences as values.
+
+```yaml
+foo: whatever
+bar:
+ -
+   fruit: apple
+   name: steve
+   sport: baseball
+ - more
+ -
+   python: rocks
+   perl: papers
+   ruby: scissorses
+```
+
+```php
+Array
+(
+    [foo] => whatever
+    [bar] => Array
+        (
+            [0] => Array
+                (
+                    [fruit] => apple
+                    [name] => steve
+                    [sport] => baseball
+                )
+            [1] => more
+            [2] => Array
+                (
+                    [python] => rocks
+                    [perl] => papers
+                    [ruby] => scissorses
+                )
+        )
+)
+```
+
+#### Mapping-in-Sequence Shortcut
+
+If you are adding a mapping to a sequence, you can place the mapping on the same line as the dash as a shortcut.
+
+```yaml
+- work_on_YAML:
+   - work on Store
+```
+
+```php
+Array
+(
+    [0] => Array
+        (
+            [work_on_YAML] => Array
+                (
+                    [0] => work on Store
+                )
+        )
+)
+```
+
+#### Sequence-in-Mapping Shortcut
+
+The dash in a sequence counts as indentation, so you can add a sequence inside of a mapping without needing spaces as indentation.
+
+```yaml
+allow:
+- 'localhost'
+- '%.sourceforge.net'
+- '%.freepan.org'
+```
+
+```php
+Array
+(
+    [allow] => Array
+        (
+            [0] => localhost
+            [1] => %.sourceforge.net
+            [2] => %.freepan.org
+        )
+)
+```
+
+#### Merge key
+
+A merge key `<<` can be used in a mapping to insert other mappings. If the value associated with the merge key is a mapping, each of its key/value pairs is inserted into the current mapping.
+
+```yaml
+mapping:
+  name: Joe
+  job: Accountant
+  <<:
+    age: 38
+```
+
+### <a name="inline-collections"></a> Inline Collections
+
+#### Simple Inline Array
+
+Sequences can be contained on a single line, using the inline syntax. Separate each entry with commas and enclose in square brackets.
+
+```yaml
+seq: [ a, b, c ]
+```
+
+```php
+Array
+(
+    [seq] => Array
+        (
+            [0] => a
+            [1] => b
+            [2] => c
+        )
+)
+```
+
+#### Simple Inline Hash
+
+Mapping can also be contained on a single line, using the inline syntax. Each key-value pair is separated by a colon, with a comma between each entry in the mapping. Enclose with curly braces.
+
+```yaml
+hash: { name: Steve, foo: bar }
+```
+
+```php
+Array
+(
+    [hash] => Array
+        (
+            [name] => Steve
+            [foo] => bar
+        )
+)
+```
+
+#### Multi-line Inline Collections
+
+Both inline sequences and inline mappings can span multiple lines, provided that you indent the additional lines.
+
+```yaml
+languages: [ Ruby,
+             Perl,
+             Python ]
+websites: { YAML: yaml.org,
+            Ruby: ruby-lang.org,
+            Python: python.org,
+            Perl: use.perl.org }
+```
+
+
+```php
+Array
+(
+    [languages] => Array
+        (
+            [0] => Ruby
+            [1] => Perl
+            [2] => Python
+        )
+    [websites] => Array
+        (
+            [YAML] => yaml.org
+            [Ruby] => ruby-lang.org
+            [Python] => python.org
+            [Perl] => use.perl.org
+        )
+)
+```
+
+### <a name="datatypes"></a> Datatypes
+
+Values in YAML’s key-value pairs are scalar. They act like the scalar types in languages like Perl, Javascript, and Python. It’s usually good enough to enclose strings in quotes, leave numbers unquoted, and let the parser figure it out.
+
+But that’s only the tip of the iceberg. YAML is capable of a great deal more.
+
+#### Key-Value Pairs and Dictionaries
+
+The key-value is YAML’s basic building block. Every item in a YAML document is a member of at least one dictionary. The key is always a string. The value is a scalar so that it can be any datatype.
+
+So, as we’ve already seen, the value can be a string, a number, or another dictionary.
 
 #### Strings
 
@@ -289,18 +622,6 @@ Like arrays, you can put dictionaries inline. We saw this format above. It’s h
 
 ```yaml
 foo: { thing1: huey, thing2: louie, thing3: dewey }
-```
-
-### Merge key
-
-A merge key `<<` can be used in a mapping to insert other mappings. If the value associated with the merge key is a mapping, each of its key/value pairs is inserted into the current mapping.
-
-```yaml
-mapping:
-  name: Joe
-  job: Accountant
-  <<:
-    age: 38
 ```
 
 ### Resources and Further Documentation
