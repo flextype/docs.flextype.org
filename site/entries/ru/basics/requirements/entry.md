@@ -1,6 +1,18 @@
 ---
 title: Requirements
+on_this_page:
+  system_requirements:
+    title: "System requirements"
+    link: "system-requirements"
+  php_extensions:
+    title: "PHP extensions"
+    link: "php-extensions"
+  browser_requirements:
+    title: "Browser requirements"
+    link: "browser-requirements"
 ---
+
+<a name="system-requirements"></a>
 
 ### Системные требования
 
@@ -8,6 +20,8 @@ title: Requirements
 
 * Веб-сервер (Apache с функцией [Mod Rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html))
 * PHP 7.2.0 или выше
+
+<a name="php-extensions"></a>
 
 ### Расширения PHP
 
@@ -21,6 +35,8 @@ title: Requirements
 - PHP [DOM](https://www.php.net/manual/ru/class.domdocument.php)
 
 Хотя это и необязательно, мы настоятельно рекомендуем включить следующие расширения PHP: APC, APCu, XCache, Memcached или Redis для повышения производительности.
+
+<a name="browser-requirements"></a>
 
 ### Требования к браузеру
 
