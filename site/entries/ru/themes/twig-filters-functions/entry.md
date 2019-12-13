@@ -182,7 +182,13 @@ Usage:
 {{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
 ```
 
-Result: \--- title: About \--- Some text here
+Result:
+
+    ---
+    title: About
+    ---
+    Some text here
+    
 
 #### filesystem_ext
 
@@ -204,8 +210,9 @@ Get filename
 
 Применение:
 
-    {{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
-    
+```twig
+{{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+```
 
 Результат:
 

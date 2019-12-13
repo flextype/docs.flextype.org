@@ -1,13 +1,31 @@
 ---
 title: Записи
+on_this_page:
+  - 
+    title: "Basics"
+    link: "basics"
+  - 
+    title: "Entries and Urls structure in Flextype"
+    link: "urls-structure"
+  - 
+    title: "Predefined Entry Variables"
+    link: "predefined-entry-variables"
+  - 
+    title: "Custom Entry Variables"
+    link: "custom-entry-variables"
+  - 
+    title: "Entries visibility"
+    link: "entries-visibility"
 ---
 
+<a name="basics"></a>
 Записи являются основными строительными блоками вашего сайта. Каждая запись в Flextype должна содержать **Вступительный фронт Matter** блок в формате YAML вверху файла и **Содержимое записи** помечено с помощью HTML + Markdown + Коротков в нижней части файла.
 
 Вот базовый пример: `сайт/записи/my-entry/entry.md`:
 
 <div class="file-header"><i class="far fa-file-alt"></i> site/entries/my-entry/entry.md</div>
 
+    ---
     title: My Entry
     description: My entry description
     ---
@@ -24,7 +42,7 @@ title: Записи
 {{ entry.content }}
 ```
 
-### Структура записей и Url-адресов в Flextype
+### <a name="urls-structure"></a> Структура записей и Url-адресов в Flextype
 
 Все записи содержимого расположены в папке `/site/entries`. Каждая запись должна быть помещена в свою папку.
 
@@ -37,7 +55,7 @@ title: Записи
 | site/entries/a/very/long/url/entry.md | /a/very/long/url |
 
 
-### Predefined Entry Variables
+### <a name="predefined-entry-variables"></a> Predefined Entry Variables
 
 There are a number of predefined global variables that you can set in the front matter of a entry.
 
@@ -47,7 +65,7 @@ There are a number of predefined global variables that you can set in the front 
 * slug
 * content
 
-### Custom Entry Variables
+### <a name="custom-entry-variables"></a> Custom Entry Variables
 
 You can create any custom entry front matter variables using valid YAML syntax.
 
@@ -68,7 +86,7 @@ Using in the templates:
 {{ entry.author.twitter }}
 ```
 
-### Entries visibility
+### <a name="entries-visibility"></a> Entries visibility
 
 Content visibility is about controlling who can see your entries. Flextype allows you to control the visibility of your entries and Pages on an individual basis. By default, all entries are visible.
 

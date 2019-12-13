@@ -1,8 +1,24 @@
 ---
 title: Installation
+on_this_page:
+  0:
+    title: "Check for PHP version"
+    link: "check-for-php-version"
+  1:
+    title: "Using (S)FTP"
+    link: "using-sftp"
+  2:
+    title: "Using Composer"
+    link: "using-composer"
+  3:
+    title: "Using command-line"
+    link: "using-command-line"
+  4:
+    title: "Installation issues"
+    link: "installation-issues"
 ---
 
-### Check for PHP version
+### <a name="check-for-php-version"></a> Check for PHP version
 
 Flextype is incredibly easy to set up and get running.  
 Be sure you have at least PHP version 7.2.0+ by going to the terminal and typing `php -v`:
@@ -15,7 +31,7 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
  with Zend OPcache v7.2.20, Copyright (c) 1999-2018, by Zend Technologies
 ```
 
-### Using (S)FTP
+### <a name="using-sftp"></a> Using (S)FTP
 
 [Download the latest version.](http://flextype.org/en/downloads)
 
@@ -23,7 +39,7 @@ Unzip the contents to a new folder on your local computer, and upload to your we
 
 * `site/`
 
-### Using Composer
+### <a name="using-composer"></a> Using Composer
 
 You can easily install Flextype with Composer.
 
@@ -52,7 +68,7 @@ npm install
 gulp
 ```
 
-### Using command-line
+### <a name="using-command-line"></a> Using command-line
 
 If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
 
@@ -62,7 +78,7 @@ unzip flextype-0.9.6.zip
 chmod -R 0777 site/
 ```
 
-### Installation issues
+### <a name="installation-issues"></a> Installation issues
 
 ##### Broken subpages
 
