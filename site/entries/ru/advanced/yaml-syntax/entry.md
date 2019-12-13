@@ -3,10 +3,10 @@ title: Синтаксис YAML
 on_this_page:
   basic_rules:
     title: "Basic Rules"
-    link: "#basic-rules"
+    link: "basic-rules"
   datatypes:
     title: "Datatypes"
-    link: "#datatypes"
+    link: "datatypes"
 ---
 
 YAML (YAML Ain't Markup) является дружественным человеческим языком специализации данных.
@@ -15,7 +15,7 @@ Flextype использует YAML, потому что он так близок
 
 YAML широко используется в Flextype для конфигурационных файлов, наборов полей, а также в настройках записей.
 
-<a name="#basic-rules"></a>
+<a name="basic-rules"></a>
 
 ### Основные правила
 
@@ -25,7 +25,7 @@ YAML широко используется в Flextype для конфигура
 * YAML чувствительна к регистру.
 * YAML не позволяет использовать вкладки. Вместо этого используются пробелы, так как вкладки не всегда поддерживаются.
 
-<a name="#datatypes"></a>
+<a name="datatypes"></a>
 
 ### Тип данных
 
