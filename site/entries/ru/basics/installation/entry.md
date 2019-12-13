@@ -1,5 +1,6 @@
 ---
 title: Установка
+description: Flextype is incredibly easy to set up and get running.
 on_this_page:
   - 
     title: "Check for PHP version"
