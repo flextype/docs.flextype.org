@@ -1,5 +1,6 @@
 ---
 title: Folder structure
+description: Flextype folder structure
 ---
 
 System folders:

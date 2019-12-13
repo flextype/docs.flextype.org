@@ -1,5 +1,6 @@
 ---
 title: Getting Help
+description: There are several channels to reach the developers and the Flextype community to get direct assistance.
 ---
 There are several channels to reach the developers and the Flextype community to get direct assistance.
 
