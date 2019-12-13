@@ -21,7 +21,6 @@ Form fields are an essential part of the fieldsets and have very powerful option
 | tags | An interactive tags input field. |
 | datetimepicker | A date time picker field. |
 
-<br>
 
 ### Field properties
 
