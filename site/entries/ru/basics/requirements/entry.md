@@ -1,13 +1,13 @@
 ---
 title: Requirements
 on_this_page:
-  system_requirements:
+  - 
     title: "System requirements"
     link: "system-requirements"
-  php_extensions:
+  - 
     title: "PHP extensions"
     link: "php-extensions"
-  browser_requirements:
+  - 
     title: "Browser requirements"
     link: "browser-requirements"
 ---
