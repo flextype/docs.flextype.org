@@ -1,7 +1,19 @@
 ---
 title: Requirements
+on_this_page:
+  system_requirements:
+    title: "System requirements"
+    link: "system-requirements"
+  php_extensions:
+    title: "PHP extensions"
+    link: "php-extensions"
+  browser_requirements:
+    title: "Browser requirements"
+    link: "browser-requirements"
+
 ---
 
+<a name="system-requirements"></a>
 ### System requirements
 
 Make sure your server meets the following requirements.
@@ -9,6 +21,7 @@ Make sure your server meets the following requirements.
 * Webserver (Apache with [Mod Rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html))
 * PHP 7.2.0 or higher
 
+<a name="php-extensions"></a>
 ### PHP extensions
 
 Flextype needs the following PHP extensions to be enabled:
@@ -23,6 +36,7 @@ Flextype needs the following PHP extensions to be enabled:
 Although it is optional, we strongly recommend enabling the following PHP extensions:  
 APC, APCu, XCache, Memcached, or Redis for better performance.
 
+<a name="browser-requirements"></a>
 ### Browser requirements
 
 The admin panel of Flextype is compatible with:
