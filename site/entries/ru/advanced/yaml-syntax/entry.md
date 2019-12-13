@@ -1,10 +1,10 @@
 ---
 title: Синтаксис YAML
 on_this_page:
-  basic_rules:
+  - 
     title: "Basic Rules"
     link: "basic-rules"
-  datatypes:
+  - 
     title: "Datatypes"
     link: "datatypes"
 ---
