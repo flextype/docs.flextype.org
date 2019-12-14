@@ -1,9 +1,31 @@
 ---
 title: Team Members
 description: A Team Members setup with Flextype.
+on_this_page:
+  0:
+    title: "Structure"
+    link: "structure"
+  1:
+    title: "Create Team members fieldset"
+    link: "create-team-members-fieldset"
+  2:
+    title: "Create Team Members entry"
+    link: "create-team-members-entry"
+  3:
+    title: "Create Team Member fieldset"
+    link: "create-team-members-fieldset"
+  4:
+    title: "Create Team Member entry(s)"
+    link: "create-team-member-entry-s"
+  5:
+    title: "Create Team Members template"
+    link: "create-team-members-template"
+  6:
+    title: "Create Team Member template"
+    link: "create-team-member-template"
 ---
 
-A Team Members setup with Flextype.
+A Team Members setup with Flextype.<a name="structure"></a>
 
 Structure:
 <ul class="file-list">
@@ -31,7 +53,7 @@ Structure:
 
 <br>
 
-### Create Team members fieldset
+### <a name="create-team-members-fieldset"></a> Create Team members fieldset
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/fieldsets/team-members.yaml</div>
 ```yaml
@@ -102,13 +124,13 @@ sections:
         size: 4/12
 ```
 
-#### Create Team Members entry
+#### <a name="create-team-members-entry"></a> Create Team Members entry
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/team-members/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/team-members/create-team-members.png?w=800&dpr=2&q=70" />
 
-### Create Team Member fieldset
+### <a name="create-team-member-fieldset"></a> Create Team Member fieldset
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/fieldsets/team-member.yaml</div>
 ```yaml
@@ -204,13 +226,13 @@ sections:
         size: 4/12
 ```
 
-#### Create Team Member entry(s)
+#### <a name="create-team-member-entry-s"></a> Create Team Member entry(s)
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/team-members/daniel-jackson/entry.md</div>
 
 <img src="[base_url]/image/en/cookbook/team-members/create-team-member.png?w=800&dpr=2&q=70" />
 
-### Create Team Members template
+### <a name="create-team-members-template"></a> Create Team Members template
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/templates/team-members.html</div>
 ```twig
@@ -240,7 +262,7 @@ sections:
 
 <img src="[base_url]/image/en/cookbook/team-members/team-members.png?w=800&dpr=2&q=70" />
 
-### Create Team Member template
+### <a name="create-team-member-template"></a> Create Team Member template
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/templates/team-member.html</div>
 ```twig
