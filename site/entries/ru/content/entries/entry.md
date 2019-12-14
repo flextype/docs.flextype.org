@@ -22,7 +22,7 @@ on_this_page:
 <a name="basics"></a>
 Записи являются основными строительными блоками вашего сайта. Каждая запись в Flextype должна содержать **Вступительный фронт Matter** блок в формате YAML вверху файла и **Содержимое записи** помечено с помощью HTML + Markdown + Коротков в нижней части файла.
 
-Вот базовый пример: `сайт/записи/my-entry/entry.md`:
+Here is a basic example:
 
 <div class="file-header"><i class="far fa-file-alt"></i> site/entries/my-entry/entry.md</div>
 
