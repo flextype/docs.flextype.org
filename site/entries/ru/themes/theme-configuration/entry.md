@@ -1,5 +1,6 @@
 ---
 title: Конфигурация темы
+description: You can easily access theme configuration and theme information from your Twig and PHP files.
 ---
 
 Вы можете легко получить доступ к настройке тем и информации о темах из ваших файлов Twig и PHP.

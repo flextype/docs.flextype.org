@@ -1,5 +1,6 @@
 ---
 title: Структура папок
+description: Flextype folder structure
 ---
 
 Системные папки:
