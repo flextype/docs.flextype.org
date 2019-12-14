@@ -1,11 +1,18 @@
 ---
 title: Fieldsets
 description: Fieldsets are configuration files written in YAML for Admin Panel to create publish forms. They establish your content model. Essentially, a schema that defines your fields, data types, and the interface used to manage them.
+on_this_page:
+  0:
+    title: "Field types"
+    link: "field-types"
+  1:
+    title: "Field properties"
+    link: "field-properties"
 ---
 
 Fieldsets are configuration files written in YAML for Admin Panel to create publish forms. They establish your content model. Essentially, a schema that defines your fields, data types, and the interface used to manage them.
 
-### Fields
+### <a name="field-types"></a> Field types
 
 Form fields are an essential part of the fieldsets and have very powerful options.
 
@@ -23,7 +30,7 @@ Form fields are an essential part of the fieldsets and have very powerful option
 | `datetimepicker` | The datetimepicker field lets you specify a date and time. |
 
 
-### Field properties
+### <a name="field-properties"></a> Field properties
 
 | Property    | Type     | Default | Description |
 | :------------- | :------------- | :------------- | :------------- |
