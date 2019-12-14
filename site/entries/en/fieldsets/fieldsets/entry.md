@@ -1,29 +1,36 @@
 ---
 title: Fieldsets
 description: Fieldsets are configuration files written in YAML for Admin Panel to create publish forms. They establish your content model. Essentially, a schema that defines your fields, data types, and the interface used to manage them.
+on_this_page:
+  0:
+    title: "Field types"
+    link: "field-types"
+  1:
+    title: "Field properties"
+    link: "field-properties"
 ---
 
 Fieldsets are configuration files written in YAML for Admin Panel to create publish forms. They establish your content model. Essentially, a schema that defines your fields, data types, and the interface used to manage them.
 
-### Fields
+### <a name="field-types"></a> Field types
 
 Form fields are an essential part of the fieldsets and have very powerful options.
 
 | Field type | Description |
 | :------------- | :------------- | :------------- | :------------- |
-| text | A standard, single-line input field. |
-| textarea | Simple text-input where multi-line plain text can be entered. |
-| html | A WYSIWYG HTML editor field. |
-| hidden | The hidden field is like the text field, except it's hidden from the content editor. |
-| select | A simple selectbox field. |
-| template_select | Template select field for selecting entry template. |
-| visibility_select | Visibility select field for selecting entry visibility state. |
-| media_select | Media select field for selection media for entry. |
-| tags | An interactive tags input field. |
-| datetimepicker | A date time picker field. |
+| `text` | The plain text field for short text blocks or a short paragraph of information related to a item–basic text content that doesn't need special formatting. <br><br> **Common uses**: Short-form text that doesn't need any formatting; Product titles; Event names |
+| `textarea` | While a plain text field is used for creating short-form, a textarea field is used for long-form content. <br><br> **Common uses**: Long-form text that doesn't need any formatting; Product descriptions; Event descriptions |
+| `html` | While a textarea field is used for creating long-form, unformatted text, a html field is used for long-form content that you can format. The html field gives your collaborators freedom to create and format your content. <br><br> **Common uses**: Most long-form content with links; Blog posts; Articles; Team member bios; Product description; Event details |
+| `hidden` | The hidden field is like the text field, except it's hidden from the content editor. |
+| `select` | A simple selectbox field. |
+| `template_select` | Template select field for selecting entry template. |
+| `visibility_select` | Visibility select field for selecting entry visibility state. |
+| `media_select` | Media select field for selection media for entry. |
+| `tags` | An interactive tags input field. |
+| `datetimepicker` | The datetimepicker field lets you specify a date and time. |
 
 
-### Field properties
+### <a name="field-properties"></a> Field properties
 
 | Property    | Type     | Default | Description |
 | :------------- | :------------- | :------------- | :------------- |

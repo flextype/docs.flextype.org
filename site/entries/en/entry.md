@@ -40,6 +40,7 @@ txt:
     cookbook:
       title: Cookbook
       blog: Blog
+      team_members: Team members
     advanced:
       title: Advanced
       performance_and_caching: Performance & Caching

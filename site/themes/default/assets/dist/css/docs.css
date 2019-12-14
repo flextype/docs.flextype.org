@@ -146,7 +146,7 @@ h5 {
 }
 
 h1, h2, h3, h4, h5 {
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .flex > div > h1:first-of-type
@@ -185,6 +185,7 @@ th, td {
     padding-bottom: 20px;
     margin-bottom: 25px;
     line-height: 60px;
+    padding-top: 10px;
 }
 
 .flextype .h2 {
