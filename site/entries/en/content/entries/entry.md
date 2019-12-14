@@ -21,7 +21,7 @@ on_this_page:
 <a name="basics"></a>
 Entries are the fundamental building-blocks of your site. Each entry in Flextype should contains **Entry Front Matter** block in YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes at the bottom of the file.
 
-Here is a basic example `site/entries/my-entry/entry.md`:
+Here is a basic example:
 
 <div class="file-header"><i class="far fa-file-alt"></i> site/entries/my-entry/entry.md</div>
 
