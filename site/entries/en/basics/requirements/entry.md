@@ -39,14 +39,14 @@ APC, APCu, XCache, Memcached, or Redis for better performance.
 
 The admin panel of Flextype is compatible with:
 
-##### Windows and macOS
+#### Windows and macOS
 
 * Chrome 29 or later
 * Firefox 28 or later
 * Safari 9.0 or later
 * Microsoft Edge
 
-##### Mobile
+#### Mobile
 
 * iOS: Safari 9.1 or later
 * Android: Chrome 4.4 or later
