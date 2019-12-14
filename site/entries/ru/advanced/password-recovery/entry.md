@@ -1,5 +1,6 @@
 ---
 title: Восстановление пароля
+description: Flextype does not provide a password recovery, but there is a way to create a new password.
 ---
 
 Flextype не обеспечивает восстановление пароля, но есть способ создать новый пароль.

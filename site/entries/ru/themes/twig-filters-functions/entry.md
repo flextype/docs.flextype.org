@@ -1,5 +1,6 @@
 ---
 title: Twig Фильтры и Функции
+description: Twig already provides an extensive list of filters, functions, and tags, Flextype also provides a selection of useful additions to make the process of theming easier.
 ---
 
 Twig уже предоставляет обширный список [фильтров, функций и тегов](https://twig.symfony.com/doc/2.x/), Flextype также предоставляет набор полезных дополнений, облегчающих процесс создания тем.

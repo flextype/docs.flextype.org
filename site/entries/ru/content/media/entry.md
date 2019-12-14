@@ -1,5 +1,6 @@
 ---
 title: Медиа
+description: Entries can have any number and kind of images, videos, documents or other files. Those files are being stored directly in the entry folder.
 ---
 
 Записи могут иметь любое количество изображений, видео, документов или других файлов.  

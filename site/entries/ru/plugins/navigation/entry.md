@@ -1,5 +1,6 @@
 ---
 title: Navigation
+description: You can customize Admin Panel navigation by adding your own navigation items.
 ---
 
 You can customize Admin Panel navigation by adding your own navigation items.

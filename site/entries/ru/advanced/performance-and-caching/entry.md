@@ -1,5 +1,6 @@
 ---
 title: Performance & Caching
+description: Flextype is super fast content management system because of its elegance architecture. It is do not use super heavy solutions and libraries to delivery the site content. Flextype caching system is really smart and efficient to deliver site content fast as possible.
 ---
 
 Flextype is super fast content management system because of its elegance architecture.<br>It is do not use super heavy solutions and libraries to delivery the site content.<br>Flextype caching system is really smart and efficient to deliver site content fast as possible.
