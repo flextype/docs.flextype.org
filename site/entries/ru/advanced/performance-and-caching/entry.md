@@ -9,7 +9,7 @@ But there is a several ways to speed up your projects powered by Flextype even m
 
 ### Performance
 
-1. **PHP caching is critical for Flextype.** You should run a PHP OPCache and User Cache in order to get the best performance results.
+1. **PHP caching is important for Flextype.** You should run a PHP OPCache and User Cache in order to get the best performance results.
 
 2. **SSD drives.** Most things can get cached in PHP User Cache, but some are stored as files, so SSD drives can make a big impact on performance.
 
