@@ -5,42 +5,15 @@ description: Your index.php file can define certain PHP constants, which Flextyp
 
 Ваш файл `index.php` может определить определенные константы PHP, которые Flextype bootstrap скрипт будет проверять при загрузке и настройке Flextype.
 
-### FLEXTYPE_MINIMUM_PHP
-
-Определите минимальную версию приложения, поддерживаемую PHP.
-
-### ROOT_DIR
-
-Определите путь к корневому каталогу (без обратной косой черты).
-
-### LOGS_PATH
-
-Определите PATH для журналов (без задней черты).
-
-### PATH['site']
-
-Определите PATH to site (без задней черты).
-
-### PATH['entries']
-
-Определите входы PATH to site (без наклонной черты).
-
-### PATH['plugins']
-
-Определите плагины PATH to site (без обратного слеша).
-
-### PATH['themes']
-
-Определите темы PATH to site (без наклонной черты).
-
-### PATH\['config'\]\['default'\]
-
-Определите конфигурацию PATH по умолчанию (без обратного слеша).
-
-### PATH\['config'\]\['site'\]
-
-Определите конфигурацию PATH to site (без обратного слеша).
-
-### PATH['cache']
-
-Определите кэш PATH to site (без обратного слеша).
+| Name                        | Description                                                     |
+|:--------------------------- |:--------------------------------------------------------------- |
+| `FLEXTYPE_MINIMUM_PHP`      | Define the application minimum supported PHP version.           |
+| `ROOT_DIR`                  | Define the path to the root directory (without trailing slash). |
+| `LOGS_PATH`                 | Define the PATH to logs (without trailing slash).               |
+| `PATH['site']`              | Define the PATH to site (without trailing slash).               |
+| `PATH['entries']`           | Define the PATH to site entries (without trailing slash).       |
+| `PATH['plugins']`           | Define the PATH to site plugins (without trailing slash).       |
+| `PATH['themes']`            | Define the PATH to site themes (without trailing slash).        |
+| `PATH['config']['default']` | Define the PATH to default config (without trailing slash).     |
+| `PATH['config']['site']`    | Define the PATH to site config (without trailing slash).        |
+| `PATH['cache']`             | Define the PATH to site cache (without trailing slash).         |
