@@ -9,7 +9,7 @@ But there is a several ways to speed up your projects powered by Flextype even m
 
 ### Performance
 
-1. **PHP caching is critical for Flextype.** You should run a PHP OPCache and User Cache in order to get the best performance results.
+1. **PHP caching is important for Flextype.** You should run a PHP OPCache and User Cache in order to get the best performance results.
 
 2. **SSD drives.** Most things can get cached in PHP User Cache, but some are stored as files, so SSD drives can make a big impact on performance.
 
@@ -30,11 +30,11 @@ Flextype caching system is really smart and efficient.
 Flextype uses the established and well-respected [Doctrine Cache library](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/caching.html). This means that Flextype supports any caching mechanism that Doctrine Cache supports.
 
 * Auto (Default) - Finds the best option automatically
-* File - Stores in cache files in the cache/ folder
+* File - Stores in cache files in the `/site/cache/` folder
 * APC - https://php.net/manual/en/book.apc.php
 * XCache - http://xcache.lighttpd.net/
 * Memcache - https://php.net/manual/en/book.memcache.php
 * Redis - https://redis.io
 * WinCache - https://www.iis.net/downloads/microsoft/wincache-extension
 
-By default, Flextype comes preconfigured to use the auto setting. This will try APC, then WinCache, then XCache, and lastly File. You can, of course, explicitly configure the cache in your `site/config/settings.yaml` file, which could make things ever so slightly faster.
+By default, Flextype comes preconfigured to use the auto setting. This will try APC, then WinCache, then XCache, and lastly File. You can, of course, explicitly configure the cache in your `/site/config/settings.yaml` file, which could make things ever so slightly faster.
