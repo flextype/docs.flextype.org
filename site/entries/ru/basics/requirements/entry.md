@@ -37,14 +37,14 @@ on_this_page:
 
 Панель администрирования Flextype совместима с:
 
-##### Windows и macOS
+#### Windows and macOS
 
 * Chrome 29 или позже
 * Mozilla Firefox 28 или позже
 * Safari 9.0 или позже
 * Microsoft Edge
 
-##### Мобильный
+#### Mobile
 
 * iOS: Safari 9.1 или позже
 * Android: Chrome 4.4 или позже

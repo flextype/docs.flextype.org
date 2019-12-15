@@ -39,7 +39,10 @@ txt:
       navigation: Navigation
     cookbook:
       title: Cookbook
-      blog: Blog
+      tutorials:
+        title: Tutorials
+        blog: Blog
+        team_members: Team Members
     advanced:
       title: Advanced
       performance_and_caching: Performance & Caching

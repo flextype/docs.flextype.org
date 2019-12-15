@@ -104,7 +104,7 @@ sections:
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/entry.md</div>
 
-<img src="[base_url]/image/en/cookbook/blog/create-blog.png?w=800&dpr=2&q=70" />
+<img src="[base_url]/image/en/cookbook/tutorials/blog/create-blog.png?w=800&dpr=2&q=70" />
 
 ### Create blog post fieldset
 
@@ -194,7 +194,7 @@ sections:
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/blog/hello-world/entry.md</div>
 
-<img src="[base_url]/image/en/cookbook/blog/create-blog-post.png?w=800&dpr=2&q=70" />
+<img src="[base_url]/image/en/cookbook/tutorials/blog/create-blog-post.png?w=800&dpr=2&q=70" />
 
 ### Create blog template
 
@@ -319,7 +319,7 @@ sections:
 ```
 <br>
 
-<img src="[base_url]/image/en/cookbook/blog/blog.png?w=800&dpr=2&q=70" />
+<img src="[base_url]/image/en/cookbook/tutorials/blog/blog.png?w=800&dpr=2&q=70" />
 
 ### Create blog post template
 
@@ -336,7 +336,7 @@ sections:
 {% endblock %}
 ```
 
-<img src="[base_url]/image/en/cookbook/blog/blog-post.png?w=800&dpr=2&q=70" />
+<img src="[base_url]/image/en/cookbook/tutorials/blog/blog-post.png?w=800&dpr=2&q=70" />
 
 ### List the last 5 recent blog posts
 

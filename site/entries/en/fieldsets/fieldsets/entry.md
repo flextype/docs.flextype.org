@@ -22,9 +22,11 @@ Form fields are an essential part of the fieldsets and have very powerful option
 | `textarea` | While a plain text field is used for creating short-form, a textarea field is used for long-form content. <br><br> **Common uses**: Long-form text that doesn't need any formatting; Product descriptions; Event descriptions |
 | `html` | While a textarea field is used for creating long-form, unformatted text, a html field is used for long-form content that you can format. The html field gives your collaborators freedom to create and format your content. <br><br> **Common uses**: Most long-form content with links; Blog posts; Articles; Team member bios; Product description; Event details |
 | `hidden` | The hidden field is like the text field, except it's hidden from the content editor. |
+| `heading` | The heading field helps to group larger sets of fields. |
 | `select` | A simple selectbox field. |
 | `template_select` | Template select field for selecting entry template. |
 | `visibility_select` | Visibility select field for selecting entry visibility state. |
+| `routable_select` | Routable select field for selection entry routable state. |
 | `media_select` | Media select field for selection media for entry. |
 | `tags` | An interactive tags input field. |
 | `datetimepicker` | The datetimepicker field lets you specify a date and time. |

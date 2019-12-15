@@ -40,7 +40,7 @@ Hooks are a way for one piece of code to interact/modify another piece of code. 
 
 ### How to use hooks
 
-#### Registering Listeners
+#### Registering Listeners{.margin-top-none .padding-top-none}
 
 Listeners are registered through the `addListener` method.
 
