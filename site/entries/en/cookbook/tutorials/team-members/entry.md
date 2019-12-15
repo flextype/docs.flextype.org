@@ -128,7 +128,7 @@ sections:
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/team-members/entry.md</div>
 
-<img src="[base_url]/image/en/cookbook/team-members/create-team-members.png?w=800&dpr=2&q=70" />
+<img src="[base_url]/image/en/cookbook/tutorials/team-members/create-team-members.png?w=800&dpr=2&q=70" />
 
 ### <a name="create-team-member-fieldset"></a> Create Team Member fieldset
 
@@ -230,7 +230,7 @@ sections:
 
 <div class="file-list"><i class="far fa-file-alt"></i> /site/entries/team-members/daniel-jackson/entry.md</div>
 
-<img src="[base_url]/image/en/cookbook/team-members/create-team-member.png?w=800&dpr=2&q=70" />
+<img src="[base_url]/image/en/cookbook/tutorials/team-members/create-team-member.png?w=800&dpr=2&q=70" />
 
 ### <a name="create-team-members-template"></a> Create Team Members template
 
@@ -260,7 +260,7 @@ sections:
 ```
 <br>
 
-<img src="[base_url]/image/en/cookbook/team-members/team-members.png?w=800&dpr=2&q=70" />
+<img src="[base_url]/image/en/cookbook/tutorials/team-members/team-members.png?w=800&dpr=2&q=70" />
 
 ### <a name="create-team-member-template"></a> Create Team Member template
 
@@ -279,4 +279,4 @@ sections:
 
 ```
 
-<img src="[base_url]/image/en/cookbook/team-members/team-member.png?w=800&dpr=2&q=70" />
+<img src="[base_url]/image/en/cookbook/tutorials/team-members/team-member.png?w=800&dpr=2&q=70" />
