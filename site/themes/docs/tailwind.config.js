@@ -19,6 +19,11 @@ module.exports = {
             black: 'black',
             white: 'white'
         }
+    },
+    extend: {
+        borderWidth: {
+            '3': '3px'
+        }
     }
   },
   variants: {},
