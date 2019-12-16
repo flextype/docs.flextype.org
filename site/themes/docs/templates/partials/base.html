@@ -146,10 +146,10 @@
         <script src="{{ highlight_js }}"></script>
 
         <script>
-        hljs.configure({useBR: false});
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block);
-        });
+            hljs.configure({useBR: false});
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
         </script>
         {% do emitter.emit('onThemeTail') %}
     </body>
