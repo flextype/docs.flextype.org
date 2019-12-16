@@ -4,7 +4,7 @@ module.exports = {
         'xs': '.75rem',
         'sm': '.875rem',
         'tiny': '.875rem',
-        'base': '1.100rem',
+        'base': '18px',
         'lg': '1.125rem',
         'xl': '1.25rem',
         '2xl': '1.5rem',
