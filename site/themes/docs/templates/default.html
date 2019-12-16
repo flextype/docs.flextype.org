@@ -1,12 +1,12 @@
-{% extends "themes/default/templates/partials/base.html" %}
+{% extends "themes/docs/templates/partials/base.html" %}
 
 {% block content %}
-<div class="page-content container">
+<div class="page-content pl-10 pr-10">
     <h1 class="h1">
         {{ entry.title }}
     </h1>
     <div class="flex relative">
-        <div class="{% if entry.on_this_page %}width-9-12{% else %}width-full{% endif %}">
+        <div class="{% if entry.on_this_page %}w-9/12{% else %}w-full{% endif %}">
             {{ entry.content|shortcode|markdown|raw }}
         </div>
         {% if entry.on_this_page %}
