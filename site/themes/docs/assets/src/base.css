@@ -38,3 +38,10 @@ th, td {
     padding-top: 16px;
     vertical-align: middle;
 }
+
+hr {
+    border-top: 3px solid black;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}

@@ -4,6 +4,7 @@
 @import "base.css";
 @import "headings.css";
 @import "code.css";
+@import "sidebar.css";
 
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
