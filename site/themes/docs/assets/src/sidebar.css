@@ -1,0 +1,20 @@
+.sidebar li {
+    border-left: 6px solid black;
+    padding-left: 10px;
+    margin-left: -16px;
+}
+
+.sidebar {
+    background: black;
+    color: white;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+    border-left: 6px solid white;
+}

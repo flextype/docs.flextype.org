@@ -3,3 +3,5 @@ description: Documentation for Flextype.
 
 entries:
   main: en
+
+theme: docs
