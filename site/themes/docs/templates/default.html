@@ -1,20 +1,20 @@
-{% extends "themes/default/templates/partials/base.html" %}
+{% extends "themes/docs/templates/partials/base.html" %}
 
 {% block content %}
-<div class="page-content container">
-    <h1 class="h1">
+<div class="page-content pl-10 pr-10">
+    <h1>
         {{ entry.title }}
     </h1>
     <div class="flex relative">
-        <div class="{% if entry.on_this_page %}width-9-12{% else %}width-full{% endif %}">
+        <div class="{% if entry.on_this_page %}w-9/12{% else %}w-full{% endif %}">
             {{ entry.content|shortcode|markdown|raw }}
         </div>
         {% if entry.on_this_page %}
-        <div class="width-3-12 block relative">
-            <div class="sticky top-18">
-                <div class="padding-left-2">
-                    <h4 class="margin-none padding-none">{{ entry_locale.txt.common.on_this_page }}</h4>
-                    <ul class="list-none margin-none padding-none">
+        <div class="w-3/12 block relative">
+            <div class="sticky top-0">
+                <div class="pl-4">
+                    <h4 class="m-0 p-0">{{ entry_locale.txt.common.on_this_page }}</h4>
+                    <ul class="list-none m-0 p-0">
                         {% for item in entry.on_this_page %}
                             <li><a class="text-decoration-none" href="#{{ item.link }}">{{ item.title }}</a></li>
                         {% endfor %}
