@@ -90,13 +90,13 @@
                     <li class="{% if entry.slug == locale ~ "/basics/license" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/license" class="no-underline">{{ entry_locale.txt.categories.basics.license }}</a></li>
                 </ul>
                 <h4 class="pb-4 pt-8">{{ entry_locale.txt.categories.content.title }}</h4>
-                <ul>
+                <ul class="m-0 p-0 list-none">
                     <li class="{% if entry.slug == locale ~ "/content/entries" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/entries" class="no-underline">{{ entry_locale.txt.categories.content.entries }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/content/media" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/media" class="no-underline">{{ entry_locale.txt.categories.content.media }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/fieldsets/fieldsets" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/fieldsets/fieldsets" class="no-underline">{{ entry_locale.txt.categories.content.fieldsets }}</a></li>
                 </ul>
                 <h4 class="pb-4 pt-8">{{ entry_locale.txt.categories.themes.title }}</h4>
-                <ul>
+                <ul class="m-0 p-0 list-none">
                     <li class="{% if entry.slug == locale ~ "/themes/installation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/installation" class="no-underline">{{ entry_locale.txt.categories.themes.theme_installation }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/themes/theme-configuration" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/theme-configuration" class="no-underline">{{ entry_locale.txt.categories.themes.theme_configuration }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/themes/theme-variables" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/theme-variables" class="no-underline">{{ entry_locale.txt.categories.themes.theme_variables }}</a></li>
@@ -104,7 +104,7 @@
                     <li class="{% if entry.slug == locale ~ "/themes/entries-fetch" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/entries-fetch" class="no-underline">{{ entry_locale.txt.categories.themes.entries_fetch }}</a></li>
                 </ul>
                 <h4 class="pb-4 pt-8">{{ entry_locale.txt.categories.plugins.title }}</h4>
-                <ul>
+                <ul class="m-0 p-0 list-none">
                     <li class="{% if entry.slug == locale ~ "/plugins/installation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/installation" class="no-underline">{{ entry_locale.txt.categories.plugins.installation }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/plugins/configuration" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/configuration" class="no-underline">{{ entry_locale.txt.categories.plugins.configuration }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/plugins/hooks" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/hooks" class="no-underline">{{ entry_locale.txt.categories.plugins.event_hooks }}</a></li>
@@ -112,26 +112,26 @@
                     <li class="{% if entry.slug == locale ~ "/plugins/navigation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/navigation" class="no-underline">{{ entry_locale.txt.categories.plugins.navigation }}</a></li>
                 </ul>
                 <h4 class="pb-4 pt-8">{{ entry_locale.txt.categories.advanced.title }}</h4>
-                <ul>
+                <ul class="m-0 p-0 list-none">
                     <li class="{% if entry.slug == locale ~ "/advanced/performance-and-caching" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/performance-and-caching" class="no-underline">{{ entry_locale.txt.categories.advanced.performance_and_caching }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/advanced/yaml-syntax" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax" class="no-underline">{{ entry_locale.txt.categories.advanced.yaml_syntax }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/advanced/password-recovery" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/password-recovery" class="no-underline">{{ entry_locale.txt.categories.advanced.password_recovery }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/advanced/api" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/api" class="no-underline">{{ entry_locale.txt.categories.advanced.api }}</a></li>
                 </ul>
                 <h4 class="pb-4 pt-8">{{ entry_locale.txt.categories.cookbook.title }}</h4>
-                <ul>
+                <ul class="m-0 p-0 list-none">
                     <li class="{% if entry.slug == locale ~ "/cookbook/tutorials" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/cookbook/tutorials" class="no-underline">{{ entry_locale.txt.categories.cookbook.tutorials.title }}</a></li>
                 </ul>
             </div>
-            <div class="content w-9/12">
+            <div class="w-9/12">
                 {% block content %}{% endblock %}
-                <div class="edit-this-page flex">
+                <div class="border-t-3 ml-10 mr-10 pt-4 flex">
                     <div class="w-3/12 text-left">
                         {{ entry_locale.txt.common.language }}:
                         <a href="{{ base_url() }}/en">en</a>,
                         <a href="{{ base_url() }}/ru">ru</a>
                     </div>
-                    <div class="w-9/12">
+                    <div class="w-9/12 text-right">
                         {% if locale == 'en' %}
                             <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt.common.edit_this_page }}</a>
                         {% else %}
@@ -141,7 +141,6 @@
                 </div>
             </div>
         </div>
-
 
         {% set highlight_js = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/highlight.pack.js' %}
         <script src="{{ highlight_js }}"></script>

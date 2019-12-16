@@ -17,3 +17,7 @@ a {
 p, pre {
     margin: 0 0 20px;
 }
+
+li {
+    margin: 0 0 2px;
+}
