@@ -187,7 +187,6 @@ sections:
         title: admin_description
         type: textarea
         size: 12
-        default: test!
       template:
         title: admin_template
         type: template_select
