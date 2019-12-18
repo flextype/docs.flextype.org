@@ -65,6 +65,7 @@ code {
     margin-right: 5px;
 }
 
+/* purgecss start ignore */
 .hljs {
     position: relative;
 }
@@ -97,3 +98,4 @@ code {
 .hljs.language-twig:before {
     content: "TWIG";
 }
+/* purgecss end ignore */
