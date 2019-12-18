@@ -1,21 +1,25 @@
 ---
 title: Snippets
+description: Snippets are some sort of extensions written on PHP/HTML/JS languages that add different features on the site.
 ---
 
-Snippets are extensions written on PHP/HTML/JS languages that add different features on the site.
+Snippets are some sort of extensions written on PHP/HTML/JS languages that add different features on the site.
 
-Snippets are stored in `/site/snippets/`  
-You can edit snippets manually using any text editor or via the admin panel in the snippets section.
+Snippets are stored in `/site/snippets/` directory.
+You can edit snippets manually using any text editor or via the Admin panel in the snippets section.
 
-### Using snippets in the content {#using-snippets-in-the-content}
+### Using snippets in the entry content
 
-You can display the snippet in the page with a shortcode like this:
+You can display snippet in the entry content with a shortcode `snippets_exec` like this:
 
-    [snippet name="snippet_name"]
-    
+<div class="hljs-shortcode">
+    <input value='&#91;snippets_exec id="snippet-name"&#93;'>
+</div>
 
-### Snippets can be displayed in the template {#snippets-can-be-displayed-in-the-template}
+### Using snippets in the templates
 
-Display a snippet by its name:
+Display a snippet in the template by it's name:
 
-    <?= Snippets::get('snippet_name') ?>
+```twig
+{{ snippets.exec('snippet-name')|raw }}
+```

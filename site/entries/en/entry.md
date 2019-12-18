@@ -23,6 +23,8 @@ txt:
       markdown: Markdown
       media: Media
       fieldsets: Fieldsets
+      snippets: Snippets
+      shortcodes: Shortcodes
     themes:
       title: Themes
       theme_installation: Theme Installation

@@ -93,6 +93,8 @@
                 <ul class="m-0 p-0 list-none">
                     <li class="{% if entry.slug == locale ~ "/content/entries" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/entries" class="no-underline">{{ entry_locale.txt.categories.content.entries }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/content/media" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/media" class="no-underline">{{ entry_locale.txt.categories.content.media }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/content/shortcodes" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/shortcodes" class="no-underline">{{ entry_locale.txt.categories.content.shortcodes }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/content/snippets" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/snippets" class="no-underline">{{ entry_locale.txt.categories.content.snippets }}</a></li>
                     <li class="{% if entry.slug == locale ~ "/fieldsets/fieldsets" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/fieldsets/fieldsets" class="no-underline">{{ entry_locale.txt.categories.content.fieldsets }}</a></li>
                 </ul>
                 <h4 class="pt-8">{{ entry_locale.txt.categories.themes.title }}</h4>
