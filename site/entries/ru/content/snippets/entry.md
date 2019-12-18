@@ -1,20 +1,24 @@
 ---
 title: Фрагменты
+description: Snippets are some sort of extensions written on PHP/HTML/JS languages that add different features on the site.
 ---
 
-Фрагменты - это расширения, написанные на языках PHP/HTML/JS, которые добавляют различные возможности на сайте.
+Snippets are some sort of extensions written on PHP/HTML/JS languages that add different features on the site.
 
-Фрагменты хранятся в следующих местах `/site/snippets/` Вы можете редактировать фрагменты вручную с помощью любого текстового редактора или с помощью панели администратора в разделе фрагменты.
+Snippets are stored in `/site/snippets/` directory. You can edit snippets manually using any text editor or via the Admin panel in the snippets section.
 
-### Использование фрагментов в контенте {#using-snippets-in-the-content}
+### Using snippets in the entry content
 
-Вы можете отобразить фрагмент на странице с помощью такого ярлыка, как этот:
+You can display snippet in the entry content with a shortcode `snippets_exec` like this:
 
-    [snippet name="snippet_name"]
+<div class="hljs-shortcode">
+    <input value='&#91;snippets_exec id="snippet-name"&#93;'>
+</div>
 
+### Using snippets in the templates
 
-### Фрагменты могут быть отображены в шаблоне {#snippets-can-be-displayed-in-the-template}
+Display a snippet in the template by it's name:
 
-Отображение фрагмента по его названию:
-
-    <?= Snippets::get('snippet_name') ?>
+```twig
+{{ snippets.exec('snippet-name')|raw }}
+```
