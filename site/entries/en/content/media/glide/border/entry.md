@@ -31,5 +31,5 @@ Example:
 
 Result:
 
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&border=10,5000,overlay">
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&border=10,FFCC33,expand">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&border=10,5000,overlay">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&border=10,FFCC33,expand">

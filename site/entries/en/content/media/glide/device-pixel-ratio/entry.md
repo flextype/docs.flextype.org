@@ -14,4 +14,4 @@ Example:
 
 Result:
 
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&h=200&dpr=2">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&h=200&dpr=2">

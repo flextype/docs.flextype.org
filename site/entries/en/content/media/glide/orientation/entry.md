@@ -17,7 +17,7 @@ Example:
 
 Result:
 
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=0">
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=90">
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=180">
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=270">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=0">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=90">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=180">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=270">

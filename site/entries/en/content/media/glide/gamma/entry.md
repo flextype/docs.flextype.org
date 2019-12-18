@@ -15,5 +15,5 @@ Example:
 
 Result:
 
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&gam=0.1">
-<img width="200" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&gam=9.99">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&gam=0.1">
+<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&gam=9.99">
