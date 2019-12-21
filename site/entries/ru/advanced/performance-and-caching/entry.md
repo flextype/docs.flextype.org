@@ -21,7 +21,7 @@ But there is a several ways to speed up your projects powered by Flextype even m
 
 6. **Multi-core processors are better.** Faster and more advanced processors will always help, but not as much as the other points.
 
-7. **PECL Yaml Parser.** Installing the native PHP PECL Yaml parser can increase YAML parsing!
+7. **PECL Yaml Parser.** Flextype configurations, entries and related things uses YAML. Installing the native PHP PECL Yaml parser can increase YAML parsing and performance in general!
 
 ### Caching Options
 
