@@ -9,7 +9,7 @@ You can easily access theme configuration and theme information from your Twig a
 
 Information from the currently active theme can get from the `registry` object.
 
-Example information from `/site/themes/default/theme.yaml`:
+Example information from `/site/themes/default/theme.yaml`
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/themes/default/theme.yaml</div>
 ```yaml
