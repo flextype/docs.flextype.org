@@ -72,7 +72,8 @@
     </head>
     <body>
         <div class="w-full flex">
-            <div class="w-3/12 pl-12 pt-6 pb-10 text-brand-white bg-brand-black sidebar">
+            <div id="shadow" onclick="hideMenu();" class="hidden z-30 fixed block opacity-75 h-full w-full" style="background: black;"></div>
+            <div id="menu" class="hidden lg:block w-3/12 pl-12 pt-6 pb-10 text-brand-white bg-brand-black sidebar">
                 <div class="flextype-docs-logo">
                     <h2>FLEXTYPE</h2>
                     <h3>DOCUMENTATION</h3>
@@ -125,7 +126,8 @@
                     <li class="{% if entry.slug == locale ~ "/cookbook/tutorials" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/cookbook/tutorials" class="no-underline">{{ entry_locale.txt.categories.cookbook.tutorials.title }}</a></li>
                 </ul>
             </div>
-            <div class="w-9/12">
+            <div class="w-full lg:w-9/12">
+                <a href="javascript:;" onclick="showMenu();" class="absolute lg:hidden right-0 top-0 mr-10 mt-12"><i class="fas fa-bars"></i></a>
                 {% block content %}{% endblock %}
                 <div class="border-t-3 ml-10 mr-10 pt-5 mt-2 pb-6 flex">
                     <div class="w-3/12 text-left">
@@ -148,6 +150,24 @@
         <script src="{{ highlight_js }}"></script>
 
         <script>
+            function showMenu() {
+                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
+                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)w-3\/12(?!\S)/g , '' );
+                document.getElementById("menu").className += " w-full";
+                document.getElementById("menu").className += " absolute";
+                document.getElementById("menu").className += " z-50";
+                document.getElementById("shadow").className = document.getElementById("shadow").className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
+            }
+
+            function hideMenu() {
+                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)absolute(?!\S)/g , '' );
+                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)w-full(?!\S)/g , '' );
+                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)z-50(?!\S)/g , '' );
+                document.getElementById("menu").className += " hidden";
+                document.getElementById("menu").className += " 3/12";
+                document.getElementById("shadow").className += " hidden";
+            }
+
             hljs.configure({useBR: false});
             document.querySelectorAll('pre code').forEach((block) => {
                 hljs.highlightBlock(block);
