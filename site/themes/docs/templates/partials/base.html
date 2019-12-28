@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ locale }}">
     {% set entry_locale = entries.fetch(locale) %}
+    {% set static_version = 1 %}
     <head>
         {% block head %}
             <meta charset="{{ registry.settings.charset|lower }}">
@@ -63,7 +64,7 @@
             {% do assets.add('css', docs_css, 'site', 2) %}
             {% for assets_site in assets.get('css', 'site') %}
                 {% for assets_by_priorities in assets_site %}
-                    <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
+                    <link href="{{ assets_by_priorities.asset }}?v={{ static_version }}" rel="stylesheet">
                 {% endfor %}
             {% endfor %}
 
