@@ -47,6 +47,8 @@ txt:
         team_members: Team Members
       setup:
         title: Setup
+      templating:
+        title: Templating
     advanced:
       title: Advanced
       performance_and_caching: Performance & Caching
