@@ -23,3 +23,6 @@ Display a snippet in the template by it's name:
 ```twig
 {{ snippets.exec('snippet-name')|raw }}
 ```
+
+Note:
+The `raw` filter marks the value as being "safe", which means that in an environment with automatic escaping enabled this variable will not be escaped if raw is the last filter applied to it.
