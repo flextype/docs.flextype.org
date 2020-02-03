@@ -9,7 +9,7 @@
             <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.settings.description }}{% endif %}">
             <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.settings.keywords }}{% endif %}">
             <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.settings.robots }}{% endif %}">
-            <meta name="generator" content="Powered by Flextype {{ FLEXTYPE_VERSION }}" />
+            <meta name="generator" content="Powered by Flextype {{ FLEXTYPE_VERSION }}"/>
 
             <meta name="image" content="https://github.com/flextype/flextype/raw/dev/site/plugins/admin/preview.png">
 
@@ -26,7 +26,7 @@
             <meta property="og:image" content="https://github.com/flextype/flextype/raw/dev/site/plugins/admin/preview.png">
             <meta property="og:image:type" content="image/png">
 
-            <meta name="yandex-verification" content="920bbfc83bbe3fbe" />
+            <meta name="yandex-verification" content="920bbfc83bbe3fbe"/>
 
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,41 +34,58 @@
             <link rel="manifest" href="/site.webmanifest">
 
             <!-- Yandex.Metrika counter -->
-            <script type="text/javascript" >
-               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-               m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-               (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            <script type="text/javascript">
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () {
+                        (m[i].a = m[i].a || []).push(arguments)
+                    };
+                    m[i].l = 1 * new Date();
+                    k = e.createElement(t),
+                    a = e.getElementsByTagName(t)[0],
+                    k.async = 1,
+                    k.src = r,
+                    a.parentNode.insertBefore(k, a)
+                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-               ym(56663935, "init", {
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
-               });
+                ym(56663935, "init", {
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
+                });
             </script>
-            <noscript><div><img src="https://mc.yandex.ru/watch/56663935" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+            <noscript>
+                <div><img src="https://mc.yandex.ru/watch/56663935" style="position:absolute; left:-9999px;" alt=""/></div>
+            </noscript>
             <!-- /Yandex.Metrika counter -->
 
             <link rel="canonical" href="{{ base_url() }}/{{ entry.slug }}">
 
-            {% do emitter.emit('onThemeMeta') %}
+            {% do 
+                emitter.emit('onThemeMeta') %}
 
-            <title>{% if entry.title %}{{ entry.title|e('html') }} | {% endif %}{{ registry.settings.title|e('html') }}</title>
+            <title>
+                {% if entry.title %}{{ entry.title|e('html') }}
+                    |
+                {% endif %}{{ registry.settings.title|e('html') }}</title>
 
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
             {% set highlight_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/styles/tomorrow-night-bright.css' %}
             {% set docs_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/build.min.css' %}
-            {% do assets.add('css', highlight_css, 'site', 1) %}
-            {% do assets.add('css', docs_css, 'site', 2) %}
+            {% do 
+                assets.add('css', highlight_css, 'site', 1) %}
+            {% do 
+                assets.add('css', docs_css, 'site', 2) %}
             {% for assets_site in assets.get('css', 'site') %}
                 {% for assets_by_priorities in assets_site %}
                     <link href="{{ assets_by_priorities.asset }}?v={{ static_version }}" rel="stylesheet">
                 {% endfor %}
             {% endfor %}
 
-            {% do emitter.emit('onThemeHeader') %}
+            {% do 
+                emitter.emit('onThemeHeader') %}
         {% endblock %}
     </head>
     <body>
@@ -81,54 +98,117 @@
                 </div>
                 <h4>{{ entry_locale.txt.categories.basics.title }}</h4>
                 <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}" class="no-underline">{{ entry_locale.txt.categories.basics.what_is_flextype }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/basics/requirements" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/requirements" class="no-underline">{{ entry_locale.txt.categories.basics.requirements }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/basics/installation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/installation" class="no-underline">{{ entry_locale.txt.categories.basics.installation }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/basics/configuration" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/configuration" class="no-underline">{{ entry_locale.txt.categories.basics.configuration }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/basics/folder-structure" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/folder-structure" class="no-underline">{{ entry_locale.txt.categories.basics.folder_structure }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/basics/php-constants" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/php-constants" class="no-underline">{{ entry_locale.txt.categories.basics.php_constants }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/basics/coc" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/coc" class="no-underline">{{ entry_locale.txt.categories.basics.coc }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/basics/getting-help" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/getting-help" class="no-underline">{{ entry_locale.txt.categories.basics.getting_help }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/basics/license" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/basics/license" class="no-underline">{{ entry_locale.txt.categories.basics.license }}</a></li>
+                    <li class="{% if entry.slug == locale %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}" class="no-underline">{{ entry_locale.txt.categories.basics.what_is_flextype }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/basics/requirements" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/basics/requirements" class="no-underline">{{ entry_locale.txt.categories.basics.requirements }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/basics/installation" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/basics/installation" class="no-underline">{{ entry_locale.txt.categories.basics.installation }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/basics/configuration" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/basics/configuration" class="no-underline">{{ entry_locale.txt.categories.basics.configuration }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/basics/folder-structure" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/basics/folder-structure" class="no-underline">{{ entry_locale.txt.categories.basics.folder_structure }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/basics/php-constants" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/basics/php-constants" class="no-underline">{{ entry_locale.txt.categories.basics.php_constants }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/basics/coc" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/basics/coc" class="no-underline">{{ entry_locale.txt.categories.basics.coc }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/basics/getting-help" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/basics/getting-help" class="no-underline">{{ entry_locale.txt.categories.basics.getting_help }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/basics/license" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/basics/license" class="no-underline">{{ entry_locale.txt.categories.basics.license }}</a>
+                    </li>
                 </ul>
                 <h4 class="pt-8">{{ entry_locale.txt.categories.content.title }}</h4>
                 <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/content/entries" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/entries" class="no-underline">{{ entry_locale.txt.categories.content.entries }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/content/media" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/media" class="no-underline">{{ entry_locale.txt.categories.content.media }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/content/shortcodes" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/shortcodes" class="no-underline">{{ entry_locale.txt.categories.content.shortcodes }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/content/snippets" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/content/snippets" class="no-underline">{{ entry_locale.txt.categories.content.snippets }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/fieldsets/fieldsets" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/fieldsets/fieldsets" class="no-underline">{{ entry_locale.txt.categories.content.fieldsets }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/content/entries" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/content/entries" class="no-underline">{{ entry_locale.txt.categories.content.entries }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/content/media" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/content/media" class="no-underline">{{ entry_locale.txt.categories.content.media }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/content/shortcodes" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/content/shortcodes" class="no-underline">{{ entry_locale.txt.categories.content.shortcodes }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/content/snippets" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/content/snippets" class="no-underline">{{ entry_locale.txt.categories.content.snippets }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/fieldsets/fieldsets" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/fieldsets/fieldsets" class="no-underline">{{ entry_locale.txt.categories.content.fieldsets }}</a>
+                    </li>
                 </ul>
                 <h4 class="pt-8">{{ entry_locale.txt.categories.themes.title }}</h4>
                 <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/themes/installation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/installation" class="no-underline">{{ entry_locale.txt.categories.themes.theme_installation }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/themes/theme-configuration" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/theme-configuration" class="no-underline">{{ entry_locale.txt.categories.themes.theme_configuration }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/themes/theme-variables" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/theme-variables" class="no-underline">{{ entry_locale.txt.categories.themes.theme_variables }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/themes/twig-filters-functions" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/twig-filters-functions" class="no-underline">{{ entry_locale.txt.categories.themes.twig_filters_functions }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/themes/entries-fetch" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/themes/entries-fetch" class="no-underline">{{ entry_locale.txt.categories.themes.entries_fetch }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/themes/installation" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/themes/installation" class="no-underline">{{ entry_locale.txt.categories.themes.theme_installation }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/themes/theme-configuration" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/themes/theme-configuration" class="no-underline">{{ entry_locale.txt.categories.themes.theme_configuration }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/themes/theme-variables" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/themes/theme-variables" class="no-underline">{{ entry_locale.txt.categories.themes.theme_variables }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/themes/twig-filters-functions" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/themes/twig-filters-functions" class="no-underline">{{ entry_locale.txt.categories.themes.twig_filters_functions }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/themes/entries-fetch" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/themes/entries-fetch" class="no-underline">{{ entry_locale.txt.categories.themes.entries_fetch }}</a>
+                    </li>
                 </ul>
                 <h4 class="pt-8">{{ entry_locale.txt.categories.plugins.title }}</h4>
                 <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/plugins/installation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/installation" class="no-underline">{{ entry_locale.txt.categories.plugins.installation }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/plugins/configuration" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/configuration" class="no-underline">{{ entry_locale.txt.categories.plugins.configuration }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/plugins/hooks" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/hooks" class="no-underline">{{ entry_locale.txt.categories.plugins.event_hooks }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/plugins/toasts" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/toasts" class="no-underline">{{ entry_locale.txt.categories.plugins.toasts_notifications }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/plugins/navigation" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/plugins/navigation" class="no-underline">{{ entry_locale.txt.categories.plugins.navigation }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/plugins/installation" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/plugins/installation" class="no-underline">{{ entry_locale.txt.categories.plugins.installation }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/plugins/configuration" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/plugins/configuration" class="no-underline">{{ entry_locale.txt.categories.plugins.configuration }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/plugins/hooks" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/plugins/hooks" class="no-underline">{{ entry_locale.txt.categories.plugins.event_hooks }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/plugins/toasts" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/plugins/toasts" class="no-underline">{{ entry_locale.txt.categories.plugins.toasts_notifications }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/plugins/navigation" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/plugins/navigation" class="no-underline">{{ entry_locale.txt.categories.plugins.navigation }}</a>
+                    </li>
                 </ul>
                 <h4 class="pt-8">{{ entry_locale.txt.categories.advanced.title }}</h4>
                 <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/advanced/performance-and-caching" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/performance-and-caching" class="no-underline">{{ entry_locale.txt.categories.advanced.performance_and_caching }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/advanced/yaml-syntax" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax" class="no-underline">{{ entry_locale.txt.categories.advanced.yaml_syntax }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/advanced/password-recovery" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/password-recovery" class="no-underline">{{ entry_locale.txt.categories.advanced.password_recovery }}</a></li>
-                    <li class="{% if entry.slug == locale ~ "/advanced/api" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/advanced/api" class="no-underline">{{ entry_locale.txt.categories.advanced.api }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/advanced/performance-and-caching" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/advanced/performance-and-caching" class="no-underline">{{ entry_locale.txt.categories.advanced.performance_and_caching }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/advanced/yaml-syntax" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax" class="no-underline">{{ entry_locale.txt.categories.advanced.yaml_syntax }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/advanced/password-recovery" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/advanced/password-recovery" class="no-underline">{{ entry_locale.txt.categories.advanced.password_recovery }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/advanced/api" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/advanced/api" class="no-underline">{{ entry_locale.txt.categories.advanced.api }}</a>
+                    </li>
                 </ul>
                 <h4 class="pt-8">{{ entry_locale.txt.categories.cookbook.title }}</h4>
                 <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/cookbook/tutorials" %}active{% endif %}"><a href="{{ base_url() }}/{{ locale }}/cookbook/tutorials" class="no-underline">{{ entry_locale.txt.categories.cookbook.tutorials.title }}</a></li>
+                    <li class="{% if entry.slug == locale ~ "/cookbook/tutorials" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/cookbook/tutorials" class="no-underline">{{ entry_locale.txt.categories.cookbook.tutorials.title }}</a>
+                    </li>
+                    <li class="{% if entry.slug == locale ~ "/cookbook/setup" %}active{% endif %}">
+                        <a href="{{ base_url() }}/{{ locale }}/cookbook/setup" class="no-underline">{{ entry_locale.txt.categories.cookbook.setup.title }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="w-full lg:w-9/12">
-                <a href="javascript:;" onclick="showMenu();" class="absolute lg:hidden right-0 top-0 mr-10 mt-12"><i class="fas fa-bars"></i></a>
+                <a href="javascript:;" onclick="showMenu();" class="absolute lg:hidden right-0 top-0 mr-10 mt-12">
+                    <i class="fas fa-bars"></i>
+                </a>
                 {% block content %}{% endblock %}
                 <div class="border-t-3 ml-10 mr-10 pt-5 mt-2 pb-6 flex">
                     <div class="w-3/12 text-left">
@@ -152,18 +232,18 @@
 
         <script>
             function showMenu() {
-                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
-                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)w-3\/12(?!\S)/g , '' );
+                document.getElementById("menu").className = document.getElementById("menu").className.replace(/(?:^|\s)hidden(?!\S)/g, '');
+                document.getElementById("menu").className = document.getElementById("menu").className.replace(/(?:^|\s)w-3\/12(?!\S)/g, '');
                 document.getElementById("menu").className += " w-full";
                 document.getElementById("menu").className += " absolute";
                 document.getElementById("menu").className += " z-50";
-                document.getElementById("shadow").className = document.getElementById("shadow").className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
+                document.getElementById("shadow").className = document.getElementById("shadow").className.replace(/(?:^|\s)hidden(?!\S)/g, '');
             }
 
             function hideMenu() {
-                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)absolute(?!\S)/g , '' );
-                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)w-full(?!\S)/g , '' );
-                document.getElementById("menu").className = document.getElementById("menu").className.replace( /(?:^|\s)z-50(?!\S)/g , '' );
+                document.getElementById("menu").className = document.getElementById("menu").className.replace(/(?:^|\s)absolute(?!\S)/g, '');
+                document.getElementById("menu").className = document.getElementById("menu").className.replace(/(?:^|\s)w-full(?!\S)/g, '');
+                document.getElementById("menu").className = document.getElementById("menu").className.replace(/(?:^|\s)z-50(?!\S)/g, '');
                 document.getElementById("menu").className += " hidden";
                 document.getElementById("menu").className += " 3/12";
                 document.getElementById("shadow").className += " hidden";
@@ -174,6 +254,7 @@
                 hljs.highlightBlock(block);
             });
         </script>
-        {% do emitter.emit('onThemeTail') %}
+        {% do 
+            emitter.emit('onThemeTail') %}
     </body>
 </html>
