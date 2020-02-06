@@ -11,15 +11,23 @@ If you have never used Composer before, you first need to install it. Please fol
 
 Once you have installed Composer, run the following command to set up Flextype:
 
-
 ```plaintext
 composer create-project flextype/flextype
+```
+
+or you may setup Flextype with a dev stability
+
+```plaintext
+composer create-project flextype/flextype --stability=dev
 ```
 
 Also you may need to install vendor libs for default plugins and default theme.
 Go to your project folder, and run:
 
 ```plaintext
+
+composer install
+
 cd site/plugins/admin
 composer install
 npm install
