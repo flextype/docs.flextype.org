@@ -17,6 +17,8 @@ php_value max_execution_time 90
 php_value max_input_time 120
 php_value upload_max_filesize 16M
 
+Header set Access-Control-Allow-Origin 'origin-list'
+
 <IfModule mod_rewrite.c>
 
 RewriteEngine On
