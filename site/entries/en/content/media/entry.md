@@ -9,7 +9,7 @@ Those files are being stored directly in the entry folder.
 ### Getting list of media files for entry in the template
 
 ```twig
-{% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
+{% set media = filesystem_list_contents(PATH_UPLOADS ~ '/' ~ entry.slug) %}
 ```
 
 ### Displaying images in the template
@@ -17,7 +17,7 @@ Those files are being stored directly in the entry folder.
 ```twig
 {% for image in media %}
     {% if image.extension == 'jpg' %}
-        <img src="{{ base_url() }}/image/{{ entry.slug }}/{{ image.filename }}">
+        <img src="{{ site_url() }}/site/uploads/{{ entry.slug }}/{{ image.filename }}">
     {% endif %}
 {% endfor %}
 ```
