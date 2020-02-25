@@ -87,8 +87,8 @@ composer install --no-dev
 If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
 
 ```plaintext
-wget https://github.com/flextype/flextype/releases/download/v0.9.6/flextype-0.9.6.zip
-unzip flextype-0.9.6.zip
+wget https://github.com/flextype/flextype/releases/download/v0.9.7/flextype-0.9.7.zip
+unzip flextype-0.9.7.zip
 chmod -R 0777 site/
 ```
 
