@@ -10,23 +10,6 @@ You can update and create site configuration by editing file `/site/config/setti
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/config/settings.yaml</div>
 ```
-# The title of the website
-title: Flextype
-
-# The description of the website
-description: Build fast, flexible, easier to manage websites with Flextype.
-
-# The keywords of the website
-keywords: flextype, php, cms, flat-file cms, flat cms, flatfile cms, html
-
-# The robots of the website
-robots: index, follow
-
-# The name and email address of the website author
-author:
-  email: ''
-  name: ''
-
 # Set the timezone to be used on the website.
 # For a list of valid timezone settings, see:
 # http://php.net/manual/en/timezones.php
@@ -65,13 +48,6 @@ date_display_format: 'd-m-y G:i'
 # - media.accept_file_types: Define the file types (extensions to be exact) that are acceptable for upload.
 entries:
   main: home
-  media:
-    upload_images_quality: 70
-    upload_images_width: 1600
-    upload_images_height: 0
-    accept_file_types: gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf,
-      epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm,
-      svg
   error404:
     title: Error 404
     description: We're sorry but the page you are looking for doesn't appear to exist!
@@ -82,7 +58,7 @@ entries:
 #
 # - display: Display errors or not.
 errors:
-  display: true
+  display: false
 
 # Cache
 #
@@ -134,12 +110,6 @@ cache:
   sqlite3:
     database: flextype
     table: flextype
-
-# Admin Panel
-#
-# - themes:  Theme (dark, light)
-admin_panel:
-  theme: light
 
 # Whoops
 #
@@ -198,11 +168,14 @@ http_version: '1.1'
 # - charset:     The charset used by the templates.
 #
 # - cache:       Set false to disable caching.
+#
+# - extensions   Flextype Twig Extension to load.
 twig:
   auto_reload: true
   cache: true
   debug: false
   charset: "UTF-8"
+  extensions: ['Cache', 'Entries', 'Emitter', 'Flash', 'I18n', 'Json', 'Yaml', 'Parser', 'Markdown', 'Filesystem', 'Date', 'Assets', 'Csrf', 'Shortcodes', 'Snippets', 'GlobalVars']
 
 # Slugify
 #
@@ -240,6 +213,24 @@ slugify:
 # - driver: gd or imagick
 image:
   driver: gd
+
+# Shortcodes
+#
+# - extensions: Flextype Shortcodes Extension to load.
+shortcodes:
+  extensions: ['BaseUrl', 'Entries', 'Registry', 'Snippets']
+
+# API's
+api:
+  images:
+    enabled: true
+    default_token:
+  entries:
+    enabled: true
+    default_token:
+  registry:
+    enabled: true
+    default_token:
 ```
 
 <br>
