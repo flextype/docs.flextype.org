@@ -16,7 +16,7 @@ description: When you are designing a theme, Flextype gives you access to all so
 Применение:
 
 ```twig
-{{ registry.settings.theme }} {# returns the currently configured theme #}
+{{ registry.flextype.theme }} {# returns the currently configured theme #}
 ```
 
 #### записи
@@ -58,7 +58,7 @@ or
 Применение:
 
 ```twig
-{% set site = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/site/site.min.css' %}
+{% set site = site_url() ~ '/site/themes/' ~ registry.flextype.theme ~ '/assets/dist/site/site.min.css' %}
 {% do assets.add('css', site, 'site', 1) %}
 ```
 
