@@ -16,7 +16,7 @@ description: When you are designing a theme, Flextype gives you access to all so
 Применение:
 
 ```twig
-{{ registry.settings.theme }} {# returns the currently configured theme #}
+{{ registry.flextype.theme }} {# returns the currently configured theme #}
 ```
 
 #### записи
@@ -58,7 +58,7 @@ or
 Применение:
 
 ```twig
-{% set site = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/site/site.min.css' %}
+{% set site = site_url() ~ '/site/themes/' ~ registry.flextype.theme ~ '/assets/dist/site/site.min.css' %}
 {% do assets.add('css', site, 'site', 1) %}
 ```
 
@@ -110,6 +110,9 @@ Execute snippet
 {{ PATH_ENTRIES }} {# Returns the path to the entries directory (without trailing slash). #}
 {{ PATH_SNIPPETS }} {# Returns the path to the snippets directory (without trailing slash). #}
 {{ PATH_FIELDSETS }} {# Returns the path to the fieldsets directory (without trailing slash). #}
+{{ PATH_LOGS }} {# Returns the path to the logs directory (without trailing slash). #}
+{{ PATH_TOKENS }} {# Returns the path to the tokens directory (without trailing slash). #}
+{{ PATH_ACCOUNTS }} {# Returns the path to the accounts directory (without trailing slash). #}
 {{ PATH_CONFIG_DEFAULT }} {# Returns the path to the default config directory (without trailing slash). #}
 {{ PATH_CONFIG_SITE }} {# Returns the path to the site config directory (without trailing slash). #}
 {{ PATH_CACHE }} {# Returns the path to the cache directory (without trailing slash). #}
