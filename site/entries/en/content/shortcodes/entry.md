@@ -79,7 +79,7 @@ Usage:
 Display icon from Font Awesome collection.
 
 Parameters:
-* `value` - Fieldsets valid fontawesome icon class.
+* `value` -  Valid fontawesome icon class.
 
 Usage:
 
