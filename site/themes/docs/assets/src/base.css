@@ -29,6 +29,7 @@ table tr {
 table {
     width: 100%;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 th, td {
