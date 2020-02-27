@@ -9,6 +9,7 @@ description: Flextype folder structure
     <li><i class="fas fa-folder"></i> flextype</li>
     <li><i class="fas fa-folder"></i> vendor</li>
     <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> var</li>
 </ul>
 
 <ul class="file-list">
@@ -31,68 +32,80 @@ description: Flextype folder structure
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> cache</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> accounts</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> config</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> entries</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> logs</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> plugins</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> snippets</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> accounts</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> tokens</li>
 </ul>
-
-<ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> cache</li>
-</ul>
-
-Эта папка используется для хранения временных кэшированных файлов, которые автоматически создаются Flextype для повышения производительности.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> config</li>
 </ul>
 
-В этой папке содержатся настройки сайта и системы.
+This folder contains the site and system settings.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> entries</li>
 </ul>
 
-В этой папке хранятся записи и медиафайлы сайта.
-
-<ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> logs</li>
-</ul>
-
-В этой папке хранятся журналы ошибок.
+Entries and media files of the site are stored in this folder.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> plugins</li>
 </ul>
 
-Эта папка содержит плагины, расширяющие возможности системы.
+This folder contains plugins that extend the capabilities of the system.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
 </ul>
 
-Эта папка содержит темы для веб-сайта со стилями, скриптами и отдельными наборами полей.
+This folder contains themes for the website with the styles, scripts and individual fieldsets.
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> site</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> tokens</li>
+</ul>
+
+This folder contains tokens for the flextype api's.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> snippets</li>
 </ul>
 
-В этой папке хранятся фрагменты.
+Snippets are stored in this folder.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> accounts</li>
 </ul>
 
-В этой папке хранятся учетные записи.
+Accounts are stored in this folder.
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> var</li>
+</ul>
+
+This folder contains directories and files that are prone to change, such as logs, cache and other temporary data.
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> var</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> cache</li>
+</ul>
+
+This folder is used to store temporary cached files that are automatically created by the Flextype to improve performance.
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> var</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> logs</li>
+</ul>
+
+Error logs are stored in this folder.
