@@ -59,3 +59,30 @@ Usage:
     <input value='&#91;entries_fetch id="entry-id" field="field-name" default="default-value"&#93;'>
 </div>
 
+### Site plugin shortcodes
+
+`site_url`
+
+Display site url based on `registry.plugins.site.site_url` setting.
+
+Usage:
+
+<div class="hljs-shortcode">
+    <input value='&#91;site_url&#93;'>
+</div>
+
+### Icon plugin shortcodes
+
+`icon`
+
+Display icon from Font Awesome collection.
+
+Parameters:
+* `value` - Fieldsets valid fontawesome icon class.
+
+Usage:
+
+<div class="hljs-shortcode">
+    <input value='&#91;icon value="fab fa-apple"&#93;'>
+</div>
+
