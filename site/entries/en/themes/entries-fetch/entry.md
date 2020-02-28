@@ -4,15 +4,15 @@ title: Entries fetch
 
 ### Expressions
 
-* `eq` or `=` - Equals
-* `neq` or `<>` - Not equals
+* `eq` or `=` - Equal to
+* `neq` or `<>` or `!=` - Not equal to
 * `lt` or `<` - Lower than
 * `gt` or `>` - Greater than
 * `lte` or `<=` - Lower than or equal to
 * `gte` or `>=` - Greater than or equal to
 * `in` - Included in an array of values
 * `nin` - Isn't included in an array of values
-* `contains` - Contains
+* `contains` or `like` - Contains the substring
 * `member_of` - Member of
 * `start_with` - Start with
 * `ends_with` - Ends with
