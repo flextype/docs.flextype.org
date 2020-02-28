@@ -3,12 +3,15 @@ title: Flextype API's
 ---
 
 ### Flextype Core
+A set of core PHP Classes that powers Flextype.
 
 <ul>
     <li><a href="./api/core">Core</a></li>
 </ul>
 
 ### Flextype Components
+A set of decoupled and reusable PHP libraries for kickass Web Applications.
+
 <ul>
     <li><a href="./api/arr">Arr</a></li>
     <li><a href="./api/assets">Assets</a></li>
