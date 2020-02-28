@@ -31,7 +31,7 @@ description: Entries can have any number and kind of images, videos, documents o
 ```twig
 {% for image in media %}
     {% if image.extension == 'jpg' %}
-        <img src="{{ base_url() }}/image/{{ entry.slug }}/{{ image.filename }}?dpr=2&w=350&q=60">
+        <img src="{{ site_url() }}/api/delivery/images/{{ entry.slug }}/{{ image.filename }}?dpr=2&w=350&q=60&token=YOUR_IMAGES_DELIVERY_TOKEN">
     {% endif %}
 {% endfor %}
 ```
