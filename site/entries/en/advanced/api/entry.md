@@ -33,7 +33,7 @@ A set of decoupled and reusable PHP libraries for kickass Web Applications.
 </ul>
 
 
-## Vendor Packages
+### Vendor Packages
 <ul>
     <li class="pb-4">
         <a href="https://www.doctrine-project.org/projects/cache.html">Doctrine Cache</a><br>
@@ -78,5 +78,13 @@ A set of decoupled and reusable PHP libraries for kickass Web Applications.
     <li class="pb-4">
         <a href="https://github.com/erusev/parsedown">Erusev Parsedown</a> + <a href="https://github.com/erusev/parsedown-extra">Parsedown Extra</a><br>
         Better Markdown Parser in PHP.
+    </li>
+    <li class="pb-4">
+        <a href="http://glide.thephpleague.com">League Glide</a><br>
+        Glide is a wonderfully easy on-demand image manipulation library written in PHP. Its straightforward API is exposed via HTTP, similar to cloud image processing services like Imgix and Cloudinary. Glide leverages powerful libraries like Intervention Image (for image handling and manipulation) and Flysystem (for file system abstraction).
+    </li>
+    <li class="pb-4">
+        <a href="http://event.thephpleague.com">League Event</a><br>
+        The League Event package provides a versatile tool to manage events in your app or domain. The package supports string based and class based events, as well as Closure or class based listeners. This makes the package ideal for regular event management but also allows for a clean event-driven style of programming.
     </li>
 </ul>
