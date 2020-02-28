@@ -1,5 +1,5 @@
 ---
-title: Core API (0.9.6)
+title: Flextype Core API (0.9.7)
 ---
 
 - [\Flextype\Frontmatter](#class-flextypefrontmatter)
@@ -15,7 +15,6 @@ title: Core API (0.9.6)
 - [\Flextype\Fieldsets](#class-flextypefieldsets)
 - [\Flextype\Plugins](#class-flextypeplugins)
 - [\Flextype\Middleware](#class-flextypemiddleware)
-- [\Flextype\Forms](#class-flextypeforms)
 - [\Flextype\AuthMiddleware](#class-flextypeauthmiddleware)
 - [\Flextype\EmitterTwigExtension](#class-flextypeemittertwigextension)
 - [\Flextype\MarkdownTwigExtension](#class-flextypemarkdowntwigextension)
@@ -33,6 +32,15 @@ title: Core API (0.9.6)
 - [\Flextype\ShortcodesTwigExtension](#class-flextypeshortcodestwigextension)
 - [\Flextype\YamlTwigExtension](#class-flextypeyamltwigextension)
 - [\Flextype\GlobalVarsTwigExtension](#class-flextypeglobalvarstwigextension)
+- [\Flextype\Cache\SQLite3Adapter](#class-flextypecachesqlite3adapter)
+- [\Flextype\Cache\ZendDataCacheAdapter](#class-flextypecachezenddatacacheadapter)
+- [\Flextype\Cache\CacheAdapterInterface (interface)](#interface-flextypecachecacheadapterinterface)
+- [\Flextype\Cache\ArrayAdapter](#class-flextypecachearrayadapter)
+- [\Flextype\Cache\WinCacheAdapter](#class-flextypecachewincacheadapter)
+- [\Flextype\Cache\MemcachedAdapter](#class-flextypecachememcachedadapter)
+- [\Flextype\Cache\RedisAdapter](#class-flextypecacheredisadapter)
+- [\Flextype\Cache\AcpuAdapter](#class-flextypecacheacpuadapter)
+- [\Flextype\Cache\FilesystemAdapter](#class-flextypecachefilesystemadapter)
 
 <hr /><a id="class-flextypefrontmatter"></a>
 
@@ -79,7 +87,7 @@ title: Core API (0.9.6)
 | public     | <strong>copy(</strong><em>\string</em> <strong>$id</strong>, <em>\string</em> <strong>$new_id</strong>, <em>\boolean</em> <strong>$recursive=false</strong>)</strong> : <em>bool/null True on success, false on failure.</em><br /><em>Copy entry(s)</em> |
 | public     | <strong>create(</strong><em>\string</em> <strong>$id</strong>, <em>array</em> <strong>$data</strong>)</strong> : <em>bool True on success, false on failure.</em><br /><em>Create entry</em>                                                      |
 | public     | <strong>delete(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>bool True on success, false on failure.</em><br /><em>Delete entry</em>                                                                                                           |
-| public     | <strong>fetch(</strong><em>\string</em> <strong>$id</strong>, <em>array/null</em> <strong>$args=null</strong>)</strong> : <em>array The entry array data.</em><br /><em>Fetch entry(enries)</em>                                                      |
+| public     | <strong>fetch(</strong><em>\string</em> <strong>$id</strong>, <em>array/null</em> <strong>$args=null</strong>)</strong> : <em>array The entry array data.</em><br /><em>Fetch entry(entries)</em>                                                      |
 | public     | <strong>fetchCollection(</strong><em>\string</em> <strong>$id</strong>, <em>array</em> <strong>$args=array()</strong>)</strong> : <em>array The entries array data.</em><br /><em>Fetch entries collection</em>                                                      |
 | public     | <strong>fetchSingle(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>array The entry array data.</em><br /><em>Fetch single entry</em>                                                                                                           |
 | public     | <strong>getDirLocation(</strong><em>\string</em> <strong>$id</strong>)</strong> : <em>string entry directory location</em><br /><em>Get entry directory location</em>                                                                                                           |
@@ -157,16 +165,6 @@ title: Core API (0.9.6)
 | public     | <strong>getLifetime()</strong> : <em>mixed</em><br /><em>Retrieve the cache lifetime (in seconds)</em>                                                                                                                                                                                |
 | public     | <strong>save(</strong><em>\string</em> <strong>$id</strong>, <em>mixed</em> <strong>$data</strong>, <em>\integer</em> <strong>$lifetime=null</strong>)</strong> : <em>void</em><br /><em>Puts data into the cache. If zero (the default), the entry never expires (although it may be deleted from the cache to make place for other entries).</em> |
 | public     | <strong>setLifetime(</strong><em>int/\integer</em> <strong>$future</strong>)</strong> : <em>void</em><br /><em>Set the cache lifetime.</em>                                                                                                               |
-| protected  | <strong>setApcuCacheDriver()</strong> : <em>void</em><br /><em>The ApcuCache driver uses the apcu_fetch, apcu_exists, etc. functions that come with PHP so no additional setup is required in order to use it.</em>                                                                                                                                                                                |
-| protected  | <strong>setArrayCacheDriver()</strong> : <em>void</em><br /><em>The ArrayCache driver stores the cache data in PHPs memory and is not persisted anywhere. This can be useful for caching things in memory for a single process when you don't need the cache to be persistent across processes.</em>                                                                                                                                                                                |
-| protected  | <strong>setCacheDriver(</strong><em>\string</em> <strong>$driver_name</strong>)</strong> : <em>void</em>                                                                                                                                                |
-| protected  | <strong>setDefaultCacheDriverName(</strong><em>\string</em> <strong>$driver_name</strong>)</strong> : <em>void</em><br /><em>Set Default Cache Driver Name</em>                                                                                                               |
-| protected  | <strong>setFilesystemCacheDriver()</strong> : <em>void</em><br /><em>Filesystem cache Driver</em>                                                                                                                                                                                |
-| protected  | <strong>setMemcachedCacheDriver()</strong> : <em>void</em><br /><em>The MemcachedCache drivers stores the cache data in Memcached.</em>                                                                                                                                                                                |
-| protected  | <strong>setRedisCacheDriver()</strong> : <em>void</em><br /><em>The RedisCache driver stores the cache data in Redis and depends on the phpredis extension https://github.com/phpredis/phpredis</em>                                                                                                                                                                                |
-| protected  | <strong>setSQLite3CacheDriver()</strong> : <em>void</em><br /><em>The SQLite3Cache driver stores the cache data in a SQLite database and depends on the sqlite3 extension http://php.net/manual/en/book.sqlite3.php</em>                                                                                                                                                                                |
-| protected  | <strong>setWinCacheDriver()</strong> : <em>void</em><br /><em>The WinCacheCache driver uses the wincache_ucache_get, wincache_ucache_exists, etc. functions that come with the wincache extension http://php.net/manual/en/book.wincache.php</em>                                                                                                                                                                                |
-| protected  | <strong>setZendDataCacheDriver()</strong> : <em>void</em><br /><em>The ZendDataCache driver uses the Zend Data Cache API available in the Zend Platform.</em>                                                                                                                                                                                |
 
 <hr /><a id="class-flextypefieldsets"></a>
 
@@ -194,7 +192,7 @@ title: Core API (0.9.6)
 |:---------- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | public     | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>, <em>mixed</em> <strong>$app</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
 | public     | <strong>getLocales()</strong> : <em>array</em><br /><em>Get locales</em>                                                                                                                         |
-| public     | <strong>getPluginsList()</strong> : <em>mixed</em><br /><em>Get plugins list</em>                                                                                                                         |
+| public     | <strong>getPluginsList()</strong> : <em>array</em><br /><em>Get plugins list</em>                                                                                                                         |
 | public     | <strong>init(</strong><em>mixed</em> <strong>$flextype</strong>, <em>mixed</em> <strong>$app</strong>)</strong> : <em>void</em><br /><em>Init Plugins</em> |
 
 <hr /><a id="class-flextypemiddleware"></a>
@@ -205,32 +203,6 @@ title: Core API (0.9.6)
 |:---------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | public     | <strong>__construct(</strong><em>mixed</em> <strong>$container</strong>)</strong> : <em>void</em><br /><em>__construct</em> |
 | public     | <strong>__get(</strong><em>mixed</em> <strong>$property</strong>)</strong> : <em>void</em><br /><em>__get</em> |
-
-<hr /><a id="class-flextypeforms"></a>
-
-### Class: \Flextype\Forms
-
-| Visibility | Function                                                                                                                                                                                                                                                                                                                                                                              |
-|:---------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| public     | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em>                                                                                                                                                                                                                             |
-| public     | <strong>render(</strong><em>array</em> <strong>$fieldset</strong>, <em>array</em> <strong>$values=array()</strong>, <em>\Flextype\Request/\Psr\Http\Message\ServerRequestInterface</em> <strong>$request</strong>)</strong> : <em>string Returns form based on fieldsets</em><br /><em>Render form</em>                                                                                                               |
-| protected  | <strong>_actionHiddenField()</strong> : <em>string Returns field</em><br /><em>_actionHiddenField</em>                                                                                                                                                                                                                                                                                              |
-| protected  | <strong>_csrfHiddenField()</strong> : <em>string Returns field</em><br /><em>_csrfHiddenField</em>                                                                                                                                                                                                                                                                                              |
-| protected  | <strong>dateField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Date field</em>                                                        |
-| protected  | <strong>getElementID(</strong><em>\string</em> <strong>$element</strong>)</strong> : <em>string Returns form element id</em><br /><em>Get element id</em>                                                                                                                                                                                                                             |
-| protected  | <strong>getElementName(</strong><em>\string</em> <strong>$element</strong>)</strong> : <em>string Returns form element name</em><br /><em>Get element name</em>                                                                                                                                                                                                                             |
-| protected  | <strong>getElementValue(</strong><em>\string</em> <strong>$element</strong>, <em>array</em> <strong>$values</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>mixed Returns form element value</em><br /><em>Get element value</em>                                                                                                               |
-| protected  | <strong>headingField(</strong><em>\string</em> <strong>$field_id</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Heading field</em>                                                                                                                                                                      |
-| protected  | <strong>hiddenField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Hidden field</em>                                                        |
-| protected  | <strong>htmlField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Html field</em>                                                        |
-| protected  | <strong>mediaSelectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>, <em>\Flextype\Request/\Psr\Http\Message\ServerRequestInterface</em> <strong>$request</strong>)</strong> : <em>string Returns field</em><br /><em>Media select field</em> |
-| protected  | <strong>routableSelectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Routable select field</em>                                                        |
-| protected  | <strong>selectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Select field</em>                                                        |
-| protected  | <strong>tagsField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Tags field</em>                                                        |
-| protected  | <strong>templateSelectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Template select field</em>                                                        |
-| protected  | <strong>textField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Text field</em>                                                        |
-| protected  | <strong>textareaField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>string</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Textarea field</em>                                                        |
-| protected  | <strong>visibilitySelectField(</strong><em>\string</em> <strong>$field_id</strong>, <em>\string</em> <strong>$field_name</strong>, <em>mixed</em> <strong>$field_value</strong>, <em>array</em> <strong>$properties</strong>)</strong> : <em>string Returns field</em><br /><em>Visibility field</em>                                                        |
 
 <hr /><a id="class-flextypeauthmiddleware"></a>
 
@@ -370,7 +342,7 @@ title: Core API (0.9.6)
 
 | Visibility | Function                                                                                                                                                  |
 |:---------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| public     | <strong>__construct(</strong><em>\Slim\Csrf\Guard</em> <strong>$csrf</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
+| public     | <strong>__construct(</strong><em>mixed</em> <strong>$flextype</strong>)</strong> : <em>void</em><br /><em>Constructor</em> |
 | public     | <strong>csrf()</strong> : <em>void</em><br /><em>CSRF</em>                                                                  |
 | public     | <strong>getFunctions()</strong> : <em>array</em><br /><em>Returns a list of functions to add to the existing list.</em>                                                                  |
 | public     | <strong>getGlobals()</strong> : <em>mixed</em><br /><em>Register Global variables in an extension</em>                                                                  |
@@ -468,3 +440,100 @@ title: Core API (0.9.6)
 *This class extends \Twig\Extension\AbstractExtension*
 
 *This class implements \Twig\Extension\ExtensionInterface, \Twig\Extension\GlobalsInterface*
+
+<hr /><a id="class-flextypecachesqlite3adapter"></a>
+
+### Class: \Flextype\Cache\SQLite3Adapter
+
+| Visibility | Function                                                                                                                 |
+|:---------- |:------------------------------------------------------------------------------------------------------------------------ |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$flextype</strong>)</strong> : <em>void</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em>                                                                  |
+
+*This class implements [\Flextype\Cache\CacheAdapterInterface](#interface-flextypecachecacheadapterinterface)*
+
+<hr /><a id="class-flextypecachezenddatacacheadapter"></a>
+
+### Class: \Flextype\Cache\ZendDataCacheAdapter
+
+| Visibility | Function                                                                                                                 |
+|:---------- |:------------------------------------------------------------------------------------------------------------------------ |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$flextype</strong>)</strong> : <em>void</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em>                                                                  |
+
+*This class implements [\Flextype\Cache\CacheAdapterInterface](#interface-flextypecachecacheadapterinterface)*
+
+<hr /><a id="interface-flextypecachecacheadapterinterface"></a>
+
+### Interface: \Flextype\Cache\CacheAdapterInterface
+
+| Visibility | Function                                                                                                                                                  |
+|:---------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$container</strong>)</strong> : <em>void</em><br /><em>Injects the dependency container</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em><br /><em>Returns the cache driver object</em>                                                                  |
+
+<hr /><a id="class-flextypecachearrayadapter"></a>
+
+### Class: \Flextype\Cache\ArrayAdapter
+
+| Visibility | Function                                                                                                                 |
+|:---------- |:------------------------------------------------------------------------------------------------------------------------ |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$flextype</strong>)</strong> : <em>void</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em>                                                                  |
+
+*This class implements [\Flextype\Cache\CacheAdapterInterface](#interface-flextypecachecacheadapterinterface)*
+
+<hr /><a id="class-flextypecachewincacheadapter"></a>
+
+### Class: \Flextype\Cache\WinCacheAdapter
+
+| Visibility | Function                                                                                                                 |
+|:---------- |:------------------------------------------------------------------------------------------------------------------------ |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$flextype</strong>)</strong> : <em>void</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em>                                                                  |
+
+*This class implements [\Flextype\Cache\CacheAdapterInterface](#interface-flextypecachecacheadapterinterface)*
+
+<hr /><a id="class-flextypecachememcachedadapter"></a>
+
+### Class: \Flextype\Cache\MemcachedAdapter
+
+| Visibility | Function                                                                                                                 |
+|:---------- |:------------------------------------------------------------------------------------------------------------------------ |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$flextype</strong>)</strong> : <em>void</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em>                                                                  |
+
+*This class implements [\Flextype\Cache\CacheAdapterInterface](#interface-flextypecachecacheadapterinterface)*
+
+<hr /><a id="class-flextypecacheredisadapter"></a>
+
+### Class: \Flextype\Cache\RedisAdapter
+
+| Visibility | Function                                                                                                                 |
+|:---------- |:------------------------------------------------------------------------------------------------------------------------ |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$flextype</strong>)</strong> : <em>void</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em>                                                                  |
+
+*This class implements [\Flextype\Cache\CacheAdapterInterface](#interface-flextypecachecacheadapterinterface)*
+
+<hr /><a id="class-flextypecacheacpuadapter"></a>
+
+### Class: \Flextype\Cache\AcpuAdapter
+
+| Visibility | Function                                                                                                                 |
+|:---------- |:------------------------------------------------------------------------------------------------------------------------ |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$flextype</strong>)</strong> : <em>void</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em>                                                                  |
+
+*This class implements [\Flextype\Cache\CacheAdapterInterface](#interface-flextypecachecacheadapterinterface)*
+
+<hr /><a id="class-flextypecachefilesystemadapter"></a>
+
+### Class: \Flextype\Cache\FilesystemAdapter
+
+| Visibility | Function                                                                                                                 |
+|:---------- |:------------------------------------------------------------------------------------------------------------------------ |
+| public     | <strong>__construct(</strong><em>\Psr\Container\ContainerInterface</em> <strong>$flextype</strong>)</strong> : <em>void</em> |
+| public     | <strong>getDriver()</strong> : <em>mixed</em>                                                                  |
+
+*This class implements [\Flextype\Cache\CacheAdapterInterface](#interface-flextypecachecacheadapterinterface)*
