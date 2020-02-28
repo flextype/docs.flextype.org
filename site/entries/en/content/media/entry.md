@@ -31,7 +31,7 @@ An example of using the Glide/Intervention library to resize images:
 ```twig
 {% for image in media %}
     {% if image.extension == 'jpg' %}
-        <img src="{{ base_url() }}/image/{{ entry.slug }}/{{ image.filename }}?dpr=2&w=350&q=60">
+        <img src="{{ site_url() }}/api/delivery/images/{{ entry.slug }}/{{ image.filename }}?dpr=2&w=350&q=60&token=YOUR_IMAGES_DELIVERY_TOKEN">
     {% endif %}
 {% endfor %}
 ```
