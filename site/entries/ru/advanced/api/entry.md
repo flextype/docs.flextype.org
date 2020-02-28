@@ -26,16 +26,16 @@ List of available Rest API's:
 A set of decoupled and reusable PHP libraries for kickass Web Applications.
 
 <ul>
-    <li><a href="./api/arr">Arr</a></li>
-    <li><a href="./api/assets">Assets</a></li>
-    <li><a href="./api/cookie">Cookie</a></li>
-    <li><a href="./api/date">Date</a></li>
-    <li><a href="./api/filesystem">Filesystem</a></li>
-    <li><a href="./api/i18n">i18n</a></li>
-    <li><a href="./api/number">Number</a></li>
-    <li><a href="./api/registry">Registry</a></li>
-    <li><a href="./api/session">Session</a></li>
-    <li><a href="./api/text">Text</a></li>
+    <li><a href="./api/components/arr">Arr</a></li>
+    <li><a href="./api/components/assets">Assets</a></li>
+    <li><a href="./api/components/cookie">Cookie</a></li>
+    <li><a href="./api/components/date">Date</a></li>
+    <li><a href="./api/components/filesystem">Filesystem</a></li>
+    <li><a href="./api/components/i18n">i18n</a></li>
+    <li><a href="./api/components/number">Number</a></li>
+    <li><a href="./api/components/registry">Registry</a></li>
+    <li><a href="./api/components/session">Session</a></li>
+    <li><a href="./api/components/text">Text</a></li>
 </ul>
 
 ### Vendor Packages
