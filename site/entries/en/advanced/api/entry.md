@@ -12,9 +12,10 @@ A set of core PHP Classes that powers Flextype.
 </ul>
 
 ### Flextype Rest API
-Flextype Rest API allows to use it as a Headless CMS!
+Flextype Rest API allows to use it as a Headless CMS!<br>
 Read this article: <a href="./api/rest/what-is-a-headless-cms">What is a headless CMS?</a>
 
+List of available Rest API's:
 <ul>
     <li>
         <a href="./api/rest/delivery">Delivery</a><br>
