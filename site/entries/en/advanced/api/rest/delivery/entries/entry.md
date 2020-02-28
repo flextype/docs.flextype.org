@@ -1,0 +1,24 @@
+---
+title: Content Delivery API / Entries
+---
+
+The Content Delivery API (CDA) for Entries is a read-only API for delivering entries from Flextype to apps, websites and other media. Content is delivered as JSON data.
+
+
+### Endpoint
+
+```plaintext
+GET /api/delivery/entries
+```
+
+Params:
+- id - Valid Entry ID (slug)
+- args - A set of arguments to search and sort specific needed entries.
+- token - Valid Content Delivery API token for Entries.
+
+
+### Get single entry
+
+```plaintext
+GET /api/delivery/entries?id=ID&token=TOKEN
+```
