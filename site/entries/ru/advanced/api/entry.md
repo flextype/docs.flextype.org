@@ -9,6 +9,12 @@ A set of core PHP Classes that powers Flextype.
     <li><a href="./api/core">Core</a></li>
 </ul>
 
+### Flextype Rest API
+
+<ul>
+    <li><a href="./api/delivery">Delivery</a></li>
+</ul>
+
 ### Flextype Components
 A set of decoupled and reusable PHP libraries for kickass Web Applications.
 
