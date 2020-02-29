@@ -4,14 +4,15 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
+class ComposerStaticInit0cb9f2a1d3d5161e0498154d73abebc0
 {
     public static $files = array (
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -49,8 +50,6 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         'M' => 
         array (
             'Monolog\\' => 8,
-            'Middlewares\\Utils\\' => 18,
-            'Middlewares\\' => 12,
         ),
         'L' => 
         array (
@@ -73,10 +72,7 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
             'Flextype\\Component\\Registry\\' => 28,
             'Flextype\\Component\\Number\\' => 26,
             'Flextype\\Component\\I18n\\' => 24,
-            'Flextype\\Component\\Html\\' => 24,
-            'Flextype\\Component\\Form\\' => 24,
             'Flextype\\Component\\Filesystem\\' => 30,
-            'Flextype\\Component\\Debug\\' => 25,
             'Flextype\\Component\\Date\\' => 24,
             'Flextype\\Component\\Cookie\\' => 26,
             'Flextype\\Component\\Assets\\' => 26,
@@ -158,8 +154,7 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Container\\' => 
         array (
@@ -168,15 +163,6 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
-        ),
-        'Middlewares\\Utils\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/middlewares/utils/src',
-        ),
-        'Middlewares\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/middlewares/response-time/src',
-            1 => __DIR__ . '/..' . '/middlewares/trailing-slash/src',
         ),
         'League\\Glide\\' => 
         array (
@@ -219,21 +205,9 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         array (
             0 => __DIR__ . '/..' . '/flextype-components/i18n',
         ),
-        'Flextype\\Component\\Html\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/flextype-components/html',
-        ),
-        'Flextype\\Component\\Form\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/flextype-components/form',
-        ),
         'Flextype\\Component\\Filesystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/flextype-components/filesystem',
-        ),
-        'Flextype\\Component\\Debug\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/flextype-components/debug',
         ),
         'Flextype\\Component\\Date\\' => 
         array (
@@ -314,8 +288,6 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         'Cocur\\Slugify\\Bridge\\League\\SlugifyServiceProvider' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/League/SlugifyServiceProvider.php',
         'Cocur\\Slugify\\Bridge\\Nette\\SlugifyExtension' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Nette/SlugifyExtension.php',
         'Cocur\\Slugify\\Bridge\\Plum\\SlugifyConverter' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Plum/SlugifyConverter.php',
-        'Cocur\\Slugify\\Bridge\\Silex2\\SlugifyServiceProvider' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Silex2/SlugifyServiceProvider.php',
-        'Cocur\\Slugify\\Bridge\\Silex\\SlugifyServiceProvider' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Silex/SlugifyServiceProvider.php',
         'Cocur\\Slugify\\Bridge\\Symfony\\CocurSlugifyBundle' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Symfony/CocurSlugifyBundle.php',
         'Cocur\\Slugify\\Bridge\\Symfony\\CocurSlugifyExtension' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Symfony/CocurSlugifyExtension.php',
         'Cocur\\Slugify\\Bridge\\Symfony\\Configuration' => __DIR__ . '/..' . '/cocur/slugify/src/Bridge/Symfony/Configuration.php',
@@ -394,14 +366,20 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         'Flextype\\AuthMiddleware' => __DIR__ . '/../..' . '/flextype/middlewares/AuthMiddleware.php',
         'Flextype\\Cache' => __DIR__ . '/../..' . '/flextype/core/Cache.php',
         'Flextype\\CacheTwigExtension' => __DIR__ . '/../..' . '/flextype/twig/CacheTwigExtension.php',
+        'Flextype\\Cache\\AcpuAdapter' => __DIR__ . '/../..' . '/flextype/cache/AcpuAdapter.php',
+        'Flextype\\Cache\\ArrayAdapter' => __DIR__ . '/../..' . '/flextype/cache/ArrayAdapter.php',
+        'Flextype\\Cache\\CacheAdapterInterface' => __DIR__ . '/../..' . '/flextype/cache/CacheAdapterInterface.php',
+        'Flextype\\Cache\\FilesystemAdapter' => __DIR__ . '/../..' . '/flextype/cache/FilesystemAdapter.php',
+        'Flextype\\Cache\\MemcachedAdapter' => __DIR__ . '/../..' . '/flextype/cache/MemcachedAdapter.php',
+        'Flextype\\Cache\\RedisAdapter' => __DIR__ . '/../..' . '/flextype/cache/RedisAdapter.php',
+        'Flextype\\Cache\\SQLite3Adapter' => __DIR__ . '/../..' . '/flextype/cache/SQLite3Adapter.php',
+        'Flextype\\Cache\\WinCacheAdapter' => __DIR__ . '/../..' . '/flextype/cache/WinCacheAdapter.php',
+        'Flextype\\Cache\\ZendDataCacheAdapter' => __DIR__ . '/../..' . '/flextype/cache/ZendDataCacheAdapter.php',
         'Flextype\\Component\\Arr\\Arr' => __DIR__ . '/..' . '/flextype-components/arr/Arr.php',
         'Flextype\\Component\\Assets\\Assets' => __DIR__ . '/..' . '/flextype-components/assets/Assets.php',
         'Flextype\\Component\\Cookie\\Cookie' => __DIR__ . '/..' . '/flextype-components/cookie/Cookie.php',
         'Flextype\\Component\\Date\\Date' => __DIR__ . '/..' . '/flextype-components/date/Date.php',
-        'Flextype\\Component\\Debug\\Debug' => __DIR__ . '/..' . '/flextype-components/debug/Debug.php',
         'Flextype\\Component\\Filesystem\\Filesystem' => __DIR__ . '/..' . '/flextype-components/filesystem/Filesystem.php',
-        'Flextype\\Component\\Form\\Form' => __DIR__ . '/..' . '/flextype-components/form/Form.php',
-        'Flextype\\Component\\Html\\Html' => __DIR__ . '/..' . '/flextype-components/html/Html.php',
         'Flextype\\Component\\I18n\\I18n' => __DIR__ . '/..' . '/flextype-components/i18n/I18n.php',
         'Flextype\\Component\\Number\\Number' => __DIR__ . '/..' . '/flextype-components/number/Number.php',
         'Flextype\\Component\\Registry\\Registry' => __DIR__ . '/..' . '/flextype-components/registry/Registry.php',
@@ -418,7 +396,6 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         'Flextype\\Fieldsets' => __DIR__ . '/../..' . '/flextype/core/Fieldsets.php',
         'Flextype\\FilesystemTwigExtension' => __DIR__ . '/../..' . '/flextype/twig/FilesystemTwigExtension.php',
         'Flextype\\FlashTwigExtension' => __DIR__ . '/../..' . '/flextype/twig/FlashTwigExtension.php',
-        'Flextype\\Forms' => __DIR__ . '/../..' . '/flextype/core/Forms.php',
         'Flextype\\Frontmatter' => __DIR__ . '/../..' . '/flextype/parsers/Frontmatter.php',
         'Flextype\\GlobalVarsTwigExtension' => __DIR__ . '/../..' . '/flextype/twig/GlobalVarsTwigExtension.php',
         'Flextype\\I18nTwigExtension' => __DIR__ . '/../..' . '/flextype/twig/I18nTwigExtension.php',
@@ -621,15 +598,19 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         'League\\Flysystem\\Adapter\\SynologyFtp' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/SynologyFtp.php',
         'League\\Flysystem\\Config' => __DIR__ . '/..' . '/league/flysystem/src/Config.php',
         'League\\Flysystem\\ConfigAwareTrait' => __DIR__ . '/..' . '/league/flysystem/src/ConfigAwareTrait.php',
+        'League\\Flysystem\\ConnectionErrorException' => __DIR__ . '/..' . '/league/flysystem/src/ConnectionErrorException.php',
+        'League\\Flysystem\\ConnectionRuntimeException' => __DIR__ . '/..' . '/league/flysystem/src/ConnectionRuntimeException.php',
         'League\\Flysystem\\Directory' => __DIR__ . '/..' . '/league/flysystem/src/Directory.php',
         'League\\Flysystem\\Exception' => __DIR__ . '/..' . '/league/flysystem/src/Exception.php',
         'League\\Flysystem\\File' => __DIR__ . '/..' . '/league/flysystem/src/File.php',
         'League\\Flysystem\\FileExistsException' => __DIR__ . '/..' . '/league/flysystem/src/FileExistsException.php',
         'League\\Flysystem\\FileNotFoundException' => __DIR__ . '/..' . '/league/flysystem/src/FileNotFoundException.php',
         'League\\Flysystem\\Filesystem' => __DIR__ . '/..' . '/league/flysystem/src/Filesystem.php',
+        'League\\Flysystem\\FilesystemException' => __DIR__ . '/..' . '/league/flysystem/src/FilesystemException.php',
         'League\\Flysystem\\FilesystemInterface' => __DIR__ . '/..' . '/league/flysystem/src/FilesystemInterface.php',
         'League\\Flysystem\\FilesystemNotFoundException' => __DIR__ . '/..' . '/league/flysystem/src/FilesystemNotFoundException.php',
         'League\\Flysystem\\Handler' => __DIR__ . '/..' . '/league/flysystem/src/Handler.php',
+        'League\\Flysystem\\InvalidRootException' => __DIR__ . '/..' . '/league/flysystem/src/InvalidRootException.php',
         'League\\Flysystem\\MountManager' => __DIR__ . '/..' . '/league/flysystem/src/MountManager.php',
         'League\\Flysystem\\NotSupportedException' => __DIR__ . '/..' . '/league/flysystem/src/NotSupportedException.php',
         'League\\Flysystem\\PluginInterface' => __DIR__ . '/..' . '/league/flysystem/src/PluginInterface.php',
@@ -685,19 +666,6 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         'League\\Glide\\Signatures\\SignatureInterface' => __DIR__ . '/..' . '/league/glide/src/Signatures/SignatureInterface.php',
         'League\\Glide\\Urls\\UrlBuilder' => __DIR__ . '/..' . '/league/glide/src/Urls/UrlBuilder.php',
         'League\\Glide\\Urls\\UrlBuilderFactory' => __DIR__ . '/..' . '/league/glide/src/Urls/UrlBuilderFactory.php',
-        'Middlewares\\ResponseTime' => __DIR__ . '/..' . '/middlewares/response-time/src/ResponseTime.php',
-        'Middlewares\\TrailingSlash' => __DIR__ . '/..' . '/middlewares/trailing-slash/src/TrailingSlash.php',
-        'Middlewares\\Utils\\CallableHandler' => __DIR__ . '/..' . '/middlewares/utils/src/CallableHandler.php',
-        'Middlewares\\Utils\\Dispatcher' => __DIR__ . '/..' . '/middlewares/utils/src/Dispatcher.php',
-        'Middlewares\\Utils\\Factory' => __DIR__ . '/..' . '/middlewares/utils/src/Factory.php',
-        'Middlewares\\Utils\\Factory\\DiactorosFactory' => __DIR__ . '/..' . '/middlewares/utils/src/Factory/DiactorosFactory.php',
-        'Middlewares\\Utils\\Factory\\GuzzleFactory' => __DIR__ . '/..' . '/middlewares/utils/src/Factory/GuzzleFactory.php',
-        'Middlewares\\Utils\\Factory\\SlimFactory' => __DIR__ . '/..' . '/middlewares/utils/src/Factory/SlimFactory.php',
-        'Middlewares\\Utils\\HttpErrorException' => __DIR__ . '/..' . '/middlewares/utils/src/HttpErrorException.php',
-        'Middlewares\\Utils\\RequestHandler' => __DIR__ . '/..' . '/middlewares/utils/src/RequestHandler.php',
-        'Middlewares\\Utils\\RequestHandlerContainer' => __DIR__ . '/..' . '/middlewares/utils/src/RequestHandlerContainer.php',
-        'Middlewares\\Utils\\Traits\\HasResponseFactory' => __DIR__ . '/..' . '/middlewares/utils/src/Traits/HasResponseFactory.php',
-        'Middlewares\\Utils\\Traits\\HasStreamFactory' => __DIR__ . '/..' . '/middlewares/utils/src/Traits/HasStreamFactory.php',
         'Monolog\\DateTimeImmutable' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/DateTimeImmutable.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
         'Monolog\\Formatter\\ChromePHPFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',
@@ -833,17 +801,11 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
         'Psr\\Http\\Message\\MessageInterface' => __DIR__ . '/..' . '/psr/http-message/src/MessageInterface.php',
-        'Psr\\Http\\Message\\RequestFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/RequestFactoryInterface.php',
         'Psr\\Http\\Message\\RequestInterface' => __DIR__ . '/..' . '/psr/http-message/src/RequestInterface.php',
-        'Psr\\Http\\Message\\ResponseFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/ResponseFactoryInterface.php',
         'Psr\\Http\\Message\\ResponseInterface' => __DIR__ . '/..' . '/psr/http-message/src/ResponseInterface.php',
-        'Psr\\Http\\Message\\ServerRequestFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/ServerRequestFactoryInterface.php',
         'Psr\\Http\\Message\\ServerRequestInterface' => __DIR__ . '/..' . '/psr/http-message/src/ServerRequestInterface.php',
-        'Psr\\Http\\Message\\StreamFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/StreamFactoryInterface.php',
         'Psr\\Http\\Message\\StreamInterface' => __DIR__ . '/..' . '/psr/http-message/src/StreamInterface.php',
-        'Psr\\Http\\Message\\UploadedFileFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/UploadedFileFactoryInterface.php',
         'Psr\\Http\\Message\\UploadedFileInterface' => __DIR__ . '/..' . '/psr/http-message/src/UploadedFileInterface.php',
-        'Psr\\Http\\Message\\UriFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/UriFactoryInterface.php',
         'Psr\\Http\\Message\\UriInterface' => __DIR__ . '/..' . '/psr/http-message/src/UriInterface.php',
         'Psr\\Http\\Server\\MiddlewareInterface' => __DIR__ . '/..' . '/psr/http-server-middleware/src/MiddlewareInterface.php',
         'Psr\\Http\\Server\\RequestHandlerInterface' => __DIR__ . '/..' . '/psr/http-server-handler/src/RequestHandlerInterface.php',
@@ -2192,10 +2154,10 @@ class ComposerStaticInit2502c2417779bc4b565947d4c4b2515c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2502c2417779bc4b565947d4c4b2515c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2502c2417779bc4b565947d4c4b2515c::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit2502c2417779bc4b565947d4c4b2515c::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit2502c2417779bc4b565947d4c4b2515c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0cb9f2a1d3d5161e0498154d73abebc0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0cb9f2a1d3d5161e0498154d73abebc0::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit0cb9f2a1d3d5161e0498154d73abebc0::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit0cb9f2a1d3d5161e0498154d73abebc0::$classMap;
 
         }, null, ClassLoader::class);
     }
