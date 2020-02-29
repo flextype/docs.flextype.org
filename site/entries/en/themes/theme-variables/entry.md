@@ -114,6 +114,7 @@ Usage:
 {{ PATH_LOGS }} {# Returns the path to the logs directory (without trailing slash). #}
 {{ PATH_TOKENS }} {# Returns the path to the tokens directory (without trailing slash). #}
 {{ PATH_ACCOUNTS }} {# Returns the path to the accounts directory (without trailing slash). #}
+{{ PATH_UPLOADS }} {# Returns the path to the uploads directory (without trailing slash). #}
 {{ PATH_CONFIG_DEFAULT }} {# Returns the path to the default config directory (without trailing slash). #}
 {{ PATH_CONFIG_SITE }} {# Returns the path to the site config directory (without trailing slash). #}
 {{ PATH_CACHE }} {# Returns the path to the cache directory (without trailing slash). #}
