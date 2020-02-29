@@ -9,10 +9,10 @@ The Content Delivery API (CDA) is a read-only API for delivering content from Fl
         <a href="./delivery/entries">Entries</a>
     </li>
     <li>
-        <a href="./api/rest/delivery">Registry</a>
+        <a href="./delivery/registry">Registry</a>
     </li>
     <li>
-        <a href="./api/rest/delivery">Images</a>
+        <a href="./delivery/images">Images</a>
     </li>
 </ul>
 
