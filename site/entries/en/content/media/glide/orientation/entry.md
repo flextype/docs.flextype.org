@@ -9,15 +9,15 @@ Rotates the image. Accepts auto, `0`, `90`, `180` or `270`. Default is `auto`. T
 Example:
 
 ```twig
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?or=0">
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?or=90">
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?or=180">
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?or=270">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?or=0&token=YOUR_IMAGES_DELIVERY_TOKEN">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?or=90&token=YOUR_IMAGES_DELIVERY_TOKEN">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?or=180&token=YOUR_IMAGES_DELIVERY_TOKEN">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?or=270&token=YOUR_IMAGES_DELIVERY_TOKEN">
 ```
 
 Result:
 
-<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=0">
-<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=90">
-<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=180">
-<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&or=270">
+<img width="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=200&dpr=2&or=0&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=200&dpr=2&or=90&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=200&dpr=2&or=180&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=200&dpr=2&or=270&token=4864fb8e1ebe080e6e4ad5c4363083a6">
