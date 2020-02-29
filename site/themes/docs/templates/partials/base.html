@@ -61,7 +61,7 @@
 
             <link rel="canonical" href="{{ base_url() }}/{{ entry.slug }}">
 
-            {% do 
+            {% do
                 emitter.emit('onThemeMeta') %}
 
             <title>
@@ -74,9 +74,9 @@
 
             {% set highlight_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/styles/tomorrow-night-bright.css' %}
             {% set docs_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/build.min.css' %}
-            {% do 
+            {% do
                 assets.add('css', highlight_css, 'site', 1) %}
-            {% do 
+            {% do
                 assets.add('css', docs_css, 'site', 2) %}
             {% for assets_site in assets.get('css', 'site') %}
                 {% for assets_by_priorities in assets_site %}
@@ -84,7 +84,7 @@
                 {% endfor %}
             {% endfor %}
 
-            {% do 
+            {% do
                 emitter.emit('onThemeHeader') %}
         {% endblock %}
     </head>
@@ -257,7 +257,7 @@
                 hljs.highlightBlock(block);
             });
         </script>
-        {% do 
+        {% do
             emitter.emit('onThemeTail') %}
     </body>
 </html>
