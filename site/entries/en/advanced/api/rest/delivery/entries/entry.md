@@ -13,7 +13,7 @@ GET /api/delivery/entries
 
 Params:
 - id - Valid Entry ID (slug)
-- args - A set of arguments to search and sort specific needed entries.
+- args - A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries.
 - token - Valid Content Delivery API token for Entries.
 
 ### Get single entry
