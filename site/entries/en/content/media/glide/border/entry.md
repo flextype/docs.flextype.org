@@ -25,11 +25,11 @@ Sets how the border will be displayed. Available options:
 Example:
 
 ```twig
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?border=10,5000,overlay">
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?border=10,FFCC33,expand">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?border=10,5000,overlay&token=YOUR_IMAGES_DELIVERY_TOKEN">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?border=10,FFCC33,expand&token=YOUR_IMAGES_DELIVERY_TOKEN">
 ```
 
 Result:
 
-<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&border=10,5000,overlay">
-<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&border=10,FFCC33,expand">
+<img width="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=200&dpr=2&border=10,5000,overlay&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=200&dpr=2&border=10,FFCC33,expand&token=4864fb8e1ebe080e6e4ad5c4363083a6">
