@@ -16,9 +16,9 @@ Sets how the image is fitted to its target dimensions.
 Example:
 
 ```twig
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?w=300&h=300&fit=stretch">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?w=300&h=300&fit=stretch&token=YOUR_IMAGES_DELIVERY_TOKEN">
 ```
 
 Result:
 
-<img height="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=100&h=200&dpr=2&fit=stretch">
+<img height="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=100&h=200&dpr=2&fit=stretch&token=4864fb8e1ebe080e6e4ad5c4363083a6">
