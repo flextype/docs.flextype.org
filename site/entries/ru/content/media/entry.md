@@ -9,7 +9,7 @@ description: Entries can have any number and kind of images, videos, documents o
 ### Getting list of media files for entry in the template
 
 ```twig
-{% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
+{% set media = filesystem_list_contents(PATH_UPLOADS ~ '/' ~ entry.slug) %}
 ```
 
 ### Displaying images in the template
@@ -17,7 +17,7 @@ description: Entries can have any number and kind of images, videos, documents o
 ```twig
 {% for image in media %}
     {% if image.extension == 'jpg' %}
-        <img src="{{ base_url() }}/image/{{ entry.slug }}/{{ image.filename }}">
+        <img src="{{ site_url() }}/site/uploads/{{ entry.slug }}/{{ image.filename }}">
     {% endif %}
 {% endfor %}
 ```
@@ -31,7 +31,7 @@ description: Entries can have any number and kind of images, videos, documents o
 ```twig
 {% for image in media %}
     {% if image.extension == 'jpg' %}
-        <img src="{{ base_url() }}/image/{{ entry.slug }}/{{ image.filename }}?dpr=2&w=350&q=60">
+        <img src="{{ site_url() }}/api/delivery/images/{{ entry.slug }}/{{ image.filename }}?dpr=2&w=350&q=60&token=YOUR_IMAGES_DELIVERY_TOKEN">
     {% endif %}
 {% endfor %}
 ```

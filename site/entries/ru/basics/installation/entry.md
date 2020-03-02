@@ -59,23 +59,27 @@ composer create-project flextype/flextype --stability=dev
 Also you may need to install vendor libs for default plugins and default theme. Go to your project folder, and run:
 
 ```plaintext
-<br />composer install
-
-cd site/plugins/admin
-composer install
-npm install
-gulp
-
-cd ../../../
-
-cd site/plugins/site
-composer install
-
-cd ../../../
+composer install --no-dev;
 
 cd site/themes/default
 npm install
 gulp
+
+cd site/plugins/admin
+npm install
+gulp
+composer install --no-dev
+
+cd site/plugins/form
+composer install --no-dev
+
+cd site/plugins/icon
+npm install
+gulp
+composer install --no-dev
+
+cd site/plugins/site
+composer install --no-dev
 ```
 
 ### <a name="using-command-line"></a> Использование командной строки
@@ -83,8 +87,8 @@ gulp
 If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
 
 ```plaintext
-wget https://github.com/flextype/flextype/releases/download/v0.9.6/flextype-0.9.6.zip
-unzip flextype-0.9.6.zip
+wget https://github.com/flextype/flextype/releases/download/v0.9.7/flextype-0.9.7.zip
+unzip flextype-0.9.7.zip
 chmod -R 0777 site/
 ```
 

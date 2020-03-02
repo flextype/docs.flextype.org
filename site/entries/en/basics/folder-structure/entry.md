@@ -9,6 +9,7 @@ System folders:
     <li><i class="fas fa-folder"></i> flextype</li>
     <li><i class="fas fa-folder"></i> vendor</li>
     <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> var</li>
 </ul>
 
 <ul class="file-list">
@@ -33,22 +34,14 @@ This folder contains content, plugins, themes and all that is necessary for the 
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> cache</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> accounts</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> config</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> entries</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> logs</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> plugins</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> snippets</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> accounts</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> tokens</li>
 </ul>
-
-<ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> cache</li>
-</ul>
-
-This folder is used to store temporary cached files that are automatically created by the Flextype to improve performance.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
@@ -66,13 +59,6 @@ Entries and media files of the site are stored in this folder.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> logs</li>
-</ul>
-
-Error logs are stored in this folder.
-
-<ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> plugins</li>
 </ul>
 
@@ -87,6 +73,13 @@ This folder contains themes for the website with the styles, scripts and individ
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> tokens</li>
+</ul>
+
+This folder contains tokens for the flextype api's.
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> site</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> snippets</li>
 </ul>
 
@@ -98,3 +91,24 @@ Snippets are stored in this folder.
 </ul>
 
 Accounts are stored in this folder.
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> var</li>
+</ul>
+
+This folder contains directories and files that are prone to change, such as logs, cache and other temporary data.
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> var</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> cache</li>
+</ul>
+
+This folder is used to store temporary cached files that are automatically created by the Flextype to improve performance.
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> var</li>
+    <li class="file-list-level-2"><i class="fas fa-folder"></i> logs</li>
+</ul>
+
+
+Error logs are stored in this folder.

@@ -23,6 +23,7 @@ Hooks are a way for one piece of code to interact/modify another piece of code. 
 | `onAdminThemeMeta` | Fires when html header meta information are printed for all admin pages. |
 | `onAdminThemeHeader` | Fires when html header information are printed for all admin pages. |
 | `onAdminThemeFooter` | Fires when html footer information are printed for all admin pages. |
+| `onAdminThemeTail` | Fires when html tail information are printed for all admin pages. |
 
 #### Site plugin
 

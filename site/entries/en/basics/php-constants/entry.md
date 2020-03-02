@@ -14,6 +14,11 @@ Your `index.php` file can define certain PHP constants, which Flextype bootstrap
 | `PATH['entries']` | Define the PATH to site entries (without trailing slash). |
 | `PATH['plugins']` | Define the PATH to site plugins (without trailing slash). |
 | `PATH['themes']` | Define the PATH to site themes (without trailing slash). |
+| `PATH['fieldsets']` | Define the PATH to site fieldsets (without trailing slash). |
+| `PATH['tokens']` | Define the PATH to site tokens (without trailing slash). |
+| `PATH['accounts']` | Define the PATH to site accounts (without trailing slash). |
+| `PATH['uploads']` | Define the PATH to site uploads (without trailing slash). |
 | `PATH['config']['default']` | Define the PATH to default config (without trailing slash). |
 | `PATH['config']['site']` | Define the PATH to site config (without trailing slash). |
 | `PATH['cache']` | Define the PATH to site cache (without trailing slash). |
+| `PATH['logs']` | Define the PATH to site logs (without trailing slash). |

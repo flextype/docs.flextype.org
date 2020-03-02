@@ -18,7 +18,7 @@ on_this_page:
         {% if item.menu_item_title %}
             <li class="nav-item">
                 <a class="nav-link {% if item.menu_item_url in entry.slug %}active{% endif %}"
-                   href="{{ base_url() }}/{{ item.menu_item_url }}">
+                   href="{{ site_url() }}/{{ item.menu_item_url }}">
                    {{ item.menu_item_title }}
                 </a>
             </li>
@@ -50,14 +50,14 @@ Result:
     {% for item in entries.fetch('', {'order_by': {'field': 'menu_item_order', 'direction': 'asc'}}) %}
         {% if item.menu_item_title %}
             <li class="nav-item">
-                <a class="nav-link {% if item.menu_item_url in entry.slug %}active{% endif %}" href="{{ base_url() }}/{{ item.menu_item_url }}">{{ item.menu_item_title }}</a>
+                <a class="nav-link {% if item.menu_item_url in entry.slug %}active{% endif %}" href="{{ site_url() }}/{{ item.menu_item_url }}">{{ item.menu_item_title }}</a>
                 {% set menu_level_2 = entries.fetch(item.slug, {'order_by': {'field': 'menu_item_order', 'direction': 'asc'}}) %}
                 {% if menu_level_2|length > 0 %}
                 <ul>
                     {% for item_level_2 in menu_level_2 %}
                         {% if item_level_2.menu_item_title %}
                             <li>
-                                <a class="nav-link {% if item_level_2.menu_item_url in entry.slug %}active{% endif %}" href="{{ base_url() }}/{{ item_level_2.menu_item_url }}">{{ item_level_2.menu_item_title }}</a>
+                                <a class="nav-link {% if item_level_2.menu_item_url in entry.slug %}active{% endif %}" href="{{ site_url() }}/{{ item_level_2.menu_item_url }}">{{ item_level_2.menu_item_title }}</a>
                             </li>
                         {% endif %}
                     {% endfor %}

@@ -30,7 +30,7 @@ Flextype caching system is really smart and efficient.
 Flextype uses the established and well-respected [Doctrine Cache library](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/caching.html). This means that Flextype supports any caching mechanism that Doctrine Cache supports.
 
 * Auto (Default) - Finds the best option automatically
-* File - Stores in cache files in the `/site/cache/` folder
+* File - Stores in cache files in the `/var/cache/` folder
 * APC - https://php.net/manual/en/book.apc.php
 * XCache - http://xcache.lighttpd.net/
 * Memcache - https://php.net/manual/en/book.memcache.php

@@ -4,11 +4,11 @@
     {% set static_version = 1 %}
     <head>
         {% block head %}
-            <meta charset="{{ registry.settings.charset|lower }}">
+            <meta charset="{{ registry.flextype.charset|lower }}">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.settings.description }}{% endif %}">
-            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.settings.keywords }}{% endif %}">
-            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.settings.robots }}{% endif %}">
+            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.flextype.description }}{% endif %}">
+            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.flextype.keywords }}{% endif %}">
+            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.flextype.robots }}{% endif %}">
             <meta name="generator" content="Powered by Flextype {{ FLEXTYPE_VERSION }}"/>
 
             <meta name="image" content="https://github.com/flextype/flextype/raw/dev/site/plugins/admin/preview.png">
@@ -61,22 +61,22 @@
 
             <link rel="canonical" href="{{ base_url() }}/{{ entry.slug }}">
 
-            {% do 
+            {% do
                 emitter.emit('onThemeMeta') %}
 
             <title>
                 {% if entry.title %}{{ entry.title|e('html') }}
                     |
-                {% endif %}{{ registry.settings.title|e('html') }}</title>
+                {% endif %}{{ registry.plugins.site.title|e('html') }}</title>
 
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
-            {% set highlight_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/styles/tomorrow-night-bright.css' %}
-            {% set docs_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/build.min.css' %}
-            {% do 
+            {% set highlight_css = base_url() ~ '/site/themes/' ~ registry.flextype.theme ~ '/assets/highlight/styles/tomorrow-night-bright.css' %}
+            {% set docs_css = base_url() ~ '/site/themes/' ~ registry.flextype.theme ~ '/assets/dist/css/build.min.css' %}
+            {% do
                 assets.add('css', highlight_css, 'site', 1) %}
-            {% do 
+            {% do
                 assets.add('css', docs_css, 'site', 2) %}
             {% for assets_site in assets.get('css', 'site') %}
                 {% for assets_by_priorities in assets_site %}
@@ -84,7 +84,7 @@
                 {% endfor %}
             {% endfor %}
 
-            {% do 
+            {% do
                 emitter.emit('onThemeHeader') %}
         {% endblock %}
     </head>
@@ -230,7 +230,7 @@
             </div>
         </div>
 
-        {% set highlight_js = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/highlight/highlight.pack.js' %}
+        {% set highlight_js = base_url() ~ '/site/themes/' ~ registry.flextype.theme ~ '/assets/highlight/highlight.pack.js' %}
         <script src="{{ highlight_js }}"></script>
 
         <script>
@@ -257,7 +257,7 @@
                 hljs.highlightBlock(block);
             });
         </script>
-        {% do 
+        {% do
             emitter.emit('onThemeTail') %}
     </body>
 </html>

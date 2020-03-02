@@ -25,22 +25,25 @@ Also you may need to install vendor libs for default plugins and default theme.
 Go to your project folder, and run:
 
 ```plaintext
-
-composer install
-
-cd site/plugins/admin
-composer install
-npm install
-gulp
-
-cd ../../../
-
-cd site/plugins/site
-composer install
-
-cd ../../../
+composer install --no-dev;
 
 cd site/themes/default
 npm install
 gulp
+
+cd site/plugins/admin
+npm install
+gulp
+composer install --no-dev
+
+cd site/plugins/form
+composer install --no-dev
+
+cd site/plugins/icon
+npm install
+gulp
+composer install --no-dev
+
+cd site/plugins/site
+composer install --no-dev
 ```
