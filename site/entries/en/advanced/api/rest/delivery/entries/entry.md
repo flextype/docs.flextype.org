@@ -13,13 +13,13 @@ GET /api/delivery/entries
 
 Params:
 - id - Valid Entry ID (slug)
-- args - A set of arguments to search and sort specific needed entries.
+- args - A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries.
 - token - Valid Content Delivery API token for Entries.
 
 ### Get single entry
 
 ```plaintext
-GET /api/delivery/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_TOKEN
+GET /api/delivery/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_DELIVERY_TOKEN
 ```
 
 ##### Examples
@@ -33,7 +33,7 @@ GET /api/delivery/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ### Get entries collection
 
 ```plaintext
-GET /api/delivery/entries?id=YOUR_ENTRY_ID&args[]&token=YOUR_ENTRIES_TOKEN
+GET /api/delivery/entries?id=YOUR_ENTRY_ID&args[]&token=YOUR_ENTRIES_DELIVERY_TOKEN
 ```
 
 ##### Examples

@@ -12,13 +12,13 @@ GET /api/delivery/registry
 ```
 
 Params:
-- id - Valid Registry Item ID (slug)
+- id - Valid Registry Item ID
 - token - Valid Content Delivery API token for Registry.
 
 ### Get registry item value
 
 ```plaintext
-GET /api/delivery/registry?id=YOUR_REGISTRY_ITEM_ID&token=YOUR_REGISTRY_TOKEN
+GET /api/delivery/registry?id=YOUR_REGISTRY_ITEM_ID&token=YOUR_REGISTRY_DELIVERY_TOKEN
 ```
 
 ##### Examples
