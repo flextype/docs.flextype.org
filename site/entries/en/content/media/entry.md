@@ -26,6 +26,8 @@ Those files are being stored directly in the entry folder.
 
 The built-in Glide/Intervention library allows you to do manipulations with images and cache the images.
 
+To access Glide/Intervention you should use `/api/delivery/images` endpoint and [valid images delivery token](http://docs.flextype.org/en/advanced/api/rest/delivery/images).
+
 An example of using the Glide/Intervention library to resize images:
 
 ```twig
