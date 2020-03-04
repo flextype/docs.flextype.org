@@ -1,18 +1,31 @@
 ---
 title: Media
 description: Entries can have any number and kind of images, videos, documents or other files. Those files are being stored directly in the entry folder.
+on_this_page:
+  0:
+    title: "Getting list of media files for entry in the template"
+    link: "getting-list-of-media-files"
+  1:
+    title: "Displaying images in the template"
+    link: "displaying-images-in-the-template"
+  2:
+    title: "Display images in the template using the Glide/Intervention"
+    link: "displaying-images-in-the-template-glide"
+  3:
+    title: "A complete list of available options for Glide/Intervention"
+    link: "displaying-images-in-the-template-glide-options"
 ---
 
 Entries can have any number and kind of images, videos, documents or other files.  
 Those files are being stored directly in the entry folder.
 
-### Getting list of media files for entry in the template
+### <a name="getting-list-of-media-files"></a> Getting list of media files for entry in the template
 
 ```twig
 {% set media = filesystem_list_contents(PATH_UPLOADS ~ '/' ~ entry.slug) %}
 ```
 
-### Displaying images in the template
+### <a name="displaying-images-in-the-template"></a> Displaying images in the template
 
 ```twig
 {% for image in media %}
@@ -22,7 +35,7 @@ Those files are being stored directly in the entry folder.
 {% endfor %}
 ```
 
-### Display images in the template using the Glide/Intervention
+### <a name="displaying-images-in-the-template-glide"></a> Display images in the template using the Glide/Intervention
 
 The built-in Glide/Intervention library allows you to do manipulations with images and cache the images.
 
@@ -38,7 +51,7 @@ An example of using the Glide/Intervention library to resize images:
 {% endfor %}
 ```
 
-### A complete list of available options for Glide/Intervention
+### <a name="displaying-images-in-the-template-glide-options"></a> A complete list of available options for Glide/Intervention
 * [Orientation](./media/glide/orientation)
 * [Flip](./media/glide/flip)
 * [Crop](./media/glide/crop)
