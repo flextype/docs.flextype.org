@@ -143,7 +143,7 @@ List contents of a directory
 Usage:
 
 ```twig
-{% set media = filesystem_list_contents(PATH_ENTRIES ~ '/' ~ entry.slug) %}
+{% set media = filesystem_list_contents(PATH_UPLOADS ~ '/' ~ entry.slug) %}
 ```
 
 Result:
@@ -156,7 +156,7 @@ Check whether a file exists
 
 Usage:
 ```twig
-{% if (filesystem_has(PATH_ENTRIES ~ '/' ~ 'about/entry.md')) %}
+{% if (filesystem_has(PATH_UPLOADS ~ '/' ~ entry.slug ~ '/about.md')) %}
     Show something...
 {% endif %}
 ```
@@ -167,15 +167,14 @@ Read a file
 
 Usage:
 ```twig
-{{ filesystem_read(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+{{ filesystem_read(PATH_UPLOADS ~ '/' ~ entry.slug ~ '/about.md') }}
 ```
 
 Result:
 
-    ---
-    title: About
-    ---
-    Some text here
+```
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```
 
 #### filesystem_ext
 
@@ -183,7 +182,7 @@ Get file extension
 
 Usage:
 ```twig
-{{ filesystem_ext(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+{{ filesystem_ext(PATH_UPLOADS ~ '/' ~ entry.slug ~ '/about.md') }}
 ```
 
 Result:
@@ -197,7 +196,7 @@ Get filename
 Usage:
 
 ```twig
-{{ filesystem_basename(PATH_ENTRIES ~ '/' ~ 'about/entry.md') }}
+{{ filesystem_basename(PATH_UPLOADS ~ '/' ~ entry.slug ~ '/about.md') }}
 ```
 
 Result:
