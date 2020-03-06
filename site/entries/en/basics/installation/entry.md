@@ -100,8 +100,8 @@ chmod -R 0777 site/
 Your homepage is working, but subpages won't open or lead to a server error?
 
 1. Make sure that the .htaccess file is present in your Flextype folder.
-2. Check if mod_rewrite is enabled on your server.
-3. Please try setting the RewriteBase in the .htaccess file:
+2. Check if `mod_rewrite` is enabled on your server.
+3. Please try setting the `RewriteBase` in the .htaccess file:
 
 ```
 RewriteBase /
