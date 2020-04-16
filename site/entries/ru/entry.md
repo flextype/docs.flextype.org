@@ -64,11 +64,9 @@ Flextype был **основан в марте 2018** как легкая аль
 Базовая архитектура Flextype построена с использованием хорошо зарекомендовавших себя и лучших в своем классе технологий. Это гарантирует, что тип файла прост в использовании и легко расширяется. Некоторые из этих ключевых технологий включают:
 
 * [Slim PHP](http://www.slimframework.com): Платформа для мощных веб-приложений и API.
-* [Хранилище Twig](https://twig.symfony.com): Гибкий, быстрый и безопасный шаблон для PHP.
-* [Doctrine Projec](https://www.doctrine-project.org): Набор отдельных и многоразовых PHP библиотек для мощных веб-приложений.
-* [The PHP League](https://thephpleague.com): Лига экстраординарных PHP пакетов хорошо протестирована и использует современные стандарты кодирования.
-* [Respect Validation](https://respect-validation.readthedocs.io/): Самый удивительный движок проверки, созданный для PHP.
-* [Thunderer Shortcode](https://github.com/thunderer/Shortcode): Расширенный шорткод (BBCode) синтаксический анализатор и движок для PHP.
+* [Doctrine Project](https://www.doctrine-project.org): A set of decoupled and reusable PHP libraries for powerful web applications.
+* [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
+* [Respect Validation](https://respect-validation.readthedocs.io/): The most awesome validation engine ever created for PHP.
 
 ### Supporting Flextype
 
