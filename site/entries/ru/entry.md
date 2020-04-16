@@ -17,6 +17,11 @@ txt:
       coc: Code of Conduct
       getting_help: Getting Help
       license: License
+    api:
+      title: API Reference
+      delivery: Content Delivery API
+      management: Content Management API
+      images: Images API
     content:
       title: Content
       entries: Entries
