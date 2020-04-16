@@ -1,5 +1,12 @@
 ---
 title: Лицензия
+breadcrumbs:
+  - 
+    title: "Documentation"
+    link: "[site_url]/en/"
+  - 
+    title: "Basics"
+    link: "[site_url]/en/basics/"
 ---
 
 Лицензия Массачусетского технологического института (MIT)
