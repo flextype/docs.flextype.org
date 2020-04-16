@@ -8,8 +8,8 @@ breadcrumbs:
     title: "API"
     link: "[site_url]/en/api/"
   2:
-    title: "Delivery"
-    link: "[site_url]/en/api/delivery/"
+    title: "Management"
+    link: "[site_url]/en/api/management/"
 ---
 
 The Content Delivery API (CDA) for Entries is a read-only API for delivering entries from Flextype to apps, websites and other media. Entries is delivered as JSON data.
