@@ -1,6 +1,13 @@
 ---
 title: Конфигурация
 description: Flextype allows you to configure your site in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that make this possible.
+breadcrumbs:
+  - 
+    title: "Documentation"
+    link: "[site_url]/en/"
+  - 
+    title: "Basics"
+    link: "[site_url]/en/basics/"
 ---
 Flextype позволяет конфигурировать сайт любым удобным для вас способом, и это благодаря мощным и гибким опциям конфигурации, которые делают это возможным.
 
