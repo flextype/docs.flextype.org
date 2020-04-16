@@ -8,9 +8,6 @@ on_this_page:
   - 
     title: "PHP Requirements"
     link: "php-requirements"
-  - 
-    title: "Browser Requirements"
-    link: "browser-requirements"
 ---
 
 You can easily run Flextype on your local computer and on any Web hosting providers. Make sure that your server meets the following requirements
@@ -44,19 +41,3 @@ Flextype needs PHP 7.2.0 or higher and the following PHP extensions to be enable
 - PHP [DOM](https://www.php.net/manual/ru/class.domdocument.php)
 
 Although it is optional, we strongly recommend enabling the following PHP extensions: APC, APCu, XCache, Memcached, or Redis for better [performance]([site_url]/en/advanced/performance-and-caching).
-
-### <a name="browser-requirements"></a> Browser Requirements
-
-The admin panel of Flextype is compatible with:
-
-##### Windows and macOS
-
-* Chrome 29 или позже
-* Mozilla Firefox 28 или позже
-* Safari 9.0 или позже
-* Microsoft Edge
-
-##### Mobile
-
-* iOS: Safari 9.1 или позже
-* Android: Chrome 4.4 или позже
