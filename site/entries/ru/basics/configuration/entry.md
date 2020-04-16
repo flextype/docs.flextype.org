@@ -217,9 +217,3 @@ api:
       enabled: true
       default_token:
 ```
-
-<br />
-
-Also you can update any site setting in Admin Panel on the Settings page.
-
-<img src="[site_url]/api/delivery/images/en/basics/configuration/settings.png?q=70&token=4864fb8e1ebe080e6e4ad5c4363083a6" />
