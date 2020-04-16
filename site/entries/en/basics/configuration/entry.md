@@ -23,17 +23,15 @@ timezone: UTC
 # http://php.net/manual/en/function.mb-regex-encoding.php#121645
 charset: UTF-8
 
-# The theme to use.
-#
-# Don't edit the provided theme templates directly, because they get updated
-# in next releases. If you wish to modify a default theme, copy its folder, and
-# change the name here accordingly.
-theme: default
-
 # The locale that'll be used by the Flextype.
 #
 # Available locales to use: flextype/config/locales.yaml
 locale: en_US
+
+# Application URL
+#
+# Define custom application url
+url: ''
 
 # Valid date format
 #
@@ -49,22 +47,7 @@ locale: en_US
 # H:i d-m-Y - 09:41 02-02-2020
 # h:i a m/d/Y - 09:41 pm 02/02/2020
 date_format: 'd-m-Y H:i'
-date_display_format: 'd-m-Y'
-
-# The entries settings
-#
-# - main:                 Main entry
-# - error404.title:       Title to display on Error404 page
-# - error404.description: Description to display on Error404 page
-# - error404.content:     Content to display on Error404 page
-# - error404.template:    Template to use on Error404 page
-entries:
-  main: home
-  error404:
-    title: Error 404
-    description: We're sorry but the page you are looking for doesn't appear to exist!
-    content: "<center>We're sorry but the page you are looking for doesn't appear to exist!</center>"
-    template: default
+date_display_format: 'd-m-Y H:i'
 
 # Display errors
 #
@@ -80,7 +63,7 @@ entries:
 #
 # - display: Display errors or not.
 errors:
-  display: true
+  display: false
 
 # Cache
 #
@@ -114,7 +97,7 @@ errors:
 #
 # - sqlite3.table    SQLite3 Table
 cache:
-  enabled: false
+  enabled: true
   prefix: flextype
   driver: auto
   lifetime: 604800
@@ -179,28 +162,6 @@ output_buffering: append
 response_chunk_size: 4096
 http_version: '1.1'
 
-# Twig
-#
-# - auto_reload: When developing with Twig, it's useful to recompile the template
-#                whenever the source code changes. If you don't provide a value
-#                for the auto_reload option, it will be determined automatically
-#                based on the debug value.
-#
-# - debug:       When set to true, the generated templates have a __toString()
-#                method that you can use to display the generated nodes
-#
-# - charset:     The charset used by the templates.
-#
-# - cache:       Set false to disable caching.
-#
-# - extensions   Flextype Twig Extension to load.
-twig:
-  auto_reload: true
-  cache: false
-  debug: false
-  charset: "UTF-8"
-  extensions: ['Cache', 'Entries', 'Emitter', 'Flash', 'I18n', 'Json', 'Yaml', 'Parser', 'Markdown', 'Filesystem', 'Date', 'Assets', 'Csrf', 'Shortcodes', 'Snippets', 'GlobalVars']
-
 # Slugify
 #
 # - separator: By default Slugify will use dashes as separators.
@@ -238,23 +199,22 @@ slugify:
 image:
   driver: gd
 
-# Shortcodes
-#
-# - extensions: Flextype Shortcodes Extension to load.
-shortcodes:
-  extensions: ['BaseUrl', 'Entries', 'Registry', 'Snippets']
-
 # API's
 api:
-  images:
-    enabled: true
-    default_token:
-  entries:
-    enabled: true
-    default_token:
-  registry:
-    enabled: true
-    default_token:
+  delivery:
+    images:
+      enabled: true
+      default_token:
+    entries:
+      enabled: true
+      default_token:
+    registry:
+      enabled: true
+      default_token:
+  management:
+    entries:
+      enabled: true
+      default_token:
 ```
 
 <br>
