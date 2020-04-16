@@ -1,6 +1,13 @@
 ---
 title: Установка
 description: Flextype is incredibly easy to set up and get running.
+breadcrumbs:
+  - 
+    title: "Documentation"
+    link: "[site_url]/en/"
+  - 
+    title: "Basics"
+    link: "[site_url]/en/basics/"
 on_this_page:
   - 
     title: "Check for PHP version"
