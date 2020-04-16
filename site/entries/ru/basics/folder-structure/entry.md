@@ -1,6 +1,13 @@
 ---
 title: Структура папок
 description: Flextype folder structure
+breadcrumbs:
+  - 
+    title: "Documentation"
+    link: "[site_url]/en/"
+  - 
+    title: "Basics"
+    link: "[site_url]/en/basics/"
 ---
 
 Системные папки:
