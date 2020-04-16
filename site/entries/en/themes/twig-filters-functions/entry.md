@@ -221,6 +221,15 @@ Usage:
 {{ base_url() }}
 ```
 
+#### url
+
+Returns the Uri object's App URL.
+
+Usage:
+```twig
+{{ url() }}
+```
+
 #### is_current_path
 
 Returns true is the provided route name and parameters are valid for the current path.
