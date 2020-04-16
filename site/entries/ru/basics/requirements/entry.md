@@ -1,6 +1,13 @@
 ---
 title: Requirements
 description: System and Browser requirements for Flextype
+breadcrumbs:
+  - 
+    title: "Documentation"
+    link: "[site_url]/en/"
+  - 
+    title: "Basics"
+    link: "[site_url]/en/basics/"
 on_this_page:
   - 
     title: "Web Server Requirements"
