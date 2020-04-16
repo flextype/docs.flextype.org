@@ -1,5 +1,12 @@
 ---
 title: License
+breadcrumbs:
+  0:
+    title: "Documentation"
+    link: "[site_url]/en/"
+  1:
+    title: "Basics"
+    link: "[site_url]/en/basics/"
 ---
 
 The MIT License (MIT)

@@ -1,6 +1,13 @@
 ---
 title: Folder structure
 description: Flextype folder structure
+breadcrumbs:
+  0:
+    title: "Documentation"
+    link: "[site_url]/en/"
+  1:
+    title: "Basics"
+    link: "[site_url]/en/basics/"
 ---
 
 System folders:

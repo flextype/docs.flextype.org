@@ -1,5 +1,15 @@
 ---
 title: Gamma
+breadcrumbs:
+  0:
+    title: "Documentation"
+    link: "[site_url]/en/"
+  1:
+    title: "API"
+    link: "[site_url]/en/api/"
+  2:
+    title: "Images API"
+    link: "[site_url]/en/api/images/"
 ---
 
 `gam`

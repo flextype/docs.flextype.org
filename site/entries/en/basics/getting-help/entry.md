@@ -1,6 +1,13 @@
 ---
 title: Getting Help
 description: There are several channels to reach the developers and the Flextype community to get direct assistance.
+breadcrumbs:
+  0:
+    title: "Documentation"
+    link: "[site_url]/en/"
+  1:
+    title: "Basics"
+    link: "[site_url]/en/basics/"
 ---
 There are several channels to reach the developers and the Flextype community to get direct assistance.
 
