@@ -14,26 +14,42 @@ The Flextype Images API allows the retrieval and manipulation of image files ref
 
 ### Endpoint
 
-```plaintext
-GET /api/images
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | /api/images | Fetch image |
+
+<br>
+
+### Fetch image
+
+```
+GET /api/images/{path:.+}?VALID_ARGUMENTS&token=YOUR_IMAGES_TOKEN
 ```
 
-Params:
-- Image file path
-- [Valid arguments for images manipulation](#displaying-images-in-the-template-glide-options)
-- token - Valid Images API token.
+##### Parameters
+
+| name | |  Description |
+| --- | --- | --- |
+| {path:.+} | REQUIRED | The file path with valid params for image manipulations. |
+
+##### Query
+
+| name | |  Description |
+| --- | --- | --- |
+| * | REQUIRED | [Valid arguments for images manipulation](#displaying-images-in-the-template-glide-options) |
+| token | REQUIRED | Valid Images API token. |
 
 ##### Examples
 
 Fetch image `venom-2` from upload directory `/movies/venom-2/`
 
-```plaintext
+```
 GET /api/images/movies/venom-2/venom-2.jpg?token=c1fda5a94603a7296f3a0a5370cfe59f
 ```
 
 Fetch image `venom-2` from upload directory `/movies/venom-2/` and do several image manipulations
 
-```plaintext
+```
 GET /api/images/movies/venom-2/venom-2.jpg?w=100&&q=70&token=c1fda5a94603a7296f3a0a5370cfe59f
 ```
 

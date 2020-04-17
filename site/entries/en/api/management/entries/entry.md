@@ -12,61 +12,107 @@ breadcrumbs:
     link: "[site_url]/en/api/management/"
 ---
 
-The Content Delivery API (CDA) for Entries is a read-only API for delivering entries from Flextype to apps, websites and other media. Entries is delivered as JSON data.
+The Content Management API (CMA) for Entries is a read-write API for managing content.
+You could use the CMA for several use cases, such as:
 
-<div class="file-header">Endpoint</div>
+* Automatic imports from WordPress, Joomla, Drupal, and more.
+* Integration with other backend systems, such as an e-commerce shop.
+* Building custom editing experiences.
+
+#### Endpoints
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | /api/management/entries | Fetch entry(entries) |
+| POST | /api/management/entries | Create entry |
+| PATCH | /api/management/entries | Update entry |
+| PUT | /api/management/entries | Rename entry |
+| PUT | /api/management/entries/copy | Copy entry(entries) |
+| DELETE | /api/management/entries | Delete entry |
+
+<br>
+
+### Fetch entry
+
 ```
-GET /api/delivery/entries
+GET /api/management/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_MANAGEMENT_TOKEN
 ```
 
 ##### Query
 
-| name | |  Description |
+| Name | |  Description |
 | --- | --- | --- |
 | id | REQUIRED | Valid Entry ID (slug) |
 | filter | OPTIONAL | A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries. |
-| token | REQUIRED | Valid Content Delivery API token for Entries. |
+| token | REQUIRED | Valid Content Management API token for Entries. |
+
 
 ##### Result
 
-An array of entry item(s) objects.
-
-
-### Get single entry
-
-```plaintext
-GET /api/delivery/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_DELIVERY_TOKEN
-```
+Returns the item object for the given unique identifier.
 
 ##### Examples
 
 Fetch Movies Entry
 
-```plaintext
-GET /api/delivery/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
+```
+GET /api/management/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
-### Get entries collection
+<br>
 
-```plaintext
-GET /api/delivery/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_DELIVERY_TOKEN
+### Fetch entries collection
+
 ```
+GET /api/management/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_MANAGEMENT_TOKEN
+```
+
+##### Query
+
+| Name | |  Description |
+| --- | --- | --- |
+| id | REQUIRED | Valid Entry ID (slug) |
+| filter | REQUIRED | A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries. |
+| token | REQUIRED | Valid Content Management API token for Entries. |
+
+##### Result
+
+Returns an array of item objects.
 
 ##### Examples
 
 Fetch Movies Collection
 
-```plaintext
-GET /api/delivery/entries?id=movies&filter[]&token=6f047babd1894064fbf7662080a9a2f0
+```
+GET /api/management/entries?id=movies&filter[]&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan**
-```plaintext
-GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
+```
+GET /api/management/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan** and where year is equal to **2020** and where genre is contains **action**
 
-```plaintext
-GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[and_where][0][key]=year&filter[and_where][0][expr]=eq&filter[and_where][0][value]=2020&filter[and_where][1][key]=genre&filter[and_where][1][expr]=contains&filter[and_where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
+GET /api/management/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[and_where][0][key]=year&filter[and_where][0][expr]=eq&filter[and_where][0][value]=2020&filter[and_where][1][key]=genre&filter[and_where][1][expr]=contains&filter[and_where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
+```
+
+<br>
+
+### Create entry
+
+```
+POST /api/management/entries
+```
+
+##### Body
+
+| Name | |  Description |
+| --- | --- | --- |
+| id | REQUIRED | Unique identifier of the entry. |
+| token | REQUIRED | Valid Content Management API token for Entries. |
+| access_token | REQUIRED | Valid Access token. |
+| data | REQUIRED | Data to store for the entry. |
+
+##### Result
+Returns the entry item object for the entry item that was just created.

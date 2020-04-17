@@ -18,10 +18,10 @@ Adds a blur effect to the image. Use values between `0` and `100`.
 
 Example:
 
-```twig
-<img src="{{ site_url() }}/api/images/en/content/media/image.jpg?blur=0&token=YOUR_IMAGES_TOKEN">
-<img src="{{ site_url() }}/api/images/en/content/media/image.jpg?blur=50&token=YOUR_IMAGES_TOKEN">
-<img src="{{ site_url() }}/api/images/en/content/media/image.jpg?blur=100&token=YOUR_IMAGES_TOKEN">
+```
+GET YOUR_APP_URL/api/images/en/content/media/image.jpg?blur=0&token=YOUR_IMAGES_TOKEN
+GET YOUR_APP_URL/api/images/en/content/media/image.jpg?blur=50&token=YOUR_IMAGES_TOKEN
+GET YOUR_APP_URL/api/images/en/content/media/image.jpg?blur=100&token=YOUR_IMAGES_TOKEN
 ```
 
 Result:

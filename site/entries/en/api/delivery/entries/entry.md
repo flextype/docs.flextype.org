@@ -14,59 +14,76 @@ breadcrumbs:
 
 The Content Delivery API (CDA) for Entries is a read-only API for delivering entries from Flextype to apps, websites and other media. Entries is delivered as JSON data.
 
-<div class="file-header">Endpoint</div>
+#### Endpoints
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | /api/delivery/entries | Fetch entry(entries) |
+
+<br>
+
+### Fetch entry
+
 ```
-GET /api/delivery/entries
+GET /api/delivery/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_DELIVERY_TOKEN
 ```
 
 ##### Query
 
-| name | |  Description |
+| Name | |  Description |
 | --- | --- | --- |
 | id | REQUIRED | Valid Entry ID (slug) |
 | filter | OPTIONAL | A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries. |
 | token | REQUIRED | Valid Content Delivery API token for Entries. |
 
+
 ##### Result
 
-An array of entry item(s) objects.
-
-
-### Get single entry
-
-```plaintext
-GET /api/delivery/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_DELIVERY_TOKEN
-```
+Returns the item object for the given unique identifier.
 
 ##### Examples
 
 Fetch Movies Entry
 
-```plaintext
+```
 GET /api/delivery/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
-### Get entries collection
+<br>
 
-```plaintext
+### Fetch entries collection
+
+```
 GET /api/delivery/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_DELIVERY_TOKEN
 ```
+
+##### Query
+
+| Name | |  Description |
+| --- | --- | --- |
+| id | REQUIRED | Valid Entry ID (slug) |
+| filter | REQUIRED | A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries. |
+| token | REQUIRED | Valid Content Delivery API token for Entries. |
+
+##### Result
+
+Returns an array of item objects.
 
 ##### Examples
 
 Fetch Movies Collection
 
-```plaintext
+```
 GET /api/delivery/entries?id=movies&filter[]&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan**
-```plaintext
+```
 GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan** and where year is equal to **2020** and where genre is contains **action**
 
-```plaintext
+```
 GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[and_where][0][key]=year&filter[and_where][0][expr]=eq&filter[and_where][0][value]=2020&filter[and_where][1][key]=genre&filter[and_where][1][expr]=contains&filter[and_where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
