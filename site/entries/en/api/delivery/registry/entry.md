@@ -12,7 +12,7 @@ breadcrumbs:
     link: "[site_url]/en/api/delivery/"
 ---
 
-The Content Delivery API (CDA) for Registry is a read-only API for delivering registry values from Flextype to apps, websites and other media. Registry values is delivered as JSON data.
+The Content Delivery API (CDA) for Registry is a read-only API organized around Representational State Transfer (REST) for delivering registry values from Flextype to apps, websites and other media. Registry values is delivered as JSON data.
 
 #### Endpoints
 

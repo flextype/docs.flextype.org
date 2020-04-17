@@ -9,7 +9,8 @@ breadcrumbs:
     link: "[site_url]/en/api/"
 ---
 
-The Content Management API (CMA), is a read-write API for managing content.
+The Content Management API (CMA), is a read-write API for managing content and it is organized around Representational State Transfer (REST).
+
 You could use the CMA for several use cases, such as:
 
 * Automatic imports from WordPress, Joomla, Drupal, and more.
