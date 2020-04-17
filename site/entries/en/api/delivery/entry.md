@@ -9,7 +9,7 @@ breadcrumbs:
     link: "[site_url]/en/api/"
 ---
 
-The Content Delivery API (CDA) is a read-only API for delivering content from Flextype to apps, websites and other media. Content is delivered as JSON data.
+The Content Delivery API (CDA) is a read-only API organized around Representational State Transfer (REST) for delivering content from Flextype to apps, websites and other media. Content is delivered as JSON data.
 
 ##### API's
 <ul>

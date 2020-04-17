@@ -10,6 +10,34 @@ breadcrumbs:
   2:
     title: "Management"
     link: "[site_url]/en/api/management/"
+on_this_page:
+  0:
+    title: "Endpoints"
+    link: "endpoints"
+  1:
+    title: "Fetch single entry"
+    link: "fetch-single-entry"
+  2:
+    title: "Fetch entries collection"
+    link: "fetch-entries-collection"
+  3:
+    title: "Filtering"
+    link: "filtering"
+  4:
+    title: "Create entry"
+    link: "create-entry"
+  5:
+    title: "Update entry"
+    link: "update-entry"
+  6:
+    title: "Rename entry"
+    link: "rename-entry"
+  7:
+    title: "Copy entry"
+    link: "copy-entry"
+  8:
+    title: "Delete entry"
+    link: "delete-entry"
 ---
 
 The Content Management API (CMA) for Entries is a read-write API for managing content.
@@ -19,7 +47,7 @@ You could use the CMA for several use cases, such as:
 * Integration with other backend systems, such as an e-commerce shop.
 * Building custom editing experiences.
 
-#### Endpoints
+#### <a name="endpoints"></a> Endpoints
 | Method | Endpoint | Description |
 | --- | --- | --- |
 | GET | /api/management/entries | Fetch entry(entries) |
@@ -31,7 +59,7 @@ You could use the CMA for several use cases, such as:
 
 <br>
 
-### Fetch entry
+### <a name="fetch-single-entry"></a> Fetch single entry
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -62,7 +90,7 @@ GET /api/management/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 
 <br>
 
-### Fetch entries collection
+### <a name="fetch-entries-collection"></a> Fetch entries collection
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -106,7 +134,15 @@ GET /api/management/entries?id=movies&filter[where][key]=director&filter[where][
 
 <br>
 
-### Create entry
+### <a name="filtering"></a> Filtering
+
+With the filter query you're able to search items in a collection that matches the filter's conditions.
+Filtering for Content Management API is absolutely the same as it is for Content Delivery API.
+Read about filtering: <a href="[site_url]/en/api/delivery/entries#filtering">here</a>
+
+<br>
+
+### <a name="create-entry"></a> Create entry
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -168,7 +204,7 @@ POST /api/management/entries
 
 <br>
 
-### Update entry
+### <a name="update-entry"></a> Update entry
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -229,7 +265,7 @@ PATCH /api/management/entries
 
 <br>
 
-### Rename entry
+### <a name="rename-entry"></a> Rename entry
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -324,7 +360,7 @@ PUT /api/management/entries
 
 <br>
 
-### Copy entry
+### <a name="copy-entry"></a> Copy entry
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -381,7 +417,7 @@ PUT /api/management/entries
 }
 ```
 
-### Delete entry
+### <a name="delete-entry"></a> Delete entry
 
 <div class="file-header">Request</div>
 ```plaintext
