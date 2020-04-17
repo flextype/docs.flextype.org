@@ -24,7 +24,8 @@ The Content Delivery API (CDA) for Registry is a read-only API for delivering re
 
 ### Fetch registry item
 
-```
+<div class="file-header">Request</div>
+```plaintext
 GET /api/delivery/registry?id=YOUR_REGISTRY_ITEM_ID&token=YOUR_REGISTRY_DELIVERY_TOKEN
 ```
 
@@ -41,8 +42,19 @@ An array of registry item objects.
 
 ##### Examples
 
-Fetch Flextype Timezone from Flextype Registry
+Fetch Flextype Version from Flextype Registry
 
+<div class="file-header">Request</div>
+```plaintext
+GET /api/delivery/registry?id=flextype.manifest.version&token=efe1e36e4d60fcd547e22eb9f795dff9
 ```
-GET /api/delivery/registry?id=flextype.settings.timezone&token=efe1e36e4d60fcd547e22eb9f795dff9
+
+<div class="file-header">Response</div>
+```json
+{
+    "data": {
+        "key": "flextype.manifest.version",
+        "value": "0.9.7"
+    }
+}
 ```

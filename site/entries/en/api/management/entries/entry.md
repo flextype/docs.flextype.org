@@ -127,7 +127,7 @@ Returns the entry item object for the entry item that was just created.
 
 ##### Examples
 
-Create new entry "Platform"
+Create new entry **platform**
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -189,7 +189,7 @@ Returns the entry item object for the entry item that was just updated.
 
 ##### Examples
 
-Update content for entry "Platform"
+Update content for entry **platform**
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -250,7 +250,7 @@ Returns the entry item object for the entry item that was just renamed.
 
 ##### Examples
 
-Rename entry "platform" to the "the-platform"
+Rename entry **platform** to the **the-platform**
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -286,7 +286,7 @@ PUT /api/management/entries
 }
 ```
 
-Move entry "movies/the-platform" to the "movies/2019/the-platform"
+Move entry **movies/the-platform** to the **movies/2019/the-platform**
 
 <div class="file-header">Request</div>
 ```plaintext
@@ -345,7 +345,7 @@ Returns the entry item object for the entry item that was just copied.
 
 ##### Examples
 
-Copy for entry "movies/2019/the-platform" to "movies/horror/the-platform"
+Copy for entry **movies/2019/the-platform** to **movies/horror/the-platform**
 
 <div class="file-header">Request</div>
 ```json
