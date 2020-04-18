@@ -13,8 +13,8 @@ txt:
     language: Language
     on_this_page: On this page
   categories:
-    basics:
-      title: Basics
+    getting_started:
+      title: Getting Started
       what_is_flextype: What is Flextype?
       requirements: Requirements
       installation: Installation
@@ -24,6 +24,9 @@ txt:
       coc: Code of Conduct
       getting_help: Getting Help
       license: License
+    concepts:
+      title: Concepts
+      content_apis: Content APIs
     api:
      title: API Reference
      delivery: Content Delivery API
@@ -69,7 +72,7 @@ txt:
       api: Flextype API's
 ---
 
-Flextype was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
+Flextype is an open-source **Data-First Headless CMS & API**. It is was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
 
 With Flextype, you are in complete control. Design your data structure the way you want. Update and share your data with others and teams using version control. Flextype does not require MySQL database, because all the data are collected in a simple files. Perfect portability when changing your hosting provider. Just copy all the files from one account to another.
 
@@ -79,6 +82,10 @@ The underlying architecture of Flextype is built using well established and best
 * [Doctrine Project](https://www.doctrine-project.org): A set of decoupled and reusable PHP libraries for powerful web applications.
 * [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
 * [Respect Validation](https://respect-validation.readthedocs.io/): The most awesome validation engine ever created for PHP.
+
+### What is a Headless CMS?
+
+
 
 ### Supporting Flextype
 
