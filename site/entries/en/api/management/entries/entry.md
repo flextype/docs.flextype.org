@@ -437,7 +437,7 @@ Returns an empty body with HTTP status 204
 
 ##### Examples
 
-Delete entry `movies/horror/the-platform`
+Delete entry **movies/horror/the-platform**
 
 <div class="file-header">Request</div>
 ```plaintext
