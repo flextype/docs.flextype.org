@@ -13,8 +13,8 @@ txt:
     language: Language
     on_this_page: On this page
   categories:
-    basics:
-      title: Basics
+    getting_started:
+      title: Getting Started
       what_is_flextype: What is Flextype?
       requirements: Requirements
       installation: Installation
@@ -24,6 +24,9 @@ txt:
       coc: Code of Conduct
       getting_help: Getting Help
       license: License
+    concepts:
+      title: Concepts
+      content_apis: Content APIs
     api:
       title: API Reference
       delivery: Content Delivery API
@@ -69,7 +72,7 @@ txt:
       api: Flextype API's
 ---
 
-Flextype был **основан в марте 2018** как легкая альтернатива другим тяжелым и устаревшим CMS. Многие люди используют сложные решения для простых страниц, без необходимости. Создавая эту систему управления контентом, мы сосредоточили внимание на простоте - даже новичок Вебмастер может адаптировать его шаблон и написать свой собственный плагин. Для этого мы внедрили простой, но мощный API.
+Flextype is an open-source **Data-First Headless CMS & API**. It is was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
 
 С Flextype вы находитесь под полным контролем. Создайте структуру данных так, как вы хотите. Обновляйте и передавайте свои данные другим пользователям и командам с помощью системы управления версиями. Flextype не требует базы данных MySQL, потому что все данные собираются в простых файлах. Идеально подходит для переноса при изменении хостинга. Просто скопируйте все файлы из одной учетной записи в другую.
 
@@ -79,6 +82,8 @@ Flextype был **основан в марте 2018** как легкая аль
 * [Doctrine Project](https://www.doctrine-project.org): A set of decoupled and reusable PHP libraries for powerful web applications.
 * [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
 * [Respect Validation](https://respect-validation.readthedocs.io/): The most awesome validation engine ever created for PHP.
+
+### What is a Headless CMS?
 
 ### Supporting Flextype
 
