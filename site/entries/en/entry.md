@@ -26,6 +26,7 @@ txt:
       license: License
     concepts:
       title: Concepts
+      entries: Entries
       content_apis: Content APIs
     api:
      title: API Reference
