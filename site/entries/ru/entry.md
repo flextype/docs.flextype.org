@@ -34,6 +34,7 @@ txt:
       management: Content Management API
       images: Images API
       authentication: Authentication
+      http_details: HTTP Details
       errors: Errors
     content:
       title: Content
@@ -75,7 +76,7 @@ txt:
       api: Flextype API's
 ---
 
-Flextype is an open-source **Data-First Headless CMS & API**. It is was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
+Flextype is an open-source self-hosted **Data-First Headless CMS & API**. It is was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
 
 С Flextype вы находитесь под полным контролем. Создайте структуру данных так, как вы хотите. Обновляйте и передавайте свои данные другим пользователям и командам с помощью системы управления версиями. Flextype не требует базы данных MySQL, потому что все данные собираются в простых файлах. Идеально подходит для переноса при изменении хостинга. Просто скопируйте все файлы из одной учетной записи в другую.
 
