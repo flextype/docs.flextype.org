@@ -33,6 +33,7 @@ txt:
       delivery: Content Delivery API
       management: Content Management API
       images: Images API
+      errors: Errors
     content:
       title: Content
       entries: Entries
