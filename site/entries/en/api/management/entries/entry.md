@@ -5,10 +5,10 @@ breadcrumbs:
     title: "Documentation"
     link: "[site_url]/en/"
   1:
-    title: "API"
+    title: "API Reference"
     link: "[site_url]/en/api/"
   2:
-    title: "Management"
+    title: "Content Management API"
     link: "[site_url]/en/api/management/"
 on_this_page:
   0:
@@ -62,7 +62,7 @@ You could use the CMA for several use cases, such as:
 ### <a name="fetch-single-entry"></a> Fetch single entry
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/management/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_MANAGEMENT_TOKEN
 ```
 
@@ -84,7 +84,7 @@ Returns the item object for the given unique identifier.
 Fetch Movies Entry
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/management/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
@@ -93,7 +93,7 @@ GET /api/management/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ### <a name="fetch-entries-collection"></a> Fetch entries collection
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/management/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_MANAGEMENT_TOKEN
 ```
 
@@ -114,21 +114,21 @@ Returns an array of item objects.
 Fetch Movies Collection
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/management/entries?id=movies&filter[]&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/management/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan** and where year is equal to **2020** and where genre is contains **action**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/management/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[and_where][0][key]=year&filter[and_where][0][expr]=eq&filter[and_where][0][value]=2020&filter[and_where][1][key]=genre&filter[and_where][1][expr]=contains&filter[and_where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
@@ -145,7 +145,7 @@ Read about filtering: <a href="[site_url]/en/api/delivery/entries#filtering">her
 ### <a name="create-entry"></a> Create entry
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 POST /api/management/entries
 ```
 
@@ -166,7 +166,7 @@ Returns the entry item object for the entry item that was just created.
 Create new entry **platform**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 POST /api/management/entries
 ```
 
@@ -183,7 +183,7 @@ POST /api/management/entries
 }
 ```
 
-<div class="file-header">Response</div>
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
 ```json
 {
     "data": {
@@ -207,7 +207,7 @@ POST /api/management/entries
 ### <a name="update-entry"></a> Update entry
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 PATCH /api/management/entries
 ```
 
@@ -228,7 +228,7 @@ Returns the entry item object for the entry item that was just updated.
 Update content for entry **platform**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 PATCH /api/management/entries
 ```
 
@@ -244,7 +244,7 @@ PATCH /api/management/entries
 }
 ```
 
-<div class="file-header">Response</div>
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
 ```json
 {
     "data": {
@@ -303,7 +303,7 @@ PUT /api/management/entries
 }
 ```
 
-<div class="file-header">Response</div>
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
 ```json
 {
     "data": {
@@ -339,7 +339,7 @@ PUT /api/management/entries
 }
 ```
 
-<div class="file-header">Response</div>
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
 ```json
 {
     "data": {
@@ -398,7 +398,7 @@ PUT /api/management/entries
 }
 ```
 
-<div class="file-header">Response</div>
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
 ```json
 {
     "data": {

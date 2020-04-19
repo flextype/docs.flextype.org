@@ -5,10 +5,10 @@ breadcrumbs:
     title: "Documentation"
     link: "[site_url]/en/"
   1:
-    title: "API"
+    title: "API Reference"
     link: "[site_url]/en/api/"
   2:
-    title: "Delivery"
+    title: "Content Delivery API"
     link: "[site_url]/en/api/delivery/"
 on_this_page:
   0:
@@ -38,7 +38,7 @@ The Content Delivery API (CDA) for Entries is a read-only API organized around R
 ### <a name="fetch-single-entry"></a> Fetch single entry
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_DELIVERY_TOKEN
 ```
 
@@ -60,7 +60,7 @@ Returns the item object for the given unique identifier.
 Fetch Movies Entry
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
@@ -69,7 +69,7 @@ GET /api/delivery/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ### <a name="fetch-entries-collection"></a> Fetch entries collection
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_DELIVERY_TOKEN
 ```
 
@@ -90,21 +90,21 @@ Returns an array of item objects.
 Fetch Movies Collection
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[]&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan** and where year is equal to **2020** and where genre is contains **action**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[and_where][0][key]=year&filter[and_where][0][expr]=eq&filter[and_where][0][value]=2020&filter[and_where][1][key]=genre&filter[and_where][1][expr]=contains&filter[and_where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
@@ -129,7 +129,7 @@ Get all content entries that is refered to another in a 1:N relationship or if y
 Fetch Movies Collection where **director** is equal to **Cathy Yan**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
@@ -144,7 +144,7 @@ Filter your entries by checking if your custom attribute (field) does not have a
 Fetch Movies Collection where **director** is not equal to **Cathy Yan**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=neq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
@@ -174,7 +174,7 @@ Filter your entries by checking if your custom attribute (field) has a value tha
 Fetch Movies Collection where **year** is greater than to **2019**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[where][key]=year&filter[where][expr]=gt&filter[where][value]=2019&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
@@ -189,7 +189,7 @@ Filter your entries by checking if your custom attribute (field) has a value tha
 Fetch Movies Collection where **year** is lower than or equal to **2019**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[where][key]=year&filter[where][expr]=lte&filter[where][value]=2019&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
@@ -204,7 +204,7 @@ Filter your entries by checking if your custom attribute (field) has a value tha
 Fetch Movies Collection where **year** is greater than or equal to **2019**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[where][key]=year&filter[where][expr]=gte&filter[where][value]=2019&token=6f047babd1894064fbf7662080a9a2f0
 ```
 

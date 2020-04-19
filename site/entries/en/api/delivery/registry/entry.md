@@ -5,10 +5,10 @@ breadcrumbs:
     title: "Documentation"
     link: "[site_url]/en/"
   1:
-    title: "API"
+    title: "API Reference"
     link: "[site_url]/en/api/"
   2:
-    title: "Delivery"
+    title: "Content Delivery API"
     link: "[site_url]/en/api/delivery/"
 ---
 
@@ -45,11 +45,11 @@ An array of registry item objects.
 Fetch Flextype Version from Flextype Registry
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/registry?id=flextype.manifest.version&token=efe1e36e4d60fcd547e22eb9f795dff9
 ```
 
-<div class="file-header">Response</div>
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
 ```json
 {
     "data": {
