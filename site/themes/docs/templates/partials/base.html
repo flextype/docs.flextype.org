@@ -128,6 +128,9 @@
                </ul>
                <h4 class="pt-8">{{ entry_locale.txt.categories.concepts.title }}</h4>
                <ul class="m-0 p-0 list-none">
+                   <li class="{% if entry.slug == locale ~ "/concepts/entries" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/concepts/entries" class="no-underline">{{ entry_locale.txt.categories.concepts.entries }}</a>
+                   </li>
                    <li class="{% if entry.slug == locale ~ "/concepts/content-apis" %}active{% endif %}">
                        <a href="{{ base_url() }}/{{ locale }}/concepts/content-apis" class="no-underline">{{ entry_locale.txt.categories.concepts.content_apis }}</a>
                    </li>
