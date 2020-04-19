@@ -36,3 +36,18 @@ Fetch entries using Content Management API Token for Entries.
 ```plaintext
 GET /api/management/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_MANAGEMENT_TOKEN
 ```
+
+### Content Delivery API
+
+To access the Content Delivery API and fetch content from Flextype, you need a content delivery token.
+
+### Content Management API
+
+To access the Content Management API and store content created in your apps, you need a content management token. There are two types of content management tokens which you should use:
+
+* Management token - Content Management API token.
+* Access token - Valid Access token.
+
+### Images API
+
+To access the Image API and fetch images from Flextype, you need a images token.
