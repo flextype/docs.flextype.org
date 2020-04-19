@@ -11,6 +11,9 @@ breadcrumbs:
 ---
 When something goes wrong with an API request, our server generates an error. The error message contains an appropriate HTTP status code in the header and a JSON response in the body.
 
-Errors share the same common attributes as other API resources. They have a sys property, where sys.type is always "Error" and a sys.id that identifies the exact error code (see table below) that occurred. They always have a message property which will be a short description of what went wrong.
+### Error types
 
-Errors resulting from bad input (such as ValidationFailed errors) contain a details property. This property is structured data that indicates more precisely what was wrong with the input.
+| HTTP status code | Error code | Description |
+| --- | --- | --- |
+| 401 Unauthorized | AccessTokenInvalid | Incorrect authentication credentials. |
+| 404 Not Found | NotFound | The requested resource or endpoint could not be found. |
