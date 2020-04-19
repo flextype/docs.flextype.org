@@ -17,8 +17,7 @@ on_this_page:
     link: "php-requirements"
 ---
 
-You can easily run Flextype on your local computer and on any Web hosting providers. Make sure that your server meets the following requirements
-
+You can easily run Flextype on your local computer and on any Web hosting providers. Make sure that your server meets the following requirements.
 
 ### <a name="web-server-requirements"></a> Web Server Requirements
 
