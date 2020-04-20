@@ -18,22 +18,22 @@ You should send the authentication token to an API as a query parameter.
 ##### Examples
 
 Fetch entries using Content Delivery API Token for Entries.
-```plaintext
+```http
 GET /api/delivery/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_DELIVERY_TOKEN
 ```
 
 Fetch registry item using Content Delivery API Token for Registry.
-```plaintext
+```http
 GET /api/delivery/registry?id=YOUR_REGISTRY_ITEM_ID&token=YOUR_REGISTRY_DELIVERY_TOKEN
 ```
 
 Fetch image using Images API Token.
-```plaintext
+```http
 GET /api/images/{path:.+}?VALID_ARGUMENTS&token=YOUR_IMAGES_TOKEN
 ```
 
 Fetch entries using Content Management API Token for Entries.
-```plaintext
+```http
 GET /api/management/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_MANAGEMENT_TOKEN
 ```
 

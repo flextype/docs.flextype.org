@@ -159,7 +159,7 @@ Filter your entries by checking if your custom attribute (field) has a value tha
 Fetch Movies Collection where **year** is lower than to **2019**
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/delivery/entries?id=movies&filter[where][key]=year&filter[where][expr]=lt&filter[where][value]=2019&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
