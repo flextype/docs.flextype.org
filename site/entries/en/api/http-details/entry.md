@@ -24,4 +24,4 @@ Note: Allowing all origins is safe because all requests to manage content in the
 
 ### JSON format details
 
-Contentful represents resources as [JSON](http://json.org/), encoded in UTF-8. Contentful represents dates and times as [Unix Timestamp](https://www.unixtimestamp.com).
+Flextype represents resources as [JSON](http://json.org/), encoded in UTF-8. Flextype represents dates and times as [Unix Timestamp](https://www.unixtimestamp.com).

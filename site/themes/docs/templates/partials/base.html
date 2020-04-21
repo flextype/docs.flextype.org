@@ -131,6 +131,9 @@
                    <li class="{% if entry.slug == locale ~ "/concepts/entries" %}active{% endif %}">
                        <a href="{{ base_url() }}/{{ locale }}/concepts/entries" class="no-underline">{{ entry_locale.txt.categories.concepts.entries }}</a>
                    </li>
+                   <li class="{% if entry.slug == locale ~ "/concepts/plugins" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/concepts/plugins" class="no-underline">{{ entry_locale.txt.categories.concepts.plugins }}</a>
+                   </li>
                    <li class="{% if entry.slug == locale ~ "/concepts/content-apis" %}active{% endif %}">
                        <a href="{{ base_url() }}/{{ locale }}/concepts/content-apis" class="no-underline">{{ entry_locale.txt.categories.concepts.content_apis }}</a>
                    </li>

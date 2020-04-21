@@ -16,7 +16,7 @@ on_this_page:
     link: "entries-visibility"
 ---
 <a name="basics"></a>
-Entries are the fundamental building-blocks of your project. Each entry in Flextype should contains **Entry Front Matter** block in YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc.. at the bottom of the file.
+Entries are the fundamental building-blocks of your project. We are using jekyll like entries format it means that each entry in Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
 
 Here is a basic example:
 
@@ -29,6 +29,18 @@ Here is a basic example:
     My entry content.
 
 Between triple-dashed lines, you can set predefined variables or even create custom ones of your own.
+
+When you will fetch entry above with Content APIs, data will looks like this:
+
+```json
+{
+  "data": {
+      "title": "My Entry",
+      "description": "My entry description",
+      "content": "My entry content."
+  }
+}
+```
 
 ### <a name="urls-structure"></a> Entries and Urls structure in Flextype
 
