@@ -27,6 +27,7 @@ txt:
     concepts:
       title: Concepts
       entries: Entries
+      plugins: Plugins
       content_apis: Content APIs
     api:
       title: API Reference
