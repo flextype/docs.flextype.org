@@ -4,10 +4,10 @@ description: Flextype folder structure
 breadcrumbs:
   - 
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[project_url]/en/"
   - 
     title: "Basics"
-    link: "[site_url]/en/basics/"
+    link: "[project_url]/en/basics/"
 ---
 
 System folders:
@@ -15,7 +15,7 @@ System folders:
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> flextype</li>
     <li><i class="fas fa-folder"></i> vendor</li>
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
     <li><i class="fas fa-folder"></i> var</li>
 </ul>
 
@@ -34,13 +34,13 @@ The vendor folder contains important libraries that Flextype uses.
 This folder is similar to the flextype folder and its contents should not be edited!
 
 <ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
 </ul>
 
 This folder should contains content, plugins, themes and all that is necessary for the work of the project.
 
 <ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> accounts</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> config</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> entries</li>
@@ -50,42 +50,42 @@ This folder should contains content, plugins, themes and all that is necessary f
 </ul>
 
 <ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> config</li>
 </ul>
 
-This folder contains the site and system settings.
+This folder contains the project and system settings.
 
 <ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> entries</li>
 </ul>
 
-Entries and media files of the site are stored in this folder.
+Entries and media files of the project are stored in this folder.
 
 <ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> plugins</li>
 </ul>
 
 This folder contains plugins that extend the capabilities of the system.
 
 <ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
 </ul>
 
-This folder contains themes for the website with the styles, scripts and individual fieldsets.
+This folder contains themes for the webproject with the styles, scripts and individual fieldsets.
 
 <ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> tokens</li>
 </ul>
 
 This folder contains tokens for the flextype api's.
 
 <ul class="file-list">
-    <li><i class="fas fa-folder"></i> site</li>
+    <li><i class="fas fa-folder"></i> project</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> snippets</li>
 </ul>
 
