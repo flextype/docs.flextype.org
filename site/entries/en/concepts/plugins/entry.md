@@ -1,6 +1,6 @@
 ---
 title: Plugins
-description: Entries are the fundamental building-blocks of your site. Each entry in Flextype should contains Entry Front Matter block in YAML format at the top of the file and Entry Content marked up using HTML + Markdown + Shortcodes at the bottom of the file.
+description: Plugins are the foundation for adding new features to the Flextype by extending it. Each Flextype plugin is an additional piece of software that can be easily installed to extend the functionality of Flextype core.
 on_this_page:
   0:
     title: "What are plugins?"
@@ -34,9 +34,9 @@ You can easily access plugin configuration and plugin information by Flextype Co
 
 Information for the currently enabled plugins you can get from the `registry` object.
 
-Example information from `/project/plugins/project/plugin.yaml`
+Example information from `/project/plugins/site/plugin.yaml`
 
-<div class="file-header"><i class="far fa-file-alt"></i> /project/plugins/project/plugin.yaml</div>
+<div class="file-header"><i class="far fa-file-alt"></i> /project/plugins/site/plugin.yaml</div>
 ```yaml
 name: Site
 version: 1.0.0
@@ -47,15 +47,12 @@ author:
   email: support@flextype.org
   url: http://flextype.org
 homepage: https://github.com/flextype-plugins/site
-bugs: https://github.com/flextype-plugins/project/issues
+bugs: https://github.com/flextype-plugins/site/issues
 license: MIT
 
 dependencies:
   flextype: 0.9.8
-  plugins:
-    twig: 1.0.0
-  themes:
-    noir: 1.0.0
+  twig: '>=1.0.0'
 ```
 
 You can reach these items values from a Flextype plugin(s) with PHP syntax:
@@ -79,7 +76,7 @@ enabled: true
 
 Let us add some custom plugin settings.
 
-Open `/project/config/plugins/project/settings.yaml` and add new variable with value:
+Open `/project/config/plugins/site/settings.yaml` and add new variable with value:
 
 `my_custom_var: "Lorem ipsum dolor sit amet"`
 
