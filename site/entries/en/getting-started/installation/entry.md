@@ -41,9 +41,9 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 
 ### <a name="using-sftp"></a> Using (S)FTP
 
-1 - <a href="http://flextype.org/en/downloads">Download the latest version of Flextype.</a><br>
-2 - Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, create directory <code>site</code> and be sure to chmod the following directory to <code>755</code> (or <code>777</code>), so it is readable and writable by Flextype.<br>
-3 - Create CDA, CMA and Access tokens for your project using this <a href="http://flextype.org/en/downloads">webpage</a>.
+1. [Download the latest version of Flextype](https://flextype.org/en/downloads).
+2. Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, create directory <code>/project</code> and be sure to chmod the following directory to <code>755</code> (or <code>777</code>), so it is readable and writable by Flextype.<br>
+3. Create CDA, CMA and Access tokens for your project using this [webpage](https://flextype.org/en/api-token-generator).
 
 ### <a name="using-composer"></a> Using Composer
 
