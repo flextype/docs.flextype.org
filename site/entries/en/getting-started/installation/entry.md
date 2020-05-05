@@ -70,7 +70,7 @@ If you have command-line access, you can easily install Flextype by executing a 
 ```plaintext
 wget https://github.com/flextype/flextype/releases/download/v0.9.7/flextype-0.9.7.zip
 unzip flextype-0.9.7.zip
-chmod -R 0777 site/
+chmod -R 0777 project/
 ```
 
 Create CDA, CMA and Access tokens for your project using this <a href="http://flextype.org/en/downloads">webpage</a>.

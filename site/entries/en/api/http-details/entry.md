@@ -15,13 +15,6 @@ breadcrumbs:
 
 CORS is [supported by all modern browsers](http://caniuse.com/cors). Read more about using CORS in this [tutorial](https://www.html5rocks.com/en/tutorials/cors/).
 
-To allow JavaScript applications running inside browsers to interact with our APIs, we set the following HTTP response headers:
-
-* Access-Control-Allow-Origin: `*`
-
-Note: Allowing all origins is safe because all requests to manage content in the Flextype must include an access token.
-
-
 ### JSON format details
 
 Flextype represents resources as [JSON](http://json.org/), encoded in UTF-8. Flextype represents dates and times as [Unix Timestamp](https://www.unixtimestamp.com).

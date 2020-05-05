@@ -20,7 +20,7 @@ Entries are the fundamental building-blocks of your project. We are using jekyll
 
 Here is a basic example:
 
-<div class="file-header"><i class="far fa-file-alt"></i> site/entries/my-entry/entry.md</div>
+<div class="file-header"><i class="far fa-file-alt"></i> project/entries/my-entry/entry.md</div>
 
     ---
     title: My Entry
@@ -44,15 +44,15 @@ When you will fetch entry above with Content APIs, data will looks like this:
 
 ### <a name="urls-structure"></a> Entries and Urls structure in Flextype
 
-All content entries are located in the `/site/entries/` folder. Each Entry should be placed in its own folder.
+All content entries are located in the `/project/entries/` folder. Each Entry should be placed in its own folder.
 
 Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
 
 | Physical Location                     | URL              |
 | ------------------------------------- | ---------------- |
-| site/entries/home/entry.md            | /                |
-| site/entries/blog/my-post/entry.md    | /blog/my-post    |
-| site/entries/a/very/long/url/entry.md | /a/very/long/url |
+| project/entries/home/entry.md            | /                |
+| project/entries/blog/my-post/entry.md    | /blog/my-post    |
+| project/entries/a/very/long/url/entry.md | /a/very/long/url |
 
 
 ### <a name="predefined-entry-variables"></a> Predefined Entry Variables

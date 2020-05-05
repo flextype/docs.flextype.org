@@ -24,7 +24,7 @@ Plugins are available via the Flextype Plugin Directory.
 
 ### <a name="installation"></a> Installation
 
-1. Unzip plugin to the folder `/site/plugins/`
+1. Unzip plugin to the folder `/project/plugins/`
 
 ### <a name="configuration"></a> Configuration
 
@@ -34,9 +34,9 @@ You can easily access plugin configuration and plugin information by Flextype Co
 
 Information for the currently enabled plugins you can get from the `registry` object.
 
-Example information from `/site/plugins/site/plugin.yaml`
+Example information from `/project/plugins/project/plugin.yaml`
 
-<div class="file-header"><i class="far fa-file-alt"></i> /site/plugins/site/plugin.yaml</div>
+<div class="file-header"><i class="far fa-file-alt"></i> /project/plugins/project/plugin.yaml</div>
 ```yaml
 name: Site
 version: 1.0.0
@@ -47,7 +47,7 @@ author:
   email: support@flextype.org
   url: http://flextype.org
 homepage: https://github.com/flextype-plugins/site
-bugs: https://github.com/flextype-plugins/site/issues
+bugs: https://github.com/flextype-plugins/project/issues
 license: MIT
 
 dependencies:
@@ -69,7 +69,7 @@ $plugin_version = $flextype->registry->get('plugins.site.manifest.version');
 
 #### Accessing Plugin Configuration
 
-Plugins have default and site configuration files, named `settings.yaml` located in `/site/plugins/<pluginname>/` and in `/site/config/plugins/<pluginname>/`
+Plugins have default and site configuration files, named `settings.yaml` located in `/project/plugins/<pluginname>/` and in `/project/config/plugins/<pluginname>/`
 
 For example, let us consider the Site plugin and there is a file called `settings.yaml` in the plugins site settings folder. The contents of this configuration file look like this:
 
@@ -79,7 +79,7 @@ enabled: true
 
 Let us add some custom plugin settings.
 
-Open `/site/config/plugins/site/settings.yaml` and add new variable with value:
+Open `/project/config/plugins/project/settings.yaml` and add new variable with value:
 
 `my_custom_var: "Lorem ipsum dolor sit amet"`
 
