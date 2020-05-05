@@ -41,11 +41,9 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 
 ### <a name="using-sftp"></a> Using (S)FTP
 
-[Download the latest version.](http://flextype.org/en/downloads)
-
-Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, be sure to chmod the following directories (with containing files) to `755` (or `777`), so they are readable and writable by Flextype:
-
-* `site/`
+1 - <a href="http://flextype.org/en/downloads">Download the latest version of Flextype.</a><br>
+2 - Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, create directory <code>site</code> and be sure to chmod the following directory to <code>755</code> (or <code>777</code>), so it is readable and writable by Flextype.<br>
+3 - Create CDA, CMA and Access tokens for your project using this <a href="http://flextype.org/en/downloads">webpage</a>.
 
 ### <a name="using-composer"></a> Using Composer
 
@@ -63,6 +61,8 @@ or you may setup Flextype with a dev stability
 composer create-project flextype/flextype --stability=dev
 ```
 
+Create CDA, CMA and Access tokens for your project using this <a href="http://flextype.org/en/downloads">webpage</a>.
+
 ### <a name="using-command-line"></a> Using command-line
 
 If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
@@ -72,6 +72,8 @@ wget https://github.com/flextype/flextype/releases/download/v0.9.7/flextype-0.9.
 unzip flextype-0.9.7.zip
 chmod -R 0777 site/
 ```
+
+Create CDA, CMA and Access tokens for your project using this <a href="http://flextype.org/en/downloads">webpage</a>.
 
 ### <a name="installation-issues"></a> Installation issues
 

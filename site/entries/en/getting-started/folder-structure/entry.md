@@ -37,7 +37,7 @@ This folder is similar to the flextype folder and its contents should not be edi
     <li><i class="fas fa-folder"></i> site</li>
 </ul>
 
-This folder contains content, plugins, themes and all that is necessary for the work of the site.
+This folder should contains content, plugins, themes and all that is necessary for the work of the project.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> site</li>
@@ -45,7 +45,6 @@ This folder contains content, plugins, themes and all that is necessary for the 
     <li class="file-list-level-2"><i class="fas fa-folder"></i> config</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> entries</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> plugins</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> snippets</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> themes</li>
     <li class="file-list-level-2"><i class="fas fa-folder"></i> tokens</li>
 </ul>

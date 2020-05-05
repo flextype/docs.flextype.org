@@ -17,7 +17,7 @@ You can update and create site configuration by editing file `/site/config/setti
 
 <div class="file-header"><i class="far fa-file-alt"></i> /site/config/settings.yaml</div>
 ```
-# Set the timezone to be used on the website.
+# Set the timezone to be used on the project.
 # For a list of valid timezone settings, see:
 # http://php.net/manual/en/timezones.php
 timezone: UTC
@@ -70,7 +70,13 @@ date_display_format: 'd-m-Y H:i'
 #
 # - display: Display errors or not.
 errors:
-  display: false
+  display: true
+
+# Entries
+#
+# - extension: Set entries file extension
+entries:
+  extension: md
 
 # Cache
 #
@@ -104,7 +110,7 @@ errors:
 #
 # - sqlite3.table    SQLite3 Table
 cache:
-  enabled: true
+  enabled: false
   prefix: flextype
   driver: auto
   lifetime: 604800
@@ -206,12 +212,52 @@ slugify:
 image:
   driver: gd
 
-# API's
+# Shortcodes
+#
+# - extensions: Flextype Shortcodes Extension to load.
+shortcodes:
+  extensions: ['Entries', 'Registry', 'Url']
+
+# CORS
+#
+# CORS (Cross-origin resource sharing) allows JavaScript web apps to make HTTP requests to other domains.
+# This is important for third party web apps using Flextype, as without CORS, a JavaScript app hosted on example.com
+# couldn't access our APIs because they're hosted on another.com which is a different domain.
+#
+# - enabled: Set to true to enable cors
+#
+# - origin:   The Access-Control-Allow-Origin response header indicates whether
+#             the response can be shared with requesting code from the given origin.
+#             read more: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
+#
+# - headers:  The Access-Control-Allow-Headers response header is used in response
+#             to a preflight request which includes the Access-Control-Request-Headers
+#             to indicate which HTTP headers can be used during the actual request.
+#             read more: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers
+#
+# - methods: The Access-Control-Allow-Methods response header specifies the method
+#            or methods allowed when accessing the resource in response to a preflight request.
+#            read more: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods
+#
+# - expose:  The Access-Control-Expose-Headers response header indicates which headers
+#            can be exposed as part of the response by listing their names.
+#            read more: https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Access-Control-Expose-Headers
+#
+# - credentials: The Access-Control-Allow-Credentials response header tells browsers whether
+#                to expose the response to frontend JavaScript code when the request's credentials
+#                mode (Request.credentials) is include.
+#                read more: https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials
+cors:
+  enabled: true
+  origin: "*"
+  headers: ["X-Requested-With", "Content-Type", "Accept", "Origin", "Authorization"]
+  methods: [GET, POST, PUT, DELETE, PATCH, OPTIONS]
+  expose: []
+  credentials: false
+
+# Content APIs
 api:
   delivery:
-    images:
-      enabled: true
-      default_token:
     entries:
       enabled: true
       default_token:
@@ -222,4 +268,7 @@ api:
     entries:
       enabled: true
       default_token:
+  images:
+    enabled: true
+    default_token:
 ```
