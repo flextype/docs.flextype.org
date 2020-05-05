@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ locale }}">
     {% set entry_locale = entries.fetch(locale) %}
-    {% set static_version = 1 %}
+    {% set static_version = 2 %}
     <head>
         {% block head %}
             <meta charset="{{ registry.flextype.charset|lower }}">
@@ -96,117 +96,69 @@
                     <h2>FLEXTYPE</h2>
                     <h3>DOCUMENTATION</h3>
                 </div>
-                <h4>{{ entry_locale.txt.categories.basics.title }}</h4>
+                <h4>{{ entry_locale.txt.categories.getting_started.title }}</h4>
                 <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}" class="no-underline">{{ entry_locale.txt.categories.basics.what_is_flextype }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/basics/requirements" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/basics/requirements" class="no-underline">{{ entry_locale.txt.categories.basics.requirements }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/basics/installation" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/basics/installation" class="no-underline">{{ entry_locale.txt.categories.basics.installation }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/basics/configuration" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/basics/configuration" class="no-underline">{{ entry_locale.txt.categories.basics.configuration }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/basics/folder-structure" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/basics/folder-structure" class="no-underline">{{ entry_locale.txt.categories.basics.folder_structure }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/basics/php-constants" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/basics/php-constants" class="no-underline">{{ entry_locale.txt.categories.basics.php_constants }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/basics/coc" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/basics/coc" class="no-underline">{{ entry_locale.txt.categories.basics.coc }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/basics/getting-help" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/basics/getting-help" class="no-underline">{{ entry_locale.txt.categories.basics.getting_help }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/basics/license" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/basics/license" class="no-underline">{{ entry_locale.txt.categories.basics.license }}</a>
-                    </li>
-                </ul>
-                <h4 class="pt-8">{{ entry_locale.txt.categories.content.title }}</h4>
-                <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/content/entries" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/content/entries" class="no-underline">{{ entry_locale.txt.categories.content.entries }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/content/media" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/content/media" class="no-underline">{{ entry_locale.txt.categories.content.media }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/content/shortcodes" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/content/shortcodes" class="no-underline">{{ entry_locale.txt.categories.content.shortcodes }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/content/snippets" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/content/snippets" class="no-underline">{{ entry_locale.txt.categories.content.snippets }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/fieldsets/fieldsets" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/fieldsets/fieldsets" class="no-underline">{{ entry_locale.txt.categories.content.fieldsets }}</a>
-                    </li>
-                </ul>
-                <h4 class="pt-8">{{ entry_locale.txt.categories.themes.title }}</h4>
-                <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/themes/installation" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/themes/installation" class="no-underline">{{ entry_locale.txt.categories.themes.theme_installation }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/themes/theme-configuration" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/themes/theme-configuration" class="no-underline">{{ entry_locale.txt.categories.themes.theme_configuration }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/themes/theme-variables" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/themes/theme-variables" class="no-underline">{{ entry_locale.txt.categories.themes.theme_variables }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/themes/twig-filters-functions" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/themes/twig-filters-functions" class="no-underline">{{ entry_locale.txt.categories.themes.twig_filters_functions }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/themes/entries-fetch" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/themes/entries-fetch" class="no-underline">{{ entry_locale.txt.categories.themes.entries_fetch }}</a>
-                    </li>
-                </ul>
-                <h4 class="pt-8">{{ entry_locale.txt.categories.plugins.title }}</h4>
-                <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/plugins/installation" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/plugins/installation" class="no-underline">{{ entry_locale.txt.categories.plugins.installation }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/plugins/configuration" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/plugins/configuration" class="no-underline">{{ entry_locale.txt.categories.plugins.configuration }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/plugins/hooks" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/plugins/hooks" class="no-underline">{{ entry_locale.txt.categories.plugins.event_hooks }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/plugins/toasts" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/plugins/toasts" class="no-underline">{{ entry_locale.txt.categories.plugins.toasts_notifications }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/plugins/navigation" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/plugins/navigation" class="no-underline">{{ entry_locale.txt.categories.plugins.navigation }}</a>
-                    </li>
-                </ul>
-                <h4 class="pt-8">{{ entry_locale.txt.categories.advanced.title }}</h4>
-                <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/advanced/performance-and-caching" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/advanced/performance-and-caching" class="no-underline">{{ entry_locale.txt.categories.advanced.performance_and_caching }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/advanced/yaml-syntax" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/advanced/yaml-syntax" class="no-underline">{{ entry_locale.txt.categories.advanced.yaml_syntax }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/advanced/password-recovery" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/advanced/password-recovery" class="no-underline">{{ entry_locale.txt.categories.advanced.password_recovery }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/advanced/api" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/advanced/api" class="no-underline">{{ entry_locale.txt.categories.advanced.api }}</a>
-                    </li>
-                </ul>
-                <h4 class="pt-8">{{ entry_locale.txt.categories.cookbook.title }}</h4>
-                <ul class="m-0 p-0 list-none">
-                    <li class="{% if entry.slug == locale ~ "/cookbook/tutorials" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/cookbook/tutorials" class="no-underline">{{ entry_locale.txt.categories.cookbook.tutorials.title }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/cookbook/setup" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/cookbook/setup" class="no-underline">{{ entry_locale.txt.categories.cookbook.setup.title }}</a>
-                    </li>
-                    <li class="{% if entry.slug == locale ~ "/cookbook/templating" %}active{% endif %}">
-                        <a href="{{ base_url() }}/{{ locale }}/cookbook/templating" class="no-underline">{{ entry_locale.txt.categories.cookbook.templating.title }}</a>
-                    </li>
-                </ul>
+                   <li class="{% if entry.slug == locale %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}" class="no-underline">{{ entry_locale.txt.categories.getting_started.what_is_flextype }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/getting-started/requirements" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/getting-started/requirements" class="no-underline">{{ entry_locale.txt.categories.getting_started.requirements }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/getting-started/installation" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/getting-started/installation" class="no-underline">{{ entry_locale.txt.categories.getting_started.installation }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/getting-started/configuration" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/getting-started/configuration" class="no-underline">{{ entry_locale.txt.categories.getting_started.configuration }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/getting-started/folder-structure" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/getting-started/folder-structure" class="no-underline">{{ entry_locale.txt.categories.getting_started.folder_structure }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/getting-started/php-constants" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/getting-started/php-constants" class="no-underline">{{ entry_locale.txt.categories.getting_started.php_constants }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/getting-started/coc" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/getting-started/coc" class="no-underline">{{ entry_locale.txt.categories.getting_started.coc }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/getting-started/getting-help" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/getting-started/getting-help" class="no-underline">{{ entry_locale.txt.categories.getting_started.getting_help }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/getting-started/license" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/getting-started/license" class="no-underline">{{ entry_locale.txt.categories.getting_started.license }}</a>
+                   </li>
+               </ul>
+               <h4 class="pt-8">{{ entry_locale.txt.categories.concepts.title }}</h4>
+               <ul class="m-0 p-0 list-none">
+                   <li class="{% if entry.slug == locale ~ "/concepts/entries" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/concepts/entries" class="no-underline">{{ entry_locale.txt.categories.concepts.entries }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/concepts/plugins" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/concepts/plugins" class="no-underline">{{ entry_locale.txt.categories.concepts.plugins }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/concepts/content-apis" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/concepts/content-apis" class="no-underline">{{ entry_locale.txt.categories.concepts.content_apis }}</a>
+                   </li>
+               </ul>
+               <h4 class="pt-8">{{ entry_locale.txt.categories.api.title }}</h4>
+               <ul class="m-0 p-0 list-none">
+                   <li class="{% if entry.slug == locale ~ "/api/delivery" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/api/delivery" class="no-underline">{{ entry_locale.txt.categories.api.delivery }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/api/management" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/api/management" class="no-underline">{{ entry_locale.txt.categories.api.management }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/api/images" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/api/images" class="no-underline">{{ entry_locale.txt.categories.api.images }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/api/http-details" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/api/http-details" class="no-underline">{{ entry_locale.txt.categories.api.http_details }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/api/authentication" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/api/authentication" class="no-underline">{{ entry_locale.txt.categories.api.authentication }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/api/errors" %}active{% endif %}">
+                       <a href="{{ base_url() }}/{{ locale }}/api/errors" class="no-underline">{{ entry_locale.txt.categories.api.errors }}</a>
+                   </li>
+               </ul>
             </div>
             <div class="w-full lg:w-9/12">
                 <a href="javascript:;" onclick="showMenu();" class="absolute lg:hidden right-0 top-0 mr-10 mt-12">

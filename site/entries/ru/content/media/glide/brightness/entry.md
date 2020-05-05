@@ -9,11 +9,11 @@ Adjusts the image brightness. Use values between `-100` and `+100`, where `0` re
 Example:
 
 ```twig
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?bri=-50">
-<img src="{{ base_url() }}/image/en/content/media/image.jpg?bri=50">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?bri=-50&token=YOUR_IMAGES_DELIVERY_TOKEN">
+<img src="{{ site_url() }}/api/delivery/images/en/content/media/image.jpg?bri=50&token=YOUR_IMAGES_DELIVERY_TOKEN">
 ```
 
 Result:
 
-<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&bri=-50" />
-<img width="200" class="inline" src="[base_url]/image/en/content/media/image.jpg?q=70&w=200&dpr=2&bri=50" />
+<img width="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=200&dpr=2&bri=-50&token=4864fb8e1ebe080e6e4ad5c4363083a6" />
+<img width="200" class="inline" src="[site_url]/api/delivery/images/en/content/media/image.jpg?q=70&w=200&dpr=2&bri=50&token=4864fb8e1ebe080e6e4ad5c4363083a6" />

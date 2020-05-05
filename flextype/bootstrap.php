@@ -29,7 +29,7 @@ use function mb_regex_encoding;
  *
  * @var string
  */
-define('FLEXTYPE_VERSION', '0.9.7 BETA.1');
+define('FLEXTYPE_VERSION', '0.9.7');
 
 /**
  * Start the session
@@ -162,7 +162,7 @@ if ($flextype['registry']->get('flextype.errors.display')) {
  * Set default timezone
  */
 date_default_timezone_set($flextype['registry']->get('flextype.timezone'));
-
+ 
 /**
  * Init shortocodes
  *

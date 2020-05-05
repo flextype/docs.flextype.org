@@ -31,7 +31,7 @@ on_this_page:
 - PHP [SPL](https://www.php.net/manual/en/book.spl.php)
 - PHP [DOM](https://www.php.net/manual/ru/class.domdocument.php)
 
-Хотя это и необязательно, мы настоятельно рекомендуем включить следующие расширения PHP: APC, APCu, XCache, Memcached или Redis для повышения производительности.
+Although it is optional, we strongly recommend enabling the following PHP extensions: APC, APCu, XCache, Memcached, or Redis for better performance.
 
 ### <a name="browser-requirements"></a> Требования к браузеру
 

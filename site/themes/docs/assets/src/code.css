@@ -104,6 +104,14 @@ code {
     content: "TWIG";
 }
 
+.hljs.language-json:before {
+    content: "JSON";
+}
+
+.hljs.language-http:before {
+    content: "HTTP";
+}
+
 .hljs-shortcode {
     padding: 20px!important;
     font-size: 18px;

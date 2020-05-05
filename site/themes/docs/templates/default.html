@@ -2,6 +2,11 @@
 
 {% block content %}
 <div class="page-content pl-10 pr-10">
+    <div class="mt-3">
+        {% for item in entry.breadcrumbs %}
+            <a class="text-decoration-none" href="{{ item.link|shortcode }}">{{ item.title }}</a> {% if loop.last == false %}/{% endif %}
+        {% endfor %}
+    </div>
     <h1>
         {{ entry.title }}
     </h1>

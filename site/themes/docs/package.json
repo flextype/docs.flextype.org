@@ -12,5 +12,5 @@
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
     "gulp-sourcemaps": "^2.6.5"
-  },
+  }
 }
