@@ -13,9 +13,9 @@ Flextype allows you to configure your site in any way you can dream up, and itâ€
 
 All Flextype configuration files are written in YAML syntax with a `.yaml` file extension. YAML is very intuitive which makes it very easy to both read and write.
 
-You can update and create site configuration by editing file `/site/config/settings.yaml`
+You can update and create site configuration by editing file `/project/config/settings.yaml`
 
-<div class="file-header"><i class="far fa-file-alt"></i> /site/config/settings.yaml</div>
+<div class="file-header"><i class="far fa-file-alt"></i> /project/config/settings.yaml</div>
 
 ```
 # Set the timezone to be used on the project.
