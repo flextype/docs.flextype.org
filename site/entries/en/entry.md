@@ -29,6 +29,7 @@ txt:
       entries: Entries
       plugins: Plugins
       content_apis: Content APIs
+      perfomance: Performance
     api:
      title: API Reference
      delivery: Content Delivery API
