@@ -1,4 +1,4 @@
-# Set the timezone to be used on the website.
+# Set the timezone to be used on the project.
 # For a list of valid timezone settings, see:
 # http://php.net/manual/en/timezones.php
 timezone: UTC
@@ -11,42 +11,53 @@ timezone: UTC
 # http://php.net/manual/en/function.mb-regex-encoding.php#121645
 charset: UTF-8
 
-# The theme to use.
-#
-# Don't edit the provided theme templates directly, because they get updated
-# in next releases. If you wish to modify a default theme, copy its folder, and
-# change the name here accordingly.
-theme: docs
-
 # The locale that'll be used by the Flextype.
+#
+# Available locales to use: flextype/config/locales.yaml
 locale: en_US
+
+# Application URL
+#
+# Define custom application url
+url: ''
 
 # Valid date format
 #
 # - date_format: Valid date format
 #
 # - date_display_format: Valid date format to display
-date_format: 'd-m-Y H:i'
-date_display_format: 'd-m-y G:i'
-
-# The entries settings§
 #
-# - main:        Main entry
-# - media.upload_images_quality: Image quality
-# - media.accept_file_types: Define the file types (extensions to be exact) that are acceptable for upload.
-entries:
-  main: home
-  error404:
-    title: Error 404
-    description: We're sorry but the page you are looking for doesn't appear to exist!
-    content: "<center>We're sorry but the page you are looking for doesn't appear to exist!</center>"
-    template: default
+# Date format variants:
+#
+# d-m-Y H:i" - 02-02-2020 09:41
+# Y-m-d H:i" - 2020-02-02 09:41
+# m/d/Y h:i a - 02/02/2020 09:41 pm
+# H:i d-m-Y - 09:41 02-02-2020
+# h:i a m/d/Y - 09:41 pm 02/02/2020
+date_format: 'd-m-Y H:i'
+date_display_format: 'd-m-Y H:i'
 
 # Display errors
 #
+# Please make sure to set false for error `display` in production!
+#
+# Displaying PHP errors on a public server can be a serious security risk:
+#
+# - Error messages are displayed with detailed information about the code structure (e.g. file path, class, method)
+# - With Whoops enabled, there will be even more detailed information about the code structure
+# - Detailed error messages for login failures could leak information to attackers
+#
+# In a production environment, always log errors to your PHP error logs.
+#
 # - display: Display errors or not.
 errors:
-  display: true
+  display: false
+
+# Entries
+#
+# - extension: Set entries file extension
+entries:
+  extension: md
 
 # Cache
 #
@@ -80,8 +91,8 @@ errors:
 #
 # - sqlite3.table    SQLite3 Table
 cache:
-  enabled: false
-  prefix: flextype
+  enabled: true
+  prefix: flextype-docs
   driver: auto
   lifetime: 604800
   memcache:
@@ -100,6 +111,8 @@ cache:
     table: flextype
 
 # Whoops
+#
+# Error handler framework for PHP.
 #
 # - editor: emacs, idea, macvim, phpstorm, sublime, textmate, xdebug, vscode, atom, espresso
 #
@@ -143,28 +156,6 @@ output_buffering: append
 response_chunk_size: 4096
 http_version: '1.1'
 
-# Twig
-#
-# - auto_reload: When developing with Twig, it's useful to recompile the template
-#                whenever the source code changes. If you don't provide a value
-#                for the auto_reload option, it will be determined automatically
-#                based on the debug value.
-#
-# - debug:       When set to true, the generated templates have a __toString()
-#                method that you can use to display the generated nodes
-#
-# - charset:     The charset used by the templates.
-#
-# - cache:       Set false to disable caching.
-#
-# - extensions   Flextype Twig Extension to load.
-twig:
-  auto_reload: true
-  cache: true
-  debug: false
-  charset: "UTF-8"
-  extensions: ['Cache', 'Entries', 'Emitter', 'Flash', 'I18n', 'Json', 'Yaml', 'Parser', 'Markdown', 'Filesystem', 'Date', 'Assets', 'Csrf', 'Shortcodes', 'Snippets', 'GlobalVars']
-
 # Slugify
 #
 # - separator: By default Slugify will use dashes as separators.
@@ -206,16 +197,58 @@ image:
 #
 # - extensions: Flextype Shortcodes Extension to load.
 shortcodes:
-  extensions: ['BaseUrl', 'Entries', 'Registry', 'Snippets']
+  extensions: ['Entries', 'Registry', 'Url']
 
-# API's
+# CORS
+#
+# CORS (Cross-origin resource sharing) allows JavaScript web apps to make HTTP requests to other domains.
+# This is important for third party web apps using Flextype, as without CORS, a JavaScript app hosted on example.com
+# couldn't access our APIs because they're hosted on another.com which is a different domain.
+#
+# - enabled: Set to true to enable cors
+#
+# - origin:   The Access-Control-Allow-Origin response header indicates whether
+#             the response can be shared with requesting code from the given origin.
+#             read more: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
+#
+# - headers:  The Access-Control-Allow-Headers response header is used in response
+#             to a preflight request which includes the Access-Control-Request-Headers
+#             to indicate which HTTP headers can be used during the actual request.
+#             read more: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers
+#
+# - methods: The Access-Control-Allow-Methods response header specifies the method
+#            or methods allowed when accessing the resource in response to a preflight request.
+#            read more: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods
+#
+# - expose:  The Access-Control-Expose-Headers response header indicates which headers
+#            can be exposed as part of the response by listing their names.
+#            read more: https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Access-Control-Expose-Headers
+#
+# - credentials: The Access-Control-Allow-Credentials response header tells browsers whether
+#                to expose the response to frontend JavaScript code when the request's credentials
+#                mode (Request.credentials) is include.
+#                read more: https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials
+cors:
+  enabled: true
+  origin: "*"
+  headers: ["X-Requested-With", "Content-Type", "Accept", "Origin", "Authorization"]
+  methods: [GET, POST, PUT, DELETE, PATCH, OPTIONS]
+  expose: []
+  credentials: false
+
+# Content APIs
 api:
+  delivery:
+    entries:
+      enabled: true
+      default_token:
+    registry:
+      enabled: true
+      default_token:
+  management:
+    entries:
+      enabled: true
+      default_token:
   images:
-    enabled: true
-    default_token:
-  entries:
-    enabled: true
-    default_token:
-  registry:
     enabled: true
     default_token:
