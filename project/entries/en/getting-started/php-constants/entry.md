@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[site_url]/en/"
   1:
-    title: "Basics"
-    link: "[site_url]/en/basics/"
+    title: "Getting Started"
+    link: "[site_url]/en/getting-started/"
 ---
 
 Your `index.php` file can define certain PHP constants, which Flextype bootstrap script will check for while loading and configuring Flextype.
