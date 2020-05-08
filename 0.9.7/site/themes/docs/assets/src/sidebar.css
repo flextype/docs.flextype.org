@@ -1,0 +1,22 @@
+.sidebar {
+    background: black;
+    color: white;
+    min-width: 320px;
+    max-width: 320px;
+}
+
+.sidebar li {
+    border-left: 6px solid black;
+    padding-left: 10px;
+    margin-left: -16px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+    border-left: 6px solid white;
+}
