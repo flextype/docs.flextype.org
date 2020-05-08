@@ -1,0 +1,32 @@
+1589566017
+s:1561:"<h3><a name="system-requirements"></a> System requirements</h3>
+<p>Make sure your server meets the following requirements.</p>
+<ul>
+<li>Webserver (Apache with <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html">Mod Rewrite</a>)</li>
+<li>PHP 7.2.0 or higher</li>
+</ul>
+<h3><a name="php-extensions"></a> PHP extensions</h3>
+<p>Flextype needs the following PHP extensions to be enabled:</p>
+<ul>
+<li>PHP <a href="http://php.net/manual/en/book.mbstring.php">mbstring</a> module for full UTF-8 support.</li>
+<li>PHP <a href="http://php.net/manual/en/book.image.php">gd</a> or <a href="http://php.net/manual/en/book.imagick.php">ImageMagick</a> module for image processing.</li>
+<li>PHP <a href="https://php.net/manual/en/book.json.php">json</a> module for JSON manipulation.</li>
+<li>PHP <a href="https://www.php.net/manual/en/book.fileinfo.php">Fileinfo</a></li>
+<li>PHP <a href="https://www.php.net/manual/en/book.spl.php">SPL</a></li>
+<li>PHP <a href="https://www.php.net/manual/ru/class.domdocument.php">DOM</a></li>
+</ul>
+<p>Although it is optional, we strongly recommend enabling the following PHP extensions: APC, APCu, XCache, Memcached, or Redis for better performance.</p>
+<h3><a name="browser-requirements"></a> Browser requirements</h3>
+<p>The admin panel of Flextype is compatible with:</p>
+<h4>Windows and macOS</h4>
+<ul>
+<li>Chrome 29 or later</li>
+<li>Firefox 28 or later</li>
+<li>Safari 9.0 or later</li>
+<li>Microsoft Edge</li>
+</ul>
+<h4>Mobile</h4>
+<ul>
+<li>iOS: Safari 9.1 or later</li>
+<li>Android: Chrome 4.4 or later</li>
+</ul>";

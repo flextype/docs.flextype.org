@@ -168,12 +168,13 @@
                 </a>
                 {% block content %}{% endblock %}
                 <div class="border-t-3 ml-10 mr-10 pt-5 mt-2 pb-6 flex">
-                    <div class="w-3/12 text-left">
+                    <div class="w-6/12 text-left">
                         {{ entry_locale.txt.common.language }}:
                         <a href="{{ url() }}/en">en</a>,
                         <a href="{{ url() }}/ru">ru</a>
+                        Version: <a href="{{ url() }}/0.9.7">0.9.7</a>
                     </div>
-                    <div class="w-9/12 text-right">
+                    <div class="w-6/12 text-right">
                         {% if locale == 'en' %}
                             <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt.common.edit_this_page }}</a>
                         {% else %}
