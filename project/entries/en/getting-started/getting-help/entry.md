@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[site_url]/en/"
   1:
-    title: "Basics"
-    link: "[site_url]/en/basics/"
+    title: "Getting Started"
+    link: "[site_url]/en/getting-started/"
 ---
 There are several channels to reach the developers and the Flextype community to get direct assistance.
 

@@ -1,6 +1,13 @@
 ---
 title: Plugins
 description: Plugins are the foundation for adding new features to the Flextype by extending it. Each Flextype plugin is an additional piece of software that can be easily installed to extend the functionality of Flextype core.
+breadcrumbs:
+  0:
+    title: "Documentation"
+    link: "[site_url]/en/"
+  1:
+    title: "Concepts"
+    link: "[site_url]/en/concepts/"
 on_this_page:
   0:
     title: "What are plugins?"

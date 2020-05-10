@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[site_url]/en/"
   1:
-    title: "Basics"
-    link: "[site_url]/en/basics/"
+    title: "Getting Started"
+    link: "[site_url]/en/getting-started/"
 on_this_page:
   0:
     title: "Check for PHP version"
@@ -61,19 +61,19 @@ or you may setup Flextype with a dev stability
 composer create-project flextype/flextype --stability=dev
 ```
 
-Create CDA, CMA and Access tokens for your project using this <a href="http://flextype.org/en/downloads">webpage</a>.
+Create CDA, CMA and Access tokens for your project using this <a href="https://flextype.org/en/downloads">webpage</a>.
 
 ### <a name="using-command-line"></a> Using command-line
 
 If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
 
 ```plaintext
-wget https://github.com/flextype/flextype/releases/download/v0.9.7/flextype-0.9.7.zip
-unzip flextype-0.9.7.zip
+wget https://github.com/flextype/flextype/releases/download/v0.9.8/flextype-0.9.8.zip
+unzip flextype-0.9.8.zip
 chmod -R 0777 project/
 ```
 
-Create CDA, CMA and Access tokens for your project using this <a href="http://flextype.org/en/downloads">webpage</a>.
+Create CDA, CMA and Access tokens for your project using this <a href="https://flextype.org/en/downloads">webpage</a>.
 
 ### <a name="installation-issues"></a> Installation issues
 

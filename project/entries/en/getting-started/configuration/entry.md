@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[site_url]/en/"
   1:
-    title: "Basics"
-    link: "[site_url]/en/basics/"
+    title: "Getting Started"
+    link: "[site_url]/en/getting-started/"
 ---
 Flextype allows you to configure your site in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that make this possible.
 

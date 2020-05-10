@@ -4,10 +4,10 @@ description: Flextype folder structure
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[project_url]/en/"
+    link: "[site_url]/en/"
   1:
-    title: "Basics"
-    link: "[project_url]/en/basics/"
+    title: "Getting Started"
+    link: "[site_url]/en/getting-started/"
 ---
 
 <ul class="file-list">
