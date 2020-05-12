@@ -28,6 +28,8 @@ txt:
       title: Concepts
       entries: Entries
       plugins: Plugins
+      parsers: Parsers
+      serializers: Serializers
       content_apis: Content APIs
       perfomance: Performance
     api:
