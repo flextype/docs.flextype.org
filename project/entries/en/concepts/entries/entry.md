@@ -23,7 +23,7 @@ on_this_page:
     link: "entries-visibility"
 ---
 <a name="basics"></a>
-Entries are the fundamental building-blocks of your project. We are using jekyll like entries format it means that each entry in Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
+Entries are the fundamental building-blocks of your project. We are using jekyll like entries format, it means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
 
 Here is a basic example:
 
@@ -37,7 +37,7 @@ Here is a basic example:
 
 Between triple-dashed lines, you can set predefined variables or even create custom ones of your own.
 
-When you will fetch entry above with Content APIs, data will looks like this:
+When you will fetch entry above with [Content APIs]([url]/en/concepts/content-apis), data will looks like this:
 
 ```json
 {
@@ -51,7 +51,7 @@ When you will fetch entry above with Content APIs, data will looks like this:
 
 ### <a name="urls-structure"></a> Entries and Urls structure in Flextype
 
-All content entries are located in the `/project/entries/` folder. Each Entry should be placed in its own folder.
+All content entries are located in the `/project/entries/` folder. Each entry file should be placed in its own folder.
 
 Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
 
