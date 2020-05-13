@@ -4,10 +4,10 @@ description: The Flextype Images API allows the retrieval and manipulation of im
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "API Reference"
-    link: "[site_url]/en/api/"
+    link: "[url]/en/api/"
 on_this_page:
   0:
     title: "Endpoint"

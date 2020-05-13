@@ -4,10 +4,10 @@ description: Flextype is super fast content management system because of its ele
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Concepts"
-    link: "[site_url]/en/concepts/"
+    link: "[url]/en/concepts/"
 ---
 
 Flextype is super fast content management system because of its elegance architecture.<br>It is do not use super heavy solutions and libraries to delivery the project content.<br>Flextype caching system is really smart and efficient to deliver project content fast as possible.

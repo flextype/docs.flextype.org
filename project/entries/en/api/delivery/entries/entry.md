@@ -3,13 +3,13 @@ title: Entries
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "API Reference"
-    link: "[site_url]/en/api/"
+    link: "[url]/en/api/"
   2:
     title: "Content Delivery API"
-    link: "[site_url]/en/api/delivery/"
+    link: "[url]/en/api/delivery/"
 on_this_page:
   0:
     title: "Endpoints"

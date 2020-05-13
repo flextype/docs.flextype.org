@@ -4,10 +4,10 @@ description: When something goes wrong with an API request, our server generates
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "API Reference"
-    link: "[site_url]/en/api/"
+    link: "[url]/en/api/"
 ---
 To retrieve or store content with Flextype, you first need to authenticate your app with an token. Flextype offers three APIs, and each requires separate authentication.
 

@@ -4,10 +4,10 @@ description: Flextype is incredibly easy to set up and get running.
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Getting Started"
-    link: "[site_url]/en/getting-started/"
+    link: "[url]/en/getting-started/"
 on_this_page:
   0:
     title: "Check for PHP version"

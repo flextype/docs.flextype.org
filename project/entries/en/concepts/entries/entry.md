@@ -4,10 +4,10 @@ description: Entries are the fundamental building-blocks of your site. Each entr
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Concepts"
-    link: "[site_url]/en/concepts/"
+    link: "[url]/en/concepts/"
 on_this_page:
   0:
     title: "Basics"

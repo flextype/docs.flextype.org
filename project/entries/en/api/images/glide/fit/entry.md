@@ -3,13 +3,13 @@ title: Fit
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "API"
-    link: "[site_url]/en/api/"
+    link: "[url]/en/api/"
   2:
     title: "Images API"
-    link: "[site_url]/en/api/images/"
+    link: "[url]/en/api/images/"
 ---
 
 `fit`
@@ -26,9 +26,9 @@ Sets how the image is fitted to its target dimensions.
 Example:
 
 ```twig
-<img src="{{ site_url() }}/api/images/en/content/media/image.jpg?w=300&h=300&fit=stretch&token=YOUR_IMAGES_DELIVERY_TOKEN">
+<img src="{{ url() }}/api/images/en/content/media/image.jpg?w=300&h=300&fit=stretch&token=YOUR_IMAGES_DELIVERY_TOKEN">
 ```
 
 Result:
 
-<img height="200" class="inline" src="[site_url]/api/images/en/content/media/image.jpg?q=70&w=100&h=200&dpr=2&fit=stretch&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img height="200" class="inline" src="[url]/api/images/en/content/media/image.jpg?q=70&w=100&h=200&dpr=2&fit=stretch&token=4864fb8e1ebe080e6e4ad5c4363083a6">

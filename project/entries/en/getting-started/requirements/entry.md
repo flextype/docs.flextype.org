@@ -4,10 +4,10 @@ description: System and Browser requirements for Flextype
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Getting Started"
-    link: "[site_url]/en/getting-started/"
+    link: "[url]/en/getting-started/"
 on_this_page:
   0:
     title: "Web Server Requirements"
@@ -46,4 +46,4 @@ Flextype needs PHP 7.2.0 or higher and the following PHP extensions to be enable
 - PHP [SPL](https://www.php.net/manual/en/book.spl.php)
 - PHP [DOM](https://www.php.net/manual/ru/class.domdocument.php)
 
-Although it is optional, we strongly recommend enabling the following PHP extensions: APC, APCu, XCache, Memcached, or Redis for better [performance]([site_url]/en/advanced/performance-and-caching).
+Although it is optional, we strongly recommend enabling the following PHP extensions: APC, APCu, XCache, Memcached, or Redis for better [performance]([url]/en/advanced/performance-and-caching).
