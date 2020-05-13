@@ -81,7 +81,7 @@ GET /api/images/movies/venom-2/venom-2.jpg?w=100&&q=70&token=c1fda5a94603a7296f3
 * [Blur](./images/glide/blur)
 * [Pixelate](./images/glide/pixelate)
 * [Filter](./images/glide/filter)
-* [Border](./images/images/glide/border)
+* [Border](./images/glide/border)
 * [Quality](./images/glide/quality)
 * [Format](./images/glide/format)
 * [Relative dimensions](./images/glide/relative-dimensions)

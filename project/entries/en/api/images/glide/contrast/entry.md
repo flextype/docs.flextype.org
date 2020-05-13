@@ -5,7 +5,7 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "API"
+    title: "API Reference"
     link: "[url]/en/api/"
   2:
     title: "Images API"
@@ -16,14 +16,23 @@ breadcrumbs:
 
 Adjusts the image contrast. Use values between `-100` and `+100`, where `0` represents no change.
 
-Example:
+##### Usage
 
-```twig
-<img src="{{ url() }}/api/images/en/content/media/image.jpg?con=-50&token=YOUR_IMAGES_TOKEN">
-<img src="{{ url() }}/api/images/en/content/media/image.jpg?con=50&token=YOUR_IMAGES_TOKEN">
+<div class="file-header">Request</div>
+```http
+GET YOUR_APP_URL/api/images/en/image.jpg?con=-50&token=YOUR_IMAGES_TOKEN
+GET YOUR_APP_URL/api/images/en/image.jpg?con=50&token=YOUR_IMAGES_TOKEN
 ```
 
-Result:
+##### Example
 
-<img width="200" class="inline" src="[url]/api/images/en/content/media/image.jpg?q=70&w=200&dpr=2&con=-50&token=4864fb8e1ebe080e6e4ad5c4363083a6">
-<img width="200" class="inline" src="[url]/api/images/en/content/media/image.jpg?q=70&w=200&dpr=2&con=50&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<div class="file-header">Request</div>
+```http
+GET [url]/api/images/en/image.jpg?con=-50&token=4864fb8e1ebe080e6e4ad5c4363083a6
+GET [url]/api/images/en/image.jpg?con=50&token=4864fb8e1ebe080e6e4ad5c4363083a6
+```
+
+##### Result
+
+<img width="200" class="inline" src="[url]/api/images/en/image.jpg?con=-50&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[url]/api/images/en/image.jpg?con=50&token=4864fb8e1ebe080e6e4ad5c4363083a6">
