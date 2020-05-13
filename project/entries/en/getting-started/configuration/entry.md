@@ -9,11 +9,11 @@ breadcrumbs:
     title: "Getting Started"
     link: "[site_url]/en/getting-started/"
 ---
-Flextype allows you to configure your site in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that make this possible.
+Flextype allows you to configure your project in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that make this possible.
 
 All Flextype configuration files are written in YAML syntax with a `.yaml` file extension. YAML is very intuitive which makes it very easy to both read and write.
 
-You can update and create site configuration by editing file `/project/config/settings.yaml`
+You can update and create project configuration by editing file `/project/config/settings.yaml`
 
 <div class="file-header"><i class="far fa-file-alt"></i> /project/config/settings.yaml</div>
 ```
