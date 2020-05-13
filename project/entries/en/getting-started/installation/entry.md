@@ -61,7 +61,7 @@ or you may setup Flextype with a dev stability
 composer create-project flextype/flextype --stability=dev
 ```
 
-Create CDA, CMA and Access tokens for your project using this <a href="https://flextype.org/en/downloads">webpage</a>.
+Create CDA, CMA and Access tokens for your project using this <a href="https://flextype.org/en/api-token-generator">webpage</a>.
 
 ### <a name="using-command-line"></a> Using command-line
 
@@ -73,7 +73,7 @@ unzip flextype-0.9.8.zip
 chmod -R 0777 project/
 ```
 
-Create CDA, CMA and Access tokens for your project using this <a href="https://flextype.org/en/downloads">webpage</a>.
+Create CDA, CMA and Access tokens for your project using this <a href="https://flextype.org/en/api-token-generator">webpage</a>.
 
 ### <a name="installation-issues"></a> Installation issues
 
