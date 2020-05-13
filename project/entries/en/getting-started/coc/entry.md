@@ -4,10 +4,10 @@ description: Like the technical community as a whole, the Flextype team and comm
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Getting Started"
-    link: "[site_url]/en/getting-started/"
+    link: "[url]/en/getting-started/"
 ---
 
 Like the technical community as a whole, the Flextype team and community is made up of a mixture of professionals and volunteers from all over the world, working on every aspect of the mission - including mentorship, teaching, and connecting people.

@@ -4,10 +4,10 @@ description: Your index.php file can define certain PHP constants, which Flextyp
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Getting Started"
-    link: "[site_url]/en/getting-started/"
+    link: "[url]/en/getting-started/"
 ---
 
 Your `index.php` file can define certain PHP constants, which Flextype bootstrap script will check for while loading and configuring Flextype.

@@ -3,10 +3,10 @@ title: What is Flextype?
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Basics"
-    link: "[site_url]/en/basics/"
+    link: "[url]/en/basics/"
 txt:
   common:
     edit_this_page: Improve this page

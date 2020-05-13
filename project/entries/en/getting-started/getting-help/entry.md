@@ -4,10 +4,10 @@ description: There are several channels to reach the developers and the Flextype
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Getting Started"
-    link: "[site_url]/en/getting-started/"
+    link: "[url]/en/getting-started/"
 ---
 There are several channels to reach the developers and the Flextype community to get direct assistance.
 

@@ -4,10 +4,10 @@ description: Plugins are the foundation for adding new features to the Flextype 
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "Concepts"
-    link: "[site_url]/en/concepts/"
+    link: "[url]/en/concepts/"
 on_this_page:
   0:
     title: "What are plugins?"

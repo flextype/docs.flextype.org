@@ -3,13 +3,13 @@ title: Entries
 breadcrumbs:
   0:
     title: "Documentation"
-    link: "[site_url]/en/"
+    link: "[url]/en/"
   1:
     title: "API Reference"
-    link: "[site_url]/en/api/"
+    link: "[url]/en/api/"
   2:
     title: "Content Management API"
-    link: "[site_url]/en/api/management/"
+    link: "[url]/en/api/management/"
 on_this_page:
   0:
     title: "Endpoints"
@@ -138,7 +138,7 @@ GET /api/management/entries?id=movies&filter[where][key]=director&filter[where][
 
 With the filter query you're able to search items in a collection that matches the filter's conditions.
 Filtering for Content Management API is absolutely the same as it is for Content Delivery API.
-Read about filtering: <a href="[site_url]/en/api/delivery/entries#filtering">here</a>
+Read about filtering: <a href="[url]/en/api/delivery/entries#filtering">here</a>
 
 <br>
 
