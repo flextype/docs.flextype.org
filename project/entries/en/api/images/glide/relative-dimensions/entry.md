@@ -5,7 +5,7 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "API"
+    title: "API Reference"
     link: "[url]/en/api/"
   2:
     title: "Images API"
