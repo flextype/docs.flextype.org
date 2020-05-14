@@ -16,7 +16,6 @@ breadcrumbs:
 
 Flips the image. Accepts `v`, `h` and `both`.
 
-
 ##### Usage
 
 <div class="file-header">Request</div>
