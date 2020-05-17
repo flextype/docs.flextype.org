@@ -3,6 +3,19 @@ h1, h2, h3, h4, h5 {
     font-weight: 700;
 }
 
+h1, h2, h3, h4 {
+    margin-top: 50px;
+}
+
+h1 ~ div > div > h2:first-of-type,
+h1 ~ div > div > h2:first-of-type ~ h4,
+h1 ~ div > div > h3:first-of-type,
+h1 ~ div > div > h3:first-of-type ~ h4,
+h1 ~ div > div > h4:first-of-type,
+h1 ~ div > div > h4:first-of-type ~ h4 {
+    margin-top: 0;
+}
+
 h1 {
   @apply text-4xl;
 }
@@ -29,6 +42,7 @@ h5 {
     margin-bottom: 30px;
     line-height: 60px;
     padding-top: 20px;
+    margin-top: 0;
 }
 
 .flextype-docs-logo {

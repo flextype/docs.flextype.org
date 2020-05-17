@@ -8,21 +8,8 @@ breadcrumbs:
   1:
     title: "Concepts"
     link: "[url]/en/concepts/"
-on_this_page:
-  0:
-    title: "Basics"
-    link: "basics"
-  1:
-    title: "Entries and Urls structure in Flextype"
-    link: "urls-structure"
-  2:
-    title: "Predefined Entry Variables"
-    link: "predefined-entry-variables"
-  3:
-    title: "Entries visibility"
-    link: "entries-visibility"
 ---
-<a name="basics"></a>
+
 Entries are the fundamental building-blocks of your project. We are using jekyll like entries format, it means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
 
 Here is a basic example:
@@ -49,36 +36,7 @@ When you will fetch entry above with [Content APIs]([url]/en/concepts/content-ap
 }
 ```
 
-### <a name="urls-structure"></a> Entries and Urls structure in Flextype
+### Articles
 
-All content entries are located in the `/project/entries/` folder. Each entry file should be placed in its own folder.
-
-Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
-
-| Physical Location                     | URL              |
-| ------------------------------------- | ---------------- |
-| project/entries/home/entry.md            | /                |
-| project/entries/blog/my-post/entry.md    | /blog/my-post    |
-| project/entries/a/very/long/url/entry.md | /a/very/long/url |
-
-
-### <a name="predefined-entry-variables"></a> Predefined Entry Variables
-
-There are a number of predefined global variables that you can set in the front matter of a entry.
-
-* published_at
-* created_at
-* modified_at
-* slug
-* content
-
-### <a name="entries-visibility"></a> Entries visibility
-
-Content visibility is about controlling who can see your entries. Flextype allows you to control the visibility of your entries and Pages on an individual basis. By default, all entries are visible.
-
-Available values for option `visibility`
-* visible
-* draft
-* hidden
-
-Also your entries can be routable and not. You can set `true` or `false` for `routable` option. By default it is `true`
+* [Entries and URLs structure](./entries/urls-structure)
+* [Entry Variables](./entries/entry-variables)
