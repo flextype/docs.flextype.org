@@ -11,13 +11,20 @@ breadcrumbs:
   2:
     title: "Entries"
     link: "[url]/en/concepts/entries/"
+on_this_page:
+  0:
+    title: "Default Entry Variables"
+    link: "default-entry-variables"
+  1:
+    title: "Custom Entry Variables"
+    link: "custom-entry-variables"
 ---
 
-Entry Front Matter block in valid YAML format at the top of the entry file.
+### <a name="default-entry-variables"></a> Default Entry Variables
 
-There are a number of basic Front Matter variables available.
+There are a number of basic entry variables available for each entry and defined in the Front Matter section.
 
-### Visibility
+#### Visibility
 
 | Name | Default | Available values for option |
 | --- | --- | --- |
@@ -33,7 +40,7 @@ Content visibility is about controlling who can see your entries. Flextype allow
     ---
     My entry content here.
 
-### Routable
+#### Routable
 
 | Name | Default | Available values for option |
 | --- | --- | --- |
@@ -49,7 +56,7 @@ By default, all pages are routable. This means that they can be reached by point
     ---
     Content for Commment42
 
-### Published at
+#### Published at
 
 | Name | Default | Available values for option |
 | --- | --- | --- |
@@ -65,7 +72,7 @@ This variable allows you to specifically set a published_at date associated with
     ---
     My entry content here.
 
-### Published by
+#### Published by
 
 | Name | Default | Available values for option |
 | --- | --- | --- |
@@ -81,7 +88,7 @@ This variable allows you to specifically set a published_by User UUID associated
     ---
     My entry content here.
 
-### Created at
+#### Created at
 
 | Name | Default | Available values for option |
 | --- | --- | --- |
@@ -89,7 +96,7 @@ This variable allows you to specifically set a published_by User UUID associated
 
 This variable allows you to specifically set a created_at date associated with this entry.
 
-### Modified at
+#### Modified at
 
 | Name | Default | Available values for option |
 | --- | --- | --- |
@@ -105,7 +112,7 @@ This variable allows you to specifically set a modified_at date associated with 
     ---
     My entry content here.
 
-### Parsers
+#### Parsers
 
 | Name | Default | Available values for option |
 | --- | --- | --- |
@@ -123,12 +130,25 @@ parsers:
     fields: "*"
 ```
 
-### Slug
+#### Slug
 
 | Name | Default | Available values for option |
 | --- | --- | --- |
 | `slug` |  | Slug ist entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded. |
 
+### <a name="custom-entry-variables"></a> Custom Entry Variables
+
+You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for content api's and any extension such as plugin, theme and etc...
+
+##### Example
+
+    ---
+    title: My Entry Title
+    description: My entry description
+    author:
+      twitter: "@getflextype"
+    ---
+    My entry content here.
 
 <!--
 There are a number of predefined global variables that you can set in the front matter of a entry.

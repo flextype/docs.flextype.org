@@ -36,5 +36,5 @@ When you will fetch entry above with [Content APIs]([url]/en/concepts/content-ap
 }
 ```
 
-* [Entries and Urls structure in Flextype](./entries/urls-structure)
+* [Entries and URLs structure](./entries/urls-structure)
 * [Entry Variables](./entries/entry-variables)
