@@ -5,8 +5,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Basics"
-    link: "[url]/en/basics/"
+    title: "Getting Started"
+    link: "[url]/en/getting-started/"
 txt:
   common:
     edit_this_page: Improve this page
