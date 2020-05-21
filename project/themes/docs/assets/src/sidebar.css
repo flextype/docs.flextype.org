@@ -20,3 +20,7 @@
 .sidebar li.active {
     border-left: 6px solid white;
 }
+
+.sidebar h4 {
+    margin-top: 0!important;
+}

@@ -33,8 +33,6 @@ The Content Delivery API (CDA) for Entries is a read-only API organized around R
 | --- | --- | --- |
 | GET | /api/delivery/entries | Fetch entry(entries) |
 
-<br>
-
 ### <a name="fetch-single-entry"></a> Fetch single entry
 
 <div class="file-header">Request</div>
@@ -50,7 +48,6 @@ GET /api/delivery/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_DELIVERY_TOKEN
 | filter | OPTIONAL | A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries. |
 | token | REQUIRED | Valid Content Delivery API token for Entries. |
 
-
 ##### Result
 
 Returns the item object for the given unique identifier.
@@ -63,8 +60,6 @@ Fetch Movies Entry
 ```http
 GET /api/delivery/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
-
-<br>
 
 ### <a name="fetch-entries-collection"></a> Fetch entries collection
 
@@ -107,8 +102,6 @@ Fetch Movies Collection where **director** is equal to **Cathy Yan** and where y
 ```http
 GET /api/delivery/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[and_where][0][key]=year&filter[and_where][0][expr]=eq&filter[and_where][0][value]=2020&filter[and_where][1][key]=genre&filter[and_where][1][expr]=contains&filter[and_where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
-
-<br>
 
 ### <a name="filtering"></a> Filtering
 
@@ -229,13 +222,11 @@ Filter your entries by checking if your custom array attribute (field) is not co
 
 Get all content entries that is not refered to others in a N:N relationship or if you want to get all entries with a specific value that is not in one of it's array fields.
 
-
 ##### Operator: Contains the substring
 
 `contains` or `like`
 
 Filter your entries by checking if your custom attribute (field) has a value that is "like" the value provided.
-
 
 ##### Operator: Member of
 
