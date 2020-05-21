@@ -18,6 +18,7 @@ You could use the CMA for several use cases, such as:
 * Building custom editing experiences.
 
 ##### API's
+
 <ul>
     <li>
         <a href="./management/entries">Entries</a>

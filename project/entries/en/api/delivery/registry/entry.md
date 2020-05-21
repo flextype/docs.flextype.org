@@ -20,8 +20,6 @@ The Content Delivery API (CDA) for Registry is a read-only API organized around 
 | --- | --- | --- |
 | GET | /api/delivery/registry | Fetch registry item |
 
-<br>
-
 ### Fetch registry item
 
 <div class="file-header">Request</div>

@@ -57,8 +57,6 @@ You could use the CMA for several use cases, such as:
 | PUT | /api/management/entries/copy | Copy entry(entries) |
 | DELETE | /api/management/entries | Delete entry |
 
-<br>
-
 ### <a name="fetch-single-entry"></a> Fetch single entry
 
 <div class="file-header">Request</div>
@@ -87,8 +85,6 @@ Fetch Movies Entry
 ```http
 GET /api/management/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
-
-<br>
 
 ### <a name="fetch-entries-collection"></a> Fetch entries collection
 
@@ -132,15 +128,11 @@ Fetch Movies Collection where **director** is equal to **Cathy Yan** and where y
 GET /api/management/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[and_where][0][key]=year&filter[and_where][0][expr]=eq&filter[and_where][0][value]=2020&filter[and_where][1][key]=genre&filter[and_where][1][expr]=contains&filter[and_where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
-<br>
-
 ### <a name="filtering"></a> Filtering
 
 With the filter query you're able to search items in a collection that matches the filter's conditions.
 Filtering for Content Management API is absolutely the same as it is for Content Delivery API.
 Read about filtering: <a href="[url]/en/api/delivery/entries#filtering">here</a>
-
-<br>
 
 ### <a name="create-entry"></a> Create entry
 
@@ -202,8 +194,6 @@ POST /api/management/entries
 }
 ```
 
-<br>
-
 ### <a name="update-entry"></a> Update entry
 
 <div class="file-header">Request</div>
@@ -262,8 +252,6 @@ PATCH /api/management/entries
     }
 }
 ```
-
-<br>
 
 ### <a name="rename-entry"></a> Rename entry
 
@@ -357,8 +345,6 @@ PUT /api/management/entries
     }
 }
 ```
-
-<br>
 
 ### <a name="copy-entry"></a> Copy entry
 
