@@ -137,7 +137,7 @@
                        <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.concepts.parsers }}</a>
                    </li>
                    <li class="{% if entry.slug == locale ~ "/concepts/serializers" %}active{% endif %}">
-                       <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.concepts.serializers }}</a>
+                       <a href="{{ url() }}/{{ locale }}/concepts/serializers" class="no-underline">{{ entry_locale.txt.categories.concepts.serializers }}</a>
                    </li>
                    <li class="{% if entry.slug == locale ~ "/concepts/content-apis" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/concepts/content-apis" class="no-underline">{{ entry_locale.txt.categories.concepts.content_apis }}</a>

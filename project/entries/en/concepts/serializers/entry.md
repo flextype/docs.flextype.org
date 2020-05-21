@@ -12,3 +12,4 @@ breadcrumbs:
 ### Topics
 
 * [Yaml](./serializers/yaml)
+* [JSON](./serializers/json)
