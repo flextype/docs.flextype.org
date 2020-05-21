@@ -28,8 +28,6 @@ The Flextype Images API allows the retrieval and manipulation of image files ref
 | --- | --- | --- |
 | GET | /api/images | Fetch image |
 
-<br>
-
 ### <a name="fetch-image"></a> Fetch image
 
 <div class="file-header">Request</div>
