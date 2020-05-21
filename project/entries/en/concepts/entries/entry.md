@@ -36,7 +36,7 @@ When you will fetch entry above with [Content APIs]([url]/en/concepts/content-ap
 }
 ```
 
-### Articles
+### Topics
 
 * [Entries and URLs structure](./entries/urls-structure)
-* [Entry Variables](./entries/entry-variables)
+* [Variables](./entries/variables)
