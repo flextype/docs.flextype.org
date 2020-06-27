@@ -20,4 +20,7 @@ The Content Delivery API (CDA) is a read-only API organized around Representatio
     <li>
         <a href="./delivery/registry">Registry</a>
     </li>
+    <li>
+        <a href="./delivery/config">Config</a>
+    </li>
 </ul>

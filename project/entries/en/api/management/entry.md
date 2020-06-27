@@ -23,4 +23,7 @@ You could use the CMA for several use cases, such as:
     <li>
         <a href="./management/entries">Entries</a>
     </li>
+    <li>
+        <a href="./management/config">Config</a>
+    </li>
 </ul>

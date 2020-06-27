@@ -47,11 +47,6 @@ Fetch Flextype Version from Flextype Registry
 GET /api/delivery/registry?id=flextype.manifest.version&token=efe1e36e4d60fcd547e22eb9f795dff9
 ```
 
-<div class="file-header flex justify-between"><div>Request</div> <div class="text-right">CURL</div></div>
-```http
-curl -X GET "http://example.com/api/delivery/registry?id=flextype.manifest.version&token=efe1e36e4d60fcd547e22eb9f795dff9"
-```
-
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
 ```json
 {
