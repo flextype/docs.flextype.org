@@ -1,5 +1,5 @@
 ---
-title: Images API
+title: Images
 description: The Flextype Images API allows the retrieval and manipulation of image files referenced from uploads.
 breadcrumbs:
   0:

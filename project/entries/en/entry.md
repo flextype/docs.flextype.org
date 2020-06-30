@@ -34,9 +34,12 @@ txt:
       perfomance: Performance
     api:
      title: API Reference
-     delivery: Content Delivery API
-     management: Content Management API
-     images: Images API
+     entries: Entries
+     registry: Registry
+     config: Config
+     files: Files
+     folders: Folders
+     images: Images
      authentication: Authentication
      http_details: HTTP Details
      errors: Errors
