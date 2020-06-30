@@ -1,5 +1,5 @@
 ---
-title: Content APIs
+title: Rest APIs
 description: Flextype provides APIs organized around Representational State Transfer (REST) APIs for working with your content. Each of these APIs serve a different purpose, so which one to use depends on what you want to do.
 breadcrumbs:
   0:

@@ -17,6 +17,5 @@ Your `index.php` file can define certain PHP constants, which Flextype bootstrap
 | `FLEXTYPE_MINIMUM_PHP` | Define the application minimum supported PHP version. |
 | `ROOT_DIR` | Define the path to the root directory (without trailing slash). |
 | `PATH['project']` | Define the PATH to project (without trailing slash). |
-| `PATH['config']` | Define the PATH to default project config (without trailing slash). |
 | `PATH['cache']` | Define the PATH to project cache (without trailing slash). |
 | `PATH['logs']` | Define the PATH to project logs (without trailing slash). |

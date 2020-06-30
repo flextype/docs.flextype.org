@@ -43,7 +43,7 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 
 1. [Download the latest version of Flextype](https://flextype.org/en/downloads).
 2. Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, create directory <code>/project</code> and be sure to chmod the following directory to <code>755</code> (or <code>777</code>), so it is readable and writable by Flextype.<br>
-3. Create CDA, CMA and Access tokens for your project using this [webpage](https://flextype.org/en/api-token-generator).
+3. Create API tokens for your project using this [webpage](https://flextype.org/en/api-token-generator).
 
 ### <a name="using-composer"></a> Using Composer
 
@@ -68,8 +68,8 @@ Create CDA, CMA and Access tokens for your project using this <a href="https://f
 If you have command-line access, you can easily install Flextype by executing a few commands. First, create the directory where you want to install Flextype, if it doesn’t already exist. Enter the directory, and execute the following commands:
 
 ```plaintext
-wget https://github.com/flextype/flextype/releases/download/v0.9.8/flextype-0.9.8.zip
-unzip flextype-0.9.8.zip
+wget https://github.com/flextype/flextype/releases/download/v0.9.9/flextype-0.9.9.zip
+unzip flextype-0.9.9.zip
 chmod -R 0777 project/
 ```
 
