@@ -6,6 +6,7 @@
 pre {
     background: inherit;
     padding: 0;
+    @apply rounded;
 }
 
 pre > code {
@@ -16,18 +17,20 @@ pre > code {
 }
 
 code {
+    @apply rounded;
     font-size: 18px;
     line-height: 30px;
-    background: black;
-    color: white;
+    background: #f8f9fb;
+    color: #090e24;
     padding: 2px 10px;
     font-family: "noirpro-light", sans-serif;
 }
 
 .file-list {
+    @apply rounded;
     padding: 20px!important;
-    background: black;
-    color: white;
+    background: #f8f9fb;
+    color: #090e24;
     font-family: "noirpro-light", sans-serif;
     margin-bottom: 20px;
     list-style: none;
@@ -60,10 +63,10 @@ code {
 
 .file-header {
     padding: 8px 20px!important;
-    background: black;
-    color: white;
+    color: #090e24;
     font-family: "noirpro-light", sans-serif;
-    border-bottom: 1px solid rgb(39, 39, 39);
+    background: #f8f9fb;
+    border-bottom: 1px solid #f8f8f8;
 }
 
 .file-header > i {
@@ -73,10 +76,11 @@ code {
 /* purgecss start ignore */
 .hljs {
     position: relative;
+    background: #f8f9fb;
 }
 
 .hljs:before {
-    background: #202020;
+    background: #f8f9fb;
     letter-spacing: 1px;
     padding: 7px 12px;
     font-size: 10px;
