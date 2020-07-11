@@ -150,6 +150,9 @@
                </ul>
                <h4 class="pt-8">{{ entry_locale.txt.categories.api.title }}</h4>
                <ul class="m-0 p-0 list-none">
+                   <li class="{% if entry.slug == locale ~ "/api/introduction" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/api/introduction" class="no-underline">{{ entry_locale.txt.categories.api.introduction }}</a>
+                   </li>
                    <li class="{% if entry.slug == locale ~ "/api/entries" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/api/entries" class="no-underline">{{ entry_locale.txt.categories.api.entries }}</a>
                    </li>
@@ -167,15 +170,6 @@
                    </li>
                    <li class="{% if entry.slug == locale ~ "/api/images" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/api/images" class="no-underline">{{ entry_locale.txt.categories.api.images }}</a>
-                   </li>
-                   <li class="{% if entry.slug == locale ~ "/api/http-details" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/http-details" class="no-underline">{{ entry_locale.txt.categories.api.http_details }}</a>
-                   </li>
-                   <li class="{% if entry.slug == locale ~ "/api/authentication" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/authentication" class="no-underline">{{ entry_locale.txt.categories.api.authentication }}</a>
-                   </li>
-                   <li class="{% if entry.slug == locale ~ "/api/errors" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/errors" class="no-underline">{{ entry_locale.txt.categories.api.errors }}</a>
                    </li>
                </ul>
             </div>
