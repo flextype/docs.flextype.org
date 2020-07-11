@@ -34,15 +34,13 @@ txt:
       perfomance: Performance
     api:
      title: API Reference
+     introduction: Introduction
      entries: Entries
      registry: Registry
      config: Config
      files: Files
      folders: Folders
      images: Images
-     authentication: Authentication
-     http_details: HTTP Details
-     errors: Errors
     content:
       title: Content
       entries: Entries
