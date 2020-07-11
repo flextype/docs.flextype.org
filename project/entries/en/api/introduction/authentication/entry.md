@@ -9,6 +9,7 @@ breadcrumbs:
     title: "API Reference"
     link: "[url]/en/api/"
 ---
+
 To retrieve or store content with Flextype, you first need to authenticate your app with an token. Flextype offers three APIs, and each requires separate authentication.
 
 We recommend using different access tokens for different environments in your development process. For example, use one for your production environment and another for staging or continuous integration. This allows you to revoke them individually in the future and manage your delivery channels independently.

@@ -21,7 +21,7 @@ The Flextype Registry API organized around Representational State Transfer (REST
 
 <div class="file-header">Request</div>
 ```plaintext
-GET /api/registry?id=YOUR_REGISTRY_ITEM_ID&token=YOUR_REGISTRY_DELIVERY_TOKEN
+GET /api/registry?id=YOUR_REGISTRY_ITEM_ID&token=YOUR_REGISTRY_TOKEN
 ```
 
 ##### Query

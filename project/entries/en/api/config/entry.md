@@ -7,9 +7,6 @@ breadcrumbs:
   1:
     title: "API Reference"
     link: "[url]/en/api/"
-  2:
-    title: "Content Management API"
-    link: "[url]/en/api/management/"
 on_this_page:
   0:
     title: "Endpoints"
@@ -28,21 +25,22 @@ on_this_page:
     link: "delete-config-item"
 ---
 
-The Content Management API (CMA) for Config is a read-write API for managing configs.
+The Flextype Registry API organized around Representational State Transfer (REST) for delivering data from Flextype registry to apps, websites and other. Registry is delivered as JSON data.
 
 #### <a name="endpoints"></a> Endpoints
+
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | /api/management/config | Fetch config items |
-| POST | /api/management/config | Create new item in the config |
-| PATCH | /api/management/config | Update config item |
-| DELETE | /api/management/config | Delete config item |
+| GET | /api/config | Fetch config items |
+| POST | /api/config | Create new item in the config |
+| PATCH | /api/config | Update config item |
+| DELETE | /api/config | Delete config item |
 
-### <a name="fetch-config-item"></a> Fetch config items
+### <a name="fetch-config-item"></a> Fetch config item
 
 <div class="file-header">Request</div>
-```http
-GET /api/management/config?config=YOUR_CONFIG&key=YOUR_CONFIG_KEY&token=YOUR_CONFIG_MANAGEMENT_TOKEN
+```plaintext
+GET /api/delivery/config?config=YOUR_CONFIG&key=YOUR_CONFIG_ITEM_ID&token=YOUR_CONFIG_TOKEN
 ```
 
 ##### Query
@@ -75,6 +73,7 @@ GET /api/delivery/config?config=flextype&id=timezone&token=efe1e36e4d60fcd547e22
     }
 }
 ```
+
 
 ### <a name="create-config-item"></a> Create new item in the config
 
