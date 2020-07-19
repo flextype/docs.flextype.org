@@ -33,7 +33,7 @@ txt:
       rest_apis: Rest APIs
       perfomance: Performance
     api:
-     title: API Reference
+     title: Rest API
      introduction: Introduction
      entries: Entries
      registry: Registry
