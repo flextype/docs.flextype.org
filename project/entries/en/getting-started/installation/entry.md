@@ -25,10 +25,10 @@ on_this_page:
     title: "Installation issues"
     link: "installation-issues"
 ---
+Flextype is incredibly easy to set up and get running.  
 
 ### <a name="check-for-php-version"></a> Check for PHP version
 
-Flextype is incredibly easy to set up and get running.  
 Be sure you have at least PHP version 7.2.0+ by going to the terminal and typing `php -v`:
 
 ```plaintext
