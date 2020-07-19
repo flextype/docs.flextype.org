@@ -14,7 +14,7 @@ breadcrumbs:
 
 | Method | Description |
 |---|---|
-| `collect()` | The `collect` method returns a new `Collection` instance with the items currently in the collection |
+| `collection()` | The `collection` method returns a new `Collection` instance with the items currently in the collection |
 | `merge()` | The `merge` method merges the given array or collection with the original collection. If a string key in the given items matches a string key in the original collection, the given items's value will overwrite the value in the original collection |
 | `where()` | Sets the where expression to evaluate when this Criteria is searched for. |
 | `andWhere()` |  |

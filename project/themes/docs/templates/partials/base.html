@@ -133,6 +133,9 @@
                    <li class="{% if entry.slug == locale ~ "/foundation/plugins" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/foundation/plugins" class="no-underline">{{ entry_locale.txt.categories.foundation.plugins }}</a>
                    </li>
+                   <li class="{% if entry.slug == locale ~ "/foundation/collections" %}active{% endif %}">
+                        <a href="{{ url() }}/{{ locale }}/foundation/collections" class="no-underline">{{ entry_locale.txt.categories.foundation.collections }}</a>
+                   </li>
                    <li class="{% if entry.slug == locale ~ "/foundation/parsers" %}active{% endif %}">
                        <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.foundation.parsers }}</a>
                    </li>

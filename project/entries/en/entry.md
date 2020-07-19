@@ -28,6 +28,7 @@ txt:
       title: Foundation
       entries: Entries
       plugins: Plugins
+      collections: Collections
       parsers: Parsers
       serializers: Serializers
     rest_api:
