@@ -10,8 +10,8 @@ breadcrumbs:
     link: "[url]/en/rest-api/"
 on_this_page:
   0:
-    title: "Endpoint"
-    link: "endpoint"
+    title: "Endpoints"
+    link: "endpoints"
   1:
     title: "Fetch image"
     link: "fetch-image"
@@ -20,9 +20,9 @@ on_this_page:
     link: "displaying-images-in-the-template-glide-options"
 ---
 
-The Flextype Images allows the retrieval and manipulation of image files referenced from Flextype site uploads directory to apps, websites and other media. Images are delivered as files.
+The Flextype Images API allows the retrieval and manipulation of image files referenced from Flextype site uploads directory to apps, websites and other media. Images are delivered as files.
 
-### <a name="endpoint"></a> Endpoint
+### <a name="endpoints"></a> Endpoints
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
