@@ -7,17 +7,24 @@ breadcrumbs:
   1:
     title: "Rest API"
     link: "[url]/en/rest-api/"
+on_this_page:
+  0:
+    title: "Endpoints"
+    link: "endpoints"
+  1:
+    title: "Fetch registry item"
+    link: "fetch-registry-item"
 ---
 
 The Flextype Registry API organized around Representational State Transfer (REST) for delivering data from Flextype registry to apps, websites and other. Registry is delivered as JSON data.
 
-#### Endpoints
+#### <a name="endpoints"></a> Endpoints
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
 | GET | /api/registry | Fetch registry item |
 
-### Fetch registry item
+### <a name="fetch-registry-item"></a> Fetch registry item
 
 <div class="file-header">Request</div>
 ```plaintext
