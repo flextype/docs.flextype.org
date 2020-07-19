@@ -125,51 +125,46 @@
                        <a href="{{ url() }}/{{ locale }}/getting-started/license" class="no-underline">{{ entry_locale.txt.categories.getting_started.license }}</a>
                    </li>
                </ul>
-               <h4 class="pt-8">{{ entry_locale.txt.categories.concepts.title }}</h4>
+               <h4 class="pt-8">{{ entry_locale.txt.categories.foundation.title }}</h4>
                <ul class="m-0 p-0 list-none">
-                   <li class="{% if entry.slug == locale ~ "/concepts/entries" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/entries" class="no-underline">{{ entry_locale.txt.categories.concepts.entries }}</a>
+                   <li class="{% if entry.slug == locale ~ "/foundation/entries" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/foundation/entries" class="no-underline">{{ entry_locale.txt.categories.foundation.entries }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/concepts/plugins" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/plugins" class="no-underline">{{ entry_locale.txt.categories.concepts.plugins }}</a>
+                   <li class="{% if entry.slug == locale ~ "/foundation/plugins" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/foundation/plugins" class="no-underline">{{ entry_locale.txt.categories.foundation.plugins }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/concepts/parsers" %}active{% endif %}">
-                       <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.concepts.parsers }}</a>
+                   <li class="{% if entry.slug == locale ~ "/foundation/parsers" %}active{% endif %}">
+                       <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.foundation.parsers }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/concepts/serializers" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/serializers" class="no-underline">{{ entry_locale.txt.categories.concepts.serializers }}</a>
+                   <li class="{% if entry.slug == locale ~ "/foundation/serializers" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/foundation/serializers" class="no-underline">{{ entry_locale.txt.categories.foundation.serializers }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/concepts/rest-apis" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/rest-apis" class="no-underline">{{ entry_locale.txt.categories.concepts.rest_apis }}</a>
+                   <li class="{% if entry.slug == locale ~ "/foundation/rest-apis" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/foundation/rest-apis" class="no-underline">{{ entry_locale.txt.categories.foundation.rest_apis }}</a>
                    </li>
-                   <!--
-                   <li class="{% if entry.slug == locale ~ "/concepts/performance" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/performance" class="no-underline">{{ entry_locale.txt.categories.concepts.perfomance }}</a>
-                   </li>
-                   -->
                </ul>
-               <h4 class="pt-8">{{ entry_locale.txt.categories.api.title }}</h4>
+               <h4 class="pt-8">{{ entry_locale.txt.categories.rest_api.title }}</h4>
                <ul class="m-0 p-0 list-none">
-                   <li class="{% if entry.slug == locale ~ "/api/introduction" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/introduction" class="no-underline">{{ entry_locale.txt.categories.api.introduction }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/introduction" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/introduction" class="no-underline">{{ entry_locale.txt.categories.rest_api.introduction }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/entries" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/entries" class="no-underline">{{ entry_locale.txt.categories.api.entries }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/entries" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/entries" class="no-underline">{{ entry_locale.txt.categories.rest_api.entries }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/registry" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/registry" class="no-underline">{{ entry_locale.txt.categories.api.registry }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/registry" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/registry" class="no-underline">{{ entry_locale.txt.categories.rest_api.registry }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/config" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/config" class="no-underline">{{ entry_locale.txt.categories.api.config }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/config" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/config" class="no-underline">{{ entry_locale.txt.categories.rest_api.config }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/files" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/files" class="no-underline">{{ entry_locale.txt.categories.api.files }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/files" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/files" class="no-underline">{{ entry_locale.txt.categories.rest_api.files }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/folders" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/folders" class="no-underline">{{ entry_locale.txt.categories.api.folders }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/folders" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/folders" class="no-underline">{{ entry_locale.txt.categories.rest_api.folders }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/images" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/images" class="no-underline">{{ entry_locale.txt.categories.api.images }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/images" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/images" class="no-underline">{{ entry_locale.txt.categories.rest_api.images }}</a>
                    </li>
                </ul>
             </div>
