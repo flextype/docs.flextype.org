@@ -30,8 +30,6 @@ txt:
       plugins: Plugins
       parsers: Parsers
       serializers: Serializers
-      rest_apis: Rest APIs
-      perfomance: Performance
     rest_api:
      title: Rest API
      introduction: Introduction
