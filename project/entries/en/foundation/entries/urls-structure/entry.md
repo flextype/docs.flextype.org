@@ -14,7 +14,9 @@ breadcrumbs:
 ---
 
 
-All content entries are located in the `/project/entries/` folder. Each entry file should be placed in its own folder.
+All content entries are located in the `/project/entries/` folder.
+
+Each entry file `entry.md` should be placed in its own folder.
 
 Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
 
