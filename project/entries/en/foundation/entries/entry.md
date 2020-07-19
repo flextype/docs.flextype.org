@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Concepts"
-    link: "[url]/en/concepts/"
+    title: "Foundation"
+    link: "[url]/en/foundation/"
 ---
 
 Entries are the fundamental building-blocks of your project. We are using jekyll like entries format, it means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
@@ -24,7 +24,7 @@ Here is a basic example:
 
 Between triple-dashed lines, you can set predefined variables or even create custom ones of your own.
 
-When you will fetch entry above with [Content APIs]([url]/en/concepts/content-apis), data will looks like this:
+When you will fetch entry above with [Content APIs]([url]/en/foundation/content-apis), data will looks like this:
 
 ```json
 {

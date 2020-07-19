@@ -6,11 +6,11 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Concepts"
-    link: "[url]/en/concepts/"
+    title: "Foundation"
+    link: "[url]/en/foundation/"
   2:
     title: "Plugins"
-    link: "[url]/en/concepts/plugins/"
+    link: "[url]/en/foundation/plugins/"
 ---
 
 1. Download & Install all required dependencies for PLUGIN_NAME.

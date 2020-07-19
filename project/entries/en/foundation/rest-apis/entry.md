@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Concepts"
-    link: "[url]/en/concepts/"
+    title: "Foundation"
+    link: "[url]/en/foundation/"
 ---
 
 Flextype provides APIs organized around <b>Re</b>presentational <b>S</b>tate <b>T</b>ransfer (REST) for working with your content.

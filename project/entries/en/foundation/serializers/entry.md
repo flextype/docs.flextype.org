@@ -5,8 +5,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Concents"
-    link: "[url]/en/concepts/"
+    title: "Foundation"
+    link: "[url]/en/foundation/"
 ---
 
 ### Topics

@@ -8,6 +8,6 @@ breadcrumbs:
 
 ### Topics
 
-* [Entries](./concepts/Entries)
-* [Plugins](./concepts/Plugins)
-* [Content API's](./concepts/content-apis)
+* [Entries](./foundation/Entries)
+* [Plugins](./foundation/Plugins)
+* [Content API's](./foundation/content-apis)

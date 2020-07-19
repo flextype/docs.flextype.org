@@ -6,11 +6,11 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Concepts"
-    link: "[url]/en/concepts/"
+    title: "Foundation"
+    link: "[url]/en/foundation/"
   2:
     title: "Plugins"
-    link: "[url]/en/concepts/plugins/"
+    link: "[url]/en/foundation/plugins/"
 ---
 
 You can easily access plugin configuration and plugin information by Flextype Core API and Content APIs.

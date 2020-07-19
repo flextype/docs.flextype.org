@@ -6,11 +6,11 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Concents"
-    link: "[url]/en/concepts/"
+    title: "Foundation"
+    link: "[url]/en/foundation/"
   2:
     title: "Serializers"
-    link: "[url]/en/concepts/serializers/"
+    link: "[url]/en/foundation/serializers/"
 on_this_page:
   0:
     title: "JSON Syntax"
@@ -31,7 +31,7 @@ Primarily, JSON is built on two structures:
 * A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
 * An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
 
-We are using JSON sytnax in our [Content APIs]([url]/concepts/content-apis).
+We are using JSON sytnax in our [Content APIs]([url]/foundation/content-apis).
 
 ### <a name="json-syntax"></a> JSON Syntax
 
