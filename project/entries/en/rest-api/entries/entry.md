@@ -58,7 +58,7 @@ GET /api/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_TOKEN
 | --- | --- | --- |
 | id | REQUIRED | Valid Entry ID (slug) |
 | filter | OPTIONAL | A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries. |
-| token | REQUIRED | Valid Content Delivery API token for Entries. |
+| token | REQUIRED | Valid Entries Token. |
 
 ##### Result
 
@@ -86,7 +86,7 @@ GET /api/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_TOKEN
 | --- | --- | --- |
 | id | REQUIRED | Valid Entry ID (slug) |
 | filter | REQUIRED | A set of [valid arguments](#filtering) to search and sort specific needed entries. |
-| token | REQUIRED | Valid Content Delivery API token for Entries. |
+| token | REQUIRED | Valid Entries Token. |
 
 ##### Result
 

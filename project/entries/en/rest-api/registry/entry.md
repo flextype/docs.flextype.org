@@ -36,7 +36,7 @@ GET /api/registry?id=YOUR_REGISTRY_ITEM_ID&token=YOUR_REGISTRY_TOKEN
 | name | |  Description |
 | --- | --- | --- |
 | id | REQUIRED | Valid Entry ID (slug) |
-| token | REQUIRED | Valid Content Delivery API token for Registry. |
+| token | REQUIRED | Valid Registry Token. |
 
 ##### Result
 

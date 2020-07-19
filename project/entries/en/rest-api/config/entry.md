@@ -40,7 +40,7 @@ The Flextype Registry API organized around Representational State Transfer (REST
 
 <div class="file-header">Request</div>
 ```plaintext
-GET /api/delivery/config?config=YOUR_CONFIG&key=YOUR_CONFIG_ITEM_ID&token=YOUR_CONFIG_TOKEN
+GET /api/config?config=YOUR_CONFIG&key=YOUR_CONFIG_ITEM_ID&token=YOUR_CONFIG_TOKEN
 ```
 
 ##### Query
@@ -61,7 +61,7 @@ Fetch Flextype Version from Flextype Config
 
 <div class="file-header">Request</div>
 ```http
-GET /api/delivery/config?config=flextype&id=timezone&token=efe1e36e4d60fcd547e22eb9f795dff9
+GET /api/config?config=flextype&id=timezone&token=efe1e36e4d60fcd547e22eb9f795dff9
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
@@ -79,7 +79,7 @@ GET /api/delivery/config?config=flextype&id=timezone&token=efe1e36e4d60fcd547e22
 
 <div class="file-header">Request</div>
 ```http
-POST /api/management/config
+POST /api/config
 ```
 
 ##### Body
@@ -87,7 +87,7 @@ POST /api/management/config
 | Name | |  Description |
 | --- | --- | --- |
 | config | REQUIRED | Unique identifier of the config namespace. |
-| token | REQUIRED | Valid Content Management API token for Config. |
+| token | REQUIRED | Valid Config Token. |
 | access_token | REQUIRED | Valid Access token. |
 | data | REQUIRED | Data to store for the config. |
 
@@ -100,7 +100,7 @@ Create new config item **slogan**
 
 <div class="file-header">Request</div>
 ```http
-POST /api/management/config
+POST /api/config
 ```
 
 <div class="file-header">Body</div>
@@ -130,7 +130,7 @@ POST /api/management/config
 
 <div class="file-header">Request</div>
 ```http
-PATCH /api/management/config
+PATCH /api/config
 ```
 
 ##### Body
@@ -138,7 +138,7 @@ PATCH /api/management/config
 | Name | |  Description |
 | --- | --- | --- |
 | config | REQUIRED | Unique identifier of the config namespace. |
-| token | REQUIRED | Valid Content Management API token for Config. |
+| token | REQUIRED | Valid Config Token. |
 | access_token | REQUIRED | Valid Access token. |
 | data | REQUIRED | Data to store for the config. |
 
@@ -151,7 +151,7 @@ Update content for entry **slogan**
 
 <div class="file-header">Request</div>
 ```http
-PATCH /api/management/config
+PATCH /api/config
 ```
 
 <div class="file-header">Body</div>
@@ -180,8 +180,8 @@ PATCH /api/management/config
 ### <a name="delete-config-item"></a> Delete config item
 
 <div class="file-header">Request</div>
-```plaintext
-DELETE /api/management/config
+```http
+DELETE /api/config
 ```
 
 ##### Body
@@ -190,7 +190,7 @@ DELETE /api/management/config
 | --- | --- | --- |
 | config | REQUIRED | Unique identifier of the config namespace. |
 | data | REQUIRED | Data to store for the config. |
-| token | REQUIRED | Valid Content Management API token for Config. |
+| token | REQUIRED | Valid Config Token. |
 | access_token | REQUIRED | Valid Access token. |
 
 ##### Result
@@ -201,8 +201,8 @@ Returns an empty body with HTTP status 204
 Delete entry **slogan** in **flextype** config
 
 <div class="file-header">Request</div>
-```plaintext
-DELETE /api/management/config
+```http
+DELETE /api/config
 ```
 
 <div class="file-header">Body</div>
