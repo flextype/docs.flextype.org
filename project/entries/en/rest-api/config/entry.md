@@ -39,7 +39,7 @@ The Flextype Registry API organized around Representational State Transfer (REST
 ### <a name="fetch-config-item"></a> Fetch config item
 
 <div class="file-header">Request</div>
-```plaintext
+```http
 GET /api/config?config=YOUR_CONFIG&key=YOUR_CONFIG_ITEM_ID&token=YOUR_CONFIG_TOKEN
 ```
 
