@@ -118,7 +118,7 @@ This variable allows you to specifically set a modified_at date associated with 
 | --- | --- | --- |
 | `parsers` |  | A list of parsers with options |
 
-```
+```yaml
 parsers:
   markdown:
     enabled: true
@@ -127,7 +127,7 @@ parsers:
   shortcodes:
     enabled: true
     cache: true
-    fields: "*"
+    fields: ['content', 'title', 'description']
 ```
 
 #### Slug

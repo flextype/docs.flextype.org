@@ -10,9 +10,9 @@ breadcrumbs:
     link: "[url]/en/foundation/"
 ---
 
-Entries are the fundamental building-blocks of your project. We are using jekyll like entries format, it means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
+Entries are the fundamental building-blocks of your project. We are using jekyll like entries format. It means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
 
-Here is a basic example:
+Here is a simple entry example:
 
 <div class="file-header"><i class="far fa-file-alt"></i> project/entries/my-entry/entry.md</div>
 
@@ -22,9 +22,9 @@ Here is a basic example:
     ---
     My entry content.
 
-Between triple-dashed lines, you can set predefined variables or even create custom ones of your own.
+Between triple-dashed lines, you can set [predefined variables](./entries/variables) or even create custom ones of your own.
 
-When you will fetch entry above with [Content APIs]([url]/en/foundation/content-apis), data will looks like this:
+When you will fetch entry above with Flextype [Entries Rest API]([url]/en/rest-api/entries), entry data will looks like this:
 
 ```json
 {
