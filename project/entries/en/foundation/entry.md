@@ -1,5 +1,5 @@
 ---
-title: Concepts
+title: Foundation
 breadcrumbs:
   0:
     title: "Documentation"

@@ -24,15 +24,15 @@ txt:
       coc: Code of Conduct
       getting_help: Getting Help
       license: License
-    concepts:
-      title: Concepts
+    foundation:
+      title: Foundation
       entries: Entries
       plugins: Plugins
       parsers: Parsers
       serializers: Serializers
       rest_apis: Rest APIs
       perfomance: Performance
-    api:
+    rest_api:
      title: Rest API
      introduction: Introduction
      entries: Entries
@@ -41,44 +41,6 @@ txt:
      files: Files
      folders: Folders
      images: Images
-    content:
-      title: Content
-      entries: Entries
-      markdown: Markdown
-      media: Media
-      fieldsets: Fieldsets
-      snippets: Snippets
-      shortcodes: Shortcodes
-    themes:
-      title: Themes
-      theme_installation: Theme Installation
-      twig_filters_functions: Twig Filters & Functions
-      theme_variables: Theme Variables
-      theme_configuration: Theme Configuration
-      entries_fetch: Entries Fetch
-    plugins:
-      title: Plugins
-      configuration: Plugin Configuration
-      event_hooks: "Event Hooks"
-      toasts_notifications: Toast Notifications
-      installation: Plugin Installation
-      navigation: Navigation
-    cookbook:
-      title: Cookbook
-      tutorials:
-        title: Tutorials
-        blog: Blog
-        team_members: Team Members
-      setup:
-        title: Setup
-      templating:
-        title: Templating
-    advanced:
-      title: Advanced
-      performance_and_caching: Performance & Caching
-      password_recovery: Password recovery
-      yaml_syntax: YAML Syntax
-      api: Flextype API's
 ---
 
 Flextype is an open-source **Hybrid Content Management System** with the freedom of a headless CMS and with the full functionality of a traditional CMS. A true hybrid CMS gives you the freedom of a Headless CMS ー with the functionality and ease-of-use of a traditional content management system. Whether you’re looking to build headless, traditional, or a combination of both Flextype CMS has you covered.
