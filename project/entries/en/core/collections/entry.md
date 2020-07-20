@@ -175,6 +175,8 @@ on_this_page:
 | <a href="#random"><code>random()</code></a> | Returns one or a specified number of items randomly from the collection. |
 | <a href="#shuffle"><code>shuffle()</code></a> | Returns randomly shuffles the items in the collection. |
 | <a href="#slice"><code>slice()</code></a> | Returns a slice of the collection by defining `length` of elements and starting position `offset`.<br><br>If `length` is null it returns all elements from `offset` to the end of the Collection. Keys have to be preserved by this method. Calling this method will only return the selected slice and NOT change the elements contained in the collection slice is called on. |
+| <a href="#count"><code>count()</code></a> | If you want to know how many items match your Criteria, you can call `count()`. |  
+| <a href="#exists"><code>exists()</code></a> | If you just need to check if any item exist in the collection that match the Criteria, you can call `exists()`, which will return either `true` or `false`. |  
 | <a href="#all"><code>all()</code></a> | Returns the underlying array represented by the collection. |  
 
 ##### <a name="collection"></a> `collection()`
@@ -487,6 +489,50 @@ $movies = collection($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->slice(0, 5);
+```
+
+##### <a name="count"></a> `count()`
+
+If you want to know how many items match your Criteria, you can call `count()`.
+
+**Examples**
+
+Count all drama movies where field directed_by eq Denis Villeneuve.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->count();
+```
+
+##### <a name="exists"></a> `exists()`
+
+If you just need to check if any item exist in the collection that match the Criteria, you can call `exists()`, which will return either `true` or `false`.
+
+**Examples**
+
+Check if any drama movies where field directed_by eq Denis Villeneuve are exists.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->exists();
+
+if ($result) {
+    // do something...
+}
 ```
 
 ##### <a name="all"></a> `all()`
