@@ -14,7 +14,6 @@ breadcrumbs:
 * [Installation](./getting-started/installation)
 * [Configuration](./getting-started/configuration)
 * [Folder Structure](./getting-started/folder-structure)
-* [PHP Constants](./getting-started/php-constants)
 * [Code of Conduct](./getting-started/coc)
 * [Getting Help](./getting-started/getting-help)
 * [License](./getting-started/license)
