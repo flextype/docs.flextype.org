@@ -67,104 +67,88 @@ breadcrumbs:
                 Filter your collection by checking if your custom attribute (field) has a value that is greater than one of the values provided.
             </td>
         </tr>
+        <tr>
+            <td>
+                <code>lte</code> <code>&lt;=</code>
+            </td>
+            <td>
+                <b>Lower than or equal to</b><br><br>
+
+                Filter your collection by checking if your custom attribute (field) has a value that is lower than or equal to one of the values provided.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>gt</code> <code>&gt;=</code>
+            </td>
+            <td>
+                <b>Greater than or equal to</b><br><br>
+
+                Filter your collection by checking if your custom attribute (field) has a value that is greater than or equal to one of the values provided.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>in</code>
+            </td>
+            <td>
+                <b>Included in an array of values</b><br><br>
+
+                Filter your collection by checking if your custom array attribute (field) contains one of the values provided. As soon as one of the provided values separated with, are in the array field, the entry object will be in the response.<br><br>
+
+                <b>Use-cases:</b><br>
+                Get all content entries that is refered to others in a N:N relationship or if you want to get all entries with a specific value in one of it's array fields.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>nin</code>
+            </td>
+            <td>
+                <b>Isn't included in an array of values</b><br><br>
+
+                Filter your entries by checking if your custom array attribute (field) is not contains one of the values provided.<br><br>
+
+                <b>Use-cases:</b><br>
+                Get all content collection that is not refered to others in a N:N relationship or if you want to get all entries with a specific value that is not in one of it's array fields.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>contains</code> <code>like</code>
+            </td>
+            <td>
+                <b>Contains the substring</b><br><br>
+
+                Filter your entries by checking if your custom attribute (field) has a value that is "like" the value provided.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>member_of</code>
+            </td>
+            <td>
+                <b>Member of</b><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>member_of</code>
+            </td>
+            <td>
+                <b>Start with</b><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>ends_with</code>
+            </td>
+            <td>
+                <b>Ends with</b><br><br>
+            </td>
+        </tr>
     </tbody>
 </table>
-
-* `eq` or `=` - Equal to
-* `neq` or `<>` or `!=` - Not equal to
-* `lt` or `<` - Lower than
-* `gt` or `>` - Greater than
-* `lte` or `<=` - Lower than or equal to
-* `gte` or `>=` - Greater than or equal to
-* `in` - Included in an array of values
-* `nin` - Isn't included in an array of values
-* `contains` or `like` - Contains the substring
-* `member_of` - Member of
-* `start_with` - Start with
-* `ends_with` - Ends with
-
-#### Operators Details
-
-##### Operator: Equal to
-
-`eq` or `=`
-
-Filter your collection by checking if your custom attribute (field) has a value that is equal to one of the values provided.
-
-##### Use-cases
-
-Get all content entries that is refered to another in a 1:N relationship or if you want to get all entries with a specific value in one of it's fields.
-
-##### Operator: Not equal to
-
-`neq` or `<>` or `!=`
-
-Filter your entries by checking if your custom attribute (field) does not have a value that is equal to one of the values provided.
-
-##### Operator: Lower than
-
-`lt` or `<`
-
-Filter your entries by checking if your custom attribute (field) has a value that is lower than one of the values provided.
-
-##### Operator: Greater than
-
-`gt` or `>`
-
-Filter your entries by checking if your custom attribute (field) has a value that is greater than one of the values provided.
-
-##### Operator: Lower than or equal to
-
-`lte` or `<=`
-
-Filter your entries by checking if your custom attribute (field) has a value that is lower than or equal to one of the values provided.
-
-##### Operator: Greater than or equal to
-
-`gte` or `>=`
-
-Filter your collection by checking if your custom attribute (field) has a value that is greater than or equal to one of the values provided.
-
-
-##### Operator: Included in an array of values
-
-`in`
-
-Filter your entries by checking if your custom array attribute (field) contains one of the values provided. As soon as one of the provided values separated with, are in the array field, the entry object will be in the response.
-
-##### Use-cases
-
-Get all content entries that is refered to others in a N:N relationship or if you want to get all entries with a specific value in one of it's array fields.
-
-
-##### Operator: Isn't included in an array of values
-
-`nin`
-
-Filter your entries by checking if your custom array attribute (field) is not contains one of the values provided.
-
-##### Use-cases
-
-Get all content entries that is not refered to others in a N:N relationship or if you want to get all entries with a specific value that is not in one of it's array fields.
-
-##### Operator: Contains the substring
-
-`contains` or `like`
-
-Filter your entries by checking if your custom attribute (field) has a value that is "like" the value provided.
-
-##### Operator: Member of
-
-`member_of`
-
-##### Operator: Start with
-
-`start_with`
-
-##### Operator: Ends with
-
-`ends_with`
-
 
 ### Public Methods
 
