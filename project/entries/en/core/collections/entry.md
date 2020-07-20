@@ -163,19 +163,19 @@ on_this_page:
 |---|---|
 | <a href="#collection"><code>collection()</code></a> | Returns a new `Collection` instance with the items currently in the collection. |
 | <a href="#merge"><code>merge()</code></a> | Merges the given array or collection with the original collection. If a string key in the given items matches a string key in the original collection, the given items's value will overwrite the value in the original collection. |
-| <a href="#where"><code>`where()`</code></a> | Sets the where expression to evaluate when this Criteria is searched for. |
-| `andWhere()` | Appends the where expression to evaluate when this Criteria is searched for using an AND with previous expression. |
-| `orWhere()` | Appends the where expression to evaluate when this Criteria is searched for using an OR with previous expression. |
-| `orderBy()` | Sets the ordering of the result of this Criteria. Keys are field and values are the order, being either ASC or DESC. |
-| `setFirstResult()` | Set the number of first result that this Criteria should return. |
-| `limit()` | Sets the max results that this Criteria should return. |
-| `first()` | Returns the current first result option of this Criteria. |
-| `last()` | Returns the current last result option of this Criteria.  |
-| `next()` | Returns a single item of result. Moves the internal iterator position to the next element and returns this element. |
-| `random()` | Returns one or a specified number of items randomly from the collection. |
-| `shuffle()` | Returns randomly shuffles the items in the collection |
-| `slice()` | Returns a slice of the collection starting at the given index: |
-| `all()` | Returns the underlying array represented by the collection |  
+| <a href="#where"><code>where()</code></a> | Sets the where expression to evaluate when this Criteria is searched for. |
+| <a href="#and-where"><code>andWhere()</code></a> | Appends the where expression to evaluate when this Criteria is searched for using an AND with previous expression. |
+| <a href="#or-where"><code>orWhere()</code></a> | Appends the where expression to evaluate when this Criteria is searched for using an OR with previous expression. |
+| <a href="#order-by"><code>orderBy()</code></a> | Sets the ordering of the result of this Criteria. Keys are field and values are the order, being either ASC or DESC. |
+| <a href="#set-first-result"><code>setFirstResult()</code></a> | Set the number of first result that this Criteria should return. |
+| <a href="#limit"><code>limit()</code></a> | Sets the max results that this Criteria should return. |
+| <a href="#first"><code>first()</code></a> | Returns the current first result option of this Criteria. |
+| <a href="#last"><code>last()</code></a> | Returns the current last result option of this Criteria.  |
+| <a href="#next"><code>next()</code></a> | Returns a single item of result. Moves the internal iterator position to the next element and returns this element. |
+| <a href="#random"><code>random()</code></a> | Returns one or a specified number of items randomly from the collection. |
+| <a href="#shuffle"><code>shuffle()</code></a> | Returns randomly shuffles the items in the collection. |
+| <a href="#slice"><code>slice()</code></a> | Returns a slice of the collection by defining `length` of elements and starting position `offset`.<br><br>If `length` is null it returns all elements from `offset` to the end of the Collection. Keys have to be preserved by this method. Calling this method will only return the selected slice and NOT change the elements contained in the collection slice is called on. |
+| <a href="#all"><code>all()</code></a> | Returns the underlying array represented by the collection. |  
 
 ##### <a name="collection"></a> `collection()`
 
@@ -235,4 +235,276 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection where field stars contains Amy Adams
 $movies = collection($drama)->where('stars', 'contains', 'Amy Adams');
+```
+
+##### <a name="and-where"></a> `andWhere()`
+
+Appends the where expression to evaluate when this Criteria is searched for using an AND with previous expression.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and where field year eq 2020
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and where field year eq 2020
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+            ->andWhere('year', 'eq', 2020);
+```
+
+Collect drama movies where field directed_by eq Denis Villeneuve and where field year eq 2020 and where field stars contains Amy Adams
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and where field year eq 2020
+// and where field stars contains Amy Adams
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+            ->andWhere('year', 'eq', 2020);
+            ->andWhere('year', 'stars', 'Amy Adams');
+```
+
+##### <a name="or-where"></a> `orWhere()`
+
+Appends the where expression to evaluate when this Criteria is searched for using an OR with previous expression.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and where field year eq 2020 or where year eq 2019
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and where field year eq 2020
+// or where field year eq 2020
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+            ->andWhere('year', 'eq', 2020);
+            ->orWhere('year', 'eq', 2019);
+```
+
+##### <a name="order-by"></a> `orderBy()`
+
+Sets the ordering of the result of this Criteria. Keys are field and values are the order, being either ASC or DESC.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and order by year ASC.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and order by year ASC
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+            ->orderBy('year', 'ASC');
+```
+
+Collect drama movies where field directed_by eq Denis Villeneuve and order by year DESC.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and order by year DESC
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+            ->orderBy('year', 'DESC');
+```
+
+##### <a name="set-first-result"></a> `setFirstResult()`
+
+Set the number of first result that this Criteria should return.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and set first result 5.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and set first result 5
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+            ->setFirstResult(5);
+```
+
+##### <a name="limit"></a> `limit()`
+
+Sets the max results that this Criteria should return.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and set limit 10.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and set limit 10
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+            ->limit(10);
+```
+
+##### <a name="first"></a> `first()`
+
+Returns the current first result option of this Criteria.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and return first option of this Criteria.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->first();
+```
+
+##### <a name="last"></a> `last()`
+
+Returns the current last result option of this Criteria.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and return last option of this Criteria.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->last();
+```
+
+##### <a name="next"></a> `next()`
+
+Returns a single item of result. Moves the internal iterator position to the next element and returns this element.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and moves the internal iterator position to the next element and returns this element.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->next();
+```
+
+##### <a name="random"></a> `random()`
+
+Returns one or a specified number of items randomly from the collection.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve and return 3 random items.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->random(3);
+```
+
+##### <a name="shuffle"></a> `shuffle()`
+
+Returns randomly shuffles the items in the collection.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve, shuffle the items and return them all.
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->shuffle();
+```
+
+##### <a name="slice"></a> `slice()`
+
+Returns a slice of the collection by defining `length` of elements and starting position `offset`.<br><br>If `length` is null it returns all elements from `offset` to the end of the Collection. Keys have to be preserved by this method. Calling this method will only return the selected slice and NOT change the elements contained in the collection slice is called on.
+
+**Examples**
+
+Collect drama movies where field directed_by eq Denis Villeneuve, and set offset 0 and length 5
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->slice(0, 5);
+```
+
+##### <a name="all"></a> `all()`
+
+Returns the underlying array represented by the collection.
+
+**Examples**
+
+Collect all drama movies where field directed_by eq Denis Villeneuve
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+$movies = collection($drama)
+            ->where('directed_by', 'eq', 'Denis Villeneuve')
+
+$result = $movies->all();
 ```
