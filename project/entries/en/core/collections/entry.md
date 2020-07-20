@@ -161,7 +161,7 @@ on_this_page:
 
 | Method | Description |
 |---|---|
-| <a href="#collection"><code>collection()</code></a> | Returns a new `Collection` instance with the items currently in the collection. |
+| <a href="#collection"><code>collect()</code></a> | Returns a new `Collection` instance with the items currently in the collection. |
 | <a href="#merge"><code>merge()</code></a> | Merges the given array or collection with the original collection. If a string key in the given items matches a string key in the original collection, the given items's value will overwrite the value in the original collection. |
 | <a href="#where"><code>where()</code></a> | Sets the where expression to evaluate when this Criteria is searched for. |
 | <a href="#and-where"><code>andWhere()</code></a> | Appends the where expression to evaluate when this Criteria is searched for using an AND with previous expression. |
@@ -179,7 +179,7 @@ on_this_page:
 | <a href="#exists"><code>exists()</code></a> | If you just need to check if any item exist in the collection that match the Criteria, you can call `exists()`, which will return either `true` or `false`. |  
 | <a href="#all"><code>all()</code></a> | Returns the underlying array represented by the collection. |  
 
-##### <a name="collection"></a> `collection()`
+##### <a name="collection"></a> `collect()`
 
 Returns a new `Collection` instance with the items currently in the collection.
 
@@ -192,7 +192,7 @@ Collect movies
 $movies_collection = $flextype->entries->fetchCollection('movies');
 
 // Create movies collection
-$movies = collection($movies_collection);
+$movies = collect($movies_collection);
 ```
 
 ##### <a name="merge"></a> `merge()`
@@ -210,7 +210,7 @@ $drama   = $flextype->entries->fetchCollection('movies/drama');
 $fantasy = $flextype->entries->fetchCollection('movies/fantasy');
 
 // Create movies collection with comedy, drama and fantasy
-$movies = collection($comedy)->merge($drama)->merge($fantasy);
+$movies = collect($comedy)->merge($drama)->merge($fantasy);
 ```
 
 ##### <a name="where"></a> `where()`
@@ -226,7 +226,7 @@ Collect drama movies where field directed_by eq Denis Villeneuve
 $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection where field directed_by eq Denis Villeneuve
-$movies = collection($drama)->where('directed_by', 'eq', 'Denis Villeneuve');
+$movies = collect($drama)->where('directed_by', 'eq', 'Denis Villeneuve');
 ```
 
 Collect drama movies where field stars contains Amy Adams
@@ -236,7 +236,7 @@ Collect drama movies where field stars contains Amy Adams
 $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection where field stars contains Amy Adams
-$movies = collection($drama)->where('stars', 'contains', 'Amy Adams');
+$movies = collect($drama)->where('stars', 'contains', 'Amy Adams');
 ```
 
 ##### <a name="and-where"></a> `andWhere()`
@@ -254,7 +254,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
 // and where field year eq 2020
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->andWhere('year', 'eq', 2020);
 ```
@@ -269,7 +269,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 // where field directed_by eq Denis Villeneuve
 // and where field year eq 2020
 // and where field stars contains Amy Adams
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->andWhere('year', 'eq', 2020);
             ->andWhere('year', 'stars', 'Amy Adams');
@@ -291,7 +291,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 // where field directed_by eq Denis Villeneuve
 // and where field year eq 2020
 // or where field year eq 2020
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->andWhere('year', 'eq', 2020);
             ->orWhere('year', 'eq', 2019);
@@ -312,7 +312,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
 // and order by year ASC
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->orderBy('year', 'ASC');
 ```
@@ -326,7 +326,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
 // and order by year DESC
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->orderBy('year', 'DESC');
 ```
@@ -346,7 +346,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
 // and set first result 5
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->setFirstResult(5);
 ```
@@ -366,7 +366,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
 // and set limit 10
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->limit(10);
 ```
@@ -385,7 +385,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->first();
@@ -405,7 +405,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->last();
@@ -425,7 +425,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->next();
@@ -445,7 +445,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->random(3);
@@ -465,7 +465,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->shuffle();
@@ -485,7 +485,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->slice(0, 5);
@@ -505,7 +505,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->count();
@@ -525,7 +525,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->exists();
@@ -549,7 +549,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
-$movies = collection($drama)
+$movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->all();
