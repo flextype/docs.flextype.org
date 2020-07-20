@@ -57,7 +57,7 @@ GET /api/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_TOKEN
 | Name | |  Description |
 | --- | --- | --- |
 | id | REQUIRED | Valid Entry ID (slug) |
-| filter | OPTIONAL | A set of [valid arguments](http://docs.flextype.org/en/themes/entries-fetch) to search and sort specific needed entries. |
+| filter | OPTIONAL | A set of [valid arguments](#filtering) to search and sort specific needed entries. |
 | token | REQUIRED | Valid Entries Token. |
 
 ##### Result
@@ -265,7 +265,7 @@ POST /api/entries
 | Name | |  Description |
 | --- | --- | --- |
 | id | REQUIRED | Unique identifier of the entry. |
-| token | REQUIRED | Valid Content Management API token for Entries. |
+| token | REQUIRED | Valid Entries token. |
 | access_token | REQUIRED | Valid Access token. |
 | data | REQUIRED | Data to store for the entry. |
 
@@ -325,7 +325,7 @@ PATCH /api/entries
 | Name | |  Description |
 | --- | --- | --- |
 | id | REQUIRED | Unique identifier of the entry. |
-| token | REQUIRED | Valid Content Management API token for Entries. |
+| token | REQUIRED | Valid Entries token. |
 | access_token | REQUIRED | Valid Access token. |
 | data | REQUIRED | Data to store for the entry. |
 
@@ -385,7 +385,7 @@ PUT /api/entries
 | --- | --- | --- |
 | id | REQUIRED | Unique identifier of the entry. |
 | new_id | REQUIRED | New Unique identifier of the entry. |
-| token | REQUIRED | Valid Content Management API token for Entries. |
+| token | REQUIRED | Valid Entries token. |
 | access_token | REQUIRED | Valid Access token. |
 
 ##### Result
@@ -478,7 +478,7 @@ PUT /api/entries/copy
 | --- | --- | --- |
 | id | REQUIRED | Unique identifier of the entry. |
 | new_id | REQUIRED | New Unique identifier of the entry. |
-| token | REQUIRED | Valid Content Management API token for Entries. |
+| token | REQUIRED | Valid Entries token. |
 | access_token | REQUIRED | Valid Access token. |
 
 ##### Result
@@ -534,7 +534,7 @@ DELETE /api/entries
 | Name | |  Description |
 | --- | --- | --- |
 | id | REQUIRED | Unique identifier of the entry. |
-| token | REQUIRED | Valid Content Management API token for Entries. |
+| token | REQUIRED | Valid Entries token. |
 | access_token | REQUIRED | Valid Access token. |
 
 ##### Result

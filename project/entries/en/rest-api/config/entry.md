@@ -25,7 +25,7 @@ on_this_page:
     link: "delete-config-item"
 ---
 
-The Flextype Registry API organized around Representational State Transfer (REST) for delivering data from Flextype registry to apps, websites and other. Registry is delivered as JSON data.
+The Flextype Config API organized around Representational State Transfer (REST) for delivering data from Flextype config to apps, websites and other. Config is delivered as JSON data.
 
 #### <a name="endpoints"></a> Endpoints
 
