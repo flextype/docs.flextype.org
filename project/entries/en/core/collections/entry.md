@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Foundation"
-    link: "[url]/en/foundation/"
+    title: "Core Concepts"
+    link: "[url]/en/core/"
 on_this_page:
   0:
     title: "Operators"

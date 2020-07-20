@@ -24,11 +24,15 @@ txt:
       coc: Code of Conduct
       getting_help: Getting Help
       license: License
-    foundation:
-      title: Foundation
+    core:
+      title: Core Concepts
       entries: Entries
       plugins: Plugins
       collections: Collections
+      config: Config
+      registry: Registry
+      cache: Cache
+      media: Media
       parsers: Parsers
       serializers: Serializers
     rest_api:

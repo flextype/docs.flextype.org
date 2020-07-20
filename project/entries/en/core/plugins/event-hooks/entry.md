@@ -6,11 +6,11 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Foundation"
-    link: "[url]/en/foundation/"
+    title: "Core Concepts"
+    link: "[url]/en/core/"
   2:
     title: "Plugins"
-    link: "[url]/en/foundation/plugins/"
+    link: "[url]/en/core/plugins/"
 ---
 
 Hooks are a way for one piece of code to interact/modify another piece of code. They make up the foundation for how plugins and themes interact with Flextype.

@@ -6,11 +6,11 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Foundation"
-    link: "[url]/en/foundation/"
+    title: "Core Concepts"
+    link: "[url]/en/core/"
   2:
     title: "Serializers"
-    link: "[url]/en/foundation/serializers/"
+    link: "[url]/en/core/serializers/"
 on_this_page:
   0:
     title: "Basic Rules"

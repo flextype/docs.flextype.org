@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Foundation"
-    link: "[url]/en/foundation/"
+    title: "Core Concepts"
+    link: "[url]/en/core/"
 ---
 
 Entries are the fundamental building-blocks of your project. We are using jekyll like entries format. It means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.

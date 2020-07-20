@@ -6,8 +6,8 @@ breadcrumbs:
     title: "Documentation"
     link: "[url]/en/"
   1:
-    title: "Foundation"
-    link: "[url]/en/foundation/"
+    title: "Core Concepts"
+    link: "[url]/en/core/"
 ---
 
 Plugins are the foundation for adding new features to the Flextype by extending it.
