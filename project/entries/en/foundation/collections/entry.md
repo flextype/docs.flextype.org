@@ -8,9 +8,16 @@ breadcrumbs:
   1:
     title: "Foundation"
     link: "[url]/en/foundation/"
+on_this_page:
+  0:
+    title: "Operators"
+    link: "operators"
+  1:
+    title: "Methods"
+    link: "methods"
 ---
 
-### Operators
+### <a name="operators"></a> Operators
 
 <table>
     <thead>
@@ -150,7 +157,7 @@ breadcrumbs:
     </tbody>
 </table>
 
-### Public Methods
+### <a name="methods"></a> Methods
 
 | Method | Description |
 |---|---|
@@ -169,8 +176,6 @@ breadcrumbs:
 | `shuffle()` | Returns randomly shuffles the items in the collection |
 | `slice()` | Returns a slice of the collection starting at the given index: |
 | `all()` | Returns the underlying array represented by the collection |  
-
-#### Method Details
 
 ##### <a name="collection"></a> `collection()`
 
