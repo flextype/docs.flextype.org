@@ -140,10 +140,10 @@ on_this_page:
         </tr>
         <tr>
             <td>
-                <code>member_of</code>
+                <code>starts_with</code>
             </td>
             <td>
-                <b>Start with</b><br><br>
+                <b>Starts with</b><br><br>
             </td>
         </tr>
         <tr>
