@@ -18,22 +18,25 @@ on_this_page:
   2:
     title: "Custom Variables"
     link: "custom-variables"
+  3:
+    title: "Methods"
+    link: "methods"
 ---
 
 Entries are the fundamental building-blocks of your project. We are using jekyll like entries format. It means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
 
 Here is a simple entry example:
 
-<div class="file-header"><i class="far fa-file-alt"></i> project/entries/movies/sg-1/season-1/episode-6/entry.md</div>
+<div class="file-header"><i class="far fa-file-alt"></i> project/entries/movies/sg-1/season-5/episode-21/entry.md</div>
 
     ---
-    title: Cold Lazarus
-    description: When Jack is injured unintentionally by a crystal alien, the alien duplicates Jack's form and out of fear of retribution tries to heal Jack.
-    director: Ken Girotti
+    title: Meridian
+    description: As Jackson suffers from a fatal dose of radiation, he struggles with the value of his life while his friends deal with the emotional and diplomatic repercussions.
+    director: William Waring
     writers: Brad Wright, Jonathan Glassner
     stars: Richard Dean Anderson, Michael Shanks, Amanda Tapping
     ---
-    SG-1 visits as planet, uninteresting except for unique broken crystals; nobody noticed that when colonel Jack O'Neill touched them, he fainted and was replaced by a copy, which returns to earth in his place. His strange, aloof behavior on the base, is one thing, but Jack's memories also drive him to return to his ex's paternal home, to deal with the great drama in his past  when his beloved kid son accidentally shot himself with his gun. Meanwhile Sam and Daniel compare the crystal sample with the puzzling result of goa'uld weapons elsewhere, and find out about the crystal's amazing powers. Then the real Jack regains conscience and returns to base, but is initially incarcerated as a possible fraud...
+    SG-1 returns from an off-world mission to P9Y-3C3 with Daniel Jackson suffering from what is likely a fatal dose of radiation. On the planet, they dealt with the country of Kelowna and their representative Jonas Quinn. That country was at the same stage of development as the United States in the 1940s and well on their way to creating an atomic weapon using Goa'uld technology found in an ancient temple. Daniel argued against the Kelownans developing such a weapon and is accused of attempting to sabotage the project. As members of the team sit by his deathbed, Daniel receives an unexpected offer from someone they once met off-world.
 
 Between triple-dashed lines, you can set [predefined variables](#default-variables) or even create custom ones of your own.
 
@@ -180,3 +183,20 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
       twitter: "@getflextype"
     ---
     My entry content here.
+
+
+### <a name="methods"></a> Methods
+
+| Method | Description |
+|---|---|
+| <a href="#"><code>fetch()</code></a> | Fetch single entry or collections of entries |
+| <a href="#"><code>fetchSingle()</code></a> | Fetch single entries |
+| <a href="#"><code>fetchCollection()</code></a> | Fetch entries collection |
+| <a href="#"><code>create()</code></a> | Create entry |
+| <a href="#"><code>update()</code></a> | Update entry |
+| <a href="#"><code>rename()</code></a> | Rename entry |
+| <a href="#"><code>copy()</code></a> | Copy entry |
+| <a href="#"><code>delete()</code></a> | Delete entry |
+| <a href="#"><code>has()</code></a> | Check whether entry exists |
+| <a href="#"><code>getFileLocation()</code></a> | Get entry file location |
+| <a href="#"><code>getDirLocation()</code></a> | Get entry directory location |
