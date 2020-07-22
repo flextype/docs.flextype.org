@@ -28,3 +28,9 @@ The good thing is that JSON is a human and machine readable format. So while app
 A JSON document may contains text, curly braces, square brackets, colons, commas, double quotes, and maybe a few other characters.
 
 For more details <a href="[url]/en/core/serializers/json">read the guide for the JSON</a>.
+
+#### FRONTMATTER
+
+Any file that contains a YAML front matter block will be processed by Flextype as a special file. The front matter must be the first thing in the file and must take the form of valid YAML set between triple-dashed lines. Between these triple-dashed lines, you can set predefined variables or even create custom ones of your own.
+
+For more details <a href="[url]/en/core/serializers/frontmatter">read the guide for the FRONTMATTER</a>.
