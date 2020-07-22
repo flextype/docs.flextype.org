@@ -2,9 +2,6 @@
 title: Performance
 description: Flextype is super fast content management system because of its elegance architecture. It is do not use super heavy solutions and libraries to delivery the project content. Flextype caching system is really smart and efficient to deliver project content fast as possible.
 breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
   1:
     title: "Core Concepts"
     link: "[url]/en/core/"

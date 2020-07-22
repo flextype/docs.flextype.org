@@ -2,9 +2,6 @@
 title: Images
 description: The Flextype Images allows the retrieval and manipulation of image files referenced from uploads.
 breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
   1:
     title: "Rest API"
     link: "[url]/en/rest-api/"

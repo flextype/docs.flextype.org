@@ -1,10 +1,6 @@
 ---
 title: Getting Started
 description: Basics Discover what Flextype is all about and the core concepts behind it.
-breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
 ---
 
 ### Topics

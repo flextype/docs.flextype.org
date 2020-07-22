@@ -2,9 +2,6 @@
 title: Installation
 description: Flextype is incredibly easy to set up and get running.
 breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
   1:
     title: "Getting Started"
     link: "[url]/en/getting-started/"

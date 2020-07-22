@@ -2,9 +2,6 @@
 title: SHORTCODE
 description: Shortcode is a small piece of code, indicated by brackets like `[this]`, that performs a dedicated function on your site.
 breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
   1:
     title: "Core Concepts"
     link: "[url]/en/core/"

@@ -1,9 +1,6 @@
 ---
 title: Config
 breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
   1:
     title: "Rest API"
     link: "[url]/en/rest-api/"
