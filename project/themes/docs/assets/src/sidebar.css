@@ -1,8 +1,6 @@
 .sidebar {
     background: white;
     color: black;
-    min-width: 280px;
-    max-width: 280px;
 }
 
 .sidebar li {

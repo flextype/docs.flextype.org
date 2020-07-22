@@ -88,9 +88,9 @@
         {% endblock %}
     </head>
     <body>
-        <div class="w-full flex">
+        <div class="container mx-auto flex">
             <div id="shadow" onclick="hideMenu();" class="hidden z-30 fixed block opacity-75 h-full w-full" style="background: black;"></div>
-            <div id="menu" class="hidden lg:block w-3/12 pl-12 pt-6 pb-10 text-white bg-white sidebar">
+            <div id="menu" class="hidden lg:block w-2/12 pl-6 pt-6 pb-10 text-white bg-white sidebar">
                 <div class="flextype-docs-logo">
                     <h2>FLEXTYPE</h2>
                     <h3>DOCUMENTATION</h3>
@@ -134,7 +134,7 @@
                         <a href="{{ url() }}/{{ locale }}/core/collections" class="no-underline">{{ entry_locale.txt.categories.core.collections }}</a>
                    </li>
                    <li class="{% if entry.slug == locale ~ "/core/parsers" %}active{% endif %}">
-                       <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.core.parsers }}</a>
+                      <a href="{{ url() }}/{{ locale }}/core/parsers" class="no-underline">{{ entry_locale.txt.categories.core.parsers }}</a>
                    </li>
                    <li class="{% if entry.slug == locale ~ "/core/serializers" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/core/serializers" class="no-underline">{{ entry_locale.txt.categories.core.serializers }}</a>
@@ -177,7 +177,7 @@
                    </li>
                </ul>
             </div>
-            <div class="w-full lg:w-9/12">
+            <div class="w-full lg:w-10/12">
                 <a href="javascript:;" onclick="showMenu();" class="absolute lg:hidden right-0 top-0 mr-10 mt-12">
                     <i class="fas fa-bars"></i>
                 </a>
