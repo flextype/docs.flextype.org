@@ -19,4 +19,6 @@ For more details <a href="[url]/en/core/parsers/markdown">read the guide for the
 
 #### SHORTCODE
 
-For more details <a href="[url]/en/core/serializers/shortcode">read the guide for the SHORTCODE</a>.
+Shortcode is a small piece of code, indicated by brackets like `[this]`, that performs a dedicated function on your site. You can place it just about anywhere you’d like, and it will add a specific feature to your page, post, or other content. For example, you can use shortcodes to display galleries, videos, or even playlists.
+
+For more details <a href="[url]/en/core/parsers/shortcode">read the guide for the SHORTCODE</a>.
