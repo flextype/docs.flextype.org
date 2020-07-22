@@ -139,10 +139,10 @@
                        <a href="{{ url() }}/{{ locale }}/core/serializers" class="no-underline">{{ entry_locale.txt.categories.core.serializers }}</a>
                    </li>
                    <li class="{% if entry.slug == locale ~ "/core/config" %}active{% endif %}">
-                       <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.core.config }}</a>
+                       <a href="{{ url() }}/{{ locale }}/core/config" class="no-underline">{{ entry_locale.txt.categories.core.config }}</a>
                    </li>
                    <li class="{% if entry.slug == locale ~ "/core/registry" %}active{% endif %}">
-                       <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.core.registry }}</a>
+                        <a href="{{ url() }}/{{ locale }}/core/registry" class="no-underline">{{ entry_locale.txt.categories.core.registry }}</a>
                    </li>
                    <li class="{% if entry.slug == locale ~ "/core/cache" %}active{% endif %}">
                        <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.core.cache }}</a>
