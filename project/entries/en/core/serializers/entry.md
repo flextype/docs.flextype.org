@@ -9,7 +9,22 @@ breadcrumbs:
     link: "[url]/en/core/"
 ---
 
-### Topics
+#### YAML
 
-* [Yaml](./serializers/yaml)
-* [JSON](./serializers/json)
+YAML (YAML Ain't Markup) is a human friendly data serialization language.
+
+Flextype uses YAML because it's as close to plain English as data serialization and configuration formats get. It has no curly braces, it allows you to omit quotation marks for strings in most cases, and it relies on indentation for structure, which makes it incredibly readable compared to other languages, such as JSON and XML.
+
+YAML is used extensively in Flextype for its configuration files, fieldsets, and also in entries settings.
+
+For more details <a href="[url]/en/core/serializers/yaml">read the guide for the YAML</a>.
+
+#### JSON
+
+JSON (JavaScript Object Notation) is most widely used data format for data interchange on the web. This data interchange can happen between two computers applications at different geographical locations or running within same hardware machine.
+
+The good thing is that JSON is a human and machine readable format. So while applications/libraries can parse the JSON data – humans can also look at data and derive meaning from it.
+
+A JSON document may contains text, curly braces, square brackets, colons, commas, double quotes, and maybe a few other characters.
+
+For more details <a href="[url]/en/core/serializers/json">read the guide for the JSON</a>.
