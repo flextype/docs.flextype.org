@@ -189,14 +189,177 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
 
 | Method | Description |
 |---|---|
-| <a href="#"><code>fetch()</code></a> | Fetch single entry or collections of entries |
-| <a href="#"><code>fetchSingle()</code></a> | Fetch single entries |
-| <a href="#"><code>fetchCollection()</code></a> | Fetch entries collection |
-| <a href="#"><code>create()</code></a> | Create entry |
-| <a href="#"><code>update()</code></a> | Update entry |
-| <a href="#"><code>rename()</code></a> | Rename entry |
-| <a href="#"><code>copy()</code></a> | Copy entry |
-| <a href="#"><code>delete()</code></a> | Delete entry |
-| <a href="#"><code>has()</code></a> | Check whether entry exists |
-| <a href="#"><code>getFileLocation()</code></a> | Get entry file location |
-| <a href="#"><code>getDirLocation()</code></a> | Get entry directory location |
+| <a href="#fetch"><code>fetch()</code></a> | Fetch single entry or collections of entries |
+| <a href="#fetch-single"><code>fetchSingle()</code></a> | Fetch single entries |
+| <a href="#fetch-collection"><code>fetchCollection()</code></a> | Fetch entries collection |
+| <a href="#create"><code>create()</code></a> | Create entry |
+| <a href="#update"><code>update()</code></a> | Update entry |
+| <a href="#rename"><code>rename()</code></a> | Rename entry |
+| <a href="#copy"><code>copy()</code></a> | Copy entry |
+| <a href="#delete"><code>delete()</code></a> | Delete entry |
+| <a href="#has"><code>has()</code></a> | Check whether entry exists |
+| <a href="#getFileLocation"><code>getFileLocation()</code></a> | Get entry file location |
+| <a href="#getDirLocation"><code>getDirLocation()</code></a> | Get entry directory location |
+
+
+##### <a name="fetch"></a> `fetch()`
+
+Fetch single entry or collections of entries.
+
+**Examples**
+
+Fetch single entry `movies/sg-1/season-5/episode-21`
+
+```php
+// Fetch single entry: movies/sg-1/season-5/episode-21
+$data = $flextype->entries->fetch('movies/sg-1/season-5/episode-21');
+
+// Fetch collections of entries episodes in movies/sg-1/season-5
+$data = $flextype->entries->fetch('movies/sg-1/season-5', true);
+
+// Fetch collections of entries in movies/sg-1 including all episodes.
+$data = $flextype->entries->fetch('movies/sg-1', true, true);
+```
+
+##### <a name="fetchSingle"></a> `fetchSingle()`
+
+Fetch single entry.
+
+**Examples**
+
+Fetch single entry `movies/sg-1/season-5/episode-21`
+
+```php
+$data = $flextype->entries->fetchSingle('movies/sg-1/season-5/episode-21');
+```
+
+##### <a name="fetchCollection"></a> `fetchCollection()`
+
+Fetch entries collection.
+
+**Examples**
+
+Fetch collections of entries episodes in `movies/sg-1/season-5`
+
+```php
+$data = $flextype->entries->fetchCollection('movies/sg-1/season-5');
+```
+
+Fetch collections of entries in `movies/sg-1` including all episodes.
+
+```php
+$data = $flextype->entries->fetchCollection('movies/sg-1/season-5', true);
+```
+
+##### <a name="create"></a> `create()`
+
+Create entry.
+
+**Examples**
+
+Create new entry `episode-22` in `movies/sg-1/season-5`
+
+```php
+$data = [
+                'title' => 'Revelations',
+                'description' => 'While still dealing with the loss of Daniel Jackson the SGC is contacted by the Asgard who require assistance dealing with Anubis, who seems to have new shield technology that can repel Asgard weapons.',
+                'director' => 'Martin Wood',
+                'writers' => 'Brad Wright, Jonathan Glassner',
+                'stars' => 'Richard Dean Anderson, Michael Shanks, Amanda Tapping',
+                'content' => 'Osiris engages in space combat with Thor over a violation of the protected planets treaty. Freyr arrives at the SGC bringing news of Thor\'s death and asking SG-1 to mount a rescue mission to retrieve an Asgard scientist from the planet in question. Upon their arrival Heimdall informs them that Thor still lives and has been taken captive by the Goa\'uld. O\'Neill and Teal\'c transport over to the mothership to rescue him from the clutches of Anubis.'
+        ];
+
+
+$flextype->entries->create('movies/sg-1/season-5/episode-22', $data);
+```
+
+##### <a name="update"></a> `update()`
+
+Update entry.
+
+**Examples**
+
+Update entry `episode-22` in `movies/sg-1/season-5`
+
+```php
+$data = ['soundtracks' => 'Joel Goldsmith'];
+
+
+$flextype->entries->update('movies/sg-1/season-5/episode-22', $data);
+```
+
+##### <a name="rename"></a> `rename()`
+
+Rename entry.
+
+**Examples**
+
+Rename entry `episode-22` to `episode-23` in `movies/sg-1/season-5`
+
+```php
+$flextype->entries->rename('movies/sg-1/season-5/episode-22',
+                                       'movies/sg-1/season-5/episode-23');
+```
+
+##### <a name="copy"></a> `copy()`
+
+Copy entry.
+
+**Examples**
+
+Copy entry `episode-23` to `episode-22` in `movies/sg-1/season-5`
+
+```php
+$flextype->entries->rename('movies/sg-1/season-5/episode-23',
+                                       'movies/sg-1/season-5/episode-22');
+```
+
+##### <a name="delete"></a> `delete()`
+
+Delete entry.
+
+**Examples**
+
+Delete entry `episode-23` in `movies/sg-1/season-5`
+
+```php
+$flextype->entries->delete('movies/sg-1/season-5/episode-23');
+```
+
+##### <a name="has"></a> `has()`
+
+Check whether entry exists.
+
+**Examples**
+
+Check whether entry `episode-23` exists in `movies/sg-1/season-5`
+
+```php
+if ($flextype->entries->has('movies/sg-1/season-5/episode-23')) {
+    // do something...
+}
+```
+
+##### <a name="getFileLocation"></a> `getFileLocation()`
+
+Get entry file location
+
+**Examples**
+
+Check whether entry `episode-23` exists in `movies/sg-1/season-5`
+
+```php
+$data = $flextype->entries->getFileLocation('movies/sg-1/season-5/episode-23');
+```
+
+##### <a name="getDirLocation"></a> `getDirLocation()`
+
+Get entry directory location
+
+**Examples**
+
+Get entry `episode-23` exists in `movies/sg-1/season-5`
+
+```php
+$data = $flextype->entries->getDirLocation('movies/sg-1/season-5/episode-23');
+```
