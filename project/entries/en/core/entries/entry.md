@@ -187,7 +187,7 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
 | Method | Description |
 |---|---|
 | <a href="#fetch"><code>fetch()</code></a> | Fetch single entry or collections of entries |
-| <a href="#fetch-single"><code>fetchSingle()</code></a> | Fetch single entries |
+| <a href="#fetch-single"><code>fetchSingle()</code></a> | Fetch single entry |
 | <a href="#fetch-collection"><code>fetchCollection()</code></a> | Fetch entries collection |
 | <a href="#create"><code>create()</code></a> | Create entry |
 | <a href="#update"><code>update()</code></a> | Update entry |
