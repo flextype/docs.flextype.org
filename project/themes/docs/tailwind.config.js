@@ -22,13 +22,7 @@ module.exports = {
     },
     extend: {
         borderWidth: {
-            '1': '1px',
-            '2': '2px',
             '3': '3px'
-        },
-        borderRadius: {
-            'full': '9999px',
-            'lg': '10px'
         }
     }
   },

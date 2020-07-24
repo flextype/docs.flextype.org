@@ -2,6 +2,9 @@
 title: Getting Help
 description: There are several channels to reach the developers and the Flextype community to get direct assistance.
 breadcrumbs:
+  0:
+    title: "Documentation"
+    link: "[url]/en/"
   1:
     title: "Getting Started"
     link: "[url]/en/getting-started/"
