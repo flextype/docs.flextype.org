@@ -23,7 +23,7 @@ Header set Access-Control-Allow-Origin 'origin-list'
 
 RewriteEngine On
 
-RewriteBase /docs.flextype.org/0.9.7/
+RewriteBase /0.9.7/
 
 ## Begin - Exploits
 # If you experience problems on your site block out the operations listed below
