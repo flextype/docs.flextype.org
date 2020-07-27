@@ -35,12 +35,6 @@ The Flextype Registry API organized around Representational State Transfer (REST
 
 For more details <a href="[url]/en/rest-api/registry">read the reference guide for the Registry API</a>.
 
-#### Config
-
-The Flextype Config API organized around Representational State Transfer (REST) for delivering Config from Flextype to apps, websites and other. Config is delivered as JSON data.
-
-For more details <a href="[url]/en/rest-api/config">read the reference guide for the Config API</a>.
-
 #### Files
 
 The Flextype Files API organized around Representational State Transfer (REST) for delivering Files from Flextype to apps, websites and other. Files is delivered as JSON data.
