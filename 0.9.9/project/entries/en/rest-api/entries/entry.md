@@ -41,6 +41,11 @@ The Flextype Entries API organized around Representational State Transfer (REST)
 | Method | Endpoint | Description |
 | --- | --- | --- |
 | GET | /api/entries | Fetch entry(entries) |
+| POST | /api/entries | Create entry |
+| PATCH | /api/entries | Update entry |
+| PUT | /api/entries | Rename entry |
+| PUT | /api/entries/copy | Copy entry(entries) |
+| DELETE | /api/entries | Delete entry |
 
 ### <a name="fetch-single-entry"></a> Fetch single entry
 
