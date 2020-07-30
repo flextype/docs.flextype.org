@@ -200,39 +200,39 @@ curl -i -X POST \
 }
 ```
 
-### <a name="rename-folder"></a> Rename folder
+### <a name="rename-file"></a> Rename file
 
 <div class="file-header">Request</div>
 ```http
-PUT /api/folders
+PUT /api/files
 ```
 
 ##### Body
 
 | Name | |  Description |
 | --- | --- | --- |
-| path | REQUIRED | Unique identifier of the folder. |
-| new_path | REQUIRED | New Unique identifier of the folder. |
-| token | REQUIRED | Valid Entries token. |
+| path | REQUIRED | Unique identifier of the file. |
+| new_path | REQUIRED | New Unique identifier of the file. |
+| token | REQUIRED | Valid Files token. |
 | access_token | REQUIRED | Valid Access token. |
 
 ##### Result
-Returns the folders object for the folders that was just renamed
+Returns the folders object for the file that was just renamed
 
 ##### Examples
 
-Rename entry **entries/movies/platform** to the **entries/movies/the-platform**
+Rename file **entries/movies/sg-1/season-5/episode-21/cover.jpg** to the **entries/movies/sg-1/season-5/episode-21/new-cover.jpg**
 
 <div class="file-header">Request</div>
 ```http
-PUT /api/folders
+PUT /api/files
 ```
 
 <div class="file-header">Body</div>
 ```json
 {
-    "path": "entries/movies/platform",
-    "new_path": "entries/movies/the-platform",
+    "path": "entries/movies/sg-1/season-5/episode-21/cover.jpg",
+    "new_path": "entries/movies/sg-1/season-5/episode-21/new-cover.jpg",
 	"token": "f3acf199a9ac120d3bfd604e1e382456",
 	"access_token": "bbc4417d171e38099bd129aeca279018"
 }
@@ -242,26 +242,29 @@ PUT /api/folders
 ```json
 {
     "data": {
-        "path": "entries/movies/the-platform",
-        "full_path": "/htdocs/flextype/project/uploads/entries/movies/the-platform",
-        "url": "project/uploads/entries/movies/the-platform",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/the-platform"
+        "title": "Episode 21",
+        "filename": "new-cover.jpg",
+        "basename": "new-cover",
+        "extension": "jpg",
+        "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21",
+        "url": "project/uploads/entries/movies/sg-1/season-5/episode-21/new-cover.jpg",
+        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/new-cover.jpg"
     }
 }
 ```
 
-Move entry **entries/movies/the-platform** to the **entries/movies/2019/the-platform**
+Move file **entries/movies/sg-1/season-5/episode-21/cover.jpg** to the **entries/movies/sg-1/season-5/cover.jpg**
 
 <div class="file-header">Request</div>
 ```http
-PUT /api/folders
+PUT /api/files
 ```
 
 <div class="file-header">Body</div>
 ```json
 {
-	"path": "entries/movies/the-platform",
-    "new_path": "entries/movies/2019/the-platform",
+	"path": "entries/movies/sg-1/season-5/episode-21/cover.jpg",
+    "new_path": "entries/movies/sg-1/season-5/cover.jpg",
 	"token": "f3acf199a9ac120d3bfd604e1e382456",
 	"access_token": "bbc4417d171e38099bd129aeca279018"
 }
@@ -271,47 +274,50 @@ PUT /api/folders
 ```json
 {
     "data": {
-        "path": "entries/movies/2019/the-platform",
-        "full_path": "/htdocs/flextype/project/uploads/entries/movies/2019/the-platform",
-        "url": "project/uploads/entries/movies/2019/the-platform",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/2019/the-platform"
+        "title": "Episode 21",
+        "filename": "cover.jpg",
+        "basename": "cover",
+        "extension": "jpg",
+        "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
+        "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
+        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/new-cover.jpg"
     }
 }
 ```
 
-### <a name="copy-folder"></a> Copy folder
+### <a name="copy-file"></a> Copy File
 
 <div class="file-header">Request</div>
 ```http
-PUT /api/folders/copy
+PUT /api/files/copy
 ```
 
 ##### Body
 
 | Name | |  Description |
 | --- | --- | --- |
-| path | REQUIRED | Unique identifier of the folder. |
-| new_path | REQUIRED | New Unique identifier of the folder. |
+| path | REQUIRED | Unique identifier of the file. |
+| new_path | REQUIRED | New Unique identifier of the file. |
 | token | REQUIRED | Valid Folders token. |
 | access_token | REQUIRED | Valid Access token. |
 
 ##### Result
-Returns the folders object for the folders that was just copied.
+Returns the file object for the file that was just copied.
 
 ##### Examples
 
-Copy for entry **entries/movies/2019/the-platform** to **entries/movies/horror/the-platform**
+Copy for entry **entries/movies/sg-1/season-5/cover.jpg** to **entries/movies/sg-1/season-5/episode-21/cover.jpg**
 
 <div class="file-header">Request</div>
 ```http
-PUT /api/folders/copy
+PUT /api/files/copy
 ```
 
 <div class="file-header">Body</div>
 ```json
 {
-	"path": "entries/movies/2019/the-platform",
-    "new_path": "entries/movies/horror/the-platform",
+	"path": "entries/movies/sg-1/season-5/cover.jpg",
+    "new_path": "entries/movies/sg-1/season-5/episode-21/cover.jpg",
 	"token": "f3acf199a9ac120d3bfd604e1e382456",
 	"access_token": "bbc4417d171e38099bd129aeca279018"
 }
@@ -321,15 +327,18 @@ PUT /api/folders/copy
 ```json
 {
     "data": {
-        "path": "entries/movies/horror/the-platform",
-        "full_path": "/htdocs/flextype/project/uploads/entries/movies/horror/the-platform",
-        "url": "project/uploads/entries/movies/horror/the-platform",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/horror/the-platform"
+        "title": "Episode 21",
+        "filename": "cover.jpg",
+        "basename": "cover",
+        "extension": "jpg",
+        "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21",
+        "url": "project/uploads/entries/movies/sg-1/season-5/episode-21/cover.jpg",
+        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/cover-4.jpg"
     }
 }
 ```
 
-### <a name="delete-folder"></a> Delete folder
+### <a name="delete-folder"></a> Delete file
 
 <div class="file-header">Request</div>
 ```http
