@@ -58,7 +58,7 @@ Fetch image **venom-2** from upload directory **/movies/venom-2/** and do severa
 
 <div class="file-header">Request</div>
 ```http
-GET /api/images/movies/venom-2/venom-2.jpg?w=100&&q=70&token=c1fda5a94603a7296f3a0a5370cfe59f
+GET /api/images/movies/venom-2/venom-2.jpg?w=100&q=70&token=c1fda5a94603a7296f3a0a5370cfe59f
 ```
 
 ### <a name="displaying-images-in-the-template-glide-options"></a> A complete list of available options for Glide/Intervention

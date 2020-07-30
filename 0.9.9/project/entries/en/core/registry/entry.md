@@ -10,6 +10,8 @@ on_this_page:
     link: "methods"
 ---
 
+A registry is a container for storing objects and values in the Flextype application space. By storing the value in a registry, the same object is always available throughout Flextype application. This mechanism is an alternative to using global storage.
+
 ### <a name="methods"></a> Methods
 
 | Method | Description |

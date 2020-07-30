@@ -175,6 +175,8 @@ on_this_page:
 | <a href="#count"><code>count()</code></a> | If you want to know how many items match your Criteria, you can call `count()`. |  
 | <a href="#exists"><code>exists()</code></a> | If you just need to check if any item exist in the collection that match the Criteria, you can call `exists()`, which will return either `true` or `false`. |  
 | <a href="#all"><code>all()</code></a> | Returns the underlying array represented by the collection. |  
+| <a href="#collect-filter"><code>collect_filter()</code></a> | Apply filters to the array items with help of parameters array. |  
+
 
 ##### <a name="collection"></a> `collect()`
 
@@ -269,7 +271,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 $movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->andWhere('year', 'eq', 2020);
-            ->andWhere('year', 'stars', 'Amy Adams');
+            ->andWhere('stars', 'contains', 'Amy Adams');
 ```
 
 ##### <a name="or-where"></a> `orWhere()`
@@ -287,7 +289,7 @@ $drama = $flextype->entries->fetchCollection('movies/drama');
 // Create movies drama collection
 // where field directed_by eq Denis Villeneuve
 // and where field year eq 2020
-// or where field year eq 2020
+// or where field year eq 2019
 $movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->andWhere('year', 'eq', 2020);
@@ -550,4 +552,240 @@ $movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
 
 $result = $movies->all();
+```
+
+
+##### <a name="collect-filter"></a> `collect_filter()`
+
+Apply filters to the array items with help of parameters array.
+
+**Examples**
+
+```php
+// Fetch movies drama collection
+$drama = $flextype->entries->fetchCollection('movies/drama');
+
+// Create movies drama collection where field directed_by eq Denis Villeneuve
+$movies = collect_filter($drama, [
+                                    'where' => [
+                                        'key' => 'directed_by',
+                                        'expr' => 'eq',
+                                        'value' => 'Denis Villeneuve'
+                                  ]
+                              ]);
+
+// Create movies drama collection where field stars contains Amy Adams
+$movies = collect_filter($drama, [
+                                    'where' => [
+                                        'key' => 'directed_by',
+                                        'expr' => 'contains',
+                                        'value' => 'Amy Adams'
+                                    ]
+                                ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and where field year eq 2020
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'and_where' => [
+                                            [
+                                                'key' => 'year',
+                                                'expr' => 'eq',
+                                                'value' => 2020
+                                            ]
+                                        ]
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and where field year eq 2020
+// and where field stars contains Amy Adams
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'and_where' => [
+                                            [
+                                                'key' => 'year',
+                                                'expr' => 'eq',
+                                                'value' => 2020
+                                            ]
+                                        ],
+                                        'and_where' => [
+                                            [
+                                                'key' => 'stars',
+                                                'expr' => 'contains',
+                                                'value' => 'Amy Adams'
+                                            ]
+                                        ]
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and where field year eq 2020
+// or where field year eq 2019
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'and_where' => [
+                                            [
+                                                'key' => 'year',
+                                                'expr' => 'eq',
+                                                'value' => 2020
+                                            ]
+                                        ],
+                                        'or_where' => [
+                                            [
+                                                'key' => 'year',
+                                                'expr' => 'eq',
+                                                'value' => 2019
+                                            ]
+                                        ]
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and order by year ASC
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'order_by' => [
+                                            'field' => 'year',
+                                            'direction' => 'ASC'
+                                        ]
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and set first result 5
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'set_first_result_value' => 5,
+                                        'return' => 'set_first_result'
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and set limit 10
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'limit_value' => 10,
+                                        'return' => 'limit'
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and return first option of this Criteria.
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'return' => 'first'
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and return last option of this Criteria.
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'return' => 'last'
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and moves the internal iterator position to the next element and returns this element.
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'return' => 'next'
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and return 3 random items.
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'return' => 'random',
+                                        'random_value' => 3
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// shuffle the items and return them all.
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'return' => 'shuffle'
+                                    ]);
+
+// Create movies drama collection
+// where field directed_by eq Denis Villeneuve
+// and set offset 0 and length 5
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'return' => 'slice',
+                                        'slice_offset_value' => 0,
+                                        'slice_offset_value' => 5,
+                                    ]);
+
+// Count all drama movies where field directed_by eq Denis Villeneuve.
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'return' => 'count'
+                                    ]);
+
+// Check if any drama movies where field directed_by eq Denis Villeneuve are exists.
+$movies = collect_filter($drama, [
+                                        'where' => [
+                                            'key' => 'directed_by',
+                                            'expr' => 'eq',
+                                            'value' => 'Denis Villeneuve'
+                                        ],
+                                        'return' => 'exists'
+                                    ]);
 ```
