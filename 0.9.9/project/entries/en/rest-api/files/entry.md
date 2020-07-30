@@ -423,7 +423,7 @@ PATCH /api/files/meta
         "filename": "cover.jpg",
         "basename": "cover-4",
         "extension": "jpg",
-        "dirname": "/Applications/MAMP/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
+        "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
         "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
         "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
     }
@@ -480,7 +480,7 @@ PATCH /api/files/meta
         "filename": "cover.jpg",
         "basename": "cover-4",
         "extension": "jpg",
-        "dirname": "/Applications/MAMP/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
+        "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
         "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
         "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
     }
@@ -535,7 +535,7 @@ DELETE /api/files/meta
         "filename": "cover.jpg",
         "basename": "cover-4",
         "extension": "jpg",
-        "dirname": "/Applications/MAMP/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
+        "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
         "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
         "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
     }
