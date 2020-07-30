@@ -25,13 +25,13 @@ on_this_page:
     link: "delete-file"
   6:
     title: "Update file meta"
-    link: "update-file-meta-infromation"
+    link: "update-file-meta"
   7:
     title: "Add file meta"
-    link: "update-file-meta-infromation"
+    link: "update-file-meta"
   8:
     title: "Delete file meta"
-    link: "delete-file-meta-infromation"
+    link: "delete-file-meta"
 ---
 
 The Flextype Files API organized around Representational State Transfer (REST) for delivering files from Flextype to apps, websites and other. Folders are delivered as JSON data.
@@ -338,19 +338,19 @@ PUT /api/files/copy
 }
 ```
 
-### <a name="delete-folder"></a> Delete file
+### <a name="delete-file"></a> Delete file
 
 <div class="file-header">Request</div>
 ```http
-DELETE /api/folders
+DELETE /api/files
 ```
 
 ##### Body
 
 | Name | |  Description |
 | --- | --- | --- |
-| path | REQUIRED | Unique identifier of the folder. |
-| token | REQUIRED | Valid Folders token. |
+| path | REQUIRED | Unique identifier of the file. |
+| token | REQUIRED | Valid Files token. |
 | access_token | REQUIRED | Valid Access token. |
 
 ##### Result
@@ -358,18 +358,186 @@ Returns an empty body with HTTP status 204
 
 ##### Examples
 
-Delete entry **entires/movies/horror/the-platform**
+Delete entry **entries/movies/sg-1/season-5/episode-21/new-cover.jpg**
 
 <div class="file-header">Request</div>
 ```http
-DELETE /api/folders
+DELETE /api/files
 ```
 
 <div class="file-header">Body</div>
 ```json
 {
-	"id": "entries/movies/horror/the-platform",
+	"id": "entries/movies/sg-1/season-5/episode-21/new-cover.jpg",
 	"token": "f3acf199a9ac120d3bfd604e1e382456",
 	"access_token": "bbc4417d171e38099bd129aeca279018"
+}
+```
+
+### <a name="update-file-meta"></a> Update File Meta
+
+<div class="file-header">Request</div>
+```http
+PUT /api/files
+```
+
+##### Body
+
+| Name | |  Description |
+| --- | --- | --- |
+| path | REQUIRED | Unique identifier of the file. |
+| field | REQUIRED | Field name. |
+| value | REQUIRED | Field value. |
+| token | REQUIRED | Valid Files token. |
+| access_token | REQUIRED | Valid Access token. |
+
+##### Result
+Returns the file object for the file that was just updated.
+
+##### Examples
+
+Update title for file **entries/movies/sg-1/season-5/cover.jpg**
+
+<div class="file-header">Request</div>
+```http
+PATCH /api/files/meta
+```
+
+<div class="file-header">Body</div>
+```json
+{
+    "field": "title",
+    "value": "Season 5",
+	"path": "entries/movies/sg-1/season-5/cover.jpg",
+    "new_path": "entries/movies/sg-1/season-5/episode-21/cover.jpg",
+	"token": "f3acf199a9ac120d3bfd604e1e382456",
+	"access_token": "bbc4417d171e38099bd129aeca279018"
+}
+```
+
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+```json
+{
+    "data": {
+        "title": "Season 5",
+        "filename": "cover.jpg",
+        "basename": "cover-4",
+        "extension": "jpg",
+        "dirname": "/Applications/MAMP/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
+        "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
+        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
+    }
+}
+```
+
+### <a name="update-file-meta"></a> Add File Meta
+
+<div class="file-header">Request</div>
+```http
+POST /api/files
+```
+
+##### Body
+
+| Name | |  Description |
+| --- | --- | --- |
+| path | REQUIRED | Unique identifier of the file. |
+| field | REQUIRED | Field name. |
+| value | REQUIRED | Field value. |
+| token | REQUIRED | Valid Files token. |
+| access_token | REQUIRED | Valid Access token. |
+
+##### Result
+Returns the file object for the file that was just updated.
+
+##### Examples
+
+Add tags for file **entries/movies/sg-1/season-5/cover.jpg**
+
+<div class="file-header">Request</div>
+```http
+PATCH /api/files/meta
+```
+
+<div class="file-header">Body</div>
+```json
+{
+    "field": "tags",
+    "value": "sg-1, season-5",
+	"path": "entries/movies/sg-1/season-5/cover.jpg",
+    "new_path": "entries/movies/sg-1/season-5/episode-21/cover.jpg",
+	"token": "f3acf199a9ac120d3bfd604e1e382456",
+	"access_token": "bbc4417d171e38099bd129aeca279018"
+}
+```
+
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+```json
+{
+    "data": {
+        "title": "Season 5",
+        "tags": "sg-1, season-5",
+        "filename": "cover.jpg",
+        "basename": "cover-4",
+        "extension": "jpg",
+        "dirname": "/Applications/MAMP/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
+        "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
+        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
+    }
+}
+```
+
+
+### <a name="update-file-meta"></a> Delete File Meta
+
+<div class="file-header">Request</div>
+```http
+DELETE /api/files
+```
+
+##### Body
+
+| Name | |  Description |
+| --- | --- | --- |
+| path | REQUIRED | Unique identifier of the file. |
+| field | REQUIRED | Field name. |
+| token | REQUIRED | Valid Files token. |
+| access_token | REQUIRED | Valid Access token. |
+
+##### Result
+Returns the file object for the file that was just updated.
+
+##### Examples
+
+Delete tags meta field for file **entries/movies/sg-1/season-5/cover.jpg**
+
+<div class="file-header">Request</div>
+```http
+DELETE /api/files/meta
+```
+
+<div class="file-header">Body</div>
+```json
+{
+    "field": "tags",
+	"path": "entries/movies/sg-1/season-5/cover.jpg",
+    "new_path": "entries/movies/sg-1/season-5/episode-21/cover.jpg",
+	"token": "f3acf199a9ac120d3bfd604e1e382456",
+	"access_token": "bbc4417d171e38099bd129aeca279018"
+}
+```
+
+<div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+```json
+{
+    "data": {
+        "title": "Season 5",
+        "filename": "cover.jpg",
+        "basename": "cover-4",
+        "extension": "jpg",
+        "dirname": "/Applications/MAMP/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
+        "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
+        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
+    }
 }
 ```
