@@ -121,139 +121,7 @@ GET /api/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&fi
 
 With the filter query you're able to search items in a collection that matches the filter's conditions.
 
-##### Operator: Equal to
-
-`eq` or `=`
-
-Filter your entries by checking if your custom attribute (field) has a value that is equal to one of the values provided.
-
-##### Use-cases
-
-Get all content entries that is refered to another in a 1:N relationship or if you want to get all entries with a specific value in one of it's fields.
-
-##### Examples
-
-Fetch Movies Collection where **director** is equal to **Cathy Yan**
-
-<div class="file-header">Request</div>
-```http
-GET /api/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
-```
-
-##### Operator: Not equal to
-
-`neq` or `<>` or `!=`
-
-Filter your entries by checking if your custom attribute (field) does not have a value that is equal to one of the values provided.
-
-##### Examples
-
-Fetch Movies Collection where **director** is not equal to **Cathy Yan**
-
-<div class="file-header">Request</div>
-```http
-GET /api/entries?id=movies&filter[where][key]=director&filter[where][expr]=neq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
-```
-
-##### Operator: Lower than
-
-`lt` or `<`
-
-Filter your entries by checking if your custom attribute (field) has a value that is lower than one of the values provided.
-
-##### Examples
-
-Fetch Movies Collection where **year** is lower than to **2019**
-
-<div class="file-header">Request</div>
-```http
-GET /api/entries?id=movies&filter[where][key]=year&filter[where][expr]=lt&filter[where][value]=2019&token=6f047babd1894064fbf7662080a9a2f0
-```
-
-##### Operator: Greater than
-
-`gt` or `>`
-
-Filter your entries by checking if your custom attribute (field) has a value that is greater than one of the values provided.
-
-##### Examples
-
-Fetch Movies Collection where **year** is greater than to **2019**
-
-<div class="file-header">Request</div>
-```http
-GET /api/entries?id=movies&filter[where][key]=year&filter[where][expr]=gt&filter[where][value]=2019&token=6f047babd1894064fbf7662080a9a2f0
-```
-
-##### Operator: Lower than or equal to
-
-`lte` or `<=`
-
-Filter your entries by checking if your custom attribute (field) has a value that is lower than or equal to one of the values provided.
-
-##### Examples
-
-Fetch Movies Collection where **year** is lower than or equal to **2019**
-
-<div class="file-header">Request</div>
-```http
-GET /api/entries?id=movies&filter[where][key]=year&filter[where][expr]=lte&filter[where][value]=2019&token=6f047babd1894064fbf7662080a9a2f0
-```
-
-##### Operator: Greater than or equal to
-
-`gte` or `>=`
-
-Filter your entries by checking if your custom attribute (field) has a value that is greater than or equal to one of the values provided.
-
-##### Examples
-
-Fetch Movies Collection where **year** is greater than or equal to **2019**
-
-<div class="file-header">Request</div>
-```http
-GET /api/entries?id=movies&filter[where][key]=year&filter[where][expr]=gte&filter[where][value]=2019&token=6f047babd1894064fbf7662080a9a2f0
-```
-
-##### Operator: Included in an array of values
-
-`in`
-
-Filter your entries by checking if your custom array attribute (field) contains one of the values provided. As soon as one of the provided values separated with, are in the array field, the entry object will be in the response.
-
-##### Use-cases
-
-Get all content entries that is refered to others in a N:N relationship or if you want to get all entries with a specific value in one of it's array fields.
-
-
-##### Operator: Isn't included in an array of values
-
-`nin`
-
-Filter your entries by checking if your custom array attribute (field) is not contains one of the values provided.
-
-##### Use-cases
-
-Get all content entries that is not refered to others in a N:N relationship or if you want to get all entries with a specific value that is not in one of it's array fields.
-
-##### Operator: Contains the substring
-
-`contains` or `like`
-
-Filter your entries by checking if your custom attribute (field) has a value that is "like" the value provided.
-
-##### Operator: Member of
-
-`member_of`
-
-##### Operator: Start with
-
-`start_with`
-
-##### Operator: Ends with
-
-`ends_with`
-
+See `operators` and `collect_filter()` section here: [url]/en/core/collections
 
 ### <a name="create-entry"></a> Create entry
 
@@ -492,7 +360,7 @@ Copy for entry **movies/2019/the-platform** to **movies/horror/the-platform**
 
 <div class="file-header">Request</div>
 ```http
-PUT /api/entries
+PUT /api/entries/copy
 ```
 
 <div class="file-header">Body</div>
