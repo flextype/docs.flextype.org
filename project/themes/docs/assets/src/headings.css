@@ -37,27 +37,28 @@ h5 {
 }
 
 .page-content > h1 {
+    margin-top: 20px;
+    border-bottom: 3px solid black;
     font-size: 36px;
     line-height: 36px;
     padding-bottom: 0;
     margin-bottom: 0;
     line-height: 60px;
     padding-top: 0;
-    margin-top: 35px;
 }
 
 .flextype-docs-logo {
-    padding-bottom: 30px;
-    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .flextype-docs-logo > h2 {
+    border-bottom: 3px solid black;
+    letter-spacing: 1.7px;
+    line-height: 60px;
     font-size: 36px;
-    line-height: 36px;
-    letter-spacing: 3px;
     padding-bottom: 0;
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 20px;
 }
 
 .flextype-docs-logo > h3 {

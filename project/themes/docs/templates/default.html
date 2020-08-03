@@ -5,7 +5,11 @@
     <h1>
         {{ entry.title }}
     </h1>
-    <div class="mb-10">
+    <div style="letter-spacing: 1.1px;
+line-height: 36px;
+font-size: 20px;
+padding-top: 0;
+margin-top: 6px; margin-bottom: 30px;">
         {% for item in entry.breadcrumbs %}
             <a class="text-decoration-none" href="{{ item.link|shortcode }}">{{ item.title }}</a> {% if loop.last == false %}/{% endif %}
         {% endfor %}
