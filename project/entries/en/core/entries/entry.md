@@ -153,13 +153,20 @@ This variable allows you to specifically set a modified_at date associated with 
 parsers:
   markdown:
     enabled: true
-    cache: true
     fields: ['content', 'title']
   shortcodes:
     enabled: true
-    cache: true
     fields: ['content', 'title', 'description']
 ```
+
+##### Cache
+
+| Name | Default | Available values for option |
+| --- | --- | --- |
+| `cache` | `true` | `true` or `false`|
+
+By default, all pages are stored in the cache if flextype cache is true.
+But this rule can be changed by setting individual cache for each entry.
 
 ##### Slug
 
