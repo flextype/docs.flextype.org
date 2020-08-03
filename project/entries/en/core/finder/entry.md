@@ -23,7 +23,7 @@ on_this_page:
     link: "reading-contents-of-returned-files"
 ---
 
-The Finder component finds files and directories based on different criteria
+We are using Symfony Finder Component to finds files and directories based on different criteria
 (name, file size, modification time, etc.) via an intuitive fluent interface.
 
 ### <a name="basic-usage"></a> Basic usage
