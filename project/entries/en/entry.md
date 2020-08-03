@@ -32,6 +32,7 @@ txt:
       media: Media
       parsers: Parsers
       serializers: Serializers
+      finder: Finder
     rest_api:
      title: Rest API
      introduction: Introduction

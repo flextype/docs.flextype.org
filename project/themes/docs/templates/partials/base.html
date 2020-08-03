@@ -152,6 +152,9 @@
                    <li class="{% if entry.slug == locale ~ "/core/media" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/core/media" class="no-underline">{{ entry_locale.txt.categories.core.media }}</a>
                    </li>
+                   <li class="{% if entry.slug == locale ~ "/core/finder" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/core/finder" class="no-underline">{{ entry_locale.txt.categories.core.finder }}</a>
+                   </li>
                </ul>
                <h4 class="pt-8">{{ entry_locale.txt.categories.rest_api.title }}</h4>
                <ul class="m-0 p-0 list-none">
