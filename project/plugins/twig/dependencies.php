@@ -9,13 +9,14 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Twig;
 
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Slim\Http\Environment;
 use Slim\Http\Uri;
 use Slim\Csrf\Guard;
+use Slim\Flash\Messages;
 use Twig\Extension\DebugExtension;
 
 /**
@@ -56,9 +57,16 @@ $flextype['twig'] = static function ($container) {
 
     foreach ($twig_extensions as $twig_extension) {
         $twig_extension_class_name = $twig_extension . 'TwigExtension';
-        $twig_extension_class_name_with_namespace = 'Flextype\\' . $twig_extension . 'TwigExtension';
+        $twig_extension_class_name_with_namespace = 'Flextype\\Plugin\\Twig\\Twig\\' . $twig_extension . 'TwigExtension';
 
         if (file_exists(ROOT_DIR . '/project/plugins/twig/twig/' . $twig_extension_class_name . '.php')) {
+
+            if ($twig_extension == 'Flash') {
+                $container['flash'] = static function () {
+                    return new Messages();
+                };
+            }
+
             $twig->addExtension(new $twig_extension_class_name_with_namespace($container));
         }
     }

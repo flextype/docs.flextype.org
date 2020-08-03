@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Twig\Twig;
 
 use Twig_Extension;
 use Twig_Extension_GlobalsInterface;
@@ -56,24 +56,24 @@ class EntriesTwig
     /**
      * Fetch entry(entries)
      */
-    public function fetch(string $id, $args = null) : array
+    public function fetch(string $path, bool $collection = false, array $filter = []) : array
     {
-        return $this->flextype['entries']->fetch($id, $args);
+        return $this->flextype['entries']->fetch($path, $collection, $filter);
     }
 
     /**
      * Fetch single entry
      */
-    public function fetchSingle(string $id) : array
+    public function fetchSingle(string $path) : array
     {
-        return $this->flextype['entries']->fetch($id);
+        return $this->flextype['entries']->fetch($path);
     }
 
     /**
      * Fetch entries collection
      */
-    public function fetchCollection(string $id, array $args = []) : array
+    public function fetchCollection(string $path, array $filter = []) : array
     {
-        return $this->flextype['entries']->fetch($id, $args);
+        return $this->flextype['entries']->fetchCollection($path, $filter);
     }
 }

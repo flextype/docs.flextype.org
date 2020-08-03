@@ -292,7 +292,16 @@ class Filesystem
      */
     public static function delete(string $path) : bool
     {
-        return @unlink($path);
+        if (self::has($path)) {
+            $result = unlink($path);
+
+            // Wiping out changes in local file cache
+            clearstatcache(false, $path);
+
+            return $result;
+        }
+
+        return false;
     }
 
     /**
@@ -317,7 +326,7 @@ class Filesystem
                 if (filetype($dirname . '/' . $o) === 'dir') {
                     self::deleteDir($dirname . '/' . $o);
                 } else {
-                    unlink($dirname . '/' . $o);
+                    self::delete($dirname . '/' . $o);
                 }
             }
         }

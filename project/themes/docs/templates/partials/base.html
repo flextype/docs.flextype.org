@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ locale }}">
     {% set entry_locale = entries.fetch(locale) %}
-    {% set static_version = 2 %}
+    {% set static_version = 3 %}
     <head>
         {% block head %}
             <meta charset="{{ registry.get('flextype.settings.charset')|lower }}">
@@ -69,10 +69,9 @@
                     |
                 {% endif %}{{ registry.get('plugins.site.settings.title')|e('html') }}</title>
 
-            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
             <script src="https://kit.fontawesome.com/588226d8c5.js"></script>
 
-            <link href="{{ url() ~ '/project/themes/' ~ registry.get('plugins.site.settings.theme') ~ '/assets/highlight/styles/tomorrow-night-bright.css' }}?v={{ static_version }}" rel="stylesheet">
+            <link href="{{ url() ~ '/project/themes/' ~ registry.get('plugins.site.settings.theme') ~ '/assets/highlight/styles/github.css' }}?v={{ static_version }}" rel="stylesheet">
             <link href="{{ url() ~ '/project/themes/' ~ registry.get('plugins.site.settings.theme') ~ '/assets/dist/css/build.min.css' }}?v={{ static_version }}" rel="stylesheet">
 
             {% if registry.has('assets.site.css') %}
@@ -88,9 +87,9 @@
         {% endblock %}
     </head>
     <body>
-        <div class="w-full flex">
+        <div class="container mx-auto flex">
             <div id="shadow" onclick="hideMenu();" class="hidden z-30 fixed block opacity-75 h-full w-full" style="background: black;"></div>
-            <div id="menu" class="hidden lg:block w-3/12 pl-12 pt-6 pb-10 text-brand-white bg-brand-black sidebar">
+            <div id="menu" class="hidden lg:block w-2/12 pl-6 pb-10 text-white bg-white sidebar">
                 <div class="flextype-docs-logo">
                     <h2>FLEXTYPE</h2>
                     <h3>DOCUMENTATION</h3>
@@ -112,9 +111,6 @@
                    <li class="{% if entry.slug == locale ~ "/getting-started/folder-structure" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/getting-started/folder-structure" class="no-underline">{{ entry_locale.txt.categories.getting_started.folder_structure }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/getting-started/php-constants" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/getting-started/php-constants" class="no-underline">{{ entry_locale.txt.categories.getting_started.php_constants }}</a>
-                   </li>
                    <li class="{% if entry.slug == locale ~ "/getting-started/coc" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/getting-started/coc" class="no-underline">{{ entry_locale.txt.categories.getting_started.coc }}</a>
                    </li>
@@ -125,52 +121,69 @@
                        <a href="{{ url() }}/{{ locale }}/getting-started/license" class="no-underline">{{ entry_locale.txt.categories.getting_started.license }}</a>
                    </li>
                </ul>
-               <h4 class="pt-8">{{ entry_locale.txt.categories.concepts.title }}</h4>
+               <h4 class="pt-8">{{ entry_locale.txt.categories.core.title }}</h4>
                <ul class="m-0 p-0 list-none">
-                   <li class="{% if entry.slug == locale ~ "/concepts/entries" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/entries" class="no-underline">{{ entry_locale.txt.categories.concepts.entries }}</a>
+                   <li class="{% if entry.slug == locale ~ "/core/entries" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/core/entries" class="no-underline">{{ entry_locale.txt.categories.core.entries }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/concepts/plugins" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/plugins" class="no-underline">{{ entry_locale.txt.categories.concepts.plugins }}</a>
+                   <li class="{% if entry.slug == locale ~ "/core/plugins" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/core/plugins" class="no-underline">{{ entry_locale.txt.categories.core.plugins }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/concepts/parsers" %}active{% endif %}">
-                       <a href="#" class="no-underline opacity-50">{{ entry_locale.txt.categories.concepts.parsers }}</a>
+                   <li class="{% if entry.slug == locale ~ "/core/collections" %}active{% endif %}">
+                        <a href="{{ url() }}/{{ locale }}/core/collections" class="no-underline">{{ entry_locale.txt.categories.core.collections }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/concepts/serializers" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/serializers" class="no-underline">{{ entry_locale.txt.categories.concepts.serializers }}</a>
+                   <li class="{% if entry.slug == locale ~ "/core/parsers" %}active{% endif %}">
+                      <a href="{{ url() }}/{{ locale }}/core/parsers" class="no-underline">{{ entry_locale.txt.categories.core.parsers }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/concepts/content-apis" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/content-apis" class="no-underline">{{ entry_locale.txt.categories.concepts.content_apis }}</a>
+                   <li class="{% if entry.slug == locale ~ "/core/serializers" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/core/serializers" class="no-underline">{{ entry_locale.txt.categories.core.serializers }}</a>
                    </li>
                    <!--
-                   <li class="{% if entry.slug == locale ~ "/concepts/performance" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/concepts/performance" class="no-underline">{{ entry_locale.txt.categories.concepts.perfomance }}</a>
+                   <li class="{% if entry.slug == locale ~ "/core/config" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/core/config" class="no-underline">{{ entry_locale.txt.categories.core.config }}</a>
                    </li>
                    -->
+                   <li class="{% if entry.slug == locale ~ "/core/registry" %}active{% endif %}">
+                        <a href="{{ url() }}/{{ locale }}/core/registry" class="no-underline">{{ entry_locale.txt.categories.core.registry }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/core/cache" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/core/cache" class="no-underline">{{ entry_locale.txt.categories.core.cache }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/core/media" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/core/media" class="no-underline">{{ entry_locale.txt.categories.core.media }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/core/finder" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/core/finder" class="no-underline">{{ entry_locale.txt.categories.core.finder }}</a>
+                   </li>
                </ul>
-               <h4 class="pt-8">{{ entry_locale.txt.categories.api.title }}</h4>
+               <h4 class="pt-8">{{ entry_locale.txt.categories.rest_api.title }}</h4>
                <ul class="m-0 p-0 list-none">
-                   <li class="{% if entry.slug == locale ~ "/api/delivery" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/delivery" class="no-underline">{{ entry_locale.txt.categories.api.delivery }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/introduction" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/introduction" class="no-underline">{{ entry_locale.txt.categories.rest_api.introduction }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/management" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/management" class="no-underline">{{ entry_locale.txt.categories.api.management }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/entries" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/entries" class="no-underline">{{ entry_locale.txt.categories.rest_api.entries }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/images" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/images" class="no-underline">{{ entry_locale.txt.categories.api.images }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/registry" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/registry" class="no-underline">{{ entry_locale.txt.categories.rest_api.registry }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/http-details" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/http-details" class="no-underline">{{ entry_locale.txt.categories.api.http_details }}</a>
+                   <!--
+                   <li class="{% if entry.slug == locale ~ "/rest-api/config" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/config" class="no-underline">{{ entry_locale.txt.categories.rest_api.config }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/authentication" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/authentication" class="no-underline">{{ entry_locale.txt.categories.api.authentication }}</a>
+                   -->
+                   <li class="{% if entry.slug == locale ~ "/rest-api/files" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/files" class="no-underline">{{ entry_locale.txt.categories.rest_api.files }}</a>
                    </li>
-                   <li class="{% if entry.slug == locale ~ "/api/errors" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/api/errors" class="no-underline">{{ entry_locale.txt.categories.api.errors }}</a>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/folders" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/folders" class="no-underline">{{ entry_locale.txt.categories.rest_api.folders }}</a>
+                   </li>
+                   <li class="{% if entry.slug == locale ~ "/rest-api/images" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/images" class="no-underline">{{ entry_locale.txt.categories.rest_api.images }}</a>
                    </li>
                </ul>
             </div>
-            <div class="w-full lg:w-9/12">
+            <div class="w-full lg:w-10/12">
                 <a href="javascript:;" onclick="showMenu();" class="absolute lg:hidden right-0 top-0 mr-10 mt-12">
                     <i class="fas fa-bars"></i>
                 </a>
@@ -180,11 +193,11 @@
                         {{ entry_locale.txt.common.language }}:
                         <a href="{{ url() }}/en">en</a>,
                         <a href="{{ url() }}/ru">ru</a>
-                        Version: 0.9.8 | <a href="{{ url() }}/0.9.7">0.9.7</a>
+                        Version: 0.9.9  | <a href="{{ url() }}/0.9.8">0.9.8</a> | <a href="{{ url() }}/0.9.7">0.9.7</a>
                     </div>
                     <div class="w-6/12 text-right">
                         {% if locale == 'en' %}
-                            <a href="https://github.com/flextype/docs.flextype.org/tree/dev/site/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt.common.edit_this_page }}</a>
+                            <a href="https://github.com/flextype/docs.flextype.org/tree/dev/project/entries/{{ entry.slug }}/entry.md">{{ entry_locale.txt.common.edit_this_page }}</a>
                         {% else %}
                             <a href="https://crowdin.com/project/flextype-documentation/{{ locale }}">{{ entry_locale.txt_link_edit_this_page }}</a>
                         {% endif %}

@@ -2,10 +2,9 @@
 
 namespace SlevomatCodingStandard\Helpers;
 
-use Generator;
 use PHP_CodeSniffer\Files\File;
-use function array_map;
-use function iterator_to_array;
+use function array_merge;
+use function array_reverse;
 use function sprintf;
 use const T_ANON_CLASS;
 use const T_FINAL;
@@ -14,6 +13,18 @@ use const T_USE;
 
 class ClassHelper
 {
+
+	public static function getClassPointer(File $phpcsFile, int $pointer): ?int
+	{
+		$classPointers = array_reverse(self::getAllClassPointers($phpcsFile));
+		foreach ($classPointers as $classPointer) {
+			if ($classPointer < $pointer && ScopeHelper::isInSameScope($phpcsFile, $classPointer, $pointer)) {
+				return $classPointer;
+			}
+		}
+
+		return null;
+	}
 
 	public static function isFinal(File $phpcsFile, int $classPointer): bool
 	{
@@ -46,37 +57,28 @@ class ClassHelper
 	}
 
 	/**
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
-	 * @return string[]
+	 * @param File $phpcsFile
+	 * @return array<int, string>
 	 */
 	public static function getAllNames(File $phpcsFile): array
 	{
-		$previousClassPointer = 0;
+		$tokens = $phpcsFile->getTokens();
 
-		return array_map(
-			function (int $classPointer) use ($phpcsFile): string {
-				return self::getName($phpcsFile, $classPointer);
-			},
-			iterator_to_array(self::getAllClassPointers($phpcsFile, $previousClassPointer))
-		);
-	}
-
-	private static function getAllClassPointers(File $phpcsFile, int &$previousClassPointer): Generator
-	{
-		do {
-			$nextClassPointer = TokenHelper::findNext($phpcsFile, TokenHelper::$typeKeywordTokenCodes, $previousClassPointer + 1);
-			if ($nextClassPointer === null) {
-				break;
+		$names = [];
+		/** @var int $classPointer */
+		foreach (self::getAllClassPointers($phpcsFile) as $classPointer) {
+			if ($tokens[$classPointer]['code'] === T_ANON_CLASS) {
+				continue;
 			}
 
-			$previousClassPointer = $nextClassPointer;
+			$names[$classPointer] = self::getName($phpcsFile, $classPointer);
+		}
 
-			yield $nextClassPointer;
-		} while (true);
+		return $names;
 	}
 
 	/**
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @param File $phpcsFile
 	 * @param int $classPointer
 	 * @return int[]
 	 */
@@ -100,6 +102,19 @@ class ClassHelper
 		}
 
 		return $useStatements;
+	}
+
+	/**
+	 * @param File $phpcsFile
+	 * @return array<int>
+	 */
+	private static function getAllClassPointers(File $phpcsFile): array
+	{
+		$lazyValue = static function () use ($phpcsFile): array {
+			return TokenHelper::findNextAll($phpcsFile, array_merge(TokenHelper::$typeKeywordTokenCodes, [T_ANON_CLASS]), 0);
+		};
+
+		return SniffLocalCache::getAndSetIfNotCached($phpcsFile, 'classPointers', $lazyValue);
 	}
 
 }

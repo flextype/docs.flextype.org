@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Twig\Twig;
 
 use Twig_Extension;
 use Twig_SimpleFilter;
@@ -59,7 +59,7 @@ class YamlTwigExtension extends Twig_Extension
      */
     public function encode($input) : string
     {
-        return $this->flextype['serializer']->encode($input, 'yaml');
+        return $this->flextype['yaml']->encode($input);
     }
 
     /**
@@ -67,6 +67,6 @@ class YamlTwigExtension extends Twig_Extension
      */
     public function decode(string $input, bool $cache = true)
     {
-        return $this->flextype['serializer']->decode($input, 'yaml', $cache);
+        return $this->flextype['yaml']->decode($input, $cache);
     }
 }

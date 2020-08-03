@@ -9,7 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Site;
+
+use Flextype\Plugin\Site\Controllers\SiteController;
 
 /**
  * Add site controller to Flextype container

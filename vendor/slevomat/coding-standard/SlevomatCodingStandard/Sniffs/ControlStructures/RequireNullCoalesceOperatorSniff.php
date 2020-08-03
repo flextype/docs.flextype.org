@@ -31,7 +31,7 @@ class RequireNullCoalesceOperatorSniff implements Sniff
 	public const CODE_NULL_COALESCE_OPERATOR_NOT_USED = 'NullCoalesceOperatorNotUsed';
 
 	/**
-	 * @return (int|string)[]
+	 * @return array<int, (int|string)>
 	 */
 	public function register(): array
 	{
@@ -43,8 +43,8 @@ class RequireNullCoalesceOperatorSniff implements Sniff
 	}
 
 	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+	 * @param File $phpcsFile
 	 * @param int $pointer
 	 */
 	public function process(File $phpcsFile, $pointer): void
@@ -103,13 +103,18 @@ class RequireNullCoalesceOperatorSniff implements Sniff
 			return;
 		}
 
-		$phpcsFile->fixer->beginChangeset();
-
-		for ($i = $issetPointer; $i <= $inlineElsePointer; $i++) {
-			$phpcsFile->fixer->replaceToken($i, '');
+		$startPointer = $issetPointer;
+		if (in_array($tokens[$previousPointer]['code'], Tokens::$castTokens, true)) {
+			$startPointer = $previousPointer;
 		}
 
-		$phpcsFile->fixer->addContent($issetPointer, sprintf('%s ??', $variableContent));
+		$phpcsFile->fixer->beginChangeset();
+
+		$phpcsFile->fixer->replaceToken($startPointer, sprintf('%s ??', $variableContent));
+
+		for ($i = $startPointer + 1; $i <= $inlineElsePointer; $i++) {
+			$phpcsFile->fixer->replaceToken($i, '');
+		}
 
 		$phpcsFile->fixer->endChangeset();
 	}
@@ -200,12 +205,13 @@ class RequireNullCoalesceOperatorSniff implements Sniff
 			return;
 		}
 
-		$phpcsFile->fixer->beginChangeset();
-
 		/** @var int $conditionStart */
 		$conditionStart = $isYodaCondition ? $pointerBeforeIdenticalOperator : $variableStartPointer;
+		$variableContent = trim(TokenHelper::getContent($phpcsFile, $variableStartPointer, $variableEndPointer));
 
-		$phpcsFile->fixer->replaceToken($conditionStart, sprintf('%s ??', trim(TokenHelper::getContent($phpcsFile, $variableStartPointer, $variableEndPointer))));
+		$phpcsFile->fixer->beginChangeset();
+
+		$phpcsFile->fixer->replaceToken($conditionStart, sprintf('%s ??', $variableContent));
 
 		if ($tokens[$identicalOperator]['code'] === T_IS_IDENTICAL) {
 			for ($i = $conditionStart + 1; $i <= $inlineThenPointer; $i++) {

@@ -8,9 +8,11 @@ use SlevomatCodingStandard\Helpers\NamespaceHelper;
 use SlevomatCodingStandard\Helpers\ReferencedNameHelper;
 use SlevomatCodingStandard\Helpers\SniffSettingsHelper;
 use SlevomatCodingStandard\Helpers\StringHelper;
+use SlevomatCodingStandard\Helpers\TokenHelper;
 use SlevomatCodingStandard\Helpers\UseStatement;
 use SlevomatCodingStandard\Helpers\UseStatementHelper;
 use Throwable;
+use function array_reverse;
 use function in_array;
 use function sprintf;
 use const T_OPEN_TAG;
@@ -23,17 +25,17 @@ class FullyQualifiedExceptionsSniff implements Sniff
 	/** @var string[] */
 	public $specialExceptionNames = [];
 
-	/** @var string[]|null */
-	private $normalizedSpecialExceptionNames;
-
 	/** @var string[] */
 	public $ignoredNames = [];
+
+	/** @var string[]|null */
+	private $normalizedSpecialExceptionNames;
 
 	/** @var string[]|null */
 	private $normalizedIgnoredNames;
 
 	/**
-	 * @return (int|string)[]
+	 * @return array<int, (int|string)>
 	 */
 	public function register(): array
 	{
@@ -43,36 +45,18 @@ class FullyQualifiedExceptionsSniff implements Sniff
 	}
 
 	/**
-	 * @return string[]
-	 */
-	private function getSpecialExceptionNames(): array
-	{
-		if ($this->normalizedSpecialExceptionNames === null) {
-			$this->normalizedSpecialExceptionNames = SniffSettingsHelper::normalizeArray($this->specialExceptionNames);
-		}
-
-		return $this->normalizedSpecialExceptionNames;
-	}
-
-	/**
-	 * @return string[]
-	 */
-	private function getIgnoredNames(): array
-	{
-		if ($this->normalizedIgnoredNames === null) {
-			$this->normalizedIgnoredNames = SniffSettingsHelper::normalizeArray($this->ignoredNames);
-		}
-
-		return $this->normalizedIgnoredNames;
-	}
-
-	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+	 * @param File $phpcsFile
 	 * @param int $openTagPointer
 	 */
 	public function process(File $phpcsFile, $openTagPointer): void
 	{
+		if (TokenHelper::findPrevious($phpcsFile, T_OPEN_TAG, $openTagPointer - 1) !== null) {
+			return;
+		}
+
+		$namespacePointers = array_reverse(NamespaceHelper::getAllNamespacesPointers($phpcsFile));
+
 		$referencedNames = ReferencedNameHelper::getAllReferencedNames($phpcsFile, $openTagPointer);
 		foreach ($referencedNames as $referencedName) {
 			$pointer = $referencedName->getStartPointer();
@@ -94,7 +78,19 @@ class FullyQualifiedExceptionsSniff implements Sniff
 					continue;
 				}
 			} else {
-				$fileNamespace = NamespaceHelper::findCurrentNamespaceName($phpcsFile, $pointer);
+				$fileNamespacePointer = null;
+				if ($namespacePointers !== []) {
+					foreach ($namespacePointers as $namespacePointer) {
+						if ($namespacePointer < $pointer) {
+							$fileNamespacePointer = $namespacePointer;
+							break;
+						}
+					}
+				}
+
+				$fileNamespace = $fileNamespacePointer !== null
+					? NamespaceHelper::getName($phpcsFile, $fileNamespacePointer)
+					: null;
 				$canonicalName = $name;
 				if (!NamespaceHelper::isFullyQualifiedName($name) && $fileNamespace !== null) {
 					$canonicalName = sprintf('%s%s%s', $fileNamespace, NamespaceHelper::NAMESPACE_SEPARATOR, $name);
@@ -124,13 +120,13 @@ class FullyQualifiedExceptionsSniff implements Sniff
 				continue;
 			}
 
-			$phpcsFile->fixer->beginChangeset();
-
 			$fullyQualifiedName = NamespaceHelper::resolveClassName(
 				$phpcsFile,
 				$name,
 				$pointer
 			);
+
+			$phpcsFile->fixer->beginChangeset();
 
 			for ($i = $referencedName->getStartPointer(); $i <= $referencedName->getEndPointer(); $i++) {
 				$phpcsFile->fixer->replaceToken($i, '');
@@ -139,6 +135,30 @@ class FullyQualifiedExceptionsSniff implements Sniff
 
 			$phpcsFile->fixer->endChangeset();
 		}
+	}
+
+	/**
+	 * @return string[]
+	 */
+	private function getSpecialExceptionNames(): array
+	{
+		if ($this->normalizedSpecialExceptionNames === null) {
+			$this->normalizedSpecialExceptionNames = SniffSettingsHelper::normalizeArray($this->specialExceptionNames);
+		}
+
+		return $this->normalizedSpecialExceptionNames;
+	}
+
+	/**
+	 * @return string[]
+	 */
+	private function getIgnoredNames(): array
+	{
+		if ($this->normalizedIgnoredNames === null) {
+			$this->normalizedIgnoredNames = SniffSettingsHelper::normalizeArray($this->ignoredNames);
+		}
+
+		return $this->normalizedIgnoredNames;
 	}
 
 }

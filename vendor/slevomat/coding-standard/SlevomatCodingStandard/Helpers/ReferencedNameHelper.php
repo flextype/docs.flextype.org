@@ -57,37 +57,63 @@ use const T_VARIABLE;
 class ReferencedNameHelper
 {
 
-	/** @var \SlevomatCodingStandard\Helpers\ReferencedName[][] Cached data for method getAllReferencedNames, cacheKey(string) => pointer(integer) => name(string) */
-	private static $allReferencedTypesCache = [];
-
 	/**
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @param File $phpcsFile
 	 * @param int $openTagPointer
-	 * @return \SlevomatCodingStandard\Helpers\ReferencedName[] referenced names
+	 * @return ReferencedName[] referenced names
 	 */
 	public static function getAllReferencedNames(File $phpcsFile, int $openTagPointer): array
 	{
-		$cacheKey = $phpcsFile->getFilename() . '-' . $openTagPointer;
+		$lazyValue = static function () use ($phpcsFile, $openTagPointer): array {
+			return self::createAllReferencedNames($phpcsFile, $openTagPointer);
+		};
 
-		$fixerLoops = $phpcsFile->fixer !== null ? $phpcsFile->fixer->loops : null;
-		if ($fixerLoops !== null) {
-			$cacheKey .= '-loop' . $fixerLoops;
-			if ($fixerLoops > 0) {
-				unset(self::$allReferencedTypesCache[$cacheKey . '-loop' . ($fixerLoops - 1)]);
+		return SniffLocalCache::getAndSetIfNotCached($phpcsFile, 'references', $lazyValue);
+	}
+
+	public static function getReferenceName(File $phpcsFile, int $nameStartPointer, int $nameEndPointer): string
+	{
+		$tokens = $phpcsFile->getTokens();
+
+		$referencedName = '';
+		for ($i = $nameStartPointer; $i <= $nameEndPointer; $i++) {
+			if (in_array($tokens[$i]['code'], Tokens::$emptyTokens, true)) {
+				continue;
 			}
+
+			$referencedName .= $tokens[$i]['content'];
 		}
 
-		if (!isset(self::$allReferencedTypesCache[$cacheKey])) {
-			self::$allReferencedTypesCache[$cacheKey] = self::createAllReferencedNames($phpcsFile, $openTagPointer);
+		return $referencedName;
+	}
+
+	public static function getReferencedNameEndPointer(File $phpcsFile, int $startPointer): int
+	{
+		$tokens = $phpcsFile->getTokens();
+
+		$nameTokenCodes = array_merge([T_RETURN_TYPE], TokenHelper::$nameTokenCodes);
+		$nameTokenCodesWithWhitespace = array_merge($nameTokenCodes, Tokens::$emptyTokens);
+
+		$lastNamePointer = $startPointer;
+		for ($i = $startPointer + 1; $i < count($tokens); $i++) {
+			if (!in_array($tokens[$i]['code'], $nameTokenCodesWithWhitespace, true)) {
+				break;
+			}
+
+			if (!in_array($tokens[$i]['code'], $nameTokenCodes, true)) {
+				continue;
+			}
+
+			$lastNamePointer = $i;
 		}
 
-		return self::$allReferencedTypesCache[$cacheKey];
+		return $lastNamePointer;
 	}
 
 	/**
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @param File $phpcsFile
 	 * @param int $openTagPointer
-	 * @return \SlevomatCodingStandard\Helpers\ReferencedName[] referenced names
+	 * @return ReferencedName[] referenced names
 	 */
 	private static function createAllReferencedNames(File $phpcsFile, int $openTagPointer): array
 	{
@@ -122,11 +148,16 @@ class ReferencedNameHelper
 					if ($tokens[$previousTokenBeforeStartPointer]['code'] !== T_NEW) {
 						$type = ReferencedName::TYPE_FUNCTION;
 					}
+				} elseif ($tokens[$nextTokenAfterEndPointer]['code'] === T_BITWISE_AND) {
+					$tokenAfterNextToken = TokenHelper::findNextEffective($phpcsFile, $nextTokenAfterEndPointer + 1);
+					if (!in_array($tokens[$tokenAfterNextToken]['code'], [T_VARIABLE, T_ELLIPSIS], true)) {
+						$type = ReferencedName::TYPE_CONSTANT;
+					}
 				} elseif (
 					!in_array($tokens[$nextTokenAfterEndPointer]['code'], [
 						T_VARIABLE,
-						T_ELLIPSIS, // Variadic parameter
-						T_BITWISE_AND, // Parameter by reference
+						// Variadic parameter
+						T_ELLIPSIS,
 					], true)
 				) {
 					if (
@@ -134,10 +165,13 @@ class ReferencedNameHelper
 							T_EXTENDS,
 							T_IMPLEMENTS,
 							T_INSTANCEOF,
-							T_USE, // Trait
+							// Trait
+							T_USE,
 							T_NEW,
-							T_COLON, // Return type hint
-							T_NULLABLE, // Nullable type hint
+							// Return type hint
+							T_COLON,
+							// Nullable type hint
+							T_NULLABLE,
 						], true)
 						&& $tokens[$nextTokenAfterEndPointer]['code'] !== T_DOUBLE_COLON
 					) {
@@ -187,45 +221,6 @@ class ReferencedNameHelper
 			$beginSearchAtPointer = $nameEndPointer + 1;
 		}
 		return $types;
-	}
-
-	public static function getReferenceName(File $phpcsFile, int $nameStartPointer, int $nameEndPointer): string
-	{
-		$tokens = $phpcsFile->getTokens();
-
-		$referencedName = '';
-		for ($i = $nameStartPointer; $i <= $nameEndPointer; $i++) {
-			if (in_array($tokens[$i]['code'], Tokens::$emptyTokens, true)) {
-				continue;
-			}
-
-			$referencedName .= $tokens[$i]['content'];
-		}
-
-		return $referencedName;
-	}
-
-	public static function getReferencedNameEndPointer(File $phpcsFile, int $startPointer): int
-	{
-		$tokens = $phpcsFile->getTokens();
-
-		$nameTokenCodes = array_merge([T_RETURN_TYPE], TokenHelper::$nameTokenCodes);
-		$nameTokenCodesWithWhitespace = array_merge($nameTokenCodes, Tokens::$emptyTokens);
-
-		$lastNamePointer = $startPointer;
-		for ($i = $startPointer + 1; $i < count($tokens); $i++) {
-			if (!in_array($tokens[$i]['code'], $nameTokenCodesWithWhitespace, true)) {
-				break;
-			}
-
-			if (!in_array($tokens[$i]['code'], $nameTokenCodes, true)) {
-				continue;
-			}
-
-			$lastNamePointer = $i;
-		}
-
-		return $lastNamePointer;
 	}
 
 	private static function isReferencedName(File $phpcsFile, int $startPointer): bool
@@ -278,8 +273,13 @@ class ReferencedNameHelper
 			if ($constPointer !== null && TokenHelper::findNext($phpcsFile, [T_OPEN_SHORT_ARRAY, T_ARRAY], $constPointer + 1, $startPointer) === null) {
 				return false;
 			}
-		} elseif ($previousToken['code'] === T_BITWISE_AND && TokenHelper::findPreviousLocal($phpcsFile, [T_FUNCTION], $previousPointer - 1) !== null) {
-			return false;
+		} elseif ($previousToken['code'] === T_BITWISE_AND) {
+			$pointerBefore = TokenHelper::findPreviousEffective($phpcsFile, $previousPointer - 1);
+			$isFunctionPointerBefore = TokenHelper::findPreviousLocal($phpcsFile, T_FUNCTION, $previousPointer - 1) !== null;
+
+			if ($tokens[$pointerBefore]['code'] !== T_VARIABLE && $isFunctionPointerBefore) {
+				return false;
+			}
 		} elseif ($previousToken['code'] === T_GOTO) {
 			return false;
 		}
@@ -297,7 +297,11 @@ class ReferencedNameHelper
 		$endPointer = self::getReferencedNameEndPointer($phpcsFile, $startPointer);
 		$referencedName = self::getReferenceName($phpcsFile, $startPointer, $endPointer);
 
-		return !TypeHintHelper::isSimpleTypeHint($referencedName) && $referencedName !== 'object';
+		if (TypeHintHelper::isSimpleTypeHint($referencedName)) {
+			return $tokens[$nextPointer]['code'] === T_OPEN_PARENTHESIS;
+		}
+
+		return $referencedName !== 'object';
 	}
 
 }

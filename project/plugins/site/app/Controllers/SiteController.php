@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Site\Controllers;
 
 use Slim\Http\Environment;
 use Slim\Http\Uri;
@@ -17,6 +17,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use function ltrim;
 use Flextype\Component\Filesystem\Filesystem;
+use Flextype\App\Foundation\Container;
 
 class SiteController extends Container
 {
@@ -93,13 +94,14 @@ class SiteController extends Container
         $path = 'themes/' . $this->registry->get('plugins.site.settings.theme') . '/' . (empty($this->entry['template']) ? 'templates/default' : 'templates/' . $this->entry['template']) . '.html';
 
         if (! Filesystem::has(PATH['project'] . '/' . $path)) {
-            return $response->write("Template not found");
+            return $response->write("Template {$this->entry['template']} not found");
         }
 
         if ($uri === '/') {
             return $response->withRedirect('./en');
         }
         
+
         if ($is_entry_not_found) {
             return $this->twig->render($response->withStatus(404), $path, ['locale' => explode('/',$uri)[1], 'entry' => $this->entry, 'query' => $query, 'uri' => $uri]);
         }

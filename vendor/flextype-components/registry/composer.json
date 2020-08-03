@@ -1,24 +1,36 @@
 {
   "name": "flextype-components/registry",
-  "keywords": ["registry", "storage"],
+  "keywords": ["registry", "storage", "php", "flextype-components"],
   "type": "library",
   "license": "MIT",
   "homepage": "https://github.com/flextype-components/registry",
   "description": "Registry component provides a mechanism for storing data globally in a well managed fashion, helping to prevent global meltdown.",
-  "authors": [
-    {
-        "name": "Sergey Romanenko",
-        "email": "awilum@yandex.ru"
-    }
-  ],
   "support": {
+    "source": "https://github.com/flextype-components/registry",
     "issues": "https://github.com/flextype-components/registry/issues"
   },
+  "authors": [
+      {
+          "name": "Sergey Romanenko",
+          "email": "sergey.romanenko@flextype.org",
+          "homepage": "https://github.com/Awilum"
+      }
+  ],
   "require": {
       "php": "^7.1.3",
-      "flextype-components/arr": "*"
+      "flextype-components/arrays": "*"
+  },
+  "config": {
+      "apcu-autoloader": true,
+      "optimize-autoloader": true,
+      "platform": {
+          "php": "7.2.0"
+      }
   },
   "autoload": {
-      "psr-4": { "Flextype\\Component\\Registry\\": "" }
+      "psr-4": { "Flextype\\Component\\Registry\\": "src/" }
+  },
+  "require-dev": {
+      "doctrine/coding-standard": "7.0.2"
   }
 }

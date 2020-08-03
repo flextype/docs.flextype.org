@@ -1,3 +1,6 @@
+# v1.1.1, 2020-08-02
+* using new Arrays 
+
 # v1.1.0, 2018-07-17
 * New method added maskСreditСard()
 * New method added formatExp()

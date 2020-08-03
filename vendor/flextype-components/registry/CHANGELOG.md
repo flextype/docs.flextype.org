@@ -1,3 +1,6 @@
+# v3.0.0, 2020-07-24
+* new infrastructure
+
 # v2.0.0, 2019-03-01
 * new infrastructure
 

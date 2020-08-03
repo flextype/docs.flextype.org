@@ -68,9 +68,9 @@ class Lexer
 		self::TOKEN_INTEGER => 'TOKEN_INTEGER',
 		self::TOKEN_SINGLE_QUOTED_STRING => 'TOKEN_SINGLE_QUOTED_STRING',
 		self::TOKEN_DOUBLE_QUOTED_STRING => 'TOKEN_DOUBLE_QUOTED_STRING',
-		self::TOKEN_IDENTIFIER => 'TOKEN_IDENTIFIER',
+		self::TOKEN_IDENTIFIER => 'type',
 		self::TOKEN_THIS_VARIABLE => '\'$this\'',
-		self::TOKEN_VARIABLE => 'TOKEN_VARIABLE',
+		self::TOKEN_VARIABLE => 'variable',
 		self::TOKEN_HORIZONTAL_WS => 'TOKEN_HORIZONTAL_WS',
 		self::TOKEN_OTHER => 'TOKEN_OTHER',
 		self::TOKEN_END => 'TOKEN_END',
@@ -147,7 +147,7 @@ class Lexer
 			self::TOKEN_SINGLE_QUOTED_STRING => '\'(?:\\\\[^\\r\\n]|[^\'\\r\\n\\\\])*+\'',
 			self::TOKEN_DOUBLE_QUOTED_STRING => '"(?:\\\\[^\\r\\n]|[^"\\r\\n\\\\])*+"',
 
-			self::TOKEN_IDENTIFIER => '(?:[\\\\]?+[a-z_\\x80-\\xFF][0-9a-z_\\x80-\\xFF]*+)++',
+			self::TOKEN_IDENTIFIER => '(?:[\\\\]?+[a-z_\\x80-\\xFF][0-9a-z_\\x80-\\xFF-]*+)++',
 			self::TOKEN_THIS_VARIABLE => '\\$this(?![0-9a-z_\\x80-\\xFF])',
 			self::TOKEN_VARIABLE => '\\$[a-z_\\x80-\\xFF][0-9a-z_\\x80-\\xFF]*+',
 

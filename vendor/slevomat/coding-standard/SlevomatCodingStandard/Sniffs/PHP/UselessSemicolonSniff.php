@@ -6,11 +6,13 @@ use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use SlevomatCodingStandard\Helpers\TokenHelper;
 use function array_key_exists;
+use function count;
 use function in_array;
 use const T_ANON_CLASS;
 use const T_CLOSE_CURLY_BRACKET;
 use const T_CLOSE_PARENTHESIS;
 use const T_CLOSURE;
+use const T_FN;
 use const T_FOR;
 use const T_OPEN_CURLY_BRACKET;
 use const T_OPEN_TAG;
@@ -23,7 +25,7 @@ class UselessSemicolonSniff implements Sniff
 	public const CODE_USELESS_SEMICOLON = 'UselessSemicolon';
 
 	/**
-	 * @return (int|string)[]
+	 * @return array<int, (int|string)>
 	 */
 	public function register(): array
 	{
@@ -33,8 +35,8 @@ class UselessSemicolonSniff implements Sniff
 	}
 
 	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+	 * @param File $phpcsFile
 	 * @param int $semicolonPointer
 	 */
 	public function process(File $phpcsFile, $semicolonPointer): void
@@ -57,6 +59,7 @@ class UselessSemicolonSniff implements Sniff
 		if (
 			$possibleEndScopePointer !== null
 			&& $tokens[$possibleEndScopePointer]['parenthesis_opener'] < $semicolonPointer
+			&& array_key_exists('parenthesis_owner', $tokens[$possibleEndScopePointer])
 			&& $tokens[$tokens[$possibleEndScopePointer]['parenthesis_owner']]['code'] === T_FOR
 		) {
 			return;
@@ -111,7 +114,7 @@ class UselessSemicolonSniff implements Sniff
 		}
 
 		$scopeOpenerPointer = $tokens[$previousPointer]['scope_condition'];
-		if (in_array($tokens[$scopeOpenerPointer]['code'], [T_CLOSURE, T_ANON_CLASS], true)) {
+		if (in_array($tokens[$scopeOpenerPointer]['code'], [T_CLOSURE, T_FN, T_ANON_CLASS], true)) {
 			return;
 		}
 
@@ -146,7 +149,7 @@ class UselessSemicolonSniff implements Sniff
 		} while (true);
 
 		$fixEndPointer = $semicolonPointer;
-		do {
+		while ($fixEndPointer < count($tokens) - 1) {
 			if ($tokens[$fixEndPointer + 1]['code'] !== T_WHITESPACE) {
 				break;
 			}
@@ -156,7 +159,7 @@ class UselessSemicolonSniff implements Sniff
 			}
 
 			$fixEndPointer++;
-		} while (true);
+		}
 
 		$phpcsFile->fixer->beginChangeset();
 		for ($i = $fixStartPointer; $i <= $fixEndPointer; $i++) {

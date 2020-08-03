@@ -1,10 +1,17 @@
-# Registry Component
-![version](https://img.shields.io/badge/version-2.0.0-brightgreen.svg?style=flat-square "Version")
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/flextype-components/registry/blob/master/LICENSE)
+<h1 align="center">Registry Component</h1>
 
+<p align="center">
 Registry component provides a mechanism for storing data globally in a well managed fashion, helping to prevent global meltdown.
+</p>
+
+<p align="center">
+<a href="https://github.com/flextype-components/registry/releases"><img alt="Version" src="https://img.shields.io/github/release/flextype-components/registry.svg?label=version&color=green"></a> <a href="https://github.com/flextype-components/registry"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=green" alt="License"></a> <a href="https://github.com/flextype-components/registry"><img src="https://img.shields.io/github/downloads/flextype-components/registry/total.svg?color=green" alt="Total downloads"></a> <a href="https://scrutinizer-ci.com/g/flextype-components/registry?branch=master"><img src="https://img.shields.io/scrutinizer/g/flextype-components/registry.svg?branch=master&color=green" alt="Quality Score"></a>
+</p>
+<br>
 
 ### Installation
+
+With [Composer](https://getcomposer.org):
 
 ```
 composer require flextype-components/registry
@@ -13,35 +20,84 @@ composer require flextype-components/registry
 ### Usage
 
 ```php
-use Flextype\Component\Registry\Registry;
-```
+use Flextype\Component\Registry;
 
-Create registry object
-```php
 $registry = new Registry();
 ```
 
-Checks if an object with this name is in the registry.
+### Methods
+
+| Method | Description |
+|---|---|
+| <a href="#registry_set">`set()`</a> | Set a value in the registry. |
+| <a href="#registry_get">`get()`</a> | Get item from the registry. |
+| <a href="#registry_has">`has()`</a> | Determine if the registry has a value for the given name. |
+| <a href="#registry_delete">`delete()`</a> |  Delete a value from the registry. |
+| <a href="#registry_flush">`flush()`</a> | Flush all values from the registry. |
+| <a href="#registry_all">`all()`</a> | Get all values in the register. |
+
+<hr>
+
+#### <a name="registry_set"></a> Method: `set()`
+
+Set a value in the registry.
+
+**Example:**
+
 ```php
-if ($registry->has('var')) {
-    // Do something...
+$registry->set('movies.the-thin-red-line.title', 'The Thin Red Line');
+```
+
+#### <a name="registry_get"></a> Method: `get()`
+
+Get item from the registry.
+
+**Example:**
+
+```php
+$registry->get('movies.the-thin-red-line.title');
+```
+
+#### <a name="registry_has"></a> Method: `has()`
+
+Determine if the registry has a value for the given name.
+
+**Example:**
+
+```php
+if ($registry->has('movies.the-thin-red-line.title')) {
+    // do something...
 }
 ```
 
-Registers a given value under a given name.
+#### <a name="registry_delete"></a> Method: `delete()`
+
+**Example:**
+
 ```php
-$registry->set('var', 'value');
+$registry->delete('movies.the-thin-red-line.title');
 ```
 
-Fetch an item from the registry.
+#### <a name="registry_flush"></a> Method: `flush()`
+
+Flush all values from the registry.
+
+**Example:**
+
 ```php
-$var = $registry->get('var', 'value');
+$registry->flush();
 ```
 
-Get registry array
+#### <a name="registry_all"></a> Method: `all()`
+
+Get all values in the register.
+
+**Example:**
+
 ```php
-$data = $registry->dump();
+$dump = $registry->all();
 ```
 
-## License
-See [LICENSE](https://github.com/flextype-components/registry/blob/master/LICENSE)
+### License
+[The MIT License (MIT)](https://github.com/flextype-components/registry/blob/master/LICENSE.txt)
+Copyright (c) 2020 [Sergey Romanenko](https://github.com/Awilum)

@@ -4,6 +4,7 @@ namespace SlevomatCodingStandard\Sniffs\PHP;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
+use SlevomatCodingStandard\Helpers\FunctionHelper;
 use SlevomatCodingStandard\Helpers\NamespaceHelper;
 use SlevomatCodingStandard\Helpers\TokenHelper;
 use SlevomatCodingStandard\Helpers\UseStatementHelper;
@@ -25,43 +26,8 @@ class OptimizedFunctionsWithoutUnpackingSniff implements Sniff
 
 	public const CODE_UNPACKING_USED = 'UnpackingUsed';
 
-	private const SPECIAL_FUNCTIONS = [
-		'array_key_exists',
-		'array_slice',
-		'boolval',
-		'call_user_func',
-		'call_user_func_array',
-		'chr',
-		'count',
-		'doubleval',
-		'defined',
-		'floatval',
-		'func_get_args',
-		'func_num_args',
-		'get_called_class',
-		'get_class',
-		'gettype',
-		'in_array',
-		'intval',
-		'is_array',
-		'is_bool',
-		'is_double',
-		'is_float',
-		'is_long',
-		'is_int',
-		'is_integer',
-		'is_null',
-		'is_object',
-		'is_real',
-		'is_resource',
-		'is_string',
-		'ord',
-		'strlen',
-		'strval',
-	];
-
 	/**
-	 * @return (int|string)[]
+	 * @return array<int, (int|string)>
 	 */
 	public function register(): array
 	{
@@ -69,8 +35,8 @@ class OptimizedFunctionsWithoutUnpackingSniff implements Sniff
 	}
 
 	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+	 * @param File $phpcsFile
 	 * @param int $pointer
 	 */
 	public function process(File $phpcsFile, $pointer): void
@@ -100,7 +66,7 @@ class OptimizedFunctionsWithoutUnpackingSniff implements Sniff
 			return;
 		}
 
-		if (!in_array($invokedName, self::SPECIAL_FUNCTIONS, true)) {
+		if (!in_array($invokedName, FunctionHelper::SPECIAL_FUNCTIONS, true)) {
 			return;
 		}
 

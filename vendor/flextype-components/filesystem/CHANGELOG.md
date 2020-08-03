@@ -1,3 +1,6 @@
+# v2.0.7, 2020-07-24
+* improve delete() and deleteDir() methods.
+
 # v2.0.6, 2019-09-06
 * typo fixes.
 

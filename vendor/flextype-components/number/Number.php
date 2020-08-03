@@ -13,7 +13,7 @@
 
 namespace Flextype\Component\Number;
 
-use Flextype\Component\Arr\Arr;
+use Flextype\Component\Arrays\Arrays;
 
 class Number
 {
@@ -126,7 +126,7 @@ class Number
         $size = (float) $matches[1];
 
         // Find the actual unit, assume B if no unit specified
-        $unit = Arr::get($matches, 2, 'B');
+        $unit = Arrays::get($matches, 2, 'B');
 
         // Convert the size into bytes
         $bytes = $size * pow(2, Number::$byte_units[$unit]);

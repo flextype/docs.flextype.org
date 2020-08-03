@@ -19,7 +19,7 @@
         "php": ">=7.2.0",
         "slim/twig-view": "~2.5.0",
         "slim/csrf": "~0.8.3",
-        "flextype-components/assets": "1.0.3"
+        "slim/flash": "~0.4.0"
     },
     "config": {
         "apcu-autoloader": true,

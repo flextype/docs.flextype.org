@@ -3,6 +3,7 @@
 namespace SlevomatCodingStandard\Helpers;
 
 use PHP_CodeSniffer\Files\File;
+use function array_reverse;
 use function array_slice;
 use function count;
 use function explode;
@@ -23,9 +24,31 @@ class NamespaceHelper
 
 	public const NAMESPACE_SEPARATOR = '\\';
 
+	/**
+	 * @param File $phpcsFile
+	 * @return int[]
+	 */
+	public static function getAllNamespacesPointers(File $phpcsFile): array
+	{
+		$lazyValue = static function () use ($phpcsFile): array {
+			return TokenHelper::findNextAll($phpcsFile, T_NAMESPACE, 0);
+		};
+
+		return SniffLocalCache::getAndSetIfNotCached($phpcsFile, 'namespacePointers', $lazyValue);
+	}
+
 	public static function isFullyQualifiedName(string $typeName): bool
 	{
 		return StringHelper::startsWith($typeName, self::NAMESPACE_SEPARATOR);
+	}
+
+	public static function getFullyQualifiedTypeName(string $typeName): string
+	{
+		if (self::isFullyQualifiedName($typeName)) {
+			return $typeName;
+		}
+
+		return sprintf('%s%s', self::NAMESPACE_SEPARATOR, $typeName);
 	}
 
 	public static function hasNamespace(string $typeName): bool
@@ -46,18 +69,35 @@ class NamespaceHelper
 		return explode(self::NAMESPACE_SEPARATOR, $name);
 	}
 
-	public static function findCurrentNamespaceName(File $phpcsFile, int $anyPointer): ?string
+	public static function getName(File $phpcsFile, int $namespacePointer): string
 	{
-		$namespacePointer = TokenHelper::findPrevious($phpcsFile, T_NAMESPACE, $anyPointer);
-		if ($namespacePointer === null) {
-			return null;
-		}
-
 		/** @var int $namespaceNameStartPointer */
 		$namespaceNameStartPointer = TokenHelper::findNextEffective($phpcsFile, $namespacePointer + 1);
 		$namespaceNameEndPointer = TokenHelper::findNextExcluding($phpcsFile, TokenHelper::$nameTokenCodes, $namespaceNameStartPointer + 1) - 1;
 
 		return TokenHelper::getContent($phpcsFile, $namespaceNameStartPointer, $namespaceNameEndPointer);
+	}
+
+	public static function findCurrentNamespacePointer(File $phpcsFile, int $pointer): ?int
+	{
+		$allNamespacesPointers = array_reverse(self::getAllNamespacesPointers($phpcsFile));
+		foreach ($allNamespacesPointers as $namespacesPointer) {
+			if ($namespacesPointer < $pointer) {
+				return $namespacesPointer;
+			}
+		}
+
+		return null;
+	}
+
+	public static function findCurrentNamespaceName(File $phpcsFile, int $anyPointer): ?string
+	{
+		$namespacePointer = self::findCurrentNamespacePointer($phpcsFile, $anyPointer);
+		if ($namespacePointer === null) {
+			return null;
+		}
+
+		return self::getName($phpcsFile, $namespacePointer);
 	}
 
 	public static function getUnqualifiedNameFromFullyQualifiedName(string $name): string
@@ -84,21 +124,12 @@ class NamespaceHelper
 		);
 	}
 
-	public static function resolveClassName(
-		File $phpcsFile,
-		string $nameAsReferencedInFile,
-		int $currentPointer
-	): string
+	public static function resolveClassName(File $phpcsFile, string $nameAsReferencedInFile, int $currentPointer): string
 	{
 		return self::resolveName($phpcsFile, $nameAsReferencedInFile, ReferencedName::TYPE_DEFAULT, $currentPointer);
 	}
 
-	public static function resolveName(
-		File $phpcsFile,
-		string $nameAsReferencedInFile,
-		string $type,
-		int $currentPointer
-	): string
+	public static function resolveName(File $phpcsFile, string $nameAsReferencedInFile, string $type, int $currentPointer): string
 	{
 		if (self::isFullyQualifiedName($nameAsReferencedInFile)) {
 			return $nameAsReferencedInFile;

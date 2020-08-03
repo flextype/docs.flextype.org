@@ -23,8 +23,11 @@ class RequireYodaComparisonSniff implements Sniff
 
 	public const CODE_REQUIRED_YODA_COMPARISON = 'RequiredYodaComparison';
 
+	/** @var bool */
+	public $alwaysVariableOnRight = false;
+
 	/**
-	 * @return (int|string)[]
+	 * @return array<int, (int|string)>
 	 */
 	public function register(): array
 	{
@@ -37,8 +40,8 @@ class RequireYodaComparisonSniff implements Sniff
 	}
 
 	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+	 * @param File $phpcsFile
 	 * @param int $comparisonTokenPointer
 	 */
 	public function process(File $phpcsFile, $comparisonTokenPointer): void
@@ -54,6 +57,10 @@ class RequireYodaComparisonSniff implements Sniff
 		}
 
 		if ($leftDynamism <= $rightDynamism) {
+			return;
+		}
+
+		if (!$this->alwaysVariableOnRight && $leftDynamism >= 900 && $rightDynamism >= 900) {
 			return;
 		}
 

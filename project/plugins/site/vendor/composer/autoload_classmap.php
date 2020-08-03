@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Flextype\\SiteController' => $baseDir . '/app/Controllers/SiteController.php',
+    'Flextype\\Plugin\\Site\\Controllers\\SiteController' => $baseDir . '/app/Controllers/SiteController.php',
     'Middlewares\\TrailingSlash' => $vendorDir . '/middlewares/trailing-slash/src/TrailingSlash.php',
     'Middlewares\\Utils\\CallableHandler' => $vendorDir . '/middlewares/utils/src/CallableHandler.php',
     'Middlewares\\Utils\\Dispatcher' => $vendorDir . '/middlewares/utils/src/Dispatcher.php',
