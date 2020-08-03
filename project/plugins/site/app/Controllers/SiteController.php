@@ -97,6 +97,11 @@ class SiteController extends Container
             return $response->write("Template {$this->entry['template']} not found");
         }
 
+        if ($uri === '/') {
+            return $response->withRedirect('./en');
+        }
+        
+
         if ($is_entry_not_found) {
             return $this->twig->render($response->withStatus(404), $path, ['locale' => explode('/',$uri)[1], 'entry' => $this->entry, 'query' => $query, 'uri' => $uri]);
         }

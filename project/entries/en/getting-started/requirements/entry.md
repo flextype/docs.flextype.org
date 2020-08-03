@@ -17,7 +17,7 @@ on_this_page:
 You can easily run Flextype on your local computer and on any Web hosting providers. Make sure that your server meets the following requirements:
 
 * Web Server Apache.
-* PHP 7.2.0 or higher.
+* PHP 7.2.5 or higher.
 
 ### <a name="web-server-requirements"></a> Web Server Requirements
 
