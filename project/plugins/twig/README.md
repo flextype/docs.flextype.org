@@ -10,8 +10,6 @@ Twig plugin to present Twig template engine for Flextype.
 
 The following dependencies need to be installed for Twig Plugin.
 
-### System
-
 | Item | Version | Download |
 |---|---|---|
 | [flextype](https://github.com/flextype/flextype) | 0.9.8 | [download](https://github.com/flextype/flextype/releases) |
@@ -336,6 +334,145 @@ Usage:
 
 ```twig
 {% do emitter.emitBatch({'onThemeHeader', 'onSomeOtherEvent'}) %}
+```
+
+##### arr
+
+Contains methods that can be useful when working with arrays.
+
+Sorts a multi-dimensional array by a certain column
+
+Usage:
+
+```twig
+{% set new_array = arr.sort(old.array, 'title') %}
+```
+
+Sets an array value using "dot notation".
+
+Usage:
+
+```twig
+{% set entry = arr.set(entry, 'title', 'New Title') %}
+```
+
+Return value from array using "dot notation".
+If the key does not exist in the array, the default value will be returned instead.
+
+Usage:
+
+```twig
+{{ arr.get(entry, 'title') }}
+```
+
+Delete an array value using "dot notation".
+
+Usage:
+
+```twig
+{% set entry = arr.delete(entry, 'title') %}
+```
+
+Checks if the given dot-notated key exists in the array.
+
+Usage:
+
+```twig
+{% if arr.keyExists(entry, 'title') %}
+    Do something...
+{% endif %}
+```
+
+Returns a random value from an array.
+
+Usage:
+
+```twig
+{{ arr.random(['php', 'js', 'css', 'html']) }}
+```
+
+Returns TRUE if the array is associative and FALSE if not.
+
+Usage:
+
+```twig
+{% if arr.isAssoc(entry) %}
+    Do something...
+{% endif %}
+```
+
+Returns TRUE if the array is associative and FALSE if not.
+
+Usage:
+
+```twig
+{% set array1 = {'name': 'john', 'mood': 'happy', 'food': 'bacon'} %}
+{% set array2 = {'name': 'jack', 'food': 'tacos', 'drink': 'beer'} %}
+{% set array3 = arr.overwrite(array1, array2) %}
+```
+
+Converts an array to a JSON string
+
+Usage:
+
+```twig
+{{ arr.json(entry) }}
+```
+
+Returns the first element of an array
+
+Usage:
+
+```twig
+{{ arr.first(entry) }}
+```
+
+Returns the last element of an array
+
+Usage:
+
+```twig
+{{ arr.last(entry) }}
+```
+
+Converts an array to a JSON string
+
+Usage:
+
+```twig
+{{ arr.toJson(entry) }}
+```
+
+Create an new Array from JSON string.
+
+Usage:
+
+```twig
+{% set array = arr.createFromJson($string) %}
+```
+
+Create an new Array object via string.
+
+Usage:
+
+```twig
+{% set array = arr.createFromString('cat, dog, bird', ',') %}
+```
+
+Counts all elements in an array.
+
+Usage:
+
+```twig
+{{ arr.size(array) }}
+```
+
+Return an array with elements in reverse order.
+
+Usage:
+
+```twig
+{% set new_array = arr.reverse(old_array) %}
 ```
 
 #### Global Variables

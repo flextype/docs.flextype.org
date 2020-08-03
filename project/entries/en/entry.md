@@ -1,9 +1,6 @@
 ---
 title: What is Flextype?   
 breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
   1:
     title: "Getting Started"
     link: "[url]/en/getting-started/"
@@ -24,65 +21,33 @@ txt:
       coc: Code of Conduct
       getting_help: Getting Help
       license: License
-    concepts:
-      title: Concepts
+    core:
+      title: Core Concepts
       entries: Entries
       plugins: Plugins
+      collections: Collections
+      config: Config
+      registry: Registry
+      cache: Cache
+      media: Media
       parsers: Parsers
       serializers: Serializers
-      content_apis: Content APIs
-      perfomance: Performance
-    api:
-     title: API Reference
-     delivery: Content Delivery API
-     management: Content Management API
-     images: Images API
-     authentication: Authentication
-     http_details: HTTP Details
-     errors: Errors
-    content:
-      title: Content
-      entries: Entries
-      markdown: Markdown
-      media: Media
-      fieldsets: Fieldsets
-      snippets: Snippets
-      shortcodes: Shortcodes
-    themes:
-      title: Themes
-      theme_installation: Theme Installation
-      twig_filters_functions: Twig Filters & Functions
-      theme_variables: Theme Variables
-      theme_configuration: Theme Configuration
-      entries_fetch: Entries Fetch
-    plugins:
-      title: Plugins
-      configuration: Plugin Configuration
-      event_hooks: "Event Hooks"
-      toasts_notifications: Toast Notifications
-      installation: Plugin Installation
-      navigation: Navigation
-    cookbook:
-      title: Cookbook
-      tutorials:
-        title: Tutorials
-        blog: Blog
-        team_members: Team Members
-      setup:
-        title: Setup
-      templating:
-        title: Templating
-    advanced:
-      title: Advanced
-      performance_and_caching: Performance & Caching
-      password_recovery: Password recovery
-      yaml_syntax: YAML Syntax
-      api: Flextype API's
+    rest_api:
+     title: Rest API
+     introduction: Introduction
+     entries: Entries
+     registry: Registry
+     config: Config
+     files: Files
+     folders: Folders
+     images: Images
 ---
 
-Flextype is an open-source self-hosted **Data-First Headless CMS & API**. It is was **founded in March 2018** as lightweight alternative to other heavy and outdated CMS. Many people use complex solutions for simple pages, unnecessarily. Building this content management system, we focused on simplicity - even novice webmaster adapt his template and writes his own plugin. To achieve this, we implemented a simple but powerful API's.
+Flextype is an open-source **Hybrid Content Management System** with the freedom of a headless CMS and with the full functionality of a traditional CMS. A true hybrid CMS gives you the freedom of a Headless CMS ー with the functionality and ease-of-use of a traditional content management system. Whether you’re looking to build headless, traditional, or a combination of both Flextype CMS has you covered.
 
-With Flextype, you are in complete control. Design your data structure the way you want. Update and share your data with others and teams using version control. Flextype does not require MySQL database, because all the data are collected in a simple files. Perfect portability when changing your hosting provider. Just copy all the files from one account to another.
+With Flextype, you are in complete control. Design your data structure the way you want. Update and share your data with others and teams using version control. Flextype does not require any relational database management system, because all the data are collected in a simple flat files. Perfect portability when changing your hosting provider. Just copy all the files from one server to another.
+
+Building this Content Management System, we focused on simplicity. To achieve this, we implemented a simple but Powerful API's.
 
 The underlying architecture of Flextype is built using well established and best-in-class technologies. This is to ensure that Flextype is simple to use and easy to extend. Some of these key technologies include:
 
@@ -93,6 +58,7 @@ The underlying architecture of Flextype is built using well established and best
 * [Thunderer Shortcode](https://github.com/thunderer/Shortcode): Advanced shortcode (BBCode) parser and engine for PHP.
 * [Markdown & Parsedown](https://github.com/erusev/parsedown): Easy content creation using Markdown Syntax.
 * [YAML](https://yaml.org): Human friendly data serialization format for simple configuration.
+
 
 ### Supporting Flextype
 
@@ -109,7 +75,7 @@ However, the amount of effort needed to maintain and develop new features for th
 We are on a mission to build high quality platform to develop fast, flexible, easier to manage websites with Flextype!<br><br>
 If you wish to participate in the translation of Flextype, please Join Flextype International Translator Team and start translating!<br><br>
 Our crowdin projects:<br>
-<a href="https://crowdin.com/project/flextype-plugin-admin">Flextype Admin Panel Plugin</a>, <a href="https://crowdin.com/project/flextype-plugin-form-admin">Flextype Form Admin Plugin</a>, <a href="https://crowdin.com/project/flextype-plugin-themes-admin">Flextype Themes Admin Plugin</a>, <a href="https://crowdin.com/project/flextype-website">Flextype Website</a>, <a href="https://crowdin.com/project/flextype-documentation">Flextype Documentation</a>
+<a href="https://crowdin.com/project/flextype-plugin-admin">Flextype Admin Panel Plugin</a>, <a href="https://crowdin.com/project/flextype-plugin-form-admin">Flextype Form Admin Plugin</a>, <a href="https://crowdin.com/project/flextype-plugin-themes-admin">Flextype Themes Admin Plugin</a>, <a href="https://crowdin.com/project/flextype-website">Flextype Website</a>, <a href="https://crowdin.com/project/flextype-documentation">Flextype Documentation</a>, <a href="https://crowdin.com/project/flextype-plugin-accounts-admin">Flextype Accounts Plugin</a>, <a href="https://crowdin.com/project/flextype-plugin-accounts">Flextype Accounts Admin Plugin</a>
 
 ### Flextype Press kit
 

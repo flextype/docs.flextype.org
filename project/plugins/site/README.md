@@ -16,7 +16,7 @@ The following dependencies need to be downloaded and installed for Site Plugin.
 |---|---|---|
 | [flextype](https://github.com/flextype/flextype) | 0.9.8 | [download](https://github.com/flextype/flextype/releases) |
 | [twig](https://github.com/flextype-plugins/twig) | >=1.0.0 | [download](https://github.com/flextype-plugins/twig/releases) |
-| [noir](https://github.com/flextype-plugins/noir) | >=1.0.0 | [download](https://github.com/flextype-plugins/noir/releases) |
+| [noir](https://github.com/flextype-themes/noir) | >=1.0.0 | [download](https://github.com/flextype-themes/noir/releases) |
 
 ## Installation
 

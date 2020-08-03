@@ -21,7 +21,7 @@ use const PHP_VERSION;
 /**
  * Define the application minimum supported PHP version.
  */
-define('FLEXTYPE_MINIMUM_PHP', '7.2.0');
+define('FLEXTYPE_MINIMUM_PHP', '7.2.5');
 
 /**
  * Define the PATH to the root directory (without trailing slash).
@@ -33,7 +33,6 @@ define('ROOT_DIR', str_replace(DIRECTORY_SEPARATOR, '/', getcwd()));
  */
 define('PATH', [
     'project'   => ROOT_DIR . '/project',
-    'config'    => ROOT_DIR . '/src/flextype/config',
     'cache'     => ROOT_DIR . '/var/cache',
     'logs'      => ROOT_DIR . '/var/logs',
 ]);

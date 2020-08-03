@@ -4,12 +4,12 @@ namespace SlevomatCodingStandard\Sniffs\Commenting;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
+use SlevomatCodingStandard\Helpers\CommentHelper;
 use SlevomatCodingStandard\Helpers\TokenHelper;
 use function array_key_exists;
 use function preg_match;
 use function preg_replace;
 use function strlen;
-use function strpos;
 use function substr;
 use const T_COMMENT;
 use const T_DOC_COMMENT_OPEN_TAG;
@@ -21,7 +21,7 @@ class EmptyCommentSniff implements Sniff
 	public const CODE_EMPTY_COMMENT = 'EmptyComment';
 
 	/**
-	 * @return (int|string)[]
+	 * @return array<int, (int|string)>
 	 */
 	public function register(): array
 	{
@@ -32,13 +32,13 @@ class EmptyCommentSniff implements Sniff
 	}
 
 	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+	 * @param File $phpcsFile
 	 * @param int $commentStartPointer
 	 */
 	public function process(File $phpcsFile, $commentStartPointer): void
 	{
-		$commentEndPointer = $this->getCommentEndPointer($phpcsFile, $commentStartPointer);
+		$commentEndPointer = CommentHelper::getCommentEndPointer($phpcsFile, $commentStartPointer);
 
 		if ($commentEndPointer === null) {
 			// Part of block comment
@@ -47,7 +47,7 @@ class EmptyCommentSniff implements Sniff
 
 		$commentContent = $this->getCommentContent($phpcsFile, $commentStartPointer, $commentEndPointer);
 
-		$isLineComment = $this->isLineComment($phpcsFile, $commentStartPointer);
+		$isLineComment = CommentHelper::isLineComment($phpcsFile, $commentStartPointer);
 		$isEmpty = $this->isEmpty($commentContent, $isLineComment);
 
 		if (!$isEmpty) {
@@ -70,14 +70,14 @@ class EmptyCommentSniff implements Sniff
 
 		$tokens = $phpcsFile->getTokens();
 
-		$phpcsFile->fixer->beginChangeset();
-
 		/** @var int $pointerBeforeWhitespaceBeforeComment */
 		$pointerBeforeWhitespaceBeforeComment = TokenHelper::findPreviousExcluding($phpcsFile, T_WHITESPACE, $commentStartPointer - 1);
 		$whitespaceBeforeComment = $pointerBeforeWhitespaceBeforeComment !== $commentStartPointer - 1
 			? TokenHelper::getContent($phpcsFile, $pointerBeforeWhitespaceBeforeComment + 1, $commentStartPointer - 1)
 			: '';
 		$fixedWhitespaceBeforeComment = preg_replace('~[ \\t]+$~', '', $whitespaceBeforeComment);
+
+		$phpcsFile->fixer->beginChangeset();
 
 		for ($i = $pointerBeforeWhitespaceBeforeComment + 1; $i < $commentStartPointer; $i++) {
 			$phpcsFile->fixer->replaceToken($i, '');
@@ -105,37 +105,11 @@ class EmptyCommentSniff implements Sniff
 		$phpcsFile->fixer->endChangeset();
 	}
 
-	private function isLineComment(File $phpcsFile, int $commentPointer): bool
-	{
-		return (bool) preg_match('~^(?://|#)(.*)~', $phpcsFile->getTokens()[$commentPointer]['content']);
-	}
-
 	private function isEmpty(string $comment, bool $isLineComment): bool
 	{
 		return $isLineComment
 			? (bool) preg_match('~^\\s*$~', $comment)
 			: (bool) preg_match('~^[\\s\*]*$~', $comment);
-	}
-
-	private function getCommentEndPointer(File $phpcsFile, int $commentStartPointer): ?int
-	{
-		$tokens = $phpcsFile->getTokens();
-
-		if ($tokens[$commentStartPointer]['code'] === T_DOC_COMMENT_OPEN_TAG) {
-			return $tokens[$commentStartPointer]['comment_closer'];
-		}
-
-		if ($this->isLineComment($phpcsFile, $commentStartPointer)) {
-			return $commentStartPointer;
-		}
-
-		if (strpos($tokens[$commentStartPointer]['content'], '/*') !== 0) {
-			// Part of block comment
-			return null;
-		}
-
-		$nextPointerAfterComment = TokenHelper::findNextExcluding($phpcsFile, T_COMMENT, $commentStartPointer + 1);
-		return $nextPointerAfterComment - 1;
 	}
 
 	private function getCommentContent(File $phpcsFile, int $commentStartPointer, int $commentEndPointer): string
@@ -173,7 +147,7 @@ class EmptyCommentSniff implements Sniff
 			return false;
 		}
 
-		if (!$this->isLineComment($phpcsFile, $beforeCommentStartPointer)) {
+		if (!CommentHelper::isLineComment($phpcsFile, $beforeCommentStartPointer)) {
 			return false;
 		}
 
@@ -182,7 +156,7 @@ class EmptyCommentSniff implements Sniff
 		}
 
 		/** @var int $beforeCommentEndPointer */
-		$beforeCommentEndPointer = $this->getCommentEndPointer($phpcsFile, $beforeCommentStartPointer);
+		$beforeCommentEndPointer = CommentHelper::getCommentEndPointer($phpcsFile, $beforeCommentStartPointer);
 		if (!$this->isEmpty($this->getCommentContent($phpcsFile, $beforeCommentStartPointer, $beforeCommentEndPointer), true)) {
 			return true;
 		}
@@ -204,7 +178,7 @@ class EmptyCommentSniff implements Sniff
 			return false;
 		}
 
-		if (!$this->isLineComment($phpcsFile, $afterCommentStartPointer)) {
+		if (!CommentHelper::isLineComment($phpcsFile, $afterCommentStartPointer)) {
 			return false;
 		}
 
@@ -213,7 +187,7 @@ class EmptyCommentSniff implements Sniff
 		}
 
 		/** @var int $afterCommentEndPointer */
-		$afterCommentEndPointer = $this->getCommentEndPointer($phpcsFile, $afterCommentStartPointer);
+		$afterCommentEndPointer = CommentHelper::getCommentEndPointer($phpcsFile, $afterCommentStartPointer);
 		if (!$this->isEmpty($this->getCommentContent($phpcsFile, $afterCommentStartPointer, $afterCommentEndPointer), true)) {
 			return true;
 		}

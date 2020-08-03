@@ -16,6 +16,7 @@ use function preg_quote;
 use function sprintf;
 use const T_AND_EQUAL;
 use const T_BITWISE_AND;
+use const T_CLOSE_CURLY_BRACKET;
 use const T_CONCAT_EQUAL;
 use const T_DIV_EQUAL;
 use const T_DO;
@@ -48,7 +49,7 @@ class UselessVariableSniff implements Sniff
 	public const CODE_USELESS_VARIABLE = 'UselessVariable';
 
 	/**
-	 * @return (int|string)[]
+	 * @return array<int, (int|string)>
 	 */
 	public function register(): array
 	{
@@ -58,8 +59,8 @@ class UselessVariableSniff implements Sniff
 	}
 
 	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+	 * @param File $phpcsFile
 	 * @param int $returnPointer
 	 */
 	public function process(File $phpcsFile, $returnPointer): void
@@ -86,6 +87,10 @@ class UselessVariableSniff implements Sniff
 		}
 
 		if ($this->isStaticVariable($phpcsFile, $functionPointer, $variablePointer, $variableName)) {
+			return;
+		}
+
+		if ($this->isFunctionParameter($phpcsFile, $functionPointer, $variableName)) {
 			return;
 		}
 
@@ -126,7 +131,7 @@ class UselessVariableSniff implements Sniff
 		}
 
 		if (
-			!in_array($tokens[$pointerBeforePreviousVariable]['code'], [T_SEMICOLON, T_OPEN_CURLY_BRACKET], true)
+			!in_array($tokens[$pointerBeforePreviousVariable]['code'], [T_SEMICOLON, T_OPEN_CURLY_BRACKET, T_CLOSE_CURLY_BRACKET], true)
 			&& TokenHelper::findNextEffective($phpcsFile, $returnSemicolonPointer + 1) !== null
 		) {
 			$phpcsFile->addError(...$errorParameters);
@@ -271,6 +276,28 @@ class UselessVariableSniff implements Sniff
 		return false;
 	}
 
+	private function isFunctionParameter(File $phpcsFile, ?int $functionPointer, string $variableName): bool
+	{
+		if ($functionPointer === null) {
+			return false;
+		}
+
+		$tokens = $phpcsFile->getTokens();
+
+		for ($i = $tokens[$functionPointer]['parenthesis_opener'] + 1; $i < $tokens[$functionPointer]['parenthesis_closer']; $i++) {
+			if ($tokens[$i]['code'] !== T_VARIABLE) {
+				continue;
+			}
+			if ($tokens[$i]['content'] !== $variableName) {
+				continue;
+			}
+
+			return true;
+		}
+
+		return false;
+	}
+
 	private function isReturnedByReference(File $phpcsFile, ?int $functionPointer): bool
 	{
 		if ($functionPointer === null) {
@@ -293,7 +320,7 @@ class UselessVariableSniff implements Sniff
 		}
 
 		$docCommentContent = TokenHelper::getContent($phpcsFile, $tokens[$pointerBeforeVariable]['comment_opener'], $pointerBeforeVariable);
-		return preg_match('~@var\\s+\\S+\\s+' . preg_quote($tokens[$variablePointer]['content'], '~') . '~', $docCommentContent) !== 0;
+		return preg_match('~@(?:(?:phpstan|psalm)-)?var\\s+.+\\s+' . preg_quote($tokens[$variablePointer]['content'], '~') . '(?:\\s|$)~', $docCommentContent) !== 0;
 	}
 
 	private function hasAnotherAssigmentBefore(File $phpcsFile, int $variablePointer, string $variableName): bool

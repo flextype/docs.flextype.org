@@ -2,14 +2,16 @@
 
 namespace SlevomatCodingStandard\Sniffs;
 
-use Exception;
 use PHP_CodeSniffer\Config;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Files\LocalFile;
 use PHP_CodeSniffer\Runner;
 use ReflectionClass;
 use function array_map;
+use function array_merge;
 use function count;
+use function define;
+use function defined;
 use function implode;
 use function in_array;
 use function preg_replace;
@@ -27,16 +29,18 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
 	/**
 	 * @param string $filePath
-	 * @param (string|int|bool|(string|int|bool)[])[] $sniffProperties
+	 * @param (string|int|bool|array<int|string, (string|int|bool|null)>)[] $sniffProperties
 	 * @param string[] $codesToCheck
-	 * @return \PHP_CodeSniffer\Files\File
+	 * @param string[] $cliArgs
+	 * @return File
 	 */
-	protected static function checkFile(string $filePath, array $sniffProperties = [], array $codesToCheck = []): File
+	protected static function checkFile(string $filePath, array $sniffProperties = [], array $codesToCheck = [], array $cliArgs = []): File
 	{
+		if (defined('PHP_CODESNIFFER_CBF') === false) {
+			define('PHP_CODESNIFFER_CBF', false);
+		}
 		$codeSniffer = new Runner();
-		$codeSniffer->config = new Config([
-			'-s',
-		]);
+		$codeSniffer->config = new Config(array_merge(['-s'], $cliArgs));
 		$codeSniffer->init();
 
 		if (count($sniffProperties) > 0) {
@@ -61,16 +65,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
 		$file = new LocalFile($filePath, $codeSniffer->ruleset, $codeSniffer->config);
 		$file->process();
-
-		foreach ($file->getErrors() as $errorsOnLine) {
-			foreach ($errorsOnLine as $errorsOnPosition) {
-				foreach ($errorsOnPosition as $error) {
-					if (strpos($error['source'], 'Internal.') === 0) {
-						throw new Exception($error['message']);
-					}
-				}
-			}
-		}
 
 		return $file;
 	}
@@ -126,47 +120,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 		self::assertStringEqualsFile(preg_replace('~(\\.php)$~', '.fixed\\1', $phpcsFile->getFilename()), $phpcsFile->fixer->getContents());
 	}
 
-	/**
-	 * @param (string|int)[][][] $errorsOnLine
-	 * @param string $sniffCode
-	 * @param string|null $message
-	 * @return bool
-	 */
-	private static function hasError(array $errorsOnLine, string $sniffCode, ?string $message = null): bool
-	{
-		foreach ($errorsOnLine as $errorsOnPosition) {
-			foreach ($errorsOnPosition as $error) {
-				/** @var string $errorSource */
-				$errorSource = $error['source'];
-				/** @var string $errorMessage */
-				$errorMessage = $error['message'];
-
-				if (!(
-					$errorSource === $sniffCode
-					&& ($message === null || strpos($errorMessage, $message) !== false)
-				)) {
-					continue;
-				}
-
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	/**
-	 * @param (string|int|bool)[][][] $errors
-	 */
-	private static function getFormattedErrors(array $errors): string
-	{
-		return implode(PHP_EOL, array_map(function (array $errors): string {
-			return implode(PHP_EOL, array_map(function (array $error): string {
-				return sprintf("\t%s: %s", $error['source'], $error['message']);
-			}, $errors));
-		}, $errors));
-	}
-
 	protected static function getSniffName(): string
 	{
 		return preg_replace(
@@ -193,9 +146,51 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 	{
 		static $reflections = [];
 
+		/** @phpstan-var class-string $className */
 		$className = static::getSniffClassName();
 
 		return $reflections[$className] ?? $reflections[$className] = new ReflectionClass($className);
+	}
+
+	/**
+	 * @param (string|int)[][][] $errorsOnLine
+	 * @param string $sniffCode
+	 * @param string|null $message
+	 * @return bool
+	 */
+	private static function hasError(array $errorsOnLine, string $sniffCode, ?string $message): bool
+	{
+		$hasError = false;
+
+		foreach ($errorsOnLine as $errorsOnPosition) {
+			foreach ($errorsOnPosition as $error) {
+				/** @var string $errorSource */
+				$errorSource = $error['source'];
+				/** @var string $errorMessage */
+				$errorMessage = $error['message'];
+
+				if ($errorSource === $sniffCode
+					&& ($message === null || strpos($errorMessage, $message) !== false)
+				) {
+					$hasError = true;
+					break;
+				}
+			}
+		}
+
+		return $hasError;
+	}
+
+	/**
+	 * @param (string|int|bool)[][][] $errors
+	 */
+	private static function getFormattedErrors(array $errors): string
+	{
+		return implode(PHP_EOL, array_map(static function (array $errors): string {
+			return implode(PHP_EOL, array_map(static function (array $error): string {
+				return sprintf("\t%s: %s", $error['source'], $error['message']);
+			}, $errors));
+		}, $errors));
 	}
 
 }

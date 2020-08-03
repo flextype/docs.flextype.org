@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Twig\Twig;
 
 use Twig_Extension;
 use Twig_Extension_GlobalsInterface;
@@ -35,7 +35,6 @@ class GlobalVarsTwigExtension extends Twig_Extension implements Twig_Extension_G
     {
         return [
             'PATH_PROJECT' => PATH['project'],
-            'PATH_CONFIG' => PATH['config'],
             'PATH_CACHE' => PATH['cache'],
             'PATH_LOGS' => PATH['logs'],
             'PHP_VERSION' => PHP_VERSION

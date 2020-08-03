@@ -5,7 +5,11 @@ namespace SlevomatCodingStandard\Sniffs\Functions;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use SlevomatCodingStandard\Helpers\TokenHelper;
+use SlevomatCodingStandard\Helpers\VariableHelper;
+use const T_CLOSE_PARENTHESIS;
 use const T_CLOSURE;
+use const T_DOUBLE_QUOTED_STRING;
+use const T_FN;
 use const T_OPEN_PARENTHESIS;
 use const T_PARENT;
 use const T_STATIC;
@@ -18,18 +22,19 @@ class StaticClosureSniff implements Sniff
 	public const CODE_CLOSURE_NOT_STATIC = 'ClosureNotStatic';
 
 	/**
-	 * @return (int|string)[]
+	 * @return array<int, (int|string)>
 	 */
 	public function register(): array
 	{
 		return [
 			T_CLOSURE,
+			T_FN,
 		];
 	}
 
 	/**
-	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+	 * @param File $phpcsFile
 	 * @param int $closurePointer
 	 */
 	public function process(File $phpcsFile, $closurePointer): void
@@ -51,12 +56,27 @@ class StaticClosureSniff implements Sniff
 			}
 		}
 
-		$thisPointer = TokenHelper::findNextContent($phpcsFile, T_VARIABLE, '$this', $tokens[$closurePointer]['scope_opener'] + 1, $tokens[$closurePointer]['scope_closer']);
+		$closureScopeOpenerPointer = $tokens[$closurePointer]['scope_opener'];
+		$closureScopeCloserPointer = $tokens[$closurePointer]['scope_closer'];
+		if ($tokens[$closureScopeCloserPointer]['code'] === T_CLOSE_PARENTHESIS) {
+			while ($tokens[$closureScopeCloserPointer]['parenthesis_opener'] > $closurePointer) {
+				$closureScopeCloserPointer = TokenHelper::findNext($phpcsFile, T_CLOSE_PARENTHESIS, $closureScopeCloserPointer + 1);
+			}
+		}
+
+		$thisPointer = TokenHelper::findNextContent($phpcsFile, T_VARIABLE, '$this', $closureScopeOpenerPointer + 1, $closureScopeCloserPointer);
 		if ($thisPointer !== null) {
 			return;
 		}
 
-		$parentPointer = TokenHelper::findNext($phpcsFile, T_PARENT, $tokens[$closurePointer]['scope_opener'] + 1, $tokens[$closurePointer]['scope_closer']);
+		$stringPointers = TokenHelper::findNextAll($phpcsFile, T_DOUBLE_QUOTED_STRING, $closureScopeOpenerPointer + 1, $closureScopeCloserPointer);
+		foreach ($stringPointers as $stringPointer) {
+			if (VariableHelper::isUsedInScopeInString($phpcsFile, '$this', $stringPointer)) {
+				return;
+			}
+		}
+
+		$parentPointer = TokenHelper::findNext($phpcsFile, T_PARENT, $closureScopeOpenerPointer + 1, $closureScopeCloserPointer);
 		if ($parentPointer !== null) {
 			return;
 		}

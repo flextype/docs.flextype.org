@@ -2,9 +2,6 @@
 title: Configuration
 description: Flextype allows you to configure your site in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that make this possible.
 breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
   1:
     title: "Getting Started"
     link: "[url]/en/getting-started/"
@@ -255,20 +252,44 @@ cors:
   expose: []
   credentials: false
 
+# Media
+media:
+  accept_file_types: 'gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg'
+  max_file_size: 5000000
+  safe_names: true
+  image_width: 1600
+  image_height: 0
+  image_quality: 70
+  max_image_width: null
+  max_image_height: null
+
 # Content APIs
 api:
-  delivery:
-    entries:
-      enabled: true
-      default_token:
-    registry:
-      enabled: true
-      default_token:
-  management:
-    entries:
-      enabled: true
-      default_token:
+  entries:
+    enabled: true
+    default_token:
+  registry:
+    enabled: true
+    default_token:
+  config:
+    enabled: true
+    default_token:
+  files:
+    enabled: true
+    default_token:
   images:
     enabled: true
     default_token:
 ```
+
+### PHP constants
+
+Your `index.php` file can define certain PHP constants, which Flextype bootstrap script will check for while loading and configuring Flextype.
+
+| Name | Description |
+| :------------- | :------------- |
+| `FLEXTYPE_MINIMUM_PHP` | Define the application minimum supported PHP version. |
+| `ROOT_DIR` | Define the path to the root directory (without trailing slash). |
+| `PATH['project']` | Define the PATH to project (without trailing slash). |
+| `PATH['cache']` | Define the PATH to project cache (without trailing slash). |
+| `PATH['logs']` | Define the PATH to project logs (without trailing slash). |

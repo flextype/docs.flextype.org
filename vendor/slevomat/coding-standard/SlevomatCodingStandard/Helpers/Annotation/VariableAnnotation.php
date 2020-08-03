@@ -3,10 +3,19 @@
 namespace SlevomatCodingStandard\Helpers\Annotation;
 
 use InvalidArgumentException;
-use LogicException;
 use PHPStan\PhpDocParser\Ast\PhpDoc\VarTagValueNode;
+use PHPStan\PhpDocParser\Ast\Type\ArrayShapeNode;
+use PHPStan\PhpDocParser\Ast\Type\ArrayTypeNode;
+use PHPStan\PhpDocParser\Ast\Type\CallableTypeNode;
+use PHPStan\PhpDocParser\Ast\Type\GenericTypeNode;
+use PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode;
+use PHPStan\PhpDocParser\Ast\Type\IntersectionTypeNode;
+use PHPStan\PhpDocParser\Ast\Type\NullableTypeNode;
+use PHPStan\PhpDocParser\Ast\Type\ThisTypeNode;
 use PHPStan\PhpDocParser\Ast\Type\TypeNode;
+use PHPStan\PhpDocParser\Ast\Type\UnionTypeNode;
 use SlevomatCodingStandard\Helpers\AnnotationTypeHelper;
+use function in_array;
 use function sprintf;
 
 /**
@@ -15,18 +24,12 @@ use function sprintf;
 class VariableAnnotation extends Annotation
 {
 
-	/** @var \PHPStan\PhpDocParser\Ast\PhpDoc\VarTagValueNode|null */
+	/** @var VarTagValueNode|null */
 	private $contentNode;
 
-	public function __construct(
-		string $name,
-		int $startPointer,
-		int $endPointer,
-		?string $content,
-		?VarTagValueNode $contentNode
-	)
+	public function __construct(string $name, int $startPointer, int $endPointer, ?string $content, ?VarTagValueNode $contentNode)
 	{
-		if ($name !== '@var') {
+		if (!in_array($name, ['@var', '@psalm-var', '@phpstan-var'], true)) {
 			throw new InvalidArgumentException(sprintf('Unsupported annotation %s.', $name));
 		}
 
@@ -42,9 +45,7 @@ class VariableAnnotation extends Annotation
 
 	public function getContentNode(): VarTagValueNode
 	{
-		if ($this->isInvalid()) {
-			throw new LogicException(sprintf('Invalid %s annotation.', $this->name));
-		}
+		$this->errorWhenInvalid();
 
 		return $this->contentNode;
 	}
@@ -56,32 +57,26 @@ class VariableAnnotation extends Annotation
 
 	public function getDescription(): ?string
 	{
-		if ($this->isInvalid()) {
-			throw new LogicException('Invalid @var annotation.');
-		}
+		$this->errorWhenInvalid();
 
 		return $this->contentNode->description !== '' ? $this->contentNode->description : null;
 	}
 
 	public function getVariableName(): ?string
 	{
-		if ($this->isInvalid()) {
-			throw new LogicException(sprintf('Invalid %s annotation.', $this->name));
-		}
+		$this->errorWhenInvalid();
 
 		return $this->contentNode->variableName !== '' ? $this->contentNode->variableName : null;
 	}
 
 	/**
-	 * @return \PHPStan\PhpDocParser\Ast\Type\GenericTypeNode|\PHPStan\PhpDocParser\Ast\Type\CallableTypeNode|\PHPStan\PhpDocParser\Ast\Type\IntersectionTypeNode|\PHPStan\PhpDocParser\Ast\Type\UnionTypeNode|\PHPStan\PhpDocParser\Ast\Type\ArrayTypeNode|\PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode|\PHPStan\PhpDocParser\Ast\Type\ThisTypeNode
+	 * @return GenericTypeNode|CallableTypeNode|IntersectionTypeNode|UnionTypeNode|ArrayTypeNode|IdentifierTypeNode|ThisTypeNode|ArrayShapeNode|NullableTypeNode
 	 */
 	public function getType(): TypeNode
 	{
-		if ($this->isInvalid()) {
-			throw new LogicException(sprintf('Invalid %s annotation.', $this->name));
-		}
+		$this->errorWhenInvalid();
 
-		/** @var \PHPStan\PhpDocParser\Ast\Type\GenericTypeNode|\PHPStan\PhpDocParser\Ast\Type\CallableTypeNode|\PHPStan\PhpDocParser\Ast\Type\IntersectionTypeNode|\PHPStan\PhpDocParser\Ast\Type\UnionTypeNode|\PHPStan\PhpDocParser\Ast\Type\ArrayTypeNode|\PHPStan\PhpDocParser\Ast\Type\IdentifierTypeNode|\PHPStan\PhpDocParser\Ast\Type\ThisTypeNode $type */
+		/** @var GenericTypeNode|CallableTypeNode|IntersectionTypeNode|UnionTypeNode|ArrayTypeNode|IdentifierTypeNode|ThisTypeNode|ArrayShapeNode|NullableTypeNode $type */
 		$type = $this->contentNode->type;
 		return $type;
 	}

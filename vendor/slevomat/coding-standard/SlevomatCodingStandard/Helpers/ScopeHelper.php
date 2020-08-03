@@ -5,6 +5,7 @@ namespace SlevomatCodingStandard\Helpers;
 use PHP_CodeSniffer\Files\File;
 use function array_reverse;
 use function in_array;
+use const T_OPEN_TAG;
 
 /**
  * @internal
@@ -16,7 +17,7 @@ class ScopeHelper
 	{
 		$tokens = $phpcsFile->getTokens();
 
-		$getScope = function (int $pointer) use ($tokens): int {
+		$getScope = static function (int $pointer) use ($tokens): int {
 			$scope = 0;
 
 			foreach (array_reverse($tokens[$pointer]['conditions'], true) as $conditionPointer => $conditionTokenCode) {
@@ -32,6 +33,34 @@ class ScopeHelper
 		};
 
 		return $getScope($firstPointer) === $getScope($secondPointer);
+	}
+
+	public static function getRootPointer(File $phpcsFile, int $pointer): int
+	{
+		$rootPointer = 0;
+
+		$rootPointers = array_reverse(self::getAllRootPointers($phpcsFile));
+		foreach ($rootPointers as $currentRootPointer) {
+			if ($currentRootPointer < $pointer) {
+				$rootPointer = $currentRootPointer;
+				break;
+			}
+		}
+
+		return $rootPointer;
+	}
+
+	/**
+	 * @param File $phpcsFile
+	 * @return int[]
+	 */
+	public static function getAllRootPointers(File $phpcsFile): array
+	{
+		$lazyValue = static function () use ($phpcsFile): array {
+			return TokenHelper::findNextAll($phpcsFile, T_OPEN_TAG, 0);
+		};
+
+		return SniffLocalCache::getAndSetIfNotCached($phpcsFile, 'openTagPointers', $lazyValue);
 	}
 
 }

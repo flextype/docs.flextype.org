@@ -16,7 +16,7 @@
   },
   "require": {
       "php": "^7.1.3",
-      "flextype-components/arr": "*"
+      "flextype-components/arrays": "*"
   },
   "autoload": {
       "psr-4": { "Flextype\\Component\\Number\\": "" }

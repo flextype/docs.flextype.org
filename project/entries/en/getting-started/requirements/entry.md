@@ -2,9 +2,6 @@
 title: Requirements
 description: System and Browser requirements for Flextype
 breadcrumbs:
-  0:
-    title: "Documentation"
-    link: "[url]/en/"
   1:
     title: "Getting Started"
     link: "[url]/en/getting-started/"
@@ -17,7 +14,10 @@ on_this_page:
     link: "php-requirements"
 ---
 
-You can easily run Flextype on your local computer and on any Web hosting providers. Make sure that your server meets the following requirements.
+You can easily run Flextype on your local computer and on any Web hosting providers. Make sure that your server meets the following requirements:
+
+* Web Server Apache.
+* PHP 7.2.0 or higher.
 
 ### <a name="web-server-requirements"></a> Web Server Requirements
 
@@ -39,11 +39,11 @@ Make sure that your web server provides Mod Rewrite.
 
 Flextype needs PHP 7.2.0 or higher and the following PHP extensions to be enabled:
 
-- PHP [mbstring](http://php.net/manual/en/book.mbstring.php) module for full UTF-8 support.
-- PHP [gd](http://php.net/manual/en/book.image.php) or [ImageMagick](http://php.net/manual/en/book.imagick.php) module for image processing.
-- PHP [json](https://php.net/manual/en/book.json.php) module for JSON manipulation.
-- PHP [Fileinfo](https://www.php.net/manual/en/book.fileinfo.php)
-- PHP [SPL](https://www.php.net/manual/en/book.spl.php)
-- PHP [DOM](https://www.php.net/manual/ru/class.domdocument.php)
+- [mbstring](http://php.net/manual/en/book.mbstring.php) module for full UTF-8 support.
+- [gd](http://php.net/manual/en/book.image.php) or [ImageMagick](http://php.net/manual/en/book.imagick.php) module for image processing.
+- [json](https://php.net/manual/en/book.json.php) module for JSON manipulation.
+- [Fileinfo](https://www.php.net/manual/en/book.fileinfo.php)
+- [SPL](https://www.php.net/manual/en/book.spl.php)
+- [DOM](https://www.php.net/manual/ru/class.domdocument.php)
 
 Although it is optional, we strongly recommend enabling the following PHP extensions: APC, APCu, XCache, Memcached, or Redis for better [performance]([url]/en/advanced/performance-and-caching).
