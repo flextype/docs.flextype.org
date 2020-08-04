@@ -38,7 +38,7 @@ h5 {
 
 .page-content > h1 {
     margin-top: 20px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #383a42;
     font-size: 36px;
     line-height: 36px;
     padding-bottom: 0;
@@ -52,7 +52,7 @@ h5 {
 }
 
 .flextype-docs-logo > h2 {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #383a42;
     letter-spacing: 1.7px;
     line-height: 60px;
     font-size: 36px;

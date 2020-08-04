@@ -38,15 +38,54 @@ The Flextype Files API organized around Representational State Transfer (REST) f
 
 ### <a name="endpoints"></a> Endpoints
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| GET | /api/files | Fetch file(files) |
-| POST | /api/files | Upload file |
-| PUT | /api/files | Rename file |
-| DELETE | /api/files | Delete file |
-| PATCH | /api/files/meta | Updates file meta information |
-| POST | /api/files/meta | Updates file meta information |
-| DELETE | /api/files/meta | Delete file meta information |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>GET</td>
+                <td>/api/files</td>
+                <td>Fetch file(files)</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/api/files</td>
+                <td>Upload file</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>/api/files</td>
+                <td>Rename file</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>/api/files</td>
+                <td>Delete file</td>
+            </tr>
+            <tr>
+                <td>PATCH</td>
+                <td>/api/files/meta</td>
+                <td>Updates file meta information</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/api/files/meta</td>
+                <td>Updates file meta information</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>/api/files/meta</td>
+                <td>Delete file meta information</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### <a name="fetch-single-file"></a> Fetch single file
 
@@ -57,10 +96,29 @@ GET /api/files?id=YOUR_FILES_ID&token=YOUR_FILES_TOKEN
 
 ##### Query
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Files path. |
-| token | REQUIRED | Valid Files Token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Files path.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Files Token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 
@@ -100,10 +158,29 @@ GET /api/files?id=YOUR_FILES_FOLDER_ID&collection=true&token=YOUR_FILES_TOKEN
 
 ##### Query
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Files folder path. |
-| token | REQUIRED | Valid Folders Token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Files folder path.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Folders Token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 
@@ -145,12 +222,39 @@ POST /api/files
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| folder | REQUIRED | The folder you're targetting. |
-| file | REQUIRED | Raw file data (multipart/form-data). |
-| token | REQUIRED | Valid Files token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>folder</td>
+                <td>REQUIRED</td>
+                <td>The folder you're targetting.</td>
+            </tr>
+            <tr>
+                <td>file</td>
+                <td>REQUIRED</td>
+                <td>Raw file data (multipart/form-data).</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Files token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the file object for the file that was just uploaded.
@@ -209,12 +313,39 @@ PUT /api/files
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the file. |
-| new_path | REQUIRED | New Unique identifier of the file. |
-| token | REQUIRED | Valid Files token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the file.</td>
+            </tr>
+            <tr>
+                <td>new_path</td>
+                <td>REQUIRED</td>
+                <td>New Unique identifier of the file.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Files token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the folders object for the file that was just renamed
@@ -294,12 +425,39 @@ PUT /api/files/copy
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the file. |
-| new_path | REQUIRED | New Unique identifier of the file. |
-| token | REQUIRED | Valid Folders token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the file.</td>
+            </tr>
+            <tr>
+                <td>new_path</td>
+                <td>REQUIRED</td>
+                <td>New Unique identifier of the file.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Folders token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the file object for the file that was just copied.
@@ -347,11 +505,34 @@ DELETE /api/files
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the file. |
-| token | REQUIRED | Valid Files token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the file.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Files token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns an empty body with HTTP status 204
@@ -383,13 +564,44 @@ PUT /api/files
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the file. |
-| field | REQUIRED | Field name. |
-| value | REQUIRED | Field value. |
-| token | REQUIRED | Valid Files token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the file.</td>
+            </tr>
+            <tr>
+                <td>field</td>
+                <td>REQUIRED</td>
+                <td>Field name.</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>REQUIRED</td>
+                <td>Field value.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Files token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the file object for the file that was just updated.
@@ -439,13 +651,44 @@ POST /api/files
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the file. |
-| field | REQUIRED | Field name. |
-| value | REQUIRED | Field value. |
-| token | REQUIRED | Valid Files token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the file.</td>
+            </tr>
+            <tr>
+                <td>field</td>
+                <td>REQUIRED</td>
+                <td>Field name.</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>REQUIRED</td>
+                <td>Field value.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Files token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the file object for the file that was just updated.
@@ -488,7 +731,7 @@ PATCH /api/files/meta
 ```
 
 
-### <a name="update-file-meta"></a> Delete File Meta
+### <a name="delete-file-meta"></a> Delete File Meta
 
 <div class="file-header">Request</div>
 ```http
@@ -497,12 +740,39 @@ DELETE /api/files
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the file. |
-| field | REQUIRED | Field name. |
-| token | REQUIRED | Valid Files token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the file.</td>
+            </tr>
+            <tr>
+                <td>field</td>
+                <td>REQUIRED</td>
+                <td>Field name.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Files token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the file object for the file that was just updated.
