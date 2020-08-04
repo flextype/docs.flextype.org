@@ -21,9 +21,24 @@ The Flextype Images API allows the retrieval and manipulation of image files ref
 
 ### <a name="endpoints"></a> Endpoints
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| GET | /api/images | Fetch image |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>GET</td>
+                <td>/api/images</td>
+                <td>Fetch image</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### <a name="fetch-image"></a> Fetch image
 
