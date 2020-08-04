@@ -198,10 +198,26 @@ JSON consist of 6 data types. First four data types (string, number, boolean and
 
 ### <a name="methods"></a> Methods
 
-| Method | Description |
-|---|---|
-| <a href="#encode"><code>encode()</code></a> | Returns the JSON representation of a value. |
-| <a href="#decode"><code>decode()</code></a> | Takes a JSON encoded string and converts it into a PHP variable. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#encode"><code>encode()</code></a></td>
+                <td>Returns the JSON representation of a value.</td>
+            </tr>
+            <tr>
+                <td><a href="#decode"><code>decode()</code></a></td>
+                <td>Takes a JSON encoded string and converts it into a PHP variable.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="encode"></a> `encode()`
 

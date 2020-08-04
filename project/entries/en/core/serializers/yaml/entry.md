@@ -914,10 +914,26 @@ Array
 
 ### <a name="methods"></a> Methods
 
-| Method | Description |
-|---|---|
-| <a href="#encode"><code>encode()</code></a> | Dumps a PHP value to a YAML string.<br><br>The dump method, when supplied with an array, will do its best to convert the array into friendly YAML. |
-| <a href="#decode"><code>decode()</code></a> | Parses YAML into a PHP value. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#encode"><code>encode()</code></a></td>
+                <td>Dumps a PHP value to a YAML string.<br><br>The dump method, when supplied with an array, will do its best to convert the array into friendly YAML.</td>
+            </tr>
+            <tr>
+                <td><a href="#decode"><code>decode()</code></a></td>
+                <td>Parses YAML into a PHP value.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="encode"></a> `encode()`
 

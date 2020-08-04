@@ -14,13 +14,34 @@ A registry is a container for storing objects and values in the Flextype applica
 
 ### <a name="methods"></a> Methods
 
-| Method | Description |
-|---|---|
-| <a href="#get"><code>get()</code></a> | Get item from the registry. |
-| <a href="#set"><code>set()</code></a> | Registers or update a given value under a given name. |
-| <a href="#has"><code>has()</code></a> | Checks if an object with this name is in the registry. |
-| <a href="#dump"><code>dump()</code></a> | Get registry array. |
-
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#get"><code>get()</code></a></a></td>
+                <td>Get item from the registry.</td>
+            </tr>
+            <tr>
+                <td><a href="#set"><code>set()</code></a></td>
+                <td>Registers or update a given value under a given name.</td>
+            </tr>
+            <tr>
+                <td><a href="#has"><code>has()</code></a></td>
+                <td>Checks if an object with this name is in the registry.</td>
+            </tr>
+            <tr>
+                <td><a href="#dump"><code>dump()</code></a></td>
+                <td>Get registry array.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="get"></a> `get()`
 

@@ -16,167 +16,232 @@ on_this_page:
 
 ### <a name="operators"></a> Operators
 
-<table>
-    <thead>
-        <tr>
-            <th style="width: 160px;">
-                Operator
-            </th>
-            <th>
-                Description
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <code>eq</code> <code>=</code>
-            </td>
-            <td>
-                <b>Equal to</b><br><br>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 190px;">
+                    Operator
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <code>eq</code> <code>=</code>
+                </td>
+                <td>
+                    <b>Equal to</b><br><br>
 
-                Filter your collection by checking if your custom attribute (field) has a value that is equal to one of the values provided.<br><br>
+                    Filter your collection by checking if your custom attribute (field) has a value that is equal to one of the values provided.<br><br>
 
-                <b>Use-cases:</b><br>
-                Get collection that is refered to another in a 1:N relationship or if you want to get collection with a specific value in one of it's fields.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>neq</code> <code>&lt;&gt;</code> <code>!=</code>
-            </td>
-            <td>
-                <b>Not equal to</b><br><br>
+                    <b>Use-cases:</b><br>
+                    Get collection that is refered to another in a 1:N relationship or if you want to get collection with a specific value in one of it's fields.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>neq</code> <code>&lt;&gt;</code> <code>!=</code>
+                </td>
+                <td>
+                    <b>Not equal to</b><br><br>
 
-                Filter your collection by checking if your custom attribute (field) does not have a value that is equal to one of the values provided.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>lt</code> <code>&lt;</code>
-            </td>
-            <td>
-                <b>Lower than</b><br><br>
+                    Filter your collection by checking if your custom attribute (field) does not have a value that is equal to one of the values provided.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>lt</code> <code>&lt;</code>
+                </td>
+                <td>
+                    <b>Lower than</b><br><br>
 
-               Filter your collection by checking if your custom attribute (field) has a value that is lower than one of the values provided.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>gt</code> <code>&gt;</code>
-            </td>
-            <td>
-                <b>Greater than</b><br><br>
+                   Filter your collection by checking if your custom attribute (field) has a value that is lower than one of the values provided.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>gt</code> <code>&gt;</code>
+                </td>
+                <td>
+                    <b>Greater than</b><br><br>
 
-                Filter your collection by checking if your custom attribute (field) has a value that is greater than one of the values provided.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>lte</code> <code>&lt;=</code>
-            </td>
-            <td>
-                <b>Lower than or equal to</b><br><br>
+                    Filter your collection by checking if your custom attribute (field) has a value that is greater than one of the values provided.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>lte</code> <code>&lt;=</code>
+                </td>
+                <td>
+                    <b>Lower than or equal to</b><br><br>
 
-                Filter your collection by checking if your custom attribute (field) has a value that is lower than or equal to one of the values provided.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>gt</code> <code>&gt;=</code>
-            </td>
-            <td>
-                <b>Greater than or equal to</b><br><br>
+                    Filter your collection by checking if your custom attribute (field) has a value that is lower than or equal to one of the values provided.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>gt</code> <code>&gt;=</code>
+                </td>
+                <td>
+                    <b>Greater than or equal to</b><br><br>
 
-                Filter your collection by checking if your custom attribute (field) has a value that is greater than or equal to one of the values provided.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>in</code>
-            </td>
-            <td>
-                <b>Included in an array of values</b><br><br>
+                    Filter your collection by checking if your custom attribute (field) has a value that is greater than or equal to one of the values provided.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>in</code>
+                </td>
+                <td>
+                    <b>Included in an array of values</b><br><br>
 
-                Filter your collection by checking if your custom array attribute (field) contains one of the values provided. As soon as one of the provided values separated with, are in the array field, the entry object will be in the response.<br><br>
+                    Filter your collection by checking if your custom array attribute (field) contains one of the values provided. As soon as one of the provided values separated with, are in the array field, the entry object will be in the response.<br><br>
 
-                <b>Use-cases:</b><br>
-                Get all content entries that is refered to others in a N:N relationship or if you want to get all entries with a specific value in one of it's array fields.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>nin</code>
-            </td>
-            <td>
-                <b>Isn't included in an array of values</b><br><br>
+                    <b>Use-cases:</b><br>
+                    Get all content entries that is refered to others in a N:N relationship or if you want to get all entries with a specific value in one of it's array fields.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>nin</code>
+                </td>
+                <td>
+                    <b>Isn't included in an array of values</b><br><br>
 
-                Filter your entries by checking if your custom array attribute (field) is not contains one of the values provided.<br><br>
+                    Filter your entries by checking if your custom array attribute (field) is not contains one of the values provided.<br><br>
 
-                <b>Use-cases:</b><br>
-                Get all content collection that is not refered to others in a N:N relationship or if you want to get all entries with a specific value that is not in one of it's array fields.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>contains</code> <code>like</code>
-            </td>
-            <td>
-                <b>Contains the substring</b><br><br>
+                    <b>Use-cases:</b><br>
+                    Get all content collection that is not refered to others in a N:N relationship or if you want to get all entries with a specific value that is not in one of it's array fields.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>contains</code> <code>like</code>
+                </td>
+                <td>
+                    <b>Contains the substring</b><br><br>
 
-                Filter your entries by checking if your custom attribute (field) has a value that is "like" the value provided.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>member_of</code>
-            </td>
-            <td>
-                <b>Member of</b><br><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>starts_with</code>
-            </td>
-            <td>
-                <b>Starts with</b><br><br>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>ends_with</code>
-            </td>
-            <td>
-                <b>Ends with</b><br><br>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                    Filter your entries by checking if your custom attribute (field) has a value that is "like" the value provided.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>member_of</code>
+                </td>
+                <td>
+                    <b>Member of</b><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>starts_with</code>
+                </td>
+                <td>
+                    <b>Starts with</b><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>ends_with</code>
+                </td>
+                <td>
+                    <b>Ends with</b><br><br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### <a name="methods"></a> Methods
 
-| Method | Description |
-|---|---|
-| <a href="#collection"><code>collect()</code></a> | Returns a new `Collection` instance with the items currently in the collection. |
-| <a href="#merge"><code>merge()</code></a> | Merges the given array or collection with the original collection. If a string key in the given items matches a string key in the original collection, the given items's value will overwrite the value in the original collection. |
-| <a href="#where"><code>where()</code></a> | Sets the where expression to evaluate when this Criteria is searched for. |
-| <a href="#and-where"><code>andWhere()</code></a> | Appends the where expression to evaluate when this Criteria is searched for using an AND with previous expression. |
-| <a href="#or-where"><code>orWhere()</code></a> | Appends the where expression to evaluate when this Criteria is searched for using an OR with previous expression. |
-| <a href="#order-by"><code>orderBy()</code></a> | Sets the ordering of the result of this Criteria. Keys are field and values are the order, being either ASC or DESC. |
-| <a href="#set-first-result"><code>setFirstResult()</code></a> | Set the number of first result that this Criteria should return. |
-| <a href="#limit"><code>limit()</code></a> | Sets the max results that this Criteria should return. |
-| <a href="#first"><code>first()</code></a> | Returns the current first result option of this Criteria. |
-| <a href="#last"><code>last()</code></a> | Returns the current last result option of this Criteria.  |
-| <a href="#next"><code>next()</code></a> | Returns a single item of result. Moves the internal iterator position to the next element and returns this element. |
-| <a href="#random"><code>random()</code></a> | Returns one or a specified number of items randomly from the collection. |
-| <a href="#shuffle"><code>shuffle()</code></a> | Returns randomly shuffles the items in the collection. |
-| <a href="#slice"><code>slice()</code></a> | Returns a slice of the collection by defining `length` of elements and starting position `offset`.<br><br>If `length` is null it returns all elements from `offset` to the end of the Collection. Keys have to be preserved by this method. Calling this method will only return the selected slice and NOT change the elements contained in the collection slice is called on. |
-| <a href="#count"><code>count()</code></a> | If you want to know how many items match your Criteria, you can call `count()`. |  
-| <a href="#exists"><code>exists()</code></a> | If you just need to check if any item exist in the collection that match the Criteria, you can call `exists()`, which will return either `true` or `false`. |  
-| <a href="#all"><code>all()</code></a> | Returns the underlying array represented by the collection. |  
-| <a href="#collect-filter"><code>collect_filter()</code></a> | Apply filters to the array items with help of parameters array. |  
-
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#collection"><code>collect()</code></a></td>
+                <td>Returns a new <code>Collection</code> instance with the items currently in the collection.</td>
+            </tr>
+            <tr>
+                <td><a href="#merge"><code>merge()</code></a></td>
+                <td>Merges the given array or collection with the original collection. If a string key in the given items matches a string key in the original collection, the given items's value will overwrite the value in the original collection.</td>
+            </tr>
+            <tr>
+                <td><a href="#where"><code>where()</code></a></td>
+                <td>Sets the where expression to evaluate when this Criteria is searched for.</td>
+            </tr>
+            <tr>
+                <td><a href="#and-where"><code>andWhere()</code></a></td>
+                <td>Appends the where expression to evaluate when this Criteria is searched for using an AND with previous expression.</td>
+            </tr>
+            <tr>
+                <td><a href="#or-where"><code>orWhere()</code></a></td>
+                <td>Appends the where expression to evaluate when this Criteria is searched for using an OR with previous expression.</td>
+            </tr>
+            <tr>
+                <td><a href="#order-by"><code>orderBy()</code></a></td>
+                <td>Sets the ordering of the result of this Criteria. Keys are field and values are the order, being either ASC or DESC.</td>
+            </tr>
+            <tr>
+                <td><a href="#set-first-result"><code>setFirstResult()</code></a></td>
+                <td>Set the number of first result that this Criteria should return.</td>
+            </tr>
+            <tr>
+                <td><a href="#limit"><code>limit()</code></a></td>
+                <td>Sets the max results that this Criteria should return.</td>
+            </tr>
+            <tr>
+                <td><a href="#first"><code>first()</code></a></td>
+                <td>Returns the current first result option of this Criteria.</td>
+            </tr>
+            <tr>
+                <td><a href="#last"><code>last()</code></a></td>
+                <td>Returns the current last result option of this Criteria.</td>
+            </tr>
+            <tr>
+                <td><a href="#next"><code>next()</code></a></td>
+                <td>Returns a single item of result. Moves the internal iterator position to the next element and returns this element.</td>
+            </tr>
+            <tr>
+                <td><a href="#random"><code>random()</code></a></td>
+                <td>Returns one or a specified number of items randomly from the collection.</td>
+            </tr>
+            <tr>
+                <td><a href="#shuffle"><code>shuffle()</code></a></td>
+                <td>Returns randomly shuffles the items in the collection.</td>
+            </tr>
+            <tr>
+                <td><a href="#slice"><code>slice()</code></a></td>
+                <td>Returns a slice of the collection by defining <code>length</code> of elements and starting position <code>offset</code>.<br><br>If <code>length</code> is null it returns all elements from <code>offset</code> to the end of the Collection. Keys have to be preserved by this method. Calling this method will only return the selected slice and NOT change the elements contained in the collection slice is called on.</td>
+            </tr>
+            <tr>
+                <td><a href="#count"><code>count()</code></a></td>
+                <td>If you want to know how many items match your Criteria, you can call <code>count()</code>.</td>
+            </tr>
+            <tr>
+                <td><a href="#exists"><code>exists()</code></a></td>
+                <td>If you just need to check if any item exist in the collection that match the Criteria, you can call <code>exists()</code>, which will return either <code>true</code> or <code>false</code>.</td>
+            </tr>
+            <tr>
+                <td><a href="#all"><code>all()</code></a></td>
+                <td>Returns the underlying array represented by the collection.</td>
+            </tr>
+            <tr>
+                <td><a href="#collect-filter"><code>collect_filter()</code></a></td>
+                <td>Apply filters to the array items with help of parameters array.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="collection"></a> `collect()`
 

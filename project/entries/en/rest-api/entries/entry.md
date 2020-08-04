@@ -38,14 +38,49 @@ The Flextype Entries API organized around Representational State Transfer (REST)
 
 ### <a name="endpoints"></a> Endpoints
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| GET | /api/entries | Fetch entry(entries) |
-| POST | /api/entries | Create entry |
-| PATCH | /api/entries | Update entry |
-| PUT | /api/entries | Rename entry |
-| PUT | /api/entries/copy | Copy entry(entries) |
-| DELETE | /api/entries | Delete entry |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>GET</td>
+                <td>/api/entries</td>
+                <td>Fetch entry(entries)</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/api/entries</td>
+                <td>Create entry</td>
+            </tr>
+            <tr>
+                <td>PATCH</td>
+                <td>/api/entries</td>
+                <td>Update entry</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>/api/entries</td>
+                <td>Rename entry</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>/api/entries/copy</td>
+                <td>Copy entry(entries)</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>/api/entries</td>
+                <td>Delete entry</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### <a name="fetch-single-entry"></a> Fetch single entry
 
@@ -56,11 +91,34 @@ GET /api/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_TOKEN
 
 ##### Query
 
-| Name | |  Description |
-| --- | --- | --- |
-| id | REQUIRED | Valid Entry ID (slug) |
-| filter | OPTIONAL | A set of [valid arguments](#filtering) to search and sort specific needed entries. |
-| token | REQUIRED | Valid Entries Token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>REQUIRED</td>
+                <td>Valid Entry ID (slug)</td>
+            </tr>
+            <tr>
+                <td>filter</td>
+                <td>OPTIONAL</td>
+                <td>A set of <a href="#filtering">valid arguments</a> to search and sort specific needed entries.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Entries Token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 
@@ -84,11 +142,34 @@ GET /api/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_TOKEN
 
 ##### Query
 
-| Name | |  Description |
-| --- | --- | --- |
-| id | REQUIRED | Valid Entry ID (slug) |
-| filter | REQUIRED | A set of [valid arguments](#filtering) to search and sort specific needed entries. |
-| token | REQUIRED | Valid Entries Token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>REQUIRED</td>
+                <td>Valid Entry ID (slug)</td>
+            </tr>
+            <tr>
+                <td>filter</td>
+                <td>REQUIRED</td>
+                <td>A set of <a href="#filtering">valid arguments</a> to search and sort specific needed entries.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Entries Token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 

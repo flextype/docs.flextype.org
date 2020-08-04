@@ -14,12 +14,30 @@ Hooks are a way for one piece of code to interact/modify another piece of code. 
 
 ### Available event hooks
 
-| Name | Description |
-| :------------- | :------------- |
-| `onPluginsInitialized` | Fires when all enabled plugins initialized. |
-| `onEntryAfterInitialized` | Fires when current entry requested by fetchSingle() method has been loaded into the entry object. |
-| `onEntriesAfterInitialized` | Fires when current entries collection requested by fetchCollection() method has been loaded into the entries object. |
-
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>onPluginsInitialized</code></td>
+                <td>Fires when all enabled plugins initialized.</td>
+            </tr>
+            <tr>
+                <td><code>onEntryAfterInitialized</code></td>
+                <td>Fires when current entry requested by fetchSingle() method has been loaded into the entry object.</td>
+            </tr>
+            <tr>
+                <td><code>onEntriesAfterInitialized</code></td>
+                <td>Fires when current entries collection requested by fetchCollection() method has been loaded into the entries object.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### How to use hooks
 

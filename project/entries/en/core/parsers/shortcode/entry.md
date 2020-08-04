@@ -18,10 +18,26 @@ Shortcode is a small piece of code, indicated by brackets like `[this]`, that pe
 
 ### <a name="methods"></a> Methods
 
-| Method | Description |
-|---|---|
-| <a href="#parse"><code>add()</code></a> | Add new SHORTCODE handler |
-| <a href="#parse"><code>parse()</code></a> | Takes a SHORTCODE encoded string and converts it into a HTML |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#add"><code>add()</code></a></td>
+                <td>Add new SHORTCODE handler</td>
+            </tr>
+            <tr>
+                <td><a href="#parse"><code>parse()</code></a></td>
+                <td>Takes a SHORTCODE encoded string and converts it into a HTML</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="add"></a> `add()`
 
