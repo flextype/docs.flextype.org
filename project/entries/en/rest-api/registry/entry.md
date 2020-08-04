@@ -17,9 +17,24 @@ The Flextype Registry API organized around Representational State Transfer (REST
 
 #### <a name="endpoints"></a> Endpoints
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| GET | /api/registry | Fetch registry item |
+<div class="table">
+    <table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td>/api/registry</td>
+            <td>Fetch registry item</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
 
 ### <a name="fetch-registry-item"></a> Fetch registry item
 
@@ -30,10 +45,29 @@ GET /api/registry?id=YOUR_REGISTRY_ITEM_ID&token=YOUR_REGISTRY_TOKEN
 
 ##### Query
 
-| name | |  Description |
-| --- | --- | --- |
-| id | REQUIRED | Valid Entry ID (slug) |
-| token | REQUIRED | Valid Registry Token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>REQUIRED</td>
+                <td>Valid Entry ID (slug)</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Registry Token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 

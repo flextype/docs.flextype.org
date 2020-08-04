@@ -213,12 +213,39 @@ POST /api/entries
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| id | REQUIRED | Unique identifier of the entry. |
-| token | REQUIRED | Valid Entries token. |
-| access_token | REQUIRED | Valid Access token. |
-| data | REQUIRED | Data to store for the entry. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the entry.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Entries token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>REQUIRED</td>
+                <td>Data to store for the entry.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the entry item object for the entry item that was just created.
@@ -273,12 +300,39 @@ PATCH /api/entries
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| id | REQUIRED | Unique identifier of the entry. |
-| token | REQUIRED | Valid Entries token. |
-| access_token | REQUIRED | Valid Access token. |
-| data | REQUIRED | Data to store for the entry. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the entry.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Entries token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>REQUIRED</td>
+                <td>Data to store for the entry.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the entry item object for the entry item that was just updated.
@@ -332,12 +386,39 @@ PUT /api/entries
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| id | REQUIRED | Unique identifier of the entry. |
-| new_id | REQUIRED | New Unique identifier of the entry. |
-| token | REQUIRED | Valid Entries token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the entry.</td>
+            </tr>
+            <tr>
+                <td>new_id</td>
+                <td>REQUIRED</td>
+                <td>New Unique identifier of the entry.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Entries token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the entry item object for the entry item that was just renamed.
@@ -425,12 +506,39 @@ PUT /api/entries/copy
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| id | REQUIRED | Unique identifier of the entry. |
-| new_id | REQUIRED | New Unique identifier of the entry. |
-| token | REQUIRED | Valid Entries token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>REQUIRED</td>
+            <td>Unique identifier of the entry.</td>
+        </tr>
+        <tr>
+            <td>new_id</td>
+            <td>REQUIRED</td>
+            <td>New Unique identifier of the entry.</td>
+        </tr>
+        <tr>
+            <td>token</td>
+            <td>REQUIRED</td>
+            <td>Valid Entries token.</td>
+        </tr>
+        <tr>
+            <td>access_token</td>
+            <td>REQUIRED</td>
+            <td>Valid Access token.</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the entry item object for the entry item that was just copied.
@@ -482,11 +590,34 @@ DELETE /api/entries
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| id | REQUIRED | Unique identifier of the entry. |
-| token | REQUIRED | Valid Entries token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the entry.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Entries token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns an empty body with HTTP status 204
