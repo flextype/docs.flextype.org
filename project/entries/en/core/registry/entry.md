@@ -8,6 +8,19 @@ on_this_page:
   1:
     title: "Methods"
     link: "methods"
+    level2:
+      1:
+        title: "get()"
+        link: "get"
+      2:
+        title: "set()"
+        link: "set"
+      3:
+        title: "has()"
+        link: "has"
+      4:
+        title: "dump()"
+        link: "dump"
 ---
 
 A registry is a container for storing objects and values in the Flextype application space. By storing the value in a registry, the same object is always available throughout Flextype application. This mechanism is an alternative to using global storage.
