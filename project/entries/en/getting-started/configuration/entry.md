@@ -286,10 +286,35 @@ api:
 
 Your `index.php` file can define certain PHP constants, which Flextype bootstrap script will check for while loading and configuring Flextype.
 
-| Name | Description |
-| :------------- | :------------- |
-| `FLEXTYPE_MINIMUM_PHP` | Define the application minimum supported PHP version. |
-| `ROOT_DIR` | Define the path to the root directory (without trailing slash). |
-| `PATH['project']` | Define the PATH to project (without trailing slash). |
-| `PATH['cache']` | Define the PATH to project cache (without trailing slash). |
-| `PATH['logs']` | Define the PATH to project logs (without trailing slash). |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>FLEXTYPE_MINIMUM_PHP</code></td>
+                <td>Define the application minimum supported PHP version.</td>
+            </tr>
+            <tr>
+                <td><code>ROOT_DIR</code></td>
+                <td>Define the path to the root directory (without trailing slash).</td>
+            </tr>
+            <tr>
+                <td><code>PATH['project']</code></td>
+                <td>Define the PATH to project (without trailing slash).</td>
+            </tr>
+            <tr>
+                <td><code>PATH['cache']</code></td>
+                <td>Define the PATH to project cache (without trailing slash).</td>
+            </tr>
+            <tr>
+                <td><code>PATH['logs']</code></td>
+                <td>Define the PATH to logs cache (without trailing slash).</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

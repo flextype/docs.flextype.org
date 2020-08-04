@@ -45,11 +45,30 @@ Each entry file `entry.md` should be placed in its own folder.
 
 Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
 
-| Physical Location                     | URL              |
-| ------------------------------------- | ---------------- |
-| project/entries/home/entry.md            | /                |
-| project/entries/blog/my-post/entry.md    | /blog/my-post    |
-| project/entries/a/very/long/url/entry.md | /a/very/long/url |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Physical Location </th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>project/entries/home/entry.md</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>project/entries/blog/my-post/entry.md </td>
+                <td>/blog/my-post</td>
+            </tr>
+            <tr>
+                <td>project/entries/a/very/long/url/entry.md</td>
+                <td>/a/very/long/url</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### <a name="default-variables"></a> Default Variables
 
@@ -57,9 +76,24 @@ There are a number of default entry variables available for each entry and defin
 
 ##### Visibility
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `visibility` | `visible` | `visible` or `draft` or `hidden`|
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>visibility</code></td>
+                <td><code>visible</code></td>
+                <td><code>visible</code> or <code>draft</code> or <code>hidden</code></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 Content visibility is about controlling who can see your entries. Flextype allows you to control the visibility of your Entries and Pages on an individual basis. By default, all entries are visible.
 
@@ -73,9 +107,24 @@ Content visibility is about controlling who can see your entries. Flextype allow
 
 ##### Routable
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `routable` | `true` | `true` or `false`|
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>routable</code></td>
+                <td><code>true</code></td>
+                <td><code>true</code> or <code>false</code></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 By default, all pages are routable. This means that they can be reached by pointing your browser to the URL of the entry. However, you may need to create a entry that is created to hold specific content, but it is meant to be called directly by a plugin, other content, or even a theme directly.
 
@@ -89,9 +138,24 @@ By default, all pages are routable. This means that they can be reached by point
 
 ##### Published at
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `published_at` |  | Date & Time |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>published_at</code></td>
+                <td></td>
+                <td>Date & Time</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 This variable allows you to specifically set a published_at date associated with this entry.
 
@@ -105,9 +169,24 @@ This variable allows you to specifically set a published_at date associated with
 
 ##### Published by
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `published_by` |  | User UUID |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>published_by</code></td>
+                <td></td>
+                <td>User UUID</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 This variable allows you to specifically set a published_by User UUID associated with this entry.
 
@@ -121,17 +200,47 @@ This variable allows you to specifically set a published_by User UUID associated
 
 ##### Created at
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `created_at` |  | Date & Time |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>created_at</code></td>
+                <td></td>
+                <td>Date & Time</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 This variable allows you to specifically set a created_at date associated with this entry.
 
 ##### Modified at
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `modified_at` |  | Date & Time |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>modified_at</code></td>
+                <td></td>
+                <td>Date & Time</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 This variable allows you to specifically set a modified_at date associated with this entry.
 
@@ -145,9 +254,24 @@ This variable allows you to specifically set a modified_at date associated with 
 
 ##### Parsers
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `parsers` |  | A list of parsers with options |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>parsers</code></td>
+                <td></td>
+                <td>A list of parsers with options</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ```yaml
 parsers:
@@ -161,18 +285,48 @@ parsers:
 
 ##### Cache
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `cache` | `true` | `true` or `false`|
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>cache</code></td>
+                <td></td>
+                <td><code>true</code> or <code>false</code></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 By default, all pages are stored in the cache if flextype cache is true.
 But this rule can be changed by setting individual cache for each entry.
 
 ##### Slug
 
-| Name | Default | Available values for option |
-| --- | --- | --- |
-| `slug` |  | Slug ist entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>slug</code></td>
+                <td></td>
+                <td>Slug ist entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### <a name="custom-variables"></a> Custom Variables
 
@@ -191,20 +345,61 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
 
 ### <a name="methods"></a> Methods
 
-| Method | Description |
-|---|---|
-| <a href="#fetch"><code>fetch()</code></a> | Fetch single entry or collections of entries |
-| <a href="#fetch-single"><code>fetchSingle()</code></a> | Fetch single entry |
-| <a href="#fetch-collection"><code>fetchCollection()</code></a> | Fetch entries collection |
-| <a href="#create"><code>create()</code></a> | Create entry |
-| <a href="#update"><code>update()</code></a> | Update entry |
-| <a href="#rename"><code>rename()</code></a> | Rename entry |
-| <a href="#copy"><code>copy()</code></a> | Copy entry |
-| <a href="#delete"><code>delete()</code></a> | Delete entry |
-| <a href="#has"><code>has()</code></a> | Check whether entry exists |
-| <a href="#getFileLocation"><code>getFileLocation()</code></a> | Get entry file location |
-| <a href="#getDirLocation"><code>getDirLocation()</code></a> | Get entry directory location |
-
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#fetch"><code>fetch()</code></a></td>
+                <td>Fetch single entry or collections of entries</td>
+            </tr>
+            <tr>
+                <td><a href="#fetch-single"><code>fetchSingle()</code></a></td>
+                <td>Fetch single entry</td>
+            </tr>
+            <tr>
+                <td><a href="#fetch-collection"><code>fetchCollection()</code></a></td>
+                <td>Fetch entries collection</td>
+            </tr>
+            <tr>
+                <td><a href="#create"><code>create()</code></a></td>
+                <td>Create entry</td>
+            </tr>
+            <tr>
+                <td><a href="#update"><code>update()</code></a></td>
+                <td>Update entry</td>
+            </tr>
+            <tr>
+                <td><a href="#rename"><code>rename()</code></a></td>
+                <td>Rename entry</td>
+            <tr>
+                <td><a href="#copy"><code>copy()</code></a></td>
+                <td>Copy entry</td>
+            </tr>
+            <tr>
+                <td><a href="#delete"><code>delete()</code></a></td>
+                <td>Delete entry</td>
+            </tr>
+            <tr>
+                <td><a href="#has"><code>has()</code></a></td>
+                <td>Check whether entry exists</td>
+            </tr>
+            <tr>
+                <td><a href="#getFileLocation"><code>getFileLocation()</code></a></td>
+                <td>Get entry file location</td>
+            </tr>
+            <tr>
+                <td><a href="#getDirLocation"><code>getDirLocation()</code></a></td>
+                <td>Get entry directory location</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="fetch"></a> `fetch()`
 
