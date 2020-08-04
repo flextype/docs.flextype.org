@@ -18,10 +18,27 @@ Any file that contains a YAML front matter block will be processed by Flextype a
 
 ### <a name="methods"></a> Methods
 
-| Method | Description |
-|---|---|
-| <a href="#encode"><code>encode()</code></a> | Returns the FRONTMATTER representation of a value. |
-| <a href="#decode"><code>decode()</code></a> | Takes a FRONTMATTER encoded string and converts it into a PHP variable. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#encode"><code>encode()</code></a></td>
+                <td>Returns the FRONTMATTER representation of a value.</td>
+            </tr>
+            <tr>
+                <td><a href="#decode"><code>decode()</code></a></td>
+                <td>Takes a FRONTMATTER encoded string and converts it into a PHP variable.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 
 ##### <a name="encode"></a> `encode()`
 

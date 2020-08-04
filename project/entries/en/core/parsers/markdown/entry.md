@@ -30,9 +30,22 @@ For more details about MARKDOWN syntax <a href="https://www.markdownguide.org/ba
 
 ### <a name="methods"></a> Methods
 
-| Method | Description |
-|---|---|
-| <a href="#parse"><code>parse()</code></a> | Takes a MARKDOWN encoded string and converts it into a HTML |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#parse"><code>parse()</code></a></td>
+                <td>Takes a MARKDOWN encoded string and converts it into a HTML</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="parse"></a> `parse()`
 

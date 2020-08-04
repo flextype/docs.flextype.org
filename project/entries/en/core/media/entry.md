@@ -14,16 +14,50 @@ on_this_page:
 
 #### Media Files
 
-| Method | Description |
-|---|---|
-| <a href="#files-upload"><code>upload()</code></a> | Upload media file. |
-| <a href="#files-fetch"><code>fetch()</code></a> | Fetch file(s). |
-| <a href="#files-fetchSingle"><code>fetchsingle()</code></a> | Fetch single file. |
-| <a href="#files-fetchCollection"><code>fetchCollection()</code></a> | Fetch files collection. |
-| <a href="#files-rename"><code>rename()</code></a> | Rename file. |
-| <a href="#files-delete"><code>delete()</code></a> | Delete file. |
-| <a href="#files-has"><code>has()</code></a> | Check whether a file exists. |
-| <a href="#files-getFileLocation"><code>getFileLocation()</code></a> | Get file location. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#files-upload"><code>upload()</code></a></td>
+                <td>Upload media file.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-fetch"><code>fetch()</code></a></td>
+                <td>Fetch file(s).</td>
+            </tr>
+            <tr>
+                <td><a href="#files-fetchSingle"><code>fetchsingle()</code></a></td>
+                <td>Fetch single file.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-fetchCollection"><code>fetchCollection()</code></a></td>
+                <td>Fetch files collection.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-rename"><code>rename()</code></a></td>
+                <td>Rename file.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-delete"><code>delete()</code></a></td>
+                <td>Delete file.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-has"><code>has()</code></a></td>
+                <td>Check whether a file exists.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-getFileLocation"><code>getFileLocation()</code></a></td>
+                <td>Get file location.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="files-upload"></a> `upload()`
 
@@ -210,15 +244,46 @@ $flextype->media_files_meta
 
 #### Media Folders
 
-| Method | Description |
-|---|---|
-| <a href="#folders-fetch"><code>fetch()</code></a> | Fetch folder(s). |
-| <a href="#folders-fetchsingle"><code>fetchsingle()</code></a> | Fetch single folder. |
-| <a href="#folders-fetchCollection"><code>fetchCollection()</code></a> | Fetch folders collection. |
-| <a href="#folders-create"><code>rename()</code></a> | Create folder. |
-| <a href="#folders-rename"><code>rename()</code></a> | Rename folder. |
-| <a href="#folders-delete"><code>delete()</code></a> | Delete folder. |
-| <a href="#folders-getDirLocation"><code>getDirLocation()</code></a> | Get folder location. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#folders-fetch"><code>fetch()</code></a></td>
+                <td>Fetch folder(s).</td>
+            </tr>
+            <tr>
+                <td><a href="#folders-fetchsingle"><code>fetchsingle()</code></a></td>
+                <td>Fetch single folder.</td>
+            </tr>
+            <tr>
+                <td><a href="#folders-fetchCollection"><code>fetchCollection()</code></a></td>
+                <td>Fetch folders collection.</td>
+            </tr>
+            <tr>
+                <td><a href="#folders-create"><code>rename()</code></a></td>
+                <td>Create folder.</td>
+            </tr>
+            <tr>
+                <td><a href="#folders-rename"><code>rename()</code></a></td>
+                <td>Rename folder.</td>
+            </tr>
+            <tr>
+                <td><a href="#folders-delete"><code>delete()</code></a></td>
+                <td>Delete folder.</td>
+            </tr>
+            <tr>
+                <td><a href="#folders-getDirLocation"><code>getDirLocation()</code></a></td>
+                <td>Get folder location.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="folders-fetch"></a> `fetch()`
 
