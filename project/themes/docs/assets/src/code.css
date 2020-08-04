@@ -35,7 +35,7 @@ code {
 .file-list {
     @apply rounded;
     padding: 20px!important;
-    background: #f8f9fb;
+    background: #fff;
     color: #090e24;
     font-family: "noirpro-light", sans-serif;
     margin-bottom: 20px;
