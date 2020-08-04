@@ -19,8 +19,14 @@ on_this_page:
         title: "has()"
         link: "has"
       4:
-        title: "dump()"
-        link: "dump"
+        title: "all()"
+        link: "all"
+      5:
+        title: "delete()"
+        link: "delete"
+      6:
+        title: "flush()"
+        link: "flush"
 ---
 
 A registry is a container for storing objects and values in the Flextype application space. By storing the value in a registry, the same object is always available throughout Flextype application. This mechanism is an alternative to using global storage.
@@ -49,8 +55,16 @@ A registry is a container for storing objects and values in the Flextype applica
                 <td>Checks if an object with this name is in the registry.</td>
             </tr>
             <tr>
-                <td><a href="#dump"><code>dump()</code></a></td>
-                <td>Get registry array.</td>
+                <td><a href="#all"><code>all()</code></a></td>
+                <td>Get all values in the register.</td>
+            </tr>
+            <tr>
+                <td><a href="#delete"><code>delete()</code></a></td>
+                <td>Delete a value from the registry.</td>
+            </tr>
+            <tr>
+                <td><a href="#flush"><code>flush()</code></a></td>
+                <td>Flush all values from the registry.</td>
             </tr>
         </tbody>
     </table>
@@ -94,12 +108,32 @@ if ($flextype->registry->has('flextype.settings.timezone')) {
 }
 ```
 
-##### <a name="dump"></a> `dump()`
+##### <a name="all"></a> `all()`
 
-Get registry array.
+Get all values in the register.
 
 **Examples**
 
 ```php
-$registry = $flextype->config->dump();
+$registry = $flextype->registry->all();
+```
+
+##### <a name="delete"></a> `delete()`
+
+Delete a value from the registry.
+
+**Examples**
+
+```php
+$flextype->registry->delete('flextype.settings.timezone');
+```
+
+##### <a name="flush"></a> `flush()`
+
+Flush all values from the registry.
+
+**Examples**
+
+```php
+$flextype->registry->flush();
 ```
