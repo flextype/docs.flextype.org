@@ -1,0 +1,34 @@
+{
+    "name": "flextype-plugins/sitemap",
+    "type": "project",
+    "description": "Sitemap plugin provide automatically generated XML sitemap for Flextype.",
+    "keywords": ["sitemap", "plugin", "flextype"],
+    "homepage": "https://github.com/flextype-plugins/sitemap",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Romanenko",
+            "email": "support@flextype.org",
+            "homepage": "https://flextype.org"
+        }
+    ],
+    "support": {
+      "issues": "https://github.com/flextype-plugins/sitemap/issues"
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "ext-json": "*"
+    },
+    "config": {
+        "apcu-autoloader": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "7.2.0"
+        }
+    },
+    "autoload": {
+        "classmap": [
+            "app"
+        ]
+    }
+}
