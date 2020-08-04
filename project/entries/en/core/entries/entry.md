@@ -422,7 +422,7 @@ $data = $flextype->entries->fetch('movies/sg-1', true, $filter);
 
 `$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and finder filter.
 
-##### <a name="fetchSingle"></a> `fetchSingle()`
+##### <a name="fetch-single"></a> `fetchSingle()`
 
 Fetch single entry.
 
@@ -434,7 +434,7 @@ Fetch single entry `movies/sg-1/season-5/episode-21`
 $data = $flextype->entries->fetchSingle('movies/sg-1/season-5/episode-21');
 ```
 
-##### <a name="fetchCollection"></a> `fetchCollection()`
+##### <a name="fetch-collection"></a> `fetchCollection()`
 
 Fetch entries collection.
 
@@ -452,7 +452,7 @@ Fetch collections of entries in `movies/sg-1` and filter them.
 $data = $flextype->entries->fetchCollection('movies/sg-1/season-5', $filter);
 ```
 
-`$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and finder filter.
+`$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
 
 ##### <a name="create"></a> `create()`
 
