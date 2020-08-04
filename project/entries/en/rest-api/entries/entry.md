@@ -202,7 +202,7 @@ GET /api/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&fi
 
 With the filter query you're able to search items in a collection that matches the filter's conditions.
 
-See `operators` and `collect_filter()` section here: [url]/en/core/collections
+`filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
 
 ### <a name="create-entry"></a> Create entry
 
