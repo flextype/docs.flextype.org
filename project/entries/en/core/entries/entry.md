@@ -18,6 +18,40 @@ on_this_page:
   3:
     title: "Methods"
     link: "methods"
+    level2:
+      0:
+        title: "fetch()"
+        link: "fetch"
+      1:
+        title: "fetchSingle()"
+        link: "fetchSingle"
+      2:
+        title: "fetchCollection()"
+        link: "fetchCollection"
+      3:
+        title: "create()"
+        link: "create"
+      4:
+        title: "update()"
+        link: "update"
+      5:
+        title: "rename()"
+        link: "rename"
+      6:
+        title: "copy()"
+        link: "copy"
+      7:
+        title: "delete()"
+        link: "delete"
+      8:
+        title: "has()"
+        link: "has"
+      9:
+        title: "getFileLocation()"
+        link: "getFileLocation"
+      10:
+        title: "getDirLocation()"
+        link: "getDirLocation"
 ---
 
 Entries are the fundamental building-blocks of your project. We are using jekyll like entries format. It means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
@@ -422,7 +456,7 @@ $data = $flextype->entries->fetch('movies/sg-1', true, $filter);
 
 `$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and finder filter.
 
-##### <a name="fetch-single"></a> `fetchSingle()`
+##### <a name="fetchSingle"></a> `fetchSingle()`
 
 Fetch single entry.
 
@@ -434,7 +468,7 @@ Fetch single entry `movies/sg-1/season-5/episode-21`
 $data = $flextype->entries->fetchSingle('movies/sg-1/season-5/episode-21');
 ```
 
-##### <a name="fetch-collection"></a> `fetchCollection()`
+##### <a name="fetchCollection"></a> `fetchCollection()`
 
 Fetch entries collection.
 
