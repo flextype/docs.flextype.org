@@ -13,7 +13,7 @@ All Flextype configuration files are written in YAML syntax with a `.yaml` file 
 You can update and create project configuration by editing file `/project/config/settings.yaml`
 
 <div class="file-header"><i class="far fa-file-alt"></i> /project/config/flextype/settings.yaml</div>
-```
+```yaml
 # Set the timezone to be used on the project.
 # For a list of valid timezone settings, see:
 # http://php.net/manual/en/timezones.php
@@ -67,13 +67,34 @@ date_display_format: 'd-m-Y H:i'
 #
 # - display: Display errors or not.
 errors:
-  display: true
+  display: false
 
 # Entries
 #
 # - extension: Set entries file extension
 entries:
   extension: md
+  fields:
+    slug:
+      enabled: true
+    published_at:
+      enabled: true
+    published_by:
+      enabled: true
+    modified_at:
+      enabled: true
+    created_at:
+      enabled: true
+    created_by:
+      enabled: true
+    routable:
+      enabled: true
+    parsers:
+      enabled: true
+    visibility:
+      enabled: true
+    uuid:
+      enabled: true
 
 # Cache
 #
@@ -107,7 +128,7 @@ entries:
 #
 # - sqlite3.table    SQLite3 Table
 cache:
-  enabled: false
+  enabled: true
   prefix: flextype
   driver: auto
   lifetime: 604800
@@ -253,9 +274,12 @@ cors:
   credentials: false
 
 # Media
+#
+# - max_file_size: Set the maximum upload size. Note, this can never exceed the settings for
+#                  `post_max_size` and `upload_max_filesize` in `php.ini`.
 media:
   accept_file_types: 'gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg'
-  max_file_size: 5000000
+  max_file_size: 8000000
   safe_names: true
   image_width: 1600
   image_height: 0
@@ -277,9 +301,13 @@ api:
   files:
     enabled: true
     default_token:
+  folders:
+    enabled: true
+    default_token:
   images:
     enabled: true
     default_token:
+
 ```
 
 ### PHP constants
