@@ -37,11 +37,11 @@ By default, Flextype comes preconfigured to use the auto setting. This will try 
         <tbody>
             <tr>
                 <td><a href="#getCacheDriver"><code>getCacheDriver()</code></a></a></td>
-                <td>Get Cache Driver</td>
+                <td>Get Active Cache Driver</td>
             </tr>
             <tr>
                 <td><a href="#driver"><code>driver()</code></a></td>
-                <td>Registers or update a given value under a given name.</td>
+                <td>Returns a driver object</td>
             </tr>
             <tr>
                 <td><a href="#getKey"><code>getKey()</code></a></td>
@@ -61,11 +61,11 @@ By default, Flextype comes preconfigured to use the auto setting. This will try 
             </tr>
             <tr>
                 <td><a href="#clear"><code>clear()</code></a></td>
-                <td>Clear cache</td>
+                <td>Clear specific cache namespaces.</td>
             </tr>
             <tr>
                 <td><a href="#clearAll"><code>clearAll()</code></a></td>
-                <td>Clear all cahce namespaces.</td>
+                <td>Clear all cache namespaces.</td>
             </tr>
             <tr>
                 <td><a href="#setLifetime"><code>setLifetime()</code></a></td>
@@ -78,3 +78,113 @@ By default, Flextype comes preconfigured to use the auto setting. This will try 
         </tbody>
     </table>
 </div>
+
+##### <a name="getCacheDriver"></a> `getCacheDriver()`
+
+Get Active Cache Driver.
+
+**Examples**
+
+```php
+$cache_driver = $flextype->cache->getCacheDriver();
+```
+
+##### <a name="driver"></a> `driver()`
+
+Returns a driver object
+
+**Examples**
+
+```php
+$driver = $flextype->cache->driver();
+```
+
+##### <a name="getKey"></a> `getKey()`
+
+Get cache key.
+
+**Examples**
+
+```php
+$cache_key = $flextype->cache->getKey();
+```
+
+##### <a name="fetch"></a> `fetch()`
+
+Fetches an item from the cache.
+
+**Examples**
+
+Fetch posts from cache.
+
+```php
+$posts = $flextype->cache->fetch('posts');
+```
+
+##### <a name="contains"></a> `contains()`
+
+Checking whether cached data exists.
+
+**Examples**
+
+Check is posts are exists in the cache then fetch them.
+
+```php
+if ($flextype->cache->contains('posts')) {
+    $posts = $flextype->cache->fetch('posts');
+}
+```
+
+##### <a name="delete"></a> `delete()`
+
+Delete specific item from the cache.
+
+**Examples**
+
+Delete is posts from the cache.
+
+```php
+$flextype->cache->delete('posts');
+```
+
+##### <a name="clear"></a> `clear()`
+
+Clear specific cache namespaces.
+
+**Examples**
+
+Clear doctrine cache.
+
+```php
+$flextype->cache->clear('doctrine');
+```
+
+##### <a name="clearAll"></a> `clearAll()`
+
+Clear all cache namespaces.
+
+**Examples**
+
+```php
+$flextype->cache->clearAll();
+```
+
+##### <a name="setLifetime"></a> `setLifetime()`
+
+Set the cache lifetime.
+
+**Examples**
+
+```php
+$flextype->cache->setLifetime(300);
+```
+
+##### <a name="getLifetime"></a> `getLifetime()`
+
+Retrieve the cache lifetime (in seconds)
+
+**Examples**
+
+```php
+$lifetime = $flextype->cache->getLifetime();
+```
