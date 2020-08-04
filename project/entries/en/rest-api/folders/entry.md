@@ -32,13 +32,44 @@ The Flextype Folders API organized around Representational State Transfer (REST)
 
 ### <a name="endpoints"></a> Endpoints
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| GET | /api/folders | Fetch folder(folders) |
-| POST | /api/folders | Create folder |
-| PUT | /api/folders | Rename folder |
-| PUT | /api/folders/copy | Copy folder |
-| DELETE | /api/folders | Delete folder |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>GET</td>
+                <td>/api/folders</td>
+                <td>Fetch folder(folders)</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/api/folders</td>
+                <td>Create folder</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>/api/folders</td>
+                <td>Rename folder</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>/api/folders/copy</td>
+                <td>Copy folder</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>/api/folders</td>
+                <td>Delete folder</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### <a name="fetch-single-folder"></a> Fetch single Folder
 
@@ -49,11 +80,34 @@ GET /api/folders?id=YOUR_FOLDER_ID&token=YOUR_FOLDERS_TOKEN
 
 ##### Query
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Folder path. |
-| collection | OPTIONAL | Collection or single. |
-| token | REQUIRED | Valid Folders Token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Folder path.</td>
+            </tr>
+            <tr>
+                <td>collection</td>
+                <td>OPTIONAL</td>
+                <td>Collection or single.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Folders Token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 
@@ -77,11 +131,34 @@ GET /api/entries?id=YOUR_FOLDER_ID&collection=true&token=YOUR_FOLDERS_TOKEN
 
 ##### Query
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Folder path. |
-| collection | OPTIONAL | Collection or single. |
-| token | REQUIRED | Valid Folders Token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Folder path.</td>
+            </tr>
+            <tr>
+                <td>collection</td>
+                <td>OPTIONAL</td>
+                <td>Collection or single.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Folders Token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 
@@ -105,11 +182,34 @@ POST /api/folders
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | New folder path. |
-| token | REQUIRED | Valid Folders token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>New folder path.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Folders token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the folder object for the folder that was just created.
@@ -153,12 +253,39 @@ PUT /api/folders
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the folder. |
-| new_path | REQUIRED | New Unique identifier of the folder. |
-| token | REQUIRED | Valid Entries token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the folder.</td>
+            </tr>
+            <tr>
+                <td>new_path</td>
+                <td>REQUIRED</td>
+                <td>New Unique identifier of the folder.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Entries token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the folders object for the folders that was just renamed
@@ -232,12 +359,39 @@ PUT /api/folders/copy
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the folder. |
-| new_path | REQUIRED | New Unique identifier of the folder. |
-| token | REQUIRED | Valid Folders token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the folder.</td>
+            </tr>
+            <tr>
+                <td>new_path</td>
+                <td>REQUIRED</td>
+                <td>New Unique identifier of the folder.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Folders token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns the folders object for the folders that was just copied.
@@ -282,11 +436,34 @@ DELETE /api/folders
 
 ##### Body
 
-| Name | |  Description |
-| --- | --- | --- |
-| path | REQUIRED | Unique identifier of the folder. |
-| token | REQUIRED | Valid Folders token. |
-| access_token | REQUIRED | Valid Access token. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>path</td>
+                <td>REQUIRED</td>
+                <td>Unique identifier of the folder.</td>
+            </tr>
+            <tr>
+                <td>token</td>
+                <td>REQUIRED</td>
+                <td>Valid Folders token.</td>
+            </tr>
+            <tr>
+                <td>access_token</td>
+                <td>REQUIRED</td>
+                <td>Valid Access token.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Result
 Returns an empty body with HTTP status 204

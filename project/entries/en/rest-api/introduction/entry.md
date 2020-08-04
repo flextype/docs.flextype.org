@@ -80,7 +80,26 @@ When something goes wrong with an API request, our server generates an error. Th
 
 #### Error types
 
-| HTTP status code | Error code | Description |
-| --- | --- | --- |
-| 401 Unauthorized | AccessTokenInvalid | Incorrect authentication credentials. |
-| 404 Not Found | NotFound | The requested resource or endpoint could not be found. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>HTTP status code</th>
+                <th>Error code</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>401 Unauthorized</td>
+                <td>AccessTokenInvalid</td>
+                <td>Incorrect authentication credentials.</td>
+            </tr>
+            <tr>
+                <td>404 Not Found</td>
+                <td>NotFound</td>
+                <td>The requested resource or endpoint could not be found.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
