@@ -24,7 +24,7 @@ li {
 }
 
 table tr {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #383a42;
 }
 
 table {
@@ -33,6 +33,7 @@ table {
 }
 
 th, td {
+    border-bottom-width: 2px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -41,7 +42,7 @@ th, td {
 }
 
 hr {
-    border-top: 3px solid black;
+    border-top: 3px solid #383a42;
     border-bottom: none;
     border-left: none;
     border-right: none;
