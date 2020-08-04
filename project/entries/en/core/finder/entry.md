@@ -275,10 +275,27 @@ $finder->path(['data', 'foo/bar']);
 Internally, strings are converted into regular expressions by escaping slashes
 and adding delimiters:
 
-| Original Given String | Regular Expression Used |
-|---|---|
-| `dirname` | `/dirname/` |
-| `a/b/c` | `/a\/b\/c/` |
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Original Given String</th>
+                <th>Original Given String</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>dirname</code></td>
+                <td><code>/dirname/</code></td>
+            </tr>
+            <tr>
+                <td><code>a/b/c</code></td>
+                <td><code>/a\/b\/c/</code></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 The method `notPath()` method excludes files by path:
 

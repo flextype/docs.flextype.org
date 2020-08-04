@@ -14,6 +14,10 @@ pre > code {
     padding: 20px!important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: .895rem;
+
+    box-shadow: 5px 5px 0 #090e24;
+    border: 2px solid #090e24;
+    margin-bottom: 40px;
 }
 
 code {
@@ -23,6 +27,9 @@ code {
     padding: 2px 10px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: .895rem;
+
+    border: 1px solid #090e24;
+    box-shadow: 1px 1px 0 #090e24;
 }
 
 .file-list {
@@ -35,6 +42,10 @@ code {
     list-style: none;
     margin-left: 0;
     border-radius: 10px;
+
+    box-shadow: 5px 5px 0 #090e24;
+    border: 2px solid #090e24;
+    margin-bottom: 40px;
 }
 
 .file-list i {
@@ -62,7 +73,7 @@ code {
 }
 
 .file-header {
-    padding: 8px 20px!important;
+    padding: 8px 20px 15px!important;
     color: #090e24;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     background: #f8f9fb;
@@ -70,6 +81,13 @@ code {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     margin-bottom: -10px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 #090e24;
+}
+
+.file-header + pre > code {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
 }
 
 .file-header > i {
@@ -157,6 +175,15 @@ code {
 
 .hljs-shortcode > input:focus {
     outline: none;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 #090e24;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
 /* purgecss end ignore */

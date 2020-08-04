@@ -29,15 +29,14 @@ table tr {
 
 table {
     width: 100%;
-    margin-bottom: 20px;
     text-align: left;
 }
 
 th, td {
-    padding-bottom: 16px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 16px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
     vertical-align: middle;
 }
 
