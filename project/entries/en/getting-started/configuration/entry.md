@@ -295,9 +295,6 @@ api:
   registry:
     enabled: true
     default_token:
-  config:
-    enabled: true
-    default_token:
   files:
     enabled: true
     default_token:
