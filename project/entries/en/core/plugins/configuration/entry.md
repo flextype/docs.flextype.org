@@ -16,9 +16,9 @@ You can easily access plugin configuration and plugin information by Flextype Co
 
 Information for the currently enabled plugins you can get from the `registry` object.
 
-Example information from `/project/plugins/site/plugin.yaml`
+Example information from `project/plugins/site/plugin.yaml`
 
-<div class="file-header"><i class="far fa-file-alt"></i> /project/plugins/site/plugin.yaml</div>
+<div class="file-header"><i class="far fa-file-alt"></i> project/plugins/site/plugin.yaml</div>
 ```yaml
 name: Site
 version: 1.0.0
@@ -33,7 +33,7 @@ bugs: https://github.com/flextype-plugins/site/issues
 license: MIT
 
 dependencies:
-  flextype: 0.9.8
+  flextype: 0.9.9
   twig: '>=1.0.0'
 ```
 
@@ -48,7 +48,7 @@ $plugin_version = $flextype->registry->get('plugins.site.manifest.version');
 
 #### Accessing Plugin Configuration
 
-Plugins have default and site configuration files, named `settings.yaml` located in `/project/plugins/<pluginname>/` and in `/project/config/plugins/<pluginname>/`
+Plugins have default and site configuration files, named `settings.yaml` located in `project/plugins/<pluginname>/` and in `project/config/plugins/<pluginname>/`
 
 For example, let us consider the Site plugin and there is a file called `settings.yaml` in the plugins site settings folder. The contents of this configuration file look like this:
 
@@ -58,7 +58,7 @@ enabled: true
 
 Let us add some custom plugin settings.
 
-Open `/project/config/plugins/site/settings.yaml` and add new variable with value:
+Open `project/config/plugins/site/settings.yaml` and add new variable with value:
 
 `my_custom_var: "Lorem ipsum dolor sit amet"`
 

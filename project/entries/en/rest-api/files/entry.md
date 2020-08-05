@@ -28,7 +28,7 @@ on_this_page:
     link: "update-file-meta"
   7:
     title: "Add file meta"
-    link: "update-file-meta"
+    link: "add-file-meta"
   8:
     title: "Delete file meta"
     link: "delete-file-meta"
@@ -76,7 +76,7 @@ The Flextype Files API organized around Representational State Transfer (REST) f
             <tr>
                 <td>POST</td>
                 <td>/api/files/meta</td>
-                <td>Updates file meta information</td>
+                <td>Add file meta information</td>
             </tr>
             <tr>
                 <td>DELETE</td>
@@ -642,7 +642,7 @@ PATCH /api/files/meta
 }
 ```
 
-### <a name="update-file-meta"></a> Add File Meta
+### <a name="add-file-meta"></a> Add File Meta
 
 <div class="file-header">Request</div>
 ```http

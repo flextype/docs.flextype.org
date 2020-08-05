@@ -73,7 +73,7 @@ Between triple-dashed lines, you can set [predefined variables](#default-variabl
 
 ### <a name="entries-and-urls-structure"></a> Entries and Urls structure in Flextype
 
-All content entries are located in the `/project/entries/` folder.
+All content entries are located in the `project/entries/` folder.
 
 Each entry file `entry.md` should be placed in its own folder.
 
@@ -393,11 +393,11 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
                 <td>Fetch single entry or collections of entries</td>
             </tr>
             <tr>
-                <td><a href="#fetch-single"><code>fetchSingle()</code></a></td>
+                <td><a href="#fetchSingle"><code>fetchSingle()</code></a></td>
                 <td>Fetch single entry</td>
             </tr>
             <tr>
-                <td><a href="#fetch-collection"><code>fetchCollection()</code></a></td>
+                <td><a href="#fetchCollection"><code>fetchCollection()</code></a></td>
                 <td>Fetch entries collection</td>
             </tr>
             <tr>

@@ -11,5 +11,5 @@ breadcrumbs:
 ---
 
 1. Download & Install all required dependencies for PLUGIN_NAME.
-2. Create new folder `/project/plugins/PLUGIN_NAME`
-3. Download PLUGIN_NAME and unzip plugin content to the folder `/project/plugins/PLUGIN_NAME`
+2. Create new folder `project/plugins/PLUGIN_NAME`
+3. Download PLUGIN_NAME and unzip plugin content to the folder `project/plugins/PLUGIN_NAME`
