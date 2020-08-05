@@ -5,12 +5,85 @@ breadcrumbs:
     title: "Core Concepts"
     link: "[url]/en/core/"
 on_this_page:
-  1:
-    title: "Methods"
-    link: "methods"
+  -
+    title: "Files Methods"
+    link: "files-methods"
+    level2:
+      -
+        title: "upload()"
+        link: "files-upload()"
+      -
+        title: "fetch()"
+        link: "files-fetch()"
+      -
+        title: "fetchSingle()"
+        link: "files-fetchSingle()"
+      -
+        title: "fetchCollection()"
+        link: "files-fetchCollection()"
+      -
+        title: "rename()"
+        link: "files-rename()"
+      -
+        title: "delete()"
+        link: "files-delete()"
+      -
+        title: "has()"
+        link: "files-has()"
+      -
+        title: "getFileLocation()"
+        link: "files-getFileLocation()"
+  -
+    title: "Files Meta Methods"
+    link: "files-meta-methods"
+    level2:
+      -
+        title: "update()"
+        link: "files-meta-update()"
+      -
+        title: "add()"
+        link: "files-meta-add()"
+      -
+        title: "delete()"
+        link: "files-meta-delete()"
+      -
+        title: "getFileMetaLocation()"
+        link: "files-meta-getFileMetaLocation()"
+  -
+    title: "Folders Methods"
+    link: "folders-methods"
+    level2:
+      -
+        title: "fetch()"
+        link: "folders-fetch()"
+      -
+        title: "fetchSingle()"
+        link: "files-fetchSingle()"
+      -
+        title: "fetchCollection()"
+        link: "files-meta-fetchCollection()"
+      -
+        title: "create()"
+        link: "files-meta-create()"
+      -
+        title: "rename()"
+        link: "files-rename()"
+      -
+        title: "delete()"
+        link: "files-meta-delete()"
+      -
+        title: "getDirLocation()"
+        link: "files-meta-getDirLocation()"
+  -
+    title: "Folders Methods"
+    link: "folders-methods"
+    level2:
+      -
+        title: "getDirMetaLocation()"
+        link: "files-meta-getDirMetaLocation()"
 ---
 
-### <a name="methods"></a> Methods
+### <a name="files-methods"></a> Methods
 
 #### Media Files
 
@@ -32,7 +105,7 @@ on_this_page:
                 <td>Fetch file(s).</td>
             </tr>
             <tr>
-                <td><a href="#files-fetchSingle"><code>fetchsingle()</code></a></td>
+                <td><a href="#files-fetchSingle"><code>fetchSingle()</code></a></td>
                 <td>Fetch single file.</td>
             </tr>
             <tr>
@@ -186,12 +259,34 @@ $flextype->media_files
 
 #### Media Files Meta
 
-| Method | Description |
-|---|---|
-| <a href="#files-meta-update"><code>update()</code></a> | Update file meta information. |
-| <a href="#files-meta-add"><code>add()</code></a> | Add file meta information. |
-| <a href="#files-meta-delete"><code>delete()</code></a> | Delete file meta information. |
-| <a href="#files-meta-getFileMetaLocation"><code>getFileMetaLocation()</code></a> | Get file meta location. |
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#files-meta-update"><code>update()</code></a></td>
+                <td>Update file meta information.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-meta-add"><code>add()</code></a></td>
+                <td>Add file meta information.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-meta-delete"><code>delete()</code></a></td>
+                <td>Delete file meta information.</td>
+            </tr>
+            <tr>
+                <td><a href="#files-meta-getFileMetaLocation"><code>getFileMetaLocation()</code></a></td>
+                <td>Get file meta location.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="files-update"></a> `update()`
 
@@ -242,7 +337,7 @@ $flextype->media_files_meta
             ->getFileMetaLocation('entries/movies/sg-1/season-5/episode-21/cover.jpg');
 ```
 
-#### Media Folders
+#### <a name="folders-methods"></a> Media Folders
 
 <div class="table">
     <table>
@@ -258,7 +353,7 @@ $flextype->media_files_meta
                 <td>Fetch folder(s).</td>
             </tr>
             <tr>
-                <td><a href="#folders-fetchsingle"><code>fetchsingle()</code></a></td>
+                <td><a href="#folders-fetchSingle"><code>fetchSingle()</code></a></td>
                 <td>Fetch single folder.</td>
             </tr>
             <tr>
@@ -386,10 +481,22 @@ $flextype->media_folders
 
 #### Media Folders Meta
 
-| Method | Description |
-|---|---|
-| <a href="#folders-meta-getDirMetaLocation"><code>getDirMetaLocation()</code></a> | Get files directory meta location. |
-
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#folders-meta-getDirMetaLocation"><code>getDirMetaLocation()</code></a></td>
+                <td>Get files directory meta location.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### <a name="folders-meta-getDirMetaLocation"></a> `getDirMetaLocation()`
 
