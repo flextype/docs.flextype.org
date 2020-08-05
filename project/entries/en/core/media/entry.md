@@ -11,76 +11,76 @@ on_this_page:
     level2:
       -
         title: "upload()"
-        link: "files-upload()"
+        link: "files-upload"
       -
         title: "fetch()"
-        link: "files-fetch()"
+        link: "files-fetch"
       -
         title: "fetchSingle()"
-        link: "files-fetchSingle()"
+        link: "files-fetchSingle"
       -
         title: "fetchCollection()"
-        link: "files-fetchCollection()"
+        link: "files-fetchCollection"
       -
         title: "rename()"
-        link: "files-rename()"
+        link: "files-rename"
       -
         title: "delete()"
-        link: "files-delete()"
+        link: "files-delete"
       -
         title: "has()"
-        link: "files-has()"
+        link: "files-has"
       -
         title: "getFileLocation()"
-        link: "files-getFileLocation()"
+        link: "files-getFileLocation"
   -
     title: "Files Meta Methods"
     link: "files-meta-methods"
     level2:
       -
         title: "update()"
-        link: "files-meta-update()"
+        link: "files-meta-update"
       -
         title: "add()"
-        link: "files-meta-add()"
+        link: "files-meta-add"
       -
         title: "delete()"
-        link: "files-meta-delete()"
+        link: "files-meta-delete"
       -
         title: "getFileMetaLocation()"
-        link: "files-meta-getFileMetaLocation()"
+        link: "files-meta-getFileMetaLocation"
   -
     title: "Folders Methods"
     link: "folders-methods"
     level2:
       -
         title: "fetch()"
-        link: "folders-fetch()"
+        link: "folders-fetch"
       -
         title: "fetchSingle()"
-        link: "files-fetchSingle()"
+        link: "folders-fetchSingle"
       -
         title: "fetchCollection()"
-        link: "files-meta-fetchCollection()"
+        link: "folders-fetchCollection"
       -
         title: "create()"
-        link: "files-meta-create()"
+        link: "folders-create"
       -
         title: "rename()"
-        link: "files-rename()"
+        link: "folders-rename"
       -
         title: "delete()"
-        link: "files-meta-delete()"
+        link: "folders-delete"
       -
         title: "getDirLocation()"
-        link: "files-meta-getDirLocation()"
+        link: "folders-getDirLocation"
   -
-    title: "Folders Methods"
+    title: "Folders Meta Methods"
     link: "folders-methods"
     level2:
       -
         title: "getDirMetaLocation()"
-        link: "files-meta-getDirMetaLocation()"
+        link: "folders-meta-getDirMetaLocation"
 ---
 
 ### <a name="files-methods"></a> Methods
@@ -288,7 +288,7 @@ $flextype->media_files
     </table>
 </div>
 
-##### <a name="files-update"></a> `update()`
+##### <a name="files-meta-update"></a> `update()`
 
 Update file meta information.
 
