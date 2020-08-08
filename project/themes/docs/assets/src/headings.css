@@ -38,6 +38,10 @@ h5 {
   @apply text-lg;
 }
 
+.page-content h3 {
+    padding-top: 20px;
+}
+
 .page-content > h1 {
     margin-top: 20px;
     border-bottom: 3px solid #090e24;
