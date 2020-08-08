@@ -844,8 +844,6 @@ To denote a word or phrase as code, enclose it in backticks (&#96;).
     </table>
 </div>
 
-##### Escaping Backticks
-
 #### Horizontal Rules
 
 If the word or phrase you want to denote as code includes one or more backticks, you can escape it by enclosing the word or phrase in double backticks (&#96;).
