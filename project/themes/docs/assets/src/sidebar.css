@@ -1,6 +1,6 @@
 .sidebar {
     background: white;
-    color: #282828;
+    color: #090e24;
 }
 
 .sidebar li {
@@ -16,7 +16,7 @@
 
 .sidebar li:hover,
 .sidebar li.active {
-    border-left: 6px solid #282828;
+    border-left: 6px solid #090e24;
 }
 
 .sidebar h4 {
