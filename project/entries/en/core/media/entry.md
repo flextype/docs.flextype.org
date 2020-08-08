@@ -257,7 +257,7 @@ $flextype->media_files
             ->getFileLocation('entries/movies/sg-1/season-5/episode-21/cover-image.jpg');
 ```
 
-#### Media Files Meta
+#### <a name="files-meta-methods"></a> Media Files Meta
 
 <div class="table">
     <table>

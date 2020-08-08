@@ -6,7 +6,7 @@ breadcrumbs:
     link: "[url]/en/core/"
 ---
 
-#### YAML
+### YAML
 
 YAML (YAML Ain't Markup) is a human friendly data serialization language.
 
@@ -16,7 +16,7 @@ YAML is used extensively in Flextype for its configuration files, fieldsets, and
 
 For more details <a href="[url]/en/core/serializers/yaml">read the guide for the YAML</a>.
 
-#### JSON
+### JSON
 
 JSON (JavaScript Object Notation) is most widely used data format for data interchange on the web. This data interchange can happen between two computers applications at different geographical locations or running within same hardware machine.
 
@@ -26,7 +26,7 @@ A JSON document may contains text, curly braces, square brackets, colons, commas
 
 For more details <a href="[url]/en/core/serializers/json">read the guide for the JSON</a>.
 
-#### FRONTMATTER
+### FRONTMATTER
 
 Any file that contains a YAML front matter block will be processed by Flextype as a special file. The front matter must be the first thing in the file and must take the form of valid YAML set between triple-dashed lines. Between these triple-dashed lines, you can set predefined variables or even create custom ones of your own.
 
