@@ -1205,6 +1205,8 @@ For example, `<p>italic and **bold**</p>` won't work.
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="parse"></a> `parse()`
 
 Takes a MARKDOWN encoded string and converts it into a HTML

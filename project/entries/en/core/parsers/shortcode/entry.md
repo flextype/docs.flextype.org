@@ -39,6 +39,8 @@ Shortcode is a small piece of code, indicated by brackets like `[this]`, that pe
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="add"></a> `add()`
 
 Add new SHORTCODE handler

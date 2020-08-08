@@ -132,6 +132,8 @@ on_this_page:
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="files-upload"></a> `upload()`
 
 Upload media file.
@@ -288,6 +290,8 @@ $flextype->media_files
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="files-meta-update"></a> `update()`
 
 Update file meta information.
@@ -379,6 +383,8 @@ $flextype->media_files_meta
         </tbody>
     </table>
 </div>
+
+### Methods Details
 
 ##### <a name="folders-fetch"></a> `fetch()`
 
@@ -497,6 +503,8 @@ $flextype->media_folders
         </tbody>
     </table>
 </div>
+
+### Methods Details
 
 ##### <a name="folders-meta-getDirMetaLocation"></a> `getDirMetaLocation()`
 

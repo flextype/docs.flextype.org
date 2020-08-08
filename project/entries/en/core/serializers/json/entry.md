@@ -219,6 +219,8 @@ JSON consist of 6 data types. First four data types (string, number, boolean and
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="encode"></a> `encode()`
 
 Returns the JSON representation of a value

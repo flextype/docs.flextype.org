@@ -935,6 +935,8 @@ Array
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="encode"></a> `encode()`
 
 Dumps a PHP value to a YAML string.<br><br>The dump method, when supplied with an array, will do its best to convert the array into friendly YAML.
