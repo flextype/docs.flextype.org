@@ -16,15 +16,36 @@ on_this_page:
 
 Flextype is incredibly easy to set up and get running. Installation of Flextype is a simple process without any of hard routine of configuring databases, servers and etc...
 
-### <a name="using-sftp"></a> Download and installation
+### <a name="download-and-installation"></a> Download and installation
 
+We provide two downloadable packages for you to get started with
 
-1. We provide two downloadable packages for you to get started with:
-  - [Flextype CMS](https://flextype.org/en/downloads) - package contains example of content, fieldsets, plugins, default theme and more. This package ideal for new users to explore many of Flextype's options and get to know the Flextype Admin Panel.
-  - [Flextype Core](https://flextype.org/en/downloads) - package with a minimal Flextype setup with the basics you need to start a project from scratch. It is the ideal choice if you are already familiar with Flextype and want to start your project step-by-step.
-2. Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, create directory <code>project</code> and be sure to chmod the following directory to <code>755</code> (or <code>777</code>), so it is readable and writable by Flextype.<br>
-3. Visit your new Flextype site in your browser at `yourdomain.com`
-4. Visit the Flextype Admin Panel at `yourdomain.com/admin` and create admin account.
+#### Flextype CMS
+
+This package contains example of content, fieldsets, plugins, default theme and more. This package ideal for new users to explore many of Flextype's options and get to know the <a href="https://flextype.org/en/downloads/extend/plugins/admin">Flextype Admin Panel</a>.
+<ol>
+    <li><a href="https://flextype.org/en/downloads">Download Flextype CMS</a></li>
+    <li>
+        Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, create directory <code>project</code> and be sure to chmod the following directory to <code>755</code> (or <code>777</code>), so it is readable and writable by Flextype.
+    </li>
+    <li>
+        Visit your new Flextype site in your browser at <code>yourdomain.com</code>
+        <img class="inline" src="[url]/api/images/en/getting-started/installation/flextype-cms-homepage.png?w=648&dpr=2&q=70&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+    </li>
+    <li>
+        Visit the Flextype Admin Panel at <code>yourdomain.com/admin</code> and create admin account.
+        <img class="inline" src="[url]/api/images/en/getting-started/installation/flextype-cms-registration.png?w=648&dpr=2&q=70&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+    </li>
+</ol>
+
+#### Flextype Core
+
+This package with a minimal Flextype setup with the basics you need to start a project from scratch. It is the ideal choice if you are already familiar with Flextype and want to start your project step-by-step.
+<ol>
+    <li><a href="https://flextype.org/en/downloads">Download Flextype CMS</a></li>
+    <li>Unzip the contents to a new folder on your local computer, and upload to your webhost using the (S)FTP client of your choice. After you’ve done this, create directory <code>project</code> and be sure to chmod the following directory to <code>755</code> (or <code>777</code>), so it is readable and writable by Flextype.</li>
+    <li>Visit your new Flextype site in your browser at <code>yourdomain.com</code></li>
+</ol>
 
 ### <a name="installation-issues"></a> Installation issues
 
