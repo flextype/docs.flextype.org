@@ -2,17 +2,19 @@
 title: Collections
 description:
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
 on_this_page:
-  0:
+  -
     title: "Operators"
     link: "operators"
-  1:
+  -
     title: "Methods"
     link: "methods"
 ---
+
+Flextype provide a powerful functionality to work with data collections. You may use it for collecting specific data by specific criterias. For e.g. collect specific blog posts or movies or series and etc..
 
 ### <a name="operators"></a> Operators
 

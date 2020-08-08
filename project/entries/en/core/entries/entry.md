@@ -12,6 +12,34 @@ on_this_page:
   1:
     title: "Default Variables"
     link: "default-variables"
+    level2:
+      -
+        title: "visibility"
+        link: "default-variables-visibility"
+      -
+        title: "routable"
+        link: "default-variables-routable"
+      -
+        title: "published_at"
+        link: "default-variables-published-at"
+      -
+        title: "published_by"
+        link: "default-variables-published-by"
+      -
+        title: "created_at"
+        link: "default-variables-created-at"
+      -
+        title: "created_by"
+        link: "default-variables-created-by"
+      -
+        title: "modified_at"
+        link: "default-variables-modified-at"
+      -
+        title: "parsers"
+        link: "default-variables-parsers"
+      -
+        title: "cache"
+        link: "default-variables-cache"
   2:
     title: "Custom Variables"
     link: "custom-variables"
@@ -21,37 +49,37 @@ on_this_page:
     level2:
       0:
         title: "fetch()"
-        link: "fetch"
+        link: "methods-fetch"
       1:
         title: "fetchSingle()"
-        link: "fetchSingle"
+        link: "methods-fetchSingle"
       2:
         title: "fetchCollection()"
-        link: "fetchCollection"
+        link: "methods-fetchCollection"
       3:
         title: "create()"
-        link: "create"
+        link: "methods-create"
       4:
         title: "update()"
-        link: "update"
+        link: "methods-update"
       5:
         title: "rename()"
-        link: "rename"
+        link: "methods-rename"
       6:
         title: "copy()"
-        link: "copy"
+        link: "methods-copy"
       7:
         title: "delete()"
-        link: "delete"
+        link: "methods-delete"
       8:
         title: "has()"
-        link: "has"
+        link: "methods-has"
       9:
         title: "getFileLocation()"
-        link: "getFileLocation"
+        link: "methods-getFileLocation"
       10:
         title: "getDirLocation()"
-        link: "getDirLocation"
+        link: "methods-getDirLocation"
 ---
 
 Entries are the fundamental building-blocks of your project. We are using jekyll like entries format. It means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
@@ -108,7 +136,7 @@ Folder names should also be valid **slugs**. Slugs are entirely lowercase, with 
 
 There are a number of default entry variables available for each entry and defined in the Front Matter section.
 
-##### Visibility
+##### <a name="default-variables-visibility"></a> Visibility
 
 <div class="table">
     <table>
@@ -139,7 +167,7 @@ Content visibility is about controlling who can see your entries. Flextype allow
     ---
     My entry content here.
 
-##### Routable
+##### <a name="default-variables-routable"></a> Routable
 
 <div class="table">
     <table>
@@ -170,7 +198,7 @@ By default, all pages are routable. This means that they can be reached by point
     ---
     Content for Commment42
 
-##### Published at
+##### <a name="default-variables-published-at"></a> Published at
 
 <div class="table">
     <table>
@@ -201,7 +229,7 @@ This variable allows you to specifically set a published_at date associated with
     ---
     My entry content here.
 
-##### Published by
+##### <a name="default-variables-published-by"></a> Published by
 
 <div class="table">
     <table>
@@ -232,7 +260,7 @@ This variable allows you to specifically set a published_by User UUID associated
     ---
     My entry content here.
 
-##### Created at
+##### <a name="default-variables-created-at"></a> Created at
 
 <div class="table">
     <table>
@@ -255,7 +283,7 @@ This variable allows you to specifically set a published_by User UUID associated
 
 This variable allows you to specifically set a created_at date associated with this entry.
 
-##### Modified at
+##### <a name="default-variables-modified-at"></a> Modified at
 
 <div class="table">
     <table>
@@ -286,7 +314,7 @@ This variable allows you to specifically set a modified_at date associated with 
     ---
     My entry content here.
 
-##### Parsers
+##### <a name="default-variables-parsers"></a> Parsers
 
 <div class="table">
     <table>
@@ -317,7 +345,7 @@ parsers:
     fields: ['content', 'title', 'description']
 ```
 
-##### Cache
+##### <a name="default-variables-cache"></a> Cache
 
 <div class="table">
     <table>
@@ -341,7 +369,7 @@ parsers:
 By default, all pages are stored in the cache if flextype cache is true.
 But this rule can be changed by setting individual cache for each entry.
 
-##### Slug
+##### <a name="default-variables-slug"></a> Slug
 
 <div class="table">
     <table>
@@ -364,7 +392,7 @@ But this rule can be changed by setting individual cache for each entry.
 
 ### <a name="custom-variables"></a> Custom Variables
 
-You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for content api's and any extension such as plugin, theme and etc...
+You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for Entry API and any extension such as plugin, theme and etc...
 
 **Examples**
 
@@ -435,7 +463,7 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
     </table>
 </div>
 
-##### <a name="fetch"></a> `fetch()`
+##### <a name="methods-fetch"></a> `fetch()`
 
 Fetch single entry or collections of entries.
 
@@ -456,7 +484,7 @@ $data = $flextype->entries->fetch('movies/sg-1', true, $filter);
 
 `$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and finder filter.
 
-##### <a name="fetchSingle"></a> `fetchSingle()`
+##### <a name="methods-fetchSingle"></a> `fetchSingle()`
 
 Fetch single entry.
 
@@ -468,7 +496,7 @@ Fetch single entry `movies/sg-1/season-5/episode-21`
 $data = $flextype->entries->fetchSingle('movies/sg-1/season-5/episode-21');
 ```
 
-##### <a name="fetchCollection"></a> `fetchCollection()`
+##### <a name="methods-fetchCollection"></a> `fetchCollection()`
 
 Fetch entries collection.
 
@@ -488,7 +516,7 @@ $data = $flextype->entries->fetchCollection('movies/sg-1/season-5', $filter);
 
 `$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
 
-##### <a name="create"></a> `create()`
+##### <a name="methods-create"></a> `create()`
 
 Create entry.
 
@@ -510,7 +538,7 @@ $data = [
 $flextype->entries->create('movies/sg-1/season-5/episode-22', $data);
 ```
 
-##### <a name="update"></a> `update()`
+##### <a name="methods-update"></a> `update()`
 
 Update entry.
 
@@ -525,7 +553,7 @@ $data = ['soundtracks' => 'Joel Goldsmith'];
 $flextype->entries->update('movies/sg-1/season-5/episode-22', $data);
 ```
 
-##### <a name="rename"></a> `rename()`
+##### <a name="methods-rename"></a> `rename()`
 
 Rename entry.
 
@@ -538,7 +566,7 @@ $flextype->entries->rename('movies/sg-1/season-5/episode-22',
                                        'movies/sg-1/season-5/episode-23');
 ```
 
-##### <a name="copy"></a> `copy()`
+##### <a name="methods-copy"></a> `copy()`
 
 Copy entry.
 
@@ -551,7 +579,7 @@ $flextype->entries->rename('movies/sg-1/season-5/episode-23',
                                        'movies/sg-1/season-5/episode-22');
 ```
 
-##### <a name="delete"></a> `delete()`
+##### <a name="methods-delete"></a> `delete()`
 
 Delete entry.
 
@@ -563,7 +591,7 @@ Delete entry `episode-23` in `movies/sg-1/season-5`
 $flextype->entries->delete('movies/sg-1/season-5/episode-23');
 ```
 
-##### <a name="has"></a> `has()`
+##### <a name="methods-has"></a> `has()`
 
 Check whether entry exists.
 
@@ -577,7 +605,7 @@ if ($flextype->entries->has('movies/sg-1/season-5/episode-23')) {
 }
 ```
 
-##### <a name="getFileLocation"></a> `getFileLocation()`
+##### <a name="methods-getFileLocation"></a> `getFileLocation()`
 
 Get entry file location
 
@@ -589,7 +617,7 @@ Check whether entry `episode-23` exists in `movies/sg-1/season-5`
 $data = $flextype->entries->getFileLocation('movies/sg-1/season-5/episode-23');
 ```
 
-##### <a name="getDirLocation"></a> `getDirLocation()`
+##### <a name="methods-getDirLocation"></a> `getDirLocation()`
 
 Get entry directory location
 

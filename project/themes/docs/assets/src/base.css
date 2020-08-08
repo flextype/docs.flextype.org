@@ -5,7 +5,11 @@ body {
     @apply text-base;
 }
 
-ol,
+ol {
+  list-style: decimal;
+  margin: 0 0 20px 40px;
+}
+
 ul {
   list-style: circle;
   margin: 0 0 20px 40px;
