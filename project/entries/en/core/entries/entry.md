@@ -463,6 +463,8 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="methods-fetch"></a> `fetch()`
 
 Fetch single entry or collections of entries.

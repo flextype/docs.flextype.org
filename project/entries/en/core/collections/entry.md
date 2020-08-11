@@ -245,6 +245,8 @@ Flextype provide a powerful functionality to work with data collections. You may
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="collection"></a> `collect()`
 
 Returns a new `Collection` instance with the items currently in the collection.

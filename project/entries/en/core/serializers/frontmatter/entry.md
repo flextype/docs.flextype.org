@@ -39,6 +39,7 @@ Any file that contains a YAML front matter block will be processed by Flextype a
     </table>
 </div>
 
+### Methods Details
 
 ##### <a name="encode"></a> `encode()`
 

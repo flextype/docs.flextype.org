@@ -70,6 +70,8 @@ A registry is a container for storing objects and values in the Flextype applica
     </table>
 </div>
 
+### Methods Details
+
 ##### <a name="get"></a> `get()`
 
 Get item from the registry.

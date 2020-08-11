@@ -5,9 +5,61 @@ breadcrumbs:
     title: "Core Concepts"
     link: "[url]/en/core/"
 on_this_page:
-  1:
+  -
     title: "Methods"
     link: "methods"
+    level2:
+      -
+        title: "getCacheDriver()"
+        link: "method-getCacheDriver"
+      -
+        title: "driver()"
+        link: "method-driver"
+      -
+        title: "getKey()"
+        link: "method-getKey"
+      -
+        title: "contains()"
+        link: "method-contains"
+      -
+        title: "fetch()"
+        link: "method-fetch"
+      -
+        title: "fetchMultiple()"
+        link: "method-fetchMultiple"
+      -
+        title: "delete()"
+        link: "method-delete"
+      -
+        title: "deleteMultiple()"
+        link: "method-deleteMultiple"
+      -
+        title: "deleteAll()"
+        link: "method-deleteAll"
+      -
+        title: "flushAll()"
+        link: "method-flushAll"
+      -
+        title: "purge()"
+        link: "method-purge"
+      -
+        title: "purgeAll()"
+        link: "method-purgeAll"
+      -
+        title: "save()"
+        link: "method-save"
+      -
+        title: "saveMultiple()"
+        link: "method-saveMultiple"
+      -
+        title: "setLifetime()"
+        link: "method-setLifetime"
+      -
+        title: "getLifetime()"
+        link: "method-getLifetime"
+      -
+        title: "getStats()"
+        link: "method-getStats"
 ---
 
 Flextype caching system is really smart and efficient! We are using established and well-respected [Doctrine Cache library](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/caching.html). This means that Flextype supports any caching mechanism that Doctrine Cache supports and our own PhpArrayFile driver which stores the data in a native PHP array.
@@ -34,78 +86,80 @@ By default, Flextype comes preconfigured to use the auto setting. This will try 
         </thead>
         <tbody>
             <tr>
-                <td><a href="#getCacheDriver"><code>getCacheDriver()</code></a></a></td>
+                <td><a href="#method-getCacheDriver"><code>getCacheDriver()</code></a></a></td>
                 <td>Get Active Cache Driver</td>
             </tr>
             <tr>
-                <td><a href="#driver"><code>driver()</code></a></td>
+                <td><a href="#method-driver"><code>driver()</code></a></td>
                 <td>Returns a driver object</td>
             </tr>
             <tr>
-                <td><a href="#getKey"><code>getKey()</code></a></td>
+                <td><a href="#method-getKey"><code>getKey()</code></a></td>
                 <td>Get cache key.</td>
             </tr>
             <tr>
-                <td><a href="#contains"><code>contains()</code></a></td>
+                <td><a href="#method-contains"><code>contains()</code></a></td>
                 <td>Returns a boolean state of whether or not the item exists in the cache based on id key.</td>
             </tr>
             <tr>
-                <td><a href="#fetch"><code>fetch()</code></a></td>
+                <td><a href="#method-fetch"><code>fetch()</code></a></td>
                 <td>Fetches an item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#fetchMultiple"><code>fetchMultiple()</code></a></td>
+                <td><a href="#method-fetchMultiple"><code>fetchMultiple()</code></a></td>
                 <td>Fetches multiple items from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#delete"><code>delete()</code></a></td>
+                <td><a href="#method-delete"><code>delete()</code></a></td>
                 <td>Delete specific item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#deleteMultiple"><code>deleteMultiple()</code></a></td>
+                <td><a href="#method-deleteMultiple"><code>deleteMultiple()</code></a></td>
                 <td>Delete multiple item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#deleteAll"><code>deleteAll()</code></a></td>
+                <td><a href="#method-deleteAll"><code>deleteAll()</code></a></td>
                 <td>Deletes all cache items.</td>
             </tr>
             <tr>
-                <td><a href="#flushAll"><code>flushAll()</code></a></td>
+                <td><a href="#method-flushAll"><code>flushAll()</code></a></td>
                 <td>Flushes all cache items.</td>
             </tr>
             <tr>
-                <td><a href="#purge"><code>purge()</code></a></td>
+                <td><a href="#method-purge"><code>purge()</code></a></td>
                 <td>Purge specific cache directory.</td>
             </tr>
             <tr>
-                <td><a href="#purgeAll"><code>purgeAll()</code></a></td>
+                <td><a href="#method-purgeAll"><code>purgeAll()</code></a></td>
                 <td>Purge all cache directories.</td>
             </tr>
             <tr>
-                <td><a href="#save"><code>save()</code></a></td>
+                <td><a href="#method-save"><code>save()</code></a></td>
                 <td>Puts data into the cache.</td>
             </tr>
             <tr>
-                <td><a href="#saveMultiple"><code>saveMultiple()</code></a></td>
+                <td><a href="#method-saveMultiple"><code>saveMultiple()</code></a></td>
                 <td>Puts multiple data into the cache.</td>
             </tr>
             <tr>
-                <td><a href="#setLifetime"><code>setLifetime()</code></a></td>
+                <td><a href="#method-setLifetime"><code>setLifetime()</code></a></td>
                 <td>Set the cache lifetime.</td>
             </tr>
             <tr>
-                <td><a href="#getLifetime"><code>getLifetime()</code></a></td>
+                <td><a href="#method-getLifetime"><code>getLifetime()</code></a></td>
                 <td>Retrieve the cache lifetime (in seconds)</td>
             </tr>
             <tr>
-                <td><a href="#getStats"><code>getStats()</code></a></td>
+                <td><a href="#method-getStats"><code>getStats()</code></a></td>
                 <td>Retrieves cached information from the data store.</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-##### <a name="getCacheDriver"></a> `getCacheDriver()`
+### Methods Details
+
+##### <a name="method-getCacheDriver"></a> `getCacheDriver()`
 
 Get Active Cache Driver.
 
@@ -115,7 +169,7 @@ Get Active Cache Driver.
 $cache_driver = $flextype->cache->getCacheDriver();
 ```
 
-##### <a name="driver"></a> `driver()`
+##### <a name="method-driver"></a> `driver()`
 
 Returns a driver object
 
@@ -125,7 +179,7 @@ Returns a driver object
 $driver = $flextype->cache->driver();
 ```
 
-##### <a name="getKey"></a> `getKey()`
+##### <a name="method-getKey"></a> `getKey()`
 
 Get cache key.
 
@@ -135,7 +189,7 @@ Get cache key.
 $cache_key = $flextype->cache->getKey();
 ```
 
-##### <a name="contains"></a> `contains()`
+##### <a name="method-contains"></a> `contains()`
 
 Returns a boolean state of whether or not the item exists in the cache based on id key.
 
@@ -149,7 +203,7 @@ if ($flextype->cache->contains('posts')) {
 }
 ```
 
-##### <a name="fetch"></a> `fetch()`
+##### <a name="method-fetch"></a> `fetch()`
 
 Fetches an item from the cache.
 
@@ -161,7 +215,7 @@ Fetch posts from cache.
 $posts = $flextype->cache->fetch('posts');
 ```
 
-##### <a name="fetchMultiple"></a> `fetchMultiple()`
+##### <a name="method-fetchMultiple"></a> `fetchMultiple()`
 
 Fetches multiple items from the cache.
 
@@ -173,7 +227,7 @@ Fetch posts and comments from the cache.
 $data = $flextype->cache->fetchMultiple(['posts', 'comments']);
 ```
 
-##### <a name="delete"></a> `delete()`
+##### <a name="method-delete"></a> `delete()`
 
 Delete specific item from the cache.
 
@@ -185,7 +239,7 @@ Delete posts from the cache.
 $flextype->cache->delete('posts');
 ```
 
-##### <a name="deleteMultiple"></a> `deleteMultiple()`
+##### <a name="method-deleteMultiple"></a> `deleteMultiple()`
 
 Delete multiple item from the cache.
 
@@ -197,7 +251,7 @@ Delete posts and comments from the cache.
 $flextype->cache->deleteMultiple(['posts', 'comments']);
 ```
 
-##### <a name="deleteAll"></a> `deleteAll()`
+##### <a name="method-deleteAll"></a> `deleteAll()`
 
 Deletes all cache items.
 
@@ -207,7 +261,7 @@ Deletes all cache items.
 $flextype->cache->deleteAll();
 ```
 
-##### <a name="flushAll"></a> `flushAll()`
+##### <a name="method-flushAll"></a> `flushAll()`
 
 Flushes all cache items.
 
@@ -217,7 +271,7 @@ Flushes all cache items.
 $flextype->cache->flushAll();
 ```
 
-##### <a name="purge"></a> `purge()`
+##### <a name="method-purge"></a> `purge()`
 
 Purge specific cache directory.
 
@@ -229,7 +283,7 @@ Clear doctrine cache.
 $flextype->cache->purge('doctrine');
 ```
 
-##### <a name="purgeAll"></a> `purgeAll()`
+##### <a name="method-purgeAll"></a> `purgeAll()`
 
 Purge all cache directories.
 
@@ -239,7 +293,7 @@ Purge all cache directories.
 $flextype->cache->purgeAll();
 ```
 
-##### <a name="save"></a> `save()`
+##### <a name="method-save"></a> `save()`
 
 Puts data into the cache.
 
@@ -249,7 +303,7 @@ Puts data into the cache.
 $flextype->cache->save('posts', $posts);
 ```
 
-##### <a name="saveMultiple"></a> `saveMultiple()`
+##### <a name="method-saveMultiple"></a> `saveMultiple()`
 
 Puts multiple data into the cache.
 
@@ -259,7 +313,7 @@ Puts multiple data into the cache.
 $flextype->cache->saveMultiple(['posts' => $posts, 'comments' => $comments]);
 ```
 
-##### <a name="setLifetime"></a> `setLifetime()`
+##### <a name="method-setLifetime"></a> `setLifetime()`
 
 Set the cache lifetime.
 
@@ -269,7 +323,7 @@ Set the cache lifetime.
 $flextype->cache->setLifetime(300);
 ```
 
-##### <a name="getLifetime"></a> `getLifetime()`
+##### <a name="method-getLifetime"></a> `getLifetime()`
 
 Retrieve the cache lifetime (in seconds)
 
@@ -279,7 +333,7 @@ Retrieve the cache lifetime (in seconds)
 $lifetime = $flextype->cache->getLifetime();
 ```
 
-##### <a name="getStats"></a> `getStats()`
+##### <a name="method-getStats"></a> `getStats()`
 
 Retrieves cached information from the data store.
 
