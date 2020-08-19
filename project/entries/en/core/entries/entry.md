@@ -390,6 +390,27 @@ But this rule can be changed by setting individual cache for each entry.
     </table>
 </div>
 
+##### <a name="default-variables-id"></a> Id
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td></td>
+                <td>Entry ID</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 ### <a name="custom-variables"></a> Custom Variables
 
 You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for Entry API and any extension such as plugin, theme and etc...
