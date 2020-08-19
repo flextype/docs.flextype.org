@@ -46,7 +46,7 @@ Hooks are a way for one piece of code to interact/modify another piece of code. 
 Listeners are registered through the `addListener` method.
 
 ```php
-$flextype['emitter']->addListener('event.name', $listener);
+$flextype->container('emitter')->addListener('event.name', $listener);
 ```
 
 The listener can be of two types:
@@ -55,7 +55,7 @@ The listener can be of two types:
 
 Example:
 ```php
-$flextype['emitter']->addListener('onThemeMeta', function() {
+$flextype->container('emitter')->addListener('onThemeMeta', function() {
     echo '
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
@@ -72,12 +72,12 @@ $flextype['emitter']->addListener('onThemeMeta', function() {
 Optionally event flow can be influenced by setting a priority. Priorities are represented as integers.
 
 ```php
-$flextype['emitter']->addListener('event.name', $listener, 100);
+$flextype->container('emitter')->addListener('event.name', $listener, 100);
 ```
 
 Example:
 ```php
-$flextype['emitter']->addListener('onThemeMeta', function() {
+$flextype->container('emitter')->addListener('onThemeMeta', function() {
     echo '
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
@@ -88,7 +88,7 @@ $flextype['emitter']->addListener('onThemeMeta', function() {
         <meta name="twitter:image" content="https://github.com/flextype/flextype/raw/dev/site/plugins/admin/preview.png">';
 }, 100);
 
-$flextype['emitter']->addListener('onThemeMeta', function() {
+$flextype->container('emitter')->addListener('onThemeMeta', function() {
     echo '
         <!-- Facebook -->
         <meta property="og:url" content="http://flextype.org">
@@ -111,7 +111,7 @@ The `League\Event\EmitterInterface` has 3 predefined priorities:
 Events are emitted using the `emit` function.
 
 ```php
-$event = $flextype['emitter']->emit($event);
+$event = $flextype->container('emitter')->emit($event);
 ```
 
 The event can be of two types:
@@ -122,7 +122,7 @@ The event can be of two types:
 #### Emitting events in batches
 
 ```
-$events = $flextype['emitter']->emitBatch([$event, $event, $event]);
+$events = $flextype->container('emitter')->emitBatch([$event, $event, $event]);
 ```
 
 #### Emit Return Values

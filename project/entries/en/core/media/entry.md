@@ -141,7 +141,7 @@ Upload media file.
 **Examples**
 
 ```php
-$flextype->media_files->upload($_FILES['file'],
+$flextype->container('media_files')->upload($_FILES['file'],
                                             '/entries/movies/sg-1/season-5/episode-21/');
 ```
 
@@ -154,7 +154,7 @@ Fetch file(s).
 ```php
 // Fetch single image
 $cover = $flextype
-                ->media_files
+                ->container('media_files')
                 ->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg');
 
 // Now you may get each image field from image meta data.
@@ -170,7 +170,7 @@ echo $cover['full_url'];
 
 // Fetch images collection
 $images = $flextype
-                ->media_files
+                ->container('media_files')
                 ->fetch('entries/movies/sg-1/season-5/episode-21/images/');
 
 ```
@@ -184,7 +184,7 @@ Fetch single file.
 ```php
 // Fetch single image
 $cover = $flextype
-                ->media_files
+                ->container('media_files')
                 ->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg');
 
 // Now you may get each image field from image meta data.
@@ -208,7 +208,7 @@ Fetch files collection.
 ```php
 // Fetch images collection
 $images = $flextype
-                ->media_files
+                ->container('media_files')
                 ->fetchCollection('entries/movies/sg-1/season-5/episode-21');
 
 ```
@@ -219,7 +219,7 @@ Rename file.
 **Examples**
 
 ```php
-$flextype->media_files
+$flextype->container('media_files')
             ->rename('entries/movies/sg-1/season-5/episode-21/cover.jpg',
                           'entries/movies/sg-1/season-5/episode-21/cover-image.jpg');
 ```
@@ -231,7 +231,7 @@ Delete file.
 **Examples**
 
 ```php
-$flextype->media_files
+$flextype->container('media_files')
             ->delete('entries/movies/sg-1/season-5/episode-21/cover-image.jpg');
 ```
 
@@ -242,7 +242,7 @@ Check whether a file exists.
 **Examples**
 
 ```php
-if ($flextype->media_files
+if ($flextype->container('media_files')
             ->has('entries/movies/sg-1/season-5/episode-21/cover-image.jpg')) {
     // do something...
 }
@@ -255,7 +255,7 @@ Get file location.
 **Examples**
 
 ```php
-$flextype->media_files
+$flextype->container('media_files')
             ->getFileLocation('entries/movies/sg-1/season-5/episode-21/cover-image.jpg');
 ```
 
@@ -299,7 +299,7 @@ Update file meta information.
 **Examples**
 
 ```php
-$flextype->media_files_meta
+$flextype->container('media_files_meta')
             ->update('entries/movies/sg-1/season-5/episode-21/cover.jpg',
                      'title',
                      'Episode 21');
@@ -312,7 +312,7 @@ Add file meta information.
 **Examples**
 
 ```php
-$flextype->media_files_meta
+$flextype->container('media_files_meta')
             ->add('entries/movies/sg-1/season-5/episode-21/cover.jpg',
                      'tags',
                      'sg1');
@@ -325,7 +325,7 @@ Delete file meta information.
 **Examples**
 
 ```php
-$flextype->media_files_meta
+$flextype->container('media_files_meta')
             ->delete('entries/movies/sg-1/season-5/episode-21/cover.jpg',
                      'tags');
 
@@ -337,7 +337,7 @@ Get file meta location.
 **Examples**
 
 ```php
-$flextype->media_files_meta
+$flextype->container('media_files_meta')
             ->getFileMetaLocation('entries/movies/sg-1/season-5/episode-21/cover.jpg');
 ```
 
@@ -447,7 +447,7 @@ Create folder.
 **Examples**
 
 ```php
-$flextype->media_folders
+$flextype->container('media_folders')
             ->create('entries/movies/sg-1/season-5/episode-22');
 ```
 
@@ -458,7 +458,7 @@ Rename folder.
 **Examples**
 
 ```php
-$flextype->media_folders
+$flextype->container('media_folders')
             ->rename('entries/movies/sg-1/season-5/episode-22',
                             'entries/movies/sg-1/season-5/episode-23');
 ```
@@ -470,7 +470,7 @@ Delete folder.
 **Examples**
 
 ```php
-$flextype->media_folders
+$flextype->container('media_folders')
             ->delete('entries/movies/sg-1/season-5/episode-23');
 ```
 
@@ -481,7 +481,7 @@ Get folder location.
 **Examples**
 
 ```php
-$flextype->media_folders
+$flextype->container('media_folders')
             ->getDirLocation('entries/movies/sg-1/season-5/episode-23');
 ```
 
@@ -513,6 +513,6 @@ Get files directory meta location.
 **Examples**
 
 ```php
-$flextype->media_folders_meta
+$flextype->container('media_folders_meta')
             ->getDirMetaLocation('entries/movies/sg-1/season-5/episode-23');
 ```

@@ -95,6 +95,8 @@ entries:
       enabled: true
     uuid:
       enabled: true
+    id:
+      enabled: true
 
 # Cache
 #
@@ -230,11 +232,19 @@ slugify:
 image:
   driver: gd
 
-# Shortcodes
+# Shortcode
 #
-# - extensions: Flextype Shortcodes Extension to load.
-shortcodes:
-  extensions: ['Entries', 'Registry', 'Url']
+# - shortcodes: Flextype Shortcodes to load.
+shortcode:
+  shortcodes:
+    entries:
+      enabled: true
+    raw:
+      enabled: true
+    registry:
+      enabled: true
+    url:
+      enabled: true
 
 # CORS
 #
@@ -304,7 +314,6 @@ api:
   images:
     enabled: true
     default_token:
-
 ```
 
 ### PHP constants
