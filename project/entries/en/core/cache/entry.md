@@ -166,7 +166,7 @@ Get Active Cache Driver.
 **Examples**
 
 ```php
-$cache_driver = $flextype->cache->getCacheDriver();
+$cache_driver = $flextype->container('cache')->getCacheDriver();
 ```
 
 ##### <a name="method-driver"></a> `driver()`
@@ -176,7 +176,7 @@ Returns a driver object
 **Examples**
 
 ```php
-$driver = $flextype->cache->driver();
+$driver = $flextype->container('cache')->driver();
 ```
 
 ##### <a name="method-getKey"></a> `getKey()`
@@ -186,7 +186,7 @@ Get cache key.
 **Examples**
 
 ```php
-$cache_key = $flextype->cache->getKey();
+$cache_key = $flextype->container('cache')->getKey();
 ```
 
 ##### <a name="method-contains"></a> `contains()`
@@ -198,8 +198,8 @@ Returns a boolean state of whether or not the item exists in the cache based on 
 Check is posts are exists in the cache then fetch them.
 
 ```php
-if ($flextype->cache->contains('posts')) {
-    $posts = $flextype->cache->fetch('posts');
+if ($flextype->container('cache')->contains('posts')) {
+    $posts = $flextype->container('cache')->fetch('posts');
 }
 ```
 
@@ -212,7 +212,7 @@ Fetches an item from the cache.
 Fetch posts from cache.
 
 ```php
-$posts = $flextype->cache->fetch('posts');
+$posts = $flextype->container('cache')->fetch('posts');
 ```
 
 ##### <a name="method-fetchMultiple"></a> `fetchMultiple()`
@@ -224,7 +224,7 @@ Fetches multiple items from the cache.
 Fetch posts and comments from the cache.
 
 ```php
-$data = $flextype->cache->fetchMultiple(['posts', 'comments']);
+$data = $flextype->container('cache')->fetchMultiple(['posts', 'comments']);
 ```
 
 ##### <a name="method-delete"></a> `delete()`
@@ -236,7 +236,7 @@ Delete specific item from the cache.
 Delete posts from the cache.
 
 ```php
-$flextype->cache->delete('posts');
+$flextype->container('cache')->delete('posts');
 ```
 
 ##### <a name="method-deleteMultiple"></a> `deleteMultiple()`
@@ -248,7 +248,7 @@ Delete multiple item from the cache.
 Delete posts and comments from the cache.
 
 ```php
-$flextype->cache->deleteMultiple(['posts', 'comments']);
+$flextype->container('cache')->deleteMultiple(['posts', 'comments']);
 ```
 
 ##### <a name="method-deleteAll"></a> `deleteAll()`
@@ -258,7 +258,7 @@ Deletes all cache items.
 **Examples**
 
 ```php
-$flextype->cache->deleteAll();
+$flextype->container('cache')->deleteAll();
 ```
 
 ##### <a name="method-flushAll"></a> `flushAll()`
@@ -268,7 +268,7 @@ Flushes all cache items.
 **Examples**
 
 ```php
-$flextype->cache->flushAll();
+$flextype->container('cache')->flushAll();
 ```
 
 ##### <a name="method-purge"></a> `purge()`
@@ -280,7 +280,7 @@ Purge specific cache directory.
 Clear doctrine cache.
 
 ```php
-$flextype->cache->purge('doctrine');
+$flextype->container('cache')->purge('doctrine');
 ```
 
 ##### <a name="method-purgeAll"></a> `purgeAll()`
@@ -290,7 +290,7 @@ Purge all cache directories.
 **Examples**
 
 ```php
-$flextype->cache->purgeAll();
+$flextype->container('cache')->purgeAll();
 ```
 
 ##### <a name="method-save"></a> `save()`
@@ -300,7 +300,7 @@ Puts data into the cache.
 **Examples**
 
 ```php
-$flextype->cache->save('posts', $posts);
+$flextype->container('cache')->save('posts', $posts);
 ```
 
 ##### <a name="method-saveMultiple"></a> `saveMultiple()`
@@ -310,7 +310,7 @@ Puts multiple data into the cache.
 **Examples**
 
 ```php
-$flextype->cache->saveMultiple(['posts' => $posts, 'comments' => $comments]);
+$flextype->container('cache')->saveMultiple(['posts' => $posts, 'comments' => $comments]);
 ```
 
 ##### <a name="method-setLifetime"></a> `setLifetime()`
@@ -320,7 +320,7 @@ Set the cache lifetime.
 **Examples**
 
 ```php
-$flextype->cache->setLifetime(300);
+$flextype->container('cache')->setLifetime(300);
 ```
 
 ##### <a name="method-getLifetime"></a> `getLifetime()`
@@ -330,7 +330,7 @@ Retrieve the cache lifetime (in seconds)
 **Examples**
 
 ```php
-$lifetime = $flextype->cache->getLifetime();
+$lifetime = $flextype->container('cache')->getLifetime();
 ```
 
 ##### <a name="method-getStats"></a> `getStats()`
@@ -340,5 +340,5 @@ Retrieves cached information from the data store.
 **Examples**
 
 ```php
-$stats = $flextype->cache->getStats();
+$stats = $flextype->container('cache')->getStats();
 ```
