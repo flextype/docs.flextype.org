@@ -42,8 +42,8 @@ You can reach these items values from a Flextype plugin(s) with PHP syntax:
 Usage:
 
 ```php
-$plugin_name = $flextype->registry->get('plugins.site.manifest.name');
-$plugin_version = $flextype->registry->get('plugins.site.manifest.version');
+$plugin_name = $flextype->container('registry')->get('plugins.site.manifest.name');
+$plugin_version = $flextype->container('registry')->get('plugins.site.manifest.version');
 ```
 
 #### Accessing Plugin Configuration
@@ -71,5 +71,5 @@ my_custom_var: "Lorem ipsum dolor sit amet"
 Then you can access the current plugin configuration like this:
 
 ```php
-$my_custom_var = $flextype->registry->get('plugins.site.settings.my_custom_var');
+$my_custom_var = $flextype->container('registry')->get('plugins.site.settings.my_custom_var');
 ```
