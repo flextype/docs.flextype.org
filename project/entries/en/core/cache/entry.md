@@ -11,55 +11,55 @@ on_this_page:
     level2:
       -
         title: "getCacheDriver()"
-        link: "method-getCacheDriver"
+        link: "methods-getCacheDriver"
       -
         title: "driver()"
-        link: "method-driver"
+        link: "methods-driver"
       -
         title: "getKey()"
-        link: "method-getKey"
+        link: "methods-getKey"
       -
         title: "contains()"
-        link: "method-contains"
+        link: "methods-contains"
       -
         title: "fetch()"
-        link: "method-fetch"
+        link: "methods-fetch"
       -
         title: "fetchMultiple()"
-        link: "method-fetchMultiple"
+        link: "methods-fetchMultiple"
       -
         title: "delete()"
-        link: "method-delete"
+        link: "methods-delete"
       -
         title: "deleteMultiple()"
-        link: "method-deleteMultiple"
+        link: "methods-deleteMultiple"
       -
         title: "deleteAll()"
-        link: "method-deleteAll"
+        link: "methods-deleteAll"
       -
         title: "flushAll()"
-        link: "method-flushAll"
+        link: "methods-flushAll"
       -
         title: "purge()"
-        link: "method-purge"
+        link: "methods-purge"
       -
         title: "purgeAll()"
-        link: "method-purgeAll"
+        link: "methods-purgeAll"
       -
         title: "save()"
-        link: "method-save"
+        link: "methods-save"
       -
         title: "saveMultiple()"
-        link: "method-saveMultiple"
+        link: "methods-saveMultiple"
       -
         title: "setLifetime()"
-        link: "method-setLifetime"
+        link: "methods-setLifetime"
       -
         title: "getLifetime()"
-        link: "method-getLifetime"
+        link: "methods-getLifetime"
       -
         title: "getStats()"
-        link: "method-getStats"
+        link: "methods-getStats"
 ---
 
 Flextype caching system is really smart and efficient! We are using established and well-respected [Doctrine Cache library](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/caching.html). This means that Flextype supports any caching mechanism that Doctrine Cache supports and our own PhpArrayFile driver which stores the data in a native PHP array.
@@ -159,7 +159,7 @@ By default, Flextype comes preconfigured to use the auto setting. This will try 
 
 ### Methods Details
 
-##### <a name="method-getCacheDriver"></a> `getCacheDriver()`
+##### <a name="methods-getCacheDriver"></a> `getCacheDriver()`
 
 Get Active Cache Driver.
 
@@ -169,7 +169,7 @@ Get Active Cache Driver.
 $cache_driver = $flextype->container('cache')->getCacheDriver();
 ```
 
-##### <a name="method-driver"></a> `driver()`
+##### <a name="methods-driver"></a> `driver()`
 
 Returns a driver object
 
@@ -179,7 +179,7 @@ Returns a driver object
 $driver = $flextype->container('cache')->driver();
 ```
 
-##### <a name="method-getKey"></a> `getKey()`
+##### <a name="methods-getKey"></a> `getKey()`
 
 Get cache key.
 
@@ -189,7 +189,7 @@ Get cache key.
 $cache_key = $flextype->container('cache')->getKey();
 ```
 
-##### <a name="method-contains"></a> `contains()`
+##### <a name="methods-contains"></a> `contains()`
 
 Returns a boolean state of whether or not the item exists in the cache based on id key.
 
@@ -203,7 +203,7 @@ if ($flextype->container('cache')->contains('posts')) {
 }
 ```
 
-##### <a name="method-fetch"></a> `fetch()`
+##### <a name="methods-fetch"></a> `fetch()`
 
 Fetches an item from the cache.
 
@@ -215,7 +215,7 @@ Fetch posts from cache.
 $posts = $flextype->container('cache')->fetch('posts');
 ```
 
-##### <a name="method-fetchMultiple"></a> `fetchMultiple()`
+##### <a name="methods-fetchMultiple"></a> `fetchMultiple()`
 
 Fetches multiple items from the cache.
 
@@ -227,7 +227,7 @@ Fetch posts and comments from the cache.
 $data = $flextype->container('cache')->fetchMultiple(['posts', 'comments']);
 ```
 
-##### <a name="method-delete"></a> `delete()`
+##### <a name="methods-delete"></a> `delete()`
 
 Delete specific item from the cache.
 
@@ -239,7 +239,7 @@ Delete posts from the cache.
 $flextype->container('cache')->delete('posts');
 ```
 
-##### <a name="method-deleteMultiple"></a> `deleteMultiple()`
+##### <a name="methods-deleteMultiple"></a> `deleteMultiple()`
 
 Delete multiple item from the cache.
 
@@ -251,7 +251,7 @@ Delete posts and comments from the cache.
 $flextype->container('cache')->deleteMultiple(['posts', 'comments']);
 ```
 
-##### <a name="method-deleteAll"></a> `deleteAll()`
+##### <a name="methods-deleteAll"></a> `deleteAll()`
 
 Deletes all cache items.
 
@@ -261,7 +261,7 @@ Deletes all cache items.
 $flextype->container('cache')->deleteAll();
 ```
 
-##### <a name="method-flushAll"></a> `flushAll()`
+##### <a name="methods-flushAll"></a> `flushAll()`
 
 Flushes all cache items.
 
@@ -271,7 +271,7 @@ Flushes all cache items.
 $flextype->container('cache')->flushAll();
 ```
 
-##### <a name="method-purge"></a> `purge()`
+##### <a name="methods-purge"></a> `purge()`
 
 Purge specific cache directory.
 
@@ -283,7 +283,7 @@ Clear doctrine cache.
 $flextype->container('cache')->purge('doctrine');
 ```
 
-##### <a name="method-purgeAll"></a> `purgeAll()`
+##### <a name="methods-purgeAll"></a> `purgeAll()`
 
 Purge all cache directories.
 
@@ -293,7 +293,7 @@ Purge all cache directories.
 $flextype->container('cache')->purgeAll();
 ```
 
-##### <a name="method-save"></a> `save()`
+##### <a name="methods-save"></a> `save()`
 
 Puts data into the cache.
 
@@ -303,7 +303,7 @@ Puts data into the cache.
 $flextype->container('cache')->save('posts', $posts);
 ```
 
-##### <a name="method-saveMultiple"></a> `saveMultiple()`
+##### <a name="methods-saveMultiple"></a> `saveMultiple()`
 
 Puts multiple data into the cache.
 
@@ -313,7 +313,7 @@ Puts multiple data into the cache.
 $flextype->container('cache')->saveMultiple(['posts' => $posts, 'comments' => $comments]);
 ```
 
-##### <a name="method-setLifetime"></a> `setLifetime()`
+##### <a name="methods-setLifetime"></a> `setLifetime()`
 
 Set the cache lifetime.
 
@@ -323,7 +323,7 @@ Set the cache lifetime.
 $flextype->container('cache')->setLifetime(300);
 ```
 
-##### <a name="method-getLifetime"></a> `getLifetime()`
+##### <a name="methods-getLifetime"></a> `getLifetime()`
 
 Retrieve the cache lifetime (in seconds)
 
@@ -333,7 +333,7 @@ Retrieve the cache lifetime (in seconds)
 $lifetime = $flextype->container('cache')->getLifetime();
 ```
 
-##### <a name="method-getStats"></a> `getStats()`
+##### <a name="methods-getStats"></a> `getStats()`
 
 Retrieves cached information from the data store.
 
