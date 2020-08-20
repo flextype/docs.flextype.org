@@ -2,14 +2,14 @@
 title: FRONTMATTER
 description: Any file that contains a YAML front matter block will be processed by Flextype as a special file. The front matter must be the first thing in the file and must take the form of valid YAML set between triple-dashed lines. Between these triple-dashed lines, you can set predefined variables or even create custom ones of your own.
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
-  2:
+  -
     title: "Serializers"
     link: "[url]/en/core/serializers/"
 on_this_page:
-  0:
+  -
     title: "Methods"
     link: "methods"
 ---
@@ -28,11 +28,11 @@ Any file that contains a YAML front matter block will be processed by Flextype a
         </thead>
         <tbody>
             <tr>
-                <td><a href="#encode"><code>encode()</code></a></td>
+                <td><a href="#methods-encode">encode()</a></td>
                 <td>Returns the FRONTMATTER representation of a value.</td>
             </tr>
             <tr>
-                <td><a href="#decode"><code>decode()</code></a></td>
+                <td><a href="#methods-decode">decode()</a></td>
                 <td>Takes a FRONTMATTER encoded string and converts it into a PHP variable.</td>
             </tr>
         </tbody>
@@ -41,7 +41,7 @@ Any file that contains a YAML front matter block will be processed by Flextype a
 
 ### Methods Details
 
-##### <a name="encode"></a> `encode()`
+##### <a name="methods-encode"></a> `encode()`
 
 Returns the FRONTMATTER representation of a value.
 
@@ -57,11 +57,11 @@ $data = [
                 'content' => 'Osiris engages in space combat with Thor over a violation of the protected planets treaty. Freyr arrives at the SGC bringing news of Thor\'s death and asking SG-1 to mount a rescue mission to retrieve an Asgard scientist from the planet in question. Upon their arrival Heimdall informs them that Thor still lives and has been taken captive by the Goa\'uld. O\'Neill and Teal\'c transport over to the mothership to rescue him from the clutches of Anubis.'
         ];
 
-$json = $flextype->frontmatter->encode($data);
+$json = $flextype->container('frontmatter')->encode($data);
 
 ```
 
-##### <a name="decode"></a> `decode()`
+##### <a name="methods-decode"></a> `decode()`
 
 Takes a FRONTMATTER encoded string and converts it into a PHP variable.
 
@@ -78,6 +78,6 @@ $frontmatter = "
     ---
     SG-1 returns from an off-world mission to P9Y-3C3 with Daniel Jackson suffering from what is likely a fatal dose of radiation. On the planet, they dealt with the country of Kelowna and their representative Jonas Quinn. That country was at the same stage of development as the United States in the 1940s and well on their way to creating an atomic weapon using Goa'uld technology found in an ancient temple. Daniel argued against the Kelownans developing such a weapon and is accused of attempting to sabotage the project. As members of the team sit by his deathbed, Daniel receives an unexpected offer from someone they once met off-world."
 
-$data = $flextype->frontmatter->decode($frontmatter);
+$data = $flextype->container('frontmatter')->decode($frontmatter);
 
 ```
