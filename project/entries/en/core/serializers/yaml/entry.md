@@ -2,35 +2,35 @@
 title: YAML
 description: Flextype uses YAML because it's as close to plain English as data serialization and configuration formats get. It has no curly braces, it allows you to omit quotation marks for strings in most cases, and it relies on indentation for structure, which makes it incredibly readable compared to other languages, such as JSON and XML.
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
-  2:
+  -
     title: "Serializers"
     link: "[url]/en/core/serializers/"
 on_this_page:
-  0:
+  -
     title: "Basic Rules"
     link: "basic-rules"
-  1:
+  -
     title: "Collections"
     link: "collections"
-  2:
+  -
     title: "Inline Collections"
     link: "inline-collections"
-  3:
+  -
     title: "Datatypes"
     link: "datatypes"
-  4:
+  -
     title: "Blocks"
     link: "blocks"
-  5:
+  -
     title: "Aliases and Anchors"
     link: "aliases-and-anchors"
-  6:
+  -
     title: "Methods"
     link: "methods"
-  7:
+  -
     title: "Resources and Further Documentation"
     link: "resources-and-further-documentation"
 ---
@@ -924,11 +924,11 @@ Array
         </thead>
         <tbody>
             <tr>
-                <td><a href="#encode"><code>encode()</code></a></td>
+                <td><a href="#methods-encode">encode()</a></td>
                 <td>Dumps a PHP value to a YAML string.<br><br>The dump method, when supplied with an array, will do its best to convert the array into friendly YAML.</td>
             </tr>
             <tr>
-                <td><a href="#decode"><code>decode()</code></a></td>
+                <td><a href="#methods-decode">decode()</a></td>
                 <td>Parses YAML into a PHP value.</td>
             </tr>
         </tbody>
@@ -937,7 +937,7 @@ Array
 
 ### Methods Details
 
-##### <a name="encode"></a> `encode()`
+##### <a name="methods-encode"></a> `encode()`
 
 Dumps a PHP value to a YAML string.<br><br>The dump method, when supplied with an array, will do its best to convert the array into friendly YAML.
 
@@ -953,11 +953,11 @@ $data = [
                 'content' => 'Osiris engages in space combat with Thor over a violation of the protected planets treaty. Freyr arrives at the SGC bringing news of Thor\'s death and asking SG-1 to mount a rescue mission to retrieve an Asgard scientist from the planet in question. Upon their arrival Heimdall informs them that Thor still lives and has been taken captive by the Goa\'uld. O\'Neill and Teal\'c transport over to the mothership to rescue him from the clutches of Anubis.'
         ];
 
-$yaml = $flextype->yaml->encode($data);
+$yaml = $flextype->container('yaml')->encode($data);
 
 ```
 
-##### <a name="decode"></a> `decode()`
+##### <a name="methods-decode"></a> `decode()`
 
 Parses YAML into a PHP value.
 
@@ -972,7 +972,7 @@ $yaml = "
     stars: Richard Dean Anderson, Michael Shanks, Amanda Tapping
     content: SG-1 returns from an off-world mission to P9Y-3C3 with Daniel Jackson suffering from what is likely a fatal dose of radiation. On the planet, they dealt with the country of Kelowna and their representative Jonas Quinn. That country was at the same stage of development as the United States in the 1940s and well on their way to creating an atomic weapon using Goa'uld technology found in an ancient temple. Daniel argued against the Kelownans developing such a weapon and is accused of attempting to sabotage the project. As members of the team sit by his deathbed, Daniel receives an unexpected offer from someone they once met off-world."
 
-$data = $flextype->yaml->decode($yaml);
+$data = $flextype->container('yaml')->decode($yaml);
 
 ```
 
