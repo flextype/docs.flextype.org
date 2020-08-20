@@ -1,7 +1,7 @@
 ---
 title: Cache
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
 on_this_page:
@@ -86,71 +86,71 @@ By default, Flextype comes preconfigured to use the auto setting. This will try 
         </thead>
         <tbody>
             <tr>
-                <td><a href="#method-getCacheDriver"><code>getCacheDriver()</code></a></a></td>
+                <td><a href="#method-getCacheDriver">getCacheDriver()</a></a></td>
                 <td>Get Active Cache Driver</td>
             </tr>
             <tr>
-                <td><a href="#method-driver"><code>driver()</code></a></td>
+                <td><a href="#method-driver">driver()</a></td>
                 <td>Returns a driver object</td>
             </tr>
             <tr>
-                <td><a href="#method-getKey"><code>getKey()</code></a></td>
+                <td><a href="#method-getKey">getKey()</a></td>
                 <td>Get cache key.</td>
             </tr>
             <tr>
-                <td><a href="#method-contains"><code>contains()</code></a></td>
+                <td><a href="#method-contains">contains()</a></td>
                 <td>Returns a boolean state of whether or not the item exists in the cache based on id key.</td>
             </tr>
             <tr>
-                <td><a href="#method-fetch"><code>fetch()</code></a></td>
+                <td><a href="#method-fetch">fetch()</a></td>
                 <td>Fetches an item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-fetchMultiple"><code>fetchMultiple()</code></a></td>
+                <td><a href="#method-fetchMultiple">fetchMultiple()</a></td>
                 <td>Fetches multiple items from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-delete"><code>delete()</code></a></td>
+                <td><a href="#method-delete">delete()</a></td>
                 <td>Delete specific item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-deleteMultiple"><code>deleteMultiple()</code></a></td>
+                <td><a href="#method-deleteMultiple">deleteMultiple()</a></td>
                 <td>Delete multiple item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-deleteAll"><code>deleteAll()</code></a></td>
+                <td><a href="#method-deleteAll">deleteAll()</a></td>
                 <td>Deletes all cache items.</td>
             </tr>
             <tr>
-                <td><a href="#method-flushAll"><code>flushAll()</code></a></td>
+                <td><a href="#method-flushAll">flushAll()</a></td>
                 <td>Flushes all cache items.</td>
             </tr>
             <tr>
-                <td><a href="#method-purge"><code>purge()</code></a></td>
+                <td><a href="#method-purge">purge()</a></td>
                 <td>Purge specific cache directory.</td>
             </tr>
             <tr>
-                <td><a href="#method-purgeAll"><code>purgeAll()</code></a></td>
+                <td><a href="#method-purgeAll">purgeAll()</a></td>
                 <td>Purge all cache directories.</td>
             </tr>
             <tr>
-                <td><a href="#method-save"><code>save()</code></a></td>
+                <td><a href="#method-save">save()</a></td>
                 <td>Puts data into the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-saveMultiple"><code>saveMultiple()</code></a></td>
+                <td><a href="#method-saveMultiple">saveMultiple()</a></td>
                 <td>Puts multiple data into the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-setLifetime"><code>setLifetime()</code></a></td>
+                <td><a href="#method-setLifetime">setLifetime()</a></td>
                 <td>Set the cache lifetime.</td>
             </tr>
             <tr>
-                <td><a href="#method-getLifetime"><code>getLifetime()</code></a></td>
+                <td><a href="#method-getLifetime">getLifetime()</a></td>
                 <td>Retrieve the cache lifetime (in seconds)</td>
             </tr>
             <tr>
-                <td><a href="#method-getStats"><code>getStats()</code></a></td>
+                <td><a href="#method-getStats">getStats()</a></td>
                 <td>Retrieves cached information from the data store.</td>
             </tr>
         </tbody>
