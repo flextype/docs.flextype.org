@@ -86,71 +86,71 @@ By default, Flextype comes preconfigured to use the auto setting. This will try 
         </thead>
         <tbody>
             <tr>
-                <td><a href="#method-getCacheDriver">getCacheDriver()</a></a></td>
+                <td><a href="#methods-getCacheDriver">getCacheDriver()</a></a></td>
                 <td>Get Active Cache Driver</td>
             </tr>
             <tr>
-                <td><a href="#method-driver">driver()</a></td>
+                <td><a href="#methods-driver">driver()</a></td>
                 <td>Returns a driver object</td>
             </tr>
             <tr>
-                <td><a href="#method-getKey">getKey()</a></td>
+                <td><a href="#methods-getKey">getKey()</a></td>
                 <td>Get cache key.</td>
             </tr>
             <tr>
-                <td><a href="#method-contains">contains()</a></td>
+                <td><a href="#methods-contains">contains()</a></td>
                 <td>Returns a boolean state of whether or not the item exists in the cache based on id key.</td>
             </tr>
             <tr>
-                <td><a href="#method-fetch">fetch()</a></td>
+                <td><a href="#methods-fetch">fetch()</a></td>
                 <td>Fetches an item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-fetchMultiple">fetchMultiple()</a></td>
+                <td><a href="#methods-fetchMultiple">fetchMultiple()</a></td>
                 <td>Fetches multiple items from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-delete">delete()</a></td>
+                <td><a href="#methods-delete">delete()</a></td>
                 <td>Delete specific item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-deleteMultiple">deleteMultiple()</a></td>
+                <td><a href="#methods-deleteMultiple">deleteMultiple()</a></td>
                 <td>Delete multiple item from the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-deleteAll">deleteAll()</a></td>
+                <td><a href="#methods-deleteAll">deleteAll()</a></td>
                 <td>Deletes all cache items.</td>
             </tr>
             <tr>
-                <td><a href="#method-flushAll">flushAll()</a></td>
+                <td><a href="#methods-flushAll">flushAll()</a></td>
                 <td>Flushes all cache items.</td>
             </tr>
             <tr>
-                <td><a href="#method-purge">purge()</a></td>
+                <td><a href="#methods-purge">purge()</a></td>
                 <td>Purge specific cache directory.</td>
             </tr>
             <tr>
-                <td><a href="#method-purgeAll">purgeAll()</a></td>
+                <td><a href="#methods-purgeAll">purgeAll()</a></td>
                 <td>Purge all cache directories.</td>
             </tr>
             <tr>
-                <td><a href="#method-save">save()</a></td>
+                <td><a href="#methods-save">save()</a></td>
                 <td>Puts data into the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-saveMultiple">saveMultiple()</a></td>
+                <td><a href="#methods-saveMultiple">saveMultiple()</a></td>
                 <td>Puts multiple data into the cache.</td>
             </tr>
             <tr>
-                <td><a href="#method-setLifetime">setLifetime()</a></td>
+                <td><a href="#methods-setLifetime">setLifetime()</a></td>
                 <td>Set the cache lifetime.</td>
             </tr>
             <tr>
-                <td><a href="#method-getLifetime">getLifetime()</a></td>
+                <td><a href="#methods-getLifetime">getLifetime()</a></td>
                 <td>Retrieve the cache lifetime (in seconds)</td>
             </tr>
             <tr>
-                <td><a href="#method-getStats">getStats()</a></td>
+                <td><a href="#methods-getStats">getStats()</a></td>
                 <td>Retrieves cached information from the data store.</td>
             </tr>
         </tbody>
