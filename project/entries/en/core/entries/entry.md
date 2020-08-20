@@ -149,9 +149,9 @@ There are a number of default entry variables available for each entry and defin
         </thead>
         <tbody>
             <tr>
-                <td><code>visibility</code></td>
-                <td><code>visible</code></td>
-                <td><code>visible</code> or <code>draft</code> or <code>hidden</code></td>
+                <td>visibility</td>
+                <td>visible</td>
+                <td>visible or draft or hidden</td>
             </tr>
         </tbody>
     </table>
@@ -180,9 +180,9 @@ Content visibility is about controlling who can see your entries. Flextype allow
         </thead>
         <tbody>
             <tr>
-                <td><code>routable</code></td>
-                <td><code>true</code></td>
-                <td><code>true</code> or <code>false</code></td>
+                <td>routable</td>
+                <td>true</td>
+                <td>true or false</td>
             </tr>
         </tbody>
     </table>
@@ -211,7 +211,7 @@ By default, all pages are routable. This means that they can be reached by point
         </thead>
         <tbody>
             <tr>
-                <td><code>published_at</code></td>
+                <td>published_at</td>
                 <td></td>
                 <td>Date & Time</td>
             </tr>
@@ -242,7 +242,7 @@ This variable allows you to specifically set a published_at date associated with
         </thead>
         <tbody>
             <tr>
-                <td><code>published_by</code></td>
+                <td>published_by</td>
                 <td></td>
                 <td>User UUID</td>
             </tr>
@@ -273,7 +273,7 @@ This variable allows you to specifically set a published_by User UUID associated
         </thead>
         <tbody>
             <tr>
-                <td><code>created_at</code></td>
+                <td>created_at</td>
                 <td></td>
                 <td>Date & Time</td>
             </tr>
@@ -296,7 +296,7 @@ This variable allows you to specifically set a created_at date associated with t
         </thead>
         <tbody>
             <tr>
-                <td><code>modified_at</code></td>
+                <td>modified_at</td>
                 <td></td>
                 <td>Date & Time</td>
             </tr>
@@ -327,7 +327,7 @@ This variable allows you to specifically set a modified_at date associated with 
         </thead>
         <tbody>
             <tr>
-                <td><code>parsers</code></td>
+                <td>parsers</td>
                 <td></td>
                 <td>A list of parsers with options</td>
             </tr>
@@ -358,9 +358,9 @@ parsers:
         </thead>
         <tbody>
             <tr>
-                <td><code>cache</code></td>
+                <td>cache</td>
                 <td></td>
-                <td><code>true</code> or <code>false</code></td>
+                <td>true or false</td>
             </tr>
         </tbody>
     </table>
@@ -382,7 +382,7 @@ But this rule can be changed by setting individual cache for each entry.
         </thead>
         <tbody>
             <tr>
-                <td><code>slug</code></td>
+                <td>slug</td>
                 <td></td>
                 <td>Slug ist entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.</td>
             </tr>
@@ -403,7 +403,7 @@ But this rule can be changed by setting individual cache for each entry.
         </thead>
         <tbody>
             <tr>
-                <td><code>id</code></td>
+                <td>id</td>
                 <td></td>
                 <td>Entry ID</td>
             </tr>
@@ -438,46 +438,46 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
         </thead>
         <tbody>
             <tr>
-                <td><a href="#fetch"><code>fetch()</code></a></td>
+                <td><a href="#methods-fetch">fetch()</a></td>
                 <td>Fetch single entry or collections of entries</td>
             </tr>
             <tr>
-                <td><a href="#fetchSingle"><code>fetchSingle()</code></a></td>
+                <td><a href="#methods-fetchSingle">fetchSingle()</a></td>
                 <td>Fetch single entry</td>
             </tr>
             <tr>
-                <td><a href="#fetchCollection"><code>fetchCollection()</code></a></td>
+                <td><a href="#methods-fetchCollection">fetchCollection()</a></td>
                 <td>Fetch entries collection</td>
             </tr>
             <tr>
-                <td><a href="#create"><code>create()</code></a></td>
+                <td><a href="#methods-create">create()</a></td>
                 <td>Create entry</td>
             </tr>
             <tr>
-                <td><a href="#update"><code>update()</code></a></td>
+                <td><a href="#methods-update">update()</a></td>
                 <td>Update entry</td>
             </tr>
             <tr>
-                <td><a href="#rename"><code>rename()</code></a></td>
+                <td><a href="#methods-rename">rename()</a></td>
                 <td>Rename entry</td>
             <tr>
-                <td><a href="#copy"><code>copy()</code></a></td>
+                <td><a href="#methods-copy">copy()</a></td>
                 <td>Copy entry</td>
             </tr>
             <tr>
-                <td><a href="#delete"><code>delete()</code></a></td>
+                <td><a href="#methods-delete">delete()</a></td>
                 <td>Delete entry</td>
             </tr>
             <tr>
-                <td><a href="#has"><code>has()</code></a></td>
+                <td><a href="#methods-has">has()</a></td>
                 <td>Check whether entry exists</td>
             </tr>
             <tr>
-                <td><a href="#getFileLocation"><code>getFileLocation()</code></a></td>
+                <td><a href="#methods-getFileLocation">getFileLocation()</a></td>
                 <td>Get entry file location</td>
             </tr>
             <tr>
-                <td><a href="#getDirLocation"><code>getDirLocation()</code></a></td>
+                <td><a href="#methods-getDirLocation">getDirLocation()</a></td>
                 <td>Get entry directory location</td>
             </tr>
         </tbody>
