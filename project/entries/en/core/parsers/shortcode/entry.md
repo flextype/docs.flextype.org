@@ -2,14 +2,14 @@
 title: SHORTCODE
 description: Shortcode is a small piece of code, indicated by brackets like `[this]`, that performs a dedicated function on your site.
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
-  2:
+  -
     title: "Parsers"
     link: "[url]/en/core/parsers/"
 on_this_page:
-  0:
+  -
     title: "Methods"
     link: "methods"
 ---
@@ -28,12 +28,24 @@ Shortcode is a small piece of code, indicated by brackets like `[this]`, that pe
         </thead>
         <tbody>
             <tr>
-                <td><a href="#add"><code>add()</code></a></td>
-                <td>Add new SHORTCODE handler</td>
+                <td><a href="#methods-addHandler">addHandler()</a></td>
+                <td>Add shortcode handler.</td>
             </tr>
             <tr>
-                <td><a href="#parse"><code>parse()</code></a></td>
-                <td>Takes a SHORTCODE encoded string and converts it into a HTML</td>
+                <td><a href="#methods-addEventHandler">addEventHandler()</a></td>
+                <td>Add event handler.</td>
+            </tr>
+            <tr>
+                <td><a href="#methods-process">process()</a></td>
+                <td>Processes text and replaces shortcodes.</td>
+            </tr>
+            <tr>
+                <td><a href="#methods-parse">parse()</a></td>
+                <td>Parses text into shortcodes.</td>
+            </tr>
+            <tr>
+                <td><a href="#methods-getCacheID">getCacheID()</a></td>
+                <td>Get Cache ID for shortcode</td>
             </tr>
         </tbody>
     </table>
@@ -41,26 +53,68 @@ Shortcode is a small piece of code, indicated by brackets like `[this]`, that pe
 
 ### Methods Details
 
-##### <a name="add"></a> `add()`
+##### <a name="methods-addHandler"></a> `addHandler()`
 
-Add new SHORTCODE handler
+Add shortcode handler.
 
 **Examples**
 
 ```php
-$flextype['shortcode']->add('message', function () {
+$flextype->container('shortcode')->addHandler('message', function () {
     return "Indeed. – Teal'c";
 });
 ```
 
-##### <a name="parse"></a> `parse()`
+##### <a name="methods-addEventHandler"></a> `addEventHandler()`
 
-Takes a SHORTCODE encoded string and converts it into a HTML
+Add event handler.
+
+**Examples**
+
+```php
+$flextype->container('shortcode')->addHandler('raw', static function (ShortcodeInterface $s) {
+    return $s->getContent();
+});
+
+$flextype->container('shortcode')->addEventHandler(Events::FILTER_SHORTCODES, new FilterRawEventHandler(['raw']));
+```
+
+More details about events: https://github.com/thunderer/Shortcode#events
+
+
+
+##### <a name="methods-process"></a> `process()`
+
+Processes text and replaces shortcodes.
 
 **Examples**
 
 ```php
 $shortcode = 'text with [message]';
 
-$html = $flextype->shortcode->parse($shortcode);
+$html = $flextype->container('shortcode')->process($shortcode);
+```
+
+##### <a name="methods-parse"></a> `parse()`
+
+Parses text into shortcodes.
+
+**Examples**
+
+```php
+$shortcode = 'text with [message]';
+
+$text = $flextype->container('shortcode')->parse($shortcode);
+```
+
+##### <a name="methods-getCacheID"></a> `getCacheID()`
+
+Get Cache ID for shortcode
+
+**Examples**
+
+```php
+$shortcode = 'text with [message]';
+
+$cache_id = $flextype->container('shortcode')->getCacheID($shortcode);
 ```
