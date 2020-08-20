@@ -24,15 +24,15 @@ Hooks are a way for one piece of code to interact/modify another piece of code. 
         </thead>
         <tbody>
             <tr>
-                <td><code>onPluginsInitialized</code></td>
+                <td>onPluginsInitialized</td>
                 <td>Fires when all enabled plugins initialized.</td>
             </tr>
             <tr>
-                <td><code>onEntryAfterInitialized</code></td>
+                <td>onEntryAfterInitialized</td>
                 <td>Fires when current entry requested by fetchSingle() method has been loaded into the entry object.</td>
             </tr>
             <tr>
-                <td><code>onEntriesAfterInitialized</code></td>
+                <td>onEntriesAfterInitialized</td>
                 <td>Fires when current entries collection requested by fetchCollection() method has been loaded into the entries object.</td>
             </tr>
         </tbody>

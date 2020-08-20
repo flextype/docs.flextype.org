@@ -33,7 +33,7 @@ Flextype provide a powerful functionality to work with data collections. You may
         <tbody>
             <tr>
                 <td>
-                    <code>eq</code> <code>=</code>
+                    eq =
                 </td>
                 <td>
                     <b>Equal to</b><br><br>
@@ -46,7 +46,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>neq</code> <code>&lt;&gt;</code> <code>!=</code>
+                    neq &lt;&gt; !=
                 </td>
                 <td>
                     <b>Not equal to</b><br><br>
@@ -56,7 +56,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>lt</code> <code>&lt;</code>
+                    lt &lt;
                 </td>
                 <td>
                     <b>Lower than</b><br><br>
@@ -66,7 +66,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>gt</code> <code>&gt;</code>
+                    gt &gt;
                 </td>
                 <td>
                     <b>Greater than</b><br><br>
@@ -76,7 +76,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>lte</code> <code>&lt;=</code>
+                    lte &lt;=
                 </td>
                 <td>
                     <b>Lower than or equal to</b><br><br>
@@ -86,7 +86,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>gt</code> <code>&gt;=</code>
+                    gt &gt;=
                 </td>
                 <td>
                     <b>Greater than or equal to</b><br><br>
@@ -96,7 +96,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>in</code>
+                    in
                 </td>
                 <td>
                     <b>Included in an array of values</b><br><br>
@@ -109,7 +109,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>nin</code>
+                    nin
                 </td>
                 <td>
                     <b>Isn't included in an array of values</b><br><br>
@@ -122,7 +122,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>contains</code> <code>like</code>
+                    contains like
                 </td>
                 <td>
                     <b>Contains the substring</b><br><br>
@@ -132,7 +132,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>member_of</code>
+                    member_of
                 </td>
                 <td>
                     <b>Member of</b><br><br>
@@ -140,7 +140,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>starts_with</code>
+                    starts_with
                 </td>
                 <td>
                     <b>Starts with</b><br><br>
@@ -148,7 +148,7 @@ Flextype provide a powerful functionality to work with data collections. You may
             </tr>
             <tr>
                 <td>
-                    <code>ends_with</code>
+                    ends_with
                 </td>
                 <td>
                     <b>Ends with</b><br><br>
@@ -170,75 +170,75 @@ Flextype provide a powerful functionality to work with data collections. You may
         </thead>
         <tbody>
             <tr>
-                <td><a href="#collection"><code>collect()</code></a></td>
-                <td>Returns a new <code>Collection</code> instance with the items currently in the collection.</td>
+                <td><a href="#collection">collect()</a></td>
+                <td>Returns a new Collection instance with the items currently in the collection.</td>
             </tr>
             <tr>
-                <td><a href="#merge"><code>merge()</code></a></td>
+                <td><a href="#merge">merge()</a></td>
                 <td>Merges the given array or collection with the original collection. If a string key in the given items matches a string key in the original collection, the given items's value will overwrite the value in the original collection.</td>
             </tr>
             <tr>
-                <td><a href="#where"><code>where()</code></a></td>
+                <td><a href="#where">where()</a></td>
                 <td>Sets the where expression to evaluate when this Criteria is searched for.</td>
             </tr>
             <tr>
-                <td><a href="#and-where"><code>andWhere()</code></a></td>
+                <td><a href="#and-where">andWhere()</a></td>
                 <td>Appends the where expression to evaluate when this Criteria is searched for using an AND with previous expression.</td>
             </tr>
             <tr>
-                <td><a href="#or-where"><code>orWhere()</code></a></td>
+                <td><a href="#or-where">orWhere()</a></td>
                 <td>Appends the where expression to evaluate when this Criteria is searched for using an OR with previous expression.</td>
             </tr>
             <tr>
-                <td><a href="#order-by"><code>orderBy()</code></a></td>
+                <td><a href="#order-by">orderBy()</a></td>
                 <td>Sets the ordering of the result of this Criteria. Keys are field and values are the order, being either ASC or DESC.</td>
             </tr>
             <tr>
-                <td><a href="#set-first-result"><code>setFirstResult()</code></a></td>
+                <td><a href="#set-first-result">setFirstResult()</a></td>
                 <td>Set the number of first result that this Criteria should return.</td>
             </tr>
             <tr>
-                <td><a href="#limit"><code>limit()</code></a></td>
+                <td><a href="#limit">limit()</a></td>
                 <td>Sets the max results that this Criteria should return.</td>
             </tr>
             <tr>
-                <td><a href="#first"><code>first()</code></a></td>
+                <td><a href="#first">first()</a></td>
                 <td>Returns the current first result option of this Criteria.</td>
             </tr>
             <tr>
-                <td><a href="#last"><code>last()</code></a></td>
+                <td><a href="#last">last()</a></td>
                 <td>Returns the current last result option of this Criteria.</td>
             </tr>
             <tr>
-                <td><a href="#next"><code>next()</code></a></td>
+                <td><a href="#next">next()</a></td>
                 <td>Returns a single item of result. Moves the internal iterator position to the next element and returns this element.</td>
             </tr>
             <tr>
-                <td><a href="#random"><code>random()</code></a></td>
+                <td><a href="#random">random()</a></td>
                 <td>Returns one or a specified number of items randomly from the collection.</td>
             </tr>
             <tr>
-                <td><a href="#shuffle"><code>shuffle()</code></a></td>
+                <td><a href="#shuffle">shuffle()</a></td>
                 <td>Returns randomly shuffles the items in the collection.</td>
             </tr>
             <tr>
-                <td><a href="#slice"><code>slice()</code></a></td>
-                <td>Returns a slice of the collection by defining <code>length</code> of elements and starting position <code>offset</code>.<br><br>If <code>length</code> is null it returns all elements from <code>offset</code> to the end of the Collection. Keys have to be preserved by this method. Calling this method will only return the selected slice and NOT change the elements contained in the collection slice is called on.</td>
+                <td><a href="#slice">slice()</a></td>
+                <td>Returns a slice of the collection by defining length of elements and starting position offset.<br><br>If length is null it returns all elements from offset to the end of the Collection. Keys have to be preserved by this method. Calling this method will only return the selected slice and NOT change the elements contained in the collection slice is called on.</td>
             </tr>
             <tr>
-                <td><a href="#count"><code>count()</code></a></td>
-                <td>If you want to know how many items match your Criteria, you can call <code>count()</code>.</td>
+                <td><a href="#count">count()</a></td>
+                <td>If you want to know how many items match your Criteria, you can call count().</td>
             </tr>
             <tr>
-                <td><a href="#exists"><code>exists()</code></a></td>
-                <td>If you just need to check if any item exist in the collection that match the Criteria, you can call <code>exists()</code>, which will return either <code>true</code> or <code>false</code>.</td>
+                <td><a href="#exists">exists()</a></td>
+                <td>If you just need to check if any item exist in the collection that match the Criteria, you can call exists(), which will return either true or false.</td>
             </tr>
             <tr>
-                <td><a href="#all"><code>all()</code></a></td>
+                <td><a href="#all">all()</a></td>
                 <td>Returns the underlying array represented by the collection.</td>
             </tr>
             <tr>
-                <td><a href="#collect-filter"><code>collect_filter()</code></a></td>
+                <td><a href="#collect-filter">collect_filter()</a></td>
                 <td>Apply filters to the array items with help of parameters array.</td>
             </tr>
         </tbody>

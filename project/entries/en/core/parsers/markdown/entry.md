@@ -2,10 +2,10 @@
 title: MARKDOWN
 description: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
-  2:
+  -
     title: "Parsers"
     link: "[url]/en/core/parsers/"
 on_this_page:
@@ -114,14 +114,10 @@ Markdown applications don't agree on how to handle a missing space between the n
       <tbody>
         <tr>
           <td>
-
               # Here's a Heading
-
           </td>
           <td>
-
               #Here's a Heading
-
           </td>
         </tr>
       </tbody>
@@ -170,11 +166,8 @@ Unless the [paragraph is in a list](/basic-syntax/#paragraphs), don't indent par
       <tbody>
         <tr>
           <td>
-
               Don't put tabs or spaces in front of your paragraphs.<br><br>
-
               Keep lines left-aligned like this.<br><br>
-
           </td>
           <td>
 
@@ -1198,7 +1191,7 @@ For example, `<p>italic and **bold**</p>` won't work.
         </thead>
         <tbody>
             <tr>
-                <td><a href="#parse">parse()</a></td>
+                <td><a href="#methods-parse">parse()</a></td>
                 <td>Takes a MARKDOWN encoded string and converts it into a HTML</td>
             </tr>
         </tbody>
@@ -1207,7 +1200,7 @@ For example, `<p>italic and **bold**</p>` won't work.
 
 ### Methods Details
 
-##### <a name="parse"></a> `parse()`
+##### <a name="methods-parse"></a> `parse()`
 
 Takes a MARKDOWN encoded string and converts it into a HTML
 
@@ -1217,5 +1210,4 @@ Takes a MARKDOWN encoded string and converts it into a HTML
 $markdown = '**this text is bold**';
 
 $html = $flextype->container('markdown')->parse($markdown);
-
 ```
