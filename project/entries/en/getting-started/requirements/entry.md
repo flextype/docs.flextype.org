@@ -37,7 +37,7 @@ Make sure that your web server provides Mod Rewrite.
 
 ### <a name="php-requirements"></a> PHP Requirements
 
-Flextype needs PHP 7.2.0 or higher and the following PHP extensions to be enabled:
+Flextype needs PHP 7.3.0 or higher and the following PHP extensions to be enabled:
 
 - [mbstring](http://php.net/manual/en/book.mbstring.php) module for full UTF-8 support.
 - [gd](http://php.net/manual/en/book.image.php) or [ImageMagick](http://php.net/manual/en/book.imagick.php) module for image processing.
