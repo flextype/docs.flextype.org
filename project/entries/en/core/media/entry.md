@@ -1,7 +1,7 @@
 ---
 title: Media
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
 on_this_page:
@@ -11,76 +11,76 @@ on_this_page:
     level2:
       -
         title: "upload()"
-        link: "files-upload"
+        link: "methods-files-upload"
       -
         title: "fetch()"
-        link: "files-fetch"
+        link: "methods-files-fetch"
       -
         title: "fetchSingle()"
-        link: "files-fetchSingle"
+        link: "methods-files-fetchSingle"
       -
         title: "fetchCollection()"
-        link: "files-fetchCollection"
+        link: "methods-files-fetchCollection"
       -
         title: "rename()"
-        link: "files-rename"
+        link: "methods-files-rename"
       -
         title: "delete()"
-        link: "files-delete"
+        link: "methods-files-delete"
       -
         title: "has()"
-        link: "files-has"
+        link: "methods-files-has"
       -
         title: "getFileLocation()"
-        link: "files-getFileLocation"
+        link: "methods-files-getFileLocation"
   -
     title: "Files Meta Methods"
     link: "files-meta-methods"
     level2:
       -
         title: "update()"
-        link: "files-meta-update"
+        link: "methods-files-meta-update"
       -
         title: "add()"
-        link: "files-meta-add"
+        link: "methods-files-meta-add"
       -
         title: "delete()"
-        link: "files-meta-delete"
+        link: "methods-files-meta-delete"
       -
         title: "getFileMetaLocation()"
-        link: "files-meta-getFileMetaLocation"
+        link: "methods-files-meta-getFileMetaLocation"
   -
     title: "Folders Methods"
     link: "folders-methods"
     level2:
       -
         title: "fetch()"
-        link: "folders-fetch"
+        link: "methods-folders-fetch"
       -
         title: "fetchSingle()"
-        link: "folders-fetchSingle"
+        link: "methods-folders-fetchSingle"
       -
         title: "fetchCollection()"
-        link: "folders-fetchCollection"
+        link: "methods-folders-fetchCollection"
       -
         title: "create()"
-        link: "folders-create"
+        link: "methods-folders-create"
       -
         title: "rename()"
         link: "folders-rename"
       -
         title: "delete()"
-        link: "folders-delete"
+        link: "methods-folders-delete"
       -
         title: "getDirLocation()"
-        link: "folders-getDirLocation"
+        link: "methods-folders-getDirLocation"
   -
     title: "Folders Meta Methods"
     link: "folders-methods"
     level2:
       -
         title: "getDirMetaLocation()"
-        link: "folders-meta-getDirMetaLocation"
+        link: "methods-folders-meta-getDirMetaLocation"
 ---
 
 ### <a name="files-methods"></a> Methods
@@ -97,35 +97,35 @@ on_this_page:
         </thead>
         <tbody>
             <tr>
-                <td><a href="#files-upload"><code>upload()</code></a></td>
+                <td><a href="#methods-files-upload">upload()</a></td>
                 <td>Upload media file.</td>
             </tr>
             <tr>
-                <td><a href="#files-fetch"><code>fetch()</code></a></td>
+                <td><a href="#methods-files-fetch">fetch()</a></td>
                 <td>Fetch file(s).</td>
             </tr>
             <tr>
-                <td><a href="#files-fetchSingle"><code>fetchSingle()</code></a></td>
+                <td><a href="#methods-files-fetchSingle">fetchSingle()</a></td>
                 <td>Fetch single file.</td>
             </tr>
             <tr>
-                <td><a href="#files-fetchCollection"><code>fetchCollection()</code></a></td>
+                <td><a href="#methods-files-fetchCollection">fetchCollection()</a></td>
                 <td>Fetch files collection.</td>
             </tr>
             <tr>
-                <td><a href="#files-rename"><code>rename()</code></a></td>
+                <td><a href="#methods-files-rename">rename()</a></td>
                 <td>Rename file.</td>
             </tr>
             <tr>
-                <td><a href="#files-delete"><code>delete()</code></a></td>
+                <td><a href="#methods-files-delete">delete()</a></td>
                 <td>Delete file.</td>
             </tr>
             <tr>
-                <td><a href="#files-has"><code>has()</code></a></td>
+                <td><a href="#methods-files-has">has()</a></td>
                 <td>Check whether a file exists.</td>
             </tr>
             <tr>
-                <td><a href="#files-getFileLocation"><code>getFileLocation()</code></a></td>
+                <td><a href="#methods-files-getFileLocation">getFileLocation()</a></td>
                 <td>Get file location.</td>
             </tr>
         </tbody>
@@ -134,7 +134,7 @@ on_this_page:
 
 ### Methods Details
 
-##### <a name="files-upload"></a> `upload()`
+##### <a name="methods-files-upload"></a> `upload()`
 
 Upload media file.
 
@@ -145,7 +145,7 @@ $flextype->container('media_files')->upload($_FILES['file'],
                                             '/entries/movies/sg-1/season-5/episode-21/');
 ```
 
-##### <a name="files-fetch"></a> `fetch()`
+##### <a name="methods-files-fetch"></a> `fetch()`
 
 Fetch file(s).
 
@@ -175,7 +175,7 @@ $images = $flextype
 
 ```
 
-##### <a name="files-fetchSingle"></a> `fetchSingle()`
+##### <a name="methods-files-fetchSingle"></a> `fetchSingle()`
 
 Fetch single file.
 
@@ -199,7 +199,7 @@ echo $cover['url'];
 echo $cover['full_url'];
 ```
 
-##### <a name="files-fetchCollection"></a> `fetchCollection()`
+##### <a name="methods-files-fetchCollection"></a> `fetchCollection()`
 
 Fetch files collection.
 
@@ -212,7 +212,7 @@ $images = $flextype
                 ->fetchCollection('entries/movies/sg-1/season-5/episode-21');
 
 ```
-##### <a name="files-rename"></a> `rename()`
+##### <a name="methods-files-rename"></a> `rename()`
 
 Rename file.
 
@@ -224,7 +224,7 @@ $flextype->container('media_files')
                           'entries/movies/sg-1/season-5/episode-21/cover-image.jpg');
 ```
 
-##### <a name="files-delete"></a> `delete()`
+##### <a name="methods-files-delete"></a> `delete()`
 
 Delete file.
 
@@ -235,7 +235,7 @@ $flextype->container('media_files')
             ->delete('entries/movies/sg-1/season-5/episode-21/cover-image.jpg');
 ```
 
-##### <a name="files-has"></a> `has()`
+##### <a name="methods-files-has"></a> `has()`
 
 Check whether a file exists.
 
@@ -259,7 +259,7 @@ $flextype->container('media_files')
             ->getFileLocation('entries/movies/sg-1/season-5/episode-21/cover-image.jpg');
 ```
 
-#### <a name="files-meta-methods"></a> Media Files Meta
+#### <a name="methods-files-meta-methods"></a> Media Files Meta
 
 <div class="table">
     <table>
@@ -271,19 +271,19 @@ $flextype->container('media_files')
         </thead>
         <tbody>
             <tr>
-                <td><a href="#files-meta-update"><code>update()</code></a></td>
+                <td><a href="#methods-files-meta-update">update()</a></td>
                 <td>Update file meta information.</td>
             </tr>
             <tr>
-                <td><a href="#files-meta-add"><code>add()</code></a></td>
+                <td><a href="#methods-files-meta-add">add()</a></td>
                 <td>Add file meta information.</td>
             </tr>
             <tr>
-                <td><a href="#files-meta-delete"><code>delete()</code></a></td>
+                <td><a href="#methods-files-meta-delete">delete()</a></td>
                 <td>Delete file meta information.</td>
             </tr>
             <tr>
-                <td><a href="#files-meta-getFileMetaLocation"><code>getFileMetaLocation()</code></a></td>
+                <td><a href="#methods-files-meta-getFileMetaLocation">getFileMetaLocation()</a></td>
                 <td>Get file meta location.</td>
             </tr>
         </tbody>
@@ -292,7 +292,7 @@ $flextype->container('media_files')
 
 ### Methods Details
 
-##### <a name="files-meta-update"></a> `update()`
+##### <a name="methods-files-meta-update"></a> `update()`
 
 Update file meta information.
 
@@ -305,7 +305,7 @@ $flextype->container('media_files_meta')
                      'Episode 21');
 ```
 
-##### <a name="files-meta-add"></a> `add()`
+##### <a name="methods-files-meta-add"></a> `add()`
 
 Add file meta information.
 
@@ -318,7 +318,7 @@ $flextype->container('media_files_meta')
                      'sg1');
 ```
 
-##### <a name="files-meta-delete"></a> `delete()`
+##### <a name="methods-files-meta-delete"></a> `delete()`
 
 Delete file meta information.
 
@@ -330,7 +330,7 @@ $flextype->container('media_files_meta')
                      'tags');
 
 ```
-##### <a name="files-meta-getFileMetaLocation"></a> `getFileMetaLocation()`
+##### <a name="methods-files-meta-getFileMetaLocation"></a> `getFileMetaLocation()`
 
 Get file meta location.
 
@@ -341,7 +341,7 @@ $flextype->container('media_files_meta')
             ->getFileMetaLocation('entries/movies/sg-1/season-5/episode-21/cover.jpg');
 ```
 
-#### <a name="folders-methods"></a> Media Folders
+#### <a name="methods-folders-methods"></a> Media Folders
 
 <div class="table">
     <table>
@@ -353,31 +353,31 @@ $flextype->container('media_files_meta')
         </thead>
         <tbody>
             <tr>
-                <td><a href="#folders-fetch"><code>fetch()</code></a></td>
+                <td><a href="#methods-folders-fetch">fetch()</a></td>
                 <td>Fetch folder(s).</td>
             </tr>
             <tr>
-                <td><a href="#folders-fetchSingle"><code>fetchSingle()</code></a></td>
+                <td><a href="#methods-folders-fetchSingle">fetchSingle()</a></td>
                 <td>Fetch single folder.</td>
             </tr>
             <tr>
-                <td><a href="#folders-fetchCollection"><code>fetchCollection()</code></a></td>
+                <td><a href="#methods-folders-fetchCollection">fetchCollection()</a></td>
                 <td>Fetch folders collection.</td>
             </tr>
             <tr>
-                <td><a href="#folders-create"><code>rename()</code></a></td>
+                <td><a href="#methods-folders-create">rename()</a></td>
                 <td>Create folder.</td>
             </tr>
             <tr>
-                <td><a href="#folders-rename"><code>rename()</code></a></td>
+                <td><a href="#methods-folders-rename">rename()</a></td>
                 <td>Rename folder.</td>
             </tr>
             <tr>
-                <td><a href="#folders-delete"><code>delete()</code></a></td>
+                <td><a href="#methods-folders-delete">delete()</a></td>
                 <td>Delete folder.</td>
             </tr>
             <tr>
-                <td><a href="#folders-getDirLocation"><code>getDirLocation()</code></a></td>
+                <td><a href="#methods-folders-getDirLocation">getDirLocation()</a></td>
                 <td>Get folder location.</td>
             </tr>
         </tbody>
@@ -386,7 +386,7 @@ $flextype->container('media_files_meta')
 
 ### Methods Details
 
-##### <a name="folders-fetch"></a> `fetch()`
+##### <a name="methods-folders-fetch"></a> `fetch()`
 
 Fetch folder(s).
 
@@ -409,7 +409,7 @@ $folders = $flextype
                 ->fetch('entries/movies/sg-1/season-5', true);
 ```
 
-##### <a name="folders-fetchSingle"></a> `fetchSingle()`
+##### <a name="methods-folders-fetchSingle"></a> `fetchSingle()`
 
 Fetch single folder.
 
@@ -440,7 +440,7 @@ $folders = $flextype
                 ->fetchCollection('entries/movies/sg-1/season-5');
 ```
 
-##### <a name="folders-create"></a> `create()`
+##### <a name="methods-folders-create"></a> `create()`
 
 Create folder.
 
@@ -451,7 +451,7 @@ $flextype->container('media_folders')
             ->create('entries/movies/sg-1/season-5/episode-22');
 ```
 
-##### <a name="folders-rename"></a> `rename()`
+##### <a name="methods-folders-rename"></a> `rename()`
 
 Rename folder.
 
@@ -463,7 +463,7 @@ $flextype->container('media_folders')
                             'entries/movies/sg-1/season-5/episode-23');
 ```
 
-##### <a name="folders-delete"></a> `delete()`
+##### <a name="methods-folders-delete"></a> `delete()`
 
 Delete folder.
 
@@ -474,7 +474,7 @@ $flextype->container('media_folders')
             ->delete('entries/movies/sg-1/season-5/episode-23');
 ```
 
-##### <a name="folders-getDirLocation"></a> `getDirLocation()`
+##### <a name="methods-folders-getDirLocation"></a> `getDirLocation()`
 
 Get folder location.
 
@@ -497,7 +497,7 @@ $flextype->container('media_folders')
         </thead>
         <tbody>
             <tr>
-                <td><a href="#folders-meta-getDirMetaLocation"><code>getDirMetaLocation()</code></a></td>
+                <td><a href="#methods-folders-meta-getDirMetaLocation">getDirMetaLocation()</a></td>
                 <td>Get files directory meta location.</td>
             </tr>
         </tbody>
@@ -506,7 +506,7 @@ $flextype->container('media_folders')
 
 ### Methods Details
 
-##### <a name="folders-meta-getDirMetaLocation"></a> `getDirMetaLocation()`
+##### <a name="methods-folders-meta-getDirMetaLocation"></a> `getDirMetaLocation()`
 
 Get files directory meta location.
 
