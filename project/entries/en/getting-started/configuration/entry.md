@@ -330,23 +330,23 @@ Your `index.php` file can define certain PHP constants, which Flextype bootstrap
         </thead>
         <tbody>
             <tr>
-                <td><code>FLEXTYPE_MINIMUM_PHP</code></td>
+                <td>FLEXTYPE_MINIMUM_PHP</td>
                 <td>Define the application minimum supported PHP version.</td>
             </tr>
             <tr>
-                <td><code>ROOT_DIR</code></td>
+                <td>ROOT_DIR</td>
                 <td>Define the path to the root directory (without trailing slash).</td>
             </tr>
             <tr>
-                <td><code>PATH['project']</code></td>
+                <td>PATH['project']</td>
                 <td>Define the PATH to project (without trailing slash).</td>
             </tr>
             <tr>
-                <td><code>PATH['cache']</code></td>
+                <td>PATH['cache']</td>
                 <td>Define the PATH to project cache (without trailing slash).</td>
             </tr>
             <tr>
-                <td><code>PATH['logs']</code></td>
+                <td>PATH['logs']</td>
                 <td>Define the PATH to logs cache (without trailing slash).</td>
             </tr>
         </tbody>
