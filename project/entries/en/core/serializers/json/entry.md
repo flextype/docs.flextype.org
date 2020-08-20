@@ -2,20 +2,20 @@
 title: JSON
 description: Flextype uses YAML because it's as close to plain English as data serialization and configuration formats get. It has no curly braces, it allows you to omit quotation marks for strings in most cases, and it relies on indentation for structure, which makes it incredibly readable compared to other languages, such as JSON and XML.
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
-  2:
+  -
     title: "Serializers"
     link: "[url]/en/core/serializers/"
 on_this_page:
-  0:
+  -
     title: "JSON Syntax"
     link: "json-syntax"
-  1:
+  -
     title: "JSON Data Types"
     link: "json-data-types"
-  2:
+  -
     title: "Methods"
     link: "methods"
 ---
@@ -31,7 +31,7 @@ Primarily, JSON is built on two structures:
 * A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
 * An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
 
-We are using JSON sytnax in our [Content APIs]([url]/core/content-apis).
+We are using JSON sytnax in our [Rest APIs]([url]/en/rest-api).
 
 ### <a name="json-syntax"></a> JSON Syntax
 
@@ -123,78 +123,79 @@ JSON consist of 6 data types. First four data types (string, number, boolean and
 * object
 * array
 
-<table>
-    <tr>
-        <td><b>Data Type</b></td>
-        <td><b>Description</b></td>
-    </tr>
-    <tr>
-        <td><code>string</code></td>
-        <td>
-        Strings in JSON must be written in double quotes. <br><br>
-<pre><code class="hljs">{
-  "color" : "Purple"
-}
-</code></pre>
-        </td>
-    </tr>
-    <tr>
-        <td><code>number</code></td>
-        <td>
-        Numbers in JSON must be an integer or a floating point. <br><br>
-<pre><code class="hljs">{
-  "number_1": 210,
-  "number_2": -210,
-  "number_3": 21.05,
-  "number_4": 1.0E+2
-}
-</code></pre>
-        </td>
-    </tr>
-    <tr>
-        <td><code>boolean</code></td>
-        <td>
-        Value can be either true or false. <br><br>
-<pre><code class="hljs">{
-  "visibility": true
-}
-</code></pre>
-        </td>
-    </tr>
-    <tr>
-        <td><code>null</code></td>
-        <td>
-        Values in JSON can be null. <br><br>
-<pre><code class="hljs">{
-   "middlename": null
-}
-</code></pre>
-        </td>
-    </tr>
-    <tr>
-        <td><code>object</code></td>
-        <td>
-        Values in JSON can be objects. <br><br>
-<pre><code class="hljs">"employee": {
-  "name": "John",
-  "age": 30,
-  "city": "New York"
-}
-</code></pre>
-        </td>
-    </tr>
-    <tr>
-        <td><code>array</code></td>
-        <td>
-        Values in JSON can be arrays. <br><br>
-<pre><code class="hljs">{
-  "employees": [ "John", "Anna", "Peter" ]
-}
-</code></pre>
-        </td>
-    </tr>
-</table>
-
+<div class="table">
+    <table>
+        <tr>
+            <td><b>Data Type</b></td>
+            <td><b>Description</b></td>
+        </tr>
+        <tr>
+            <td>string</td>
+            <td>
+            Strings in JSON must be written in double quotes. <br><br>
+    <pre><code class="hljs">{
+      "color" : "Purple"
+    }
+    </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td>
+            Numbers in JSON must be an integer or a floating point. <br><br>
+    <pre><code class="hljs">{
+      "number_1": 210,
+      "number_2": -210,
+      "number_3": 21.05,
+      "number_4": 1.0E+2
+    }
+    </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>
+            Value can be either true or false. <br><br>
+    <pre><code class="hljs">{
+      "visibility": true
+    }
+    </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>null</td>
+            <td>
+            Values in JSON can be null. <br><br>
+    <pre><code class="hljs">{
+       "middlename": null
+    }
+    </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>object</td>
+            <td>
+            Values in JSON can be objects. <br><br>
+    <pre><code class="hljs">"employee": {
+      "name": "John",
+      "age": 30,
+      "city": "New York"
+    }
+    </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>array</td>
+            <td>
+            Values in JSON can be arrays. <br><br>
+    <pre><code class="hljs">{
+      "employees": [ "John", "Anna", "Peter" ]
+    }
+    </pre>
+            </td>
+        </tr>
+    </table>
+</div>
 
 ### <a name="methods"></a> Methods
 
@@ -208,11 +209,11 @@ JSON consist of 6 data types. First four data types (string, number, boolean and
         </thead>
         <tbody>
             <tr>
-                <td><a href="#encode"><code>encode()</code></a></td>
+                <td><a href="#methods-encode">encode()</a></td>
                 <td>Returns the JSON representation of a value.</td>
             </tr>
             <tr>
-                <td><a href="#decode"><code>decode()</code></a></td>
+                <td><a href="#methods-decode">decode()</a></td>
                 <td>Takes a JSON encoded string and converts it into a PHP variable.</td>
             </tr>
         </tbody>
@@ -237,7 +238,7 @@ $data = [
                 'content' => 'Osiris engages in space combat with Thor over a violation of the protected planets treaty. Freyr arrives at the SGC bringing news of Thor\'s death and asking SG-1 to mount a rescue mission to retrieve an Asgard scientist from the planet in question. Upon their arrival Heimdall informs them that Thor still lives and has been taken captive by the Goa\'uld. O\'Neill and Teal\'c transport over to the mothership to rescue him from the clutches of Anubis.'
         ];
 
-$json = $flextype->json->encode($data);
+$json = $flextype->container('json')->encode($data);
 
 ```
 
@@ -256,6 +257,6 @@ $json = '{
   "stars": "Richard Dean Anderson, Michael Shanks, Amanda Tapping",
   "content": "SG-1 returns from an off-world mission to P9Y-3C3 with Daniel Jackson suffering from what is likely a fatal dose of radiation. On the planet, they dealt with the country of Kelowna and their representative Jonas Quinn. That country was at the same stage of development as the United States in the 1940s and well on their way to creating an atomic weapon using Goa\'uld technology found in an ancient temple. Daniel argued against the Kelownans developing such a weapon and is accused of attempting to sabotage the project. As members of the team sit by his deathbed, Daniel receives an unexpected offer from someone they once met off-world."}'
 
-$data = $flextype->json->decode($json);
+$data = $flextype->container('json')->decode($json);
 
 ```
