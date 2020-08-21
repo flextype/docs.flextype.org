@@ -9,15 +9,14 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_SimpleFilter;
+use Twig\Extension\AbstractExtension;
 
-class ShortcodeTwigExtension extends Twig_Extension
+class ShortcodeTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -35,7 +34,7 @@ class ShortcodeTwigExtension extends Twig_Extension
     public function getFilters() : array
     {
         return [
-            new Twig_SimpleFilter('shortcode', [$this, 'shortcode']),
+            new \Twig\TwigFilter('shortcode', [$this, 'shortcode']),
         ];
     }
 
@@ -45,7 +44,7 @@ class ShortcodeTwigExtension extends Twig_Extension
     public function shortcode($value) : string
     {
         if (!empty($value)) {
-            return $this->flextype['shortcode']->parse($value);
+            return $this->flextype->container('shortcode')->process($value);
         }
 
         return '';

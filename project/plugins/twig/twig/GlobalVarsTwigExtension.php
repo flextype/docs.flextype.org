@@ -9,16 +9,16 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_Extension_GlobalsInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 use const PHP_VERSION;
 
-class GlobalVarsTwigExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
+class GlobalVarsTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -31,7 +31,7 @@ class GlobalVarsTwigExtension extends Twig_Extension implements Twig_Extension_G
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         return [
             'PATH_PROJECT' => PATH['project'],

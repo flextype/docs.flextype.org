@@ -9,15 +9,15 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_Extension_GlobalsInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 
-class EntriesTwigExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
+class EntriesTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -30,7 +30,7 @@ class EntriesTwigExtension extends Twig_Extension implements Twig_Extension_Glob
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         return [
             'entries' => new EntriesTwig($this->flextype),
@@ -41,9 +41,9 @@ class EntriesTwigExtension extends Twig_Extension implements Twig_Extension_Glob
 class EntriesTwig
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -58,7 +58,7 @@ class EntriesTwig
      */
     public function fetch(string $path, bool $collection = false, array $filter = []) : array
     {
-        return $this->flextype['entries']->fetch($path, $collection, $filter);
+        return $this->flextype->container('entries')->fetch($path, $collection, $filter);
     }
 
     /**
@@ -66,7 +66,7 @@ class EntriesTwig
      */
     public function fetchSingle(string $path) : array
     {
-        return $this->flextype['entries']->fetch($path);
+        return $this->flextype->container('entries')->fetch($path);
     }
 
     /**
@@ -74,6 +74,6 @@ class EntriesTwig
      */
     public function fetchCollection(string $path, array $filter = []) : array
     {
-        return $this->flextype['entries']->fetchCollection($path, $filter);
+        return $this->flextype->container('entries')->fetchCollection($path, $filter);
     }
 }

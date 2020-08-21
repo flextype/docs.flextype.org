@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Flextype\\Plugin\\Site\\Controllers\\SiteController' => $baseDir . '/app/Controllers/SiteController.php',
+    'Flextype\\Plugin\\Site\\Models\\Themes' => $baseDir . '/app/Models/Themes.php',
     'Middlewares\\TrailingSlash' => $vendorDir . '/middlewares/trailing-slash/src/TrailingSlash.php',
     'Middlewares\\Utils\\CallableHandler' => $vendorDir . '/middlewares/utils/src/CallableHandler.php',
     'Middlewares\\Utils\\Dispatcher' => $vendorDir . '/middlewares/utils/src/Dispatcher.php',
