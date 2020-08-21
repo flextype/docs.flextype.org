@@ -9,16 +9,14 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_SimpleFunction;
-use Twig_Extension_GlobalsInterface;
+use Twig\Extension\AbstractExtension;
 
-class CollectionTwigExtension extends Twig_Extension
+class CollectionTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -36,7 +34,7 @@ class CollectionTwigExtension extends Twig_Extension
     public function getFunctions() : array
     {
         return [
-            new Twig_SimpleFunction('collect', [$this, 'collect']),
+            new \Twig\TwigFunction('collect', [$this, 'collect']),
         ];
     }
 

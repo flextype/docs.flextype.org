@@ -9,15 +9,14 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_SimpleFilter;
+use Twig\Extension\AbstractExtension;
 
-class MarkdownTwigExtension extends Twig_Extension
+class MarkdownTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -35,7 +34,7 @@ class MarkdownTwigExtension extends Twig_Extension
     public function getFilters() : array
     {
         return [
-            new Twig_SimpleFilter('markdown', [$this, 'markdown']),
+            new \Twig\TwigFilter('markdown', [$this, 'markdown']),
         ];
     }
 
@@ -45,7 +44,7 @@ class MarkdownTwigExtension extends Twig_Extension
     public function markdown($input, bool $cache = true) : string
     {
         if (!empty($input)) {
-            return $this->flextype['markdown']->parse($input, $cache);
+            return $this->flextype->container('markdown')->parse($input, $cache);
         }
 
         return '';

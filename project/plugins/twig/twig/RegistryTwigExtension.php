@@ -9,15 +9,15 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_Extension_GlobalsInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 
-class RegistryTwigExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
+class RegistryTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -30,7 +30,7 @@ class RegistryTwigExtension extends Twig_Extension implements Twig_Extension_Glo
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         return [
             'registry' => new RegistryTwig($this->flextype),
@@ -41,9 +41,9 @@ class RegistryTwigExtension extends Twig_Extension implements Twig_Extension_Glo
 class RegistryTwig
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -60,7 +60,7 @@ class RegistryTwig
      */
     public function dump() : array
     {
-        return $this->flextype['registry']->dump();
+        return $this->flextype->container('registry')->dump();
     }
 
     /**
@@ -71,7 +71,7 @@ class RegistryTwig
      */
     public function has(string $name) : bool
     {
-        return $this->flextype['registry']->has($name);
+        return $this->flextype->container('registry')->has($name);
     }
 
     /**
@@ -83,7 +83,7 @@ class RegistryTwig
      */
     public function set(string $name, $value = null) : void
     {
-        $this->flextype['registry']->set($name, $value);
+        $this->flextype->container('registry')->set($name, $value);
     }
 
     /**
@@ -95,6 +95,6 @@ class RegistryTwig
      */
     public function get(string $name, $default = null)
     {
-        return $this->flextype['registry']->get($name, $default);
+        return $this->flextype->container('registry')->get($name, $default);
     }
 }

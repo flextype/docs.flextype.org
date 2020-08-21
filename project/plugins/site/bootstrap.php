@@ -32,14 +32,14 @@ $site_loader = require_once $site_autoload;
 /**
  * Include web routes
  */
-include_once 'routes/web.php';
+include_once __DIR__ . '/routes/web.php';
 
 /**
  * Include dependencies
  */
-include_once 'dependencies.php';
+include_once __DIR__ . '/dependencies.php';
 
 /**
  * Include Middlewares
  */
-include_once 'middlewares.php';
+include_once __DIR__ . '/middlewares.php';

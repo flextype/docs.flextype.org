@@ -12,10 +12,23 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Site;
 
 use Flextype\Plugin\Site\Controllers\SiteController;
+use Flextype\Plugin\Site\Models\Themes;
+
+/**
+ * Add themes service to Flextype container
+ */
+$flextype->container()['themes'] = static function () use ($flextype) {
+    return new Themes($flextype);
+};
+
+/**
+ * Init themes
+ */
+$flextype->container()['themes']->init($flextype);
 
 /**
  * Add site controller to Flextype container
  */
-$flextype['SiteController'] = static function ($container) {
-    return new SiteController($container);
+$flextype->container()['SiteController'] = static function () use ($flextype) {
+    return new SiteController($flextype);
 };

@@ -9,16 +9,15 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_Extension_GlobalsInterface;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 
-class CsrfTwigExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
+class CsrfTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -31,13 +30,13 @@ class CsrfTwigExtension extends Twig_Extension implements Twig_Extension_Globals
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         // CSRF token name and value
-        $csrfNameKey  = $this->flextype->csrf->getTokenNameKey();
-        $csrfValueKey = $this->flextype->csrf->getTokenValueKey();
-        $csrfName     = $this->flextype->csrf->getTokenName();
-        $csrfValue    = $this->flextype->csrf->getTokenValue();
+        $csrfNameKey  = $this->flextype->container('csrf')->getTokenNameKey();
+        $csrfValueKey = $this->flextype->container('csrf')->getTokenValueKey();
+        $csrfName     = $this->flextype->container('csrf')->getTokenName();
+        $csrfValue    = $this->flextype->container('csrf')->getTokenValue();
 
         return [
             'csrf'   => [
@@ -64,7 +63,7 @@ class CsrfTwigExtension extends Twig_Extension implements Twig_Extension_Globals
     public function getFunctions() : array
     {
         return [
-            new Twig_SimpleFunction('csrf', [$this, 'csrf'], ['is_safe' => ['html']]),
+            new \Twig\TwigFunction('csrf', [$this, 'csrf'], ['is_safe' => ['html']]),
         ];
     }
 
@@ -73,7 +72,7 @@ class CsrfTwigExtension extends Twig_Extension implements Twig_Extension_Globals
      */
     public function csrf() : string
     {
-        return '<input type="hidden" name="' . $this->flextype->csrf->getTokenNameKey() . '" value="' . $this->flextype->csrf->getTokenName() . '">' .
-               '<input type="hidden" name="' . $this->flextype->csrf->getTokenValueKey() . '" value="' . $this->flextype->csrf->getTokenValue() . '">';
+        return '<input type="hidden" name="' . $this->flextype->container('csrf')->getTokenNameKey() . '" value="' . $this->flextype->container('csrf')->getTokenName() . '">' .
+               '<input type="hidden" name="' . $this->flextype->container('csrf')->getTokenValueKey() . '" value="' . $this->flextype->container('csrf')->getTokenValue() . '">';
     }
 }

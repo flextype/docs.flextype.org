@@ -9,16 +9,16 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_Extension_GlobalsInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 use Flextype\Component\Arrays\Arrays;
 
-class ArraysTwigExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
+class ArraysTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -31,7 +31,7 @@ class ArraysTwigExtension extends Twig_Extension implements Twig_Extension_Globa
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         return [
             'arrays' => new ArraysTwig($this->flextype),
@@ -42,9 +42,9 @@ class ArraysTwigExtension extends Twig_Extension implements Twig_Extension_Globa
 class ArraysTwig
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor

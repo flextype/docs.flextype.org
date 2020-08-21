@@ -9,17 +9,16 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
 use Slim\Http\Environment;
 use Slim\Http\Uri;
 
-class UrlTwigExtension extends Twig_Extension
+class UrlTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -37,7 +36,7 @@ class UrlTwigExtension extends Twig_Extension
     public function getFunctions() : array
     {
         return [
-            new Twig_SimpleFunction('url', [$this, 'url'], ['is_safe' => ['html']])
+            new \Twig\TwigFunction('url', [$this, 'url'], ['is_safe' => ['html']])
         ];
     }
 
@@ -46,8 +45,8 @@ class UrlTwigExtension extends Twig_Extension
      */
     public function url() : string
     {
-        if ($this->flextype->registry->has('flextype.settings.url') && $this->flextype->registry->get('flextype.settings.url') != '') {
-            return $this->flextype->registry->get('flextype.settings.url');
+        if ($this->flextype->container('registry')->has('flextype.settings.url') && $this->flextype->container('registry')->get('flextype.settings.url') != '') {
+            return $this->flextype->container('registry')->get('flextype.settings.url');
         } else {
             return Uri::createFromEnvironment(new Environment($_SERVER))->getBaseUrl();
         }

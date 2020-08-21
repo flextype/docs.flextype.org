@@ -4,6 +4,6 @@ namespace Flextype\Plugin\Sitemap;
 
 use Flextype\Plugin\Sitemap\Controllers\SitemapController;
 
-$flextype['SitemapController'] = function ($container) {
-    return new SitemapController($container);
+$flextype->container()['SitemapController'] = function () use ($flextype) {
+    return new SitemapController($flextype);
 };

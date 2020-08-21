@@ -17,9 +17,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use function ltrim;
 use Flextype\Component\Filesystem\Filesystem;
-use Flextype\App\Foundation\Container;
 
-class SiteController extends Container
+class SiteController
 {
     /**
      * Current entry data array
@@ -28,6 +27,19 @@ class SiteController extends Container
      * @access private
      */
     public $entry = [];
+
+    /**
+     * Flextype
+     */
+    protected $flextype;
+
+    /**
+     * __construct
+     */
+    public function __construct($flextype)
+    {
+        $this->flextype = $flextype;
+    }
 
     /**
      * Index page
@@ -49,13 +61,13 @@ class SiteController extends Container
 
         // If uri is empty then it is main entry else use entry uri
         if ($uri === '/') {
-            $entry_uri = $this->registry->get('plugins.site.settings.entries.main');
+            $entry_uri = $this->flextype->container('registry')->get('plugins.site.settings.entries.main');
         } else {
             $entry_uri = ltrim($uri, '/');
         }
 
         // Get entry body
-        $entry_body = $this->entries->fetch($entry_uri);
+        $entry_body = $this->flextype->container('entries')->fetch($entry_uri);
 
         // is entry not found
         $is_entry_not_found = false;
@@ -79,7 +91,7 @@ class SiteController extends Container
         $this->entry = $entry;
 
         // Run event onSiteEntryAfterInitialized
-        $this->emitter->emit('onSiteEntryAfterInitialized');
+        $this->flextype->container('emitter')->emit('onSiteEntryAfterInitialized');
 
         // Return in JSON Format
         if ($is_json) {
@@ -91,7 +103,9 @@ class SiteController extends Container
         }
 
         // Set template path for current entry
-        $path = 'themes/' . $this->registry->get('plugins.site.settings.theme') . '/' . (empty($this->entry['template']) ? 'templates/default' : 'templates/' . $this->entry['template']) . '.html';
+        $path = 'themes/' . $this->flextype->container('registry')->get('plugins.site.settings.theme') . '/' . (empty($this->entry['template']) ? 'templates/default' : 'templates/' . $this->entry['template']) . '.html';
+
+        self::includeCurrentThemeBootstrap($this->flextype);
 
         if (! Filesystem::has(PATH['project'] . '/' . $path)) {
             return $response->write("Template {$this->entry['template']} not found");
@@ -100,13 +114,21 @@ class SiteController extends Container
         if ($uri === '/') {
             return $response->withRedirect('./en');
         }
-        
 
         if ($is_entry_not_found) {
-            return $this->twig->render($response->withStatus(404), $path, ['locale' => explode('/',$uri)[1], 'entry' => $this->entry, 'query' => $query, 'uri' => $uri]);
+            return $this->flextype->container('twig')->render($response->withStatus(404), $path, ['locale' => explode('/',$uri)[1], 'entry' => $this->entry, 'query' => $query, 'uri' => $uri]);
         }
 
-        return $this->twig->render($response, $path, ['locale' => explode('/',$uri)[1], 'entry' => $this->entry, 'query' => $query, 'uri' => $uri]);
+        return $this->flextype->container('twig')->render($response, $path, ['locale' => explode('/',$uri)[1], 'entry' => $this->entry, 'query' => $query, 'uri' => $uri]);
+    }
+
+    private static function includeCurrentThemeBootstrap($flextype)
+    {
+        $bootstrap_path = 'themes/' . $flextype->container('registry')->get('plugins.site.settings.theme') . '/bootstrap.php';
+
+        if (Filesystem::has(PATH['project'] . '/' . $bootstrap_path)) {
+            include_once PATH['project'] . '/' . $bootstrap_path;
+        }
     }
 
     /**
@@ -119,10 +141,10 @@ class SiteController extends Container
     public function error404() : array
     {
         return [
-            'title'       => $this->registry->get('plugins.site.settings.entries.error404.title'),
-            'description' => $this->registry->get('plugins.site.settings.entries.error404.description'),
-            'content'     => $this->registry->get('plugins.site.settings.entries.error404.content'),
-            'template'    => $this->registry->get('plugins.site.settings.entries.error404.template'),
+            'title'       => $this->flextype->container('registry')->get('plugins.site.settings.entries.error404.title'),
+            'description' => $this->flextype->container('registry')->get('plugins.site.settings.entries.error404.description'),
+            'content'     => $this->flextype->container('registry')->get('plugins.site.settings.entries.error404.content'),
+            'template'    => $this->flextype->container('registry')->get('plugins.site.settings.entries.error404.template'),
         ];
     }
 }

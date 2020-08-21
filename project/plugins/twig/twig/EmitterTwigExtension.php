@@ -9,15 +9,15 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_Extension_GlobalsInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 
-class EmitterTwigExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
+class EmitterTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -30,7 +30,7 @@ class EmitterTwigExtension extends Twig_Extension implements Twig_Extension_Glob
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         return [
             'emitter' => new EmitterTwig($this->flextype),
@@ -41,9 +41,9 @@ class EmitterTwigExtension extends Twig_Extension implements Twig_Extension_Glob
 class EmitterTwig
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -58,7 +58,7 @@ class EmitterTwig
      */
     public function emit($event)
     {
-        return $this->flextype['emitter']->emit($event);
+        return $this->flextype->container('emitter')->emit($event);
     }
 
     /**
@@ -66,6 +66,6 @@ class EmitterTwig
      */
     public function emitBatch(array $events)
     {
-        return $this->flextype['emitter']->emitBatch($events);
+        return $this->flextype->container('emitter')->emitBatch($events);
     }
 }

@@ -1,30 +1,30 @@
 ---
 title: Registry
 breadcrumbs:
-  1:
+  -
     title: "Core Concepts"
     link: "[url]/en/core/"
 on_this_page:
-  1:
+  -
     title: "Methods"
     link: "methods"
     level2:
-      1:
+      -
         title: "get()"
         link: "get"
-      2:
+      -
         title: "set()"
         link: "set"
-      3:
+      -
         title: "has()"
         link: "has"
-      4:
+      -
         title: "all()"
         link: "all"
-      5:
+      -
         title: "delete()"
         link: "delete"
-      6:
+      -
         title: "flush()"
         link: "flush"
 ---
@@ -43,27 +43,27 @@ A registry is a container for storing objects and values in the Flextype applica
         </thead>
         <tbody>
             <tr>
-                <td><a href="#get"><code>get()</code></a></a></td>
+                <td><a href="#methods-get">get()</a></a></td>
                 <td>Get item from the registry.</td>
             </tr>
             <tr>
-                <td><a href="#set"><code>set()</code></a></td>
+                <td><a href="#methods-set">set()</a></td>
                 <td>Registers or update a given value under a given name.</td>
             </tr>
             <tr>
-                <td><a href="#has"><code>has()</code></a></td>
+                <td><a href="#methods-has">has()</a></td>
                 <td>Checks if an object with this name is in the registry.</td>
             </tr>
             <tr>
-                <td><a href="#all"><code>all()</code></a></td>
+                <td><a href="#methods-all">all()</a></td>
                 <td>Get all values in the register.</td>
             </tr>
             <tr>
-                <td><a href="#delete"><code>delete()</code></a></td>
+                <td><a href="#methods-delete">delete()</a></td>
                 <td>Delete a value from the registry.</td>
             </tr>
             <tr>
-                <td><a href="#flush"><code>flush()</code></a></td>
+                <td><a href="#methods-flush">flush()</a></td>
                 <td>Flush all values from the registry.</td>
             </tr>
         </tbody>
