@@ -496,13 +496,13 @@ Fetch single entry `movies/sg-1/season-5/episode-21`
 
 ```php
 // Fetch single entry: movies/sg-1/season-5/episode-21
-$data = $flextype->container('entries')->fetch('movies/sg-1/season-5/episode-21');
+$data = flextype('entries')->fetch('movies/sg-1/season-5/episode-21');
 
 // Fetch collections of entries episodes in movies/sg-1/season-5
-$data = $flextype->container('entries')->fetch('movies/sg-1/season-5', true);
+$data = flextype('entries')->fetch('movies/sg-1/season-5', true);
 
 // Fetch collections of entries in movies/sg-1 and filter them.
-$data = $flextype->container('entries')->fetch('movies/sg-1', true, $filter);
+$data = flextype('entries')->fetch('movies/sg-1', true, $filter);
 ```
 
 `$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and finder filter.
@@ -516,7 +516,7 @@ Fetch single entry.
 Fetch single entry `movies/sg-1/season-5/episode-21`
 
 ```php
-$data = $flextype->container('entries')->fetchSingle('movies/sg-1/season-5/episode-21');
+$data = flextype('entries')->fetchSingle('movies/sg-1/season-5/episode-21');
 ```
 
 ##### <a name="methods-fetchCollection"></a> `fetchCollection()`
@@ -528,13 +528,13 @@ Fetch entries collection.
 Fetch collections of entries episodes in `movies/sg-1/season-5`
 
 ```php
-$data = $flextype->container('entries')->fetchCollection('movies/sg-1/season-5');
+$data = flextype('entries')->fetchCollection('movies/sg-1/season-5');
 ```
 
 Fetch collections of entries in `movies/sg-1` and filter them.
 
 ```php
-$data = $flextype->container('entries')->fetchCollection('movies/sg-1/season-5', $filter);
+$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $filter);
 ```
 
 `$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
@@ -558,7 +558,7 @@ $data = [
         ];
 
 
-$flextype->container('entries')->create('movies/sg-1/season-5/episode-22', $data);
+flextype('entries')->create('movies/sg-1/season-5/episode-22', $data);
 ```
 
 ##### <a name="methods-update"></a> `update()`
@@ -573,7 +573,7 @@ Update entry `episode-22` in `movies/sg-1/season-5`
 $data = ['soundtracks' => 'Joel Goldsmith'];
 
 
-$flextype->container('entries')->update('movies/sg-1/season-5/episode-22', $data);
+flextype('entries')->update('movies/sg-1/season-5/episode-22', $data);
 ```
 
 ##### <a name="methods-rename"></a> `rename()`
@@ -585,7 +585,7 @@ Rename entry.
 Rename entry `episode-22` to `episode-23` in `movies/sg-1/season-5`
 
 ```php
-$flextype->container('entries')->rename('movies/sg-1/season-5/episode-22',
+flextype('entries')->rename('movies/sg-1/season-5/episode-22',
                                        'movies/sg-1/season-5/episode-23');
 ```
 
@@ -598,7 +598,7 @@ Copy entry.
 Copy entry `episode-23` to `episode-22` in `movies/sg-1/season-5`
 
 ```php
-$flextype->container('entries')->rename('movies/sg-1/season-5/episode-23',
+flextype('entries')->rename('movies/sg-1/season-5/episode-23',
                                        'movies/sg-1/season-5/episode-22');
 ```
 
@@ -611,7 +611,7 @@ Delete entry.
 Delete entry `episode-23` in `movies/sg-1/season-5`
 
 ```php
-$flextype->container('entries')->delete('movies/sg-1/season-5/episode-23');
+flextype('entries')->delete('movies/sg-1/season-5/episode-23');
 ```
 
 ##### <a name="methods-has"></a> `has()`
@@ -623,7 +623,7 @@ Check whether entry exists.
 Check whether entry `episode-23` exists in `movies/sg-1/season-5`
 
 ```php
-if ($flextype->container('entries')->has('movies/sg-1/season-5/episode-23')) {
+if (flextype('entries')->has('movies/sg-1/season-5/episode-23')) {
     // do something...
 }
 ```
@@ -637,7 +637,7 @@ Get entry file location
 Check whether entry `episode-23` exists in `movies/sg-1/season-5`
 
 ```php
-$data = $flextype->container('entries')->getFileLocation('movies/sg-1/season-5/episode-23');
+$data = flextype('entries')->getFileLocation('movies/sg-1/season-5/episode-23');
 ```
 
 ##### <a name="methods-getDirLocation"></a> `getDirLocation()`
@@ -649,5 +649,5 @@ Get entry directory location
 Get entry `episode-23` exists in `movies/sg-1/season-5`
 
 ```php
-$data = $flextype->container('entries')->getDirLocation('movies/sg-1/season-5/episode-23');
+$data = flextype('entries')->getDirLocation('movies/sg-1/season-5/episode-23');
 ```

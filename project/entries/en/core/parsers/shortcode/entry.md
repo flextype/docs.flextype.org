@@ -141,7 +141,7 @@ Add shortcode handler.
 **Examples**
 
 ```php
-$flextype->container('shortcode')->addHandler('message', function () {
+flextype('shortcode')->addHandler('message', function () {
     return "Indeed. – Teal'c";
 });
 ```
@@ -153,11 +153,11 @@ Add event handler.
 **Examples**
 
 ```php
-$flextype->container('shortcode')->addHandler('raw', static function (ShortcodeInterface $s) {
+flextype('shortcode')->addHandler('raw', static function (ShortcodeInterface $s) {
     return $s->getContent();
 });
 
-$flextype->container('shortcode')->addEventHandler(Events::FILTER_SHORTCODES, new FilterRawEventHandler(['raw']));
+flextype('shortcode')->addEventHandler(Events::FILTER_SHORTCODES, new FilterRawEventHandler(['raw']));
 ```
 
 More details about events: https://github.com/thunderer/Shortcode#events
@@ -173,7 +173,7 @@ Processes text and replaces shortcodes.
 ```php
 $shortcode = 'text with [message]';
 
-$html = $flextype->container('shortcode')->process($shortcode);
+$html = flextype('shortcode')->process($shortcode);
 ```
 
 ##### <a name="methods-parse"></a> `parse()`
@@ -185,7 +185,7 @@ Parses text into shortcodes.
 ```php
 $shortcode = 'text with [message]';
 
-$text = $flextype->container('shortcode')->parse($shortcode);
+$text = flextype('shortcode')->parse($shortcode);
 ```
 
 ##### <a name="methods-getCacheID"></a> `getCacheID()`
@@ -197,5 +197,5 @@ Get Cache ID for shortcode
 ```php
 $shortcode = 'text with [message]';
 
-$cache_id = $flextype->container('shortcode')->getCacheID($shortcode);
+$cache_id = flextype('shortcode')->getCacheID($shortcode);
 ```
