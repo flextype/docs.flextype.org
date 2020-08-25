@@ -153,9 +153,7 @@ Fetch file(s).
 
 ```php
 // Fetch single image
-$cover = $flextype
-                ->container('media_files')
-                ->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg');
+$cover = flextype('media_files')->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg');
 
 // Now you may get each image field from image meta data.
 echo $cover['title'];
@@ -169,9 +167,7 @@ echo $cover['url'];
 echo $cover['full_url'];
 
 // Fetch images collection
-$images = $flextype
-                ->container('media_files')
-                ->fetch('entries/movies/sg-1/season-5/episode-21/images/');
+$images = flextype('media_files')->fetch('entries/movies/sg-1/season-5/episode-21/images/');
 
 ```
 
@@ -183,9 +179,7 @@ Fetch single file.
 
 ```php
 // Fetch single image
-$cover = $flextype
-                ->container('media_files')
-                ->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg');
+$cover = flextype('media_files')->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg');
 
 // Now you may get each image field from image meta data.
 echo $cover['title'];
@@ -207,9 +201,7 @@ Fetch files collection.
 
 ```php
 // Fetch images collection
-$images = $flextype
-                ->container('media_files')
-                ->fetchCollection('entries/movies/sg-1/season-5/episode-21');
+$images = flextype('media_files')->fetchCollection('entries/movies/sg-1/season-5/episode-21');
 
 ```
 ##### <a name="methods-files-rename"></a> `rename()`
