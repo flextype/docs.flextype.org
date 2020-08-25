@@ -1209,5 +1209,5 @@ Takes a MARKDOWN encoded string and converts it into a HTML
 ```php
 $markdown = '**this text is bold**';
 
-$html = $flextype->container('markdown')->parse($markdown);
+$html = flextype('markdown')->parse($markdown);
 ```

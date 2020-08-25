@@ -81,7 +81,7 @@ Get item from the registry.
 Get `flextype.settings.timezone` item from the registry.
 
 ```php
-$flextype_timezone = $flextype->container('registry')->get('flextype.settings.timezone');
+$flextype_timezone = flextype('registry')->get('flextype.settings.timezone');
 ```
 
 ##### <a name="set"></a> `set()`
@@ -93,7 +93,7 @@ Registers or update a given value under a given name.
 Set `flextype.settings.timezone` item in the registry.
 
 ```php
-$flextype->container('registry')->set('flextype.settings.timezone', 'America/New_York');
+flextype('registry')->set('flextype.settings.timezone', 'America/New_York');
 ```
 
 ##### <a name="has"></a> `has()`
@@ -105,7 +105,7 @@ Checks if an config item with this key name is in the config.
 Checks if an `flextype.settings.timezone` item with this key name is in the registry.
 
 ```php
-if ($flextype->container('registry')->has('flextype.settings.timezone')) {
+if (flextype('registry')->has('flextype.settings.timezone')) {
     // do something...
 }
 ```
@@ -117,7 +117,7 @@ Get all values in the register.
 **Examples**
 
 ```php
-$registry = $flextype->container('registry')->all();
+$registry = flextype('registry')->all();
 ```
 
 ##### <a name="delete"></a> `delete()`
@@ -127,7 +127,7 @@ Delete a value from the registry.
 **Examples**
 
 ```php
-$flextype->container('registry')->delete('flextype.settings.timezone');
+flextype('registry')->delete('flextype.settings.timezone');
 ```
 
 ##### <a name="flush"></a> `flush()`
@@ -137,5 +137,5 @@ Flush all values from the registry.
 **Examples**
 
 ```php
-$flextype->container('registry')->flush();
+flextype('registry')->flush();
 ```
