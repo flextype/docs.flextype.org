@@ -40,6 +40,12 @@ on_this_page:
       -
         title: "cache"
         link: "default-variables-cache"
+      -
+        title: "slug"
+        link: "default-variables-slug"
+      -
+        title: "id"
+        link: "default-variables-id"
   2:
     title: "Custom Variables"
     link: "custom-variables"
