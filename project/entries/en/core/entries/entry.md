@@ -113,30 +113,41 @@ Each entry file `entry.md` should be placed in its own folder.
 
 Folder names should also be valid **slugs**. Slugs are entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.
 
-<div class="table">
-    <table>
-        <thead>
-            <tr>
-                <th>Physical Location </th>
-                <th>URL</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>project/entries/home/entry.md</td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>project/entries/blog/my-post/entry.md </td>
-                <td>/blog/my-post</td>
-            </tr>
-            <tr>
-                <td>project/entries/a/very/long/url/entry.md</td>
-                <td>/a/very/long/url</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+##### Examples
+
+```
+# Physical Location
+project/entries/movies/sg-1/entry.md
+
+# ID (URL)
+movies/sg-1
+
+# Slug
+sg-1
+```
+
+```
+# Physical Location
+project/entries/movies/sg-1/season-5/entry.md
+
+# ID (URL)
+movies/sg-1/season-5
+
+# Slug
+season-5
+```
+
+```
+# Physical Location
+project/entries/movies/sg-1/season-5/episode-21/entry.md
+
+# ID (URL)
+movies/sg-1/season-5/episode-21
+
+# Slug
+episode-21
+```
+
 
 ### <a name="default-variables"></a> Default Variables
 
