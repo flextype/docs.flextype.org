@@ -23,6 +23,7 @@ txt:
       license: License
     core:
       title: Core Concepts
+      flextype: Flextype
       entries: Entries
       plugins: Plugins
       collections: Collections
