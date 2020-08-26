@@ -138,7 +138,7 @@ flextype()
 
 // Add POST route
 flextype()
-  ->get('/save-form', 'CustomServiceController:index')
+  ->get('/save-form', 'CustomServiceController:saveForm')
   ->setName('service.form.index');
 ```
 
