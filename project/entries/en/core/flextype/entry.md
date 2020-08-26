@@ -1,6 +1,6 @@
 ---
 title: Flextype
-description:
+description: Common part of Flextype is a Flextype Core Class that extends Slim Framework that we are using under the hood. Slim is amazing PHP micro framework that helps quickly write simple yet powerful web applications and APIs.
 breadcrumbs:
   -
     title: "Core Concepts"
@@ -58,3 +58,88 @@ With help of Flextype Core Class we are able to access all features and develop 
         </tbody>
     </table>
 </div>
+
+### Methods Details
+
+##### <a name="methods-getInstance"></a> `getInstance()`
+
+Get the available Flextype Application instance.
+
+**Examples**
+
+```php
+$instance = Flextype::getInstance();
+```
+
+##### <a name="methods-getVersion"></a> `getVersion()`
+
+Get current Flextype version.
+
+**Examples**
+
+```php
+$version = Flextype::getInstance()->getVersion();
+```
+
+##### <a name="methods-container"></a> `container()`
+
+Get and Set Dependency Injection Container.
+
+**Examples**
+
+```php
+// Get container object
+$container = Flextype::getInstance()->container();
+
+// Set new container
+Flextype::getInstance()->container()['name'] = function () {
+    return new ServiceName();
+};
+
+// Get specific container object by name
+$entries = Flextype::getInstance()->container('entries');
+```
+
+We recommend to use our `flextype()` helper function to access all Flexype Application methods, set and get containers.
+
+**Examples**
+
+```php
+// Get the available Flextype Application instance.
+$instance = flextype();
+
+// Get current Flextype version.
+$version = flextype()->getVersion();
+
+// Get container object
+$container = flextype()->container();
+
+// Set new container
+flextype()->container()['name'] = function () {
+    return new ServiceName();
+};
+
+// Get specific container object by name
+$entries = flextype()->container('entries');
+
+// ... or even better :)
+$entries = flextype('entries');
+```
+
+With `flextype()` helper function you can access Flexype Application and all available Slim Framework methods.
+
+**Examples**
+
+```php
+// Add GET route
+flextype()
+  ->get('/dashboard', 'DashboardController:index')
+  ->setName('admin.dashboard.index');
+
+// Add POST route
+flextype()
+  ->get('/save-form', 'CustomServiceController:saveForm')
+  ->setName('service.form.index');
+```
+
+Check all available methods: http://slimframework.com/docs/v3/
