@@ -1,6 +1,6 @@
 ---
 title: Flextype
-description:
+description: Common part of Flextype is a Flextype Core Class that extends Slim Framework that we are using under the hood. Slim is amazing PHP micro framework that helps quickly write simple yet powerful web applications and APIs.
 breadcrumbs:
   -
     title: "Core Concepts"
