@@ -119,11 +119,76 @@ Event Hooks are a way for one piece of code to interact/modify another piece of 
             </tr>
             <tr>
                 <td>onEntryAfterInitialized</td>
-                <td>Fires when current entry requested by fetchSingle() method has been loaded into the entry object.</td>
+                <td>
+                    Fires when current entry requested by fetchSingle() method has been loaded into the entry object.
+                </td>
+            </tr>
+            <tr>
+                <td>onEntryAfterCacheInitialized</td>
+                <td>
+                    Fires when current entry requested by fetchSingle() method has been loaded from cache into the entry object.
+                </td>
             </tr>
             <tr>
                 <td>onEntriesAfterInitialized</td>
-                <td>Fires when current entries collection requested by fetchCollection() method has been loaded into the entries object.</td>
+                <td>
+                    Fires when current entries collection requested by fetchCollection() method has been loaded into the entries object.
+                </td>
+            </tr>
+            <tr>
+                <td>onEntryCreate</td>
+                <td>
+                    Fires on new entry create.
+                </td>
+            </tr>
+            <tr>
+                <td>onEntryUpdate</td>
+                <td>
+                    Fires on entry update.
+                </td>
+            </tr>
+            <tr>
+                <td>onEntryRename</td>
+                <td>
+                    Fires on entry rename.
+                </td>
+            </tr>
+            <tr>
+                <td>onEntryCopy</td>
+                <td>
+                    Fires on entry copy.
+                </td>
+            </tr>
+            <tr>
+                <td>onEntryDelete</td>
+                <td>
+                    Fires on entry delete.
+                </td>
+            </tr>
+
+            <tr>
+                <td>onCacheBeforePurge</td>
+                <td>
+                    Fires on cache before purge.
+                </td>
+            </tr>
+            <tr>
+                <td>onCacheAfterPurge</td>
+                <td>
+                    Fires on cache after purge.
+                </td>
+            </tr>
+            <tr>
+                <td>onCacheBeforePurgeAll</td>
+                <td>
+                    Fires on cache before purge all.
+                </td>
+            </tr>
+            <tr>
+                <td>onCacheAfterPurgeAll</td>
+                <td>
+                    Fires on cache after purge all.
+                </td>
             </tr>
         </tbody>
     </table>
