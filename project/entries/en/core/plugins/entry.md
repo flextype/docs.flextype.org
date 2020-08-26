@@ -31,7 +31,7 @@ Plugins are available via the Flextype Plugin Directory.
 2. Create new folder `project/plugins/PLUGIN_NAME`
 3. Download PLUGIN_NAME and unzip plugin content to the folder `project/plugins/PLUGIN_NAME`
 
-### <a name="installation"></a> Configuration
+### <a name="configuration"></a> Configuration
 
 
 You can easily access plugin configuration and plugin information by Flextype Registry API and Registry Rest API.
