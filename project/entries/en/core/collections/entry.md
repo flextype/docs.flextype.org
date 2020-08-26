@@ -190,6 +190,10 @@ Flextype provide a powerful functionality to work with data collections. You may
                 <td>Appends the where expression to evaluate when this Criteria is searched for using an OR with previous expression.</td>
             </tr>
             <tr>
+                <td><a href="#only">only()</a></td>
+                <td>Get a subset of the items from the given collection.</td>
+            </tr>
+            <tr>
                 <td><a href="#order-by">orderBy()</a></td>
                 <td>Sets the ordering of the result of this Criteria. Keys are field and values are the order, being either ASC or DESC.</td>
             </tr>
@@ -363,6 +367,22 @@ $movies = collect($drama)
             ->where('directed_by', 'eq', 'Denis Villeneuve')
             ->andWhere('year', 'eq', 2020);
             ->orWhere('year', 'eq', 2019);
+```
+
+##### <a name="only"></a> `only()`
+
+Get a subset of the items from the given collection.
+
+**Examples**
+
+Collect drama movies items: title, id
+
+```php
+// Fetch movies drama collection
+$drama = flextype('entries')->fetchCollection('movies/drama');
+
+// Collect drama movies items: title, id
+$movies = collect($drama)->only(['title', 'id']);
 ```
 
 ##### <a name="order-by"></a> `orderBy()`
