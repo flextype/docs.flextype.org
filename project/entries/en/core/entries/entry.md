@@ -518,11 +518,11 @@ $data = flextype('entries')->fetch('movies/sg-1/season-5/episode-21');
 // Fetch collections of entries episodes in movies/sg-1/season-5
 $data = flextype('entries')->fetch('movies/sg-1/season-5', true);
 
-// Fetch collections of entries in movies/sg-1 and filter them.
-$data = flextype('entries')->fetch('movies/sg-1', true, $filter);
+// Fetch collections of entries in movies/sg-1 and param them.
+$data = flextype('entries')->fetch('movies/sg-1', true, $param);
 ```
 
-`$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and finder filter.
+`$param` is an array of valid values for [filter()](./collections#filter) and finder filter.
 
 ##### <a name="methods-fetchSingle"></a> `fetchSingle()`
 
@@ -548,13 +548,13 @@ Fetch collections of entries episodes in `movies/sg-1/season-5`
 $data = flextype('entries')->fetchCollection('movies/sg-1/season-5');
 ```
 
-Fetch collections of entries in `movies/sg-1` and filter them.
+Fetch collections of entries in `movies/sg-1` and param them.
 
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $filter);
+$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $param);
 ```
 
-`$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
+`$param` is an array of valid values for [filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
 
 ##### <a name="methods-create"></a> `create()`
 
