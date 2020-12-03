@@ -69,8 +69,8 @@ on_this_page:
         title: "update()"
         link: "methods-update"
       5:
-        title: "rename()"
-        link: "methods-rename"
+        title: "move()"
+        link: "methods-move"
       6:
         title: "copy()"
         link: "methods-copy"
@@ -475,8 +475,8 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
                 <td>Update entry</td>
             </tr>
             <tr>
-                <td><a href="#methods-rename">rename()</a></td>
-                <td>Rename entry</td>
+                <td><a href="#methods-move">move()</a></td>
+                <td>Move entry</td>
             <tr>
                 <td><a href="#methods-copy">copy()</a></td>
                 <td>Copy entry</td>
@@ -593,17 +593,17 @@ $data = ['soundtracks' => 'Joel Goldsmith'];
 flextype('entries')->update('movies/sg-1/season-5/episode-22', $data);
 ```
 
-##### <a name="methods-rename"></a> `rename()`
+##### <a name="methods-move"></a> `move()`
 
-Rename entry.
+Move entry.
 
 **Examples**
 
 Rename entry `episode-22` to `episode-23` in `movies/sg-1/season-5`
 
 ```php
-flextype('entries')->rename('movies/sg-1/season-5/episode-22',
-                                       'movies/sg-1/season-5/episode-23');
+flextype('entries')->move('movies/sg-1/season-5/episode-22',
+                          'movies/sg-1/season-5/episode-23');
 ```
 
 ##### <a name="methods-copy"></a> `copy()`
