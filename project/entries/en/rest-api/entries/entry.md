@@ -195,14 +195,15 @@ Fetch Movies Collection where **director** is equal to **Cathy Yan** and where y
 
 <div class="file-header">Request</div>
 ```http
-GET /api/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[and_where][0][key]=year&filter[and_where][0][expr]=eq&filter[and_where][0][value]=2020&filter[and_where][1][key]=genre&filter[and_where][1][expr]=contains&filter[and_where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
+GET /api/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[where][0][key]=year&filter[where][0][expr]=eq&filter[where][0][value]=2020&filter[where][1][key]=genre&filter[where][1][expr]=contains&filter[where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 ### <a name="filtering"></a> Filtering
 
 With the filter query you're able to search items in a collection that matches the filter's conditions.
 
-`filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
+`filter` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
+
 
 ### <a name="create-entry"></a> Create entry
 
