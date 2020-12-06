@@ -24,8 +24,8 @@ on_this_page:
     title: "Update entry"
     link: "update-entry"
   6:
-    title: "Rename entry"
-    link: "rename-entry"
+    title: "Move entry"
+    link: "move-entry"
   7:
     title: "Copy entry"
     link: "copy-entry"
@@ -66,7 +66,7 @@ The Flextype Entries API organized around Representational State Transfer (REST)
             <tr>
                 <td>PUT</td>
                 <td>/api/entries</td>
-                <td>Rename entry</td>
+                <td>Move entry</td>
             </tr>
             <tr>
                 <td>PUT</td>
@@ -377,7 +377,7 @@ PATCH /api/entries
 }
 ```
 
-### <a name="rename-entry"></a> Rename entry
+### <a name="move-entry"></a> Move entry
 
 <div class="file-header">Request</div>
 ```http
@@ -421,11 +421,11 @@ PUT /api/entries
 </div>
 
 ##### Result
-Returns the entry item object for the entry item that was just renamed.
+Returns the entry item object for the entry item that was just moved.
 
 ##### Examples
 
-Rename entry **platform** to the **the-platform**
+Move entry **platform** to the **the-platform**
 
 <div class="file-header">Request</div>
 ```http
