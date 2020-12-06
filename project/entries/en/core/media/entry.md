@@ -13,9 +13,6 @@ on_this_page:
         title: "upload()"
         link: "methods-files-upload"
       -
-        title: "fetch()"
-        link: "methods-files-fetch"
-      -
         title: "fetchSingle()"
         link: "methods-files-fetchSingle"
       -
@@ -53,9 +50,6 @@ on_this_page:
     title: "Folders Methods"
     link: "folders-methods"
     level2:
-      -
-        title: "fetch()"
-        link: "methods-folders-fetch"
       -
         title: "fetchSingle()"
         link: "methods-folders-fetchSingle"
@@ -99,10 +93,6 @@ on_this_page:
             <tr>
                 <td><a href="#methods-files-upload">upload()</a></td>
                 <td>Upload media file.</td>
-            </tr>
-            <tr>
-                <td><a href="#methods-files-fetch">fetch()</a></td>
-                <td>Fetch file(s).</td>
             </tr>
             <tr>
                 <td><a href="#methods-files-fetchSingle">fetchSingle()</a></td>
