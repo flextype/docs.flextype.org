@@ -10,26 +10,29 @@ on_this_page:
     link: "methods"
     level2:
       -
+        title: "getInstance()"
+        link: "methods-getInstance"
+      -
         title: "get()"
-        link: "get"
+        link: "methods-get"
       -
         title: "set()"
-        link: "set"
+        link: "methods-set"
       -
         title: "has()"
-        link: "has"
+        link: "methods-has"
       -
         title: "all()"
-        link: "all"
+        link: "methods-all"
       -
         title: "delete()"
-        link: "delete"
+        link: "methods-delete"
       -
         title: "flush()"
-        link: "flush"
+        link: "methods-flush"
 ---
 
-A registry is a container for storing objects and values in the Flextype application space. By storing the value in a registry, the same object is always available throughout Flextype application. This mechanism is an alternative to using global storage.
+A registry is a container for storing objects and values in the Flextype application space. By storing the value in a registry, the same object is always available throughout Flextype application. This mechanism is an alternative to using global storage. Flextype Registry is build on top of [Atomastic Registry Component](https://github.com/atomastic/registry).
 
 ### <a name="methods"></a> Methods
 
@@ -43,28 +46,32 @@ A registry is a container for storing objects and values in the Flextype applica
         </thead>
         <tbody>
             <tr>
-                <td><a href="#methods-get">get()</a></a></td>
+                <td><a href="#methods-getInstance">getInstance()</a></td>
+                <td>Gets the instance via lazy initialization (created on first usage)</td>
+            </tr>
+            <tr>
+                <td><a href="#methods-get">get()</a></td>
                 <td>Get item from the registry.</td>
             </tr>
             <tr>
                 <td><a href="#methods-set">set()</a></td>
-                <td>Registers or update a given value under a given name.</td>
+                <td>Set an registry data to a given value using "dot" notation. If no key is given to the method, the entire registry data will be replaced.</td>
             </tr>
             <tr>
                 <td><a href="#methods-has">has()</a></td>
-                <td>Checks if an object with this name is in the registry.</td>
+                <td>Determine if the registry has a value for the given name.</td>
             </tr>
             <tr>
                 <td><a href="#methods-all">all()</a></td>
-                <td>Get all values in the register.</td>
+                <td>Get all items from the registry.</td>
             </tr>
             <tr>
                 <td><a href="#methods-delete">delete()</a></td>
-                <td>Delete a value from the registry.</td>
+                <td>Get item from the registry.</td>
             </tr>
             <tr>
                 <td><a href="#methods-flush">flush()</a></td>
-                <td>Flush all values from the registry.</td>
+                <td>Flush all items from the registry.</td>
             </tr>
         </tbody>
     </table>
@@ -72,9 +79,16 @@ A registry is a container for storing objects and values in the Flextype applica
 
 ### Methods Details
 
-##### <a name="get"></a> `get()`
+##### <a name="methods-getInstance"></a> `getInstance()`
 
-Get item from the registry.
+Gets the instance via lazy initialization (created on first usage)
+
+```php
+/**
+ * Gets the instance via lazy initialization (created on first usage)
+ */
+public static function getInstance(): Registry
+```
 
 **Examples**
 
@@ -84,9 +98,43 @@ Get `flextype.settings.timezone` item from the registry.
 $flextype_timezone = flextype('registry')->get('flextype.settings.timezone');
 ```
 
-##### <a name="set"></a> `set()`
+##### <a name="methods-get"></a> `get()`
 
-Registers or update a given value under a given name.
+Get item from the registry.
+
+```php
+/**
+ * Get item from the registry.
+ *
+ * @param  string $key     The name of the item to fetch.
+ * @param  mixed  $default Default value
+ */
+public function get(string $key, $default = null)
+```
+
+**Examples**
+
+Get `flextype.settings.timezone` item from the registry.
+
+```php
+$flextype_timezone = flextype('registry')->get('flextype.settings.timezone');
+```
+
+##### <a name="methods-set"></a> `set()`
+
+Set an registry data to a given value using "dot" notation. If no key is given to the method, the entire registry data will be replaced.
+
+```php
+/**
+ * Set an registry data to a given value using "dot" notation.
+ *
+ * If no key is given to the method, the entire registry data will be replaced.
+ *
+ * @param  string $key   Key
+ * @param  mixed  $value Value
+ */
+public function set(string $key, $value): self
+```
 
 **Examples**
 
@@ -96,9 +144,18 @@ Set `flextype.settings.timezone` item in the registry.
 flextype('registry')->set('flextype.settings.timezone', 'America/New_York');
 ```
 
-##### <a name="has"></a> `has()`
+##### <a name="methods-has"></a> `has()`
 
-Checks if an config item with this key name is in the config.
+Determine if the registry has a value for the given name.
+
+```php
+/**
+ * Determine if the registry has a value for the given name.
+ *
+ * @param  string|array $keys The keys of the registry item to check for existence.
+ */
+public function has($keys): bool
+```
 
 **Examples**
 
@@ -110,9 +167,16 @@ if (flextype('registry')->has('flextype.settings.timezone')) {
 }
 ```
 
-##### <a name="all"></a> `all()`
+##### <a name="methods-all"></a> `all()`
 
-Get all values in the register.
+Get all items from the registry.
+
+```php
+/**
+ * Get all items from the registry.
+ */
+public function all(): array
+```
 
 **Examples**
 
@@ -120,9 +184,18 @@ Get all values in the register.
 $registry = flextype('registry')->all();
 ```
 
-##### <a name="delete"></a> `delete()`
+##### <a name="methods-delete"></a> `delete()`
 
-Delete a value from the registry.
+Delete a items from the registry.
+
+```php
+/**
+ * Delete a items from the registry.
+ *
+ * @param  array|string $keys Keys
+ */
+public function delete($keys): self
+```
 
 **Examples**
 
@@ -130,9 +203,16 @@ Delete a value from the registry.
 flextype('registry')->delete('flextype.settings.timezone');
 ```
 
-##### <a name="flush"></a> `flush()`
+##### <a name="methods-flush"></a> `flush()`
 
 Flush all values from the registry.
+
+```php
+/**
+ * Flush all items from the registry.
+ */
+public function flush(): void
+```
 
 **Examples**
 

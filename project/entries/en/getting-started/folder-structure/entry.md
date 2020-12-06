@@ -35,9 +35,8 @@ The `project/` folder should contains entries, uploads, tokens, plugins, themes 
     <li><i class="fas fa-folder"></i> project</li>
 </ul>
 
-The `var/tmp/` folder is used to store temporary cached files that are automatically created by the Flextype to improve performance.
+The `var/` folder is used to store temporary cached files that are automatically created by the Flextype to improve performance.
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> var</li>
-    <li class="file-list-level-2"><i class="fas fa-folder"></i> cache</li>
 </ul>

@@ -24,9 +24,9 @@ on_this_page:
 Common part of Flextype is a Flextype Core Class that extends [Slim Framework](http://www.slimframework.com) that we are using under the hood. Slim is amazing PHP micro framework that helps quickly write simple yet powerful web applications and APIs.
 
 **Slim Framework Resources**
-* Website: http://slimframework.com
-* Documentation: http://slimframework.com/docs/v3/
-* Repository: https://github.com/slimphp/Slim
+* **Website:** [http://slimframework.com](http://slimframework.com)
+* **Documentation:** [http://slimframework.com/docs/v3/](http://slimframework.com/docs/v3/)
+* **Repository:** [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
 
 Getting back to Flextype Core.
 
@@ -65,6 +65,15 @@ With help of Flextype Core Class we are able to access all features and develop 
 
 Get the available Flextype Application instance.
 
+```php
+/**
+ * Returns Flextype Instance
+ *
+ * @param ContainerInterface|array $container Container.
+ */
+public static function getInstance($container = []): Flextype
+```
+
 **Examples**
 
 ```php
@@ -74,6 +83,13 @@ $instance = Flextype::getInstance();
 ##### <a name="methods-getVersion"></a> `getVersion()`
 
 Get current Flextype version.
+
+```php
+/**
+ * Returns the current Flextype version
+ */
+public function getVersion(): string
+```
 
 **Examples**
 
@@ -85,18 +101,27 @@ $version = Flextype::getInstance()->getVersion();
 
 Get and Set Dependency Injection Container.
 
+```php
+/**
+ * Get/Set Dependency Injection Container.
+ *
+ * @param string|null $name DI Container name.
+ */
+public function container(?string $name = null)
+```
+
 **Examples**
 
 ```php
-// Get container object
+// Get container object.
 $container = Flextype::getInstance()->container();
 
-// Set new container
+// Set new container.
 Flextype::getInstance()->container()['name'] = function () {
     return new ServiceName();
 };
 
-// Get specific container object by name
+// Get specific container object by name.
 $entries = Flextype::getInstance()->container('entries');
 ```
 
@@ -111,10 +136,10 @@ $instance = flextype();
 // Get current Flextype version.
 $version = flextype()->getVersion();
 
-// Get container object
+// Get container object.
 $container = flextype()->container();
 
-// Set new container
+// Set new container.
 flextype()->container()['name'] = function () {
     return new ServiceName();
 };
@@ -131,12 +156,12 @@ With `flextype()` helper function you can access Flexype Application and all ava
 **Examples**
 
 ```php
-// Add GET route
+// Add new GET route.
 flextype()
   ->get('/dashboard', 'DashboardController:index')
   ->setName('admin.dashboard.index');
 
-// Add POST route
+// Add new POST route.
 flextype()
   ->get('/save-form', 'CustomServiceController:saveForm')
   ->setName('service.form.index');

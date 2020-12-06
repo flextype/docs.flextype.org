@@ -54,7 +54,7 @@ Building this Content Management System, we focused on simplicity. To achieve th
 The underlying architecture of Flextype is built using well established and best-in-class technologies. This is to ensure that Flextype is simple to use and easy to extend. Some of these key technologies include:
 
 * [Slim PHP](http://www.slimframework.com): Framework for powerful web applications and APIs.
-* [Doctrine Project](https://www.doctrine-project.org): A set of decoupled and reusable PHP libraries for powerful web applications.
+* [Atomastic](https://atomastic.com): A set of decoupled and reusable PHP building blocks for kickass Web Applications.
 * [The PHP League](https://thephpleague.com): The League of Extraordinary PHP Packages well tested and using modern coding standards.
 * [Respect Validation](https://respect-validation.readthedocs.io/): The most awesome validation engine ever created for PHP.
 * [Thunderer Shortcode](https://github.com/thunderer/Shortcode): Advanced shortcode (BBCode) parser and engine for PHP.
@@ -81,4 +81,4 @@ Our crowdin projects:<br>
 
 ### Flextype Press kit
 
-You can find a summary about Flextype, including Flextype logos and press information, on our [press kit page.](https://flextype.org/en/press-kit)
+You can find a summary about Flextype, including Flextype logos and press information, on our [press kit page.](//flextype.org/en/press-kit)
