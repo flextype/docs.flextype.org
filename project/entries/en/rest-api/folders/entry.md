@@ -18,8 +18,8 @@ on_this_page:
     title: "Create folder"
     link: "create-folder"
   4:
-    title: "Rename folder"
-    link: "rename-folder"
+    title: "Move folder"
+    link: "move-folder"
   5:
     title: "Copy folder"
     link: "copy-folder"
@@ -55,7 +55,7 @@ The Flextype Folders API organized around Representational State Transfer (REST)
             <tr>
                 <td>PUT</td>
                 <td>/api/folders</td>
-                <td>Rename folder</td>
+                <td>Move folder</td>
             </tr>
             <tr>
                 <td>PUT</td>
@@ -244,7 +244,7 @@ POST /api/folders
 }
 ```
 
-### <a name="rename-folder"></a> Rename folder
+### <a name="move-folder"></a> Move folder
 
 <div class="file-header">Request</div>
 ```http
@@ -288,7 +288,7 @@ PUT /api/folders
 </div>
 
 ##### Result
-Returns the folders object for the folders that was just renamed
+Returns the folders object for the folders that was just moved.
 
 ##### Examples
 
