@@ -16,16 +16,11 @@ use const PHP_VERSION;
 class GlobalVarsTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -35,8 +30,6 @@ class GlobalVarsTwigExtension extends AbstractExtension implements GlobalsInterf
     {
         return [
             'PATH_PROJECT' => PATH['project'],
-            'PATH_CACHE' => PATH['cache'],
-            'PATH_LOGS' => PATH['logs'],
             'PHP_VERSION' => PHP_VERSION
         ];
     }

@@ -14,16 +14,11 @@ use Twig\Extension\AbstractExtension;
 class FlashTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -47,9 +42,9 @@ class FlashTwigExtension extends AbstractExtension
     public function getMessages(?string $key = null) : array
     {
         if ($key !== null) {
-            return $this->flextype->container('flash')->getMessage($key);
+            return flextype('flash')->getMessage($key);
         }
 
-        return $this->flextype->container('flash')->getMessages();
+        return flextype('flash')->getMessages();
     }
 }

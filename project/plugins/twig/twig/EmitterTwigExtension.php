@@ -15,16 +15,11 @@ use Twig\Extension\GlobalsInterface;
 class EmitterTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -33,7 +28,7 @@ class EmitterTwigExtension extends AbstractExtension implements GlobalsInterface
     public function getGlobals() : array
     {
         return [
-            'emitter' => new EmitterTwig($this->flextype),
+            'emitter' => new EmitterTwig(),
         ];
     }
 }
@@ -43,14 +38,14 @@ class EmitterTwig
     /**
      * Flextype Application
      */
-    protected $flextype;
+
 
     /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -58,7 +53,7 @@ class EmitterTwig
      */
     public function emit($event)
     {
-        return $this->flextype->container('emitter')->emit($event);
+        return flextype('emitter')->emit($event);
     }
 
     /**
@@ -66,6 +61,6 @@ class EmitterTwig
      */
     public function emitBatch(array $events)
     {
-        return $this->flextype->container('emitter')->emitBatch($events);
+        return flextype('emitter')->emitBatch($events);
     }
 }

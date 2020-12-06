@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Flextype\\Component\\Arrays\\Arrays' => $vendorDir . '/flextype-components/arrays/src/Arrays.php',
+    'Flextype\\Component\\Filesystem\\Filesystem' => $vendorDir . '/flextype-components/filesystem/Filesystem.php',
     'Flextype\\Plugin\\Site\\Controllers\\SiteController' => $baseDir . '/app/Controllers/SiteController.php',
     'Flextype\\Plugin\\Site\\Models\\Themes' => $baseDir . '/app/Models/Themes.php',
     'Middlewares\\TrailingSlash' => $vendorDir . '/middlewares/trailing-slash/src/TrailingSlash.php',

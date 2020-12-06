@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc5164cca78975a0ff46026281ef814fa
+class ComposerStaticInit3d173fb6fb5e00278f2b3f051ee85ef6
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -27,6 +27,11 @@ class ComposerStaticInitc5164cca78975a0ff46026281ef814fa
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
+        ),
+        'F' => 
+        array (
+            'Flextype\\Component\\Filesystem\\' => 30,
+            'Flextype\\Component\\Arrays\\' => 26,
         ),
     );
 
@@ -59,13 +64,21 @@ class ComposerStaticInitc5164cca78975a0ff46026281ef814fa
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
+        'Flextype\\Component\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/flextype-components/filesystem',
+        ),
+        'Flextype\\Component\\Arrays\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/flextype-components/arrays/src',
+        ),
     );
 
     public static $classMap = array (
-        'Flextype\\Plugin\\Twig\\Twig\\ArraysTwig' => __DIR__ . '/../..' . '/twig/ArraysTwigExtension.php',
+        'Flextype\\Component\\Arrays\\Arrays' => __DIR__ . '/..' . '/flextype-components/arrays/src/Arrays.php',
+        'Flextype\\Component\\Filesystem\\Filesystem' => __DIR__ . '/..' . '/flextype-components/filesystem/Filesystem.php',
         'Flextype\\Plugin\\Twig\\Twig\\ArraysTwigExtension' => __DIR__ . '/../..' . '/twig/ArraysTwigExtension.php',
         'Flextype\\Plugin\\Twig\\Twig\\CacheTwigExtension' => __DIR__ . '/../..' . '/twig/CacheTwigExtension.php',
-        'Flextype\\Plugin\\Twig\\Twig\\CollectionTwigExtension' => __DIR__ . '/../..' . '/twig/CollectionTwigExtension.php',
         'Flextype\\Plugin\\Twig\\Twig\\CsrfTwigExtension' => __DIR__ . '/../..' . '/twig/CsrfTwigExtension.php',
         'Flextype\\Plugin\\Twig\\Twig\\EmitterTwig' => __DIR__ . '/../..' . '/twig/EmitterTwigExtension.php',
         'Flextype\\Plugin\\Twig\\Twig\\EmitterTwigExtension' => __DIR__ . '/../..' . '/twig/EmitterTwigExtension.php',
@@ -137,6 +150,7 @@ class ComposerStaticInitc5164cca78975a0ff46026281ef814fa
         'Twig\\Node\\BlockNode' => __DIR__ . '/..' . '/twig/twig/src/Node/BlockNode.php',
         'Twig\\Node\\BlockReferenceNode' => __DIR__ . '/..' . '/twig/twig/src/Node/BlockReferenceNode.php',
         'Twig\\Node\\BodyNode' => __DIR__ . '/..' . '/twig/twig/src/Node/BodyNode.php',
+        'Twig\\Node\\CheckSecurityCallNode' => __DIR__ . '/..' . '/twig/twig/src/Node/CheckSecurityCallNode.php',
         'Twig\\Node\\CheckSecurityNode' => __DIR__ . '/..' . '/twig/twig/src/Node/CheckSecurityNode.php',
         'Twig\\Node\\CheckToStringNode' => __DIR__ . '/..' . '/twig/twig/src/Node/CheckToStringNode.php',
         'Twig\\Node\\DeprecatedNode' => __DIR__ . '/..' . '/twig/twig/src/Node/DeprecatedNode.php',
@@ -273,9 +287,9 @@ class ComposerStaticInitc5164cca78975a0ff46026281ef814fa
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc5164cca78975a0ff46026281ef814fa::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc5164cca78975a0ff46026281ef814fa::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc5164cca78975a0ff46026281ef814fa::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3d173fb6fb5e00278f2b3f051ee85ef6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3d173fb6fb5e00278f2b3f051ee85ef6::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit3d173fb6fb5e00278f2b3f051ee85ef6::$classMap;
 
         }, null, ClassLoader::class);
     }

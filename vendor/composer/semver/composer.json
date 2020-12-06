@@ -35,7 +35,7 @@
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^4.2 || ^5",
-        "phpstan/phpstan": "^0.12.19"
+        "phpstan/phpstan": "^0.12.54"
     },
     "autoload": {
         "psr-4": {
@@ -49,7 +49,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.x-dev"
+            "dev-main": "3.x-dev"
         }
     },
     "scripts": {

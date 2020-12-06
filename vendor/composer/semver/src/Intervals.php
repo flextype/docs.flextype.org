@@ -228,9 +228,9 @@ class Intervals
             if ($intervals['branches']['exclude']) {
                 if (\count($constraints) > 1) {
                     return new MultiConstraint(array_merge(
-                            array(new MultiConstraint($constraints, false)),
-                            $devConstraints
-                        ), true);
+                        array(new MultiConstraint($constraints, false)),
+                        $devConstraints
+                    ), true);
                 }
 
                 if (\count($constraints) === 1 && (string)$constraints[0] === (string)Interval::fromZero()) {
@@ -441,7 +441,7 @@ class Intervals
         $op = $constraint->getOperator();
 
         // handle branch constraints first
-        if (substr($constraint->getVersion(), 0, 4) === 'dev-') {
+        if (strpos($constraint->getVersion(), 'dev-') === 0) {
             $intervals = array();
             $branches = array('names' => array(), 'exclude' => false);
 

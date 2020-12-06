@@ -15,16 +15,11 @@ use Twig\Extension\GlobalsInterface;
 class CacheTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -33,7 +28,7 @@ class CacheTwigExtension extends AbstractExtension implements GlobalsInterface
     public function getGlobals() : array
     {
         return [
-            'cache' => $this->flextype->container('cache'),
+            'cache' => flextype('cache'),
         ];
     }
 }

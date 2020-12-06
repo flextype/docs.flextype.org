@@ -518,7 +518,7 @@ $data = flextype('entries')->fetch('movies/sg-1/season-5/episode-21');
 // Fetch collections of entries episodes in movies/sg-1/season-5
 $data = flextype('entries')->fetch('movies/sg-1/season-5', true);
 
-// Fetch collections of entries in movies/sg-1 and param them.
+// Fetch collections of entries in movies/sg-1 and set parameters array.
 $data = flextype('entries')->fetch('movies/sg-1', true, $param);
 ```
 
