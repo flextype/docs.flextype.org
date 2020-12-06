@@ -28,7 +28,7 @@ use function is_file;
  * Register The Auto Loader
  */
 $site_loader = require_once $site_autoload;
-
+//echo asd();
 /**
  * Include web routes
  */

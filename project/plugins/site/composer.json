@@ -18,7 +18,9 @@
     "require": {
         "php": ">=7.3.0",
         "ext-json": "*",
-        "middlewares/trailing-slash": "~1.1.0"
+        "middlewares/trailing-slash": "~1.1.0",
+        "flextype-components/arrays" : "3.0.1",
+        "flextype-components/filesystem": "2.0.8"
     },
     "config": {
         "apcu-autoloader": true,

@@ -49,16 +49,50 @@ GET /api/images/{path:.+}?VALID_ARGUMENTS&token=YOUR_IMAGES_TOKEN
 
 ##### Parameters
 
-| name | |  Description |
-| --- | --- | --- |
-| {path:.+} | REQUIRED | The file path with valid params for image manipulations. |
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{path:.+}</td>
+<td>REQUIRED</td>
+<td>The file path with valid params for image manipulations.</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 ##### Query
 
-| name | |  Description |
-| --- | --- | --- |
-| * | REQUIRED | [Valid arguments for images manipulation](#displaying-images-in-the-template-glide-options) |
-| token | REQUIRED | Valid Images token. |
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>REQUIRED</td>
+<td><a href="#displaying-images-in-the-template-glide-options">Valid arguments for images manipulation</a></td>
+</tr>
+<tr>
+<td>token</td>
+<td>REQUIRED</td>
+<td>Valid Images token.</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 ##### Examples
 

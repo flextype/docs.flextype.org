@@ -16,16 +16,11 @@ use Slim\Http\Uri;
 class UrlTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -45,8 +40,8 @@ class UrlTwigExtension extends AbstractExtension
      */
     public function url() : string
     {
-        if ($this->flextype->container('registry')->has('flextype.settings.url') && $this->flextype->container('registry')->get('flextype.settings.url') != '') {
-            return $this->flextype->container('registry')->get('flextype.settings.url');
+        if (flextype('registry')->has('flextype.settings.url') && flextype('registry')->get('flextype.settings.url') != '') {
+            return flextype('registry')->get('flextype.settings.url');
         } else {
             return Uri::createFromEnvironment(new Environment($_SERVER))->getBaseUrl();
         }

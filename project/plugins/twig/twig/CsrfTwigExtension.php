@@ -15,16 +15,11 @@ use Twig\Extension\GlobalsInterface;
 class CsrfTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -33,10 +28,10 @@ class CsrfTwigExtension extends AbstractExtension implements GlobalsInterface
     public function getGlobals() : array
     {
         // CSRF token name and value
-        $csrfNameKey  = $this->flextype->container('csrf')->getTokenNameKey();
-        $csrfValueKey = $this->flextype->container('csrf')->getTokenValueKey();
-        $csrfName     = $this->flextype->container('csrf')->getTokenName();
-        $csrfValue    = $this->flextype->container('csrf')->getTokenValue();
+        $csrfNameKey  = flextype('csrf')->getTokenNameKey();
+        $csrfValueKey = flextype('csrf')->getTokenValueKey();
+        $csrfName     = flextype('csrf')->getTokenName();
+        $csrfValue    = flextype('csrf')->getTokenValue();
 
         return [
             'csrf'   => [
@@ -72,7 +67,7 @@ class CsrfTwigExtension extends AbstractExtension implements GlobalsInterface
      */
     public function csrf() : string
     {
-        return '<input type="hidden" name="' . $this->flextype->container('csrf')->getTokenNameKey() . '" value="' . $this->flextype->container('csrf')->getTokenName() . '">' .
-               '<input type="hidden" name="' . $this->flextype->container('csrf')->getTokenValueKey() . '" value="' . $this->flextype->container('csrf')->getTokenValue() . '">';
+        return '<input type="hidden" name="' . flextype('csrf')->getTokenNameKey() . '" value="' . flextype('csrf')->getTokenName() . '">' .
+               '<input type="hidden" name="' . flextype('csrf')->getTokenValueKey() . '" value="' . flextype('csrf')->getTokenValue() . '">';
     }
 }

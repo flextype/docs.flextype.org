@@ -69,8 +69,8 @@ on_this_page:
         title: "update()"
         link: "methods-update"
       5:
-        title: "rename()"
-        link: "methods-rename"
+        title: "move()"
+        link: "methods-move"
       6:
         title: "copy()"
         link: "methods-copy"
@@ -475,8 +475,8 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
                 <td>Update entry</td>
             </tr>
             <tr>
-                <td><a href="#methods-rename">rename()</a></td>
-                <td>Rename entry</td>
+                <td><a href="#methods-move">move()</a></td>
+                <td>Move entry</td>
             <tr>
                 <td><a href="#methods-copy">copy()</a></td>
                 <td>Copy entry</td>
@@ -518,11 +518,11 @@ $data = flextype('entries')->fetch('movies/sg-1/season-5/episode-21');
 // Fetch collections of entries episodes in movies/sg-1/season-5
 $data = flextype('entries')->fetch('movies/sg-1/season-5', true);
 
-// Fetch collections of entries in movies/sg-1 and filter them.
-$data = flextype('entries')->fetch('movies/sg-1', true, $filter);
+// Fetch collections of entries in movies/sg-1 and set parameters array.
+$data = flextype('entries')->fetch('movies/sg-1', true, $param);
 ```
 
-`$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and finder filter.
+`$param` is an array of valid values for [filter()](./collections#filter) and finder filter.
 
 ##### <a name="methods-fetchSingle"></a> `fetchSingle()`
 
@@ -548,13 +548,13 @@ Fetch collections of entries episodes in `movies/sg-1/season-5`
 $data = flextype('entries')->fetchCollection('movies/sg-1/season-5');
 ```
 
-Fetch collections of entries in `movies/sg-1` and filter them.
+Fetch collections of entries in `movies/sg-1` and param them.
 
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $filter);
+$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $param);
 ```
 
-`$filter` is an array of valid values for [collect_filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
+`$param` is an array of valid values for [filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
 
 ##### <a name="methods-create"></a> `create()`
 
@@ -593,17 +593,17 @@ $data = ['soundtracks' => 'Joel Goldsmith'];
 flextype('entries')->update('movies/sg-1/season-5/episode-22', $data);
 ```
 
-##### <a name="methods-rename"></a> `rename()`
+##### <a name="methods-move"></a> `move()`
 
-Rename entry.
+Move entry.
 
 **Examples**
 
 Rename entry `episode-22` to `episode-23` in `movies/sg-1/season-5`
 
 ```php
-flextype('entries')->rename('movies/sg-1/season-5/episode-22',
-                                       'movies/sg-1/season-5/episode-23');
+flextype('entries')->move('movies/sg-1/season-5/episode-22',
+                          'movies/sg-1/season-5/episode-23');
 ```
 
 ##### <a name="methods-copy"></a> `copy()`

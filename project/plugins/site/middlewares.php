@@ -14,4 +14,4 @@ use Middlewares\TrailingSlash;
 /**
  * Add middleware TrailingSlash for all routes
  */
-$flextype->add((new TrailingSlash(false))->redirect(true));
+flextype()->add((new TrailingSlash(false))->redirect(true));

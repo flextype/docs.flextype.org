@@ -14,16 +14,11 @@ use Twig\Extension\AbstractExtension;
 class MarkdownTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -44,7 +39,7 @@ class MarkdownTwigExtension extends AbstractExtension
     public function markdown($input, bool $cache = true) : string
     {
         if (!empty($input)) {
-            return $this->flextype->container('markdown')->parse($input, $cache);
+            return flextype('markdown')->parse($input, $cache);
         }
 
         return '';

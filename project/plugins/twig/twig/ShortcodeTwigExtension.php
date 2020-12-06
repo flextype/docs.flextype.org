@@ -14,16 +14,11 @@ use Twig\Extension\AbstractExtension;
 class ShortcodeTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -44,7 +39,7 @@ class ShortcodeTwigExtension extends AbstractExtension
     public function shortcode($value) : string
     {
         if (!empty($value)) {
-            return $this->flextype->container('shortcode')->process($value);
+            return flextype('shortcode')->process($value);
         }
 
         return '';

@@ -233,10 +233,12 @@ class MultiConstraint implements ConstraintInterface
             for ($i = 1, $l = \count($constraints); $i < $l; $i++) {
                 $right = $constraints[$i];
                 if (
-                    $left instanceof MultiConstraint
+                    $left instanceof self
                     && $left->conjunctive
-                    && $right instanceof MultiConstraint
+                    && $right instanceof self
                     && $right->conjunctive
+                    && \count($left->constraints) === 2
+                    && \count($right->constraints) === 2
                     && ($left0 = (string) $left->constraints[0])
                     && $left0[0] === '>' && $left0[1] === '='
                     && ($left1 = (string) $left->constraints[1])
@@ -249,13 +251,9 @@ class MultiConstraint implements ConstraintInterface
                 ) {
                     $optimized = true;
                     $left = new MultiConstraint(
-                        array_merge(
-                            array(
-                                $left->constraints[0],
-                                $right->constraints[1],
-                            ),
-                            \array_slice($left->constraints, 2),
-                            \array_slice($right->constraints, 2)
+                        array(
+                            $left->constraints[0],
+                            $right->constraints[1],
                         ),
                         true);
                 } else {

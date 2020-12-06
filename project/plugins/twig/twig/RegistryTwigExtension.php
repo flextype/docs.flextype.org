@@ -14,17 +14,13 @@ use Twig\Extension\GlobalsInterface;
 
 class RegistryTwigExtension extends AbstractExtension implements GlobalsInterface
 {
-    /**
-     * Flextype Application
-     */
-    protected $flextype;
 
     /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -33,7 +29,7 @@ class RegistryTwigExtension extends AbstractExtension implements GlobalsInterfac
     public function getGlobals() : array
     {
         return [
-            'registry' => new RegistryTwig($this->flextype),
+            'registry' => new RegistryTwig(),
         ];
     }
 }
@@ -43,14 +39,14 @@ class RegistryTwig
     /**
      * Flextype Application
      */
-    protected $flextype;
+
 
     /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -60,7 +56,7 @@ class RegistryTwig
      */
     public function dump() : array
     {
-        return $this->flextype->container('registry')->dump();
+        return flextype('registry')->dump();
     }
 
     /**
@@ -71,7 +67,7 @@ class RegistryTwig
      */
     public function has(string $name) : bool
     {
-        return $this->flextype->container('registry')->has($name);
+        return flextype('registry')->has($name);
     }
 
     /**
@@ -83,7 +79,7 @@ class RegistryTwig
      */
     public function set(string $name, $value = null) : void
     {
-        $this->flextype->container('registry')->set($name, $value);
+        flextype('registry')->set($name, $value);
     }
 
     /**
@@ -95,6 +91,6 @@ class RegistryTwig
      */
     public function get(string $name, $default = null)
     {
-        return $this->flextype->container('registry')->get($name, $default);
+        return flextype('registry')->get($name, $default);
     }
 }

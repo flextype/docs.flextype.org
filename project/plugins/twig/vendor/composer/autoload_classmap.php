@@ -6,10 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Flextype\\Plugin\\Twig\\Twig\\ArraysTwig' => $baseDir . '/twig/ArraysTwigExtension.php',
+    'Flextype\\Component\\Arrays\\Arrays' => $vendorDir . '/flextype-components/arrays/src/Arrays.php',
+    'Flextype\\Component\\Filesystem\\Filesystem' => $vendorDir . '/flextype-components/filesystem/Filesystem.php',
     'Flextype\\Plugin\\Twig\\Twig\\ArraysTwigExtension' => $baseDir . '/twig/ArraysTwigExtension.php',
     'Flextype\\Plugin\\Twig\\Twig\\CacheTwigExtension' => $baseDir . '/twig/CacheTwigExtension.php',
-    'Flextype\\Plugin\\Twig\\Twig\\CollectionTwigExtension' => $baseDir . '/twig/CollectionTwigExtension.php',
     'Flextype\\Plugin\\Twig\\Twig\\CsrfTwigExtension' => $baseDir . '/twig/CsrfTwigExtension.php',
     'Flextype\\Plugin\\Twig\\Twig\\EmitterTwig' => $baseDir . '/twig/EmitterTwigExtension.php',
     'Flextype\\Plugin\\Twig\\Twig\\EmitterTwigExtension' => $baseDir . '/twig/EmitterTwigExtension.php',
@@ -81,6 +81,7 @@ return array(
     'Twig\\Node\\BlockNode' => $vendorDir . '/twig/twig/src/Node/BlockNode.php',
     'Twig\\Node\\BlockReferenceNode' => $vendorDir . '/twig/twig/src/Node/BlockReferenceNode.php',
     'Twig\\Node\\BodyNode' => $vendorDir . '/twig/twig/src/Node/BodyNode.php',
+    'Twig\\Node\\CheckSecurityCallNode' => $vendorDir . '/twig/twig/src/Node/CheckSecurityCallNode.php',
     'Twig\\Node\\CheckSecurityNode' => $vendorDir . '/twig/twig/src/Node/CheckSecurityNode.php',
     'Twig\\Node\\CheckToStringNode' => $vendorDir . '/twig/twig/src/Node/CheckToStringNode.php',
     'Twig\\Node\\DeprecatedNode' => $vendorDir . '/twig/twig/src/Node/DeprecatedNode.php',
