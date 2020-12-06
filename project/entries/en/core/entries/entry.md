@@ -522,7 +522,13 @@ Fetch single entry `movies/sg-1/season-5/episode-21`
 $data = flextype('entries')->fetchSingle('movies/sg-1/season-5/episode-21');
 ```
 
-`$options` is an array of valid values for [filter()](./collections#filter) and find().
+Fetch singe entry in `movies/sg-1/season-5/episode-21` and path `$options`.
+
+```php
+$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $options);
+```
+
+`$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) helper.
 
 
 ##### <a name="methods-fetchCollection"></a> `fetchCollection()`
@@ -549,20 +555,32 @@ Fetch collections of entries episodes in `movies/sg-1/season-5`
 $data = flextype('entries')->fetchCollection('movies/sg-1/season-5');
 ```
 
-Fetch collections of entries in `movies/sg-1` and param them.
-
-`$options` is an array of valid values for [filter()](./collections#filter) and find().
-
+Fetch collections of entries in `movies/sg-1` and path `$options`.
 
 ```php
 $data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $options);
 ```
 
-`$param` is an array of valid values for [filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
+`$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
+
 
 ##### <a name="methods-create"></a> `create()`
 
 Create entry.
+
+```php
+/**
+ * Create entry.
+ *
+ * @param string $id   Unique identifier of the entry.
+ * @param array  $data Data to create for the entry.
+ *
+ * @return bool True on success, false on failure.
+ *
+ * @access public
+ */
+public function create(string $id, array $data = []): bool
+```
 
 **Examples**
 
@@ -586,6 +604,20 @@ flextype('entries')->create('movies/sg-1/season-5/episode-22', $data);
 
 Update entry.
 
+```php
+/**
+ * Update entry
+ *
+ * @param string $id   Unique identifier of the entry.
+ * @param array  $data Data to update for the entry.
+ *
+ * @return bool True on success, false on failure.
+ *
+ * @access public
+ */
+public function update(string $id, array $data): bool
+```
+
 **Examples**
 
 Update entry `episode-22` in `movies/sg-1/season-5`
@@ -601,9 +633,23 @@ flextype('entries')->update('movies/sg-1/season-5/episode-22', $data);
 
 Move entry.
 
+```php
+/**
+ * Move entry
+ *
+ * @param string $id    Unique identifier of the entry.
+ * @param string $newID New Unique identifier of the entry.
+ *
+ * @return bool True on success, false on failure.
+ *
+ * @access public
+ */
+public function move(string $id, string $newID): bool
+```
+
 **Examples**
 
-Rename entry `episode-22` to `episode-23` in `movies/sg-1/season-5`
+Move entry `episode-22` to `episode-23` in `movies/sg-1/season-5`
 
 ```php
 flextype('entries')->move('movies/sg-1/season-5/episode-22',
@@ -613,6 +659,20 @@ flextype('entries')->move('movies/sg-1/season-5/episode-22',
 ##### <a name="methods-copy"></a> `copy()`
 
 Copy entry.
+
+```php
+/**
+ * Copy entry.
+ *
+ * @param string $id    Unique identifier of the entry.
+ * @param string $newID New Unique identifier of the entry.
+ *
+ * @return bool|null True on success, false on failure.
+ *
+ * @access public
+ */
+public function copy(string $id, string $newID): ?bool
+```
 
 **Examples**
 
@@ -627,6 +687,19 @@ flextype('entries')->rename('movies/sg-1/season-5/episode-23',
 
 Delete entry.
 
+```php
+/**
+ * Delete entry.
+ *
+ * @param string $id Unique identifier of the entry.
+ *
+ * @return bool True on success, false on failure.
+ *
+ * @access public
+ */
+public function delete(string $id): bool
+```
+
 **Examples**
 
 Delete entry `episode-23` in `movies/sg-1/season-5`
@@ -638,6 +711,19 @@ flextype('entries')->delete('movies/sg-1/season-5/episode-23');
 ##### <a name="methods-has"></a> `has()`
 
 Check whether entry exists.
+
+```php
+/**
+ * Check whether entry exists
+ *
+ * @param string $id Unique identifier of the entry(entries).
+ *
+ * @return bool True on success, false on failure.
+ *
+ * @access public
+ */
+public function has(string $id): bool
+```
 
 **Examples**
 
@@ -653,6 +739,20 @@ if (flextype('entries')->has('movies/sg-1/season-5/episode-23')) {
 
 Get entry file location
 
+
+```php
+/**
+ * Get entry file location
+ *
+ * @param string $id Unique identifier of the entry(entries).
+ *
+ * @return string entry file location
+ *
+ * @access public
+ */
+public function getFileLocation(string $id): string
+```
+
 **Examples**
 
 Check whether entry `episode-23` exists in `movies/sg-1/season-5`
@@ -664,6 +764,19 @@ $data = flextype('entries')->getFileLocation('movies/sg-1/season-5/episode-23');
 ##### <a name="methods-getDirLocation"></a> `getDirLocation()`
 
 Get entry directory location
+
+```php
+/**
+ * Get entry directory location
+ *
+ * @param string $id Unique identifier of the entry(entries).
+ *
+ * @return string entry directory location
+ *
+ * @access public
+ */
+public function getDirectoryLocation(string $id): string
+```
 
 **Examples**
 
