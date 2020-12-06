@@ -18,8 +18,8 @@ on_this_page:
     title: "Upload file"
     link: "upload-file"
   4:
-    title: "Rename file"
-    link: "rename-file"
+    title: "Move file"
+    link: "move-file"
   5:
     title: "Delete file"
     link: "delete-file"
@@ -61,7 +61,7 @@ The Flextype Files API organized around Representational State Transfer (REST) f
             <tr>
                 <td>PUT</td>
                 <td>/api/files</td>
-                <td>Rename file</td>
+                <td>Move file</td>
             </tr>
             <tr>
                 <td>DELETE</td>
@@ -304,7 +304,7 @@ curl -i -X POST \
 }
 ```
 
-### <a name="rename-file"></a> Rename file
+### <a name="move-file"></a> Move file
 
 <div class="file-header">Request</div>
 ```http
@@ -348,11 +348,11 @@ PUT /api/files
 </div>
 
 ##### Result
-Returns the folders object for the file that was just renamed
+Returns the folders object for the file that was just moved.
 
 ##### Examples
 
-Rename file **entries/movies/sg-1/season-5/episode-21/cover.jpg** to the **entries/movies/sg-1/season-5/episode-21/new-cover.jpg**
+Move file **entries/movies/sg-1/season-5/episode-21/cover.jpg** to the **entries/movies/sg-1/season-5/episode-21/new-cover.jpg**
 
 <div class="file-header">Request</div>
 ```http
