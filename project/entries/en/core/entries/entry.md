@@ -53,9 +53,6 @@ on_this_page:
     title: "Methods"
     link: "methods"
     level2:
-      0:
-        title: "fetch()"
-        link: "methods-fetch"
       1:
         title: "fetchSingle()"
         link: "methods-fetchSingle"
@@ -86,6 +83,9 @@ on_this_page:
       10:
         title: "getDirLocation()"
         link: "methods-getDirLocation"
+  4:
+    title: Extending
+    link: "extending"
 ---
 
 Entries are the fundamental building-blocks of your project. We are using jekyll like entries format. It means that each entry in the Flextype should contains **Entry Front Matter** block in valid YAML format at the top of the file and **Entry Content** marked up using HTML + Markdown + Shortcodes and etc... at the bottom of the file.
@@ -147,7 +147,6 @@ movies/sg-1/season-5/episode-21
 # Slug
 episode-21
 ```
-
 
 ### <a name="default-variables"></a> Default Variables
 
@@ -455,10 +454,6 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
         </thead>
         <tbody>
             <tr>
-                <td><a href="#methods-fetch">fetch()</a></td>
-                <td>Fetch single entry or collections of entries</td>
-            </tr>
-            <tr>
                 <td><a href="#methods-fetchSingle">fetchSingle()</a></td>
                 <td>Fetch single entry</td>
             </tr>
@@ -503,30 +498,21 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
 
 ### Methods Details
 
-##### <a name="methods-fetch"></a> `fetch()`
-
-Fetch single entry or collections of entries.
-
-**Examples**
-
-Fetch single entry `movies/sg-1/season-5/episode-21`
-
-```php
-// Fetch single entry: movies/sg-1/season-5/episode-21
-$data = flextype('entries')->fetch('movies/sg-1/season-5/episode-21');
-
-// Fetch collections of entries episodes in movies/sg-1/season-5
-$data = flextype('entries')->fetch('movies/sg-1/season-5', true);
-
-// Fetch collections of entries in movies/sg-1 and set parameters array.
-$data = flextype('entries')->fetch('movies/sg-1', true, $param);
-```
-
-`$param` is an array of valid values for [filter()](./collections#filter) and finder filter.
-
 ##### <a name="methods-fetchSingle"></a> `fetchSingle()`
 
 Fetch single entry.
+
+```php
+/**
+ * Fetch single entry.
+ *
+ * @param string $id      Unique identifier of the entry.
+ * @param array  $options Options array.
+ *
+ * @access public
+ */
+public function fetchSingle(string $id, array $options = []): Arrays
+```
 
 **Examples**
 
@@ -536,9 +522,24 @@ Fetch single entry `movies/sg-1/season-5/episode-21`
 $data = flextype('entries')->fetchSingle('movies/sg-1/season-5/episode-21');
 ```
 
+`$options` is an array of valid values for [filter()](./collections#filter) and find().
+
+
 ##### <a name="methods-fetchCollection"></a> `fetchCollection()`
 
 Fetch entries collection.
+
+```php
+/**
+ * Fetch entries collection.
+ *
+ * @param string $id      Unique identifier of the entries collecton.
+ * @param array  $options Options array.
+ *
+ * @access public
+ */
+public function fetchCollection(string $id, array $options = []): Arrays
+```
 
 **Examples**
 
@@ -550,8 +551,11 @@ $data = flextype('entries')->fetchCollection('movies/sg-1/season-5');
 
 Fetch collections of entries in `movies/sg-1` and param them.
 
+`$options` is an array of valid values for [filter()](./collections#filter) and find().
+
+
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $param);
+$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $options);
 ```
 
 `$param` is an array of valid values for [filter()](./collections#collect-filter) and [find_filter()](./finder#find-filter) functions.
@@ -667,4 +671,27 @@ Get entry `episode-23` exists in `movies/sg-1/season-5`
 
 ```php
 $data = flextype('entries')->getDirLocation('movies/sg-1/season-5/episode-23');
+```
+
+### <a name="extending"></a> Extending
+
+Entries are "macroable", which allows you to add additional methods to the Entries API at run time.
+
+For example, the following code adds a `fetchRecentPosts()` method to the Entries API
+
+**Examples**
+
+```php
+// Create new macros for fetch recent posts.
+flextype('entries')::macro('fetchRecentPosts', function($limit = 10) {
+    return flextype('entries')
+                ->fetchCollection('blog')
+                ->sortBy('publised_at')
+                ->limit($limit);
+});
+
+// Display recent posts.
+foreach (flextype('entries')->fetchRecentPosts(5) as $post) {
+    echo $post['title'] . "\n";
+}
 ```
