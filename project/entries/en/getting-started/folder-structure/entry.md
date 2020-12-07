@@ -12,6 +12,7 @@ breadcrumbs:
     <li><i class="fas fa-folder"></i> vendor</li>
     <li><i class="fas fa-folder"></i> project</li>
     <li><i class="fas fa-folder"></i> var</li>
+    <li><i class="fas fa-folder"></i> tests</li>
 </ul>
 
 The main folder of the Flextype system is `src/flextype/` which stores common and important files for its work.  
@@ -39,4 +40,10 @@ The `var/` folder is used to store temporary cached files that are automatically
 
 <ul class="file-list">
     <li><i class="fas fa-folder"></i> var</li>
+</ul>
+
+The `tests/` folder contains unit tests for Flextype.  
+
+<ul class="file-list">
+    <li><i class="fas fa-folder"></i> tests</li>
 </ul>

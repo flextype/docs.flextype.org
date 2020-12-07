@@ -23,7 +23,7 @@ Each Flextype plugin is an additional piece of software that can be easily insta
 
 This allows you to customize your Flextype powered project with your desired functionality. Since so much functionality is provided through plugins, Flextype core is full-featured and customizable, without having to include everything for everyone.
 
-Plugins are available via the Flextype Plugin Directory.
+Plugins are available via the [Flextype Plugin Directory](https://flextype.org/en/downloads/extend/plugins).
 
 ### <a name="installation"></a> Installation
 
