@@ -1192,7 +1192,11 @@ For example, `<p>italic and **bold**</p>` won't work.
         <tbody>
             <tr>
                 <td><a href="#methods-parse">parse()</a></td>
-                <td>Takes a MARKDOWN encoded string and converts it into a HTML</td>
+                <td>Takes a MARKDOWN encoded string and converts it into a HTML.</td>
+            </tr>
+            <tr>
+                <td><a href="#methods-getCacheID">getCacheID()</a></td>
+                <td>Get Cache ID for MARKDOWN.</td>
             </tr>
         </tbody>
     </table>
@@ -1202,7 +1206,19 @@ For example, `<p>italic and **bold**</p>` won't work.
 
 ##### <a name="methods-parse"></a> `parse()`
 
-Takes a MARKDOWN encoded string and converts it into a HTML
+Takes a MARKDOWN encoded string and converts it into a HTML.
+
+```php
+/**
+ * Takes a MARKDOWN encoded string and converts it into a PHP variable.
+ *
+ * @param string $input A string containing MARKDOWN
+ * @param bool   $cache Cache result data or no. Default is true
+ *
+ * @return mixed The MARKDOWN converted to a PHP value
+ */
+public function parse(string $input, bool $cache = true): string
+```
 
 **Examples**
 
@@ -1210,4 +1226,29 @@ Takes a MARKDOWN encoded string and converts it into a HTML
 $markdown = '**this text is bold**';
 
 $html = flextype('markdown')->parse($markdown);
+```
+
+##### <a name="methods-getCacheID"></a> `getCacheID()`
+
+Get Cache ID for markdown.
+
+```php
+/**
+ * Get Cache ID for markdown.
+ *
+ * @param  string $input Input
+ *
+ * @return string Cache ID
+ *
+ * @access public
+ */
+public function getCacheID(string $input): string
+```
+
+**Examples**
+
+```php
+$markdown = 'text with [message]';
+
+$cache_id = flextype('markdown')->getCacheID($markdown);
 ```
