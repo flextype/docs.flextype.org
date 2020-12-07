@@ -790,7 +790,7 @@ $data = flextype('entries')->getDirLocation('movies/sg-1/season-5/episode-23');
 
 Entries are "macroable", which allows you to add additional methods to the Entries API at run time.
 
-For example, the following code adds a `fetchRecentPosts()` method to the Entries API
+For example, the following code adds a `fetchRecentPosts()` method to the Entries API.
 
 **Examples**
 
@@ -802,6 +802,38 @@ flextype('entries')::macro('fetchRecentPosts', function($limit = 10) {
                 ->sortBy('publised_at')
                 ->limit($limit);
 });
+
+// Display recent posts.
+foreach (flextype('entries')->fetchRecentPosts(5) as $post) {
+    echo $post['title'] . "\n";
+}
+```
+
+As you can see, the macro method takes as arguments a name and an [anonymous function](http://php.net/manual/en/functions.anonymous.php) to call (optionally, you able to add additional arguments, if you need that).
+
+When you call a macro, your code in function would be called from the context of that class (in the example it is Entries API class context), allowing you to execute your code along with Flextype built-in features.
+
+#### Using mixins
+
+Macros awesome, and you may want to use a lot of them. You may group them with help of mixins.
+For this approach, you should use a mixin static method on the macroable Entries API class, and pass your mixin class as an argument.
+
+**Examples**
+
+
+```php
+// Blog Mixin Class.
+class BlogMixin {
+    public function fetchRecentPosts($limit = 10) {
+        return flextype('entries')
+                    ->fetchCollection('blog')
+                    ->sortBy('publised_at')
+                    ->limit($limit);
+    }
+}
+
+// Create new mixin BlogMixin with it is macros.
+flextype('entries')::mixin(new BlogMixin());
 
 // Display recent posts.
 foreach (flextype('entries')->fetchRecentPosts(5) as $post) {

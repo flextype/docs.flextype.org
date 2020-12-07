@@ -57,7 +57,7 @@ bugs: https://github.com/flextype-plugins/site/issues
 license: MIT
 
 dependencies:
-  flextype: 0.9.11
+  flextype: 0.9.12
   twig: '>=1.0.0'
 ```
 
@@ -148,9 +148,9 @@ Event Hooks are a way for one piece of code to interact/modify another piece of 
                 </td>
             </tr>
             <tr>
-                <td>onEntryRename</td>
+                <td>onEntryMove</td>
                 <td>
-                    Fires on entry rename.
+                    Fires on entry move.
                 </td>
             </tr>
             <tr>
@@ -160,34 +160,15 @@ Event Hooks are a way for one piece of code to interact/modify another piece of 
                 </td>
             </tr>
             <tr>
+                <td>onEntryHas</td>
+                <td>
+                    Fires on entry has.
+                </td>
+            </tr>
+            <tr>
                 <td>onEntryDelete</td>
                 <td>
                     Fires on entry delete.
-                </td>
-            </tr>
-
-            <tr>
-                <td>onCacheBeforePurge</td>
-                <td>
-                    Fires on cache before purge.
-                </td>
-            </tr>
-            <tr>
-                <td>onCacheAfterPurge</td>
-                <td>
-                    Fires on cache after purge.
-                </td>
-            </tr>
-            <tr>
-                <td>onCacheBeforePurgeAll</td>
-                <td>
-                    Fires on cache before purge all.
-                </td>
-            </tr>
-            <tr>
-                <td>onCacheAfterPurgeAll</td>
-                <td>
-                    Fires on cache after purge all.
                 </td>
             </tr>
         </tbody>
