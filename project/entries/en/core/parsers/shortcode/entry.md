@@ -138,6 +138,18 @@ url
 
 Add shortcode handler.
 
+```php
+/**
+ * Add shortcode handler.
+ *
+ * @param string   $name    Shortcode
+ * @param callable $handler Handler
+ *
+ * @access public
+ */
+public function addHandler(string $name, callable $handler)
+```
+
 **Examples**
 
 ```php
@@ -149,6 +161,18 @@ flextype('shortcode')->addHandler('message', function () {
 ##### <a name="methods-addEventHandler"></a> `addEventHandler()`
 
 Add event handler.
+
+```php
+/**
+ * Add event handler.
+ *
+ * @param string   $name    Event
+ * @param callable $handler Handler
+ *
+ * @access public
+ */
+public function addEventHandler(string $name, callable $handler)
+```
 
 **Examples**
 
@@ -163,10 +187,21 @@ flextype('shortcode')->addEventHandler(Events::FILTER_SHORTCODES, new FilterRawE
 More details about events: https://github.com/thunderer/Shortcode#events
 
 
-
 ##### <a name="methods-process"></a> `process()`
 
 Processes text and replaces shortcodes.
+
+```php
+/**
+ * Processes text and replaces shortcodes.
+ *
+ * @param string $input A text containing SHORTCODE
+ * @param bool   $cache Cache result data or no. Default is true
+ *
+ * @access public
+ */
+public function process(string $input, bool $cache = true)
+```
 
 **Examples**
 
@@ -180,6 +215,17 @@ $html = flextype('shortcode')->process($shortcode);
 
 Parses text into shortcodes.
 
+```php
+/**
+ * Parses text into shortcodes.
+ *
+ * @param string $input A text containing SHORTCODE
+ *
+ * @access public
+ */
+public function parse(string $input)
+```
+
 **Examples**
 
 ```php
@@ -190,7 +236,20 @@ $text = flextype('shortcode')->parse($shortcode);
 
 ##### <a name="methods-getCacheID"></a> `getCacheID()`
 
-Get Cache ID for shortcode
+Get Cache ID for shortcode.
+
+```php
+/**
+ * Get Cache ID for shortcode
+ *
+ * @param  string $input Input
+ *
+ * @return string Cache ID
+ *
+ * @access public
+ */
+public function getCacheID(string $input): string
+```
 
 **Examples**
 
