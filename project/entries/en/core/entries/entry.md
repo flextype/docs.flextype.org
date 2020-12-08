@@ -429,9 +429,9 @@ But this rule can be changed by setting individual cache for each entry.
 
 ### <a name="custom-variables"></a> Custom Variables
 
-You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for Entry API and any extension such as plugin, theme and etc...
+You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for Rest API and any extension such as plugin, theme and etc...
 
-**Examples**
+<div class="file-header"><i class="far fa-file-alt"></i> project/entries/home/entry.md</div>
 
     ---
     title: My Entry Title
@@ -441,6 +441,24 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
     ---
     My entry content here.
 
+**Examples**
+
+Get variable `author.twitter` with PHP.
+
+```php
+echo flextype('entries')->fetchSingle('home')['author']['twitter'];
+```
+
+Get variable `author.twitter` with Rest API.
+```http
+GET /api/entries?id=home&token=YOUR_ENTRIES_TOKEN
+```
+
+Get variable `author.twitter` with [TWIG Plugin](https://github.com/flextype-plugins/twig).
+
+```twig
+{{ entries.fetchSingle('home')['author']['twitter'] }}
+```
 
 ### <a name="methods"></a> Methods
 
