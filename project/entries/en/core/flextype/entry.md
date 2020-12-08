@@ -170,7 +170,7 @@ flextype()
   ->setName('service.form.index');
 ```
 
-Check all available methods: http://slimframework.com/docs/v3/
+Check all available methods: [http://slimframework.com/docs/v3/](http://slimframework.com/docs/v3/)
 
 ### Services <a name="services"></a>
 
