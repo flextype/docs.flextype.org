@@ -70,7 +70,7 @@ on_this_page:
         link: "methods-folders-getDirLocation"
   -
     title: "Folders Meta Methods"
-    link: "folders-methods"
+    link: "folders-meta-methods"
     level2:
       -
         title: "getDirMetaLocation()"
@@ -79,7 +79,7 @@ on_this_page:
 
 ### <a name="files-methods"></a> Methods
 
-#### Media Files
+#### Media Files <a name="media-files"></a>
 
 <div class="table">
     <table>
@@ -241,7 +241,7 @@ flextype('media_files')
             ->getFileLocation('entries/movies/sg-1/season-5/episode-21/cover-image.jpg');
 ```
 
-#### <a name="methods-files-meta-methods"></a> Media Files Meta
+#### <a name="files-meta-methods"></a> Media Files Meta
 
 <div class="table">
     <table>
@@ -323,7 +323,7 @@ flextype('media_files_meta')
             ->getFileMetaLocation('entries/movies/sg-1/season-5/episode-21/cover.jpg');
 ```
 
-#### <a name="methods-folders-methods"></a> Media Folders
+#### <a name="folders-methods"></a> Media Folders
 
 <div class="table">
     <table>
@@ -467,7 +467,7 @@ flextype('media_folders')
             ->getDirLocation('entries/movies/sg-1/season-5/episode-23');
 ```
 
-#### Media Folders Meta
+#### <a name="folders-meta-methods"></a> Media Folders Meta
 
 <div class="table">
     <table>
