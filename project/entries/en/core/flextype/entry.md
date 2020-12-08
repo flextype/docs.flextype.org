@@ -19,6 +19,9 @@ on_this_page:
       -
         title: "container()"
         link: "methods-container"
+  -
+    title: "Services"
+    link: "services"
 ---
 
 Common part of Flextype is a Flextype Core Class that extends [Slim Framework](http://www.slimframework.com) that we are using under the hood. Slim is amazing PHP micro framework that helps quickly write simple yet powerful web applications and APIs.
@@ -168,3 +171,100 @@ flextype()
 ```
 
 Check all available methods: http://slimframework.com/docs/v3/
+
+### Services <a name="services"></a>
+
+List of available registered services in Flextype Dependency Injection Container.
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Links</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>session</td>
+                <td><a href="https://github.com/atomastic/session">documentation</a></td>
+            </tr>
+            <tr>
+                <td>registry</td>
+                <td><a href="https://github.com/atomastic/registry">documentation</a></td>
+            </tr>
+            <tr>
+                <td>logger</td>
+                <td><a href="https://github.com/Seldaek/monolog">documentation</a></td>
+            </tr>
+            <tr>
+                <td>emitter</td>
+                <td><a href="http://event.thephpleague.com">documentation</a></td>
+            </tr>
+            <tr>
+                <td>slugify</td>
+                <td><a href="https://github.com/cocur/slugify">documentation</a></td>
+            </tr>
+            <tr>
+                <td>cache</td>
+                <td><a href="https://www.phpfastcache.com">documentation</a></td>
+            </tr>
+            <tr>
+                <td>shortcode</td>
+                <td><a href="[url]/en/parsers/shortcode">documentation</a></td>
+            </tr>
+            <tr>
+                <td>markdown</td>
+                <td><a href="[url]/en/parsers/markdown">documentation</a></td>
+            </tr>
+            <tr>
+                <td>frontmatter</td>
+                <td><a href="[url]/en/serializers/frontmatter">documentation</a></td>
+            </tr>
+            <tr>
+                <td>frontmatter</td>
+                <td><a href="[url]/en/serializers/frontmatter">documentation</a></td>
+            </tr>
+            <tr>
+                <td>json</td>
+                <td><a href="[url]/en/serializers/json">documentation</a></td>
+            </tr>
+            <tr>
+                <td>yaml</td>
+                <td><a href="[url]/en/serializers/yaml">documentation</a></td>
+            </tr>
+            <tr>
+                <td>images</td>
+                <td><a href="https://glide.thephpleague.com">documentation</a></td>
+            </tr>
+            <tr>
+                <td>entries</td>
+                <td><a href="[url]/en/core/entries">documentation</a></td>
+            </tr>
+            <tr>
+                <td>media_files</td>
+                <td><a href="[url]/en/core/media#files-methods">documentation</a></td>
+            </tr>
+            <tr>
+                <td>media_files_meta</td>
+                <td><a href="[url]/en/core/media#files-meta-methods">documentation</a></td>
+            </tr>
+            <tr>
+                <td>media_folders</td>
+                <td><a href="[url]/en/core/media#folders-methods">documentation</a></td>
+            </tr>
+            <tr>
+                <td>media_folders_meta</td>
+                <td><a href="[url]/en/core/media#folders-meta-methods">documentation</a></td>
+            </tr>
+            <tr>
+                <td>plugins</td>
+                <td><a href="[url]/en/core/plugins">documentation</a></td>
+            </tr>
+            <tr>
+                <td>cors</td>
+                <td><a href="#">documentation</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
