@@ -264,7 +264,6 @@ flextype('media_files')
                           'entries/movies/sg-1/season-5/episode-22/cover.jpg');
 ```
 
-
 ##### <a name="methods-files-delete"></a> `delete()`
 
 Delete file.
