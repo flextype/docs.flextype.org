@@ -842,11 +842,13 @@ For this approach, you should use a mixin static method on the macroable Entries
 ```php
 // Blog Mixin Class.
 class BlogMixin {
-    public function fetchRecentPosts($limit = 10) {
-        return flextype('entries')
-                    ->fetchCollection('blog')
-                    ->sortBy('publised_at')
-                    ->limit($limit);
+    public function fetchRecentPosts() {
+        return function($limit = 10) {
+            return flextype('entries')
+                        ->fetchCollection('blog')
+                        ->sortBy('publised_at')
+                        ->limit($limit);
+        }
     }
 }
 
