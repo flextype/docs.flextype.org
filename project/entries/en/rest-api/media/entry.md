@@ -7,65 +7,64 @@ breadcrumbs:
 on_this_page:
   -
     title: "Files"
-    link: "files"
+    link: "media-files"
     level2:
       -
         title: "Endpoints"
-        link: "endpoints"
+        link: "media-files-endpoints"
       -
         title: "Fetch file"
-        link: "fetch-file"
+        link: "media-files-fetch-file"
       -
         title: "Upload file"
-        link: "upload-file"
+        link: "media-files-upload-file"
       -
         title: "Move file"
-        link: "move-file"
+        link: "media-files-move-file"
       -
         title: "Copy file"
-        link: "copy-file"
+        link: "media-files-copy-file"
       -
         title: "Delete file"
-        link: "delete-file"
+        link: "media-files-delete-file"
       -
         title: "Update file meta"
-        link: "update-file-meta"
+        link: "media-files-update-file-meta"
       -
         title: "Add file meta"
-        link: "add-file-meta"
+        link: "media-files-add-file-meta"
       -
         title: "Delete file meta"
-        link: "delete-file-meta"
+        link: "media-files-delete-file-meta"
   -
     title: "Folders"
-    link: "folders"
+    link: "media-folders"
     level2:
       -
         title: "Endpoints"
-        link: "endpoints"
+        link: "media-folders-endpoints"
       -
-        title: "Fetch single folder"
-        link: "fetch-single-folder"
-      -
-        title: "Fetch folders collection"
-        link: "fetch-folders-collection"
+        title: "Fetch folder"
+        link: "media-folders-fetch-folder"
       -
         title: "Create folder"
-        link: "create-folder"
+        link: "media-folders-create-folder"
       -
         title: "Move folder"
-        link: "move-folder"
+        link: "media-folders-move-folder"
       -
         title: "Copy folder"
-        link: "copy-folder"
+        link: "media-folders-copy-folder"
       -
         title: "Delete folder"
-        link: "delete-folder"
+        link: "media-folders-delete-folder"
 ---
 
-The Flextype Files API organized around Representational State Transfer (REST) for delivering files from Flextype to apps, websites and other. Folders are delivered as JSON data.
+#### Media Files <a name="media-files"></a>
 
-### <a name="endpoints"></a> Endpoints
+The Flextype Files API organized around Representational State Transfer (REST) for delivering files from Flextype to apps, websites and other. Files are delivered as JSON data.
+
+### <a name="media-files-endpoints"></a> Endpoints
 
 <div class="table">
     <table>
@@ -121,11 +120,13 @@ The Flextype Files API organized around Representational State Transfer (REST) f
     </table>
 </div>
 
-### <a name="fetch-single-file"></a> Fetch single file
+### <a name="media-files-fetch-file"></a> Fetch file
+
+##### Fetch single file
 
 <div class="file-header">Request</div>
 ```http
-GET /api/media/files?id=YOUR_FILES_ID&token=YOUR_FILES_TOKEN
+GET /api/media/files?id=YOUR_MEDIA_FILES_ID&token=YOUR_MEDIA_FILES_TOKEN
 ```
 
 ##### Query
@@ -143,7 +144,12 @@ GET /api/media/files?id=YOUR_FILES_ID&token=YOUR_FILES_TOKEN
             <tr>
                 <td>id</td>
                 <td>REQUIRED</td>
-                <td>Files ID.</td>
+                <td>File ID.</td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td>OPTIONAL</td>
+                <td>Array of options.</td>
             </tr>
             <tr>
                 <td>token</td>
@@ -183,11 +189,11 @@ GET /api/media/files?id=entries/movies/sg-1/season-5/episode-21/cover.jpg&token=
 }
 ```
 
-### <a name="fetch-files-collection"></a> Fetch files collection
+##### Fetch files collection
 
 <div class="file-header">Request</div>
 ```http
-GET /api/media/files?id=YOUR_FILES_FOLDER_ID&collection=true&token=YOUR_FILES_TOKEN
+GET /api/media/files?id=YOUR_MEDIA_FILES_ID&options[collection]=true&token=YOUR_MEDIA_FILES_TOKEN
 ```
 
 ##### Query
@@ -205,12 +211,17 @@ GET /api/media/files?id=YOUR_FILES_FOLDER_ID&collection=true&token=YOUR_FILES_TO
             <tr>
                 <td>id</td>
                 <td>REQUIRED</td>
-                <td>Files ID.</td>
+                <td>Folder ID.</td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td>OPTIONAL</td>
+                <td>Array of options.</td>
             </tr>
             <tr>
                 <td>token</td>
                 <td>REQUIRED</td>
-                <td>Valid Folders Token.</td>
+                <td>Valid Files Token.</td>
             </tr>
         </tbody>
     </table>
@@ -247,7 +258,7 @@ GET /api/media/files?id=entries/movies/sg-1/season-5/episode-21&token=6f047babd1
 }
 ```
 
-### <a name="upload-file"></a> Upload file
+### <a name="media-files-upload-file"></a> Upload file
 
 <div class="file-header">Request</div>
 ```http
@@ -338,7 +349,7 @@ curl -i -X POST \
 }
 ```
 
-### <a name="move-file"></a> Move file
+### <a name="media-files-move-file"></a> Move file
 
 <div class="file-header">Request</div>
 ```http
@@ -530,7 +541,7 @@ PUT /api/media/files/copy
 }
 ```
 
-### <a name="delete-file"></a> Delete file
+### <a name="media-files-delete-file"></a> Delete file
 
 <div class="file-header">Request</div>
 ```http
@@ -589,7 +600,7 @@ DELETE /api/media/files
 }
 ```
 
-### <a name="update-file-meta"></a> Update File Meta
+### <a name="media-files-update-file-meta"></a> Update File Meta
 
 <div class="file-header">Request</div>
 ```http
@@ -676,7 +687,7 @@ PATCH /api/media/files/meta
 }
 ```
 
-### <a name="add-file-meta"></a> Add File Meta
+### <a name="media-files-add-file-meta"></a> Add File Meta
 
 <div class="file-header">Request</div>
 ```http
@@ -765,7 +776,7 @@ PATCH /api/media/files/meta
 ```
 
 
-### <a name="delete-file-meta"></a> Delete File Meta
+### <a name="media-files-delete-file-meta"></a> Delete File Meta
 
 <div class="file-header">Request</div>
 ```http
@@ -846,10 +857,11 @@ DELETE /api/media/files/meta
 }
 ```
 
+#### Media Folders <a name="media-folders"></a>
 
 The Flextype Folders API organized around Representational State Transfer (REST) for delivering folders from Flextype to apps, websites and other. Folders are delivered as JSON data.
 
-### <a name="endpoints"></a> Endpoints
+### <a name="media-folders-endpoints"></a> Endpoints
 
 <div class="table">
     <table>
@@ -890,11 +902,13 @@ The Flextype Folders API organized around Representational State Transfer (REST)
     </table>
 </div>
 
-### <a name="fetch-single-folder"></a> Fetch single Folder
+### <a name="media-folders-fetch-folder"></a> Fetch Folder
+
+##### Fetch single folder
 
 <div class="file-header">Request</div>
 ```http
-GET /api/media/folders?id=YOUR_FOLDER_ID&token=YOUR_FOLDERS_TOKEN
+GET /api/media/folders?id=YOUR_FOLDER_ID&options=[]&token=YOUR_FOLDERS_TOKEN
 ```
 
 ##### Query
@@ -915,9 +929,9 @@ GET /api/media/folders?id=YOUR_FOLDER_ID&token=YOUR_FOLDERS_TOKEN
                 <td>Folder id.</td>
             </tr>
             <tr>
-                <td>collection</td>
+                <td>options</td>
                 <td>OPTIONAL</td>
-                <td>Collection or single.</td>
+                <td>Array of options.</td>
             </tr>
             <tr>
                 <td>token</td>
@@ -941,11 +955,11 @@ Fetch Movies Folder
 GET /api/media/folders?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
-### <a name="fetch-folders-collection"></a> Fetch folders collection
+##### Fetch folders collection
 
 <div class="file-header">Request</div>
 ```http
-GET /api/entries?id=YOUR_FOLDER_ID&collection=true&token=YOUR_FOLDERS_TOKEN
+GET /api/entries?id=YOUR_FOLDER_ID&options[collection]=true&token=YOUR_FOLDERS_TOKEN
 ```
 
 ##### Query
@@ -966,9 +980,9 @@ GET /api/entries?id=YOUR_FOLDER_ID&collection=true&token=YOUR_FOLDERS_TOKEN
                 <td>Folder id.</td>
             </tr>
             <tr>
-                <td>collection</td>
+                <td>options</td>
                 <td>OPTIONAL</td>
-                <td>Collection or single.</td>
+                <td>Array of options.</td>
             </tr>
             <tr>
                 <td>token</td>
@@ -992,7 +1006,7 @@ Fetch Movies Folders Collection
 GET /api/media/folders?id=entries/movies&collection=true&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
-### <a name="create-folder"></a> Create folder
+### <a name="media-folders-create-folder"></a> Create folder
 
 <div class="file-header">Request</div>
 ```http
@@ -1063,7 +1077,7 @@ POST /api/media/folders
 }
 ```
 
-### <a name="move-folder"></a> Move folder
+### <a name="media-folders-move-folder"></a> Move folder
 
 <div class="file-header">Request</div>
 ```http
@@ -1169,7 +1183,7 @@ PUT /api/media/folders
 }
 ```
 
-### <a name="copy-folder"></a> Copy folder
+### <a name="media-folders-copy-folder"></a> Copy folder
 
 <div class="file-header">Request</div>
 ```http
@@ -1246,7 +1260,7 @@ PUT /api/media/folders/copy
 }
 ```
 
-### <a name="delete-folder"></a> Delete folder
+### <a name="media-folders-delete-folder"></a> Delete folder
 
 <div class="file-header">Request</div>
 ```http
