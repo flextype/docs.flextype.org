@@ -67,7 +67,7 @@ date_display_format: 'd-m-Y H:i'
 #
 # - display: Display errors or not.
 errors:
-  display: true
+  display: false
 
 # Entries
 #
@@ -75,6 +75,22 @@ errors:
 entries:
   extension: md
   fields:
+    media:
+      files:
+        fetch:
+          enabled: true
+          result: toObject
+      folders:
+        fetch:
+          enabled: true
+          result: toObject
+    registry:
+      get:
+        enabled: true
+    entries:
+      fetch:
+        enabled: true
+        result: toObject
     slug:
       enabled: true
     published_at:
@@ -141,7 +157,7 @@ entries:
 # - drivers.files.cache_slams_timeout: This option defines the cache slams timeout in seconds.
 
 cache:
-  enabled: false
+  enabled: true
   driver: auto
   drivers:
     apcu: {}
@@ -422,7 +438,7 @@ media:
 session:
   name: Flextype
 
-# Flextype APIs
+# Flextype Rest APIs
 api:
   entries:
     enabled: true
@@ -430,12 +446,13 @@ api:
   registry:
     enabled: true
     default_token:
-  files:
-    enabled: true
-    default_token:
-  folders:
-    enabled: true
-    default_token:
+  media:
+    files:
+      enabled: true
+      default_token:
+    folders:
+      enabled: true
+      default_token:
   images:
     enabled: true
     default_token:
