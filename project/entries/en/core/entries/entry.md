@@ -469,8 +469,8 @@ entries:
         filter: []
     testimonials:
       id: testimonials
-      method: fetchTestimonials
-      options: []
+      options:
+        method: fetchTestimonials
 ```
 
 ##### <a name="default-variables-media"></a> Media
@@ -509,8 +509,8 @@ media:
           filter: []
       other:
         id: other
-        method: fetchFromOtherDB
-        options: []
+        options:
+          method: fetchFromOtherDB
   folders:
     fetch:
       albums:
@@ -524,8 +524,8 @@ media:
           filter: []
       other:
         id: other
-        method: fetchFromOtherDB
-        options: []
+        options:
+          method: fetchFromOtherDB
 ```
 
 ##### <a name="default-variables-registry"></a> Registry
