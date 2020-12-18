@@ -92,12 +92,8 @@ on_this_page:
                 <td>Upload media file.</td>
             </tr>
             <tr>
-                <td><a href="#methods-files-fetchSingle">fetchSingle()</a></td>
-                <td>Fetch single file.</td>
-            </tr>
-            <tr>
-                <td><a href="#methods-files-fetchCollection">fetchCollection()</a></td>
-                <td>Fetch files collection.</td>
+                <td><a href="#methods-files-fetch">fetch()</a></td>
+                <td>Fetch file or files collection.</td>
             </tr>
             <tr>
                 <td><a href="#methods-files-move">move()</a></td>
@@ -427,15 +423,7 @@ flextype('media_files_meta')
         <tbody>
             <tr>
                 <td><a href="#methods-folders-fetch">fetch()</a></td>
-                <td>Fetch folder(s).</td>
-            </tr>
-            <tr>
-                <td><a href="#methods-folders-fetchSingle">fetchSingle()</a></td>
-                <td>Fetch single folder.</td>
-            </tr>
-            <tr>
-                <td><a href="#methods-folders-fetchCollection">fetchCollection()</a></td>
-                <td>Fetch folders collection.</td>
+                <td>Fetch folder or folders collection.</td>
             </tr>
             <tr>
                 <td><a href="#methods-folders-create">move()</a></td>
