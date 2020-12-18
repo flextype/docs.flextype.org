@@ -1,35 +1,32 @@
 ---
 title: Entries
 breadcrumbs:
-  1:
+  -
     title: "Rest API"
     link: "[url]/en/rest-api/"
 on_this_page:
-  0:
+  -
     title: "Endpoints"
     link: "endpoints"
-  1:
-    title: "Fetch single entry"
-    link: "fetch-single-entry"
-  2:
-    title: "Fetch entries collection"
-    link: "fetch-entries-collection"
-  3:
+  -
+    title: "Fetch entry"
+    link: "fetch-entry"
+  -
     title: "Filtering"
     link: "filtering"
-  4:
+  -
     title: "Create entry"
     link: "create-entry"
-  5:
+  -
     title: "Update entry"
     link: "update-entry"
-  6:
+  -
     title: "Move entry"
     link: "move-entry"
-  7:
+  -
     title: "Copy entry"
     link: "copy-entry"
-  8:
+  -
     title: "Delete entry"
     link: "delete-entry"
 ---
@@ -51,32 +48,32 @@ The Flextype Entries API organized around Representational State Transfer (REST)
             <tr>
                 <td>GET</td>
                 <td>/api/entries</td>
-                <td>Fetch entry(entries)</td>
+                <td>Fetch entry or entries collection.</td>
             </tr>
             <tr>
                 <td>POST</td>
                 <td>/api/entries</td>
-                <td>Create entry</td>
+                <td>Create entry.</td>
             </tr>
             <tr>
                 <td>PATCH</td>
                 <td>/api/entries</td>
-                <td>Update entry</td>
+                <td>Update entry.</td>
             </tr>
             <tr>
                 <td>PUT</td>
                 <td>/api/entries</td>
-                <td>Move entry</td>
+                <td>Move entry.</td>
             </tr>
             <tr>
                 <td>PUT</td>
                 <td>/api/entries/copy</td>
-                <td>Copy entry(entries)</td>
+                <td>Copy entry or entries collection.</td>
             </tr>
             <tr>
                 <td>DELETE</td>
                 <td>/api/entries</td>
-                <td>Delete entry</td>
+                <td>Delete entry.</td>
             </tr>
         </tbody>
     </table>
