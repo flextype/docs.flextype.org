@@ -1,6 +1,6 @@
 ---
 title: Images
-description: The Flextype Images allows the retrieval and manipulation of image files referenced from uploads.
+description: The Flextype Images allows the retrieval and manipulation of image files referenced from media.
 breadcrumbs:
   1:
     title: "Rest API"
@@ -17,7 +17,7 @@ on_this_page:
     link: "displaying-images-in-the-template-glide-options"
 ---
 
-The Flextype Images API allows the retrieval and manipulation of image files referenced from Flextype site uploads directory to apps, websites and other media. Images are delivered as files.
+The Flextype Images API allows the retrieval and manipulation of image files referenced from Flextype site media directory to apps, websites and other media. Images are delivered as files.
 
 ### <a name="endpoints"></a> Endpoints
 
@@ -100,14 +100,14 @@ Fetch image **venom-2** from upload directory **/movies/venom-2/**
 
 <div class="file-header">Request</div>
 ```http
-GET /api/images/movies/venom-2/venom-2.jpg?token=c1fda5a94603a7296f3a0a5370cfe59f
+GET /api/images/entries/movies/venom-2/venom-2.jpg?token=c1fda5a94603a7296f3a0a5370cfe59f
 ```
 
 Fetch image **venom-2** from upload directory **/movies/venom-2/** and do several image manipulations
 
 <div class="file-header">Request</div>
 ```http
-GET /api/images/movies/venom-2/venom-2.jpg?w=100&q=70&token=c1fda5a94603a7296f3a0a5370cfe59f
+GET /api/images/entries/movies/venom-2/venom-2.jpg?w=100&q=70&token=c1fda5a94603a7296f3a0a5370cfe59f
 ```
 
 ### <a name="displaying-images-in-the-template-glide-options"></a> A complete list of available options for Glide/Intervention
