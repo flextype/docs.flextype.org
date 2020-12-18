@@ -13,11 +13,8 @@ on_this_page:
         title: "upload()"
         link: "methods-files-upload"
       -
-        title: "fetchSingle()"
-        link: "methods-files-fetchSingle"
-      -
-        title: "fetchCollection()"
-        link: "methods-files-fetchCollection"
+        title: "fetch()"
+        link: "methods-files-fetch"
       -
         title: "move()"
         link: "methods-files-move"
@@ -54,11 +51,8 @@ on_this_page:
     link: "folders-methods"
     level2:
       -
-        title: "fetchSingle()"
-        link: "methods-folders-fetchSingle"
-      -
-        title: "fetchCollection()"
-        link: "methods-folders-fetchCollection"
+        title: "fetch()"
+        link: "methods-folders-fetch"
       -
         title: "create()"
         link: "methods-folders-create"
