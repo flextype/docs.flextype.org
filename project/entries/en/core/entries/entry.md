@@ -433,6 +433,133 @@ But this rule can be changed by setting individual cache for each entry.
     </table>
 </div>
 
+##### <a name="default-variables-entries"></a> Entries
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>entries</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+```yaml
+entries:
+  fetch:
+    posts:
+      id: blog
+      options:
+        collection: true
+        find: []
+        filter: []
+    post:
+      id: blog/post-1
+      options:
+        filter: []
+    testimonials:
+      id: testimonials
+      method: fetchTestimonials
+      options: []
+```
+
+##### <a name="default-variables-media"></a> Media
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>media</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+```yaml
+media:
+  files:
+    fetch:
+      albums:
+        id: albums
+        options:
+          collection: true
+          filter: []
+      foo:
+        id: albums/album-1/foo.jpg
+        options:
+          filter: []
+      other:
+        id: other
+        method: fetchFromOtherDB
+        options: []
+  folders:
+    fetch:
+      albums:
+        id: albums
+        options:
+          collection: true
+          filter: []
+      foo:
+        id: albums/album-1/foo.jpg
+        options:
+          filter: []
+      other:
+        id: other
+        method: fetchFromOtherDB
+        options: []
+```
+
+##### <a name="default-variables-registry"></a> Registry
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>registry</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+```yaml
+registry:
+  get:
+    flextype:
+      key: flextype.manifest.name
+    author.name:
+      key: flextype.manifest.author.name
+    license:
+      key: flextype.manifest.license
+```
+
 ### <a name="custom-variables"></a> Custom Variables
 
 You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for Rest API and any extension such as plugin, theme and etc...
