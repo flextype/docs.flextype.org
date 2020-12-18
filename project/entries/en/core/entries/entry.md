@@ -605,12 +605,8 @@ Get variable `author.twitter` with [TWIG Plugin](https://github.com/flextype-plu
         </thead>
         <tbody>
             <tr>
-                <td><a href="#methods-fetchSingle">fetchSingle()</a></td>
-                <td>Fetch single entry</td>
-            </tr>
-            <tr>
-                <td><a href="#methods-fetchCollection">fetchCollection()</a></td>
-                <td>Fetch entries collection</td>
+                <td><a href="#methods-fetch">fetch()</a></td>
+                <td>Fetch entry or entries collection.</td>
             </tr>
             <tr>
                 <td><a href="#methods-create">create()</a></td>
@@ -649,67 +645,56 @@ Get variable `author.twitter` with [TWIG Plugin](https://github.com/flextype-plu
 
 ### Methods Details
 
-##### <a name="methods-fetchSingle"></a> `fetchSingle()`
+##### <a name="methods-fetch"></a> `fetch()`
 
-Fetch single entry.
+Fetch entry or entries collection.
 
 ```php
 /**
- * Fetch single entry.
+ * Fetch.
  *
  * @param string $id      Unique identifier of the entry.
  * @param array  $options Options array.
  *
  * @access public
+ *
+ * @return self Returns instance of The Arrays class.
  */
-public function fetchSingle(string $id, array $options = []): Arrays
+public function fetch(string $id, array $options = []): Arrays
 ```
+
+##### Fetch single entry
 
 **Examples**
 
 Fetch single entry `movies/sg-1/season-5/episode-21`
 
 ```php
-$data = flextype('entries')->fetchSingle('movies/sg-1/season-5/episode-21');
+$data = flextype('entries')->fetch('movies/sg-1/season-5/episode-21');
 ```
 
 Fetch singe entry in `movies/sg-1/season-5/episode-21` and path `$options`.
 
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $options);
+$data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
 ```
 
 `$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) helper.
 
-
-##### <a name="methods-fetchCollection"></a> `fetchCollection()`
-
-Fetch entries collection.
-
-```php
-/**
- * Fetch entries collection.
- *
- * @param string $id      Unique identifier of the entries collecton.
- * @param array  $options Options array.
- *
- * @access public
- */
-public function fetchCollection(string $id, array $options = []): Arrays
-```
+##### Fetch entries collection
 
 **Examples**
 
 Fetch collections of entries episodes in `movies/sg-1/season-5`
 
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5');
+$data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
 ```
 
 Fetch collections of entries in `movies/sg-1` and path `$options`.
 
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $options);
+$data = flextype('entries')->fetch('movies/sg-1/season-5', ['collection' => true, ...$options]);
 ```
 
 `$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
