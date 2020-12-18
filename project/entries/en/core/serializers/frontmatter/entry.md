@@ -64,7 +64,7 @@ $data = [
                 'content' => 'Osiris engages in space combat with Thor over a violation of the protected planets treaty. Freyr arrives at the SGC bringing news of Thor\'s death and asking SG-1 to mount a rescue mission to retrieve an Asgard scientist from the planet in question. Upon their arrival Heimdall informs them that Thor still lives and has been taken captive by the Goa\'uld. O\'Neill and Teal\'c transport over to the mothership to rescue him from the clutches of Anubis.'
         ];
 
-$json = flextype('frontmatter')->encode($data);
+$data = flextype('serializers')->frontmatter()->encode($data);
 
 ```
 
@@ -85,6 +85,6 @@ $frontmatter = "
     ---
     SG-1 returns from an off-world mission to P9Y-3C3 with Daniel Jackson suffering from what is likely a fatal dose of radiation. On the planet, they dealt with the country of Kelowna and their representative Jonas Quinn. That country was at the same stage of development as the United States in the 1940s and well on their way to creating an atomic weapon using Goa'uld technology found in an ancient temple. Daniel argued against the Kelownans developing such a weapon and is accused of attempting to sabotage the project. As members of the team sit by his deathbed, Daniel receives an unexpected offer from someone they once met off-world."
 
-$data = flextype('frontmatter')->decode($frontmatter);
+$data = flextype('serializers')->frontmatter()->decode($frontmatter);
 
 ```
