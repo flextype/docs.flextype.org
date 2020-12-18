@@ -6,10 +6,10 @@ breadcrumbs:
     title: "Core Concepts"
     link: "[url]/en/core/"
 on_this_page:
-  0:
+  -
     title: "Entries and Urls structure"
     link: "entries-and-urls-structure"
-  1:
+  -
     title: "Default Variables"
     link: "default-variables"
     level2:
@@ -46,44 +46,50 @@ on_this_page:
       -
         title: "id"
         link: "default-variables-id"
-  2:
+      -
+        title: "entries"
+        link: "default-variables-entries"
+      -
+        title: "media"
+        link: "default-variables-media"
+      -
+        title: "registry"
+        link: "default-variables-registry"
+  -
     title: "Custom Variables"
     link: "custom-variables"
-  3:
+  -
     title: "Methods"
     link: "methods"
     level2:
-      1:
-        title: "fetchSingle()"
-        link: "methods-fetchSingle"
-      2:
-        title: "fetchCollection()"
-        link: "methods-fetchCollection"
-      3:
+      -
+        title: "fetch()"
+        link: "methods-fetch"
+      -
         title: "create()"
         link: "methods-create"
-      4:
+      -
         title: "update()"
         link: "methods-update"
-      5:
+      -
         title: "move()"
         link: "methods-move"
-      6:
+      -
         title: "copy()"
         link: "methods-copy"
-      7:
+      -
         title: "delete()"
         link: "methods-delete"
-      8:
+      -
         title: "has()"
         link: "methods-has"
-      9:
+      -
         title: "getFileLocation()"
         link: "methods-getFileLocation"
-      10:
+      -
         title: "getDirLocation()"
         link: "methods-getDirLocation"
-  4:
+  -
     title: Extending
     link: "extending"
 ---
@@ -400,7 +406,7 @@ But this rule can be changed by setting individual cache for each entry.
             <tr>
                 <td>slug</td>
                 <td></td>
-                <td>Slug ist entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.</td>
+                <td>Slug is entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.</td>
             </tr>
         </tbody>
     </table>
