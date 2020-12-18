@@ -35,17 +35,11 @@ The Flextype Registry API organized around Representational State Transfer (REST
 
 For more details <a href="[url]/en/rest-api/registry">read the reference guide for the Registry API</a>.
 
-#### Files
+#### Media
 
-The Flextype Files API organized around Representational State Transfer (REST) for delivering Files from Flextype to apps, websites and other. Files is delivered as JSON data.
+The Flextype Media Files API and Media Folders API organized around Representational State Transfer (REST) for delivering Files and Folders from Flextype to apps, websites and other. Files is delivered as JSON data.
 
-For more details <a href="[url]/en/rest-api/files">read the reference guide for the Files API</a>.
-
-#### Folders
-
-The Flextype Folders API organized around Representational State Transfer (REST) for delivering Folders from Flextype to apps, websites and other. Folders is delivered as JSON data.
-
-For more details <a href="[url]/en/rest-api/folders">read the reference guide for the Folders API</a>.
+For more details <a href="[url]/en/rest-api/media">read the reference guide for the Media API</a>.
 
 #### Images
 
