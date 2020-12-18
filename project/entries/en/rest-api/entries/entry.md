@@ -196,10 +196,19 @@ GET /api/entries?id=movies&options[collection]=true&options[filter][where][0][ke
 
 ##### Options
 
-We can send options for the query to search items in a collection that matches the specific filter's conditions.
+We can send options for the query to search items in a collection that matches the specific filter's conditions.  
 
 `options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
 
+##### Extending
+
+We can you use any custom macroabe function assigned to Entries API in the fetch query with help off `&options[method]=`
+
+##### Examples
+
+```http
+GET /api/entries?id=movies&options[method]=fetchFromOtherDB&token=6f047babd1894064fbf7662080a9a2f0
+```
 
 ### <a name="create-entry"></a> Create entry
 
