@@ -12,9 +12,6 @@ on_this_page:
     title: "Fetch entry"
     link: "fetch-entry"
   -
-    title: "Filtering"
-    link: "filtering"
-  -
     title: "Create entry"
     link: "create-entry"
   -
@@ -79,11 +76,13 @@ The Flextype Entries API organized around Representational State Transfer (REST)
     </table>
 </div>
 
-### <a name="fetch-single-entry"></a> Fetch single entry
+### <a name="fetch-entry"></a> Fetch entry
+
+##### Fetch single entry
 
 <div class="file-header">Request</div>
 ```http
-GET /api/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_TOKEN
+GET /api/entries?id=YOUR_ENTRY_ID&[options]&token=YOUR_ENTRIES_TOKEN
 ```
 
 ##### Query
@@ -104,9 +103,9 @@ GET /api/entries?id=YOUR_ENTRY_ID&token=YOUR_ENTRIES_TOKEN
                 <td>Valid Entry ID (slug)</td>
             </tr>
             <tr>
-                <td>filter</td>
+                <td>options</td>
                 <td>OPTIONAL</td>
-                <td>A set of <a href="#filtering">valid arguments</a> to search and sort specific needed entries.</td>
+                <td>A set of valid arguments to search and sort specific needed entries.</td>
             </tr>
             <tr>
                 <td>token</td>
@@ -130,11 +129,11 @@ Fetch Movies Entry
 GET /api/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
-### <a name="fetch-entries-collection"></a> Fetch entries collection
+##### Fetch entries collection
 
 <div class="file-header">Request</div>
 ```http
-GET /api/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_TOKEN
+GET /api/entries?id=YOUR_ENTRY_ID&options[collection]=true&token=YOUR_ENTRIES_TOKEN
 ```
 
 ##### Query
@@ -155,9 +154,9 @@ GET /api/entries?id=YOUR_ENTRY_ID&filter[]&token=YOUR_ENTRIES_TOKEN
                 <td>Valid Entry ID (slug)</td>
             </tr>
             <tr>
-                <td>filter</td>
-                <td>REQUIRED</td>
-                <td>A set of <a href="#filtering">valid arguments</a> to search and sort specific needed entries.</td>
+                <td>options</td>
+                <td>OPTIONAL</td>
+                <td>A set of valid arguments to search and sort specific needed entries.</td>
             </tr>
             <tr>
                 <td>token</td>
@@ -178,28 +177,28 @@ Fetch Movies Collection
 
 <div class="file-header">Request</div>
 ```http
-GET /api/entries?id=movies&filter[]&token=6f047babd1894064fbf7662080a9a2f0
+GET /api/entries?id=movies&options[collection]=true&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan**
 
 <div class="file-header">Request</div>
 ```http
-GET /api/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
+GET /api/entries?id=movies&options[collection]=true&options[filter][where][0][key]=director&options[filter][where][9][operator]=eq&options[filter][where][0][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 Fetch Movies Collection where **director** is equal to **Cathy Yan** and where year is equal to **2020** and where genre is contains **action**
 
 <div class="file-header">Request</div>
 ```http
-GET /api/entries?id=movies&filter[where][key]=director&filter[where][expr]=eq&filter[where][value]=Cathy+Yan&filter[where][0][key]=year&filter[where][0][expr]=eq&filter[where][0][value]=2020&filter[where][1][key]=genre&filter[where][1][expr]=contains&filter[where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
+GET /api/entries?id=movies&options[collection]=true&options[filter][where][0][key]=director&options[filter][where][0][operator]=eq&options[filter][where][0][value]=Cathy+Yan&options[filter][where][1][key]=year&options[filter][where][1][operator]=eq&options[filter][where][1][value]=2020&options[filter][where][2][key]=genre&options[filter][where][1][operator]=contains&options[filter][where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
-### <a name="filtering"></a> Filtering
+##### Options
 
-With the filter query you're able to search items in a collection that matches the filter's conditions.
+We can send options for the query to search items in a collection that matches the specific filter's conditions.
 
-`filter` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
+`options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
 
 
 ### <a name="create-entry"></a> Create entry
