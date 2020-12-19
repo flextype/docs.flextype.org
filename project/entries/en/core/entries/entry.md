@@ -673,7 +673,7 @@ Fetch single entry `movies/sg-1/season-5/episode-21`
 $data = flextype('entries')->fetch('movies/sg-1/season-5/episode-21');
 ```
 
-Fetch singe entry in `movies/sg-1/season-5/episode-21` and path `$options`.
+Fetch singe entry in `movies/sg-1/season-5/episode-21` and send `$options`.
 
 ```php
 $data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
@@ -691,7 +691,7 @@ Fetch collections of entries episodes in `movies/sg-1/season-5`
 $data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
 ```
 
-Fetch collections of entries in `movies/sg-1` and path `$options`.
+Fetch collections of entries in `movies/sg-1` and send `$options`.
 
 ```php
 $data = flextype('entries')->fetch('movies/sg-1/season-5', ['collection' => true, ...$options]);
