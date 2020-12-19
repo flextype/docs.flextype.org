@@ -146,7 +146,7 @@ flextype('media')->files()->upload($_FILES['file'],
 
 ##### <a name="methods-files-fetch"></a> `fetch()`
 
-Fetch file.
+Fetch file or files collection.
 
 ```php
 /**
@@ -160,11 +160,16 @@ Fetch file.
 public function fetch(string $id, array $options = []): Arrays
 ```
 
+##### Fetch single file
+
 **Examples**
 
 ```php
 // Fetch single image
 $cover = flextype('media')->files()->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg');
+
+// Fetch single image and send $options
+$cover = flextype('media')->files()->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg', $options);
 
 // Now you may get each image field from image meta data.
 echo $cover['title'];
@@ -178,14 +183,22 @@ echo $cover['url'];
 echo $cover['full_url'];
 ```
 
-Fetch files collection.
+`$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
+
+##### Fetch files collection
 
 **Examples**
 
 ```php
 // Fetch images collection
 $images = flextype('media')->files()->fetch('entries/movies/sg-1/season-5/episode-21');
+
+// Fetch images collection and send $options
+$cover = flextype('media')->files()->fetch('entries/movies/sg-1/season-5/episode-21/cover.jpg', ['collection' => true, ...$options]);
+
 ```
+
+`$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
 
 ##### <a name="methods-files-move"></a> `move()`
 
