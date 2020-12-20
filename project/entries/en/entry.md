@@ -40,8 +40,7 @@ txt:
      entries: Entries
      registry: Registry
      config: Config
-     files: Files
-     folders: Folders
+     media: Media
      images: Images
 ---
 

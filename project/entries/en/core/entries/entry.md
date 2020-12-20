@@ -6,10 +6,10 @@ breadcrumbs:
     title: "Core Concepts"
     link: "[url]/en/core/"
 on_this_page:
-  0:
+  -
     title: "Entries and Urls structure"
     link: "entries-and-urls-structure"
-  1:
+  -
     title: "Default Variables"
     link: "default-variables"
     level2:
@@ -46,44 +46,50 @@ on_this_page:
       -
         title: "id"
         link: "default-variables-id"
-  2:
+      -
+        title: "entries"
+        link: "default-variables-entries"
+      -
+        title: "media"
+        link: "default-variables-media"
+      -
+        title: "registry"
+        link: "default-variables-registry"
+  -
     title: "Custom Variables"
     link: "custom-variables"
-  3:
+  -
     title: "Methods"
     link: "methods"
     level2:
-      1:
-        title: "fetchSingle()"
-        link: "methods-fetchSingle"
-      2:
-        title: "fetchCollection()"
-        link: "methods-fetchCollection"
-      3:
+      -
+        title: "fetch()"
+        link: "methods-fetch"
+      -
         title: "create()"
         link: "methods-create"
-      4:
+      -
         title: "update()"
         link: "methods-update"
-      5:
+      -
         title: "move()"
         link: "methods-move"
-      6:
+      -
         title: "copy()"
         link: "methods-copy"
-      7:
+      -
         title: "delete()"
         link: "methods-delete"
-      8:
+      -
         title: "has()"
         link: "methods-has"
-      9:
+      -
         title: "getFileLocation()"
         link: "methods-getFileLocation"
-      10:
+      -
         title: "getDirLocation()"
         link: "methods-getDirLocation"
-  4:
+  -
     title: Extending
     link: "extending"
 ---
@@ -400,7 +406,7 @@ But this rule can be changed by setting individual cache for each entry.
             <tr>
                 <td>slug</td>
                 <td></td>
-                <td>Slug ist entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.</td>
+                <td>Slug is entirely lowercase, with accented characters replaced by letters from the Latin alphabet and whitespace characters replaced by a dash or an underscore, to avoid being encoded.</td>
             </tr>
         </tbody>
     </table>
@@ -427,11 +433,138 @@ But this rule can be changed by setting individual cache for each entry.
     </table>
 </div>
 
+##### <a name="default-variables-entries"></a> Entries
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>entries</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+```yaml
+entries:
+  fetch:
+    posts:
+      id: blog
+      options:
+        collection: true
+        find: []
+        filter: []
+    post:
+      id: blog/post-1
+      options:
+        filter: []
+    testimonials:
+      id: testimonials
+      options:
+        method: fetchTestimonials
+```
+
+##### <a name="default-variables-media"></a> Media
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>media</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+```yaml
+media:
+  files:
+    fetch:
+      albums:
+        id: albums
+        options:
+          collection: true
+          filter: []
+      foo:
+        id: albums/album-1/foo.jpg
+        options:
+          filter: []
+      other:
+        id: other
+        options:
+          method: fetchFromOtherDB
+  folders:
+    fetch:
+      albums:
+        id: albums
+        options:
+          collection: true
+          filter: []
+      foo:
+        id: albums/album-1/foo.jpg
+        options:
+          filter: []
+      other:
+        id: other
+        options:
+          method: fetchFromOtherDB
+```
+
+##### <a name="default-variables-registry"></a> Registry
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Default</th>
+                <th>Available values for option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>registry</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+```yaml
+registry:
+  get:
+    flextype:
+      key: flextype.manifest.name
+    author.name:
+      key: flextype.manifest.author.name
+    license:
+      key: flextype.manifest.license
+```
+
 ### <a name="custom-variables"></a> Custom Variables
 
-You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for Entry API and any extension such as plugin, theme and etc...
+You can create your own custom entry variables using any valid YAML syntax. These would be entry-specific variable and be available for Rest API and any extension such as plugin, theme and etc...
 
-**Examples**
+<div class="file-header"><i class="far fa-file-alt"></i> project/entries/home/entry.md</div>
 
     ---
     title: My Entry Title
@@ -441,6 +574,24 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
     ---
     My entry content here.
 
+**Examples**
+
+Get variable `author.twitter` with PHP.
+
+```php
+echo flextype('entries')->fetchSingle('home')['author']['twitter'];
+```
+
+Get variable `author.twitter` with Rest API.
+```http
+GET /api/entries?id=home&token=YOUR_ENTRIES_TOKEN
+```
+
+Get variable `author.twitter` with [TWIG Plugin](https://github.com/flextype-plugins/twig).
+
+```twig
+{{ entries.fetchSingle('home')['author']['twitter'] }}
+```
 
 ### <a name="methods"></a> Methods
 
@@ -454,12 +605,8 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
         </thead>
         <tbody>
             <tr>
-                <td><a href="#methods-fetchSingle">fetchSingle()</a></td>
-                <td>Fetch single entry</td>
-            </tr>
-            <tr>
-                <td><a href="#methods-fetchCollection">fetchCollection()</a></td>
-                <td>Fetch entries collection</td>
+                <td><a href="#methods-fetch">fetch()</a></td>
+                <td>Fetch entry or entries collection.</td>
             </tr>
             <tr>
                 <td><a href="#methods-create">create()</a></td>
@@ -498,67 +645,56 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
 
 ### Methods Details
 
-##### <a name="methods-fetchSingle"></a> `fetchSingle()`
+##### <a name="methods-fetch"></a> `fetch()`
 
-Fetch single entry.
+Fetch entry or entries collection.
 
 ```php
 /**
- * Fetch single entry.
+ * Fetch.
  *
  * @param string $id      Unique identifier of the entry.
  * @param array  $options Options array.
  *
  * @access public
+ *
+ * @return self Returns instance of The Arrays class.
  */
-public function fetchSingle(string $id, array $options = []): Arrays
+public function fetch(string $id, array $options = []): Arrays
 ```
+
+##### Fetch single entry
 
 **Examples**
 
 Fetch single entry `movies/sg-1/season-5/episode-21`
 
 ```php
-$data = flextype('entries')->fetchSingle('movies/sg-1/season-5/episode-21');
+$data = flextype('entries')->fetch('movies/sg-1/season-5/episode-21');
 ```
 
-Fetch singe entry in `movies/sg-1/season-5/episode-21` and path `$options`.
+Fetch singe entry in `movies/sg-1/season-5/episode-21` and send `$options`.
 
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $options);
+$data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
 ```
 
 `$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) helper.
 
-
-##### <a name="methods-fetchCollection"></a> `fetchCollection()`
-
-Fetch entries collection.
-
-```php
-/**
- * Fetch entries collection.
- *
- * @param string $id      Unique identifier of the entries collecton.
- * @param array  $options Options array.
- *
- * @access public
- */
-public function fetchCollection(string $id, array $options = []): Arrays
-```
+##### Fetch entries collection
 
 **Examples**
 
 Fetch collections of entries episodes in `movies/sg-1/season-5`
 
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5');
+$data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
 ```
 
-Fetch collections of entries in `movies/sg-1` and path `$options`.
+Fetch collections of entries in `movies/sg-1` and send `$options`.
 
 ```php
-$data = flextype('entries')->fetchCollection('movies/sg-1/season-5', $options);
+$data = flextype('entries')->fetch('movies/sg-1/season-5', ['collection' => true, ...$options]);
 ```
 
 `$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
@@ -824,11 +960,13 @@ For this approach, you should use a mixin static method on the macroable Entries
 ```php
 // Blog Mixin Class.
 class BlogMixin {
-    public function fetchRecentPosts($limit = 10) {
-        return flextype('entries')
-                    ->fetchCollection('blog')
-                    ->sortBy('publised_at')
-                    ->limit($limit);
+    public function fetchRecentPosts() {
+        return function($limit = 10) {
+            return flextype('entries')
+                        ->fetchCollection('blog')
+                        ->sortBy('publised_at')
+                        ->limit($limit);
+        }
     }
 }
 

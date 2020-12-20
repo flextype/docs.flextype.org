@@ -24,14 +24,14 @@ Sets how the image is fitted to its target dimensions.
 
 <div class="file-header">Request</div>
 ```http
-GET YOUR_APP_URL/api/images/en/image.jpg?w=300&h=300&fit=stretch&token=YOUR_IMAGES_TOKEN
+GET YOUR_APP_URL/api/images/entries/en/image.jpg?w=300&h=300&fit=stretch&token=YOUR_IMAGES_TOKEN
 ```
 
 ##### Example
 
 <div class="file-header">Request</div>
 ```http
-GET [url]/api/images/en/image.jpg?w=300&h=300&fit=stretch&token=4864fb8e1ebe080e6e4ad5c4363083a6
+GET [url]/api/images/entries/en/image.jpg?w=300&h=300&fit=stretch&token=4864fb8e1ebe080e6e4ad5c4363083a6
 ```
 
 ##### Result

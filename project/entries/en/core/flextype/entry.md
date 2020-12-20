@@ -17,6 +17,9 @@ on_this_page:
         title: "getVersion()"
         link: "methods-getVersion"
       -
+        title: "isApiRequest()"
+        link: "methods-isApiRequest"
+      -
         title: "container()"
         link: "methods-container"
   -
@@ -53,6 +56,10 @@ With help of Flextype Core Class we are able to access all features and develop 
             <tr>
                 <td><a href="#methods-getVersion">getVersion()</a></td>
                 <td>Get current Flextype version.</td>
+            </tr>
+            <tr>
+                <td><a href="#methods-isApiRequest">isApiRequest()</a></td>
+                <td>Determine API Request.</td>
             </tr>
             <tr>
                 <td><a href="#methods-container">container()</a></td>
@@ -98,6 +105,27 @@ public function getVersion(): string
 
 ```php
 $version = Flextype::getInstance()->getVersion();
+```
+
+##### <a name="methods-isApiRequest"></a> `isApiRequest()`
+
+Determine API Request.
+
+```php
+/**
+ * Determine API Request
+ *
+ * @return bool
+ */
+public function isApiRequest(): bool
+```
+
+**Examples**
+
+```php
+if (flextype()->isApiRequest()) {
+    // do something...
+}
 ```
 
 ##### <a name="methods-container"></a> `container()`
@@ -210,28 +238,12 @@ List of available registered services in Flextype Dependency Injection Container
                 <td><a href="https://www.phpfastcache.com">documentation</a></td>
             </tr>
             <tr>
-                <td>shortcode</td>
-                <td><a href="[url]/en/parsers/shortcode">documentation</a></td>
+                <td>parsers</td>
+                <td><a href="[url]/en/parsers">documentation</a></td>
             </tr>
             <tr>
-                <td>markdown</td>
-                <td><a href="[url]/en/parsers/markdown">documentation</a></td>
-            </tr>
-            <tr>
-                <td>frontmatter</td>
-                <td><a href="[url]/en/serializers/frontmatter">documentation</a></td>
-            </tr>
-            <tr>
-                <td>frontmatter</td>
-                <td><a href="[url]/en/serializers/frontmatter">documentation</a></td>
-            </tr>
-            <tr>
-                <td>json</td>
-                <td><a href="[url]/en/serializers/json">documentation</a></td>
-            </tr>
-            <tr>
-                <td>yaml</td>
-                <td><a href="[url]/en/serializers/yaml">documentation</a></td>
+                <td>serializers</td>
+                <td><a href="[url]/en/serializers">documentation</a></td>
             </tr>
             <tr>
                 <td>images</td>
@@ -242,20 +254,8 @@ List of available registered services in Flextype Dependency Injection Container
                 <td><a href="[url]/en/core/entries">documentation</a></td>
             </tr>
             <tr>
-                <td>media_files</td>
-                <td><a href="[url]/en/core/media#files-methods">documentation</a></td>
-            </tr>
-            <tr>
-                <td>media_files_meta</td>
-                <td><a href="[url]/en/core/media#files-meta-methods">documentation</a></td>
-            </tr>
-            <tr>
-                <td>media_folders</td>
-                <td><a href="[url]/en/core/media#folders-methods">documentation</a></td>
-            </tr>
-            <tr>
-                <td>media_folders_meta</td>
-                <td><a href="[url]/en/core/media#folders-meta-methods">documentation</a></td>
+                <td>media</td>
+                <td><a href="[url]/en/core/media">documentation</a></td>
             </tr>
             <tr>
                 <td>plugins</td>

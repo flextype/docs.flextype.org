@@ -153,7 +153,7 @@ public function addHandler(string $name, callable $handler)
 **Examples**
 
 ```php
-flextype('shortcode')->addHandler('message', function () {
+flextype('parsers')->shortcode()->addHandler('message', function () {
     return "Indeed. – Teal'c";
 });
 ```
@@ -177,11 +177,11 @@ public function addEventHandler(string $name, callable $handler)
 **Examples**
 
 ```php
-flextype('shortcode')->addHandler('raw', static function (ShortcodeInterface $s) {
+flextype('parsers')->shortcode()->addHandler('raw', static function (ShortcodeInterface $s) {
     return $s->getContent();
 });
 
-flextype('shortcode')->addEventHandler(Events::FILTER_SHORTCODES, new FilterRawEventHandler(['raw']));
+flextype('parsers')->shortcode()->addEventHandler(Events::FILTER_SHORTCODES, new FilterRawEventHandler(['raw']));
 ```
 
 More details about events: https://github.com/thunderer/Shortcode#events
@@ -208,7 +208,7 @@ public function process(string $input, bool $cache = true)
 ```php
 $shortcode = 'text with [message]';
 
-$html = flextype('shortcode')->process($shortcode);
+$html = flextype('parsers')->shortcode()->process($shortcode);
 ```
 
 ##### <a name="methods-parse"></a> `parse()`
@@ -231,7 +231,7 @@ public function parse(string $input)
 ```php
 $shortcode = 'text with [message]';
 
-$text = flextype('shortcode')->parse($shortcode);
+$text = flextype('parsers')->shortcode()->parse($shortcode);
 ```
 
 ##### <a name="methods-getCacheID"></a> `getCacheID()`
@@ -256,5 +256,5 @@ public function getCacheID(string $input): string
 ```php
 $shortcode = 'text with [message]';
 
-$cache_id = flextype('shortcode')->getCacheID($shortcode);
+$cache_id = flextype('parsers')->shortcode()->getCacheID($shortcode);
 ```

@@ -17,16 +17,16 @@ Adjusts the image contrast. Use values between `-100` and `+100`, where `0` repr
 
 <div class="file-header">Request</div>
 ```http
-GET YOUR_APP_URL/api/images/en/image.jpg?con=-50&token=YOUR_IMAGES_TOKEN
-GET YOUR_APP_URL/api/images/en/image.jpg?con=50&token=YOUR_IMAGES_TOKEN
+GET YOUR_APP_URL/api/images/entries/en/image.jpg?con=-50&token=YOUR_IMAGES_TOKEN
+GET YOUR_APP_URL/api/images/entries/en/image.jpg?con=50&token=YOUR_IMAGES_TOKEN
 ```
 
 ##### Example
 
 <div class="file-header">Request</div>
 ```http
-GET [url]/api/images/en/image.jpg?con=-50&token=4864fb8e1ebe080e6e4ad5c4363083a6
-GET [url]/api/images/en/image.jpg?con=50&token=4864fb8e1ebe080e6e4ad5c4363083a6
+GET [url]/api/images/entries/en/image.jpg?con=-50&token=4864fb8e1ebe080e6e4ad5c4363083a6
+GET [url]/api/images/entries/en/image.jpg?con=50&token=4864fb8e1ebe080e6e4ad5c4363083a6
 ```
 
 ##### Result

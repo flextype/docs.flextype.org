@@ -181,11 +181,8 @@
                        <a href="{{ url() }}/{{ locale }}/rest-api/config" class="no-underline">{{ entry_locale.txt.categories.rest_api.config }}</a>
                    </li>
                    -->
-                   <li class="{% if entry.id == locale ~ "/rest-api/files" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/rest-api/files" class="no-underline">{{ entry_locale.txt.categories.rest_api.files }}</a>
-                   </li>
-                   <li class="{% if entry.id == locale ~ "/rest-api/folders" %}active{% endif %}">
-                       <a href="{{ url() }}/{{ locale }}/rest-api/folders" class="no-underline">{{ entry_locale.txt.categories.rest_api.folders }}</a>
+                   <li class="{% if entry.id == locale ~ "/rest-api/media" %}active{% endif %}">
+                       <a href="{{ url() }}/{{ locale }}/rest-api/media" class="no-underline">{{ entry_locale.txt.categories.rest_api.media }}</a>
                    </li>
                    <li class="{% if entry.id == locale ~ "/rest-api/images" %}active{% endif %}">
                        <a href="{{ url() }}/{{ locale }}/rest-api/images" class="no-underline">{{ entry_locale.txt.categories.rest_api.images }}</a>
