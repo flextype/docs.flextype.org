@@ -579,7 +579,7 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
 Get variable `author.twitter` with PHP.
 
 ```php
-echo flextype('entries')->fetchSingle('home')['author']['twitter'];
+echo flextype('entries')->fetch('home')['author.twitter'];
 ```
 
 Get variable `author.twitter` with Rest API.
