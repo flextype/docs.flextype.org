@@ -590,7 +590,7 @@ GET /api/entries?id=home&token=YOUR_ENTRIES_TOKEN
 Get variable `author.twitter` with [TWIG Plugin](https://github.com/flextype-plugins/twig).
 
 ```twig
-{{ entries.fetchSingle('home')['author']['twitter'] }}
+{{ entries.fetch('home').author.twitter }}
 ```
 
 ### <a name="methods"></a> Methods
