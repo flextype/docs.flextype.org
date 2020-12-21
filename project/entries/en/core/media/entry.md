@@ -140,8 +140,9 @@ public function upload(array $file, string $folder)
 **Examples**
 
 ```php
-flextype('media')->files()->upload($_FILES['file'],
-                                            '/entries/movies/sg-1/season-5/episode-21/');
+flextype('media')
+  ->files()
+  ->upload($_FILES['file'], '/entries/movies/sg-1/season-5/episode-21/');
 ```
 
 ##### <a name="methods-files-fetch"></a> `fetch()`
