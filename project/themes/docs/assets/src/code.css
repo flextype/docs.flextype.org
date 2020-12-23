@@ -15,7 +15,7 @@ pre > code {
     font-size: .895rem;
 
     box-shadow: 3px 3px 0 #090e24;
-    border: 2px solid #090e24;
+    border: 1px solid #090e24;
     margin-bottom: 40px;
 
     background: #fff;
@@ -42,7 +42,7 @@ code {
 
 
     box-shadow: 3px 3px 0 #090e24;
-    border: 2px solid #090e24;
+    border: 1px solid #090e24;
     margin-bottom: 40px;
 }
 
@@ -77,7 +77,7 @@ code {
     background: #f8f9fb;
     border-bottom: 1px solid #f8f8f8;
     margin-bottom: -10px;
-    border: 2px solid #090e24;
+    border: 1px solid #090e24;
     box-shadow: 3px 3px 0 #090e24;
 }
 
@@ -170,7 +170,7 @@ code {
 .table {
 
     overflow: hidden;
-    border: 2px solid #090e24;
+    border: 1px solid #090e24;
     box-shadow: 3px 3px 0 #090e24;
     margin-bottom: 40px;
     width: 100%;

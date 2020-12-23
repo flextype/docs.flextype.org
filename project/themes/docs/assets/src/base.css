@@ -56,7 +56,7 @@ blockquote {
     padding: 20px!important;
     margin-bottom: 40px;
     font-size: .895rem;
-    border: 3px solid #090e24;
+    border: 1px solid #090e24;
 }
 
 blockquote > p:last-of-type {
