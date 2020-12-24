@@ -739,7 +739,7 @@ $data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
 Fetch collections of entries in `movies/sg-1` and send `$options`.
 
 ```php
-$data = flextype('entries')->fetch('movies/sg-1/season-5', ['collection' => true, ...$options]);
+$data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
 ```
 
 `$options` is an array of valid values for [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) and [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) helpers.
