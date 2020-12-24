@@ -579,7 +579,7 @@ You can create your own custom entry variables using any valid YAML syntax. Thes
 Get variable `author.twitter` with PHP.
 
 ```php
-echo flextype('entries')->fetchSingle('home')['author']['twitter'];
+echo flextype('entries')->fetch('home')['author.twitter'];
 ```
 
 Get variable `author.twitter` with Rest API.
@@ -590,7 +590,7 @@ GET /api/entries?id=home&token=YOUR_ENTRIES_TOKEN
 Get variable `author.twitter` with [TWIG Plugin](https://github.com/flextype-plugins/twig).
 
 ```twig
-{{ entries.fetchSingle('home')['author']['twitter'] }}
+{{ entries.fetch('home').author.twitter }}
 ```
 
 ### <a name="methods"></a> Methods
@@ -681,6 +681,51 @@ $data = flextype('entries')->fetch('movies/sg-1/season-5', $options);
 
 `$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) helper.
 
+```php
+$options = [
+    'filter' => [
+        // Return items.
+        // Valid values: all, first, last, next, random, shuffle
+        'return' => 'all',
+
+        // Filters the array items by a given condition.
+        // key - of the array or object to used for comparison.
+        // operator - used for comparison.
+        //    operators: in, nin, lt, <, lte,
+        //         >, gt, gte, >=, contains, ncontains
+        //         >=, <=, like, nlike, regexp, nregexp,
+        //         eq, =, neq, !=, starts_with,
+        //         ends_with, between, nbetween, older, newer
+        // value - Value used for comparison.
+        'where' => [
+            [
+                'key' => '',
+                'operator' => '',
+                'value' => '',
+            ],
+            [...],
+            [...],
+        ],
+
+        // Group by key
+        'group_by' => '',
+
+        // Sort by key and direction.
+        // Order direction: DESC (descending) or ASC (ascending)
+        'sort_by' => [
+            'key' => '',
+            'direction' => 'ASC'
+        ],
+
+        // Extract a slice of the current array with specific offset.
+        'offset' => 0,
+
+        // Extract a slice of the current array with offset 0 and specific length.
+        'limit' => 10,
+    ],
+];
+```
+
 ##### Fetch entries collection
 
 **Examples**
@@ -697,8 +742,97 @@ Fetch collections of entries in `movies/sg-1` and send `$options`.
 $data = flextype('entries')->fetch('movies/sg-1/season-5', ['collection' => true, ...$options]);
 ```
 
-`$options` is an array of valid values for [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) and [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) helpers.
+`$options` is an array of valid values for [find()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FindHelper.php) and [filter()](https://github.com/flextype/flextype/blob/dev/src/flextype/Support/Helpers/FilterHelper.php) helpers.
 
+```php
+$options = [
+    'collection' => true,
+
+    'find' => [
+        // Restrict the depth of traversing
+        // https://symfony.com/doc/current/components/finder.html#directory-depth
+        'depth' => ['> 1', '< 5'],
+
+        // Restrict by a date range
+        // https://symfony.com/doc/current/components/finder.html#file-date
+        'date' => ['>= 2018-01-01', '<= 2018-12-31'],
+
+        // Restrict by a size range
+        // https://symfony.com/doc/current/components/finder.html#file-size
+        'size' => ['>= 1K', '<= 2K'],
+
+        // Exclude directories from matching
+        // https://symfony.com/doc/current/components/finder.html#location
+        'exclude' => 'directory',
+
+        // Find files by content
+        // https://symfony.com/doc/current/components/finder.html#file-contents
+        'contains' => '',
+
+        // Find files by content excludes files containing given pattern
+        // https://symfony.com/doc/current/components/finder.html#file-contents
+        'not_contains' => '',
+
+        // Filter results with your own strategy
+        // https://symfony.com/doc/current/components/finder.html#custom-filtering
+        'filter' => 'CALLBACK_FUNCTION',
+
+        // Sort results by your own sorting algorithm
+        // https://symfony.com/doc/current/components/finder.html#sorting-results
+        'sort' => 'CALLBACK_FUNCTION',
+
+        // Find files and directories by path
+        // https://symfony.com/doc/current/components/finder.html#path
+        'path' => 'data',
+
+        // Sort the files and directories by the last accessed, changed or modified time
+        // Values: atime, mtime, ctime
+        // https://symfony.com/doc/current/components/finder.html#sorting-results
+        'sort_by' => 'atime',
+    ],
+
+    'filter' => [
+        // Return items.
+        // Valid values: all, first, last, next, random, shuffle
+        'return' => 'all',
+
+        // Filters the array items by a given condition.
+        // key - of the array or object to used for comparison.
+        // operator - used for comparison.
+        //    operators: in, nin, lt, <, lte,
+        //         >, gt, gte, >=, contains, ncontains
+        //         >=, <=, like, nlike, regexp, nregexp,
+        //         eq, =, neq, !=, starts_with,
+        //         ends_with, between, nbetween, older, newer
+        // value - Value used for comparison.
+        'where' => [
+            [
+                'key' => '',
+                'operator' => '',
+                'value' => '',
+            ],
+            [...],
+            [...],
+        ],
+
+        // Group by key
+        'group_by' => '',
+
+        // Sort by key and direction.
+        // Order direction: DESC (descending) or ASC (ascending)
+        'sort_by' => [
+            'key' => '',
+            'direction' => 'ASC'
+        ],
+
+        // Extract a slice of the current array with specific offset.
+        'offset' => 0,
+
+        // Extract a slice of the current array with offset 0 and specific length.
+        'limit' => 10,
+    ],
+];
+```
 
 ##### <a name="methods-create"></a> `create()`
 
