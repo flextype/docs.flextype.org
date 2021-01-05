@@ -12,6 +12,8 @@ namespace Flextype\Foundation;
 use Exception;
 use Psr\Container\ContainerInterface;
 use Slim\App;
+use Slim\Http\Environment;
+use Slim\Http\Uri;
 
 use function is_null;
 
@@ -20,7 +22,7 @@ final class Flextype extends App
     /**
      * Flextype version
      */
-    public const VERSION = '0.9.11';
+    public const VERSION = '0.9.15';
 
     /**
      * The Flextype's instance is stored in a static field. This field is an
@@ -29,7 +31,7 @@ final class Flextype extends App
      *
      * @var array
      */
-    private static $instances = [];
+    private static array $instances = [];
 
     /**
      * Flextype should not be cloneable.
@@ -74,7 +76,7 @@ final class Flextype extends App
     /**
      * Returns Flextype Instance
      *
-     * @param ContainerInterface|array $container
+     * @param ContainerInterface|array $container Container.
      */
     public static function getInstance($container = []): Flextype
     {

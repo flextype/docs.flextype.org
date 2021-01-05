@@ -21,14 +21,6 @@ use Flextype\Component\Filesystem\Filesystem;
 class SiteController
 {
     /**
-     * Current entry data array
-     *
-     * @var array
-     * @access private
-     */
-    public $entry = [];
-
-    /**
      * Index page
      *
      * @param Request  $request  PSR7 request
@@ -44,7 +36,7 @@ class SiteController
         $uri = $args['uri'];
 
         // Is JSON Format
-        $is_json = isset($query['format']) && $query['format'] === 'json';
+        $isJson = isset($query['format']) && $query['format'] === 'json';
 
         // If uri is empty then it is main entry else use entry uri
         if ($uri === '/') {
@@ -54,10 +46,10 @@ class SiteController
         }
 
         // Get entry body
-        $entry_body = flextype('entries')->fetchSingle($entry_uri)->toArray();
+        $entry_body = flextype('entries')->fetch($entry_uri)->toArray();
 
         // is entry not found
-        $is_entry_not_found = false;
+        $isEntryNotFound = false;
 
         // If entry body is not false
         if (is_array($entry_body) and count($entry_body) > 0) {
@@ -65,58 +57,49 @@ class SiteController
             if ((isset($entry_body['visibility']) && ($entry_body['visibility'] === 'draft' || $entry_body['visibility'] === 'hidden')) ||
                 (isset($entry_body['routable']) && ($entry_body['routable'] === false))) {
                 $entry              = $this->error404();
-                $is_entry_not_found = true;
+                $isEntryNotFound = true;
             } else {
                 $entry = $entry_body;
             }
         } else {
-            $entry              = $this->error404();
-            $is_entry_not_found = true;
+            $entry           = $this->error404();
+            $isEntryNotFound = true;
         }
-
-        // Set entry
-        $this->entry = $entry;
-
-        // Run event onSiteEntryAfterInitialized
-        flextype('emitter')->emit('onSiteEntryAfterInitialized');
 
         // Return in JSON Format
-        if ($is_json) {
-            if ($is_entry_not_found) {
-                return $response->withJson($this->entry, 404);
+        if ($isJson) {
+            if ($isEntryNotFound) {
+                return $response->withJson($entry, 404);
             }
 
-            return $response->withJson($this->entry);
+            return $response->withJson($entry);
         }
+
+        // ========== custom code here ==========
+        if ($uri === '/') {
+            return $response->withRedirect('https://docs.flextype.org/en');
+        }
+        // ========== custom code here ==========
+
+        $themeBootstrapPath = PATH['project']. '/themes/' . flextype('registry')->get('plugins.site.settings.theme') . '/theme.php';
+        filesystem()->file($themeBootstrapPath)->exists() and include_once $themeBootstrapPath;
 
         // Set template path for current entry
-        $path = 'themes/' . flextype('registry')->get('plugins.site.settings.theme') . '/' . (empty($this->entry['template']) ? 'templates/default' : 'templates/' . $this->entry['template']) . '.html';
-
-        self::includeCurrentThemeBootstrap();
+        $path = 'themes/' . flextype('registry')->get('plugins.site.settings.theme') . '/' . (empty($entry['template']) ? 'templates/default' : 'templates/' . $entry['template']) . '.html';
 
         if (! Filesystem::has(PATH['project'] . '/' . $path)) {
-            return $response->write("Template {$this->entry['template']} not found");
+            return $response->write("Template {$entry['template']} not found");
         }
 
-        // @TODO replace this to separate plugin!
-        if ($uri === '/') {
-            return $response->withRedirect('./en');
+        $data = ['entry'   => $entry,
+                 'args'    => $args,
+                 'request' => $request];
+
+        if ($isEntryNotFound) {
+            return flextype('twig')->render($response->withStatus(404), $path, $data);
         }
 
-        if ($is_entry_not_found) {
-            return flextype('twig')->render($response->withStatus(404), $path, ['locale' => explode('/',$uri)[1], 'entry' => $this->entry, 'query' => $query, 'uri' => $uri]);
-        }
-
-        return flextype('twig')->render($response, $path, ['locale' => explode('/',$uri)[1], 'entry' => $this->entry, 'query' => $query, 'uri' => $uri]);
-    }
-
-    private static function includeCurrentThemeBootstrap()
-    {
-        $bootstrap_path = 'themes/' . flextype('registry')->get('plugins.site.settings.theme') . '/bootstrap.php';
-
-        if (Filesystem::has(PATH['project'] . '/' . $bootstrap_path)) {
-            include_once PATH['project'] . '/' . $bootstrap_path;
-        }
+        return flextype('twig')->render($response, $path, $data);
     }
 
     /**

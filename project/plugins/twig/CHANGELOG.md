@@ -1,3 +1,82 @@
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/flextype-plugins/twig/compare/v1.6.0...v1.7.0) (2021-01-03)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.15
+
+<a name="1.7.1"></a>
+# [1.7.1](https://github.com/flextype-plugins/twig/compare/v1.7.0...v1.7.1) (2021-01-01)
+
+### Bug Fixes
+
+* **extension** fix filter for Markdown
+
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/flextype-plugins/twig/compare/v1.6.0...v1.7.0) (2020-12-30)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.14
+* **core** Moving to PHP 7.4
+* **core** use new TWIG Plugin 1.7.0
+* **extension** new Constants Extension
+* **extension** new Filesystem Extension
+* **extension** new Flextype Extension
+* **extension** new Filters Extension
+
+New docs on the way here https://github.com/flextype-plugins/twig/
+
+BREAKING CHANGES
+
+* in the templates use `flextype.registry` instead of `registry`
+* in the templates use `flextype.entries` instead of `entries`
+* in the templates use `flextype.media` instead of `media_*`
+
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/flextype-plugins/twig/compare/v1.5.1...v1.6.0) (2020-12-20)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.13
+
+<a name="1.5.1"></a>
+# [1.5.1](https://github.com/flextype-plugins/twig/compare/v1.5.0...v1.5.1) (2020-12-10)
+
+### Bug fixes
+
+* **media** fix namespace for media
+
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/flextype-plugins/twig/compare/v1.4.0...v1.5.0) (2020-12-10)
+
+### Features
+
+* **core** add Media support
+
+    ```
+    media_files.fetchSingle()
+    media_files.fetchCollection()
+    media_files.has()
+    media_files.getFileLocation()
+
+    media_files_meta.getFileMetaLocation()
+
+    media_folders.fetchSingle()
+    media_folders.fetchCollection()
+    media_folders.has()
+    media_folders.getDirectoryLocation()
+
+    media_files_meta.getDirectoryMetaLocation()
+    ```
+
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/flextype-plugins/twig/compare/v1.3.0...v1.4.0) (2020-12-07)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.12
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/flextype-plugins/twig/compare/v1.2.0...v1.3.0) (2020-08-25)
 

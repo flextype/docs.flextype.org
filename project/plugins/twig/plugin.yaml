@@ -1,5 +1,5 @@
 name: Twig
-version: 1.3.0
+version: 1.8.0
 description: Twig plugin to present Twig template engine for Flextype.
 icon: fas fa-palette
 author:
@@ -11,4 +11,4 @@ bugs: https://github.com/flextype-plugins/twig/issues
 license: MIT
 
 dependencies:
-  flextype: 0.9.11
+  flextype: 0.9.15

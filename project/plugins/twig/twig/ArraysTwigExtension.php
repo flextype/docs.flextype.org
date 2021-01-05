@@ -14,14 +14,6 @@ use Twig\Extension\AbstractExtension;
 class ArraysTwigExtension extends AbstractExtension
 {
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * Callback for twig.
      *
      * @return array
@@ -29,12 +21,7 @@ class ArraysTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new \Twig\TwigFunction('arrays', [$this, 'arrays']),
+            new \Twig\TwigFunction('arrays', 'arrays'),
         ];
-    }
-
-    public function arrays($items)
-    {
-        return arrays($items);
     }
 }

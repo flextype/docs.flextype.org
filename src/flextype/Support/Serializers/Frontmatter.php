@@ -32,7 +32,19 @@ class Frontmatter
      */
     public function encode($input): string
     {
-        return $this->_encode($input);
+        if (isset($input['content'])) {
+            $content = $input['content'];
+            $input   = arrays($input)->delete('content')->toArray();
+            $matter  = flextype('serializers')->yaml()->encode($input);
+        } else {
+            $content = '';
+            $matter  = flextype('serializers')->yaml()->encode($input);
+        }
+
+        return '---' . "\n" .
+                   $matter .
+                   '---' . "\n" .
+                   $content;
     }
 
     /**
@@ -45,64 +57,49 @@ class Frontmatter
      */
     public function decode(string $input, bool $cache = true)
     {
+        $decode = function (string $input) {
+            // Remove UTF-8 BOM if it exists.
+            $input = ltrim($input, "\xef\xbb\xbf");
+
+            // Normalize line endings to Unix style.
+            $input = (string) preg_replace("/(\r\n|\r)/", "\n", $input);
+
+            // Parse Frontmatter and Body
+            $parts = preg_split('/^[\s\r\n]?---[\s\r\n]?$/sm', PHP_EOL . strings($input)->trimLeft()->toString());
+
+            if (count($parts) < 3) {
+                return ['content' => strings($input)->trim()->toString()];
+            }
+
+            return flextype('serializers')->yaml()->decode(strings($parts[1])->trim()->toString(), false) + ['content' => strings(implode(PHP_EOL . '---' . PHP_EOL, array_slice($parts, 2)))->trim()->toString()];
+        };
+
         if ($cache === true && flextype('registry')->get('flextype.settings.cache.enabled') === true) {
             $key = $this->getCacheID($input);
 
-            if ($data_from_cache = flextype('cache')->get($key)) {
-                return $data_from_cache;
+            if ($dataFromCache = flextype('cache')->get($key)) {
+                return $dataFromCache;
             }
 
-            $data = $this->_decode($input);
+            $data = $decode($input);
             flextype('cache')->set($key, $data);
 
             return $data;
         }
 
-        return $this->_decode($input);
+        return $decode($input);
     }
 
     /**
-     * @see encode()
+     * Get Cache ID for frontmatter.
+     *
+     * @param  string $input Input.
+     *
+     * @return string Cache ID.
+     *
+     * @access public
      */
-    protected function _encode($input): string
-    {
-        if (isset($input['content'])) {
-            $content = $input['content'];
-            $input   = arrays($input)->delete('content')->toArray();
-            $matter  = flextype('yaml')->encode($input);
-        } else {
-            $content = '';
-            $matter  = flextype('yaml')->encode($input);
-        }
-
-        return '---' . "\n" .
-                   $matter .
-                   '---' . "\n" .
-                   $content;
-    }
-
-    /**
-     * @see decode()
-     */
-    protected function _decode(string $input)
-    {
-        // Remove UTF-8 BOM if it exists.
-        $input = ltrim($input, "\xef\xbb\xbf");
-
-        // Normalize line endings to Unix style.
-        $input = (string) preg_replace("/(\r\n|\r)/", "\n", $input);
-
-        // Parse Frontmatter and Body
-        $parts = preg_split('/^[\s\r\n]?---[\s\r\n]?$/sm', PHP_EOL . strings($input)->trimLeft()->toString());
-
-        if (count($parts) < 3) {
-            return ['content' => strings($input)->trim()->toString()];
-        }
-
-        return flextype('yaml')->decode(strings($parts[1])->trim()->toString(), false) + ['content' => strings(implode(PHP_EOL . '---' . PHP_EOL, array_slice($parts, 2)))->trim()->toString()];
-    }
-
-    public function getCacheID($input): string
+    public function getCacheID(string $input): string
     {
         return strings('frontmatter' . $input)->hash()->toString();
     }

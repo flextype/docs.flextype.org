@@ -10,8 +10,8 @@ declare(strict_types=1);
 use Thunder\Shortcode\Shortcode\ShortcodeInterface;
 
 // Shortcode: [entries_fetch id="entry-id" field="field-name" default="default-value"]
-if (flextype('registry')->get('flextype.settings.shortcode.shortcodes.entries.enabled')) {
-    flextype('shortcode')->addHandler('entries_fetch', static function (ShortcodeInterface $s) {
-        return arrays(flextype('entries')->fetchSingle($s->getParameter('id')))->get($s->getParameter('field'), $s->getParameter('default'));
+if (flextype('registry')->get('flextype.settings.parsers.shortcode.shortcodes.entries.enabled')) {
+    flextype('parsers')->shortcode()->addHandler('entries_fetch', static function (ShortcodeInterface $s) {
+        return arrays(flextype('entries')->fetch($s->getParameter('id')))->get($s->getParameter('field'), $s->getParameter('default'));
     });
 }

@@ -59,6 +59,22 @@ errors:
 entries:
   extension: md
   fields:
+    media:
+      files:
+        fetch:
+          enabled: true
+          result: toObject
+      folders:
+        fetch:
+          enabled: true
+          result: toObject
+    registry:
+      get:
+        enabled: true
+    entries:
+      fetch:
+        enabled: true
+        result: toObject
     slug:
       enabled: true
     published_at:
@@ -328,24 +344,25 @@ image:
 # - markdown.auto_line_breaks: Enable automatic line breaks
 # - markdown.auto_url_links:   Enable automatic HTML links
 # - markdown.escape_markup:    Escape markup tags into entities
-markdown:
-  auto_line_breaks: false
-  auto_url_links: false
-  escape_markup: false
-
+#
 # Shortcode
 #
 # - shortcodes: Flextype Shortcodes to load.
-shortcode:
-  shortcodes:
-    entries:
-      enabled: true
-    raw:
-      enabled: true
-    registry:
-      enabled: true
-    url:
-      enabled: true
+parsers:
+  markdown:
+    auto_line_breaks: false
+    auto_url_links: false
+    escape_markup: false
+  shortcode:
+    shortcodes:
+      entries:
+        enabled: true
+      raw:
+        enabled: true
+      registry:
+        enabled: true
+      url:
+        enabled: true
 
 # CORS
 #
@@ -406,7 +423,7 @@ media:
 session:
   name: Flextype
 
-# Flextype APIs
+# Flextype Rest APIs
 api:
   entries:
     enabled: true
@@ -414,12 +431,13 @@ api:
   registry:
     enabled: true
     default_token:
-  files:
-    enabled: true
-    default_token:
-  folders:
-    enabled: true
-    default_token:
+  media:
+    files:
+      enabled: true
+      default_token:
+    folders:
+      enabled: true
+      default_token:
   images:
     enabled: true
     default_token:

@@ -14,17 +14,7 @@ class SitemapController
      * @var array
      * @access public
      */
-    public $sitemap = [];
-
-    /**
-     * Constructor
-     *
-     * @access public
-     */
-    public function __construct()
-    {
-
-    }
+    public static $sitemap = [];
 
     /**
      * Index page
@@ -37,7 +27,10 @@ class SitemapController
     {
         $sitemap  = [];
 
-        $entries = arrays(flextype('entries')->fetchCollection('', ['depth' => '>0']))->sortBy('modified_at', 'ASC')->all();
+        $entries = flextype('entries')
+                        ->fetch('', ['collection' => true, 'find' => ['depth' => '> 0']])
+                        ->sortBy('modified_at', 'asc')
+                        ->all();
 
         foreach ($entries as $entry) {
 
@@ -92,7 +85,7 @@ class SitemapController
         }
 
         // Set entry to the SitemapController class property $sitemap
-        $this->sitemap = $sitemap;
+        self::$sitemap = $sitemap;
 
         // Run event onSitemapAfterInitialized
         flextype('emitter')->emit('onSitemapAfterInitialized');
@@ -104,7 +97,7 @@ class SitemapController
             $response,
             'plugins/sitemap/templates/index.html',
             [
-                'sitemap' => $this->sitemap
+                'sitemap' => self::$sitemap
             ]);
     }
 }

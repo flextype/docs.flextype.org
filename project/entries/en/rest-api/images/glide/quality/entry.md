@@ -34,6 +34,6 @@ GET [url]/api/images/entries/en/image.jpg?q=25&token=4864fb8e1ebe080e6e4ad5c4363
 
 ##### Result
 
-<img width="200" class="inline" src="[url]/api/images/en/image.jpg?q=100&token=4864fb8e1ebe080e6e4ad5c4363083a6">
-<img width="200" class="inline" src="[url]/api/images/en/image.jpg?q=65&token=4864fb8e1ebe080e6e4ad5c4363083a6">
-<img width="200" class="inline" src="[url]/api/images/en/image.jpg?q=25&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[url]/api/images/entries/en/image.jpg?q=100&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[url]/api/images/entries/en/image.jpg?q=65&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[url]/api/images/entries/en/image.jpg?q=25&token=4864fb8e1ebe080e6e4ad5c4363083a6">
