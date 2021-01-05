@@ -31,5 +31,5 @@ GET [url]/api/images/entries/en/image.jpg?bri=50&token=4864fb8e1ebe080e6e4ad5c43
 
 ##### Result
 
-<img width="200" class="inline" src="[url]/api/images/en/image.jpg?bri=-50&token=4864fb8e1ebe080e6e4ad5c4363083a6">
-<img width="200" class="inline" src="[url]/api/images/en/image.jpg?bri=50&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[url]/api/images/entries/en/image.jpg?bri=-50&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[url]/api/images/entries/en/image.jpg?bri=50&token=4864fb8e1ebe080e6e4ad5c4363083a6">

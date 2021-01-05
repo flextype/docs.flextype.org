@@ -33,6 +33,6 @@ GET [url]/api/images/entries/en/image.jpg?h=300&token=4864fb8e1ebe080e6e4ad5c436
 
 ##### Result
 
-<img height="100" class="inline" src="[url]/api/images/en/image.jpg?h=100&token=4864fb8e1ebe080e6e4ad5c4363083a6">
-<img height="200" class="inline" src="[url]/api/images/en/image.jpg?h=200&token=4864fb8e1ebe080e6e4ad5c4363083a6">
-<img height="300" class="inline" src="[url]/api/images/en/image.jpg?h=300&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img height="100" class="inline" src="[url]/api/images/entries/en/image.jpg?h=100&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img height="200" class="inline" src="[url]/api/images/entries/en/image.jpg?h=200&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img height="300" class="inline" src="[url]/api/images/entries/en/image.jpg?h=300&token=4864fb8e1ebe080e6e4ad5c4363083a6">

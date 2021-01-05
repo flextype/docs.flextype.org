@@ -47,5 +47,5 @@ GET [url]/api/entries/images/en/image.jpg?border=30,FFCC33,expand&token=4864fb8e
 
 ##### Result
 
-<img width="200" class="inline" src="[url]/api/images/en/image.jpg?border=30,5000,overlay&token=4864fb8e1ebe080e6e4ad5c4363083a6">
-<img width="200" class="inline" src="[url]/api/images/en/image.jpg?border=30,FFCC33,expand&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[url]/api/images/entries/en/image.jpg?border=30,5000,overlay&token=4864fb8e1ebe080e6e4ad5c4363083a6">
+<img width="200" class="inline" src="[url]/api/images/entries/en/image.jpg?border=30,FFCC33,expand&token=4864fb8e1ebe080e6e4ad5c4363083a6">
