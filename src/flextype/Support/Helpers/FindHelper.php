@@ -3,23 +3,23 @@
 declare(strict_types=1);
 
 /**
- * Flextype (http://flextype.org)
+ * Flextype (https://flextype.org)
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\Finder as Finder;
 
 if (! function_exists('find')) {
      /**
       * Create a Finder instance with predefined filter params or without them.
       *
-      * @param  string $path      Path.
-      * @param  array  $options   Options array.
-      * @param  string $search_in Search in 'files' or 'directories'. Default is 'files'.
+      * @param  string $path     Path.
+      * @param  array  $options  Options array.
+      * @param  string $searchIn Search in 'files' or 'directories'. Default is 'files'.
       *
-      * @return Symfony\Component\Finder<Finder>
+      * @return Finder
       */
-    function find(string $path = '', array $options = [], string $search_in = 'files'): Finder
+    function find(string $path = '', array $options = [], string $searchIn = 'files'): Finder
     {
         $find = filesystem()->find()->in($path);
 
@@ -36,6 +36,6 @@ if (! function_exists('find')) {
         isset($options['sort_by']) && $options['sort_by'] === 'mtime' and $find->sortByModifiedTime();
         isset($options['sort_by']) && $options['sort_by'] === 'ctime' and $find->sortByChangedTime();
 
-        return $search_in === 'directories' ? $find->directories() : $find->files();
+        return $searchIn === 'directories' ? $find->directories() : $find->files();
     }
 }

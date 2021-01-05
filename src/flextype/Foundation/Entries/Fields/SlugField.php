@@ -9,12 +9,12 @@ declare(strict_types=1);
 
 
 if (flextype('registry')->get('flextype.settings.entries.fields.slug.enabled')) {
-    flextype('emitter')->addListener('onEntryAfterInitialized', static function (): void {
-        if (flextype('entries')->getStorage('fetch.data.slug') !== null) {
+    flextype('emitter')->addListener('onEntriesFetchSingleHasResult', static function (): void {
+        if (flextype('entries')->storage()->get('fetch.data.slug') !== null) {
             return;
         }
 
-        $parts = strings(flextype('entries')->getStorage('fetch.id'))->trimSlashes()->segments();
-        flextype('entries')->setStorage('fetch.data.slug', (string) end($parts));
+        $parts = explode('/', ltrim(rtrim(flextype('entries')->storage()->get('fetch.id'), '/'), '/'));
+        flextype('entries')->storage()->set('fetch.data.slug', (string) end($parts));
     });
 }

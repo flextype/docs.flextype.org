@@ -1,3 +1,40 @@
+<a name="2.8.0"></a>
+# [2.8.0](https://github.com/flextype-plugins/sitemap/compare/v2.7.0...v2.8.0) (2021-01-03)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.15
+
+<a name="2.7.0"></a>
+# [2.7.0](https://github.com/flextype-plugins/sitemap/compare/v2.6.1...v2.7.0) (2020-12-30)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.14
+* **core** Moving to PHP 7.4
+* **core** use new TWIG Plugin 1.7.0
+
+<a name="2.6.1"></a>
+# [2.6.1](https://github.com/flextype-plugins/sitemap/compare/v2.6.0...v2.6.1) (2020-12-21)
+
+### Bug Fixes
+
+* **core** fix issues with fetch entries collection.
+
+<a name="2.6.0"></a>
+# [2.6.0](https://github.com/flextype-plugins/sitemap/compare/v2.5.0...v2.6.0) (2020-12-20)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.13
+
+<a name="2.5.0"></a>
+# [2.5.0](https://github.com/flextype-plugins/sitemap/compare/v2.4.0...v2.5.0) (2020-12-07)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.12
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/flextype-plugins/sitemap/compare/v2.3.0...v2.4.0) (2020-08-25)
 
