@@ -360,24 +360,25 @@ image:
 # - markdown.auto_line_breaks: Enable automatic line breaks
 # - markdown.auto_url_links:   Enable automatic HTML links
 # - markdown.escape_markup:    Escape markup tags into entities
-markdown:
-  auto_line_breaks: false
-  auto_url_links: false
-  escape_markup: false
-
+#
 # Shortcode
 #
 # - shortcodes: Flextype Shortcodes to load.
-shortcode:
-  shortcodes:
-    entries:
-      enabled: true
-    raw:
-      enabled: true
-    registry:
-      enabled: true
-    url:
-      enabled: true
+parsers:
+  markdown:
+    auto_line_breaks: false
+    auto_url_links: false
+    escape_markup: false
+  shortcode:
+    shortcodes:
+      entries:
+        enabled: true
+      raw:
+        enabled: true
+      registry:
+        enabled: true
+      url:
+        enabled: true
 
 # CORS
 #
@@ -481,11 +482,11 @@ Your `index.php` file can define certain PHP constants, which Flextype bootstrap
             </tr>
             <tr>
                 <td>PATH['project']</td>
-                <td>Define the PATH to project (without trailing slash).</td>
+                <td>Define the PATH to the project (without trailing slash).</td>
             </tr>
             <tr>
                 <td>PATH['tmp']</td>
-                <td>Define the PATH to project tmp (without trailing slash).</td>
+                <td>Define the PATH to the tmp (without trailing slash).</td>
             </tr>
         </tbody>
     </table>
