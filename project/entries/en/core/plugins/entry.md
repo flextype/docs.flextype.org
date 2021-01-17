@@ -53,7 +53,7 @@ icon: fas fa-globe
 author:
   name: Sergey Romanenko
   email: support@flextype.org
-  url: http://flextype.org
+  url: https://flextype.org
 homepage: https://github.com/flextype-plugins/site
 bugs: https://github.com/flextype-plugins/site/issues
 license: MIT
@@ -229,7 +229,7 @@ flextype('emitter')->addListener('onThemeMeta', function() {
 flextype('emitter')->addListener('onThemeMeta', function() {
     echo '
         <!-- Facebook -->
-        <meta property="og:url" content="http://flextype.org">
+        <meta property="og:url" content="https://flextype.org">
         <meta property="og:title" content="Content Management System &mdash; Flextype">
         <meta property="og:description" content="Build fast, flexible, easier to manage websites with Flextype.">
         <meta property="og:type" content="website">

@@ -1079,7 +1079,7 @@ foreach (flextype('entries')->fetchRecentPosts(5) as $post) {
 }
 ```
 
-As you can see, the macro method takes as arguments a name and an [anonymous function](http://php.net/manual/en/functions.anonymous.php) to call (optionally, you able to add additional arguments, if you need that).
+As you can see, the macro method takes as arguments a name and an [anonymous function](https://php.net/manual/en/functions.anonymous.php) to call (optionally, you able to add additional arguments, if you need that).
 
 When you call a macro, your code in function would be called from the context of that class (in the example it is Entries API class context), allowing you to execute your code along with Flextype built-in features.
 

@@ -979,4 +979,4 @@ $data = flextype('serializers')->yaml()->decode($yaml);
 
 * [Official YAML 1.2 Documentation](https://yaml.org/spec/1.2/spec.html)
 * [YAML Reference Card](https://yaml.org/refcard.html)
-* [YAML Lint](http://www.yamllint.com)
+* [YAML Lint](https://www.yamllint.com)

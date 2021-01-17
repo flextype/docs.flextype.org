@@ -36,7 +36,7 @@ Flextype uses the established and well-respected [Doctrine Cache library](https:
 * Auto (Default) - Finds the best option automatically
 * File - Stores in cache files in the `/var/cache/` folder
 * APC - https://php.net/manual/en/book.apc.php
-* XCache - http://xcache.lighttpd.net/
+* XCache - https://xcache.lighttpd.net/
 * Memcache - https://php.net/manual/en/book.memcache.php
 * Redis - https://redis.io
 * WinCache - https://www.iis.net/downloads/microsoft/wincache-extension

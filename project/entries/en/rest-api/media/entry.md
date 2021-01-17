@@ -184,7 +184,7 @@ GET /api/media/files?id=entries/movies/sg-1/season-5/episode-21/cover.jpg&token=
         "extension": "jpg",
         "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21",
         "url": "project/uploads/entries/movies/sg-1/season-5/episode-21/cover.jpg",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/cover.jpg"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/cover.jpg"
     }
 }
 ```
@@ -252,7 +252,7 @@ GET /api/media/files?id=entries/movies/sg-1/season-5/episode-21&token=6f047babd1
             "extension": "jpg",
             "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21",
             "url": "project/uploads/entries/movies/sg-1/season-5/episode-21/cover.jpg",
-            "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/cover.jpg"
+            "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/cover.jpg"
         }
     }
 }
@@ -321,7 +321,7 @@ curl -i -X POST \
   -F "access_token=efe1e36e4d60fcd547e22eb9f795dff91" \
   -F "folder=entries/movies/sg-1/season-5/episode-21" \
   -F "file=@/users/awilum/documents/new-covers/new-cover.jpg" \
-  http://localhost:8888/flextype/api/media/files
+  https://localhost:8888/flextype/api/media/files
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
@@ -344,7 +344,7 @@ curl -i -X POST \
     "extension": "jpg",
     "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21",
     "url": "project/uploads/entries/movies/sg-1/season-5/episode-21/new-cover.jpg",
-    "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/new-cover.jpg"
+    "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/new-cover.jpg"
   }
 }
 ```
@@ -424,7 +424,7 @@ PUT /api/media/files
         "extension": "jpg",
         "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21",
         "url": "project/uploads/entries/movies/sg-1/season-5/episode-21/new-cover.jpg",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/new-cover.jpg"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/new-cover.jpg"
     }
 }
 ```
@@ -456,7 +456,7 @@ PUT /api/media/files
         "extension": "jpg",
         "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
         "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/new-cover.jpg"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/new-cover.jpg"
     }
 }
 ```
@@ -536,7 +536,7 @@ PUT /api/media/files/copy
         "extension": "jpg",
         "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21",
         "url": "project/uploads/entries/movies/sg-1/season-5/episode-21/cover.jpg",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/cover-4.jpg"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/episode-21/cover-4.jpg"
     }
 }
 ```
@@ -682,7 +682,7 @@ PATCH /api/media/files/meta
         "extension": "jpg",
         "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
         "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
     }
 }
 ```
@@ -770,7 +770,7 @@ PATCH /api/media/files/meta
         "extension": "jpg",
         "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
         "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
     }
 }
 ```
@@ -852,7 +852,7 @@ DELETE /api/media/files/meta
         "extension": "jpg",
         "dirname": "/htdocs/flextype/project/uploads/entries/movies/sg-1/season-5",
         "url": "project/uploads/entries/movies/sg-1/season-5/cover.jpg",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/sg-1/season-5/cover.jpg"
     }
 }
 ```
@@ -1072,7 +1072,7 @@ POST /api/media/folders
         "id": "entries/movies/platform",
         "full_id": "/htdocs/flextype/project/uploads/entries/movies/platform",
         "url": "project/uploads/entries/movies/platform",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/platform"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/platform"
     }
 }
 ```
@@ -1149,7 +1149,7 @@ PUT /api/media/folders
         "id": "entries/movies/the-platform",
         "full_id": "/htdocs/flextype/project/uploads/entries/movies/the-platform",
         "url": "project/uploads/entries/movies/the-platform",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/the-platform"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/the-platform"
     }
 }
 ```
@@ -1178,7 +1178,7 @@ PUT /api/media/folders
         "id": "entries/movies/2019/the-platform",
         "full_id": "/htdocs/flextype/project/uploads/entries/movies/2019/the-platform",
         "url": "project/uploads/entries/movies/2019/the-platform",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/2019/the-platform"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/2019/the-platform"
     }
 }
 ```
@@ -1255,7 +1255,7 @@ PUT /api/media/folders/copy
         "id": "entries/movies/horror/the-platform",
         "full_id": "/htdocs/flextype/project/uploads/entries/movies/horror/the-platform",
         "url": "project/uploads/entries/movies/horror/the-platform",
-        "full_url": "http://localhost:8888/flextype/project/uploads/entries/movies/horror/the-platform"
+        "full_url": "https://localhost:8888/flextype/project/uploads/entries/movies/horror/the-platform"
     }
 }
 ```
