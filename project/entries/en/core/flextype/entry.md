@@ -17,9 +17,6 @@ on_this_page:
         title: "getVersion()"
         link: "methods-getVersion"
       -
-        title: "isApiRequest()"
-        link: "methods-isApiRequest"
-      -
         title: "container()"
         link: "methods-container"
   -
@@ -105,27 +102,6 @@ public function getVersion(): string
 
 ```php
 $version = Flextype::getInstance()->getVersion();
-```
-
-##### <a name="methods-isApiRequest"></a> `isApiRequest()`
-
-Determine API Request.
-
-```php
-/**
- * Determine API Request
- *
- * @return bool
- */
-public function isApiRequest(): bool
-```
-
-**Examples**
-
-```php
-if (flextype()->isApiRequest()) {
-    // do something...
-}
 ```
 
 ##### <a name="methods-container"></a> `container()`
