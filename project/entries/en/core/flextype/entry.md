@@ -55,10 +55,6 @@ With help of Flextype Core Class we are able to access all features and develop 
                 <td>Get current Flextype version.</td>
             </tr>
             <tr>
-                <td><a href="#methods-isApiRequest">isApiRequest()</a></td>
-                <td>Determine API Request.</td>
-            </tr>
-            <tr>
                 <td><a href="#methods-container">container()</a></td>
                 <td>Get and Set Dependency Injection Container.</td>
             </tr>
