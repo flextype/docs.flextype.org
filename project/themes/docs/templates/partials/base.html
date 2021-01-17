@@ -10,21 +10,21 @@
             <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ flextype.registry.get('plugins.site.settings.description') }}{% endif %}">
             <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ flextype.registry.get('plugins.site.settings.keywords') }}{% endif %}">
             <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ flextype.registry.get('plugins.site.settings.robots') }}{% endif %}">
-            <meta name="generator" content="Powered by Flextype {{ FLEXTYPE_VERSION }}"/>
+            <meta name="generator" content="Powered by Flextype"/>
 
-            <meta name="image" content="{{ url() }}/api/images/entries/{{ locale }}/banner.jpg?dpr=2&w=1100&q=70&token=3b29b31ae05c89c2009f6e3f96e3d703">
+            <meta name="image" content="{{ url() }}/api/images/entries/{{ locale }}/banner.jpg?dpr=2&w=1100&q=70&token=4864fb8e1ebe080e6e4ad5c4363083a6">
 
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:site" content="{{ url() }}/{{ entry.id }}">
             <meta name="twitter:title" content="{{ entry.title }}">
             <meta name="twitter:description" content="{{ entry.description }}">
-            <meta name="twitter:image" content="{{ url() }}/api/images/entries/{{ locale }}/banner.jpg?dpr=2&w=1100&q=70&token=3b29b31ae05c89c2009f6e3f96e3d703">
+            <meta name="twitter:image" content="{{ url() }}/api/images/entries/{{ locale }}/banner.jpg?dpr=2&w=1100&q=70&token=4864fb8e1ebe080e6e4ad5c4363083a6">
 
             <meta property="og:url" content="{{ url() }}/{{ entry.id }}">
             <meta property="og:title" content="{{ entry.title }}">
             <meta property="og:description" content="{{ entry.description }}">
             <meta property="og:type" content="website">
-            <meta property="og:image" content="{{ url() }}/api/images/entries/{{ locale }}/banner.jpg?dpr=2&w=1100&q=70&token=3b29b31ae05c89c2009f6e3f96e3d703">
+            <meta property="og:image" content="{{ url() }}/api/images/entries/{{ locale }}/banner.jpg?dpr=2&w=1100&q=70&token=4864fb8e1ebe080e6e4ad5c4363083a6">
             <meta property="og:image:type" content="image/png">
 
             <meta name="yandex-verification" content="920bbfc83bbe3fbe"/>
@@ -203,10 +203,11 @@
                         {#<a href="{{ url() }}/ru">ru</a>#}
                     </div>
                     <div class="w-6/12 text-right">
+                        <a href="{{ url() }}/sitemap.xml">sitemap</a> /
                         {% if locale == 'en' %}
-                            <a href="https://github.com/flextype/docs.flextype.org/tree/dev/project/entries/{{ entry.id }}/entry.md">{{ txt.txt.common.edit_this_page }}</a>
+                            <a href="https://github.com/flextype/docs.flextype.org/tree/dev/project/entries/{{ entry.id }}/entry.md">{{ txt.txt.common.edit_this_page|lower }}</a>
                         {% else %}
-                            <a href="https://crowdin.com/project/flextype-documentation/{{ locale }}">{{ txt.txt_link_edit_this_page }}</a>
+                            <a href="https://crowdin.com/project/flextype-documentation/{{ locale }}">{{ txt.txt_link_edit_this_page|lower }}</a>
                         {% endif %}
                     </div>
                 </div>
