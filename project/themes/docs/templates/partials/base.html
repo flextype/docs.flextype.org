@@ -35,31 +35,22 @@
             <link rel="manifest" href="{{ url() }}/site.webmanifest">
             <link type="text/plain" href="{{ url() }}/humans.txt" rel="author">
 
-            <!-- Yandex.Metrika counter -->
+            <!-- Matomo -->
             <script type="text/javascript">
-                (function (m, e, t, r, i, k, a) {
-                    m[i] = m[i] || function () {
-                        (m[i].a = m[i].a || []).push(arguments)
-                    };
-                    m[i].l = 1 * new Date();
-                    k = e.createElement(t),
-                    a = e.getElementsByTagName(t)[0],
-                    k.async = 1,
-                    k.src = r,
-                    a.parentNode.insertBefore(k, a)
-                })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-                ym(56663935, "init", {
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true,
-                    webvisor: true
-                });
+              var _paq = window._paq = window._paq || [];
+              /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+              _paq.push(['trackPageView']);
+              _paq.push(['enableLinkTracking']);
+              (function() {
+                var u="https://digital.flextype.org/matomo/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '2']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+              })();
             </script>
-            <noscript>
-                <div><img src="https://mc.yandex.ru/watch/56663935" style="position:absolute; left:-9999px;" alt=""/></div>
-            </noscript>
-            <!-- /Yandex.Metrika counter -->
+            <noscript><p><img src="https://digital.flextype.org/matomo/matomo.php?idsite=2&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+            <!-- End Matomo Code -->
 
             <link rel="canonical" href="{{ url() }}/{{ entry.id }}">
 
@@ -84,8 +75,10 @@
                 {% endfor %}
             {% endif %}
 
-            {% do
-                flextype.emitter.emit('onThemeHeader') %}
+            {% do flextype.emitter.emit('onThemeHeader') %}
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
         {% endblock %}
     </head>
     <body>
@@ -96,6 +89,7 @@
                     <h2>FLEXTYPE</h2>
                     <h3>DOCUMENTATION</h3>
                 </div>
+                <input type="text" id="search" class="search" placeholder="Search...">
                 <h4>{{ txt.txt.categories.getting_started.title }}</h4>
                 <ul class="m-0 p-0 list-none">
                    <li class="{% if entry.id == locale %}active{% endif %}">
@@ -241,7 +235,15 @@
                 hljs.highlightBlock(block);
             });
         </script>
-        {% do
-            flextype.emitter.emit('onThemeTail') %}
+        {% do flextype.emitter.emit('onThemeTail') %}
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+        <script type="text/javascript"> docsearch({
+        apiKey: '09e152565ff3b3ba65a65f53ef0b2e4a',
+        indexName: 'flextype',
+        inputSelector: '#search',
+        debug: false // Set debug to true if you want to inspect the dropdown
+        });
+        </script>
     </body>
 </html>
