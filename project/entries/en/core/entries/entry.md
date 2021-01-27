@@ -87,8 +87,8 @@ on_this_page:
         title: "getFileLocation()"
         link: "methods-getFileLocation"
       -
-        title: "getDirLocation()"
-        link: "methods-getDirLocation"
+        title: "getDirectoryLocation()"
+        link: "methods-getDirectoryLocation"
   -
     title: Extending
     link: "extending"
@@ -636,7 +636,7 @@ Get variable `author.twitter` with [TWIG Plugin](https://github.com/flextype-plu
                 <td>Get entry file location</td>
             </tr>
             <tr>
-                <td><a href="#methods-getDirLocation">getDirLocation()</a></td>
+                <td><a href="#methods-getDirectoryLocation">getDirectoryLocation()</a></td>
                 <td>Get entry directory location</td>
             </tr>
         </tbody>
@@ -1031,7 +1031,7 @@ Check whether entry `episode-23` exists in `movies/sg-1/season-5`
 $data = flextype('entries')->getFileLocation('movies/sg-1/season-5/episode-23');
 ```
 
-##### <a name="methods-getDirLocation"></a> `getDirLocation()`
+##### <a name="methods-getDirectoryLocation"></a> `getDirectoryLocation()`
 
 Get entry directory location
 
@@ -1053,7 +1053,7 @@ public function getDirectoryLocation(string $id): string
 Get entry `episode-23` exists in `movies/sg-1/season-5`
 
 ```php
-$data = flextype('entries')->getDirLocation('movies/sg-1/season-5/episode-23');
+$data = flextype('entries')->getDirectoryLocation('movies/sg-1/season-5/episode-23');
 ```
 
 ### <a name="extending"></a> Extending
