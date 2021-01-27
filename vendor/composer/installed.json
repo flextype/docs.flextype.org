@@ -553,100 +553,6 @@
         ]
     },
     {
-        "name": "erusev/parsedown",
-        "version": "1.7.4",
-        "version_normalized": "1.7.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/erusev/parsedown.git",
-            "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
-            "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
-            "shasum": ""
-        },
-        "require": {
-            "ext-mbstring": "*",
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^4.8.35"
-        },
-        "time": "2019-12-30T22:54:17+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Parsedown": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Emanuil Rusev",
-                "email": "hello@erusev.com",
-                "homepage": "http://erusev.com"
-            }
-        ],
-        "description": "Parser for Markdown.",
-        "homepage": "http://parsedown.org",
-        "keywords": [
-            "markdown",
-            "parser"
-        ]
-    },
-    {
-        "name": "erusev/parsedown-extra",
-        "version": "0.7.1",
-        "version_normalized": "0.7.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/erusev/parsedown-extra.git",
-            "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
-            "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
-            "shasum": ""
-        },
-        "require": {
-            "erusev/parsedown": "~1.4"
-        },
-        "time": "2015-11-01T10:19:22+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "ParsedownExtra": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Emanuil Rusev",
-                "email": "hello@erusev.com",
-                "homepage": "http://erusev.com"
-            }
-        ],
-        "description": "An extension of Parsedown that adds support for Markdown Extra.",
-        "homepage": "https://github.com/erusev/parsedown-extra",
-        "keywords": [
-            "markdown",
-            "markdown extra",
-            "parsedown",
-            "parser"
-        ]
-    },
-    {
         "name": "filp/whoops",
         "version": "2.9.1",
         "version_normalized": "2.9.1.0",
@@ -1033,6 +939,77 @@
             "laravel",
             "thumbnail",
             "watermark"
+        ]
+    },
+    {
+        "name": "league/commonmark",
+        "version": "1.5.7",
+        "version_normalized": "1.5.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/commonmark.git",
+            "reference": "11df9b36fd4f1d2b727a73bf14931d81373b9a54"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/11df9b36fd4f1d2b727a73bf14931d81373b9a54",
+            "reference": "11df9b36fd4f1d2b727a73bf14931d81373b9a54",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": "^7.1 || ^8.0"
+        },
+        "conflict": {
+            "scrutinizer/ocular": "1.7.*"
+        },
+        "require-dev": {
+            "cebe/markdown": "~1.0",
+            "commonmark/commonmark.js": "0.29.2",
+            "erusev/parsedown": "~1.0",
+            "ext-json": "*",
+            "github/gfm": "0.29.0",
+            "michelf/php-markdown": "~1.4",
+            "mikehaertl/php-shellcommand": "^1.4",
+            "phpstan/phpstan": "^0.12",
+            "phpunit/phpunit": "^7.5 || ^8.5 || ^9.2",
+            "scrutinizer/ocular": "^1.5",
+            "symfony/finder": "^4.2"
+        },
+        "time": "2020-10-31T13:49:32+00:00",
+        "bin": [
+            "bin/commonmark"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\CommonMark\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Colin O'Dell",
+                "email": "colinodell@gmail.com",
+                "homepage": "https://www.colinodell.com",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "Highly-extensible PHP Markdown parser which fully supports the CommonMark spec and Github-Flavored Markdown (GFM)",
+        "homepage": "https://commonmark.thephpleague.com",
+        "keywords": [
+            "commonmark",
+            "flavored",
+            "gfm",
+            "github",
+            "github-flavored",
+            "markdown",
+            "md",
+            "parser"
         ]
     },
     {
@@ -2510,17 +2487,17 @@
     },
     {
         "name": "symfony/polyfill-ctype",
-        "version": "v1.20.0",
-        "version_normalized": "1.20.0.0",
+        "version": "v1.22.0",
+        "version_normalized": "1.22.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-ctype.git",
-            "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41"
+            "reference": "c6c942b1ac76c82448322025e084cadc56048b4e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f4ba089a5b6366e453971d3aad5fe8e897b37f41",
-            "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41",
+            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/c6c942b1ac76c82448322025e084cadc56048b4e",
+            "reference": "c6c942b1ac76c82448322025e084cadc56048b4e",
             "shasum": ""
         },
         "require": {
@@ -2529,11 +2506,11 @@
         "suggest": {
             "ext-ctype": "For best performance"
         },
-        "time": "2020-10-23T14:02:19+00:00",
+        "time": "2021-01-07T16:49:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-main": "1.20-dev"
+                "dev-main": "1.22-dev"
             },
             "thanks": {
                 "name": "symfony/polyfill",
@@ -2574,17 +2551,17 @@
     },
     {
         "name": "symfony/polyfill-mbstring",
-        "version": "v1.20.0",
-        "version_normalized": "1.20.0.0",
+        "version": "v1.22.0",
+        "version_normalized": "1.22.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-mbstring.git",
-            "reference": "39d483bdf39be819deabf04ec872eb0b2410b531"
+            "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/39d483bdf39be819deabf04ec872eb0b2410b531",
-            "reference": "39d483bdf39be819deabf04ec872eb0b2410b531",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
+            "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
             "shasum": ""
         },
         "require": {
@@ -2593,11 +2570,11 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2020-10-23T14:02:19+00:00",
+        "time": "2021-01-07T16:49:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-main": "1.20-dev"
+                "dev-main": "1.22-dev"
             },
             "thanks": {
                 "name": "symfony/polyfill",

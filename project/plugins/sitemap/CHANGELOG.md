@@ -1,3 +1,24 @@
+<a name="2.10.0"></a>
+# [2.10.0](https://github.com/flextype-plugins/sitemap/compare/v2.9.1...v2.10.0) (2021-01-14)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.16
+
+<a name="2.9.1"></a>
+# [2.9.1](https://github.com/flextype-plugins/sitemap/compare/v2.9.0...v2.9.1) (2021-01-07)
+
+### Bug Fixes
+
+* **core** fix issues with wrong dependencies file.
+
+<a name="2.9.0"></a>
+# [2.9.0](https://github.com/flextype-plugins/sitemap/compare/v2.8.0...v2.9.0) (2021-01-07)
+
+### Features
+
+* Update code base for new Icon 2.0.0
+
 <a name="2.8.0"></a>
 # [2.8.0](https://github.com/flextype-plugins/sitemap/compare/v2.7.0...v2.8.0) (2021-01-03)
 
