@@ -17,9 +17,11 @@ on_this_page:
     link: "methods"
 ---
 
-Shortcode is a small piece of code, indicated by brackets like `[this]`, that performs a dedicated function on your site. You can place it just about anywhere you’d like, and it will add a specific feature to your page, post, or other content. For example, you can use shortcodes to display galleries, videos, or even playlists.
+Shortcode is a small piece of code, indicated by brackets like `[raw][this][/raw]`, that performs a dedicated function on your site. You can place it just about anywhere you’d like, and it will add a specific feature to your page, post, or other content. For example, you can use shortcodes to display galleries, videos, or even playlists.
 
 ### <a name="shortcodes"></a> Shortcodes
+
+There are a number of default shortcodes available.
 
 <div class="table">
     <table>
@@ -32,24 +34,24 @@ Shortcode is a small piece of code, indicated by brackets like `[this]`, that pe
         </thead>
         <tbody>
             <tr>
-                <td><a href="#shortcodes-entries_fetch">entries_fetch</a></td>
+                <td><a href="#shortcodes-entries_fetch">[raw][entries_fetch][/raw]</a></td>
                 <td>id, field</td>
                 <td>Fetch specific entry field.</td>
             </tr>
             <tr>
-                <td><a href="#shortcodes-registry">registry</a></td>
+                <td><a href="#shortcodes-registry">[raw][registry][/raw]</a></td>
                 <td>name, default</td>
                 <td>Fetch specific item from registry.</td>
             </tr>
             <tr>
-                <td><a href="#shortcodes-raw">raw</a></td>
-                <td></td>
-                <td>Do not process the shortcodes between the raw shortcode tags.</td>
-            </tr>
-            <tr>
-                <td><a href="#shortcodes-raw">url</a></td>
+                <td><a href="#shortcodes-raw">[raw][url][/raw]</a></td>
                 <td></td>
                 <td>Display application url.</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    You may ignore shortcodes processing by wrapping entry content in <code>raw</code> shortcode tag.
+                </td>
             </tr>
         </tbody>
     </table>
@@ -57,44 +59,34 @@ Shortcode is a small piece of code, indicated by brackets like `[this]`, that pe
 
 ### Shortocodes Details
 
-##### <a name="shortcodes-entries_fetch"></a> `entries_fetch`
+##### <a name="shortcodes-entries_fetch"></a> `[raw][entries_fetch][/raw]`
 
 Fetch specific entry field.
 
 **Examples**
 
 ```
-entries_fetch id="entry-id" field="field-name" default="default-value"
+[raw][entries_fetch id="entry-id" field="field-name" default="default-value"][/raw]
 ```
 
-##### <a name="shortcodes-registry"></a> `registry`
+##### <a name="shortcodes-registry"></a> `[raw][registry][/raw]`
 
 Fetch specific item from registry.
 
 **Examples**
 
 ```
-registry_get name="item-name" default="default-value"
+[raw][registry_get name="item-name" default="default-value"][/raw]
 ```
 
-##### <a name="shortcodes-raw"></a> `raw`
-
-Do not process the shortcodes between the raw shortcode tags.
-
-**Examples**
-
-```
-raw raw content here /raw
-```
-
-##### <a name="shortcodes-url"></a> `url`
+##### <a name="shortcodes-url"></a> `[raw][url][/raw]`
 
 Display application url.
 
 **Examples**
 
 ```
-url
+[raw][url][/raw]
 ```
 
 ### <a name="methods"></a> Methods
@@ -181,10 +173,13 @@ flextype('parsers')->shortcode()->addHandler('raw', static function (ShortcodeIn
     return $s->getContent();
 });
 
-flextype('parsers')->shortcode()->addEventHandler(Events::FILTER_SHORTCODES, new FilterRawEventHandler(['raw']));
+flextype('parsers')
+    ->shortcode()
+    ->addEventHandler(Events::FILTER_SHORTCODES,
+                      new FilterRawEventHandler(['raw']));
 ```
 
-More details about events: https://github.com/thunderer/Shortcode#events
+More details about events: [github.com/thunderer/Shortcode#events](https://github.com/thunderer/Shortcode#events)
 
 
 ##### <a name="methods-process"></a> `process()`

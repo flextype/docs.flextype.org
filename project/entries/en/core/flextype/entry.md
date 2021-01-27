@@ -24,12 +24,12 @@ on_this_page:
     link: "services"
 ---
 
-Common part of Flextype is a Flextype Core Class that extends [Slim Framework](http://www.slimframework.com) that we are using under the hood. Slim is amazing PHP micro framework that helps quickly write simple yet powerful web applications and APIs.
+Common part of Flextype is a Flextype Core Class that extends [Slim Framework](//slimframework.com) that we are using under the hood. Slim is amazing PHP micro framework that helps quickly write simple yet powerful web applications and APIs.
 
 **Slim Framework Resources**
-* **Website:** [http://slimframework.com](http://slimframework.com)
-* **Documentation:** [http://slimframework.com/docs/v3/](http://slimframework.com/docs/v3/)
-* **Repository:** [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
+* **Website:** [slimframework.com](//slimframework.com)
+* **Documentation:** [slimframework.com/docs/v3/](//slimframework.com/docs/v3/)
+* **Repository:** [github.com/slimphp/Slim](//github.com/slimphp/Slim)
 
 Getting back to Flextype Core.
 
@@ -53,10 +53,6 @@ With help of Flextype Core Class we are able to access all features and develop 
             <tr>
                 <td><a href="#methods-getVersion">getVersion()</a></td>
                 <td>Get current Flextype version.</td>
-            </tr>
-            <tr>
-                <td><a href="#methods-isApiRequest">isApiRequest()</a></td>
-                <td>Determine API Request.</td>
             </tr>
             <tr>
                 <td><a href="#methods-container">container()</a></td>
@@ -174,7 +170,7 @@ flextype()
   ->setName('service.form.index');
 ```
 
-Check all available methods: [http://slimframework.com/docs/v3/](http://slimframework.com/docs/v3/)
+Check all available methods: [//slimframework.com/docs/v3/](//slimframework.com/docs/v3/)
 
 ### Services <a name="services"></a>
 
@@ -203,7 +199,7 @@ List of available registered services in Flextype Dependency Injection Container
             </tr>
             <tr>
                 <td>emitter</td>
-                <td><a href="http://event.thephpleague.com">documentation</a></td>
+                <td><a href="https://event.thephpleague.com">documentation</a></td>
             </tr>
             <tr>
                 <td>slugify</td>

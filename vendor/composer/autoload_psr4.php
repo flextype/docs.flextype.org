@@ -30,6 +30,7 @@ return array(
     'League\\Glide\\' => array($vendorDir . '/league/glide/src', $vendorDir . '/league/glide-slim/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'League\\Event\\' => array($vendorDir . '/league/event/src'),
+    'League\\CommonMark\\' => array($vendorDir . '/league/commonmark/src'),
     'Intervention\\Image\\' => array($vendorDir . '/intervention/image/src/Intervention/Image'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),

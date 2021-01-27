@@ -39,8 +39,8 @@ Make sure that your web server provides Mod Rewrite.
 
 Flextype needs PHP 7.4.0 or higher and the following PHP extensions to be enabled:
 
-- [mbstring](http://php.net/manual/en/book.mbstring.php) module for full UTF-8 support.
-- [gd](http://php.net/manual/en/book.image.php) or [ImageMagick](http://php.net/manual/en/book.imagick.php) module for image processing.
+- [mbstring](https://php.net/manual/en/book.mbstring.php) module for full UTF-8 support.
+- [gd](https://php.net/manual/en/book.image.php) or [ImageMagick](https://php.net/manual/en/book.imagick.php) module for image processing.
 - [json](https://php.net/manual/en/book.json.php) module for JSON manipulation.
 - [Fileinfo](https://www.php.net/manual/en/book.fileinfo.php)
 - [SPL](https://www.php.net/manual/en/book.spl.php)

@@ -16,7 +16,7 @@ You can update and create project configuration by editing file `project/config/
 ```yaml
 # Set the timezone to be used on the project.
 # For a list of valid timezone settings, see:
-# http://php.net/manual/en/timezones.php
+# https://php.net/manual/en/timezones.php
 timezone: UTC
 
 # Charset
@@ -24,7 +24,7 @@ timezone: UTC
 # Set internal character encoding.
 #
 # Currently the following names are supported:
-# http://php.net/manual/en/function.mb-regex-encoding.php#121645
+# https://php.net/manual/en/function.mb-regex-encoding.php#121645
 charset: UTF-8
 
 # The locale that'll be used by the Flextype.

@@ -87,7 +87,7 @@ GET /api/registry?id=flextype.manifest.version&token=efe1e36e4d60fcd547e22eb9f79
 {
     "data": {
         "key": "flextype.manifest.version",
-        "value": "0.9.9"
+        "value": "0.9.16"
     }
 }
 ```

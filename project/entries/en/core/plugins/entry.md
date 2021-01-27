@@ -47,20 +47,22 @@ Example information from `project/plugins/site/plugin.yaml`
 <div class="file-header"><i class="far fa-file-alt"></i> project/plugins/site/plugin.yaml</div>
 ```yaml
 name: Site
-version: 1.0.0
+version: 1.11.0
 description: Site plugin to display entries content on the website frontend.
-icon: fas fa-globe
+icon:
+  name: globe
+  set: "fontawesome|solid"
 author:
   name: Sergey Romanenko
-  email: support@flextype.org
-  url: http://flextype.org
+  email: sergey.romanenko@flextype.org
+  url: https://flextype.org
 homepage: https://github.com/flextype-plugins/site
 bugs: https://github.com/flextype-plugins/site/issues
 license: MIT
 
 dependencies:
-  flextype: 0.9.12
-  twig: '>=1.0.0'
+  flextype: 0.9.16
+  twig: '>=2.0.0'
 ```
 
 You can reach these items values from a Flextype plugin(s) with PHP syntax:
@@ -229,7 +231,7 @@ flextype('emitter')->addListener('onThemeMeta', function() {
 flextype('emitter')->addListener('onThemeMeta', function() {
     echo '
         <!-- Facebook -->
-        <meta property="og:url" content="http://flextype.org">
+        <meta property="og:url" content="https://flextype.org">
         <meta property="og:title" content="Content Management System &mdash; Flextype">
         <meta property="og:description" content="Build fast, flexible, easier to manage websites with Flextype.">
         <meta property="og:type" content="website">
