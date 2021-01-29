@@ -13,6 +13,7 @@ All Flextype configuration files are written in YAML syntax with a `.yaml` file 
 You can update and create project configuration by editing file `project/config/settings.yaml`
 
 <div class="file-header"><i class="far fa-file-alt"></i> project/config/flextype/settings.yaml</div>
+
 ```yaml
 # Set the timezone to be used on the project.
 # For a list of valid timezone settings, see:
@@ -457,7 +458,7 @@ api:
   images:
     enabled: true
     default_token:
-```
+</code>
 
 ### PHP constants
 
