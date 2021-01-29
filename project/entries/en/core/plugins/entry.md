@@ -45,6 +45,7 @@ Below is example of [Site Plugin](https://github.com/flextype-plugins/site)
 Example information from `project/plugins/site/plugin.yaml`
 
 <div class="file-header"><i class="far fa-file-alt"></i> project/plugins/site/plugin.yaml</div>
+
 ```yaml
 name: Site
 version: 1.11.0
