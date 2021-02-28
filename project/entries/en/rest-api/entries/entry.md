@@ -219,6 +219,7 @@ GET /api/entries?id=movies&options[method]=fetchFromOtherDB&token=6f047babd18940
 ### <a name="create-entry"></a> Create entry
 
 <div class="file-header">Request</div>
+
 ```http
 POST /api/entries
 ```
@@ -267,11 +268,13 @@ Returns the entry item object for the entry item that was just created.
 Create new entry **platform**
 
 <div class="file-header">Request</div>
+
 ```http
 POST /api/entries
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "movies/platform",
@@ -285,6 +288,7 @@ POST /api/entries
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -306,6 +310,7 @@ POST /api/entries
 ### <a name="update-entry"></a> Update entry
 
 <div class="file-header">Request</div>
+
 ```http
 PATCH /api/entries
 ```
@@ -354,11 +359,13 @@ Returns the entry item object for the entry item that was just updated.
 Update content for entry **platform**
 
 <div class="file-header">Request</div>
+
 ```http
 PATCH /api/entries
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "movies/platform",
@@ -371,6 +378,7 @@ PATCH /api/entries
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -392,6 +400,7 @@ PATCH /api/entries
 ### <a name="move-entry"></a> Move entry
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/entries
 ```
@@ -440,11 +449,13 @@ Returns the entry item object for the entry item that was just moved.
 Move entry **platform** to the **the-platform**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/entries
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "movies/platform",
@@ -455,6 +466,7 @@ PUT /api/entries
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -476,11 +488,13 @@ PUT /api/entries
 Move entry **movies/the-platform** to the **movies/2019/the-platform**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/entries
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "movies/the-platform",
@@ -491,6 +505,7 @@ PUT /api/entries
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -512,6 +527,7 @@ PUT /api/entries
 ### <a name="copy-entry"></a> Copy entry
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/entries/copy
 ```
@@ -560,11 +576,13 @@ Returns the entry item object for the entry item that was just copied.
 Copy for entry **movies/2019/the-platform** to **movies/horror/the-platform**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/entries/copy
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "movies/2019/the-platform",
@@ -575,6 +593,7 @@ PUT /api/entries/copy
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -596,6 +615,7 @@ PUT /api/entries/copy
 ### <a name="delete-entry"></a> Delete entry
 
 <div class="file-header">Request</div>
+
 ```http
 DELETE /api/entries
 ```
@@ -639,11 +659,13 @@ Returns an empty body with HTTP status 204
 Delete entry **movies/horror/the-platform**
 
 <div class="file-header">Request</div>
+
 ```http
 DELETE /api/entries
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "movies/horror/the-platform",

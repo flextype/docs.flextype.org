@@ -16,6 +16,7 @@ The device pixel ratio is used to easily convert between CSS pixels and device p
 ##### Usage
 
 <div class="file-header">Request</div>
+
 ```http
 GET YOUR_APP_URL/api/images/entries/en/image.jpg?w=250&dpr=2&token=YOUR_IMAGES_TOKEN
 ```
@@ -23,6 +24,7 @@ GET YOUR_APP_URL/api/images/entries/en/image.jpg?w=250&dpr=2&token=YOUR_IMAGES_T
 ##### Example
 
 <div class="file-header">Request</div>
+
 ```http
 GET [url]/api/images/entries/en/image.jpg?w=250&dpr=2&token=4864fb8e1ebe080e6e4ad5c4363083a6
 ```

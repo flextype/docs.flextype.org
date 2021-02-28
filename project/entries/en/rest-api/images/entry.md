@@ -43,6 +43,7 @@ The Flextype Images API allows the retrieval and manipulation of image files ref
 ### <a name="fetch-image"></a> Fetch image
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/images/{path:.+}?VALID_ARGUMENTS&token=YOUR_IMAGES_TOKEN
 ```
@@ -99,6 +100,7 @@ GET /api/images/{path:.+}?VALID_ARGUMENTS&token=YOUR_IMAGES_TOKEN
 Fetch image **venom-2** from upload directory **/movies/venom-2/**
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/images/entries/movies/venom-2/venom-2.jpg?token=c1fda5a94603a7296f3a0a5370cfe59f
 ```
@@ -106,6 +108,7 @@ GET /api/images/entries/movies/venom-2/venom-2.jpg?token=c1fda5a94603a7296f3a0a5
 Fetch image **venom-2** from upload directory **/movies/venom-2/** and do several image manipulations
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/images/entries/movies/venom-2/venom-2.jpg?w=100&q=70&token=c1fda5a94603a7296f3a0a5370cfe59f
 ```

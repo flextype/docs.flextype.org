@@ -179,7 +179,7 @@ There are a number of default entry variables available for each entry and defin
     </table>
 </div>
 
-Content visibility is about controlling who can see your entries. Flextype allows you to control the visibility of your Entries and Pages on an individual basis. By default, all entries are visible.
+Content visibility is about controlling who can see your entries. Flextype allows you to control the visibility of your entries on an individual basis. By default, all entries are visible.
 
 **Examples**
 
@@ -210,7 +210,7 @@ Content visibility is about controlling who can see your entries. Flextype allow
     </table>
 </div>
 
-By default, all pages are routable. This means that they can be reached by pointing your browser to the URL of the entry. However, you may need to create a entry that is created to hold specific content, but it is meant to be called directly by a plugin, other content, or even a theme directly.
+By default, all entries are routable. This means that they can be reached by pointing your browser to the URL of the entry. However, you may need to create a specific entry to hold specific content, but it is meant to be called directly by a plugin, other content, or even a theme directly.
 
 **Examples**
 
@@ -388,7 +388,7 @@ parsers:
     </table>
 </div>
 
-By default, all pages are stored in the cache if flextype cache is true.
+By default, all entries are stored in the cache if flextype cache is true.
 But this rule can be changed by setting individual cache for each entry.
 
 ##### <a name="default-variables-slug"></a> Slug

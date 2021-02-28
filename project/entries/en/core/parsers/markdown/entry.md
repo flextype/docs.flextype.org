@@ -156,30 +156,27 @@ To create paragraphs, use a blank line to separate one or more lines of text.
 Unless the [paragraph is in a list](/basic-syntax/#paragraphs), don't indent paragraphs with spaces or tabs.
 
 <div class="table">
-    <table>
-      <thead>
-        <tr>
-          <th><i class="fas fa-check"></i> Do this</th>
-          <th><i class="fas fa-times"></i> Don't do this</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-              Don't put tabs or spaces in front of your paragraphs.<br><br>
-              Keep lines left-aligned like this.<br><br>
-          </td>
-          <td>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;This can result in unexpected
-            formatting problems.<br><br>
-
-            &nbsp;&nbsp;Don't add tabs or spaces in front of paragraphs.
-
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<table>
+<thead>
+<tr>
+<th><i class="fas fa-check"></i> Do this</th>
+<th><i class="fas fa-times"></i> Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Don't put tabs or spaces in front of your paragraphs.<br><br>
+Keep lines left-aligned like this.<br><br>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;This can result in unexpected
+formatting problems.<br><br>
+&nbsp;&nbsp;Don't add tabs or spaces in front of paragraphs.
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 #### Line Breaks
@@ -198,14 +195,11 @@ To create a line break (`<br>`), end a line with two or more spaces, and then ty
       <tbody>
         <tr>
           <td>
-
               This is the first line. &nbsp;<br />
               And this is the second line.
-
           </td>
           <td>
             &lt;p&gt;This is the first line.&lt;br&gt;<br />
-
             And this is the second line.&lt;/p&gt;
           </td>
           <td>
@@ -238,14 +232,12 @@ There are two other options I don't recommend using. CommonMark and a few other 
           <td>
               First line with two spaces after. &nbsp;<br>
               And the next line.<br><br>
-
               First line with the HTML tag after.&lt;br&gt;<br>
               And the next line.<br><br>
           </td>
           <td>
             First line with a backslash after.\<br>
             And the next line.<br><br>
-
             First line with nothing after.<br>
             And the next line.<br><br>
           </td>
@@ -781,7 +773,7 @@ The rendered output looks like this:
 1.  Open the file containing the Linux mascot.
 2.  Marvel at its beauty.
 
-    ![Flextype](https://flextype.org/api/images/en/press-kit/flextype-logo.png?dpr=2&w=120&q=70&token=3b29b31ae05c89c2009f6e3f96e3d703)
+    ![Flextype](https://camo.githubusercontent.com/a0e5b6039aa6d34aaa5550bf375a9dce9314db6f/68747470733a2f2f696d61676573322e696d67626f782e636f6d2f34392f38642f346970487155636a5f6f2e6a7067)
 
 3.  Close the file.
 ```
@@ -791,7 +783,7 @@ The rendered output looks like this:
 1.  Open the file containing the Linux mascot.
 2.  Marvel at its beauty.
 
-    ![Flextype](https://flextype.org/api/images/en/press-kit/flextype-logo.png?dpr=2&w=120&q=70&token=3b29b31ae05c89c2009f6e3f96e3d703)
+    ![Flextype](https://camo.githubusercontent.com/a0e5b6039aa6d34aaa5550bf375a9dce9314db6f/68747470733a2f2f696d61676573322e696d67626f782e636f6d2f34392f38642f346970487155636a5f6f2e6a7067)
 
 3.  Close the file.
 
@@ -889,9 +881,7 @@ For compatibility, put blank lines before and after horizontal rules.
     <tr>
       <td>
         Try to put a blank line before...<br><br>
-
         ---<br><br>
-
         ...and after a horizontal rule.
       </td>
       <td>
