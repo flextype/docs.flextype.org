@@ -17,6 +17,7 @@ Required format: `width, height, x, y`.
 ##### Usage
 
 <div class="file-header">Request</div>
+
 ```http
 GET YOUR_APP_URL/api/images/entries/en/image.jpg?crop=2000,2000,600,655&token=YOUR_IMAGES_TOKEN
 ```
@@ -24,6 +25,7 @@ GET YOUR_APP_URL/api/images/entries/en/image.jpg?crop=2000,2000,600,655&token=YO
 ##### Example
 
 <div class="file-header">Request</div>
+
 ```http
 GET [url]/api/images/entries/en/image.jpg?crop=2000,2000,600,655&token=4864fb8e1ebe080e6e4ad5c4363083a6
 ```

@@ -125,6 +125,7 @@ The Flextype Files API organized around Representational State Transfer (REST) f
 ##### Fetch single file
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/media/files?id=YOUR_MEDIA_FILES_ID&token=YOUR_MEDIA_FILES_TOKEN
 ```
@@ -170,6 +171,7 @@ Fetch file
 `entries/movies/sg-1/season-5/episode-21/cover.jpg`
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/media/files?id=entries/movies/sg-1/season-5/episode-21/cover.jpg&token=6f047babd1894064fbf7662080a9a2f0
 ```
@@ -192,6 +194,7 @@ GET /api/media/files?id=entries/movies/sg-1/season-5/episode-21/cover.jpg&token=
 ##### Fetch files collection
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/media/files?id=YOUR_MEDIA_FILES_ID&options[collection]=true&token=YOUR_MEDIA_FILES_TOKEN
 ```
@@ -237,11 +240,13 @@ Fetch Movies Folders Collection
 `entries/movies/sg-1/season-5/episode-21`
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/media/files?id=entries/movies/sg-1/season-5/episode-21&token=6f047babd1894064fbf7662080a9a2f0
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```http
 {
     "data": {
@@ -261,6 +266,7 @@ GET /api/media/files?id=entries/movies/sg-1/season-5/episode-21&token=6f047babd1
 ### <a name="media-files-upload-file"></a> Upload file
 
 <div class="file-header">Request</div>
+
 ```http
 POST /api/media/files
 ```
@@ -309,6 +315,7 @@ Returns the file object for the file that was just uploaded.
 Upload new file to **entries/movies/sg-1/season-5/episode-21**
 
 <div class="file-header">Request</div>
+
 ```http
 POST /api/media/files
 ```
@@ -325,6 +332,7 @@ curl -i -X POST \
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
   "data": {
@@ -352,6 +360,7 @@ curl -i -X POST \
 ### <a name="media-files-move-file"></a> Move file
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/files
 ```
@@ -400,11 +409,13 @@ Returns the folders object for the file that was just moved.
 Move file **entries/movies/sg-1/season-5/episode-21/cover.jpg** to the **entries/movies/sg-1/season-5/episode-21/new-cover.jpg**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/files
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
     "id": "entries/movies/sg-1/season-5/episode-21/cover.jpg",
@@ -415,6 +426,7 @@ PUT /api/media/files
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -432,11 +444,13 @@ PUT /api/media/files
 Move file **entries/movies/sg-1/season-5/episode-21/cover.jpg** to the **entries/movies/sg-1/season-5/cover.jpg**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/files
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "entries/movies/sg-1/season-5/episode-21/cover.jpg",
@@ -447,6 +461,7 @@ PUT /api/media/files
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -464,6 +479,7 @@ PUT /api/media/files
 ### <a name="copy-file"></a> Copy File
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/files/copy
 ```
@@ -512,11 +528,13 @@ Returns the file object for the file that was just copied.
 Copy for entry **entries/movies/sg-1/season-5/cover.jpg** to **entries/movies/sg-1/season-5/episode-21/cover.jpg**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/files/copy
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "entries/movies/sg-1/season-5/cover.jpg",
@@ -527,6 +545,7 @@ PUT /api/media/files/copy
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -544,6 +563,7 @@ PUT /api/media/files/copy
 ### <a name="media-files-delete-file"></a> Delete file
 
 <div class="file-header">Request</div>
+
 ```http
 DELETE /api/media/files
 ```
@@ -587,11 +607,13 @@ Returns an empty body with HTTP status 204
 Delete entry **entries/movies/sg-1/season-5/episode-21/new-cover.jpg**
 
 <div class="file-header">Request</div>
+
 ```http
 DELETE /api/media/files
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "entries/movies/sg-1/season-5/episode-21/new-cover.jpg",
@@ -603,6 +625,7 @@ DELETE /api/media/files
 ### <a name="media-files-update-file-meta"></a> Update File Meta
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/files
 ```
@@ -656,11 +679,13 @@ Returns the file object for the file that was just updated.
 Update title for file **entries/movies/sg-1/season-5/cover.jpg**
 
 <div class="file-header">Request</div>
+
 ```http
 PATCH /api/media/files/meta
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
     "field": "title",
@@ -673,6 +698,7 @@ PATCH /api/media/files/meta
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -690,6 +716,7 @@ PATCH /api/media/files/meta
 ### <a name="media-files-add-file-meta"></a> Add File Meta
 
 <div class="file-header">Request</div>
+
 ```http
 POST /api/media/files
 ```
@@ -743,11 +770,13 @@ Returns the file object for the file that was just updated.
 Add tags for file **entries/movies/sg-1/season-5/cover.jpg**
 
 <div class="file-header">Request</div>
+
 ```http
 PATCH /api/media/files/meta
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
     "field": "tags",
@@ -760,6 +789,7 @@ PATCH /api/media/files/meta
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -779,6 +809,7 @@ PATCH /api/media/files/meta
 ### <a name="media-files-delete-file-meta"></a> Delete File Meta
 
 <div class="file-header">Request</div>
+
 ```http
 DELETE /api/media/files
 ```
@@ -827,11 +858,13 @@ Returns the file object for the file that was just updated.
 Delete tags meta field for file **entries/movies/sg-1/season-5/cover.jpg**
 
 <div class="file-header">Request</div>
+
 ```http
 DELETE /api/media/files/meta
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
     "field": "tags",
@@ -843,6 +876,7 @@ DELETE /api/media/files/meta
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -907,6 +941,7 @@ The Flextype Folders API organized around Representational State Transfer (REST)
 ##### Fetch single folder
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/media/folders?id=YOUR_FOLDER_ID&options=[]&token=YOUR_FOLDERS_TOKEN
 ```
@@ -951,6 +986,7 @@ Returns the item object for the given unique identifier.
 Fetch Movies Folder
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/media/folders?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
@@ -958,6 +994,7 @@ GET /api/media/folders?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ##### Fetch folders collection
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/entries?id=YOUR_FOLDER_ID&options[collection]=true&token=YOUR_FOLDERS_TOKEN
 ```
@@ -1002,6 +1039,7 @@ Returns an array of item objects.
 Fetch Movies Folders Collection
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/media/folders?id=entries/movies&collection=true&token=6f047babd1894064fbf7662080a9a2f0
 ```
@@ -1009,6 +1047,7 @@ GET /api/media/folders?id=entries/movies&collection=true&token=6f047babd1894064f
 ### <a name="media-folders-create-folder"></a> Create folder
 
 <div class="file-header">Request</div>
+
 ```http
 POST /api/media/folders
 ```
@@ -1052,11 +1091,13 @@ Returns the folder object for the folder that was just created.
 Create new folder **entries/movies/platform**
 
 <div class="file-header">Request</div>
+
 ```http
 POST /api/media/folders
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "entries/movies/platform",
@@ -1066,6 +1107,7 @@ POST /api/media/folders
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -1080,6 +1122,7 @@ POST /api/media/folders
 ### <a name="media-folders-move-folder"></a> Move folder
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/folders
 ```
@@ -1128,11 +1171,13 @@ Returns the folders object for the folders that was just moved.
 Rename entry **entries/movies/platform** to the **entries/movies/the-platform**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/folders
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
     "id": "entries/movies/platform",
@@ -1143,6 +1188,7 @@ PUT /api/media/folders
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -1157,11 +1203,13 @@ PUT /api/media/folders
 Move entry **entries/movies/the-platform** to the **entries/movies/2019/the-platform**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/folders
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "entries/movies/the-platform",
@@ -1172,6 +1220,7 @@ PUT /api/media/folders
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -1186,6 +1235,7 @@ PUT /api/media/folders
 ### <a name="media-folders-copy-folder"></a> Copy folder
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/folders/copy
 ```
@@ -1234,11 +1284,13 @@ Returns the folders object for the folders that was just copied.
 Copy for entry **entries/movies/2019/the-platform** to **entries/movies/horror/the-platform**
 
 <div class="file-header">Request</div>
+
 ```http
 PUT /api/media/folders/copy
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "entries/movies/2019/the-platform",
@@ -1249,6 +1301,7 @@ PUT /api/media/folders/copy
 ```
 
 <div class="file-header flex justify-between"><div>Response</div> <div class="text-right">200 OK</div></div>
+
 ```json
 {
     "data": {
@@ -1263,6 +1316,7 @@ PUT /api/media/folders/copy
 ### <a name="media-folders-delete-folder"></a> Delete folder
 
 <div class="file-header">Request</div>
+
 ```http
 DELETE /api/media/folders
 ```
@@ -1306,11 +1360,13 @@ Returns an empty body with HTTP status 204
 Delete entry **entires/movies/horror/the-platform**
 
 <div class="file-header">Request</div>
+
 ```http
 DELETE /api/media/folders
 ```
 
 <div class="file-header">Body</div>
+
 ```json
 {
 	"id": "entries/movies/horror/the-platform",
