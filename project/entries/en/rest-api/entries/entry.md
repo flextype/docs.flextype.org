@@ -81,6 +81,7 @@ The Flextype Entries API organized around Representational State Transfer (REST)
 ##### Fetch single entry
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/entries?id=YOUR_ENTRY_ID&[options]&token=YOUR_ENTRIES_TOKEN
 ```
@@ -125,6 +126,7 @@ Returns the item object for the given unique identifier.
 Fetch Movies Entry
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ```
@@ -132,6 +134,7 @@ GET /api/entries?id=movies&token=6f047babd1894064fbf7662080a9a2f0
 ##### Fetch entries collection
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/entries?id=YOUR_ENTRY_ID&options[collection]=true&token=YOUR_ENTRIES_TOKEN
 ```
@@ -176,6 +179,7 @@ Returns an array of item objects.
 Fetch Movies Collection
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/entries?id=movies&options[collection]=true&token=6f047babd1894064fbf7662080a9a2f0
 ```
@@ -183,6 +187,7 @@ GET /api/entries?id=movies&options[collection]=true&token=6f047babd1894064fbf766
 Fetch Movies Collection where **director** is equal to **Cathy Yan**
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/entries?id=movies&options[collection]=true&options[filter][where][0][key]=director&options[filter][where][9][operator]=eq&options[filter][where][0][value]=Cathy+Yan&token=6f047babd1894064fbf7662080a9a2f0
 ```
@@ -190,6 +195,7 @@ GET /api/entries?id=movies&options[collection]=true&options[filter][where][0][ke
 Fetch Movies Collection where **director** is equal to **Cathy Yan** and where year is equal to **2020** and where genre is contains **action**
 
 <div class="file-header">Request</div>
+
 ```http
 GET /api/entries?id=movies&options[collection]=true&options[filter][where][0][key]=director&options[filter][where][0][operator]=eq&options[filter][where][0][value]=Cathy+Yan&options[filter][where][1][key]=year&options[filter][where][1][operator]=eq&options[filter][where][1][value]=2020&options[filter][where][2][key]=genre&options[filter][where][1][operator]=contains&options[filter][where][1][value]=drama&token=6f047babd1894064fbf7662080a9a2f0
 ```
